@@ -185,7 +185,7 @@ On one side, scholars including \citet{Brookes1979,Brookes1990} and
 \citet{Khazzoom1980}
 suggested rebound could be large.
 Others, including \citet{Lovins1988} and 
-% \citet{Grubb1990, Grubb1992},
+\citet{Grubb1990,Grubb1992},
 claimed rebound was likely to be small.
 
 
