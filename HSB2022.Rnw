@@ -198,77 +198,47 @@ claim the evidence for large rebound
 (greater than 50\%)
 is growing.
 (Rebound above 100\% is known as ``backfire'' \citep{Saunders:2000aa}.)
-% \citet{sonnberger2018rebound} suggest that the acceleration of everyday life 
-% is evidence of rebound.
+\citet{sonnberger2018rebound} suggest that the acceleration of everyday life
+is evidence of rebound.
+
+Amidst the rebound debate,
+energy efficiency measures are expected to deliver
+energy-related 
+CO$_2$ emissions reductions in support of
+Paris Agreement targets~\citep{masson-delmotte2018},
+even as the world economy grows.
+In one example, 
+by 2050 energy efficiency is expected to
+contribute 37\% of 
+energy-related carbon emissions reductions globally
+in the International Energy Agency's (IEA's) Sustainable Development
+% scenario~\citep[Fig.~2.1]{InternationalEnergyAgency2019}%
+% \footnote{
+%   Note that emissions reductions in the Sustainable Development scenario
+%   are relative to the IEA's Stated Policies scenario, 
+%   which itself includes planned energy efficiency.
+% }.
+% %
+% However, a study by the present authors and two others shows 
+% that the expected reductions in energy consumption 
+% would represent a significant structural break from the historical record
+% of tight coupling between energy consumption and GDP \citep[Figs.~1 and~2]{Brockway2021}.
+% The same study also found that 
+% ``many of the mechanisms driving rebound effects are overlooked by 
+% integrated assessment and global energy models'' \citep[p.~1]{Brockway2021}.
+% Thus, energy rebound is much more than an academic debate, 
+% because there is a lot at stake. 
+% Large rebound, if it exists and if it is not fully 
+% included in models from which policies are derived, would mean that
+% efficiency-based efforts to reduce carbon emissions may be less effective than supposed, 
+% and achieving Paris emissions reduction targets will be at risk.
+% So understanding the magnitude of energy rebound resulting from an EEU is important,
+% and developing clear and comprehensive ways
+% to estimate rebound is essential.
 
 
 
 
-%----------------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
-%----------------------------------------------------------------------------------------
-
-\section{Materials And Methods}
-
-\subsection{Subsection One}
-
-Some text to show footnotes\footnote{An example footnote} in action\footnote{Another example footnote}.
-
-\subsubsection{Subsubsection One}
-
-%------------------------------------------------
-
-\subsection{Subsection Two}
-
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-\section{Results}
-
-% Example figure
-\begin{figure}[t]
-\caption{A caption for a placeholder figure.}
-\includegraphics[width=\linewidth]{placeholder.jpg}
-\label{fig:FigRef}
-\end{figure}
-
-% Example rotated figure
-\begin{sidewaysfigure}
-\caption{A caption for a rotated placeholder figure.}
-\includegraphics[width=\linewidth]{placeholder.jpg}
-\label{fig:FigRef2}
-\end{sidewaysfigure}
-
-% Example table
-\begin{table}[t]
-\fontsize{10pt}{12pt}\selectfont % Table font size
-\centering % Centered table
-\caption{Calibrated Parameter and Initial Variable Values} % Table caption
-\begin{tabular}{llr}
-\noalign{\hrule height 1pt} % Table rule
-\textbf{Parameter} & & \\
-\textbf{or Variable} & \multicolumn{1}{c}{\textbf{Brief Description}} & \textbf{Value}\\
-\noalign{\hrule height 1pt} % Table rule
-$\pi$ & Initial population$\dagger$ & 1.0\\
-$S$ & Feasible technically recoverable fossil fuel resources & 2126.0527\\
-\noalign{\hrule height 1pt} % Table rule
-\multicolumn{3}{l}{$\dagger$ Set equal to 1.0 by using the value at $t = 0$ to define units}
-\end{tabular}
-\label{tab:example} % Table label for referencing the table elsewhere in the text with \ref{<label>}
-\end{table}
-
-% Example equation
-\begin{equation}
-\label{eq:emc}
-e = mc^2
-\end{equation}
-
-%----------------------------------------------------------------------------------------
-%	DISCUSSION
-%----------------------------------------------------------------------------------------
-
-\section{Discussion}
 
 %----------------------------------------------------------------------------------------
 %	APPENDIX
