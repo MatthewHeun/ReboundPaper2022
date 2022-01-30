@@ -179,6 +179,15 @@ For nearly 200 years, then, it has been understood
 that efficiency gains may be taken back or, paradoxically even,
 drive growth in energy consumption.
 
+The oil crises of the 1970s shone a light back onto energy efficiency,
+and a modern debate over the magnitude of energy rebound commenced. 
+On one side, scholars including \citet{Brookes1979, Brookes1990} and 
+% \citet{Khazzoom1980}
+% suggested rebound could be large.
+% Others, including \citet{Lovins1988} and \citet{Grubb1990, Grubb1992},
+% claimed rebound was likely to be small.
+
+
 
 
 
