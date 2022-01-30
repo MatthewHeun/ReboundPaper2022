@@ -1,0 +1,219 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% International Association for Energy Economics
+% LaTeX Template
+% Version 1.0 (12/3/15)
+%
+% This template was created by:
+% Vel (vel@latextypesetting.com)
+% http://www.LaTeXTypesetting.com
+%
+% Instructions to authors:
+% 1) Please carefully read the comments within this template as they explain the
+% function of each command and provide examples for you to customize the
+% template for your article.
+%
+% 2) Figures must be placed into the 'figures' folder and referred to by full filename
+% e.g. \includegraphics{example.jpg} where example.jpg is in the figures folder.
+%
+% 3) Figures can be in the following formats: JPG, PNG or PDF.
+%
+% 4) References are to be written in standard BibTeX format (as \bibitem's) at the 
+% end of this template. You can then cite them in-text using the \citep{citekey}
+% for a citation with surrounding brackets and \cite{citekey} for a citation with 
+% brackets surrounding the year of the publication only.
+%
+% 5) If you would like figures to be less wide than the surrounding line width,
+% add a decimal before the \linewidth command when including them. For example:
+% \includegraphics[width=0.6\linewidth]{placeholder.jpg} for a 60%-wide figure.
+%
+% 6) Packages may be incompatible with this template and adding them will prevent your
+% document from compiling or will produce unwanted results. A limited number of packages have
+% been tested and found to work, but in general you should try to achieve the results
+% you want without using packages.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you wish to submit to the Energy Journal, use the [EJ] option below
+% If you wish to submit to the Economics of Energy & Environmental Policy, use the [EEEPJ] option below
+\documentclass[EJ]{IAEE}
+
+\articletitle{Energy Sector Innovation and Growth: An Optimal Energy Crisis} % Article title
+
+% Specify each author with the following command:
+% \singleauthor{<author name>}{<superscript identifier>}
+% Suitable identifiers are *, **, ***, ****
+\authors{
+\singleauthor{Peter Hartley}{*},
+\singleauthor{Kenneth B. Medlock III}{**},
+\singleauthor{Ted Temzelides}{***},
+and 
+\singleauthor{Xinya Zhang}{****}
+}
+
+% Specify each author affiliation with the following command:
+% \singleaffiliation{<superscript identifier indent>}{<superscript identifer>}{<affiliation>}
+% The superscript indent takes values in multiples of 3pt, e.g. first affiliation is 3pt, second 6pt, etc
+\affiliations{
+\singleaffiliation{3pt}{*}{Corresponding author. Department of Economics and James A. Baker III Institute for Public Policy, Rice University and Department of Economics, University of Western Australia. Send correspondence to Department of Economics, MS22 Rice University, 6100 Main Street, Houston, TX, 77005-1892. E-mail: \href{mailto:hartley@rice.edu}{hartley@rice.edu}.}
+\singleaffiliation{6pt}{**}{James A. Baker III Institute for Public Policy and Department of Economics, Rice University.}
+\singleaffiliation{9pt}{***}{Department of Economics and James A. Baker III Institute for Public Policy, Rice University.}
+\singleaffiliation{12pt}{****}{Center for Energy Economics, University of Texas.}
+}
+
+% Note that acknowledgements are placed in their own section after the appendix and before the bibliography
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the article title and authors
+
+\printaffiliations % Print the affiliations in the footer of the first page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT BLOCK
+%----------------------------------------------------------------------------------------
+
+\abstractblock
+{Place the abstract text here}
+{Energy innovation, Energy transition, Energy cost, Economic, keyword1, keyword2} % Keywords
+{http://www.example.com} % This URL is for the DOI information and will be added by the publisher once it has been determined
+{C32, H23, O33, O38, Q56, Q58} % JEL
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+% Place your text for the Introduction here. The following dummy text illustrates how to insert footnotes and figure or table references.
+
+This statement\footnote{Not actually a statement} needs referencing \citep{Figueredo:2009dg}. This was described in \cite{Figueredo:2009dg}. This is a reference to a table (Table \ref{tab:example}).
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+\section{Materials And Methods}
+
+\subsection{Subsection One}
+
+Some text to show footnotes\footnote{An example footnote} in action\footnote{Another example footnote}.
+
+\subsubsection{Subsubsection One}
+
+%------------------------------------------------
+
+\subsection{Subsection Two}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+
+% Example figure
+\begin{figure}[t]
+\caption{A caption for a placeholder figure.}
+\includegraphics[width=\linewidth]{placeholder.jpg}
+\label{fig:FigRef}
+\end{figure}
+
+% Example rotated figure
+\begin{sidewaysfigure}
+\caption{A caption for a rotated placeholder figure.}
+\includegraphics[width=\linewidth]{placeholder.jpg}
+\label{fig:FigRef2}
+\end{sidewaysfigure}
+
+% Example table
+\begin{table}[t]
+\fontsize{10pt}{12pt}\selectfont % Table font size
+\centering % Centered table
+\caption{Calibrated Parameter and Initial Variable Values} % Table caption
+\begin{tabular}{llr}
+\noalign{\hrule height 1pt} % Table rule
+\textbf{Parameter} & & \\
+\textbf{or Variable} & \multicolumn{1}{c}{\textbf{Brief Description}} & \textbf{Value}\\
+\noalign{\hrule height 1pt} % Table rule
+$\pi$ & Initial population$\dagger$ & 1.0\\
+$S$ & Feasible technically recoverable fossil fuel resources & 2126.0527\\
+\noalign{\hrule height 1pt} % Table rule
+\multicolumn{3}{l}{$\dagger$ Set equal to 1.0 by using the value at $t = 0$ to define units}
+\end{tabular}
+\label{tab:example} % Table label for referencing the table elsewhere in the text with \ref{<label>}
+\end{table}
+
+% Example equation
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+%	DISCUSSION
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+
+%----------------------------------------------------------------------------------------
+%	APPENDIX
+%----------------------------------------------------------------------------------------
+
+\appendixtitle % Print the appendix title
+
+\appendixtext{
+
+% Appendix content is placed between the opening and closing braces and can include headings equations, figures, tables and so forth
+
+% Further titles within the appendix should be added using a \subsection{<title>} command 
+
+} % This brace ends the appendix content section.
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Acknowledgements}
+
+Place the acknowledgement text here
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99}
+
+%------------------------------------------------
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and P. S.~A. Wolf (2009).
+\newblock ``Assortative pairing and life history strategy - a cross-cultural study.''
+\newblock {\em Human Nature}, 20:317--330.
+
+%------------------------------------------------
+
+\bibitem[Smith, 2012]{Smith:2012qr}
+Smith, J.~M. and A.~B. Jones (2012).
+\newblock {\em ``Chemistry.''}
+\newblock Publisher, City, 7th edition.
+
+%------------------------------------------------
+
+% Articles:
+%\bibitem[<citation to appear in-text>]{<citekey>}
+%<author block as it appears in the references list> (<year>).
+%\newblock ``<title>''.
+%\newblock <puiblisher>, <city>, <edition>.
+
+%------------------------------------------------
+
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
