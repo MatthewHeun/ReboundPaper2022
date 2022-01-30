@@ -188,6 +188,18 @@ Others, including \citet{Lovins1988} and
 \citet{Grubb1990,Grubb1992},
 claimed rebound was likely to be small.
 
+Debate over the size of energy rebound continues today.
+Advocates of small rebound (less than, say, 50\%), suggest 
+``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
+while others,
+including \citet{Saunders2015} and 
+\citet{Stern2020},
+claim the evidence for large rebound
+(greater than 50\%)
+is growing.
+(Rebound above 100\% is known as ``backfire'' \citep{Saunders:2000aa}.)
+% \citet{sonnberger2018rebound} suggest that the acceleration of everyday life 
+% is evidence of rebound.
 
 
 
