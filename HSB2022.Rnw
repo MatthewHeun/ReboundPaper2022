@@ -61,8 +61,7 @@ library(xtable)
 % Suitable identifiers are *, **, ***, ****
 \authors{
 \singleauthor{Matthew Kuperus Heun}{*},
-\singleauthor{Gregor Semieniuk}{**},
-and
+\singleauthor{Gregor Semieniuk}{**}, and
 \singleauthor{Paul E. Brockway}{***}
 }
 
@@ -154,31 +153,31 @@ Substitution and income effects, Macroeconomic rebound} % Keywords
 
 % Place your text for the Introduction here. The following dummy text illustrates how to insert footnotes and figure or table references.
 
-This statement\footnote{Not actually a statement} needs referencing \citep{Figueredo:2009dg}. This was described in \cite{Figueredo:2009dg}. This is a reference to a table (Table \ref{tab:example}).
+% This statement\footnote{Not actually a statement} needs referencing \citep{Figueredo:2009dg}. This was described in \cite{Figueredo:2009dg}. This is a reference to a table (Table \ref{tab:example}).
 
 Energy rebound is a phenomenon whereby 
 some expected energy savings fail to materialize 
 after an energy efficiency upgrade (EEU)
 due to behavior changes and economic effects.
 Famously, the roots of energy rebound trace back to 
-% \citeauthor{Jevons:1865}
-% who, in \emph{The Coal Question}, said 
-% ``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
-% use of fuel is equivalent to a diminished consumption. 
-% The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
-% Less famously, the origins of rebound may extend further backward 
-% from \citeauthor{Jevons:1865}
-% to \citet{Williams1840}
-% who quoted \citeauthor{Parkes1838}:
-% ``[t]he economy of fuel is the secret of the economy of the steam-engine; 
-% it is the fountain of its power, and the adopted measure of its effects. 
-% Whatever, therefore, conduces to increase the efficiency of coal, 
-% and to diminish the cost of its use, 
-% directly tends to augment the value of the steam-engine, 
-% and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
-% For nearly 200 years, then, it has been understood 
-% that efficiency gains may be taken back or, paradoxically even, 
-% drive growth in energy consumption.
+\citeauthor{Jevons:1865}
+who, in \emph{The Coal Question}, said
+``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical
+use of fuel is equivalent to a diminished consumption.
+The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+Less famously, the origins of rebound may extend further backward
+from \citeauthor{Jevons:1865}
+to \citet{Williams1840}
+who quoted \citeauthor{Parkes1838}:
+``[t]he economy of fuel is the secret of the economy of the steam-engine;
+it is the fountain of its power, and the adopted measure of its effects.
+Whatever, therefore, conduces to increase the efficiency of coal,
+and to diminish the cost of its use,
+directly tends to augment the value of the steam-engine,
+and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
+For nearly 200 years, then, it has been understood
+that efficiency gains may be taken back or, paradoxically even,
+drive growth in energy consumption.
 
 
 
@@ -288,34 +287,44 @@ using an early version of this framework.
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
-\begin{thebibliography}{99}
+\input{HSBbib.tex}
 
-%------------------------------------------------
 
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and P. S.~A. Wolf (2009).
-\newblock ``Assortative pairing and life history strategy - a cross-cultural study.''
-\newblock {\em Human Nature}, 20:317--330.
-
-%------------------------------------------------
-
-\bibitem[Smith, 2012]{Smith:2012qr}
-Smith, J.~M. and A.~B. Jones (2012).
-\newblock {\em ``Chemistry.''}
-\newblock Publisher, City, 7th edition.
-
-%------------------------------------------------
-
-% Articles:
-%\bibitem[<citation to appear in-text>]{<citekey>}
-%<author block as it appears in the references list> (<year>).
-%\newblock ``<title>''.
-%\newblock <puiblisher>, <city>, <edition>.
-
-%------------------------------------------------
-
-\end{thebibliography}
+% \begin{thebibliography}{99}
+% 
+% 
+% %------------------------------------------------
+% 
+% \bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+% Figueredo, A.~J. and P. S.~A. Wolf (2009).
+% \newblock ``Assortative pairing and life history strategy - a cross-cultural study.''
+% \newblock {\em Human Nature}, 20:317--330.
+% 
+% %------------------------------------------------
+% 
+% \bibitem[Smith, 2012]{Smith:2012qr}
+% Smith, J.~M. and A.~B. Jones (2012).
+% \newblock {\em ``Chemistry.''}
+% \newblock Publisher, City, 7th edition.
+% 
+% %------------------------------------------------
+% 
+% % Articles:
+% %\bibitem[<citation to appear in-text>]{<citekey>}
+% %<author block as it appears in the references list> (<year>).
+% %\newblock ``<title>''.
+% %\newblock <puiblisher>, <city>, <edition>.
+% 
+% %------------------------------------------------
+% 
+% 
+% 
+% \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
+
+
+
+
 
 \end{document}
