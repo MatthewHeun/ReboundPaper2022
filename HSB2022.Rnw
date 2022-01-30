@@ -87,10 +87,50 @@ and
 %----------------------------------------------------------------------------------------
 
 \abstractblock
-{Place the abstract text here}
-{Energy innovation, Energy transition, Energy cost, Economic, keyword1, keyword2} % Keywords
+{Widespread implementation of energy efficiency measures
+is an important global strategy to meet Paris greenhouse gas emissions reduction targets. 
+However, energy rebound can ``take back'' efficiency-based
+energy reductions via behavior changes and economic effects.
+If rebound effects are larger than typically assumed, 
+efficiency-based efforts to reduce carbon emissions 
+will be less effective than supposed.
+Therefore, the investigation of rebound effects is a high priority. 
+% The problem
+An operationalized rebound analysis framework is needed
+to study energy efficiency upgrades 
+for specific energy conversion devices, 
+one that discriminates among all rebound effects
+in energy, expenditure, and consumption spaces
+with a detailed model of consumer responses 
+for non-marginal energy efficiency changes.
+% Our response
+In response, 
+we develop a comprehensive, partial equilibrium 
+rebound analysis framework to 
+describe direct and indirect locations
+for emplacement, substitution, and income rebound effects. 
+We utilize a macro factor to link
+microeconomic to macroeconomic rebound scales.
+A sequence of novel graphs shows rebound paths through 
+energy, expenditure, and consumption spaces.
+The framework is applied to two case studies: 
+upgrades of a car and an electric lamp.
+% Results
+After calibrating the macro factor,
+we find total rebound of 48\% and 80\% 
+for the car and lamp examples, respectively.
+Sensitivity studies are performed, showing the effects of 
+energy efficiency, capital cost, energy price, 
+energy service price elasticity of energy demand, and 
+the macro factor on rebound components.
+Implications of rebound for three common energy policies are considered:
+energy efficiency standards,
+rebates or subsidies, and
+carbon pricing or energy taxes.}
+{Energy efficiency, Energy rebound, Energy services, Microeconomic rebound,
+Substitution and income effects, Macroeconomic rebound} % Keywords
 {http://www.example.com} % This URL is for the DOI information and will be added by the publisher once it has been determined
-{C32, H23, O33, O38, Q56, Q58} % JEL
+{D11, O33, Q41, Q54, Q55} % JEL
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
