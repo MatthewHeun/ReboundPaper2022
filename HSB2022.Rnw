@@ -33,6 +33,18 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+<<setup, echo=FALSE, message=FALSE>>=
+library(dplyr)
+library(magrittr)
+library(MKHthemes)
+library(ReboundTools)
+library(tidyr)
+library(xtable)
+@
+
+
+
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
@@ -41,7 +53,8 @@
 % If you wish to submit to the Economics of Energy & Environmental Policy, use the [EEEPJ] option below
 \documentclass[EJ]{IAEE}
 
-\articletitle{Energy Sector Innovation and Growth: An Optimal Energy Crisis} % Article title
+\articletitle{A comprehensive, partial equilibrium
+              energy rebound analysis framework} % Article title
 
 % Specify each author with the following command:
 % \singleauthor{<author name>}{<superscript identifier>}
@@ -132,15 +145,43 @@ Substitution and income effects, Macroeconomic rebound} % Keywords
 {http://www.example.com} % This URL is for the DOI information and will be added by the publisher once it has been determined
 {D11, O33, Q41, Q54, Q55} % JEL
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % Place your text for the Introduction here. The following dummy text illustrates how to insert footnotes and figure or table references.
 
 This statement\footnote{Not actually a statement} needs referencing \citep{Figueredo:2009dg}. This was described in \cite{Figueredo:2009dg}. This is a reference to a table (Table \ref{tab:example}).
+
+Energy rebound is a phenomenon whereby 
+some expected energy savings fail to materialize 
+after an energy efficiency upgrade (EEU)
+due to behavior changes and economic effects.
+Famously, the roots of energy rebound trace back to 
+% \citeauthor{Jevons:1865}
+% who, in \emph{The Coal Question}, said 
+% ``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
+% use of fuel is equivalent to a diminished consumption. 
+% The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+% Less famously, the origins of rebound may extend further backward 
+% from \citeauthor{Jevons:1865}
+% to \citet{Williams1840}
+% who quoted \citeauthor{Parkes1838}:
+% ``[t]he economy of fuel is the secret of the economy of the steam-engine; 
+% it is the fountain of its power, and the adopted measure of its effects. 
+% Whatever, therefore, conduces to increase the efficiency of coal, 
+% and to diminish the cost of its use, 
+% directly tends to augment the value of the steam-engine, 
+% and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
+% For nearly 200 years, then, it has been understood 
+% that efficiency gains may be taken back or, paradoxically even, 
+% drive growth in energy consumption.
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -228,7 +269,20 @@ e = mc^2
 
 \section*{Acknowledgements}
 
-Place the acknowledgement text here
+Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
+Council, supported under EPSRC Fellowship award EP/R024254/1.
+The authors are grateful for comments from internal reviewers
+Becky Haney and Jeremy Van Antwerp (Calvin University); 
+Nathan Chan (University of Massachusetts at Amherst); and 
+Zeke Marshall (University of Leeds).
+The authors benefitted from discussions with 
+Daniele Girardi (University of Massachusetts at Amherst) and 
+Christopher Blackburn (Bureau of Economic Analysis).
+Finally, the authors thank the students of MKH's Fall 2019 
+Thermal Systems Design course (ENGR333) at Calvin University
+who studied energy rebound for many energy conversion devices
+using an early version of this framework.
+
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
