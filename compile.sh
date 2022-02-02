@@ -7,7 +7,6 @@
 
 pdflatex HSB2022.tex
 pdflatex HSB2022.tex
-# pdflatex HSB2022.tex
 open HSB2022.pdf
 
 # Comment the following line if it helps to see the auxiliary files.
