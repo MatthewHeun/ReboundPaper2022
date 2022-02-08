@@ -1,0 +1,36 @@
+\documentclass{article}
+
+
+% Author info
+\title{A comprehensive, partial equilibrium
+              energy rebound analysis framework}
+\author{Matthew Kuperus Heun}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Need interdisciplinary framework for rebound, approachable from energy and economics sides
+
+–	Long history of Rebound in The Energy Journal (Borenstein, Turner, Khazzoom, Lovins, Saunders (2015)
+
+–	Turner said we need more conceptual clarity instead of more estimates. Empirical part was moving ahead of conceptual frameworks.
+
+–	Rebound is important: why have we not decoupled? Not an ivory tower debate.
+
+–	A slate of conceptual developments for general equilibrium. That's great. Makes headway on general equilibrium effects (prices change in other sectors). But some things better described in partial equilibrium space. 
+
+–	Not a lot of rebound going on in the models. RSER paper says not much rebound in the big models.
+
+–	Important for the field to move on. Not much since Borenstein. Haven't seen the type of paper that we have.
+
+–	An ``accessible'' partial equilibrium framework. Accessible for energy experts and economists, both communities.
+
+
+	
+\end{document}
