@@ -154,7 +154,7 @@ Substitution and income effects, Macroeconomic rebound} % Keywords
 % Place your text for the Introduction here. The following dummy text illustrates how to insert footnotes and figure or table references.
 
 % This statement\footnote{Not actually a statement} needs referencing \citep{Figueredo:2009dg}. This was described in \cite{Figueredo:2009dg}. This is a reference to a table (Table \ref{tab:example}).
-
+This is a test: this introduction will change.
 Energy rebound is a phenomenon whereby 
 some expected energy savings fail to materialize 
 after an energy efficiency upgrade (EEU)
