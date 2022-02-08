@@ -4,7 +4,7 @@
 % Author info
 \title{A comprehensive, partial equilibrium
               energy rebound analysis framework}
-\author{Matthew Kuperus Heun}
+\author{Matthew Kuperus Heun, Greogr Semieniuk, Paul E.\ Brockway}
 \date{\today}
 
 \begin{document}
@@ -15,21 +15,77 @@
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Need interdisciplinary framework for rebound, approachable from energy and economics sides
+Energy rebound is an interdisciplinary problem that threatens
+a low-carbon future (ref threat paper).
+Rebound makes energy efficiency less effective at reducing carbon emissions
+by taking back (or reversing, in the case of ``backfire'') 
+energy savings expected from an energy efficiency improvement (Ref Sorrell).
+Rebound is thought to be a candidate explanation for why 
+energy consumption and carbon emissions 
+have never been absolutely decoupled from economic growth (ref RSER paper).
 
-–	Long history of Rebound in The Energy Journal (Borenstein, Turner, Khazzoom, Lovins, Saunders (2015)
+Recent work (ref RSER paper) shows that rebound is both 
+(a)~larger than commonly assumed and
+(b)~missing from large climate models.
+The absence of rebound from large climate models is surprising,
+because there is a long history of research on the topic.
+**** History here, focusing especially on 
+The Energy Journal articles
+(Borenstein, Turner, Khazzoom, Lovins, Saunders (2015)).
+****
 
-–	Turner said we need more conceptual clarity instead of more estimates. Empirical part was moving ahead of conceptual frameworks.
+Turner notes that there is a lack of consensus in the literature
+on the magnitude of rebound caused by 
+``a rush to empirical estimation in the absence of solid analytical foundations''
+(Turner 2013, p.\ 25).
+Further, we posit that lack of consensus on rebound magnitude is a plausible explanation
+for why rebound is not included in large climate models.
+(**** Can we be stronger on this? Did any of our elicitations for the RSER paper
+find that lack of consensus on ``a'' rebound magnitude 
+prevented modelers from including rebound? ****)
 
-–	Rebound is important: why have we not decoupled? Not an ivory tower debate.
+But why is there an ``absence of solid analytical foundations?''
+We propose that development of solid analytical frameworks for rebound
+is hampered by the fact that rebound is a decidedly interdisciplinary topic,
+involving both 
+economics (finance and human behavior) and 
+engineering (energy). 
+To fully understand rebound, 
+economists need to have an engineers' understanding of energy, and 
+engineers need to have an economists' understanding of finance and human behavior.
+**** Maybe add some supporting arguments here. 
+From Turner (2013)?
+From our own reading of the rebound literature? ****
 
-–	A slate of conceptual developments for general equilibrium. That's great. Makes headway on general equilibrium effects (prices change in other sectors). But some things better described in partial equilibrium space. 
+We contend that a new clarity is needed.
+Indeed, a description of rebound is needed that is both
+(a) technically rigorous and
+(b) approachable from both sides
+(economics and engineering). 
+In other words, 
+the finance and human behavior aspect of rebound need to be explained 
+in ways engineers can understand. 
+And the energy aspects of rebound need to be explained
+in ways economists can understand.
 
-–	Not a lot of rebound going on in the models. RSER paper says not much rebound in the big models.
+Summarizing,
+we surmise that reducing carbon emissions has been hampered, in part, 
+by the fact that rebound is not included in climate models.
+We suspect that rebound is not included in climate models, because 
+there is lack of consensus on rebound magnitude.
+We agree with Turner that lack of consensus on rebound magnitude
+is a symptom of the absence of solid analytical foundations for rebound.
+We posit that developing solid analytical frameworks for rebound
+is difficult because rebound is an inherently interdisciplinary topic.
 
-–	Important for the field to move on. Not much since Borenstein. Haven't seen the type of paper that we have.
+The purpose of this paper, then, is to provide the beginnings 
+of a rigorous analytical framework, 
+one that is approachable for both engineers and economists
+to understand financial, behavioral, and energetic aspects
+of rebound.
 
-–	An ``accessible'' partial equilibrium framework. Accessible for energy experts and economists, both communities.
+
+
 
 
 	
