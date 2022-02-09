@@ -7,8 +7,8 @@
             top=1in,
             bottom=1in,
             footskip=.25in]{geometry}
-\usepackage{lineno}
-\modulolinenumbers[5]
+\usepackage[pagewise]{lineno}
+% \modulolinenumbers[5]
 \usepackage{setspace}
 \doublespacing
 
@@ -41,6 +41,8 @@
 \section{Introduction}
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\linenumbers
 
 Energy rebound is an interdisciplinary problem that threatens
 a low-carbon future (ref threat paper).
