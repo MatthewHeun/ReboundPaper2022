@@ -1,11 +1,38 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
+\usepackage{authblk}
+\usepackage[letterpaper,
+            left=1in,
+            right=1in,
+            top=1in,
+            bottom=1in,
+            footskip=.25in]{geometry}
+\usepackage{lineno}
+\modulolinenumbers[5]
+\usepackage{setspace}
+\doublespacing
 
 % Author info
 \title{A comprehensive, partial equilibrium
               energy rebound analysis framework}
-\author{Matthew Kuperus Heun, Greogr Semieniuk, Paul E.\ Brockway}
-\date{\today}
+% \author{Matthew Kuperus Heun, Gregor Semieniuk, Paul E.\ Brockway}
+\author[1,*]{Matthew Kuperus Heun}
+\author[2]{Gregor Semienuik}
+\author[3]{Paul E.\ Brockway}
+\affil[1]{Engineering Department, Calvin University}
+\affil[2]{Political Economy Research Institute and 
+                            Department of Economics,
+                            UMass Amherst}
+\affil[3]{Sustainability Research Institute, 
+                             School of Earth and Environment,
+                             University of Leeds}
+\affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
+\renewcommand\Affilfont{\itshape\small}
+
+\date{}
+
+
+% \date{\today}
 
 \begin{document}
 	\maketitle
@@ -20,7 +47,7 @@ a low-carbon future (ref threat paper).
 Rebound makes energy efficiency less effective at reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
 energy savings expected from an energy efficiency improvement (Ref Sorrell).
-Rebound is thought to be a candidate explanation for why 
+Rebound is thought to be a candidate for explanining why 
 energy consumption and carbon emissions 
 have never been absolutely decoupled from economic growth (ref RSER paper).
 
@@ -34,7 +61,7 @@ The Energy Journal articles
 (Borenstein, Turner, Khazzoom, Lovins, Saunders (2015)).
 ****
 
-Turner notes that there is a lack of consensus in the literature
+Turner contends that there is a lack of consensus in the literature
 on the magnitude of rebound caused by 
 ``a rush to empirical estimation in the absence of solid analytical foundations''
 (Turner 2013, p.\ 25).
@@ -63,9 +90,9 @@ Indeed, a description of rebound is needed that is both
 (b) approachable from both sides
 (economics and engineering). 
 In other words, 
-the finance and human behavior aspect of rebound need to be explained 
+the finance and human behavior aspects of rebound need to be presented 
 in ways engineers can understand. 
-And the energy aspects of rebound need to be explained
+And the energy aspects of rebound need to be presented
 in ways economists can understand.
 
 Summarizing,
