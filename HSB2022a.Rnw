@@ -41,13 +41,13 @@
 \linenumbers
 
 Energy rebound is an interdisciplinary problem that threatens
-a low-carbon future (ref threat paper).
+a low-carbon future~\citep{Brockway:2017a}.
 Rebound makes energy efficiency less effective at reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
-energy savings expected from an energy efficiency improvement (Ref Sorrell).
-Rebound is thought to be a candidate for explanining why 
+energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
+Rebound is thought to be a candidate for explaining why 
 energy consumption and carbon emissions 
-have never been absolutely decoupled from economic growth (ref RSER paper).
+have never been absolutely decoupled from economic growth~\citep{Brockway:2021ww}.
 
 Recent work by \citet{Brockway:2021ww} shows that rebound is both 
 (a)~larger than commonly assumed and
