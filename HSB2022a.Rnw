@@ -49,21 +49,50 @@ Rebound is thought to be a candidate for explaining why
 energy consumption and carbon emissions 
 have never been absolutely decoupled from economic growth~\citep{Brockway:2021ww}.
 
-Recent work by \citet{Brockway:2021ww} shows that rebound is both 
+Recent evidence shows that rebound is both 
 (a)~larger than commonly assumed and
-(b)~missing from large climate models.
+(b)~missing from large climate models~\citep{Brockway:2021ww}.
 The absence of rebound from large climate models is surprising,
 because there is a long history of research on the topic.
-**** History here, focusing especially on 
-The Energy Journal articles
-(Borenstein, Turner, Khazzoom, Lovins, Saunders (2015)).
-****
+Famously, the roots of energy rebound trace back to 
+\citeauthor{Jevons:1865} who said 
+``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
+use of fuel is equivalent to a diminished consumption. 
+The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+Less famously, the origins of rebound may extend further backward 
+from \citeauthor{Jevons:1865}
+to \citet{Williams1840}
+who quoted \citeauthor{Parkes1838}:
+``[t]he economy of fuel is the secret of the economy of the steam-engine; 
+it is the fountain of its power, and the adopted measure of its effects. 
+Whatever, therefore, conduces to increase the efficiency of coal, 
+and to diminish the cost of its use, 
+directly tends to augment the value of the steam-engine, 
+and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
+For nearly 200 years, then, it has been understood 
+that efficiency gains may be taken back or, paradoxically even, 
+cause growth in energy consumption.
 
-Turner contends that there is a lack of consensus in the literature
-on the magnitude of rebound caused by 
-``a rush to empirical estimation in the absence of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
+The oil crises of the 1970s shone a light back onto energy efficiency,
+and a modern debate over the magnitude of energy rebound commenced. 
+On one side, scholars including \citet{Brookes1979, Brookes1990} and \citet{Khazzoom1980} 
+suggested rebound could be large.
+Others, including \citet{Lovins1988} and \citet{Grubb1990, Grubb1992},
+claimed rebound was likely to be small.
+Debate over the size of energy rebound continues today.
+Advocates of small rebound (less than, say, 50\%),
+suggest ``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
+while others, 
+including \citet{Saunders2015} and \citet{Stern2020},
+claim the evidence for large rebound
+(greater than 50\%)
+is growing.
+
+\citet[p.~25]{Turner:2013aa} contends that the lack of consensus in the recent literature
+on the magnitude of rebound is caused by 
+``a rush to empirical estimation in the absence of solid analytical foundations.''
 Further, we posit that lack of consensus on rebound magnitude is a plausible explanation
-for why rebound is not included in large climate models.
+for why rebound is not often included in large climate models~\citep{Brockway:2021ww}.
 (**** Can we be stronger on this? Did any of our elicitations for the RSER paper
 find that lack of consensus on ``a'' rebound magnitude 
 prevented modelers from including rebound? ****)
@@ -74,39 +103,49 @@ is hampered by the fact that rebound is a decidedly interdisciplinary topic,
 involving both 
 economics (finance and human behavior) and 
 engineering (energy). 
+~\citet[p.~458]{Birol:2000wi} note that 
+``different implicit and explicit assumptions of different
+research communities (`economists', `engineers') \ldots have
+in the past led to vastly differing points of view.''
+\citeauthor{Turner:2013aa} states that 
+``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
+However, \ldots it is often not clear what different authors 
+mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
+If the two disciplines cannot even agree on the terms, 
+it is unsurprising that not enough progress has been made on understanding rebound.
 To fully understand rebound, 
 economists need to have an engineers' understanding of energy, and 
 engineers need to have an economists' understanding of finance and human behavior.
-**** Maybe add some supporting arguments here. 
-From Turner (2013)?
-From our own reading of the rebound literature? ****
+That's a tall order, indeed.
 
-We contend that a new clarity is needed.
+We contend that new clarity is needed.
 Indeed, a description of rebound is needed that is both
 (a) technically rigorous and
 (b) approachable from both sides
-(economics and engineering). 
+(economics and engineering).
 In other words, 
 the finance and human behavior aspects of rebound need to be presented 
 in ways engineers can understand. 
 And the energy aspects of rebound need to be presented
 in ways economists can understand.
+A good place to start is the microeconomics of energy rebound.
 
 Summarizing,
-we surmise that reducing carbon emissions has been hampered, in part, 
-by the fact that rebound is not included in climate models.
-We suspect that rebound is not included in climate models, because 
+we surmise that reducing global carbon emissions has been hampered, in part, 
+by the fact that rebound is not sufficiently included in climate models.
+We suspect that rebound is not sufficiently included in climate models, because 
 there is lack of consensus on rebound magnitude.
-We agree with Turner that lack of consensus on rebound magnitude
+We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
-is difficult because rebound is an inherently interdisciplinary topic.
+is difficult because it is an inherently interdisciplinary topic.
 
 The purpose of this paper, then, is to provide the beginnings 
 of a rigorous analytical framework, 
-one that is approachable for both engineers and economists
-to understand financial, behavioral, and energetic aspects
-of rebound.
+one that starts at the microeconomics of rebound and 
+that is approachable for both engineers and economists.
+The goal is deeper interdisciplinary understanding of the 
+financial, behavioral, and energetic aspects of rebound.
 
 
 
