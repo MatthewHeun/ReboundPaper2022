@@ -40,7 +40,7 @@
 
 \linenumbers
 
-Energy rebound is an interdisciplinary problem that threatens
+Energy rebound is an interdisciplinary challenge that threatens
 a low-carbon future~\citep{Brockway:2017a}.
 Rebound makes energy efficiency less effective at reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
@@ -140,9 +140,9 @@ We posit that developing solid analytical frameworks for rebound
 is difficult because it is an inherently interdisciplinary topic.
 
 The purpose of this paper, then, is to provide the beginnings 
-of a rigorous analytical framework, 
-one that starts at the microeconomics of rebound and 
-that is approachable for both engineers and economists.
+of a rigorous analytical framework, one that
+(a)~starts at the microeconomics of rebound and 
+(b)~is approachable for both engineers and economists.
 The goal is deeper interdisciplinary understanding of the 
 financial, behavioral, and energetic aspects of rebound.
 
