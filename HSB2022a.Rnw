@@ -157,7 +157,7 @@ is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
 is difficult because it is an inherently interdisciplinary topic.
 
-The purpose of this paper, then, is to provide the beginnings 
+The objective of this paper, then, is to provide the beginnings 
 of a rigorous analytical framework, one that
 (a)~starts at the microeconomics of rebound
 (building upon \citet{Borenstein:2015aa}) and 
