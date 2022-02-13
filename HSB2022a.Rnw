@@ -149,8 +149,8 @@ in ways economists can understand.
 
 Summarizing,
 we surmise that reducing global carbon emissions has been hampered, in part, 
-by the fact that rebound is not sufficiently included in climate models.
-We suspect that rebound is not sufficiently included in climate models, because 
+by the fact that rebound is not sufficiently included in energy and climate models.
+We suspect that rebound is not sufficiently included in energy and climate models, because 
 there is lack of consensus on rebound estimation methods and, hence, rebound magnitude.
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
