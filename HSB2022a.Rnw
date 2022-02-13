@@ -107,7 +107,6 @@ will help to
 (b)~lead to rebound being included in more energy and climate models, and 
 (c)~provide improved policymaking around energy efficiency. 
 
-
 But why is there an ``absence of solid analytical foundations?''
 We propose that development of solid analytical frameworks for rebound
 is hampered by the fact that rebound is a decidedly interdisciplinary topic,
