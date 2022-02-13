@@ -76,7 +76,7 @@ that efficiency gains may be taken back or, paradoxically even,
 cause growth in energy consumption.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
-empirical work on rebound began late in that decade~\citep{Madlener:2016to, Saunders:2021te}, 
+empirical work on rebound began late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
 A modern debate over the magnitude of energy rebound commenced. 
 On one side, scholars including \citet{Brookes1979, Brookes1990} and \citet{Khazzoom1980} 
 suggested rebound could be large.
@@ -91,12 +91,19 @@ claim the evidence for large rebound
 (greater than 50\%)
 is growing.
 
-\citet[p.~25]{Turner:2013aa} contends that the lack of consensus in the recent literature
-on the magnitude of rebound is caused by 
-``a rush to empirical estimation in the absence of solid analytical foundations.''
+\citeauthor{Turner:2013aa} contends that the lack of consensus 
+on the magnitude of rebound 
+in the modern empirical literature is caused by 
+``a rush to empirical estimation in the absence 
+of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
+\citet{Borenstein:2015aa} made some progress toward solidifying the analytical 
+foundations for microeconomic rebound, but
+more is needed and 
+more can be done.
 In the absence of solid analytical foundations, 
-a wide variety of rebound estimation approaches yields
-a wide range of estimates of rebound and the appearance of uncertainty,
+the wide variety of rebound estimation approaches yields
+a wide range of estimates of rebound, 
+giving the appearance of uncertainty and
 leading energy and climate modelers to either 
 (a)~use incorrect numbers, or 
 (b)~ignore rebound altogether.
@@ -122,7 +129,8 @@ in the past led to vastly differing points of view.''
 However, \ldots it is often not clear what different authors 
 mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
 If authors from the two disciplines cannot even agree on the terms, 
-it is unsurprising that not enough progress has been made on understanding rebound.
+it is unsurprising that little progress has been made 
+on analytical foundations.
 To fully understand rebound, 
 economists need to have an engineer's understanding of energy, and 
 engineers need to have an economist's understanding of finance and human behavior.
@@ -143,7 +151,7 @@ Summarizing,
 we surmise that reducing global carbon emissions has been hampered, in part, 
 by the fact that rebound is not sufficiently included in climate models.
 We suspect that rebound is not sufficiently included in climate models, because 
-there is lack of consensus on rebound magnitude.
+there is lack of consensus on rebound estimation methods and, hence, rebound magnitude.
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
@@ -151,7 +159,8 @@ is difficult because it is an inherently interdisciplinary topic.
 
 The purpose of this paper, then, is to provide the beginnings 
 of a rigorous analytical framework, one that
-(a)~starts at the microeconomics of rebound and 
+(a)~starts at the microeconomics of rebound
+(building upon \citet{Borenstein:2015aa}) and 
 (b)~is approachable for both engineers and economists.
 The goal is deeper interdisciplinary understanding of the 
 financial, behavioral, and energetic aspects of rebound.
