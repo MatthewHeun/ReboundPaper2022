@@ -45,9 +45,10 @@ a low-carbon future~\citep{Brockway:2017a}.
 Rebound makes energy efficiency less effective at reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
 energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
-Rebound is thought to be a possible explanation for why 
+Rebound is a possible explanation for why 
 energy consumption and carbon emissions 
-have never been absolutely decoupled from economic growth~\citep{Brockway:2021ww}.
+have never been absolutely decoupled 
+from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
 
 Recent evidence shows that rebound is both 
 (a)~larger than commonly assumed and
