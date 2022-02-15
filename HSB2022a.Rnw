@@ -10,7 +10,9 @@
 
 
 % Author info
-\title{A comprehensive, partial equilibrium
+\title{Advancing the necessary foundations \\
+              for empirical energy rebound estimations: \\
+              A comprehensive, partial equilibrium \\
               energy rebound analysis framework}
 % \author{Matthew Kuperus Heun, Gregor Semieniuk, Paul E.\ Brockway}
 \author[1,*]{Matthew Kuperus Heun}
@@ -58,11 +60,11 @@ Famously, the roots of energy rebound trace back to
 \citeauthor{Jevons:1865} who said 
 ``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
 use of fuel is equivalent to a diminished consumption. 
-The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.%
+The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+Less famously, the origins of rebound may extend further backward 
+from \citeauthor{Jevons:1865}
+to \citet{Williams1840} and \citet{Parkes1838}.%
 \footnote{
-  Less famously, the origins of rebound may extend further backward 
-  from \citeauthor{Jevons:1865}
-  to \citet{Williams1840} and \citet{Parkes1838}.
   \citeauthor{Parkes1838} wrote, 
   ``[t]he economy of fuel is the secret of the economy of the steam-engine; 
   it is the fountain of its power, and the adopted measure of its effects. 
