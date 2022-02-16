@@ -129,7 +129,6 @@ in the past led to vastly differing points of view.''%
   interested in topics like rebound and economy-wide energy efficiency.
   **** Do we have a reference to energy analysis here? ****
 }
-
 \citeauthor{Turner:2013aa} states that 
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
 However, \ldots it is often not clear what different authors 
