@@ -11,9 +11,8 @@
 
 % Author info
 \title{Advancing the necessary foundations \\
-              for empirical energy rebound estimations: \\
-              A comprehensive, partial equilibrium \\
-              energy rebound analysis framework}
+              for empirical energy rebound estimates: \\
+              A partial equilibrium analysis framework}
 % \author{Matthew Kuperus Heun, Gregor Semieniuk, Paul E.\ Brockway}
 \author[1,*]{Matthew Kuperus Heun}
 \author[2]{Gregor Semieniuk}
@@ -104,7 +103,7 @@ more is needed
 to support empirical estimation efforts.
 In the absence of solid analytical foundations, 
 the wide variety of rebound estimation approaches yields
-a wide range of estimates of rebound, 
+a wide range of rebound estimates, 
 giving the appearance of uncertainty and
 leading energy and climate modelers to either 
 (a)~use questionable numbers, or 
@@ -119,13 +118,18 @@ will
 But why is there an ``absence of solid analytical foundations?''
 We propose that development of solid analytical frameworks for rebound
 is hampered by the fact that rebound is a decidedly interdisciplinary topic,
-involving both 
-economics (finance and human behavior) and 
-engineering (energy). 
+involving both economics and energy analysis. 
 ~\citet[p.~458]{Birol:2000wi} note that 
 ``different implicit and explicit assumptions of different
 research communities (`economists', `engineers') \ldots have
-in the past led to vastly differing points of view.''
+in the past led to vastly differing points of view.''%
+\footnote{
+  We prefer the term ``energy analysts'' over ``engineers,''
+  because ``energy analysts'' better describes the group of people 
+  interested in topics like rebound and economy-wide energy efficiency.
+  **** Do we have a reference to energy analysis here? ****
+}
+
 \citeauthor{Turner:2013aa} states that 
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
 However, \ldots it is often not clear what different authors 
@@ -134,18 +138,18 @@ If authors from the two disciplines cannot even agree on the terms,
 it is unsurprising that little progress has been made 
 on analytical foundations.
 To fully understand rebound, 
-economists need to have an engineer's understanding of energy, and 
-engineers need to have an economist's understanding of finance and human behavior.
+economists need to have an energy analyst's understanding of energy, and 
+energy analysts need to have an economist's understanding of finance and human behavior.
 That's a tall order, indeed.
 
 We contend that new clarity is needed.
 A description of rebound is needed that is both
 (a)~technically rigorous and
 (b)~approachable from both sides
-(economics and engineering).
+(economics and energy analysis).
 In other words, 
 the finance and human behavior aspects of rebound need to be presented 
-in ways engineers can understand. 
+in ways energy analysts can understand. 
 And the energy aspects of rebound need to be presented
 in ways economists can understand.
 
