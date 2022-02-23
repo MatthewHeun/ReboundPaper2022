@@ -1,0 +1,439 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB.Rnw
+
+Rebound path graphs show the impact of direct and indirect rebound effects
+in energy space, expenditure space, and consumption space.
+Notional rebound path graphs can be found in 
+Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+Rebound path graphs for the car example can be found in 
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
+Graphs for the lamp example can be found in
+Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
+
+This appendix shows the mathematical details of rebound path graphs,
+specifically derivations of equations for lines and curves 
+shown in Table~\ref{tab:lines_and_curves}.
+The lines and curves enable construction of numerically accurate
+rebound path graphs 
+as shown in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}.
+
+\begin{table}
+\centering
+\caption{Lines and curves for rebound path graphs.}
+\label{tab:lines_and_curves}
+\begin{tabular}{rl}
+\toprule
+Rebound path graph           & Lines and curves                        \\ 
+\midrule
+\multirow{2}{*}{Energy}      & Constant total energy consumption lines \\
+                             & 0\% and 100\% rebound lines             \\
+\midrule
+Expenditure                  & Constant expenditure lines              \\
+\midrule
+\multirow{3}{*}{Consumption} & Constant expenditure lines              \\
+                             & Rays from origin to $\wedge$ point      \\
+                             & Indifference curves                     \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Energy path graphs}
+\label{sec:energy_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+Energy path graphs show direct (on the $x$-axis) and indirect (on the $y$-axis)
+energy consumption associated with the energy conversion device 
+and the device owner.
+Lines of constant total energy consumption comprise a 
+scale for total rebound.
+For example, the 0\% and 100\% rebound lines are constant total energy consumption
+lines which pass through the original point ($\circ$) and
+the post-direct-emplacement-effect point ($a$) 
+on an energy path graph.
+
+The equation of a constant total energy consumption line is derived from 
+
+\begin{equation}
+  \rate{E}_{tot} = \rate{E}_{dir} + \rate{E}_{indir}
+\end{equation}
+%
+at any rebound stage. (See Fig.~\ref{fig:flowchart}.)
+Direct energy consumption is energy consumed by the energy conversion device
+($\rate{E}_s$), and 
+indirect energy consumption is the sum of embodied energy, 
+energy associated with maintenanace and disposal, and energy associated 
+with expenditures on other goods
+($\rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E$).
+
+For the energy path graph, 
+direct energy consumption is placed on the $x$-axis and 
+indirect energy consumption is placed on the $y$-axis.
+To derive the equation of a constant energy consumption line, 
+we first rearrange to put the $y$ coordinate on the left of the equation:
+
+\begin{equation}
+  \rate{E}_{indir} = - \rate{E}_{dir} + \rate{E}_{tot} \; .
+\end{equation}
+%
+Next, we substitute $y$ for $\rate{E}_{indir}$,
+$x$ for $\rate{E}_{dir}$, and 
+$\rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E$ for $\rate{E}_{tot}$
+to obtain
+
+\begin{equation}
+  y = -x + \rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E \; ,
+\end{equation}
+%
+where all of $\rate{E}_s$, $\rate{E}_{emb}$, $\rate{C}_{\md}$, and $\rate{C}_o$
+apply at the same rebound stage of Fig.~\ref{fig:flowchart}.
+
+The constant total energy consumption line 
+that passes through the original point ($\circ$)
+shows 100\% rebound:
+
+\begin{equation}
+  y = -x + \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E \; .
+\end{equation}
+
+The 0\% rebound line is the constant total energy consumption line 
+that accounts for expected energy savings ($\Sdot$) only:
+
+\begin{equation}
+  y = -x + (\rbempl{E}_s - \Sdot)
+          + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E \; .
+\end{equation}
+%
+The above line passes through the $a$ point on an energy path graph.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Expenditure path graphs}
+\label{sec:expenditure_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+Expenditure path graphs show direct (on the $x$-axis) and indirect (on the $y$-axis)
+expenses associated with the energy conversion device 
+and the device owner.
+Lines of constant expenditure are important, 
+because they provide budget constraints for the device owner.
+
+The equation of a constant total expenditure line is derived from 
+the budget constraint
+
+\begin{equation}
+  \rate{C}_{tot} = \rate{C}_{dir} + \rate{C}_{indir}
+\end{equation}
+%
+at any rebound stage.
+For the expenditure path graph,
+indirect expenditures are placed on the $y$-axis
+and direct expenditures on energy for the energy conversion device are place on the $x$-axis.
+Direct expenditure is the cost of energy consumed by the energy conversion device
+($\rate{C}_s = p_E \rate{E}_s$), and 
+indirect expenses are the sum of capital costs, 
+maintenanace and disposal costs, and 
+expenditures on other goods
+($\rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o$).
+Rearranging to put the $y$-axis variable on the left side of the equation gives
+
+\begin{equation}
+  \rate{C}_{indir} = - \rate{C}_{dir} + \rate{C}_{tot} \; .
+\end{equation}
+
+Substituting $y$ for $\rate{C}_{indir}$, 
+$x$ for $\rate{C}_{dir}$, and 
+$\rate{C}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o$ for $\rate{C}_{tot}$
+gives
+
+\begin{equation}
+  y = -x + \rate{C}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o \; ,
+\end{equation}
+%
+where all of $\rate{C}_s$, $\rate{C}_{cap}$, $\rate{C}_{\md}$, and $\rate{C}_o$
+apply at the same rebound stage of Fig.~\ref{fig:flowchart}.
+
+The constant total expenditure line 
+that passes through the original point ($\circ$)
+shows the budget constraint for the device owner:
+
+\begin{equation}
+  y = -x + \rbempl{C}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o \; ,
+\end{equation}
+%
+into which Eq.~(\ref{eq:M_acct_orig}) can be substituted with 
+$\rorig{C}_s = p_E \rorig{E}_s$ and 
+$\rorig{N} = 0$ to obtain
+
+\begin{equation}
+  y = -x + \rbempl{M} \; .
+\end{equation}
+
+The constant total expenditure line 
+that accounts for expected energy savings ($\Sdot$) 
+and freed cash ($\rate{G} = p_E \Sdot$) only 
+is given by:
+
+\begin{equation}
+  y = -x + (\rbempl{C}_s - \rate{G}) + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o \; ,
+\end{equation}
+%
+or
+
+\begin{equation}
+  y = -x + \rbempl{M} - \rate{G}\; .
+\end{equation}
+%
+The line given by the above equation
+passes through the $a$ point on an expenditure path graph.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Consumption path graphs}
+\label{sec:cons_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+Consumption path graphs show expenditures in 
+$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+to accord with the utility model.
+(See Appendix~\ref{sec:utility_and_elasticities}.)
+Consumption path graphs include 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item constant expenditure lines given prices,
+  
+  \item a ray from the origin through the $\wedge$ point, and 
+  
+  \item indifference curves.
+    
+\end{enumerate*}
+%
+Derivations for each are shown in the following subsections.
+
+
+%------------------------------
+\subsubsection{Constant expenditure lines} 
+\label{sec:pref_graph_constant_expenditure_lines}
+%------------------------------
+
+There are four constant expenditure lines on the consumption path graphs of
+Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}.
+The constant expenditure lines pass through 
+the original point (line \circcirc{}), 
+the post-emplacement point (line \starstar{}), 
+the post-substitution point (line \hathat{}), and 
+the post-income point (line \barbar{}).
+Like the expenditure path graph, 
+lines of constant expenditure on a consumption path graph 
+are derived from the budget constraint of the device owner
+at each of the four points.
+
+Prior to the EEU, the budget constraint is given by Eq.~(\ref{eq:M_acct_orig}).
+Substituting $\orig{p}_s \rorig{q}_s$ for $p_E \rorig{E}_s$ and 
+recognizing that there is no net savings before the EEU
+($\rorig{N} = 0$) gives
+
+\begin{equation}
+  \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_o \; .
+\end{equation}
+
+To create the line of constant expenditure on the consumption path graph, 
+we allow $\rorig{q}_s$ and $\rorig{C}_o$ to vary in a compensatory manner:
+when one increases, the other must decrease.  
+To show that variation along the constant expenditure line, 
+we remove the notation that ties $\rorig{q}_s$ and $\rorig{C}_o$
+to the original point ($\circ$) to obtain
+
+\begin{equation}
+  \rbempl{M} = \bempl{p}_s \rate{q}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rate{C}_o \; , 
+\end{equation}
+%
+where all of $\rbempl{M}$, $\bempl{p}_s$, $\rbempl{C}_{cap}$, and $\rbempl{C}_{\md}$
+apply at the same rebound stage of Fig.~\ref{fig:flowchart}, 
+namely the original point ($\circ$).
+
+To derive the equation of the line representing the original budget constraint 
+in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+(the \circcirc{} line through the $\circ$ point
+in consumption path graphs), 
+we solve for $\rate{C}_o$ to obtain
+
+\begin{equation}
+  \rate{C}_o = - \bempl{p}_s \rate{q}_s + \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} \; .
+\end{equation}
+%
+Multiplying judiciously by $\rbempl{C}_o/\rbempl{C}_o$ and $\rbempl{q}_s/\rbempl{q}_s$ gives
+
+\begin{equation}
+  \frac{\rate{C}_o}{\rbempl{C}_o} \rbempl{C}_o
+       = - \bempl{p}_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s 
+         + \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} \; .
+\end{equation}
+%
+Dividing both sides by $\rbempl{C}_o$ yields
+
+\begin{equation}
+  \frac{\rate{C}_o}{\rbempl{C}_o}
+       = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} \frac{\rate{q}_s}{\rbempl{q}_s}
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md}) \; .
+\end{equation}
+%
+Noting that  
+$\rate{q}_s/\rbempl{q}_s$ and 
+$\rate{C}_o/\rbempl{C}_o$ are
+the $x$-axis and $y$-axis, respectively,
+on a consumption path graph gives
+
+\begin{equation} \label{eq:orig_line_prefs}
+  y = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md}) \; .
+\end{equation}
+
+A similar procedure can be employed to derive the equation of the
+\starstar{} line through the $*$ point
+after the emplacement effect.
+The starting point is the budget constraint at the $*$ point
+(Eq.~(\ref{eq:M_acct_aemp}))
+with $\rorig{M}$ replacing $\raempl{M}$, 
+$\amacro{p}_s \rate{q}_s$ replacing $p_E \raempl{E}_s$, and
+$\rate{C}_o$ replacing $\raempl{C}_o$.
+
+\begin{equation}
+  \rbempl{M} = \amacro{p}_s \rate{q}_s + \raempl{C}_{cap} + \raempl{C}_{\md} + \rate{C}_o + \raempl{N} \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:N_dot_star_empl}) for $\raempl{N}$,
+substituting Eq.~(\ref{eq:G_dot}) for $\rate{G}$,
+multiplying judiciously by $\rbempl{C}_o/\rbempl{C}_o$ and $\rbempl{q}_s/\rbempl{q}_s$, 
+rearranging, and noting that 
+$\rate{q}_s/\rbempl{q}_s$ is the $x$-axis and 
+$\rate{C}_o/\rbempl{C}_o$ is the $y$-axis gives
+
+\begin{equation} \label{eq:star_line_prefs}
+  y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} - \rate{G}) \; .
+\end{equation}
+%
+Note that the slope of Eq.~(\ref{eq:star_line_prefs}) is less negative
+than the slope of Eq.~(\ref{eq:orig_line_prefs}), 
+because $\amacro{p}_s < \bempl{p}_s$.
+The $y$-intercept of Eq.~(\ref{eq:star_line_prefs}) is less than the 
+$y$-intercept of Eq.~(\ref{eq:orig_line_prefs}),
+reflecting freed cash.
+Both effects are seen in
+consumption path graphs 
+(Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}).
+The \circcirc{} and \starstar{} lines intersect at the coincident $\circ$ and $*$ points.
+
+A similar derivation process can be used to find the equation of 
+line representing the budget constraint
+after the substitution effect (the \hathat{} line through the $\wedge$ point).
+The starting point is Eq.~(\ref{eq:M_acct_asub}), and 
+the equation for the constant expenditure line is
+
+\begin{equation} \label{eq:hat_line_prefs}
+  y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
+                                   - \rate{G} + \amacro{p}_s \Delta \rasub{q}_s + \Delta \rasub{C}_o) \; .
+\end{equation}
+
+Note that the \hathat{} line (Eq.~(\ref{eq:hat_line_prefs})) has the same slope as 
+the \starstar{} line (Eq.~(\ref{eq:star_line_prefs}))
+but a lower $y$-intercept.
+
+Finally, the corresponding derivation
+for the equation of the constant expenditure line through the 
+$-$ point (line \barbar{}) starts with Eq.~(\ref{eq:M_acct_ainc}) and ends with 
+
+\begin{equation} \label{eq:bar_line_prefs}
+  y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
+        + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
+                                   - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md}) \; .
+\end{equation}
+
+
+%------------------------------
+\subsubsection{Ray from the origin to the $\wedge$ point} 
+\label{sec:pref_graph_ray}
+%------------------------------
+
+On consumption path graphs, 
+the ray from the origin to the $\wedge$ point 
+(line \rr{})
+defines the path along which the income effect
+(lines \hatd{} and \dbar{})
+operates.
+The ray from the origin to the $\wedge$ point
+has slope $(\rasub{C}_o/\rbempl{C}_o) / (\rasub{q}_s/\rbempl{q}_s)$
+and a $y$-intercept of 0.
+Therefore, the equation of line \rr{} is
+
+\begin{equation} \label{eq:ray_cons}
+  y = \frac{\rasub{C}_o/\rbempl{C}_o}{\rasub{q}_s/\rbempl{q}_s} \, x \; .
+\end{equation}
+
+
+%------------------------------
+\subsubsection{Indifference curves} 
+\label{sec:cons_graph_indifference_curves}
+%------------------------------
+
+On a consumption path graph, 
+indifference curves represent lines of constant utility
+for the energy conversion device owner.
+In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
+any indifference curve 
+is given by 
+Eq.~(\ref{eq:utility_Co_form})
+with $\fCs$ replacing the share parameter $a$, 
+as shown in Appendix~\ref{sec:utility_and_elasticities}.
+Recognizing that 
+$\rate{C}_o/\rbempl{C}_o$ is on the $y$-axis and 
+$\rate{q}_s/\rbempl{q}_s$ is on the $x$-axis
+leads to substitution of 
+$y$ for $\rate{C}_o/\rbempl{C}_o$ and 
+$x$ for $\rate{q}_s/\rbempl{q}_s$ to obtain
+
+\begin{equation} \label{eq:utility_line_form}
+  y = \left[ \frac{1}{1 - \fCs} \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho 
+            - \frac{\fCs}{1 - \fCs} (x)^\rho \right]^{(1/\rho)} \; .
+\end{equation}
+
+At any point in 
+$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space,
+namely ($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{o,1}/\rbempl{C}_o$),
+indexed utility ($\rate{u}_1/\rbempl{u}$) is given by Eq.~(\ref{eq:ces_utility}) as
+
+\begin{equation} \label{eq:utility_ratio_1_point}
+  \frac{\rate{u}_1}{\rbempl{u}} =
+        \left[ \fCs \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho
+        + (1-\fCs) \left( \frac{\rate{C}_{o,1}}{\rbempl{C}_o} \right)^\rho  \right]^{(1/\rho)} \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:utility_ratio_1_point}) into Eq.~(\ref{eq:utility_line_form})
+for $\rate{u}/\rorig{u}$
+and simplifying exponents gives
+
+\begin{equation}
+  y = \left\{ \frac{1}{1 - \fCs} \left[ \fCs \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho 
+        + (1-\fCs) \left( \frac{\rate{C}_{o,1}}{\rbempl{C}_o} \right)^\rho   \right] 
+            - \frac{\fCs}{1 - \fCs} (x)^\rho \right\}^{(1/\rho)}  .
+\end{equation}
+%
+Simplifying further yields
+the equation of an indifference curve passing through point 
+($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{o,1}/\rbempl{C}_o$):
+
+\begin{equation} \label{eq:indiff_curve_eqn}
+  y = \left\{ \left( \frac{\fCs}{1 - \fCs} \right) \left[ \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho 
+                                                          - (x)^\rho  \right]
+        + \left( \frac{\rate{C}_{o,1}}{\rbempl{C}_{o}} \right)^\rho \right\}^{(1/\rho)} \; .
+\end{equation}
+%
+Note that if $x$ is $\rate{q}_{s,1}/\rbempl{q}_s$,
+$y$ becomes $\rate{C}_{o,1}/\rbempl{C}_o$,
+as expected.

@@ -1,0 +1,553 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB.Rnw
+
+
+<<efficiency_improvements, echo=FALSE>>=
+eta_car_orig <- rebound_results %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::select(eta_engr_units_orig) # In mpg
+eta_car_tilde <- rebound_results %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::select(eta_engr_units_tilde) # In mpg
+eta_lamp_orig <- rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::select(eta_engr_units_orig) / 1000 # In lm-hr/W-hr
+eta_lamp_tilde <- rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::select(eta_engr_units_tilde) / 1000 # In lm-hr/W-hr
+
+eta_car_perc_improvement <- (eta_car_tilde - eta_car_orig) / eta_car_orig * 100 # In percent
+
+eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 100 # In percent
+@
+
+As discussed in Section~\ref{sec:sub_effect_main_paper}
+and Appendix~\ref{sec:Re_sub}, 
+the substitution effect requires a model for device owner utility
+that compares the perceived benefits of 
+consuming the energy service ($\rate{q}_s$) to
+consuming other goods and services ($\rate{q}_o$).
+In this appendix, we describe two utility models.
+The first utility model is an approximate model
+that applies only for small and marginal
+changes in energy efficiency and 
+energy service price, 
+such that $\Delta \aempl{\eta} \approx 0$ and $\Delta \aempl{p}_s \approx 0$.
+The approximate utility model 
+is discussed for continuity with the literature only.
+(See, for example, \citet{Borenstein:2015aa}.)
+
+We note that larger and non-marginal efficiency gains cause greater rebound
+(measured in joules)
+than small and marginal efficiency gains.
+Thus, any rebound analysis framework needs to accommodate 
+large, non-marginal efficiency changes.
+The second utility model discussed in this appendix is the
+Constant Elasticity of Substitution (CES)
+utility model which does, in fact,
+accommodate large, non-marginal 
+energy efficiency and energy service price changes.
+The CES utility model 
+underlies the substitution effect
+in this framework.
+(See Section~\ref{sec:sub_effect_main_paper}.)
+Furthermore,
+the CES utility model is needed for 
+the example EEUs in this paper,
+which have large, non-marginal
+percentage increases in energy efficiency.
+For the car example in Section~\ref{sec:car_example}, 
+energy efficiency increases from 
+$\orig{\eta} = \Sexpr{mpg_worse}$~mpg to
+$\amacro{\eta} = \Sexpr{mpg_better}$~mpg, 
+a \Sexpr{eta_car_perc_improvement}\% improvement.
+For the lamp example in Section~\ref{sec:lamp_example},
+energy efficiency increases by 
+\Sexpr{formatC(unlist(eta_lamp_perc_improvement))}\%.
+
+% For completeness,
+% we briefly mention a third utility model with Cobb-Douglas form.
+% The Cobb-Douglas utility model is a commonly used special case
+% of the CES utility model
+% with elasticity of substitution ($\sigma$) equal to 1. 
+% The Cobb-Douglas utility model simplifies many derivations due to a number of strong assumptions on behavior.
+% However, the simplicity of Cobb-Douglas utility model has side effects:
+% especially that it always gives 100\% direct substitution rebound.
+% That characteristic disqualifies its use in a rebound analysis framework
+% that purports to estimate the magnitude of substitution effect rebound.  
+% So, we reject the special case Cobb-Douglas utility model
+% in favor of the generalized CES utility model.
+
+% Both the substitution effect and the income effect
+% use elasticities to model consumer preferences. 
+% In the substitution effect, all utility models
+% rely upon elasticities to estimate
+% consumption utility and
+% the comparative benefits of
+% consuming the energy service ($\Delta \rasub{q}_s$) and
+% consuming other goods and services ($\Delta \rasub{C}_o$).
+% Similarly,
+% the income effect also employs elasticities to determine changes to
+% the rate of energy service consumption ($\Delta \rainc{q}_s$) and
+% the rate of other goods consumption ($\Delta \rainc{C}_o$).
+% In the income effect,
+% elasticities describe the proportions of net savings ($\rasub{N}$)
+% spent on the energy service
+% and other goods and services.
+% In this appendix,
+% the approximate, CES, and Cobb-Douglas utility models are described.
+% the approximate and Cobb-Douglas utility models are described.
+% Then, elasticities for the substitution effect are 
+% discussed.
+
+Both the substitution effect and the income effect
+use elasticities to model consumer preferences, and those elasticities are discussed below. 
+Finally, elasticities for the income effect are discussed. 
+
+Before proceeding with the utility models and elasticities,
+we note briefly that the rate of other goods consumption ($\rate{q}_o$)
+is not known independently from the prices of other goods ($p_o$).
+With the assumption that the prices of other goods do not change
+across rebound effects
+(i.e., $p_o$ is exogenous), 
+the ratio of other goods consumption is equal to 
+the ratio of other goods spending, such that
+
+\begin{equation} \label{eq:exogenous_p_o}
+  \frac{\rate{q}_o}{\rbempl{q}_o} 
+      = \frac{\rate{C}_o/\cancel{p_o}}{\rbempl{C}_o/\cancel{p_o}} 
+      = \frac{\rate{C}_o}{\rbempl{C}_o}
+\end{equation}
+%
+at all rebound stages. 
+(See Appendix~\ref{sec:other_goods_expenditures} for details.)
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Utility models for the substitution effect}
+\label{sec:utility_models_sub}
+%++++++++++++++++++++++++++++++
+
+A utility model gives the ratio of energy service consumption rate 
+and other goods consumption rates across the substitution effect
+($\rasub{q}_s/\rbsub{q}_s$ and 
+$\rasub{q}_o/\rbsub{q}_o$, 
+respectively).
+In so doing, 
+utility models quantify the decrease in other goods consumption
+($\rasub{q}_o\rbsub{q}_o < 1$)
+caused by the increase of energy service consumption
+($\rasub{q}_s\rbsub{q}_s > 1$)
+resulting from the decrease of the energy service price ($\aempl{p}_s < \orig{p}_s$).
+Across the substitution effect, 
+the utility increase of the larger energy service consumption rate
+must be exactly offset
+by the utility decrease of the smaller other goods consumption rate.
+
+
+%------------------------------
+\subsubsection{Approximate utility model} 
+\label{sec:derivation_approx_utility_model}
+%------------------------------
+
+The approximate utility model is given by Eqs.~(\ref{eq:approx_qshat_over_qsorig})
+and~(\ref{eq:Cdot_o_ratio}).
+The equations for the approximate utility model are repeated here
+for convenience.
+
+\begin{equation} 
+  \frac{\rasub{q}_s}{\rbempl{q}_s}
+      = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} 
+        \tag{\ref{eq:approx_qshat_over_qsorig}}
+\end{equation}
+
+\begin{equation}
+  \frac{\rasub{C}_o}{\rorig{C}_o}
+      = \frac{\rasub{q}_o}{\rorig{q}_o}
+      = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} \tag{\ref{eq:Cdot_o_ratio}}
+\end{equation}
+
+
+%------------------------------
+\subsubsection{CES utility model}
+\label{sec:derivation_ces_utility}
+%------------------------------
+
+The CES utility model is given by Eq.~(\ref{eq:ces_utility}).
+Here, its derivation is shown.
+
+The CES model for utility ($\rate{u}$)
+is normalized by (indexed to) conditions prior to emplacement:
+
+\begin{equation}
+  \frac{\rate{u}}{\rbempl{u}} = 
+  \left[ a \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^\rho 
+        + (1-a) \left( \frac{\rate{q}_o}{\rbempl{q}_o} \right)^\rho  \right]^{(1/\rho)} \; ,
+\end{equation}
+%
+where $\rho = (\sigma - 1)/\sigma$,
+$a$ is a share parameter (determined below), and 
+$\sigma$ is the elasticity of substitution between
+the normalized consumption rate of the energy service and 
+the normalized consumption rate of other goods.
+
+With the assumption of exogenous other goods prices 
+in Eq.~(\ref{eq:exogenous_p_o}), 
+we find
+
+\begin{equation} \label{eq:ces_utility_with_a}
+  \frac{\rate{u}}{\rbempl{u}} = 
+  \left[ a \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^\rho 
+        + (1-a) \left( \frac{\rate{C}_o}{\rbempl{C}_o} \right)^\rho  \right]^{(1/\rho)} \; .
+\end{equation}
+%
+Eq.~(\ref{eq:ces_utility_with_a}) is the functional form of the CES utility model,
+whose share parameter ($a$) is yet to be determined.
+The correct expression for the share parameter ($a$) is found from the 
+equilibrium requirement,
+namely that the expenditure curve is tangent to the indifference curve
+in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+prior to the EEU.
+For example, line \circcirc{} is tangent to preference curve 
+\iicirc{}
+at point $\circ$
+in Figs.~\ref{fig:ExampleConsPathGraph}, 
+\ref{fig:CarConsGraph}, and 
+\ref{fig:LampConsGraph}.
+
+To find the slope of the indifference curve,
+Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to find 
+the normalized consumption rate of other goods ($\rate{C}_o/\rbempl{C}_o$)
+as a function of the normalized consumption rate of the energy service
+($\rate{q}_s/\rbempl{q}_s$)
+and the normalized utility rate ($\rate{u}/\rbempl{u}$):
+
+\begin{equation} \label{eq:utility_Co_form}
+  \frac{\rate{C}_o}{\rbempl{C}_o} = 
+      \left[ \frac{1}{1 - a} \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho 
+            - \frac{a}{1 - a} \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1/\rho)} \; ,
+\end{equation}
+%
+a form convenient for drawing 
+constant utility rate ($\rate{u}/\rbempl{u}$) indifference curves in 
+$\rate{C}_o/\rbempl{C}_o$ vs.\ 
+$\rate{q}_s/\rbempl{q}_s$ space.
+(See Figs.~\ref{fig:ExampleConsPathGraph}, 
+\ref{fig:CarConsGraph}, and 
+\ref{fig:LampConsGraph}.)
+In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
+the slope of an indifference curve is found by taking the first 
+partial derivative of $\rate{C}_o/\rbempl{C}_o$
+with respect to $\rate{q}_s/\rbempl{q}_s$,
+starting from Eq.~(\ref{eq:utility_Co_form}) and 
+using the chain rule repeatedly.
+The result is
+
+\begin{align} \label{eq:slope_indifference_curve}
+  \frac{\partial (\rate{C}_o/\rbempl{C}_o)}{\partial (\rate{q}_s/\rbempl{q}_s)} =&
+        -\frac{a}{1 - a} \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^{(\rho -1)} \nonumber  \\
+        &\times \left[ \left( \frac{1}{1 - a} \right) \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho
+                - \left( \frac{a}{1 - a} \right) 
+                          \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1 - \rho)/\rho} \; .
+\end{align}
+
+The budget constraint is the starting point for finding 
+the slope of the expenditure line in 
+$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space:
+
+\begin{equation}
+  \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N} \; ,
+\end{equation}
+%
+a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
+(\ref{eq:M_acct_aemp}), 
+(\ref{eq:M_acct_asub}), and 
+(\ref{eq:M_acct_ainc})
+with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
+In a manner similar to derivations in
+Appendix~\ref{sec:pref_graph_constant_expenditure_lines}, 
+we solve for $\rate{C}_o$ and 
+judiciously multiply by $\rbempl{C}_o/\rbempl{C}_o$
+and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
+
+\begin{equation}
+  \frac{\rate{C}_o}{\rbempl{C}_o} \rbempl{C}_o = - p_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s
+                        + \rate{M} - \rate{C}_{cap} - \rate{C}_{\md}  - \rate{N} \; .
+\end{equation}
+%
+Solving for $\rate{C}_o/\rbempl{C}_o$ and rearranging gives
+
+\begin{equation}
+  \frac{\rate{C}_o}{\rbempl{C}_o} = - \frac{p_s \rbempl{q}_s}{\rbempl{C}_o}  
+                                        \left( \frac{\rate{q}_s}{\rbempl{q}_s}   \right)
+                                    + \frac{1}{\rbempl{C}_o}
+                                          (\rate{M} - \rate{C}_{cap} - \rate{C}_{\md} - \rate{N}) \; ,
+\end{equation}
+%
+from which the slope in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+is taken by inspection to be
+
+\begin{equation} \label{eq:slope_expenditure_line}
+  \frac{\partial (\rate{C}_o/\rbempl{C}_o)}{\partial (\rate{q}_s/\rbempl{q}_s)} =
+              - \frac{p_s \rbempl{q}_s}{\rbempl{C}_o} \; .
+\end{equation}
+
+At any equilibrium point, the expenditure line must be tangent to its indifference curve.
+Applying the tangency requirement before emplacement enables 
+solving for the correct expression for $a$.
+Setting the slope of the expenditure line (Eq.~(\ref{eq:slope_expenditure_line}))
+equal to the slope of the indifference curve (Eq.~(\ref{eq:slope_indifference_curve})) gives
+
+\begin{align} \label{eq:generic_expenditure_line}
+  - \frac{p_s \rbempl{q}_s}{\rbempl{C}_o} =& 
+        -\frac{a}{1 - a} \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^{(\rho -1)} \nonumber \\
+        &\times \left[ \left( \frac{1}{1 - a} \right) \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho
+                - \left( \frac{a}{1 - a} \right) 
+                          \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1 - \rho)/\rho} \; .
+\end{align}
+%
+For the equilibrium point 
+prior to emplacement, $\rate{q}_s/\rbempl{q}_s = 1$, $\rate{u}/\rbempl{u} = 1$, and
+$p_s = \bempl{p}_s$, which reduces Eq.~(\ref{eq:generic_expenditure_line}) to
+
+\begin{equation}
+  - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} =
+        -\frac{a}{1 - a} (1)^{(\rho -1)}
+        \left[ \left( \frac{1}{1 - a} \right) (1)^\rho
+                - \left( \frac{a}{1 - a} \right) 
+                          (1)^\rho \right]^{(1 - \rho)/\rho} \; .
+\end{equation}
+%
+Simplifying gives
+
+\begin{equation}
+  \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} = \frac{a}{1 - a} \; .
+\end{equation}
+%
+Recognizing that $\bempl{p}_s \rbempl{q}_s = \rbempl{C}_s$ and solving for
+$a$ gives
+
+\begin{equation}
+  a = \frac{\rbempl{C}_s}{\rbempl{C}_s + \rbempl{C}_o} \; ,
+\end{equation}
+%
+which is called $\fCs$, 
+the share of energy service expenditure ($\rbempl{C}_s$) 
+relative to the sum of energy service and other goods expenditures 
+($\rbempl{C}_s + \rbempl{C}_o$) 
+before emplacement.
+Thus, the CES utility equation (Eq.~(\ref{eq:ces_utility_with_a})) becomes
+
+\begin{equation} 
+    \frac{\rate{u}}{\rbempl{u}} = \cesutility{} \; , \tag{\ref{eq:ces_utility}}
+\end{equation}
+%
+with 
+
+\begin{equation} \label{eq:fCs}
+  \fCs \equiv \frac{\rorig{C}_s}{\rorig{C}_s + \rorig{C}_o} \; .
+\end{equation}
+
+
+% %------------------------------
+% \subsubsection{Cobb-Douglas utility model}
+% \label{sec:CD_utility_model}
+% %------------------------------
+% 
+% We note briefly (because we don't use it elsewhere in this paper), 
+% that a common utility model takes the form of a Cobb-Douglas function
+% 
+% \begin{equation} \label{eq:CD_utility}
+%   \frac{\rate{u}}{\rorig{u}} = A \left( \frac{\rate{q}_s}{\rorig{q}_s}\right)^\alpha 
+%                                  \left( \frac{\rate{q}_o}{\rorig{q}_o} \right) ^{(1 - \alpha)} \; ,
+% \end{equation}
+% %
+% where $A$ is a proportionality constant and
+% $\alpha \in (0,1)$ is an weighing parameter 
+% which describes the utility
+% of consuming the energy service ($\rate{q}_s$)
+% relative to consuming other goods ($\rate{q}_o$).
+% The Cobb-Douglas utility model is a special case of the general CES utility model,
+% with the elasticity of substitution ($\sigma$) equal to 1.
+% This simplicity leads to a number of desirable theoretical features for a variety of
+% contexts but it is not of use for rebound analysis as it leads to a direct
+% rebound ($Re_{dsub} + Re_{dinc}$) of 1, by definition.
+% 
+% To see how $Re_{dsub} + Re_{dinc} = 1$,
+% note that the own-price elasticity ($\eqspsUC$)
+% in the Cobb-Douglas utility model is a constant, namely $-1$.
+% The Cobb-Douglas uncompensated (Marshallian) demand 
+% for the energy service is of the form
+% 
+% \begin{equation} \label{eq:CD_marshall}
+%   \rate{q}_{s} = \alpha \rate{M} / p_s \; ,
+% \end{equation}
+% %
+% where $\rate{M}$ is the income rate as before. The price elasticity of demand is therefore
+% 
+% \begin{equation} \label{eq:elasticity_one_for_CD}
+%   \eqspsUC = \dfrac{\partial \rate{q}_{s,m}}{\partial p_s} \dfrac{p_s}{\rate{q}_{s,m}} 
+%     = -\dfrac{\alpha \rate{M}}{p_s^2} \dfrac{ p_s^2}{\alpha \rate{M}} = -1 \; .
+% \end{equation}
+% %
+% at every point in the consumption space. Therefore one can calculate exact
+% rebounds with elasticities and in particular
+% 
+% \begin{equation} \label{eq:CD_direct}
+%   \frac{\rainc{q}_s}{\rbempl{q}_s}
+%       = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsUC} 
+%        =  \frac{\amacro{\eta}}{\bempl{\eta}}  
+% \end{equation}
+% In other words the Cobb-Douglas model of consumer utility assumes demand
+% for the energy service grows in the same proportion as its efficiency rises,
+% precisely offsetting energy demand reductions from efficiency.
+% %which is inappropriate for a rebound analysis framework that purports to
+% %estimate the magnitude of rebound effects.
+% \citet{Saunders2008} discusses similar problems
+% in a rebound analysis context with the Cobb-Douglas production function.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Elasticities for the substitution effect ($\eqspsC$, $\eqopsC$, and $\sigma$)}
+\label{sec:elasticities_for_sub_effect}
+%++++++++++++++++++++++++++++++
+
+The substitution effect requires a utility model.
+In this paper, we describe two utility models: 
+an approximate model and a CES model.
+All utility models require elasticities to describe consumer preferences.
+In fact, there are three elasticies across the two utility models:
+$\eqspsC$, $\eqopsC$, and $\sigma$.
+The approximate utility model requires 
+the compensated price elasticity of energy service demand ($\eqspsC$) and
+the compensated cross-price elasticity of energy service demand ($\eqopsC$).
+The CES utility model requires the elasticity of substitution ($\sigma$)
+between energy service consumption and other goods consumption.
+Because the uncompensated price elasticity of energy service 
+demand ($\eqspsUC$) tends to be more widely estimated,
+e.g.\ in studies about driver behavior \citep{Gillingham:2020aa}, 
+the usual approach is to use $\eqspsUC$ and the Slutsky equation to derive the compensated
+elasticity ($\eqspsC$).
+The CES utility model then imposes enough restrictions to determine
+the elasticity of substitution.
+
+
+%------------------------------
+\subsubsection{Elasticities for the approximate utility model ($\eqspsC$ and $\eqopsC$)} 
+\label{sec:elasticities_approx}
+%------------------------------
+
+Analytical expressions for the compensated elasticities
+in the approximate utility model
+can be derived using the Slutsky equation, 
+whereby the price elasticity 
+of the energy service ($\eqspsUC$) 
+is decomposed into the compensated price elasticity ($\eqspsC$) and
+the income elasticity ($\eqsM$) as follows:
+
+\begin{equation} \label{eq:slutsky}
+  \eqspsUC = \eqspsC - \fCs \eqsM \; ,
+\end{equation}
+%
+where $\fCs$ is given by Eq.~(\ref{eq:fCs}), and 
+$\eqsM$ is given in Section~\ref{sec:income_elasticities}.
+Solving for the compensated price elasticity ($\eqspsC$) gives
+
+\begin{equation} \label{eq:eqsps}
+  \eqspsC = \eqspsUC + \fCs \eqsM \; .
+\end{equation}
+
+A similar argument allows straightforward derivation 
+of the compensated cross-price elasticity ($\eqopsC$).
+With \citet{Hicks1934}, 
+we note that the uncompensated cross-price elasticity ($\eqopsUC$)
+can generally be expressed as
+
+\begin{equation} \label{eq:Allen}
+  \eqopsUC = \fCs (\sigma - \eqoM) \; ,
+\end{equation}
+%
+where $\sigma$ is the elasticity of substitution 
+between the consumption rate of the energy service ($\rate{q}_s$) and
+the consumption rate of other goods ($\rate{q}_o$). 
+We set Eq.~(\ref{eq:Allen}) equal to 
+the cross-price version of the Slutsky equation
+
+\begin{equation} \label{eq:slutsky_cross}
+  \eqopsUC = \eqopsC - \fCs \eqoM \; ,
+\end{equation}
+%
+to obtain
+
+\begin{equation}
+  \fCs (\sigma - \eqoM) = \eqopsC - \fCs \eqoM \; .
+\end{equation}
+%
+Solving for $\eqopsC$ gives
+
+\begin{equation} \label{eq:eqops_general}
+  \eqopsC = \fCs \sigma \; .
+\end{equation}
+%
+Substituting $\sigma$ from Section~\ref{sec:elasticity_ces} (Eq.~(\ref{eq:sigma})) gives
+
+\begin{equation} \label{eq:eqops}
+  \eqopsC = \frac{\fCs (\fCs + \eqspsUC)}{\fCs - 1} \; .
+\end{equation}
+
+
+%------------------------------
+\subsubsection{Elasticity for the CES utility model ($\sigma$)} 
+\label{sec:elasticity_ces}
+%------------------------------
+
+\citet{Gortz1977} shows that
+the elasticity of substitution ($\sigma$)
+in the CES utility model is given by
+
+\begin{equation} \label{eq:sigma}
+  \sigma = \frac{\fCs + \eqspsUC}{\fCs - 1} \; .
+\end{equation}
+%
+Thus, the elasticity of substitution ($\sigma$) 
+can be determined from two pieces of readily available information:
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item the uncompensated own price elasticity ($\eqspsUC$) and 
+  
+  \item the share of income spent on the energy service ($\fCs$ 
+        from Eq.~(\ref{eq:fCs})).
+
+\end{enumerate*}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Elasticities for the income effect ($\eqsM$ and $\eqoM$)}
+\label{sec:income_elasticities}
+%++++++++++++++++++++++++++++++
+
+The income effect requires two elasticities to 
+estimate the spending of net savings:
+the income elasticity of energy service consumption ($\eqsM$) and
+the income elasticity of other goods consumption ($\eqoM$).
+Due to the homotheticity assumption,
+both income elasticities are unitary. 
+Thus, 
+
+\begin{equation} \label{eq:eqsM}
+  \eqsM = 1 \; ,
+\end{equation}
+%
+and
+
+\begin{equation} \label{eq:eqoM}
+  \eqoM = 1 \; .
+\end{equation}
+
+
+
+
+

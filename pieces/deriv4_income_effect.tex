@@ -1,0 +1,130 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB.Rnw
+
+% This file contains the derivation for income effect rebound and net savings.
+
+\begin{landscape}
+
+\linespread{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Income Effect %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\derivheader{\refstepcounter{table} Table~\thetable \label{tab:inceffect}. \bf{\IncEffect}}
+
+\sectionsep{}
+
+%%%%%%%%%% Before Income Effect %%%%%%%%%%
+\derivsection{before ($\wedge$)}
+{
+% Before income energy
+\begin{equation}
+  \Eacctbinc{} \tag{\ref{eq:E_acct_asub}}
+\end{equation}
+}
+{
+% Before income financial
+\begin{equation}
+  \Macctbinc{} \tag{\ref{eq:M_acct_asub}}
+\end{equation}
+}
+
+\sectionsep{}
+
+%%%%%%%%%% After Income Effect %%%%%%%%%%
+\derivsection{after ($-$)}
+{
+% After income energy
+\begin{equation} \label{eq:E_acct_ainc}
+\Eacctainc{}
+\end{equation}
+}
+{
+% After income financial
+\begin{equation} \label{eq:M_acct_ainc}
+\Macctainc{}
+\end{equation}
+}
+
+\sectionsep{}
+
+%%%%%%%%%%% Derivations for Income Effect %%%%%%%%%%
+\derivsection{}
+% Income effect: energy differences
+{
+%%%%%%%%%% Energy Income Effect %%%%%%%%%%
+~
+
+Take differences to obtain the change in energy consumption, $\Delta \rainc{E} \equiv \rainc{E} - \rbinc{E}$.
+%
+\begin{equation}
+  \Delta \rainc{E} = \Delta \rainc{E}_s 
+                     + \cancelto{0}{\Delta \rainc{E}_{emb}}
+                     + (\cancelto{0}{\Delta \rainc{C}_{\md}} + \Delta \rainc{C}_o) I_E
+\end{equation}
+%
+Thus, 
+%
+\begin{equation}
+  \Delta \rainc{E} = \Delta \rainc{E}_s + \Delta \rainc{C}_o I_E
+\end{equation}
+%
+All terms are energy takeback rates.
+Divide by $\Sdot$
+to create rebound terms.
+%
+\begin{equation}
+  \frac{\Delta \rainc{E}}{\Sdot} = \frac{\Delta \rainc{E}_s}{\Sdot} + \frac{\Delta \rainc{C}_o I_E}{\Sdot}
+\end{equation}
+%
+Define 
+$Re_{inc} \equiv \frac{\Delta \rainc{E}}{\Sdot}$, 
+$Re_{dinc} \equiv \frac{\Delta \rainc{E}_s}{\Sdot}$, and 
+$Re_{iinc} \equiv \frac{\Delta \rainc{C}_o I_E}{\Sdot}$,
+such that
+%
+\begin{equation} \label{eq:Re_inc_def}
+  Re_{inc} = Re_{dinc} + Re_{iinc} \; .
+\end{equation}
+%
+}
+{
+%%%%%%%%%% Financial Income Effect %%%%%%%%%%
+~
+
+Use the monetary constraint ($\rbinc{M} = \rainc{M}$) to obtain
+
+\begin{align}
+  p_E \rasub{E}_s &+ \cancel{\rasub{C}_{cap}} + \cancel{\rasub{C}_{\md}} + \rasub{C}_o + \rasub{N} \nonumber \\
+                  &= p_E \rainc{E}_s + \cancel{\rainc{C}_{cap}} + \cancel{\rainc{C}_{\md}} + \rainc{C}_o + \cancelto{0}{\rainc{N}} \; .
+\end{align}
+%
+For the income effect, there is no change in capital or maintainance and disposal costs
+($\rasub{C}_{cap} = \rbsub{C}_{cap}$ and $\rasub{C}_{\md} = \rbsub{C}_{\md}$).
+Notably, $\rainc{N} = 0$,
+because it is assumed that all net monetary savings ($\rbinc{N}$) are spent on
+more energy service ($\rainc{E}_s > \rbinc{E}_s$)
+and
+additional purchases in the economy ($\rainc{C}_o > \rbinc{C}_o$).
+Solving for $\rbinc{N}$ gives 
+%
+\begin{equation} \label{eq:inc_budget_constraint}
+  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_o \; ,
+\end{equation}
+%
+the budget constraint for the income effect.
+By construction, 
+Eq.~(\ref{eq:inc_budget_constraint}) ensures
+spending of net savings~($\rbinc{N}$) on
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item additional energy services~($\Delta \rainc{E}_s$) and
+  
+  \item additional purchases of other goods in the economy~($\Delta \rainc{C}_o$) only.
+    
+\end{enumerate*}
+}
+\end{landscape}

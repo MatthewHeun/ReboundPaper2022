@@ -1,23 +1,41 @@
-.Rproj.user
+# History files
 .Rhistory
+.Rapp.history
+# Session Data files
 .RData
-.Ruserdata
+# Example code in package build process
+*-Ex.R
+# Output files from R CMD build
+/*.tar.gz
+# Output files from R CMD check
+/*.Rcheck/
+# RStudio files
+.Rproj.user/
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
+rsconnect/
 .DS_Store
-HSB2022.aux
-HSB2022.bbl
-HSB2022.log
-HSB2022.out
-HSB2022.pdf
-HSB2022.synctex.gz
-HSB2022-concordance.tex
-HSB2022.tex
-HSB2022.blg
-HSB2022a-concordance.tex
-HSB2022a.bbl
-HSB2022a.log
-HSB2022a.pdf
-HSB2022a.synctex.gz
-HSB2022a.tex
-HSB2022a.toc
-HSB2022a.aux
-HSB2022a.blg
+figure
+.Rproj.user
+Heun-Semieniuk-rebound.nlo
+HSbib.log
+HSB-concordance.tex
+HSB.aux
+HSB.bbl
+HSB.blg
+HSB.log
+HSB.out
+HSB.pdf
+HSB.spl
+HSB.synctex.gz
+HSB.tex
