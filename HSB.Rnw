@@ -32,7 +32,6 @@
 \usepackage{xcolor}             % For ... colors
 
 \usepackage{hyperref}           % hyperref should be the last package loaded
-\usepackage{doi}
 
 
 %% Macros defined by authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,11 +39,8 @@
 \input{pieces/macros.tex}
 
 
-
-
 %% Bibliography style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \bibliographystyle{model2-names.bst}\biboptions{authoryear}
 \bibliographystyle{apa-good.bst}
 
 % Author info
