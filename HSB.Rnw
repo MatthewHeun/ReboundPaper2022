@@ -227,7 +227,7 @@ in the past led to vastly differing points of view.''%
 However, \ldots{} it is often not clear what different authors 
 mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
 If authors from the two disciplines cannot even agree on the terms, 
-it is unsurprising that little progress has been made 
+it is unsurprising that modest progress has been made 
 on analytical foundations.
 To fully understand rebound, 
 economists need to have an energy analyst's understanding of energy, and 
@@ -255,24 +255,54 @@ is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
 is difficult because it is an inherently interdisciplinary topic.
 
-The objective of this paper, then, is to 
+The \emph{objective} of this paper, then, is to 
 support the development of a rigorous analytical framework, 
 one that
 (a)~starts at the microeconomics of rebound
 (building upon \citet{Borenstein:2015aa}) and 
-(b)~is approachable for both engineers and economists.
-We do that by \ldots
+(b)~is approachable for both energy analysts and economists.
+The key \emph{contributions} of this paper are 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item development of the first (to our knowledge)
+        rebound analysis framework that combines 
+        embodied energy effects, 
+        maintenance and disposal effects, 
+        non-marginal energy efficiency increases, and 
+        non-marginal energy service price decreases, 
 
+  \item providing the first (to our knowledge) visualizations of rebound effects
+        in energy, expenditure, and consumption spaces to assist both 
+        energy analysts and economists 
+        in understanding nuances of rebound effects,  
+        
+  \item creating the first (to our knowledge) operationalized link between 
+        rebound effects on microeconomic and macroeconomic scales, and 
+        
+  \item providing tools for other researchers 
+        (both energy analysts and economists) 
+        to calculate rebound with our framework
+        for other energy efficiency upgrades (EEUs).
+  
+\end{enumerate*}
 
+The remainder of this paper is structured as follows.
+Section~\ref{sec:setup} **** reviews relevant literature and lays the groundwork for our framework.
+Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
+Section~\ref{sec:examples} provides two examples: 
+energy efficiency upgrades to a car and an electric lamp.
+Section~\ref{sec:discussion} discusses the results, and 
+Section~\ref{sec:conclusion} concludes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{New section 2}
-\label{sec:placeholder_label}
+\label{sec:setup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Gregor wants to put some work into a new section 2.
-here it is, with all previous sections except for the first section.
+**** Gregor wants to put some work into a new section 2.
+here it is, with all previous subsections except for the first subsection. ****
 
 
 %++++++++++++++++++++++++++++++
@@ -622,58 +652,6 @@ In particular, non-marginal price changes and the macro effect
 require conceptual development and operationalization.
 This paper aims to address the gaps in Table~\ref{tab:previous_frameworks},
 completing the ``This paper'' column with filled circles (\rating{100}).
-
-
-%++++++++++++++++++++++++++++++
-\subsection{Need, aim, contributions, and structure}
-\label{sec:aim_contribution_structure}
-%++++++++++++++++++++++++++++++
-
-There is a strategic \emph{need} for 
-a comprehensive rebound analysis framework
-that consolidates existing theoretical foundations and 
-adds non-marginal price changes and the macro effect 
-to enable effective energy efficiency policy-making.
-The framework should 
-combine all rebound effects, locations, and scales
-across energy, expenditure, and consumption spaces
-with 
-a detailed model of consumer preferences and
-non-marginal energy service price changes
-in an operationalizable manner.
-The \emph{aim} of this paper is therefore to build upon 
-the strong foundations laid by 
-previous authors (in Table~\ref{tab:previous_frameworks})
-to develop a comprehensive energy rebound analysis framework
-with the characteristics outlined above.
-The key \emph{contributions} of this paper are 
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item developing the first (to our knowledge)
-        comprehensive rebound analysis framework that combines 
-        embodied energy effects, 
-        maintenance and disposal effects, 
-        non-marginal energy efficiency increases, and 
-        non-marginal energy service price decreases, 
-
-  \item providing the first (to our knowledge) visualizations of rebound effects
-        in energy, expenditure, and consumption spaces,  
-        
-  \item creating the first (to our knowledge) operationalized link between 
-        rebound effects on microeconomic and macroeconomic scales, and 
-        
-  \item providing tools for other researchers to 
-        calculate rebound for other EEUs with our framework.
-  
-\end{enumerate*}
-
-The remainder of this paper is \emph{structured} as follows.
-Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
-Section~\ref{sec:examples} provides two examples: 
-energy efficiency upgrades to a car and an electric lamp.
-Section~\ref{sec:discussion} discusses the results, and 
-Section~\ref{sec:conclusion} concludes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
