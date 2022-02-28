@@ -1900,51 +1900,38 @@ of direct and indirect income effect rebound.)
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic scale. 
-However, the changes at the microeconomic scale have important implications at the macroeconomic scale,
-including economic expansion.
-As the price level in the economy falls due to efficiency gains, 
-demand for goods grows, and the economy grows. 
-Efficiency-driven economic expansion is
-characterized by \citeauthor{Hulten1978}'s theorem,
-which states that the economy grows at the rate 
-of an efficiency increase in some part of the economy, 
-scaled by that part's share in gross output~\citep{Hulten1978}.
-\citet{blackburn2020energy}  
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item show that \citeauthor{Hulten1978}'s theorem also applies to factor-augmenting technical change and
-  
-  \item express rebound as a scale effect.
-    
-\end{enumerate*}
+However, the changes at the microeconomic scale can 
+have important implications at the macroeconomic scale, including
+through aggregate economic growth from the energy-augmenting
+productivity increase.
 
-However, \citeauthor{Hulten1978}'s scale effect is static and does not account for
-dynamic, long-run effects induced by the EEU%
-\footnote{
-  In fact, considerable evidence in the context
-  of critiquing real business cycle models shows that
-  short-run effects of technological improvements on inputs 
-  (in that literature, labor)
-  are contractionary \citep{Basu2006,Ramey2016hb}.
-}.
-%
-This framework incorporates annual average effects over 
-the lifetime of the upgraded device, 
-so dynamic effects that take time to unfold matter.
-To describe all the mechanisms by which these dynamic effects operate, 
-the literature distinguishes among several macro rebound effects, including
-a scale effect, a structural change effect, employment and investment effects, 
-and further price effects \citep{Colmenares2020,Brockway2021}.
-As \citet{VanBenthem2015} notes, 
-cheaper energy services facilitate the development and 
-deployment of new products (product innovation),
-an important driver of rising aggregate demand \citep{Szostack1995}. 
-Ultimately, these dynamic phenomena lead to 
-higher incomes and more spending on goods and energy services than 
-otherwise would have been the case in the counterfactual absence of the EEU.
+Turner \citeyear{Turner:2013aa} cautions that when households
+see the productivity of their non-market activities increase,
+GDP remains unchanged. That may be true in the short run, but the
+question over longer periods is whether the higher productivity
+of household production of energy services does not affect also their
+capacity to contribute to economic growth. One channel could be
+time-saving. If the EEU saves time, then this time
+could be spent on more work or on increasing human capital \citep{Sorrell2008}. Both are is expected 
+to lead to GDP growth relative to a scenario without EEU.
+If the EEU saves money (but no time), then the freed cash
+could be spent on human capital-increasing activities or even be
+used to start a venture. In all
+cases, it would be rash to conclude that just because some
+EEU lead to productivity increases that GDP does not capture,
+it does not eventually lead to additional economic growth.
+\footnote{To appreciate the difference, consider one case
+where an increased mileage leads to the household saving
+on energy per car trip. THe household takes more trips
+(direct rebound), without effect on GDP.
+ In the other case, the household buys the energy
+service directly from a taxi company. Here, the taxi company
+lowers the price but gains more customers, leading immediately
+to growth in inflation-adjusted i.e. real GDP. Yet, the
+physical change of more car trips is the same in both cases.}
 
-\citeauthor{Borenstein:2015aa} has addressed these macro effects from the demand side,
+\citeauthor{Borenstein:2015aa} also addressed these macro effects 
+from consumer behavior
 noting that ``income effect rebound will be larger economy-wide than 
 would be inferred from evaluating only the direct income gain from 
 the end user's transaction'' \citep[p.~11]{Borenstein:2015aa} and 
