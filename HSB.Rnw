@@ -1905,30 +1905,35 @@ have important implications at the macroeconomic scale, including
 through aggregate economic growth from the energy-augmenting
 productivity increase.
 
-Turner \citeyear{Turner:2013aa} cautions that when households
+\citet{Turner:2013aa} cautions that when households
 see the productivity of their non-market activities increase,
-GDP remains unchanged. That may be true in the short run, but the
-question over longer periods is whether the higher productivity
+GDP remains unchanged. 
+That may be true in the short run, but
+the question over longer periods is whether the higher productivity
 of household production of energy services does not affect also their
-capacity to contribute to economic growth. One channel could be
-time-saving. If the EEU saves time, then this time
-could be spent on more work or on increasing human capital \citep{Sorrell2008}. Both are is expected 
-to lead to GDP growth relative to a scenario without EEU.
-If the EEU saves money (but no time), then the freed cash
-could be spent on human capital-increasing activities or even be
-used to start a venture. In all
-cases, it would be rash to conclude that just because some
-EEU lead to productivity increases that GDP does not capture,
-it does not eventually lead to additional economic growth.
-\footnote{To appreciate the difference, consider one case
-where an increased mileage leads to the household saving
-on energy per car trip. THe household takes more trips
-(direct rebound), without effect on GDP.
- In the other case, the household buys the energy
-service directly from a taxi company. Here, the taxi company
-lowers the price but gains more customers, leading immediately
-to growth in inflation-adjusted i.e. real GDP. Yet, the
-physical change of more car trips is the same in both cases.}
+capacity to contribute to economic growth. 
+One channel could be time-saving. 
+If the EEU saves time,
+then this time could be spent on more work or on increasing human capital \citep{Sorrell2008}.
+Both are is expected to lead to GDP growth relative to a scenario without the EEU.
+If the EEU saves money (but no time), 
+then the freed cash could be spent on human capital-increasing activities
+or even be used to start a venture. 
+In all cases, it would be rash to conclude that 
+just because some EEUs lead to productivity increases not captured by GDP,
+it does not eventually lead to additional economic growth.%
+\footnote{
+  To appreciate the difference, consider one case
+  where an increased mileage leads to the household saving
+  on energy per car trip. 
+  The household takes more trips
+  (direct rebound), without effect on GDP.
+  In the other case, 
+  the household buys the energy service directly from a taxi company. 
+  Here, the taxi company lowers the price but gains more customers, 
+  leading immediately to growth in inflation-adjusted, i.e.\ real, GDP. 
+  Yet, the physical change of more car trips is the same in both cases.
+}
 
 \citeauthor{Borenstein:2015aa} also addressed these macro effects 
 from consumer behavior
