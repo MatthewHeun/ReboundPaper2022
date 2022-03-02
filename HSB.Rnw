@@ -1900,32 +1900,10 @@ GDP remains unchanged.
 That may be true in the short run, but
 the question over longer periods is whether the higher productivity
 of household production of energy services does not affect also their
-<<<<<<< HEAD
-capacity to contribute to economic growth. One channel could be
-time-saving. If the EEU saves time, then this time
-could be spent on more work or on increasing human capital \citep{Sorrell2008}. Either is expected 
-to lead to GDP growth relative to a scenario without EEU.
-If the EEU saves money (but no time), then the freed cash
-could be spent on human capital-increasing activities or even be
-used to start a venture. In all
-cases, it would be rash to conclude that just because some
-EEU imply productivity increases not directly captured in GDP,
-it does not eventually lead to additional economic growth.\footnote{
-To appreciate the difference, consider one case
-where an increased mileage leads to the household saving
-on energy per car trip. The household takes more trips
-(direct rebound), without effect on GDP.
- In the other case, the household buys the energy
-service directly from a taxi company. Here, the taxi company
-lowers the price but gains more customers, leading immediately
-to growth in inflation-adjusted, i.e. real, GDP. Yet, the
-physical change of more car trips is the same in both cases.
-=======
 capacity to contribute to economic growth. 
 One channel could be time-saving. 
 If the EEU saves time,
 then this time could be spent on more work or on increasing human capital \citep{Sorrell2008}.
-Both are is expected to lead to GDP growth relative to a scenario without the EEU.
 If the EEU saves money (but no time), 
 then the freed cash could be spent on human capital-increasing activities
 or even be used to start a venture. 
@@ -1943,7 +1921,6 @@ it does not eventually lead to additional economic growth.%
   Here, the taxi company lowers the price but gains more customers, 
   leading immediately to growth in inflation-adjusted, i.e.\ real, GDP. 
   Yet, the physical change of more car trips is the same in both cases.
->>>>>>> c6bb6b6e394aa47d7661fecf12564cf06df1bf13
 }
 
 \citeauthor{Borenstein:2015aa} also addressed these macro effects 
@@ -4092,15 +4069,14 @@ The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
 such that $Re_{\macro}$
 is sufficient to achieve an expected value for total rebound ($Re_{tot}$).
 We take the expected value for $Re_{tot}$ from 
-\citet{Brockway2021} among whose surveyed 33 recent studies where four
-that examined total rebound only from consumer EEU in a computable general
+\citet{Brockway2021}. Four among their surveyed 33 recent studies 
+examined total rebound only from consumer EEU in a computable general
 equilibrium framework. The average total rebound ($Re_{tot}$) 
-among these four is \Sexpr{Re_tot_expected*100}\%%
-\footnote{
+among these four is \Sexpr{Re_tot_expected*100}\%.\footnote{
   The average total rebound among all 33 studies stood at 63\%,
   supporting the claim by \citeauthor{Turner:2013aa} that consumer
-  and producer rebound vary.
-}.
+  and producer rebounds vary.
+}
 %
 The calibrated values of $k$ that give identical $Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
 for both examples are
