@@ -112,6 +112,7 @@
 % energy efficiency standards,
 % rebates or subsidies, and
 % carbon pricing or energy taxes.
+\singlespace
 Widespread energy efficiency implementation 
 is a key greenhouse gas emissions mitigation measure. 
 However, energy rebound can ``take back''
@@ -4095,7 +4096,7 @@ examined total rebound only from consumer EEU in a computable general
 equilibrium framework. The average total rebound ($Re_{tot}$) 
 among these four is \Sexpr{Re_tot_expected*100}\%.\footnote{
   The average total rebound among all 33 studies stood at 63\%,
-  supporting the claim by \citeauthor{Turner:2013aa} that consumer
+  supporting the claim by \citet{Turner:2013aa} that consumer
   and producer rebounds vary.
 }
 %
