@@ -288,7 +288,7 @@ The key \emph{contributions} of this paper are
 \end{enumerate*}
 
 The remainder of this paper is structured as follows.
-Section~\ref{sec:setup} **** reviews relevant literature and lays the groundwork for our framework.
+Section~\ref{sec:setup} lays the groundwork for our framework and reviews existing literature.
 Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
 Section~\ref{sec:examples} provides two examples: 
 energy efficiency upgrades to a car and an electric lamp.
@@ -297,17 +297,13 @@ Section~\ref{sec:conclusion} concludes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{New section 2}
+\section{Background}
 \label{sec:setup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Gregor wants to put some work into a new section 2.
-here it is, with all previous subsections except for the first subsection. ****
-
-
 %++++++++++++++++++++++++++++++
-\subsection{Rebound analysis frameworks}
-\label{sec:rebound_frameworks}
+%\subsection{Rebound analysis frameworks}
+%\label{sec:rebound_frameworks}
 %++++++++++++++++++++++++++++++
 
 Rebound analysis frameworks are used to estimate the magnitude of rebound effects 
@@ -344,7 +340,7 @@ the need for operationality.
 
 
 %------------------------------
-\subsubsection{Typologies: effects, locations, scales} 
+\subsection{Typologies: effects, locations, scales} 
 \label{sec:rebound_typologies}
 %------------------------------
 
@@ -420,7 +416,7 @@ for our approach to the macro effect.)
 
 
 %------------------------------
-\subsubsection{Rebound spaces} 
+\subsection{Rebound spaces} 
 \label{sec:rebound_spaces}
 %------------------------------
 
@@ -455,7 +451,7 @@ of causal linkages across rebound effects, locations, and scales.
 
 
 %------------------------------
-\subsubsection{Consumer preferences} 
+\subsection{Consumer preferences} 
 \label{sec:consumer_preferences}
 %------------------------------
 
@@ -473,7 +469,7 @@ direct and indirect rebound locations
 at the microeconomic scale~\citep{greening2000}.
 
 %------------------------------
-\subsubsection{Non-marginal energy efficiency changes} 
+\subsection{Non-marginal energy efficiency changes} 
 \label{sec:non_marginal_changes}
 %------------------------------
 
@@ -486,7 +482,7 @@ For such EEUs, energy efficiency can increase by nearly a factor of 10.
 
 
 %------------------------------
-\subsubsection{Operationality} 
+\subsection{Operationality} 
 \label{sec:operationalizable}
 %------------------------------
 
@@ -513,12 +509,17 @@ energy efficiency policy to meet emissions targets.
 I.e.\ effective policy should be informed by rebound analyses conducted within
 a comprehensive framework.
 
-In fact, several scholars have developed previous rebound analysis frameworks.
-We divide the previous frameworks crudely into general equilibrium frameworks and
-partial equilibrium frameworks.
-Both partial and general equilibrium frameworks
-are necessary to improve understanding and develop effective policies
-for mitigation of rebound effects.
+We develop below (Section~\ref{sec:framework})
+a partial equilibrium framework.
+Partial equilibrium frameworks provide detailed assessment of individual EEUs
+with tractable, easy-to-understand mathematics.
+Partial equilibrium frameworks are easy to understand, in part, because
+they constrain price variation to the energy service only; 
+all other prices remain constant.
+In our partial equilibrium framework, 
+general equilibrium effects are captured by 
+a simplified, one-dimensional, macroeconomic-scale rebound effect
+discussed in Section~\ref{sec:macro_effect_main_paper}.
 
 General equilibrium frameworks allow prices of all goods and services 
 in an economy to adjust to the EEU.
@@ -530,19 +531,7 @@ General equilibrium frameworks provide detail and precision
 on economy-wide price adjustments, 
 but they give up specificity about individual device upgrades, 
 make assumptions during calibration, and
-lose simplicity of exposition. 
-
-In contrast, we develop below (Section~\ref{sec:framework})
-a partial equilibrium framework.
-Partial equilibrium frameworks provide detailed assessment of individual EEUs
-with tractable, easier-to-understand mathematics.
-Partial equilibrium frameworks are easier to understand, in part, because
-they constrain price variation to the energy service only; 
-all other prices remain constant.
-In our partial equilibrium framework, 
-general equilibrium effects are captured by 
-a simplified, one-dimensional, macroeconomic-scale rebound effect
-discussed in Section~\ref{sec:macro_effect_main_paper}.
+lose simplicity of exposition.  
 
 We are not the first to develop a partial equilibrium rebound analysis framework,
 so it is worthwhile to assess previous frameworks for
@@ -1912,23 +1901,24 @@ question over longer periods is whether the higher productivity
 of household production of energy services does not affect also their
 capacity to contribute to economic growth. One channel could be
 time-saving. If the EEU saves time, then this time
-could be spent on more work or on increasing human capital \citep{Sorrell2008}. Both are is expected 
+could be spent on more work or on increasing human capital \citep{Sorrell2008}. Either is expected 
 to lead to GDP growth relative to a scenario without EEU.
 If the EEU saves money (but no time), then the freed cash
 could be spent on human capital-increasing activities or even be
 used to start a venture. In all
 cases, it would be rash to conclude that just because some
-EEU lead to productivity increases that GDP does not capture,
-it does not eventually lead to additional economic growth.
-\footnote{To appreciate the difference, consider one case
+EEU imply productivity increases not directly captured in GDP,
+it does not eventually lead to additional economic growth.\footnote{
+To appreciate the difference, consider one case
 where an increased mileage leads to the household saving
-on energy per car trip. THe household takes more trips
+on energy per car trip. The household takes more trips
 (direct rebound), without effect on GDP.
  In the other case, the household buys the energy
 service directly from a taxi company. Here, the taxi company
 lowers the price but gains more customers, leading immediately
-to growth in inflation-adjusted i.e. real GDP. Yet, the
-physical change of more car trips is the same in both cases.}
+to growth in inflation-adjusted, i.e. real, GDP. Yet, the
+physical change of more car trips is the same in both cases.
+}
 
 \citeauthor{Borenstein:2015aa} also addressed these macro effects 
 from consumer behavior
@@ -1943,7 +1933,7 @@ Rather, macroeconomic rebound is caused by an energy productivity improvement,
 a supply-side shock.
 After the EEU, 
 it takes less energy (and therefore less energy cost)
-to generate the same economic output, because 
+to generate the same economic activity, because 
 energy efficiency has improved.
 That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side 
 and demand-side effects both play a role as the consequences of the
@@ -4024,7 +4014,7 @@ To ameliorate inequities, progressive feebates could be implemented%
 %++++++++++++++++++++++++++++++
 
 <<Calibrate_k, echo = FALSE>>=
-Re_tot_expected <- 0.63
+Re_tot_expected <- 0.54
 calibrated_k <- rebound_results %>% 
   dplyr::filter(.data[["Case"]] %in% c("Car", "Lamp")) %>% 
   ReboundTools::calibrate_k(Re_tot_expected)
@@ -4076,18 +4066,14 @@ The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
 such that $Re_{\macro}$
 is sufficient to achieve an expected value for total rebound ($Re_{tot}$).
 We take the expected value for $Re_{tot}$ from 
-\citet{Brockway2021} who surveyed 33 recent studies to find
-average total rebound ($Re_{tot}$) of \Sexpr{Re_tot_expected*100}\%%
+\citet{Brockway2021} among whose surveyed 33 recent studies where four
+that examined total rebound only from consumer EEU in a computable general
+equilibrium framework. The average total rebound ($Re_{tot}$) 
+among these four is \Sexpr{Re_tot_expected*100}\%%
 \footnote{
-  The relevance of $Re_{tot} = \Sexpr{Re_tot_expected*100}\%$
-  is confirmed by three studies that 
-  appeared around the time of \citet{Brockway2021}.
-  \citet{Yan2019} report 87\% short-run and 78\% long-run average rebounds for Chinese provinces.
-  \citet{blackburn2020energy} report average total rebound between
-  52\% and 77\% for the U.S.\ for plausible values
-  of the elasticity of substitution.
-  \citet{Berner2021} report 78\% to 101\% for several Western European countries and the U.S.\
-  two years after an income shock.
+  The average total rebound among all 33 studies stood at 63\%,
+  supporting the claim by \citeauthor{Turner:2013aa} that consumer
+  and producer rebound vary.
 }.
 %
 The calibrated values of $k$ that give identical $Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
@@ -4097,7 +4083,7 @@ for the car example and
 $k = \Sexpr{formatC(calibrated_k[["Lamp"]], digits = 2)}$ 
 for the lamp example.
 
-Differences in input-ouput network centrality as well as the considerable 
+Qualitative differences in benefits from EEUs as well as the considerable 
 variance in $Re_{tot}$ in 33 surveyed studies 
 indicates that total rebound from one EEU is likely to be different from 
 total rebound from another EEU. 
@@ -4115,13 +4101,11 @@ as shown in Eq.~(\ref{eq:Re_macro_def}).
 
 There are three ways to interpret $k = 3$.
 First, $k = 3$ can be considered the average long-run 
-economic growth generated by the device owner spending each \$1 of net savings,
-or three times over the growth implied by applying Hulten's theorem.
+economic growth generated by the device owner.
 Efficiency increases in equipment drive a significant part of 
-long-run productivity growth \citep{Greenwood1997}; moreover, sectoral shocks
-can have large aggregate consequences due to complementarities and network
-effects \citep{Acemoglu2012,Atalay2017}. Therefore a large, long-run multiplier
-is plausible.
+long-run productivity growth \citep{Greenwood1997}, therefore a large,
+long-run multiplier is plausible even if the initial productivity
+change occurred in household production, not accounted for in GDP.
 Second, it could be that growth is less than 
 \$3 but that the macroeconomic ``energy price effect" (a decline in 
 energy prices due to the fallen demand) induces consumption at a higher
