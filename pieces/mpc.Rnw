@@ -52,7 +52,6 @@ $k = 1$ is obtained.
 If $k = 3$, as in Section~\ref{sec:calibrating_k}, 
 $\MPC = 0.75$ is implied.
 The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
-Vertical lines indicate relevant $\MPC$ values of 0.5 and 0.75.
 
 <<k_vs_mpc, echo=FALSE, fig.cap="The relationship between $\\MPC$ and $k$ of Eq.~(\\ref{eq:mpc_and_k_converged}).", fig.width=6, fig.height=4>>=
 tibble::tibble(MPC = seq(0.1, 0.9, by = 0.005), k = 1 / (1/MPC - 1)) %>% 
@@ -63,8 +62,8 @@ tibble::tibble(MPC = seq(0.1, 0.9, by = 0.005), k = 1 / (1/MPC - 1)) %>%
   ggplot2::geom_hline(yintercept = 3, size = 0.1) +
   ggplot2::geom_line() + 
   
-  ggplot2::scale_x_continuous(breaks = seq(0, 1, by = 0.2), limits = c(0, 1)) +
-  ggplot2::scale_y_continuous(breaks = seq(0, 10, by = 2), limits = c(0, 10)) +
+  ggplot2::scale_x_continuous(breaks = c(0, 0.2, 0.4, 0.5, 0.6, 0.75, 0.9, 1), limits = c(0, 1)) +
+  ggplot2::scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 6, 8, 10), limits = c(0, 10)) +
   
   ggplot2::xlab("MPC [-]") +
   ggplot2::ylab("k [-]") +
