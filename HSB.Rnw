@@ -47,11 +47,10 @@
 \title{Advancing the necessary foundations \\
               for empirical energy rebound estimates: \\
               A partial equilibrium analysis framework}
-% \author{Matthew Kuperus Heun, Gregor Semieniuk, Paul E.\ Brockway}
 \author[1,*]{Matthew Kuperus Heun}
 \author[2]{Gregor Semieniuk}
 \author[3]{Paul E.\ Brockway}
-\affil[1]{Engineering Department, Calvin University}
+\affil[1]{Engineering Department, Calvin University, 3201 Burton St. SE, Grand Rapids, MI, 49546}
 \affil[2]{Political Economy Research Institute and 
                             Department of Economics,
                             UMass Amherst}
@@ -72,7 +71,7 @@
 
 \begin{abstract}
 \singlespace
-Widespread energy efficiency implementation 
+Widespread implementation of energy efficiency
 is a key greenhouse gas emissions mitigation measure. 
 However, energy rebound can ``take back''
 energy reductions via behavior changes, 
