@@ -72,20 +72,17 @@
 \begin{abstract}
 \singlespace
 Widespread implementation of energy efficiency
-is a key greenhouse gas emissions mitigation measure. 
-However, energy rebound can ``take back''
-energy reductions via behavior changes, 
-reducing the effectiveness of energy efficiency.
-Despite much empirical work on the subject, 
-recent contributions have admonished that conceptual foundations lag behind,
-reducing the usefulness of empirical estimates of the size of the rebound effect.
+is a key greenhouse gas emissions mitigation measure, 
+but rebound can ``take back''
+energy savings.
+However, conceptual foundations lag behind empirical estimates of the size of rebound.
 We posit that development of solid analytical frameworks for rebound
 is hampered by the interdisciplinary nature of the topic, 
-involving both economics (finance and human behavior) and energy analysis (energy).
+involving both economics and energy analysis.
 In this paper, we help advance a rigorous analytical framework
 that starts at the microeconomics of rebound
 and is approachable for both energy analysts and economists. 
-We model emplacement, substitution, and income rebound effects and
+We include emplacement, substitution, and income rebound effects and
 link them to macro rebound.
 Novel graphs show rebound paths through energy, expenditure, and consumption spaces.
 Application of the framework provides estimates of total rebound in two case studies: 
@@ -93,6 +90,8 @@ upgrades of a car (48\%) and an electric lamp (80\%).
 Sensitivities are evaluated, and 
 implications for common policies are considered.
 \end{abstract}
+
+Keywords: rebound, energy efficiency, analytical framework, sensitivity study
 
 
 <<setup, echo=FALSE, message=FALSE>>=
