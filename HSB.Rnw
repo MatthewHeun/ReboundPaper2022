@@ -178,8 +178,15 @@ the wide variety of rebound estimation approaches yields
 a wide range of rebound estimates, 
 giving the appearance of uncertainty and
 leading energy and climate modelers to either 
-(i)~use questionable numbers, or 
-(ii)~ignore rebound altogether.
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item use questionable numbers, or 
+  
+  \item ignore rebound altogether.
+
+\end{enumerate*}
+%
 We suggest that 
 improving the conceptual space around rebound and solidifying the analytical frameworks
 will
@@ -241,7 +248,7 @@ Summarizing,
 we surmise that reducing global carbon emissions has been hampered, in part, 
 by the fact that rebound is not sufficiently included in energy and climate models.
 We suspect that one reason rebound is not sufficiently included in energy and climate models
-is because of the lack of consensus on rebound estimation methods and, hence, rebound magnitude.
+is the lack of consensus on rebound estimation methods and, hence, rebound magnitude.
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
@@ -378,7 +385,7 @@ because the EEU is a cost-saving technological change.
 
 Rebound can occur at direct and indirect locations.
 Direct rebound involves takeback of expected savings of energy
-consumed by the device.
+consumed by the upgraded device.
 Indirect rebound arises from increased energy consumption 
 in other locations and in other economic sectors
 as a result of the EEU.
@@ -446,7 +453,8 @@ as illustrated by two examples.
 \end{enumerate*}
 %
 Tracking changes across all spaces increases understanding 
-of causal linkages across rebound effects, locations, and scales.
+of causal linkages across rebound effects, locations, and scales
+and clarifies terms and concepts across disciplines.
 
 
 %------------------------------
@@ -506,13 +514,13 @@ and the desirable characteristics of rebound frameworks discussed above,
 we see that comprehensive frameworks are needed to help develop 
 energy efficiency policy to meet emissions targets. 
 I.e., effective policy should be informed by rebound analyses conducted within
-a comprehensive framework.
+a comprehensive rebound framework.
 
 We develop below (Section~\ref{sec:framework})
-a partial equilibrium framework.
+a comprehensive partial equilibrium rebound framework.
 Partial equilibrium frameworks provide detailed assessment of individual EEUs
 with tractable, easy-to-understand mathematics.
-Partial equilibrium frameworks are easy to understand, in part, because
+Partial equilibrium frameworks are easier to understand, in part, because
 they constrain price variation to the energy service only; 
 all other prices remain constant.
 In our partial equilibrium framework, 
@@ -540,9 +548,9 @@ analysis in energy, expenditure, and consumption spaces;
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
 operationality.
-For only when all of the above characteristics are present can  
+Only when all of the above characteristics are present can  
 a comprehensive picture of rebound emerge.
-Table~\ref{tab:previous_frameworks} contains our evaluation 
+Table~\ref{tab:previous_frameworks} shows our assessment
 of selected recent partial equilibrium frameworks (in columns)
 relative to the characteristics discussed above (in rows).
 
@@ -634,7 +642,7 @@ across energy, expenditure, and consumption spaces with
 a detailed model of consumer preferences and
 non-marginal energy service price changes
 in an operational manner
-for the simplest case
+for the simplest case (understandable across disciplines)
 of a single fuel and a single energy service.
 In particular, non-marginal price changes and the macro effect
 require conceptual development and operationalization.
@@ -647,7 +655,8 @@ completing the ``This paper'' column with filled circles (\rating{100}).
 \label{sec:framework}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we develop a comprehensive energy rebound analysis framework 
+In this section, we develop a comprehensive, partial equilibrium, 
+energy rebound analysis framework 
 (concisely, ``this framework'').
 We follow the rebound typology discussed in Section~\ref{sec:rebound_typologies}, 
 distinguishing between
@@ -660,17 +669,19 @@ We follow others, including \citet{Jenkins2011} and \citet{Walnum2014},
 in splitting microeconomic rebound into 
 direct and indirect locations.
 Like other authors, we recognize many macroeconomic effects, 
-even if we don't later distinguish among them.
-\citet{Sorrell:2009cg} 
-sets out five macroeconomic rebound effects:
-embodied energy effects, respending effects, output effects, energy market effects, and composition effects.
-(We place the embodied energy effect at the microeconomic scale.)
-\citet{Santarius2016} and \citet{Lange2021} 
-introduce 
-meso (i.e., sectoral) level rebound
-between the micro and macro levels.
-\citet{VandenBergh2011} distinguishes 14 types of rebound, 
-providing, perhaps, the greatest complexity. 
+even if we don't later distinguish among them.%
+\footnote{
+  For example, \citet{Sorrell:2009cg} 
+  sets out five macroeconomic rebound effects:
+  embodied energy effects, respending effects, output effects, energy market effects, and composition effects.
+  (We place the embodied energy effect at the microeconomic scale.)
+  \citet{Santarius2016} and \citet{Lange2021} 
+  introduce 
+  meso (i.e., sectoral) level rebound
+  between the micro and macro levels.
+  \citet{VandenBergh2011} distinguishes 14 types of rebound, 
+  providing, perhaps, the greatest complexity.   
+}
 
 Fig.~\ref{fig:flowchart} shows rebound effects
 arranged in left-to-right order of their discussion in this paper.
@@ -682,7 +693,7 @@ Names for the decorations are given at the bottom of the figure
 (``orig,'' ``star,'' etc.)%
 \footnote{
   Note that
-  the vocabulary and mathematical notation for rebound effects is extensive;
+  the vocabulary and mathematical notation for rebound effects is important;
   Fig.~\ref{fig:flowchart} and Appendix~\ref{sec:nomenclature} provide guides to 
   notational elements used throughout this paper, including
   symbols, Greek letters, abbreviations, decorations, and subscripts.
