@@ -183,9 +183,16 @@ leading energy and climate modelers to either
 We suggest that 
 improving the conceptual space around rebound and solidifying the analytical frameworks
 will
-(i)~help generate more robust estimates of rebound,
-(ii)~lead to rebound being better included in more energy and climate models, and 
-(iii)~provide improved policymaking around energy efficiency. 
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item help generate more robust estimates of rebound,
+  
+  \item lead to rebound being better included in more energy and climate models, and 
+  
+  \item provide improved policymaking around energy efficiency. 
+
+\end{enumerate*}
 
 But why is there an ``absence of solid analytical foundations?''
 We propose that development of solid analytical frameworks for rebound
