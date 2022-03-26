@@ -71,47 +71,6 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-% **** This is the old abstract. ****
-% Widespread implementation of energy efficiency measures
-% is an important global strategy to meet Paris greenhouse gas emissions reduction targets. 
-% However, energy rebound can ``take back'' efficiency-based
-% energy reductions via behavior changes and economic effects.
-% If rebound effects are larger than typically assumed, 
-% efficiency-based efforts to reduce carbon emissions 
-% will be less effective than supposed.
-% Therefore, the investigation of rebound effects is a high priority. 
-% % The problem
-% An operationalized rebound analysis framework is needed
-% to study energy efficiency upgrades 
-% for specific energy conversion devices, 
-% one that discriminates among all rebound effects
-% in energy, expenditure, and consumption spaces
-% with a detailed model of consumer responses 
-% for non-marginal energy efficiency changes.
-% % Our response
-% In response, 
-% we develop a comprehensive, partial equilibrium 
-% rebound analysis framework to 
-% describe direct and indirect locations
-% for emplacement, substitution, and income rebound effects. 
-% We utilize a macro factor to link
-% microeconomic to macroeconomic rebound scales.
-% A sequence of novel graphs shows rebound paths through 
-% energy, expenditure, and consumption spaces.
-% The framework is applied to two case studies: 
-% upgrades of a car and an electric lamp.
-% % Results
-% After calibrating the macro factor,
-% we find total rebound of 48\% and 80\% 
-% for the car and lamp examples, respectively.
-% Sensitivity studies are performed, showing the effects of 
-% energy efficiency, capital cost, energy price, 
-% energy service price elasticity of energy demand, and 
-% the macro factor on rebound components.
-% Implications of rebound for three common energy policies are considered:
-% energy efficiency standards,
-% rebates or subsidies, and
-% carbon pricing or energy taxes.
 \singlespace
 Widespread energy efficiency implementation 
 is a key greenhouse gas emissions mitigation measure. 
@@ -135,8 +94,6 @@ upgrades of a car (48\%) and an electric lamp (80\%).
 Sensitivities are evaluated, and 
 implications for common policies are considered.
 \end{abstract}
-
-
 
 
 <<setup, echo=FALSE, message=FALSE>>=
@@ -242,7 +199,6 @@ in the past led to vastly differing points of view.''%
   We prefer the term ``energy analysts'' over ``engineers,''
   because ``energy analysts'' better describes the group of people 
   interested in topics like rebound and economy-wide energy efficiency.
-  **** Should we have a reference to energy analysis here? ****
 }
 \citeauthor{Turner:2013aa} states that 
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
@@ -258,9 +214,16 @@ That's a tall order, indeed.
 
 We contend that new clarity is needed.
 A description of rebound is needed that is both
-(a)~technically rigorous and
-(b)~approachable from both sides
-(economics and energy analysis).
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item technically rigorous and
+  
+  \item approachable from both sides
+        (economics and energy analysis).
+
+\end{enumerate*}
+%
 In other words, 
 the finance and human behavior aspects of rebound need to be presented 
 in ways energy analysts can understand. 
@@ -280,9 +243,16 @@ is difficult because it is an inherently interdisciplinary topic.
 The \emph{objective} of this paper, then, is to 
 support the development of a rigorous analytical framework, 
 one that
-(a)~starts at the microeconomics of rebound
-(building upon \citet{Borenstein:2015aa}) and 
-(b)~is approachable for both energy analysts and economists.
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item starts at the microeconomics of rebound
+        (building upon \citet{Borenstein:2015aa}) and 
+        
+  \item is approachable for both energy analysts and economists.
+
+\end{enumerate*}
+%
 The key \emph{contributions} of this paper are 
 %
 \begin{enumerate*}[label={(\roman*)}]
