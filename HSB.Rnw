@@ -119,15 +119,15 @@ However, energy rebound can ``take back''
 energy reductions via behavior changes, 
 reducing the effectiveness of energy efficiency.
 Despite much empirical work on the subject, 
-recent contributions have admonished that the conceptual foundations lag behind,
+recent contributions have admonished that conceptual foundations lag behind,
 reducing the usefulness of empirical estimates of the size of the rebound effect.
-We propose that development of solid analytical frameworks for rebound
+We posit that development of solid analytical frameworks for rebound
 is hampered by the interdisciplinary nature of the topic, 
 involving both economics (finance and human behavior) and energy analysis (energy).
 In this paper, we help advance a rigorous analytical framework
 that starts at the microeconomics of rebound
 and is approachable for both energy analysts and economists. 
-We model emplacement, substitution, income rebound effects and
+We model emplacement, substitution, and income rebound effects and
 link them to macro rebound.
 Novel graphs show rebound paths through energy, expenditure, and consumption spaces.
 Application of the framework provides estimates of total rebound in two case studies: 
@@ -167,8 +167,8 @@ have never been absolutely decoupled
 from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
 
 Recent evidence shows that rebound is both 
-(a)~larger than commonly assumed~\citep{Stern2020} and
-(b)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
+(i)~larger than commonly assumed~\citep{Stern2020} and
+(ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
 despite a long history of research on the topic.
 Famously, the roots of energy rebound trace back to 
 \citeauthor{Jevons:1865} who said 
@@ -192,7 +192,7 @@ that efficiency gains may be taken back or, paradoxically even,
 cause growth in energy consumption.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
-research into rebound appeared late in that decade~\citep{Madlener:2016to, Saunders:2021te}. 
+research into rebound appeared late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
 A modern debate over the magnitude of energy rebound commenced. 
 On one side, scholars including \citet{Brookes1979, Brookes1990} and \citet{Khazzoom1980} 
 suggested rebound could be large.
@@ -221,14 +221,14 @@ the wide variety of rebound estimation approaches yields
 a wide range of rebound estimates, 
 giving the appearance of uncertainty and
 leading energy and climate modelers to either 
-(a)~use questionable numbers, or 
-(b)~ignore rebound altogether.
+(i)~use questionable numbers, or 
+(ii)~ignore rebound altogether.
 We suggest that 
 improving the conceptual space around rebound and solidifying the analytical frameworks
 will
-(a)~help generate more robust estimates of rebound,
-(b)~lead to rebound being better included in more energy and climate models, and 
-(c)~provide improved policymaking around energy efficiency. 
+(i)~help generate more robust estimates of rebound,
+(ii)~lead to rebound being better included in more energy and climate models, and 
+(iii)~provide improved policymaking around energy efficiency. 
 
 But why is there an ``absence of solid analytical foundations?''
 We propose that development of solid analytical frameworks for rebound
