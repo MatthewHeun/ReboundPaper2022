@@ -730,7 +730,7 @@ that consumes final energy%
 %
 (say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).
 The final energy is available at price $p_E$ (in \$/MJ).
-The energy conversion device provides a rate of energy service 
+The original energy conversion device provides a rate of energy service 
 $\rbempl{q}_s$ (in vehicle-km/year)
 with final-to-service efficiency $\bempl{\eta}$ (in vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
@@ -793,6 +793,10 @@ show typical energy and cost relationships
 (Section~\ref{sec:energy_and_cost_relationships}), and 
 introduce rebound path graphs
 (Section~\ref{sec:rebound_path_graphs}).
+In developing the framework,
+we endeavor provide sufficient detail to assist
+energy analysts to understand the economics and
+economists to understand the energy analysis.
 
 
 %++++++++++++++++++++++++++++++
@@ -903,8 +907,8 @@ across all adjustments for all rebound effects.
 One novel contribution of this paper is visualization of rebound effects 
 in three spaces:
 the energy space, the expenditure space, and the consumption space.
-Each space is represented by a plane that contains a path graph that illustrates adjustments
-to energy, expenditure, or consumption as a result of the EEU.
+Each space is represented by a plane that contains a path graph, illustrating adjustments
+to energy, expenditure, or consumption in response to the EEU.
 (See Appendix~\ref{sec:graph_details} for 
 detailed mathematical descriptions of rebound path graphs.)
 Important quantities for the path graphs are
@@ -926,7 +930,7 @@ effects at the indirect location are placed on the $y$-axis.
 
 Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
 notional rebound path graphs in energy, expenditure, and consumption spaces.
-The notional path graphs are not quantified; there are no scales on the axes.
+The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
 Later (Section~\ref{sec:examples}), 
 rebound path graphs (with scales) illustrate the numerical examples.
 
@@ -1522,7 +1526,7 @@ thereby accepting the standard neoclassical microeconomic assumptions
 about consumer behavior.
 (The next section addresses income effect rebound, $Re_{inc}$.)
 The substitution effect alters compensated demand, which is the demand for
-the expenditure minimizing consumption bundle that
+the expenditure-minimizing consumption bundle that
 maintains utility at the pre-EEU level, given the new prices.
 Compensated demand is a technical term for a thought experiment from welfare economics: 
 the device owner's budget is altered so that the owner is ``compensated''
@@ -1552,7 +1556,7 @@ with reference to a consumption path graph (e.g., Fig.~\ref{fig:ExampleConsPathG
 Prior to the EEU, the consumption basket (of the energy service and other goods)
 is represented by the $\circ$ point. 
 The budget constraint,
-i.e.\ the amount of money available for final good purchase,
+i.e.\ the amount of money available for final goods purchases,
 is shown as isoquant \circcirc{}.
 The \circcirc{} line is tangent to the lower indifference curve 
 (\iicirc{}) at point $\circ$, the optimal consumption
@@ -1899,9 +1903,9 @@ of direct and indirect income effect rebound.)
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic scale. 
-However, the changes at the microeconomic scale can 
+However, changes at the microeconomic scale can 
 have important implications at the macroeconomic scale, including
-through aggregate economic growth from the energy-augmenting
+via aggregate economic growth from the energy-augmenting
 productivity increase.
 
 \citet{Turner:2013aa} cautions that when households
@@ -2076,7 +2080,7 @@ in the Discussion (Section~\ref{sec:calibrating_k}).
  
 
 %++++++++++++++++++++++++++++++
-\subsection{Case 1: Purchase of new car}
+\subsection{Case 1: Purchase of a new car}
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
@@ -2142,7 +2146,7 @@ The cars are matched as closely as possible,
 except for the inclusion of an electric battery 
 in the hybrid car.  
 The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
-versus the long-term benefit of decreased energy costs ($\rorig{C}_s > \ramacro{C}_s$). 
+versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
 
 
 %------------------------------
@@ -2151,13 +2155,11 @@ versus the long-term benefit of decreased energy costs ($\rorig{C}_s > \ramacro{
 %------------------------------
 
 We require four sets of data. 
-First, the basic car parameters are summarized 
+First, basic car parameters are summarized 
 in Table~\ref{tab:car_parameters}.
 Second, we require several general parameters, 
 mainly relating to the U.S.\ economy and personal finances 
-of the average U.S.\ citizen. 
-The parameters and the values used in the car example 
-are given in Table~\ref{tab:car_economic_parameters}.
+of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
 Third, we require elasticity parameters, 
 as given in Table~\ref{tab:car_elasticity_parameters}.
 Fourth, armed with the parameter values from 
@@ -2177,6 +2179,7 @@ of Table~\ref{tab:car_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Car example: Vehicle parameters.} 
 \label{tab:car_parameters}
@@ -2228,6 +2231,7 @@ of Table~\ref{tab:car_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Car example: Economic parameters.}
 \label{tab:car_economic_parameters}
@@ -2279,6 +2283,7 @@ of Table~\ref{tab:car_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Car example: Elasticity parameters.}
 \label{tab:car_elasticity_parameters}
@@ -2581,7 +2586,7 @@ rebound_results %>%
 @
 
 
-The results for the car upgrade are shown in Table~\ref{tab:car_results}.
+Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 <<car_rebound_results_table, results="asis", echo=FALSE>>=
 rebound_results %>% 
@@ -2665,7 +2670,7 @@ energy service (transportation).
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Case 2: Purchase of new electric lamp}
+\subsection{Case 2: Purchase of a new electric lamp}
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
@@ -2742,7 +2747,7 @@ at the same energy service delivery rate (lm-hr/year).
 %------------------------------
 
 Again, four sets of data are required. 
-First, the basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
+First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
 Second, several general parameters, 
 mainly relating to the U.S.\ economy and 
 personal finances of the average U.S.\ citizen are 
@@ -2763,6 +2768,7 @@ of Table~\ref{tab:lamp_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Lamp example: Electric lamp parameters.} 
 \label{tab:lamp_parameters}
@@ -2817,6 +2823,7 @@ of Table~\ref{tab:lamp_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Lamp example: Economic parameters.}
 \label{tab:lamp_economic_parameters}
@@ -2862,6 +2869,7 @@ of Table~\ref{tab:lamp_stages_table} are identical.
 
 \begin{landscape}
 \begin{table}
+\footnotesize
 \begin{center}
 \caption{Lamp example: Elasticity parameters.}
 \label{tab:lamp_elasticity_parameters}
@@ -3160,7 +3168,7 @@ The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
 shows the size of each rebound effect
 for the lamp example.
 
-The results for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
 rebound_results %>% 
@@ -3275,7 +3283,7 @@ uncompensated price elasticity of energy service demand ($\eqspsUC$),
 and the macro factor ($k$).
 Sensitivity analyses must be interpreted carefully,
 because rebound parameters are not expected to be 
-independent of each other.
+independent from each other.
 
 In each subsection below, a series of graphs
 shows the effects of varying each of these five key rebound parameters
@@ -3316,7 +3324,7 @@ but the relationship is asymptotic.
 Each unit increase of fuel economy or lighting efficacy is less effective than
 the previous unit increase of fuel economy or lighting efficacy
 for saving energy.
-At very high levels of fuel economy economy or lighting efficacy, 
+At very high levels of fuel economy or lighting efficacy, 
 a unit increase leads to almost no additional energy savings.
 Thus, we can say there are diminishing returns of fuel economy and lighting efficacy,
 leading to saturation of energy savings at very high levels of fuel economy and lighting efficacy.
@@ -3577,7 +3585,7 @@ price_data <- tibble::tribble(~Case, ~Country, ~p_E_engr_units,
                                 magrittr::extract2("p_E_engr_units"))     # $/W-hr
 @
 
-German energy prices%
+In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
 \footnote{
   For the car example,
   the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
@@ -3667,8 +3675,8 @@ given an elasticity of substitution.
 Uneconomic conditions should be avoided.
 For example, negative direct substitution rebound ($Re_{dsub} < 0$)
 is obtained when $\left| \eqspsUC \right| < \fCs$,
-because Eq.~(\ref{eq:sigma}) pushes 
-the elasticity of substitution negative ($\sigma < 0$).
+because the elasticity of substitution goes negative ($\sigma < 0$).
+(See Eq.~(\ref{eq:sigma}) in Appendix~\ref{sec:utility_and_elasticities}.)
 In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
 would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
 thereby avoiding the uneconomic condition.
