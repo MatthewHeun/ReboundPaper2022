@@ -377,8 +377,8 @@ The emplacement and substitution effects create net financial savings
 which are spent by the device owner 
 in the income effect on more of the energy service and 
 more other goods and services. 
-Finally, the macro effect accounts for long-run economic expansion 
-(and subsequent rising energy consumption),
+Finally, the macro effect accounts for %long-run
+economic expansion (and subsequent changing energy consumption),
 because the EEU is a cost-saving technological change.
 
 Rebound can occur at direct and indirect locations.
@@ -456,18 +456,17 @@ and clarifies terms and concepts across disciplines.
 
 
 %------------------------------
-\subsection{Consumer preferences} 
+\subsection{Behavior} 
 \label{sec:consumer_preferences}
 %------------------------------
 
-A comprehensive rebound framework will include a detailed description of consumer preferences.
-By ``detailed,'' we mean a utility or payoff 
-specification that translates
-energy service price and device purchase 
-cost changes into consumption choices, simultaneously 
+A comprehensive rebound framework will include a detailed description of device owner behavior.
+By ``detailed,'' we mean a payoff 
+specification that translates energy service price and device purchase 
+cost changes into choices, simultaneously 
 decomposing into substitution and income effects. 
 These two effects allow for nuanced understanding of behavior
-for different commodities and preferences.
+for different commodities and payoff specifications.
 Decomposition into substitution and income effects 
 has become the standard approach to analyzing
 direct and indirect rebound locations 
@@ -496,7 +495,7 @@ sufficient descriptions of energy rebound
 for all effects, locations, and scales
 in all spaces (energy, expenditure, and consumption) to calculate
 quantitative estimates of rebound effects with available real-world data.
-This is particularly important for microeconomically grounded
+This is particularly important for microeconomically grounded, consumer-sided
 rebound frameworks that involve unobserved utility functions and,
 by extension, substitution and income effects.
 
@@ -515,7 +514,9 @@ I.e., effective policy should be informed by rebound analyses conducted within
 a comprehensive rebound framework.
 
 We develop below (Section~\ref{sec:framework})
-a comprehensive partial equilibrium rebound framework.
+a comprehensive partial equilibrium rebound framework for consumers. We note
+that many of its component are similar to one for a producer-sided framework
+due to the symmetry between neoclassical microeconomic producer and consumer theory.
 Partial equilibrium frameworks provide detailed assessment of individual EEUs
 with tractable, easy-to-understand mathematics.
 Partial equilibrium frameworks are easier to understand, in part, because
@@ -626,11 +627,11 @@ Therefore, all previous frameworks earn \rating{0} in the
 ``Non-marginal energy service price changes'' row.
 
 Table~\ref{tab:previous_frameworks} shows that 
-previous frameworks contain many needed pieces, 
+previous frameworks contain many key pieces, 
 providing a substantial base from which to develop 
 a comprehensive and operational rebound analysis framework.
 A left-to-right reading of the table 
-demonstrates that previous frameworks start from micoreconomic
+demonstrates that previous frameworks start from microeconomic
 consumer theory and move towards more rigorous theoretical treatment over time,
 with recent frameworks making important advanced theoretical contributions
 at the expense of operationality.
@@ -3972,7 +3973,9 @@ Larger income effect and macro effect rebounds overwhelm
 the decrease in substitution effect rebound, 
 leading to higher overall rebound 
 from the effectively higher energy price,
-as shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}. 
+as shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}. This additional
+rebound effect moves \citet{VandenBergh2011} to propose a
+simultaneous cap on total energy consumption (or CO$_2$ emissions).
 But so long as backfire is avoided
 (i.e., total rebound remains less than 100\%),
 absolute energy savings will still occur, 
