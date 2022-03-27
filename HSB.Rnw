@@ -2209,9 +2209,9 @@ of Table~\ref{tab:car_stages_table} are identical.
    $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
                                                     &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
                                                     &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
-                                                    &           &          & to total LCA energy of vehicle manufacture \citet{onat2015conventional}. \\
+                                                    &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
-                                                    &           &          & \citet{nordelof2014environmental}, and \citet{onat2015conventional}. \\
+                                                    &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
  \midrule
   Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
   $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & maintenance, repairs, taxes, and fees \\
