@@ -2232,7 +2232,7 @@ of Table~\ref{tab:car_stages_table} are identical.
 \begin{table}
 \footnotesize
 \begin{center}
-\caption{Car example: Economic parameters.}
+\caption{Car example: Economic parameters (2020).}
 \label{tab:car_economic_parameters}
 \begin{tabular}{ r c l }
   \toprule
@@ -2241,7 +2241,7 @@ of Table~\ref{tab:car_stages_table} are identical.
   \midrule
   Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/year, calculated from \citet{Car_Insurance:2019}.  \\
   $\rbempl{q}_s$ [miles/year]                               &               & This is slightly lower than the average driver miles/year (13,476) \\
-                                                            &               & \citet{US_DoT:2018},as there are \\
+                                                            &               & \citep{US_DoT:2018}, as there are \\
                                                             &               & more registered U.S.\ vehicles than drivers. \\
   \midrule
   Real median personal income U.S., in 2018                 & 34,317        & Taken from \citet{St_Louis_Fed:2019}.\\
@@ -2249,19 +2249,19 @@ of Table~\ref{tab:car_stages_table} are identical.
   \midrule
   U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
   real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
-  {} [--]                                                   &               & Table 2.1. Personal Income and Its Disposition, \\
-                                                            &               & \citet{US_BEA:2020}, \\ 
+  {} [--]                                                   &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\ 
   \midrule
   Share of savings from 2018 disposable income              & 0.07848       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
   {} [--]                                                   &               & National and Products Accounts (NIPA) \\ 
-                                                            &               & Table 2.1. Personal Income and Its Disposition, \\
-                                                            &               & \citet{US_BEA:2020}, \\
+                                                            &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\
   \midrule
   Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$ \\
   $\rate{M}$ [\$/year]                                      &               &                                              \\
   \midrule
-  Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Taken from U.S.\ Energy Information Agency (EIA) data \\
-  $p_E$ [\$/gallon]                                         &               & \citet{US_EIA:2020_gasoline} \\
+  Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Source: \citet{US_EIA:2020_gasoline} \\
+  $p_E$ [\$/gallon]                                         &               &  \\
   \midrule  
   Fractional spend on original energy service      & \Sexpr{f_Cs_orig_car_char}      & Calculation: \$1,306 (spend on energy service) \\
   $\fCs$ [--]                                               &               & / [\$19,115 (other goods) + \$1,306 (energy service)] = 0.064, \\
@@ -2292,11 +2292,11 @@ of Table~\ref{tab:car_stages_table} are identical.
   Parameter [units] & & \\
   \midrule
   Price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
-  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa}, who estimated a value of $-0.1$, \\
-                                                           &           &   \citet{goetzke2018}, who estimated values \\
-                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005},\\  
+  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
+                                                           &           &   \citet{goetzke2018} who estimated values \\
+                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
                                                              &           &   who estimated values between $-0.1$ and $-0.3$. \\  
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$, \\   
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
                                                             &            &     based on \citet{Parry2005}. \\
   \midrule
   Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{eq:slutsky})).  \\
@@ -2824,7 +2824,7 @@ of Table~\ref{tab:lamp_stages_table} are identical.
 \begin{table}
 \footnotesize
 \begin{center}
-\caption{Lamp example: Economic parameters.}
+\caption{Lamp example: Economic parameters (2020).}
 \label{tab:lamp_economic_parameters}
 \begin{tabular}{ r c l }
   \toprule
@@ -2878,7 +2878,7 @@ of Table~\ref{tab:lamp_stages_table} are identical.
   Parameter [units] & & \\
   \midrule
   Price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
-  $\eqspsUC$ [--]                                                             &           &   from \citep[Fig.~4]{Fouquet2014} \\  
+  $\eqspsUC$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
                                                             &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
                                                             &            &     based on \citet{Fouquet2011}. \\
   \midrule
