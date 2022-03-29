@@ -91,7 +91,8 @@ Sensitivities are evaluated, and
 implications for common policies are considered.
 \end{abstract}
 
-Keywords: rebound, energy efficiency, analytical framework, sensitivity study
+Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
+
 
 
 <<setup, echo=FALSE, message=FALSE>>=
@@ -4338,8 +4339,15 @@ using an early version of this framework.
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}
 
+{
+\scriptsize
+\begin{singlespace}
 \bibliography{HSB_refs}
+\end{singlespace}
+}
 
+\clearpage
+\setcounter{page}{1}
 
 
 \appendix
