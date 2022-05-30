@@ -265,32 +265,6 @@ one that
   \item is approachable for both energy analysts and economists.
 
 \end{enumerate*}
-%
-% The key \emph{contributions} of this paper are 
-% %
-% \begin{enumerate*}[label={(\roman*)}]
-% 	
-%   \item development of the first (to our knowledge)
-%         rebound analysis framework that combines 
-%         embodied energy effects, 
-%         maintenance and disposal effects, 
-%         non-marginal energy efficiency increases, and 
-%         non-marginal energy service price decreases, 
-% 
-%   \item providing the first (to our knowledge) visualizations of rebound effects
-%         in energy, expenditure, and consumption spaces to assist both 
-%         energy analysts and economists 
-%         in understanding nuances of rebound effects,  
-%         
-%   \item creating the first (to our knowledge) operationalized link between 
-%         rebound effects on microeconomic and macroeconomic scales, and 
-%         
-%   \item providing tools for other researchers 
-%         (both energy analysts and economists) 
-%         to calculate rebound with our framework
-%         for other energy efficiency upgrades (EEUs).
-%   
-% \end{enumerate*}
 
 The key contributions of this paper are 
 development of the first (to our knowledge)
