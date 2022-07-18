@@ -313,7 +313,7 @@ Section~\ref{sec:conclusion} concludes.
 %++++++++++++++++++++++++++++++
 
 Rebound analysis frameworks are used to estimate the magnitude of rebound effects 
-and total rebound from an EEU.
+and total rebound from an EEU (energy efficiency upgrade).
 We use the word ``framework'' to mean 
 the basic structure for analysis of a system or concept,
 in this case energy rebound.
