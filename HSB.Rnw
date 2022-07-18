@@ -4345,9 +4345,6 @@ using an early version of this framework.
 \end{singlespace}
 }
 
-\clearpage
-\setcounter{page}{1}
-
 
 \appendix
 \counterwithin{figure}{section}
