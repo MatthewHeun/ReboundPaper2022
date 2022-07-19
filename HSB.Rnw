@@ -116,7 +116,8 @@ library(xtable)
 
 Energy rebound is an interdisciplinary challenge that threatens
 a low-carbon future~\citep{Brockway:2017a}.
-Rebound makes energy efficiency less effective at reducing carbon emissions
+Rebound makes energy efficiency less effective
+at decreasing energy consumption and reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
 energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
 Rebound is an explanation for why 
@@ -213,14 +214,19 @@ in the past led to vastly differing points of view.''%
 \footnote{
   We prefer the term ``energy analysts'' over ``engineers,''
   because ``energy analysts'' better describes the group of people 
-  interested in topics like rebound and economy-wide energy efficiency.
+  engaged in ``energy analysis,''
+  which for the purposes of this paper is defined as
+  the study of energy transformations from stocks to flows to wastes
+  along society's energy conversion chain
+  for the purpose of generating energy services, 
+  economic activity, and human well-being. 
 }
 \citeauthor{Turner:2013aa} states that 
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
 However, \ldots{} it is often not clear what different authors 
 mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
 If authors from the two disciplines cannot even agree on the terms, 
-it is unsurprising that modest progress has been made 
+it is unsurprising that only modest progress has been made 
 on analytical foundations.
 To fully understand rebound, 
 economists need to have an energy analyst's understanding of energy, and 
