@@ -19,7 +19,7 @@
 \usepackage{multicol}           % For multi-column layout
 \usepackage{multirow}           % For multi-row layout
 \usepackage{natbib}
-\setlength{\bibsep}{0.0pt}      % To set the separateion between entries to 0.
+\setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
 \usepackage{nccmath}            % For the \useshortskip command above equations
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
@@ -106,7 +106,7 @@ library(tidyr)
 library(xtable)
 @
 
-\linenumbers
+% \linenumbers
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,7 +215,7 @@ in the past led to vastly differing points of view.''%
   We prefer the term ``energy analysts'' over ``engineers,''
   because ``energy analysts'' better describes the group of people 
   engaged in ``energy analysis,''
-  which for the purposes of this paper is defined as
+  which for the purposes of this paper can be defined as
   the study of energy transformations from stocks to flows to wastes
   along society's energy conversion chain
   for the purpose of generating energy services, 
