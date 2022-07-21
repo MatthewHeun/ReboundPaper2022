@@ -212,14 +212,17 @@ involving both economics and energy analysis.
 research communities (`economists', `engineers') \ldots{} have
 in the past led to vastly differing points of view.''%
 \footnote{
-  We prefer the term ``energy analysts'' over ``engineers,''
-  because ``energy analysts'' better describes the group of people 
-  engaged in ``energy analysis,''
-  which for the purposes of this paper can be defined as
-  the study of energy transformations from stocks to flows to wastes
-  along society's energy conversion chain
-  for the purpose of generating energy services, 
-  economic activity, and human well-being. 
+  We prefer the term ``energy analysts'' over ``engineers,'' 
+  because ``energy analysts'' better describes 
+  the group of people engaged in ``energy analysis’'. 
+  For this paper, we define “energy analysis" as
+  the study of energy transformations from stocks to flows
+  to wastes and energy services
+  along society's energy conversion chain 
+  for the purpose of generating 
+  energy services, 
+  economic activity, and
+  human well-being.
 }
 \citeauthor{Turner:2013aa} states that 
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
@@ -464,11 +467,12 @@ and clarifies terms and concepts across disciplines.
 
 
 %------------------------------
-\subsection{Behavior} 
+\subsection{Behavior and preferences} 
 \label{sec:consumer_preferences}
 %------------------------------
 
-A comprehensive rebound framework will include a detailed description of device owner behavior.
+A comprehensive rebound framework will include a detailed description 
+of device owner behavior and preferences.
 By ``detailed,'' we mean a payoff 
 specification that translates energy service price and device purchase 
 cost changes into choices, simultaneously 
@@ -481,16 +485,18 @@ direct and indirect rebound locations
 at the microeconomic scale~\citep{greening2000}.
 
 %------------------------------
-\subsection{Non-marginal energy efficiency changes} 
+\subsection{Non-marginal energy service price changes} 
 \label{sec:non_marginal_changes}
 %------------------------------
 
-A comprehensive rebound analysis framework will allow non-marginal efficiency changes,
+A comprehensive rebound analysis framework 
+will allow non-marginal energy service price changes,
 because EEUs often involve a large percentage increase in energy efficiency.
-A good example of non-marginal energy efficiency changes is 
+A good example of non-marginal energy service price change is 
 replacing incandescent lamps with Light Emitting Diode (LED) lamps, 
 as discussed in Section~\ref{sec:lamp_example}.
-For such EEUs, energy efficiency can increase by nearly a factor of 10.
+For such EEUs, energy efficiency can increase by nearly a factor of 10
+and energy service price can decrease similarly.
 
 
 %------------------------------
