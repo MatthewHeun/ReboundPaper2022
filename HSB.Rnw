@@ -4432,8 +4432,6 @@ marginal propensity to consume (MPC)}
 \label{sec:income_macro_mpc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{pieces/mpc.tex}
-
 <<MPCAppendix, child="pieces/mpc.Rnw">>=
 @
 
