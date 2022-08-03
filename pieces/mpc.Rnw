@@ -53,7 +53,7 @@ If $k = 3$, as in Section~\ref{sec:calibrating_k},
 $\MPC = 0.75$ is implied.
 The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
 
-<<k_vs_mpc, echo=FALSE, fig.cap="The relationship between $\\MPC$ and $k$ of Eq.~(\\ref{eq:mpc_and_k_converged}).", fig.width=6, fig.height=4>>=
+<<k_vs_mpc, echo=FALSE, fig.cap="The relationship between $\\MPC$ and $k$ in Eq.~(\\ref{eq:mpc_and_k_converged}).", fig.width=6, fig.height=4>>=
 tibble::tibble(MPC = seq(0.1, 0.9, by = 0.005), k = 1 / (1/MPC - 1)) %>% 
   ggplot2::ggplot(mapping = ggplot2::aes(x = MPC, y = k)) + 
   ggplot2::geom_vline(xintercept = 0.5, size = 0.1) +

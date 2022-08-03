@@ -2784,12 +2784,21 @@ of Table~\ref{tab:lamp_stages_table} are identical.
 \label{sec:lamp_results}
 %------------------------------
 
+<<LampGraphReResults, include=FALSE>>=
+Re_empl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
+Re_sub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_sub, to_perc = TRUE)
+Re_inc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_inc, to_perc = TRUE)
+Re_micro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_micro, to_perc = TRUE)
+Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
+@
+
+
 Results are represented graphically in energy, expenditure, and consumption path graphs
 in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
 The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
 shows the size of each rebound effect
 for the lamp example.
-
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 The \empleffect{} rebound components start with
@@ -2825,6 +2834,43 @@ the incandescent lamp and the LED lamp.%
   due to the wide variety of materials in LED lamps compared to incandescent lamps.
 }
 
+Direct \subeffect{} rebound 
+($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
+due to the much higher LED lamp efficacy
+($\amacro{\eta} = \Sexpr{eta_better}$~lm/W) 
+compared to the incandescent lamp
+($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
+leading to increased demand for lighting
+(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/year
+to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/year)
+as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
+To maintain constant utility, 
+consumption of other goods is reduced
+($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/year), 
+as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
+yielding indirect substitution effect rebound
+($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
+
+\Inceffect{} rebound arises from spending net energy cost savings
+associated with converting from the incandescent lamp to the LED lamp
+($\rbinc{N} = \Sexpr{N_dot_hat_lamp_char}$~\$/year).
+Direct income effect rebound 
+($Re_{dinc}$) is \Sexpr{Re_dinc_lamp_char_perc}\%,
+positive but small, 
+as the lamp owner allocates
+some of the net savings to increased demand for lighting.
+The indirect income effect rebound is large
+($Re_{iinc} = \Sexpr{Re_iinc_lamp_char_perc}$\%),
+due to the energy implications of increased spending on other goods.
+Total microeconomic scale rebound (emplacement, substitution, and income effects)
+sums to $Re_{micro} = \Sexpr{Re_micro_lamp_char_perc}$\%.
+
+Finally, \macroeffect{} rebound
+($Re_{\macro}$) is coincidentally also \Sexpr{Re_macro_lamp_char_perc}\%
+with $k$ assumed to be 1,
+due to economic expansion caused by 
+productivity enhancements arising from the more-efficient provision of the 
+energy service (lighting).
 
 
 \begin{landscape}
@@ -2995,15 +3041,6 @@ rebound_results %>%
         math.style.negative = TRUE)
 @
 
-
-<<LampGraphReResults, include=FALSE>>=
-Re_empl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
-Re_sub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_sub, to_perc = TRUE)
-Re_inc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_inc, to_perc = TRUE)
-Re_micro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_micro, to_perc = TRUE)
-Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
-Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
-@
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="Energy path graph for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4>>=
 lamp_Re_label_angle <- -65
@@ -3218,19 +3255,6 @@ rebound_results %>%
 @
 
 
-% %------------------------------
-% \subsubsection{Results} 
-% \label{sec:lamp_results}
-% %------------------------------
-% 
-% Results are represented graphically in energy, expenditure, and consumption path graphs
-% in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
-% The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
-% shows the size of each rebound effect
-% for the lamp example.
-% 
-% Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
-
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
 rebound_results %>% 
   dplyr::filter(Case == "Lamp") %>% 
@@ -3251,78 +3275,6 @@ rebound_results %>%
         format.args = list(big.mark = ","),
         math.style.negative = TRUE)
 @
-
-
-% The \empleffect{} rebound components start with
-% the direct emplacement effect ($Re_{dempl}$),
-% which is always $\Sexpr{Re_dempl_lamp_char_perc}$\%.
-% Indirect rebound due to the embodied energy effect
-% ($Re_{emb}$) is $\Sexpr{Re_emb_lamp_char_perc}$\%.
-% Although the LED lamp has higher embodied energy 
-% ($\aempl{E}_{emb} = \Sexpr{E_emb_star_lamp_char}$~MJ)
-% than the incandescent lamp 
-% ($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
-% the LED lamp has a much longer lifetime,
-% meaning that the LED embodied energy \emph{rate}
-% ($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
-% is less than the incandescent embodied energy rate
-% ($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
-% Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
-% is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
-% and embodied energy rebound is negative
-% ($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
-% Rebound due to the maintenance and disposal effect
-% ($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
-% because we assume no difference in maintenance and disposal costs between 
-% the incandescent lamp and the LED lamp.%
-% \footnote{
-%   Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
-%   and negligible;
-%   lamps are usually installed and forgotten.
-%   Real-world disposal cost differences between the incandescent and LED technologies
-%   are also likely to be negligible. 
-%   However, if ``disposal'' includes recycling processes, 
-%   cost rates may be different between the two technologies
-%   due to the wide variety of materials in LED lamps compared to incandescent lamps.
-% }
-
-Direct \subeffect{} rebound 
-($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
-due to the much higher LED lamp efficacy
-($\amacro{\eta} = \Sexpr{eta_better}$~lm/W) 
-compared to the incandescent lamp
-($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
-leading to increased demand for lighting
-(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/year
-to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/year)
-as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
-To maintain constant utility, 
-consumption of other goods is reduced
-($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/year), 
-as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
-yielding indirect substitution effect rebound
-($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
-
-\Inceffect{} rebound arises from spending net energy cost savings
-associated with converting from the incandescent lamp to the LED lamp
-($\rbinc{N} = \Sexpr{N_dot_hat_lamp_char}$~\$/year).
-Direct income effect rebound 
-($Re_{dinc}$) is \Sexpr{Re_dinc_lamp_char_perc}\%,
-positive but small, 
-as the lamp owner allocates 
-some of the net savings to increased demand for lighting. 
-The indirect income effect rebound is large
-($Re_{iinc} = \Sexpr{Re_iinc_lamp_char_perc}$\%), 
-due to the energy implications of increased spending on other goods.
-Total microeconomic scale rebound (emplacement, substitution, and income effects)
-sums to $Re_{micro} = \Sexpr{Re_micro_lamp_char_perc}$\%.
-
-Finally, \macroeffect{} rebound
-($Re_{\macro}$) is coincidentally also \Sexpr{Re_macro_lamp_char_perc}\%
-with $k$ assumed to be 1,
-due to economic expansion caused by 
-productivity enhancements arising from the more-efficient provision of the 
-energy service (lighting).
 
 
 %++++++++++++++++++++++++++++++
@@ -4327,6 +4279,9 @@ Future work could be pursued in several areas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Declarations of interest: none.
+
+
+\clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
