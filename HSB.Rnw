@@ -2773,6 +2773,54 @@ the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:lamp_stages_table} are identical.
 
 
+%------------------------------
+\subsubsection{Results} 
+\label{sec:lamp_results}
+%------------------------------
+
+Results are represented graphically in energy, expenditure, and consumption path graphs
+in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
+The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
+shows the size of each rebound effect
+for the lamp example.
+
+Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+
+The \empleffect{} rebound components start with
+the direct emplacement effect ($Re_{dempl}$),
+which is always $\Sexpr{Re_dempl_lamp_char_perc}$\%.
+Indirect rebound due to the embodied energy effect
+($Re_{emb}$) is $\Sexpr{Re_emb_lamp_char_perc}$\%.
+Although the LED lamp has higher embodied energy 
+($\aempl{E}_{emb} = \Sexpr{E_emb_star_lamp_char}$~MJ)
+than the incandescent lamp 
+($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
+the LED lamp has a much longer lifetime,
+meaning that the LED embodied energy \emph{rate}
+($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
+is less than the incandescent embodied energy rate
+($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
+Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
+is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
+and embodied energy rebound is negative
+($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
+Rebound due to the maintenance and disposal effect
+($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
+because we assume no difference in maintenance and disposal costs between 
+the incandescent lamp and the LED lamp.%
+\footnote{
+  Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
+  and negligible;
+  lamps are usually installed and forgotten.
+  Real-world disposal cost differences between the incandescent and LED technologies
+  are also likely to be negligible. 
+  However, if ``disposal'' includes recycling processes, 
+  cost rates may be different between the two technologies
+  due to the wide variety of materials in LED lamps compared to incandescent lamps.
+}
+
+
+
 \begin{landscape}
 \begin{table}
 \footnotesize
@@ -3164,18 +3212,18 @@ rebound_results %>%
 @
 
 
-%------------------------------
-\subsubsection{Results} 
-\label{sec:lamp_results}
-%------------------------------
-
-Results are represented graphically in energy, expenditure, and consumption path graphs
-in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
-The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
-shows the size of each rebound effect
-for the lamp example.
-
-Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+% %------------------------------
+% \subsubsection{Results} 
+% \label{sec:lamp_results}
+% %------------------------------
+% 
+% Results are represented graphically in energy, expenditure, and consumption path graphs
+% in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
+% The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
+% shows the size of each rebound effect
+% for the lamp example.
+% 
+% Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
 rebound_results %>% 
@@ -3199,38 +3247,38 @@ rebound_results %>%
 @
 
 
-The \empleffect{} rebound components start with
-the direct emplacement effect ($Re_{dempl}$),
-which is always $\Sexpr{Re_dempl_lamp_char_perc}$\%.
-Indirect rebound due to the embodied energy effect
-($Re_{emb}$) is $\Sexpr{Re_emb_lamp_char_perc}$\%.
-Although the LED lamp has higher embodied energy 
-($\aempl{E}_{emb} = \Sexpr{E_emb_star_lamp_char}$~MJ)
-than the incandescent lamp 
-($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
-the LED lamp has a much longer lifetime,
-meaning that the LED embodied energy \emph{rate}
-($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
-is less than the incandescent embodied energy rate
-($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
-Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
-is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
-and embodied energy rebound is negative
-($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
-Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
-because we assume no difference in maintenance and disposal costs between 
-the incandescent lamp and the LED lamp.%
-\footnote{
-  Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
-  and negligible;
-  lamps are usually installed and forgotten.
-  Real-world disposal cost differences between the incandescent and LED technologies
-  are also likely to be negligible. 
-  However, if ``disposal'' includes recycling processes, 
-  cost rates may be different between the two technologies
-  due to the wide variety of materials in LED lamps compared to incandescent lamps.
-}
+% The \empleffect{} rebound components start with
+% the direct emplacement effect ($Re_{dempl}$),
+% which is always $\Sexpr{Re_dempl_lamp_char_perc}$\%.
+% Indirect rebound due to the embodied energy effect
+% ($Re_{emb}$) is $\Sexpr{Re_emb_lamp_char_perc}$\%.
+% Although the LED lamp has higher embodied energy 
+% ($\aempl{E}_{emb} = \Sexpr{E_emb_star_lamp_char}$~MJ)
+% than the incandescent lamp 
+% ($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
+% the LED lamp has a much longer lifetime,
+% meaning that the LED embodied energy \emph{rate}
+% ($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
+% is less than the incandescent embodied energy rate
+% ($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
+% Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
+% is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
+% and embodied energy rebound is negative
+% ($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
+% Rebound due to the maintenance and disposal effect
+% ($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
+% because we assume no difference in maintenance and disposal costs between 
+% the incandescent lamp and the LED lamp.%
+% \footnote{
+%   Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
+%   and negligible;
+%   lamps are usually installed and forgotten.
+%   Real-world disposal cost differences between the incandescent and LED technologies
+%   are also likely to be negligible. 
+%   However, if ``disposal'' includes recycling processes, 
+%   cost rates may be different between the two technologies
+%   due to the wide variety of materials in LED lamps compared to incandescent lamps.
+% }
 
 Direct \subeffect{} rebound 
 ($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
