@@ -4321,7 +4321,9 @@ Declarations of interest: none.
 \label{sec:data_repository}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-All data and calculations are stored at **** Leeds data repository URL. ****.
+All data and calculations are stored at 
+Research Data Leeds Repository
+(\url{https://doi.org/10.5518/1201}).
 An \texttt{R} package for performing all rebound calculations
 can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 (See \citet{Heun:2021us}.)
