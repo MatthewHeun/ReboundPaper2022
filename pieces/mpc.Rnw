@@ -11,18 +11,18 @@ In this appendix, we show the relationship between the macro factor ($k$) and $\
 
 The relationship between the macro factor ($k$) and $\MPC$ spans
 the income and macro effects.
-In this framework, the device owner's net income 
+In this framework, the device owner's net savings 
 after the substitution effect ($\rasub{N}$) is respent completely.
-One may assume that firms and other consumers who receive the net income have a 
+One may assume that firms and other consumers who receive the net savings have a 
 marginal propensity to re-spend of $\MPC$.
-The total spending throughout the economy of each year's net income ($\rasub{N}$)
+The total spending throughout the economy of each year's net savings ($\rasub{N}$)
 is given by the infinite series
 
 \begin{equation} \label{eq:infinite_series_spending}
   (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N} \; ,
 \end{equation}
 %
-where the first term ($1 \times \rasub{N}$) represents spending of net income by the device owner
+where the first term ($1 \times \rasub{N}$) represents spending of net savings by the device owner
 in the direct and indirect income effects, and
 the remaining terms 
 [$(\MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N}$]

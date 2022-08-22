@@ -2666,7 +2666,7 @@ net savings to additional driving.
 Rebound from the indirect income effect 
 ($Re_{iinc}$) is positive (\Sexpr{Re_iinc_car_char_perc}\%)
 due to higher spending on other goods. 
-Thus, the net income after the substitution effect
+Thus, the net savings after the substitution effect
 ($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/year) 
 translates into positive direct and indirect income
 rebound at the microeconomic scale. 
@@ -3680,7 +3680,7 @@ Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound
 ($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC$.
 For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
 substantially with $\eqspsUC$, 
-because net income increases substantially with $\eqspsUC$. 
+because net savings increases substantially with $\eqspsUC$. 
 
 A limitation of the elasticity sensitivity study derives from limitations of the 
 CES utility model itself, which constrains price elasticity variation
@@ -3840,7 +3840,7 @@ the third contribution.
 We have developed the first operational link between 
 rebound effects on macroeconomic and microeconomic scales. 
 We both operationalize the link and show how it should be applied:
-scaling net income after the substitution effect.
+scaling net savings after the substitution effect.
 We further draw upon the MPC literature to show how macro effects 
 operate via economic expansion over the long term.
 This micro-to-macro link can be seen in Eq.~(\ref{eq:Re_macro_def}) and
