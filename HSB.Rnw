@@ -3644,8 +3644,9 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
   ggplot2::geom_vline(data = price_data, 
-                      mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
-                      size = 0.1) +
+                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
+                      mapping = ggplot2::aes(xintercept = p_E_engr_units), 
+                      linewidth = 0.1) +
   ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
   ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/kW-hr (Lamp)]"),

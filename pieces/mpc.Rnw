@@ -56,10 +56,10 @@ The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
 <<k_vs_mpc, echo=FALSE, fig.cap="The relationship between $\\MPC$ and $k$ in Eq.~(\\ref{eq:mpc_and_k_converged}).", fig.width=6, fig.height=4>>=
 tibble::tibble(MPC = seq(0.1, 0.9, by = 0.005), k = 1 / (1/MPC - 1)) %>% 
   ggplot2::ggplot(mapping = ggplot2::aes(x = MPC, y = k)) + 
-  ggplot2::geom_vline(xintercept = 0.5, size = 0.1) +
-  ggplot2::geom_vline(xintercept = 0.75, size = 0.1) +
-  ggplot2::geom_hline(yintercept = 1, size = 0.1) +
-  ggplot2::geom_hline(yintercept = 3, size = 0.1) +
+  ggplot2::geom_vline(xintercept = 0.5, linewidth = 0.1) +
+  ggplot2::geom_vline(xintercept = 0.75, linewidth = 0.1) +
+  ggplot2::geom_hline(yintercept = 1, linewidth = 0.1) +
+  ggplot2::geom_hline(yintercept = 3, linewidth = 0.1) +
   ggplot2::geom_line() + 
   
   ggplot2::scale_x_continuous(breaks = c(0, 0.2, 0.4, 0.5, 0.6, 0.75, 0.9, 1), limits = c(0, 1)) +
