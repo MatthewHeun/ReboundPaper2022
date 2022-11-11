@@ -130,7 +130,61 @@ library(xtable)
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Conclusions ****
+In this paper (Part~II), we develop the first visualizations of 
+rebound path graphs in energy, expenditure, and consumption spaces
+to bridge gaps between economists and energy analysts.
+And we operationalize and calibrate the macro factor ($k = 3$)
+to provide a link between effects at microeconomic and macroeconomic scales,
+missing from previous partial equilibrium frameworks. 
+
+With novel visualizations of rebound paths and ****
+we advance the analytical foundations for empirical estimates of rebound and
+facilitate interdisciplinary understanding of rebound phenomena
+toward the goal of enabling of more robust rebound estimates
+for sound energy and climate policy.
+
+From the development and application of the framework in Part~II, 
+we draw four important conclusions.
+First, the car and lamp examples (Section~\ref{sec:examples}) show that
+        the framework enables
+        quantification of rebound magnitudes at microeconomic and macroeconomic scales, including 
+        direct and indirect locations 
+        for emplacement, substitution, income, and macro effects.
+Second, the examples show that magnitudes of rebound effects
+        vary with the type of EEU performed.
+
+
+Future work:
+Assess rebound sensitivities, which will be challenging work because
+many rebound parameters are interlinked. 
+**** examples of interlinking here ****.
+
+
+Future work could be pursued in several areas. 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item Other utility models (besides the CES utility model) 
+        could be explored for the substitution effect.
+  
+  \item Further empirical studies could be performed
+        to estimate the magnitude of different 
+        rebound effects in a variety of real-life EEUs.
+
+  \item Deeper study of macro rebound is needed, including improved estimates 
+        for the macro factor ($k$) and its relation to the MPC.
+        
+  \item The rebound implications of the distribution of $\MPC$ values 
+        across socioeconomic groups~\citep{Carroll2017}
+        could be explored.
+
+  \item The rebound effects of fossil-energy taxes 
+        could be studied further,
+        especially for the web of interconnected dynamic effects
+        among rebound components that are functions
+        of the energy intensity of the economy ($I_E$).
+
+\end{enumerate*}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
