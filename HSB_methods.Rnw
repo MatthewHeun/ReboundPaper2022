@@ -1,0 +1,278 @@
+\documentclass[12pt]{article}    % For submission
+
+
+
+%% Package imports %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsfonts}           % For access to \checkmark.
+\usepackage{amsmath}            % For better symbol decorations
+\usepackage{authblk}            % For a nice author block
+\usepackage{booktabs}           % For nice table rules
+\usepackage[official]{eurosym}  % For the euro symbol
+\usepackage[figurename=Fig.]{caption} % For changing "Figure" to "Fig." in figure captions
+\usepackage{chngcntr}           % To get figure and table numbering correct in the appendices
+\usepackage[makeroom]{cancel}   % To show terms go to zero
+\usepackage[inline]{enumitem}   % For inline enumeration
+\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
+\usepackage[pagewise]{lineno}   % For line numbers
+% \modulolinenumbers[5]
+\usepackage{multicol}           % For multi-column layout
+\usepackage{multirow}           % For multi-row layout
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
+\usepackage{nccmath}            % For the \useshortskip command above equations
+\usepackage{parcolumns}         % For multi-column layout
+\usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
+\usepackage{setspace}           % For double spacing
+\doublespacing
+\usepackage{soul}               % For text highlighting
+\usepackage[most]{tcolorbox}    % For color highlighting of text
+\usepackage{tikz}               % For diagrams
+\usetikzlibrary{arrows,positioning}
+\usepackage{ulem}               % For strikeout command (\sout)
+\usepackage{xcolor}             % For ... colors
+
+\usepackage{hyperref}           % hyperref should be the last package loaded
+
+
+%% Macros defined by authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/macros.tex}
+
+
+%% Bibliography style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apa-good.bst}
+
+% Author info
+\title{Advancing the necessary foundations \\
+              for empirical energy rebound estimates, Part I: \\
+              Theoretical framework}
+\author[1,*]{Matthew Kuperus Heun}
+\author[2]{Gregor Semieniuk}
+\author[3]{Paul E.\ Brockway}
+\affil[1]{Engineering Department, Calvin University, 3201 Burton St. SE, Grand Rapids, MI, 49546}
+\affil[2]{Political Economy Research Institute and 
+                            Department of Economics,
+                            UMass Amherst}
+\affil[3]{Sustainability Research Institute, 
+                             School of Earth and Environment,
+                             University of Leeds}
+\affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
+\renewcommand\Affilfont{\itshape\small}
+
+\date{} % Kill the date
+
+\singlespace
+
+\begin{document}
+
+\maketitle
+
+
+%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+**** Abstract ****
+\end{abstract}
+
+Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound,
+**** Update for split paper ****
+
+
+
+<<setup, echo=FALSE, message=FALSE>>=
+library(dplyr)
+library(magrittr)
+library(MKHthemes)
+library(ReboundTools)
+library(tidyr)
+library(xtable)
+@
+
+% \linenumbers
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Introduction ****
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Background}
+\label{sec:setup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Background ****
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods: development of the comprehensive rebound framework}
+\label{sec:framework}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Methods ****
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results: Two applications of the rebound framework}
+\label{sec:examples}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Results ****
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+\label{sec:discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Discussion ****
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+**** Conclusions ****
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Competing interests}
+\label{sec:competing_interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Declarations of interest: none.
+
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Author contributions}
+\label{sec:author_contributions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{r c c c}
+  \toprule
+                              & MKH          & GS           & PEB          \\
+  \midrule
+  Conceptualization           & \rating{100} & \rating{100} &              \\
+  Methodology                 & \rating{100} & \rating{100} & \rating{100} \\
+  Software                    & \rating{100} &              &              \\
+  Validation                  & \rating{100} &              & \rating{100} \\
+  Formal analysis             & \rating{100} & \rating{100} & \rating{100} \\
+  Investigation               & \rating{100} & \rating{100} & \rating{100} \\
+  Resources                   & \rating{100} &              &              \\
+  Data curation               &              &              & \rating{100} \\
+  Writing--original draft     & \rating{100} & \rating{100} & \rating{100} \\
+  Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
+  Visualization               & \rating{100} & \rating{100} &              \\
+  Supervision                 & \rating{100} &              &              \\
+  Project administration      & \rating{100} &              &              \\
+  Funding acquisition         &              &              &              \\
+\bottomrule
+\end{tabular}
+\label{tab:credit}
+\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%List funding sources in this standard way to facilitate compliance to funder's requirements: Funding: This work was supported by the National Institutes of Health [grant numbers xxxx, yyyy]; the Bill \& Melinda Gates Foundation, Seattle, WA [grant number zzzz]; and the United States Institutes of Peace [grant number aaaa].
+
+%It is not necessary to include detailed descriptions on the program or type of grants and awards. When funding is from a block grant or other resources available toa university, college, or other research institution, submit the name of the institute or organization that provided the funding.
+
+%If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
+
+Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
+Council, supported under EPSRC Fellowship award EP/R024254/1.
+The authors are grateful for comments from internal reviewers
+Becky Haney and Jeremy Van Antwerp (Calvin University); 
+Nathan Chan (University of Massachusetts at Amherst); and 
+Zeke Marshall (University of Leeds).
+The authors benefitted from discussions with 
+Daniele Girardi (University of Massachusetts at Amherst) and 
+Christopher Blackburn (Bureau of Economic Analysis).
+Finally, the authors thank the students of MKH's Fall 2019 
+Thermal Systems Design course (ENGR333) at Calvin University
+who studied energy rebound for many energy conversion devices
+using an early version of this framework.
+
+% No need for this section label, because BibTeX already provides a "References" heading.
+% \section*{References}
+
+{
+\scriptsize
+\bibliography{HSB_refs}
+}
+
+
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% Gives a helpful "Appendices" label
+\section*{Appendices}
+
+% Labels each appendix as A, B, C, etc. instead of Appendix A, Appendix B, Appendix C, etc.
+\renewcommand{\thesection}{\Alph{section}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nomenclature}
+\label{sec:nomenclature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/nomenclature.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivation of comprehensive, consumer-based rebound analysis framework}
+\label{sec:derivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/derivation.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proof: Income preference equations satisfy the budget constraint}
+\label{sec:proof_income_elasticities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/proof_income_elasticities.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Other goods expenditures and constant $p_o$}
+\label{sec:other_goods_expenditures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/other_goods_expenditures.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Income and macro effects and relation to the
+marginal propensity to consume (MPC)}
+\label{sec:income_macro_mpc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<MPCAppendix, child="pieces/mpc.Rnw">>=
+@
+
+
+
+\end{document}
