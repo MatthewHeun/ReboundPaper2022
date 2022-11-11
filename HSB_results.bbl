@@ -1,0 +1,25 @@
+\begin{thebibliography}{3}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Borenstein(2015)}]{Borenstein:2015aa}
+Borenstein, S. (2015).
+\newblock A microeconomic framework for evaluating energy efficiency rebound
+  and some implications.
+\newblock {\em The Energy Journal\/}, {\em 36\/}(1), 1--21.
+
+\bibitem[{Heun(2021)}]{Heun:2021us}
+Heun, M.~K. (2021).
+\newblock {ReboundTools}: an \texttt{R} package that provides functions to
+  analyze energy rebound.
+\newblock V0.1.32.
+\newline\urlprefix\url{https://doi.org/10.5281/zenodo.4999846}
+
+\bibitem[{Paoli \& Cullen(2020)}]{Paoli:2020aa}
+Paoli, L., \& Cullen, J. (2020).
+\newblock Technical limits for energy conversion efficiency.
+\newblock {\em Energy\/}, {\em 192\/}, 1--12.
+
+\end{thebibliography}

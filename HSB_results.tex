@@ -1,4 +1,54 @@
-\documentclass[12pt]{article}    % For submission
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}    % For submission
 
 
 
@@ -64,7 +114,7 @@
 \date{} % Kill the date
 
 \singlespace
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \maketitle
@@ -81,14 +131,7 @@ Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebo
 
 
 
-<<setup, echo=FALSE, message=FALSE>>=
-library(dplyr)
-library(magrittr)
-library(MKHthemes)
-library(ReboundTools)
-library(tidyr)
-library(xtable)
-@
+
 
 % \linenumbers
 
@@ -294,8 +337,68 @@ marginal propensity to consume (MPC)}
 \label{sec:income_macro_mpc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
+
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB.Rnw
+
+\citet{Borenstein:2015aa} has postulated a demand-side argument that macro effects 
+can be represented by a multiplier, which we call the macro factor ($k$).
+\citeauthor{Borenstein:2015aa}'s formulation and our implementation 
+are reminiscent of the marginal propensity to consume (MPC).
+In this appendix, we show the relationship between the macro factor ($k$) and $\MPC$.
+
+The relationship between the macro factor ($k$) and $\MPC$ spans
+the income and macro effects.
+In this framework, the device owner's net savings 
+after the substitution effect ($\rasub{N}$) is respent completely.
+One may assume that firms and other consumers who receive the net savings have a 
+marginal propensity to re-spend of $\MPC$.
+The total spending throughout the economy of each year's net savings ($\rasub{N}$)
+is given by the infinite series
+
+\begin{equation} \label{eq:infinite_series_spending}
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N} \; ,
+\end{equation}
+%
+where the first term ($1 \times \rasub{N}$) represents spending of net savings by the device owner
+in the direct and indirect income effects, and
+the remaining terms 
+[$(\MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N}$]
+represent macro-effect spending in the broader economy.
+
+The macro effect portion of the spending can be represented by the macro factor ($k$).
+
+\begin{equation} \label{eq:mpc_and_k}
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N} = (1 + k) \rasub{N}
+\end{equation}
+
+Canceling $\rasub{N}$ and simplifying the infinite series to its converged fraction
+(assuming $\MPC < 1$) gives
+
+\begin{equation}
+  \frac{1}{1 - \MPC} = 1 + k \; .
+\end{equation}
+%
+Solving for $k$ yields
+
+\begin{equation}
+  k = \frac{1}{\frac{1}{\MPC} - 1} \; .  \tag{\ref{eq:mpc_and_k_converged}}
+\end{equation}
+
+With $\MPC = 0.5$, as in Section~\ref{sec:macro_effect_main_paper}, 
+$k = 1$ is obtained.
+If $k = 3$, as in Section~\ref{sec:calibrating_k}, 
+$\MPC = 0.75$ is implied.
+The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/k_vs_mpc-1} \caption{The relationship between $\MPC$ and $k$ in Eq.~(\ref{eq:mpc_and_k_converged}).}\label{fig:k_vs_mpc}
+\end{figure}
+
+\end{knitrout}
 
 
 
