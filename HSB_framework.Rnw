@@ -98,7 +98,186 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Introduction ****
+Energy rebound is an interdisciplinary challenge that threatens
+a low-carbon future~\citep{Brockway:2017a}.
+Rebound makes energy efficiency less effective
+at decreasing energy consumption and reducing carbon emissions
+by taking back (or reversing, in the case of ``backfire'') 
+energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
+Rebound is an explanation for why 
+energy consumption and carbon emissions 
+have never been absolutely decoupled 
+from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
+
+Recent evidence shows that rebound is both 
+(i)~larger than commonly assumed~\citep{Stern2020} and
+(ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
+despite a long history of research on the topic.
+Famously, the roots of energy rebound trace back to 
+\citeauthor{Jevons:1865} who said 
+``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
+use of fuel is equivalent to a diminished consumption. 
+The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+Less famously, the origins of rebound extend further backward 
+from \citeauthor{Jevons:1865}
+to \citet{Williams1840} and \citet{Parkes1838}.%
+\footnote{
+  \citeauthor{Parkes1838} wrote, 
+  ``[t]he economy of fuel is the secret of the economy of the steam-engine; 
+  it is the fountain of its power, and the adopted measure of its effects. 
+  Whatever, therefore, conduces to increase the efficiency of coal, 
+  and to diminish the cost of its use, 
+  directly tends to augment the value of the steam-engine, 
+  and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
+}
+For nearly 200 years, then, it has been understood 
+that efficiency gains may be taken back or, paradoxically even, 
+cause growth in energy consumption.
+
+The oil crises of the 1970s shone a light back onto energy efficiency, and 
+research into rebound appeared late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
+A modern debate over the magnitude of energy rebound commenced. 
+On one side, scholars including \citet{Brookes1979, Brookes1990} and \citet{Khazzoom1980} 
+suggested rebound could be large.
+Others, including \citet{Lovins1988} and \citet{Grubb1990, Grubb1992},
+claimed rebound was likely to be small.
+Debate over the size of energy rebound continues today.
+Advocates of small rebound (less than, say, 50\%),
+suggest ``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
+while others, 
+including \citet{Saunders2015},
+claim the evidence for large rebound
+(greater than 50\%)
+is growing.
+
+\citeauthor{Turner:2013aa} contends that the lack of consensus 
+on the magnitude of rebound 
+in the modern empirical literature is caused by 
+``a rush to empirical estimation in the absence 
+of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
+\citet{Borenstein:2015aa} made some progress toward solidifying the analytical 
+foundations for microeconomic rebound, but
+more is needed 
+to support empirical estimation efforts.
+In the absence of solid analytical foundations, 
+the wide variety of rebound estimation approaches yields
+a wide range of rebound estimates, 
+giving the appearance of uncertainty and
+leading energy and climate modelers to either 
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item use questionable numbers, or 
+  
+  \item ignore rebound altogether.
+
+\end{enumerate*}
+%
+We suggest that 
+improving the conceptual space around rebound and solidifying the analytical frameworks
+will
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item help generate more robust estimates of rebound,
+  
+  \item lead to rebound being better included in more energy and climate models, and 
+  
+  \item provide improved policymaking around energy efficiency. 
+
+\end{enumerate*}
+
+But why is there an ``absence of solid analytical foundations?''
+We propose that development of solid analytical frameworks for rebound
+is hampered by the fact that rebound is a decidedly interdisciplinary topic,
+involving both economics and energy analysis. 
+~\citet[p.~458]{Birol:2000wi} note that 
+``different implicit and explicit assumptions of different
+research communities (`economists', `engineers') \ldots{} have
+in the past led to vastly differing points of view.''%
+\footnote{
+  We prefer the term ``energy analysts'' over ``engineers,'' 
+  because ``energy analysts'' better describes 
+  the group of people engaged in ``energy analysis’'. 
+  For this paper, we define “energy analysis" as
+  the study of energy transformations from stocks to flows
+  to wastes and energy services
+  along society's energy conversion chain 
+  for the purpose of generating 
+  energy services, 
+  economic activity, and
+  human well-being.
+}
+\citeauthor{Turner:2013aa} states that 
+``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
+However, \ldots{} it is often not clear what different authors 
+mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
+If authors from the two disciplines cannot even agree on the terms, 
+it is unsurprising that only modest progress has been made 
+on analytical foundations.
+To fully understand rebound, 
+economists need to have an energy analyst's understanding of energy, and 
+energy analysts need to have an economist's understanding of finance and human behavior.
+That's a tall order, indeed.
+
+We contend that new clarity is needed.
+A description of rebound is needed that is both
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item technically rigorous and
+  
+  \item approachable from both sides
+        (economics and energy analysis).
+
+\end{enumerate*}
+%
+In other words, 
+the finance and human behavior aspects of rebound need to be presented 
+in ways energy analysts can understand. 
+And the energy aspects of rebound need to be presented
+in ways economists can understand.
+
+Summarizing,
+we surmise that reducing global carbon emissions has been hampered, in part, 
+by the fact that rebound is not sufficiently included in energy and climate models.
+We suspect that one reason rebound is not sufficiently included in energy and climate models
+is the lack of consensus on rebound estimation methods and, hence, rebound magnitude.
+We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
+is a symptom of the absence of solid analytical foundations for rebound.
+We posit that developing solid analytical frameworks for rebound
+is difficult because it is an inherently interdisciplinary topic.
+
+The \emph{objective} of this paper, then, is to 
+support the development of a rigorous analytical framework, 
+one that
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item starts at the microeconomics of rebound
+        (building upon \citet{Borenstein:2015aa}) and 
+        
+  \item is approachable for both energy analysts and economists.
+
+\end{enumerate*}
+
+The key contributions of this paper are 
+development of the first (to our knowledge)
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item rebound analysis framework that combines 
+        embodied energy effects, 
+        maintenance and disposal effects, 
+        non-marginal energy efficiency increases, and 
+        non-marginal energy service price decreases and
+
+  \item operationalized link between 
+        rebound effects on microeconomic and macroeconomic scales.
+        
+\end{enumerate*}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -346,106 +525,7 @@ of expenditures rates~($\rate{C}_j$) and energy intensity of the economy~($I_E$)
 \end{align}
 
 
-%++++++++++++++++++++++++++++++
-\subsection{Rebound path graphs}
-\label{sec:rebound_path_graphs}
-%++++++++++++++++++++++++++++++
 
-Any comprehensive rebound analysis must track
-energy, expenditure, and consumption
-at the device (direct location) and elsewhere in the economy (indirect location)
-across all adjustments for all rebound effects. 
-One novel contribution of this paper is visualization of rebound effects 
-in three spaces:
-the energy space, the expenditure space, and the consumption space.
-Each space is represented by a plane that contains a path graph, illustrating adjustments
-to energy, expenditure, or consumption in response to the EEU.
-(See Appendix~\ref{sec:graph_details} for 
-detailed mathematical descriptions of rebound path graphs.)
-Important quantities for the path graphs are
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$), 
-  
-  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$), 
-  
-  \item the consumption rate of the energy service ($\rate{q}_s$), and
-  
-  \item the expenditure rate on other consumption goods ($\rate{C}_o$).
-    
-\end{enumerate*}
-%
-In rebound path graphs, effects at the direct location are placed on the $x$-axis, and 
-effects at the indirect location are placed on the $y$-axis.
-
-Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
-notional rebound path graphs in energy, expenditure, and consumption spaces.
-The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
-Later (Section~\ref{sec:examples}), 
-rebound path graphs (with scales) illustrate the numerical examples.
-
-Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy path graph, with 
-the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
-and
-the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.
-Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent the rebound stages
-between the rebound effects,
-as shown in Fig.~\ref{fig:flowchart}.
-Points $a$, $b$, $c$, and $d$ represent intermediate stages.
-Lines with negative slope through points 
-$\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
-indicate energy consumption isoquants
-(sum of direct and indirect components) at key points.
-Table~\ref{tab:path_graph_segments} shows 
-segments and rebound effects for all rebound path graphs.
-Note that segment \bartilde{} appears only on energy path graphs, 
-because the framework tracks energy consumption but not expenditures or consumption
-in the macro effect.
-
-\begin{table}
-\centering % Centered table
-\caption{Rebound path graph segments.} 
-\begin{tabular}{r l l c}
-  \toprule
-  Segment      & Rebound effect            & Symbol          & Equation \\
-  \midrule
-  \circa{}     & Direct emplacement        & $Re_{dempl}$    & (\ref{eq:Re_dempl0}) \\
-  \ab{}        & Embodied energy           & $Re_{emb}$      & (\ref{eq:Re_emb}) \\
-  \bstar{}     & Maintenance and disposal  & $Re_{\md}$      & (\ref{eq:Re_md}) \\
-  \midrule
-  \starc{}     & Indirect substitution     & $Re_{isub}$     & (\ref{eq:Re_isub_CES}) \\ 
-  \chat{}      & Direct substitution       & $Re_{dsub}$     & (\ref{eq:Re_dsub_CES}) \\ 
-  \midrule
-  \hatd{}      & Direct income             & $Re_{dinc}$     & (\ref{eq:Re_dinc}) \\ 
-  \dbar{}      & Indirect income           & $Re_{iinc}$     & (\ref{eq:Re_iinc}) \\ 
-  \midrule
-  \bartilde{}  & Macro                     & $Re_{macro}$    & (\ref{eq:Re_macro_def}) \\
-  \bottomrule
-\end{tabular}
-\label{tab:path_graph_segments}
-\end{table}
-
-A notional expenditure path graph is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
-with 
-the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
-the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
-Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
-indicate expenditure isoquants (sum of direct and indirect components).
-
-A notional consumption path graph is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
-The indexed rate of energy service demand ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
-the indexed rate of other goods demand ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
-Iso-cost loci of energy service and other goods demand
-are shown as lines with negative slope. 
-Indifference curves are denoted by \iicirc{} and \iibar{}. 
-A ray from the origin through the $\wedge$ point is denoted \rr{}.
-Note that points $\circ$, $a$, $b$, and $*$ collapse together
-on consumption path graphs, because both
-the rate of energy service consumption and 
-the rate of other goods consumption are
-unchanged across the emplacement effect
-($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_o = \raempl{C}_o$, respectively).
 
 <<eeu_data, echo=FALSE>>=
 # Load our test cases and perform rebound analyses.
@@ -482,34 +562,26 @@ We begin with the emplacement effect.
 \label{sec:empl_effect_main_paper}
 %------------------------------
 
-The emplacement effect (segments \circa{}, \ab{}, and \bstar{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph})
-accounts for performance of the EEU only;
+The emplacement effect accounts for performance of the EEU only;
 behavior changes are addressed later, 
 in the substitution and income effects. 
 The direct emplacement effects of the EEU include
-device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$),
-on segments \circa{} in Figs.~\ref{fig:ExampleEnergyPathGraph} 
-and~\ref{fig:ExampleCostPathGraph}, respectively.
+device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$).
 The indirect effects of EEU emplacement are
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item changes in the embodied energy rate ($\Delta \raempl{E}_{emb}$)
-        (segment \ab{} in Fig.~\ref{fig:ExampleEnergyPathGraph}), 
+  \item changes in the embodied energy rate ($\Delta \raempl{E}_{emb}$), 
   
-  \item changes in the capital expenditure rate ($\Delta \raempl{C}_{cap}$)
-        (segment \ab{} in Fig.~\ref{fig:ExampleCostPathGraph}), and 
+  \item changes in the capital expenditure rate ($\Delta \raempl{C}_{cap}$), and 
         
   \item changes in the maintenance and disposal energy and expenditure rates 
-        ($\Delta \raempl{E}_{\md}$ and $\Delta \raempl{C}_{\md}$)
-        (segments \bstar{} in Figs.~\ref{fig:ExampleEnergyPathGraph} and \ref{fig:ExampleCostPathGraph}).
+        ($\Delta \raempl{E}_{\md}$ and $\Delta \raempl{C}_{\md}$).
     
 \end{enumerate*}
 
 The rate of energy savings
-due to the direct emplacement effect  
-($\Sdot$, segment \circa{} in Fig.~\ref{fig:ExampleEnergyPathGraph})
+due to the direct emplacement effect ($\Sdot$)
 is given by
 
 \begin{equation} \label{eq:S_dot_def}
@@ -534,53 +606,13 @@ Thus,
   Re_{dempl} = 0 \; .
 \end{equation}
 %
-In the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
-point $a$ lies on the $Re_{tot} = 0\%$ line
-indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
-is the point from which all rebound effects 
-($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
-are measured.
-If rebound effects cause 
-total energy demand to return to the original energy consumption level 
-(negative sloping line through the $\circ$ point), 
-all expected energy savings are taken back by rebound effects. 
-Thus, the line of constant energy consumption through the $\circ$ point is labeled
-$Re_{tot} = 100\%$.
-The contribution of each rebound effect to total rebound 
-is represented by the distance that each component's segment
-moves across the rebound isoquants.  
-Total rebound ($Re_{tot}$) is measured linearly between and beyond the
-$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines, 
-with direct rebound in the $x$ direction and 
-indirect rebound in the $y$ direction.
-The region below and to the left of the $Re_{tot} = 0\%$ line
-in Fig.~\ref{fig:ExampleEnergyPathGraph}
-exhibits negative rebound, indicating hyperconservation.
-The region above and to the right of the $Re_{tot} = 100\%$ line 
-shows backfire, 
-i.e.\ greater total energy consumption after the EEU than before it. 
 
 Although the direct emplacement effect does not cause rebound, 
-Fig.~\ref{fig:ExampleEnergyPathGraph} shows that
 indirect emplacement effects may indeed cause rebound.
 Indirect emplacement effects 
-(segments \ab{} and \bstar{}
-in Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}) 
 account for the life cycle of the energy conversion device,
 including energy embodied by manufacturing processes (subscript $emb$) and
 maintenance and disposal activities (subscript $\md$).
-In the notional energy path graph (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
-emplacement rebound is negative ($Re_{empl} < 0$),
-because the upgraded device has a lesser
-embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$)
-and a lesser maintenance and disposal expenditure rate ($\rbempl{C}_{\md} > \raempl{C}_{\md}$)
-than the original device.
-Fig.~\ref{fig:ExampleCostPathGraph} shows segments \ab{} and \bstar{}
-moving in the negative $y$ direction,
-consistent with a lower capital expenditure rate
-($\rbempl{C}_{cap} > \raempl{C}_{cap}$) and 
-a reduced maintenance and disposal expenditure rate
-($\rbempl{C}_{\md} > \raempl{C}_{\md}$).
 
 One of the unique features of this framework
 is that independent analyses of embodied energy and 
@@ -589,10 +621,7 @@ We note that the different terms
 (embodied energy rate, $\rate{E}_{emb}$, and
 capital cost rate, $\rate{C}_{cap}$)
 might seem to imply different processes, 
-but they actually refer to the same emplacement effect, 
-namely segment \ab{} in energy and expenditure path graphs
-(Figs.~\ref{fig:ExampleEnergyPathGraph} and
-\ref{fig:ExampleCostPathGraph}, respectively).
+but they actually refer to the same emplacement effect.
 Purchasing an upgraded device
 (which likely leads to $\rbempl{C}_{cap} \neq \raempl{C}_{cap}$)
 will likely mean a changed embodied energy rate ($\rbempl{E}_{emb} \neq \raempl{E}_{emb}$) 
@@ -600,15 +629,6 @@ to provide the same energy service.
 Our names for these aspects of rebound (embodied energy and capital cost)
 reflect common usage 
 in the energy and economics fields, respectively.
-In the notional graphs of
-Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
-embodied energy rates and capital cost rates
-(represented by segments \ab{}) 
-move in the same direction (both in the negative $y$ direction).
-However, both segments \ab{} could move in the positive $y$ direction, or
-they could move in opposite directions, 
-depending on the results of the independent analyses for 
-embodied energy and capital cost rates.
 
 Consistent with the energy analysis literature, 
 we define embodied energy 
@@ -638,8 +658,7 @@ $\rbempl{E}_{emb} = \bempl{E}_{emb} / \bempl{t}_{\life}$
 and 
 $\raempl{E}_{emb} = \aempl{E}_{emb} / \aempl{t}_{\life}$.
 The change in embodied final energy due to the EEU (expressed as a rate) is given by
-$\Delta \raempl{E}_{emb} = \raempl{E}_{emb} - \rbempl{E}_{emb}$
-and is shown as segment \ab{} in Fig.~\ref{fig:ExampleEnergyPathGraph}.
+$\Delta \raempl{E}_{emb} = \raempl{E}_{emb} - \rbempl{E}_{emb}$.
 The expression for embodied energy rebound is
 
 \begin{equation} \label{eq:Re_emb}
@@ -660,14 +679,11 @@ all other things being equal.
 However, if the upgraded device has longer life than the original device
 ($\aempl{t}_{\life} > \bempl{t}_{\life}$),
 $\raempl{E}_{emb} - \rbempl{E}_{emb}$ could be negative,
-meaning that the upgraded device has a lower embodied energy rate than the original device,
-as shown by point \emph{b} being below point \emph{a} 
-in the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph}.
+meaning that the upgraded device has a lower embodied energy rate than the original device.
 
 In addition to embodied energy, 
 indirect emplacement effect rebound accounts for
-energy demanded by maintenance and disposal~($\md$) activities
-(segments \bstar{} in Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}).
+energy demanded by maintenance and disposal~($\md$) activities.
 Maintenance expenditures are typically modeled as a per-year expense, a rate (e.g., $\rbempl{C}_m$).
 Disposal costs (e.g., $\bempl{C}_d$) are one-time expenses incurred 
 at the end of the useful life of the energy conversion device.
@@ -683,8 +699,7 @@ expenditures imply energy consumption
 elsewhere in the economy at its overall energy intensity~($I_E$).
 Therefore, the change in energy consumption rate caused by a change 
 in maintenance and disposal expenditures
-is given by $\Delta \raempl{C}_{\md} I_E = (\raempl{C}_{\md} - \rbempl{C}_{\md}) I_E$, 
-shown as segment \bstar{} in Fig.~\ref{fig:ExampleEnergyPathGraph}.
+is given by $\Delta \raempl{C}_{\md} I_E = (\raempl{C}_{\md} - \rbempl{C}_{\md}) I_E$.
 Rebound from maintenance and disposal activities 
 is given by 
 
@@ -745,51 +760,32 @@ The substitution effect involves
 Thus, two terms comprise substitution effect rebound,
 direct substitution rebound ($Re_{dsub}$) and
 indirect substitution rebound ($Re_{isub}$).
-The substitution effect is shown by segments
-\starc{} (the indirect component) and \chat{} (the direct component) 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
 
-The substitution effect is best described 
-with reference to a consumption path graph (e.g., Fig.~\ref{fig:ExampleConsPathGraph}).
-Prior to the EEU, the consumption basket (of the energy service and other goods)
-is represented by the $\circ$ point. 
-The budget constraint,
-i.e.\ the amount of money available for final goods purchases,
-is shown as isoquant \circcirc{}.
-The \circcirc{} line is tangent to the lower indifference curve 
-(\iicirc{}) at point $\circ$, the optimal consumption
-bundle prior to the EEU.
+% The substitution effect is best described 
+% with reference to a consumption path graph (e.g., Fig.~\ref{fig:ExampleConsPathGraph}).
 After emplacement of the more efficient device
 (but before the substitution effect), 
-the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$),
-pivoting the budget constraint counterclockwise about the $\circ$ point.
-The budget line \starstar{} indicates the
-cost of purchasing the original consumption bundle
-at the new prices.
-The substitution effect indicates the cheaper, optimal
-consumption bundle at the $\wedge$ point. 
+the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
+% pivoting the budget constraint counterclockwise about the $\circ$ point.
 This compensating variation
-translates into a lower budget constraint \hathat{} 
-in Fig.~\ref{fig:ExampleConsPathGraph}.
-The $\wedge$ point shows consumption with new prices yielding utility
+translates into a lower budget constraint % \hathat{} 
+% in Fig.~\ref{fig:ExampleConsPathGraph}.
+% The $\wedge$ point shows consumption with new prices yielding utility
+After compensating variation, consumption at the new prices yields utility
 at the same level as prior to the EEU and minimizing expenditure, 
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
 
 Rebound from the substitution effect is typically decomposed into 
-indirect (the decrease in other goods consumption, segment \starc{}) 
+indirect (the decrease in other goods consumption) 
 and 
-direct (the increase in energy service consumption, segment \chat{})
+direct (the increase in energy service consumption)
 components.
-The impact of the substitution effect on energy consumption rates and expenditure rates
-can be seen in Figs.~\ref{fig:ExampleEnergyPathGraph}
-and~\ref{fig:ExampleCostPathGraph}, respectively.
-
 An approximate utility model
 is often used in the literature
 (e.g., see \citet[p.~17, footnote~43]{Borenstein:2015aa})
 for determining 
-the post-substitution effect point
+post-substitution effect consumption 
 and therefore $Re_{dsub}$ and $Re_{isub}$.
 The approximate utility model assumes that 
 the compensated energy service price elasticity of energy service demand ($\eqspsC$) and
@@ -861,9 +857,9 @@ which can be rearranged to
 \end{equation}
 
 To find the post-substitution effect point ($\wedge$),
-we solve for the location on the \iicirc{} indifference curve
+we solve for the location on the indifference curve
 where its slope is equal to the slope of the
-\starstar{} expenditure line, 
+original expenditure line, 
 assuming the CES utility model.%
 \footnote{
   Other utility models could be used.
@@ -934,9 +930,7 @@ and net savings after the substitution effect ($\rasub{N}$)
 are presented in Tables~\ref{tab:empleffect} and~\ref{tab:subeffect}.
 Rebound from the income effect quantifies the rate of additional energy demand 
 that arises when the energy conversion device owner spends net
-savings from the EEU
-(segments \hatd{} and \dbar{} in 
-Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}), 
+savings from the EEU.
 
 Additional energy demand from the income effect
 is determined by several constraints.
@@ -956,9 +950,9 @@ A second constraint is that net savings are spent completely on
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item additional spending on the energy service ($\rbinc{q}_s < \rainc{q}_s$, segment \hatd{}) and
+  \item additional spending on the energy service ($\rbinc{q}_s < \rainc{q}_s$) and
   
-  \item additional spending on other goods ($\rbinc{q}_o < \rainc{q}_o$, segment \dbar{}).
+  \item additional spending on other goods ($\rbinc{q}_o < \rainc{q}_o$).
     
 \end{enumerate*}
 %
@@ -970,13 +964,9 @@ The CES utility function
 allocates spending on the energy service and other goods 
 in the same proportion as post-substitution-effect 
 expenditures on the energy service and other goods,
-due to its homotheticity, 
-so that the income expansion path is a ray (\rr{}) on consumption path graphs.
+due to its homotheticity.
 This constraint is satisfied by construction below, 
 particularly via an effective income term ($\Mdothatprime$).
-In the consumption path graph, the pre- and post-income-effect 
-points ($\wedge$ and $-$, respectively)
-lie along ray \rr{} from the origin through point $\wedge$ in Fig.~\ref{fig:ExampleConsPathGraph}.
 However, this framework could accommodate non-homothetic preferences
 for spending across the income effect (turning the income
 expansion path into a more general curve).
@@ -1005,9 +995,6 @@ The ratio of rates of energy service consumed across the income effect is given 
 \end{equation}
 %
 Homotheticity means that $\eqsM = 1$. 
-The increased consumption rate of the energy service is 
-represented by segments \hatd{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
 
 Effective income ($\Mdothatprime$) is given by 
 
@@ -1060,11 +1047,9 @@ leads to indirect income effect rebound ($Re_{iinc}$).
 The ratio of rates of other goods consumed across the income effect is given by
 
 \begin{equation} \label{eq:qorat_eqoM}
-  \incprefoeqn \; 
+  \incprefoeqn \; .
 \end{equation}
 %
-and is represented by segments \dbar{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
 Under the assumption that prices of other goods are exogenous
 (see Appendix~\ref{sec:other_goods_expenditures}), 
 the ratio of rates of other goods consumption ($\rainc{q}_o/\rbinc{q}_o$)
@@ -1216,8 +1201,6 @@ Macro rebound is given by
 \end{equation}
 %
 (See Table~\ref{tab:macroeffect}.) 
-The macro effect is shown as segment \bartilde{}
-in Fig.~\ref{fig:ExampleEnergyPathGraph}.
 After some algebra (Appendix~\ref{sec:Re_macro}), 
 we arrive at an expression for macro effect rebound:
 
@@ -1571,15 +1554,6 @@ using an early version of this framework.
 \input{pieces/other_goods_expenditures.tex}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Income and macro effects and relation to the
-marginal propensity to consume (MPC)}
-\label{sec:income_macro_mpc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
 
 
 

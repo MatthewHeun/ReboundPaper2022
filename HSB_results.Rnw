@@ -98,7 +98,36 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Introduction ****
+Energy rebound is an interdisciplinary challenge that threatens
+a low-carbon future~\citep{Brockway:2017a}.
+Rebound makes energy efficiency less effective
+at decreasing energy consumption and reducing carbon emissions
+by taking back (or reversing, in the case of ``backfire'') 
+energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
+Rebound is an explanation for why 
+energy consumption and carbon emissions 
+have never been absolutely decoupled 
+from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
+
+
+
+
+The key contributions of this paper are 
+development of the first (to our knowledge)
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item visualizations of rebound effects
+        in energy, expenditure, and consumption spaces to assist both 
+        energy analysts and economists
+        in understanding nuances of rebound effects and
+        
+  \item open source tools to calculate rebound 
+        for other energy efficiency upgrades.
+  
+\end{enumerate*}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,10 +142,200 @@ rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
 rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
 
+%++++++++++++++++++++++++++++++
+\subsection{Rebound path graphs}
+\label{sec:rebound_path_graphs}
+%++++++++++++++++++++++++++++++
 
-Notional rebound path graphs
-(Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph})
-illustrate the framework.
+Any comprehensive rebound analysis must track
+energy, expenditure, and consumption
+at the device (direct location) and elsewhere in the economy (indirect location)
+across all adjustments for all rebound effects. 
+One novel contribution of this paper is visualization of rebound effects 
+in three spaces:
+the energy space, the expenditure space, and the consumption space.
+Each space is represented by a plane that contains a path graph, illustrating adjustments
+to energy, expenditure, or consumption in response to the EEU.
+(See Appendix~\ref{sec:graph_details} for 
+detailed mathematical descriptions of rebound path graphs.)
+Important quantities for the path graphs are
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$), 
+  
+  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$), 
+  
+  \item the consumption rate of the energy service ($\rate{q}_s$), and
+  
+  \item the expenditure rate on other consumption goods ($\rate{C}_o$).
+    
+\end{enumerate*}
+%
+In rebound path graphs, effects at the direct location are placed on the $x$-axis, and 
+effects at the indirect location are placed on the $y$-axis.
+
+% Notional rebound path graphs
+% (Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph})
+% illustrate the framework.
+Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
+notional rebound path graphs in energy, expenditure, and consumption spaces.
+The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
+Later (Section~\ref{sec:examples}), 
+rebound path graphs (with scales) illustrate the numerical examples.
+
+Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy path graph, with 
+the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
+and
+the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.
+Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent the rebound stages
+between the rebound effects,
+as shown in Fig.~\ref{fig:flowchart}.
+Points $a$, $b$, $c$, and $d$ represent intermediate stages.
+Lines with negative slope through points 
+$\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
+indicate energy consumption isoquants
+(sum of direct and indirect components) at key points.
+Table~\ref{tab:path_graph_segments} shows 
+segments and rebound effects for all rebound path graphs.
+Note that segment \bartilde{} appears only on energy path graphs, 
+because the framework tracks energy consumption but not expenditures or consumption
+in the macro effect.
+
+\begin{table}
+\centering % Centered table
+\caption{Rebound path graph segments.} 
+\begin{tabular}{r l l c}
+  \toprule
+  Segment      & Rebound effect            & Symbol           \\
+  \midrule
+  \circa{}     & Direct emplacement        & $Re_{dempl}$     \\
+  \ab{}        & Embodied energy           & $Re_{emb}$       \\
+  \bstar{}     & Maintenance and disposal  & $Re_{\md}$       \\
+  \midrule
+  \starc{}     & Indirect substitution     & $Re_{isub}$      \\ 
+  \chat{}      & Direct substitution       & $Re_{dsub}$      \\ 
+  \midrule
+  \hatd{}      & Direct income             & $Re_{dinc}$      \\ 
+  \dbar{}      & Indirect income           & $Re_{iinc}$      \\ 
+  \midrule
+  \bartilde{}  & Macro                     & $Re_{macro}$     \\
+  \bottomrule
+\end{tabular}
+\label{tab:path_graph_segments}
+\end{table}
+
+In the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
+point $a$ lies on the $Re_{tot} = 0\%$ line
+indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
+is the point from which all rebound effects 
+($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
+are measured.
+If rebound effects cause 
+total energy demand to return to the original energy consumption level 
+(negative sloping line through the $\circ$ point), 
+all expected energy savings are taken back by rebound effects. 
+Thus, the line of constant energy consumption through the $\circ$ point is labeled
+$Re_{tot} = 100\%$.
+The contribution of each rebound effect to total rebound 
+is represented by the distance that each component's segment
+moves across the rebound isoquants.  
+Total rebound ($Re_{tot}$) is measured linearly between and beyond the
+$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines, 
+with direct rebound in the $x$ direction and 
+indirect rebound in the $y$ direction.
+The region below and to the left of the $Re_{tot} = 0\%$ line
+in Fig.~\ref{fig:ExampleEnergyPathGraph}
+exhibits negative rebound, indicating hyperconservation.
+The region above and to the right of the $Re_{tot} = 100\%$ line 
+shows backfire, 
+i.e.\ greater total energy consumption after the EEU than before it. 
+
+In the notional energy path graph (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
+emplacement rebound is negative ($Re_{empl} < 0$),
+because the upgraded device has a lesser
+embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$)
+and a lesser maintenance and disposal expenditure rate ($\rbempl{C}_{\md} > \raempl{C}_{\md}$)
+than the original device.
+Fig.~\ref{fig:ExampleCostPathGraph} shows segments \ab{} and \bstar{}
+moving in the negative $y$ direction,
+consistent with a lower capital expenditure rate
+($\rbempl{C}_{cap} > \raempl{C}_{cap}$) and 
+a reduced maintenance and disposal expenditure rate
+($\rbempl{C}_{\md} > \raempl{C}_{\md}$).
+
+In the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph},
+the upgraded device has a lower embodied energy rate than the original device,
+as shown by point \emph{b} being below point \emph{a}.
+
+A notional expenditure path graph is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
+with 
+the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
+the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
+Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
+indicate expenditure isoquants (sum of direct and indirect components).
+
+In the notional graphs of
+Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
+embodied energy rates and capital cost rates
+(represented by segments \ab{}) 
+move in the same direction (both in the negative $y$ direction).
+However, both segments \ab{} could move in the positive $y$ direction, or
+they could move in opposite directions, 
+depending on the results of the independent analyses for 
+embodied energy and capital cost rates.
+
+A notional consumption path graph is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
+The indexed rate of energy service demand ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
+the indexed rate of other goods demand ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
+Iso-cost loci of energy service and other goods demand
+are shown as lines with negative slope. 
+
+The substitution effect is shown by segments
+\starc{} (the indirect component) and \chat{} (the direct component) 
+in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+Indifference curves are denoted by \iicirc{} and \iibar{}. 
+A ray from the origin through the $\wedge$ point is denoted \rr{}.
+Note that points $\circ$, $a$, $b$, and $*$ collapse together
+on consumption path graphs, because both
+the rate of energy service consumption and 
+the rate of other goods consumption are
+unchanged across the emplacement effect
+($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_o = \raempl{C}_o$, respectively).
+
+Prior to the EEU, the consumption basket (of the energy service and other goods)
+is represented by the $\circ$ point. 
+The budget constraint,
+i.e.\ the amount of money available for final goods purchases,
+is shown as isoquant \circcirc{}.
+The \circcirc{} line is tangent to the lower indifference curve 
+(\iicirc{}) at point $\circ$, the optimal consumption
+bundle prior to the EEU.
+The budget line \starstar{} indicates the
+cost of purchasing the original consumption bundle
+at the new prices.
+The substitution effect indicates the cheaper, optimal
+consumption bundle at the $\wedge$ point. 
+
+Rebound from the substitution effect is typically decomposed into 
+indirect (the decrease in other goods consumption, segment \starc{}) 
+and 
+direct (the increase in energy service consumption, segment \chat{})
+components.
+The impact of the substitution effect on energy consumption rates and expenditure rates
+can be seen in Figs.~\ref{fig:ExampleEnergyPathGraph}
+and~\ref{fig:ExampleCostPathGraph}, respectively.
+The income expansion path is a ray (\rr{}) on consumption path graphs.
+In the consumption path graph, the pre- and post-income-effect 
+points ($\wedge$ and $-$, respectively)
+lie along ray \rr{} from the origin through point $\wedge$ in Fig.~\ref{fig:ExampleConsPathGraph}.
+
+The increased consumption rate of the energy service is 
+represented by segments \hatd{} 
+in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+
+
+
 
 <<ExampleEnergyPathGraph,  echo=FALSE, warning=FALSE, fig.cap="Notional energy path graph.", fig.width=6, fig.height=4>>=
 stage_size <- 10
@@ -1588,486 +1807,7 @@ rebound_results %>%
 @
 
 
-%++++++++++++++++++++++++++++++
-\subsection{Sensitivity analyses}
-\label{sec:sensitivity_analyses}
-%++++++++++++++++++++++++++++++
 
-Sensitivity analyses show the effect of 
-independently varied parameters on total rebound and rebound components.
-In the context of this framework,
-sensitivity analyses
-can show important trends, tendencies, and relationships
-between rebound parameters and rebound magnitudes.
-Key rebound parameters include 
-post-EEU efficiency ($\amacro{\eta}$),
-capital cost ($\amacro{C}_{cap}$),
-energy price ($p_E$),
-uncompensated price elasticity of energy service demand ($\eqspsUC$), 
-and the macro factor ($k$).
-Sensitivity analyses must be interpreted carefully,
-because rebound parameters are not expected to be 
-independent from each other.
-
-In each subsection below, a series of graphs
-shows the effects of varying each of these five key rebound parameters
-($\amacro{\eta}$, 
-$\amacro{C}_{cap}$, 
-$p_E$, 
-$\eqspsUC$, 
-and $k$)
-on total energy rebound ($Re_{tot}$) and its components
-($Re_{emb}$, $Re_{md}$, $Re_{dsub}$, $Re_{isub}$,
-$Re_{dinc}$, $Re_{iinc}$, and $Re_{\macro}$).
-In the graphs, 
-nominal values for the rebound parameters are shown as points, 
-and sensitivity trends are shown as lines. 
-A limitation of each sensitivity analysis 
-is noted at the end of each subsection.
-
-
-%------------------------------
-\subsubsection{Effect of post-EEU efficiency ($\amacro{\eta}$)} 
-\label{sec:effect_of_efficiency}
-%------------------------------
-
-<<efficiency_ratios, echo=FALSE>>=
-car_efficiency_ratio <- (rebound_results %>% dplyr::filter(Case == "Car") %>% dplyr::select("eta_engr_units_star") / rebound_results %>% dplyr::filter(Case == "Car") %>% dplyr::select("eta_engr_units_orig")) %>% 
-  unlist() %>% 
-  formatC(digits = 3)
-
-lamp_efficacy_ratio <- (rebound_results %>% dplyr::filter(Case == "Lamp") %>% dplyr::select("eta_engr_units_star") / rebound_results %>% dplyr::filter(Case == "Lamp") %>% dplyr::select("eta_engr_units_orig")) %>% 
-  unlist() %>% 
-  formatC(digits = 3)
-@
-
-Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
-both the energy takeback rate and expected energy savings ($\Sdot$)
-increase with post-EEU efficiency ($\amacro{\eta}$), 
-but the relationship is asymptotic.
-Each unit increase of fuel economy or lighting efficacy is less effective than
-the previous unit increase of fuel economy or lighting efficacy
-for saving energy.
-At very high levels of fuel economy or lighting efficacy, 
-a unit increase leads to almost no additional energy savings.
-Thus, we can say there are diminishing returns of fuel economy and lighting efficacy,
-leading to saturation of energy savings at very high levels of fuel economy and lighting efficacy.
-A simple example illustrates.
-A $\bempl{\eta} = 25$ mpg car drives $\bempl{q}_s = 100$ miles 
-using $\bempl{E}_s = 4$ gallons of gasoline.
-A more-efficient car ($\amacro{\eta} = 30$ mpg) is expected to use
-$\aempl{E}_s = 3.33$ gallons to drive the same distance,
-a savings of $\Sdot = 0.67$ gallons.
-Another 5 mpg boost in efficiency (to $\amacro{\eta} = 35$ mpg)
-will use $\aempl{E}_s = 2.86$ gal to drive 100 miles, 
-a further expected savings of only $\Sdot = 0.47$ gallons.
-Each successive 5 mpg boost in fuel economy 
-saves less energy than the previous 5 mpg boost in fuel economy.
-
-
-<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4>>=
-actual_cases <- rebound_data %>% 
-  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car", "Lamp"))
-
-eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
-                       Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
-
-eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases,
-                                                   parameterization = eta_sens_params) %>%
-  dplyr::mutate(
-    takeback = .data[[ReboundTools::rebound_terms$Re_tot]] * .data[[ReboundTools::star_vars$S_dot_dev]]
-  )
-
-# This is a hacky formatter function 
-# that formats the x-axis numbers of the graphs.
-# The argument x_breaks is the breaks for an axis.
-# The function checks to see if the breaks are > 1000 and divides by 1000 in that case.
-# This approach works, because lm-hr/kW-hr values are > 1000 for the lamp example
-# but the car example has mpg (which are all less than 100).
-# So this function divides the Lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
-eta_tilde_formatter <- function(x_breaks) {
-  if (all(x_breaks > 1000)) {
-    # To convert Lm-hr/kW-hr to Lm-hr/W-hr.
-    return(x_breaks/1000)
-  }
-  # To leave mpg alone.
-  return(x_breaks)
-}
-
-sensitivity_graphs(.parametric_data = eta_sens_data,
-                   x_var = "eta_engr_units_star", 
-                   y_var = c(ReboundTools::star_vars$S_dot_dev, "takeback")) +
-  ggplot2::facet_wrap(facets = "Case", scales = "free") +
-  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
-  ggplot2::scale_y_continuous(limits = c(0, NA)) +
-  ggplot2::scale_colour_manual(values = c(S_dot_dev = "black", takeback = "black"), guide = "none") + 
-  ggplot2::scale_size_manual(values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
-  ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
-                y = expression("Takeback rate and "*dot(S)[dev]*" [MJ/yr]"),
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() + 
-  ggplot2::theme(        
-    # Move the facet labels out of the graphs slightly.
-    strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2))
-  )
-@
-
-
-Saturation can be seen mathematically, too.
-Taking the limit as $\amacro{\eta} \rightarrow \infty$ 
-in Eq.~(\ref{eq:Sdot}) gives $\Sdot = \rbempl{E}_s$, 
-not $\infty$. 
-Thus, efficiency saturation must occur.
-Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}
-shows that this framework correctly replicates
-expected efficiency saturation trends.
-
-Saturation is especially noticeable in the lamp example
-compared to the car example,
-the difference being that 
-the LED lamp is already much more efficient than the incandescent lamp
-(\Sexpr{lamp_efficacy_ratio}$\times$),
-whereas the hybrid car is only 
-\Sexpr{car_efficiency_ratio}$\times$ more efficient than the conventional gasoline car. 
-Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ lm-hr/W-hr, 
-the energy efficient LED
-is far closer to efficiency saturation than the hybrid vehicle 
-(at $\amacro{\eta} = \Sexpr{mpg_better}$ mpg).
-As a result, further increases in the LED lamp's efficiency 
-are less effective than further increases in the hybrid car's efficiency.
-
-That said, actual savings is the difference between the expected energy savings line (solid line)
-and the takeback line (dashed line) in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}.
-Because the gap between the lines grows, 
-higher efficiency yields greater energy savings,
-even after accounting for rebound effects.
-But the actual savings are always less than expected savings, due to takeback.
-
-Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
-expected energy savings ($\Sdot$) increase faster than takeback 
-as $\amacro{\eta}$ increases.
-Thus, total rebound ($Re_{tot}$, the ratio of 
-takeback rate to expected energy savings rate in Eq.~(\ref{eq:Re_takeback})),
-decreases as efficiency grows.
-The lamp exhibits a relatively smaller rebound decline with efficiency,
-because the lamp example is closer to saturation than the car example.
-
-Fig.~\ref{fig:all_Re_terms_eta_graph} shows the variation of all rebound components
-with post-EEU efficiency ($\amacro{\eta}$).
-In the car and lamp examples, 
-direct substitution rebound ($Re_{dsub}$) is the 
-rebound component 
-most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
-
-A limitation of the energy efficiency sensitivity analysis is that 
-post-EEU efficiency ($\amacro{\eta}$)
-is unlikely to be independent of other factors, 
-such as capital cost ($\amacro{C}_{cap}$).
-
-Note that the sensitivity analysis on post-upgrade efficiency 
-($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
-is the only sensitivity analysis that requires careful explication
-of both the numerator and denominator of Eq.~(\ref{eq:Re_takeback}),
-as in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}, 
-because both the numerator and denominator of Eq.~(\ref{eq:Re_takeback})
-change when post-upgrade efficiency ($\amacro{\eta}$) changes.
-The denominator of Eq.~(\ref{eq:Re_takeback}) doesn't change for
-the sensitivity analyses of Figs.~\ref{fig:all_Re_terms_C_cap_graph}--\ref{fig:all_Re_terms_k_graph}.
-Thus, for the remaining sensitivity analyses, 
-when the rebound percentage increases (decreases), 
-the energy takeback rate in the numerator of Eq.~(\ref{eq:Re_takeback})
-increases (decreases) proportionally,
-and the actual energy savings rate decreases (increases) accordingly.
-
-
-<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$).", fig.width=6, fig.height=4>>=
-Re_graph_params <- ReboundTools::sens_graph_params
-Re_graph_params[["include_x_axis"]] <- TRUE
-Re_graph_params[["use_latex_legend"]] <- TRUE
-
-Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
-                                                ReboundTools::rebound_terms$Re_macro,
-                                                ReboundTools::rebound_terms$Re_dinc,
-                                                ReboundTools::rebound_terms$Re_iinc,
-                                                ReboundTools::rebound_terms$Re_dsub,
-                                                ReboundTools::rebound_terms$Re_isub,
-                                                ReboundTools::rebound_terms$Re_dempl,
-                                                ReboundTools::rebound_terms$Re_emb,
-                                                ReboundTools::rebound_terms$Re_md)] %>% 
-  unlist()
-
-rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_params, 
-                    x_var = "eta_engr_units_tilde", 
-                    Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
-  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
-  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
-                y = "Rebound terms [-]",
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() + 
-  ggplot2::theme(legend.text.align = 0, 
-                 # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
-@
-
-
-%------------------------------
-\subsubsection{Effect of capital cost ($\amacro{C}_{cap}$)} 
-\label{sec:effect_of_capital_cost}
-%------------------------------
-
-The sensitivity of energy rebound
-to capital cost ($\amacro{C}_{cap}$) is shown
-in Fig.~\ref{fig:all_Re_terms_C_cap_graph}.
-All other things being equal,
-as capital cost of the EEU rises, 
-less net savings result from the emplacement effect,
-leading to smaller income, macro, and total rebound.
-The same effects would be observed
-with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
-
-A limitation of the capital cost sensitivity analysis is that
-capital cost ($\amacro{C}_{cap}$) is unlikely to be
-independent of $\amacro{\eta}$.
-Within a given energy efficiency technology
-(e.g., hybrid cars or LED lamps),
-greater capital cost ($\amacro{C}_{cap}$) may be associated with
-greater service efficiency ($\amacro{\eta}$).
-$\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
-not independently.
-
-<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$).", fig.width=6, fig.height=4>>=
-C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
-                              Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
-
-rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_sens_params,
-                    x_var = "C_cap_star", 
-                    Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
-  ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(30000, 36000, by = 2000))) + 
-  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
-  ggplot2::labs(x = expression(tilde(C)[cap]*" [$]"),
-                y = "Rebound terms [-]",
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() +
-  ggplot2::theme(legend.text.align = 0,
-                 # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
-@
-
-
-%------------------------------
-\subsubsection{Effect of energy price ($p_E$)} 
-\label{sec:effect_of_energy_price}
-%------------------------------
-
-<<Germany_results, echo=FALSE>>=
-# In the calculations, we include same parameters for German energy prices.
-# Extract that information here for use in the paragraph below.
-Car_Germany_Re_tot <- rebound_results %>% 
-  dplyr::filter(Case == "Car - Germany") %>% 
-  dplyr::select("Re_tot")
-Lamp_Germany_Re_tot <- rebound_results %>% 
-  dplyr::filter(Case == "Lamp - Germany") %>% 
-  dplyr::select("Re_tot")
-@
-
-
-The effect of energy price on rebound is shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}.
-Increasing energy prices lead to larger total rebound ($Re_{tot}$),
-because higher energy prices lead to more net savings ($\rasub{N}$)
-to be spent by the device owner.
-All other things being equal, more net savings leads to 
-more spending on other goods and services that demand energy.
-
-Fig.~\ref{fig:all_Re_terms_p_E_graph} also 
-shows the effect of energy price ($p_E$)
-on all rebound components.
-Most rebound components increase with energy price, 
-with the car and lamp examples exhibiting different sensitivities. 
-Substitution effects ($Re_{dsub}$ and $Re_{isub}$)
-are the only rebound components that decrease with energy price ($p_E$).
-Substitution effects decrease with energy price, because 
-at high energy price, less behavior adjustment is needed to re-equilibrate 
-after emplacement of the efficient device.
-
-<<GermanPrices, echo=FALSE>>=
-price_data <- tibble::tribble(~Case, ~Country, ~p_E_engr_units,
-                              "Car", "DEU", rebound_data %>% 
-                                dplyr::filter(Case == "Car - Germany") %>% 
-                                magrittr::extract2("p_E_engr_units"),     # $/USgal
-                              "Lamp", "DEU", rebound_data %>% 
-                                dplyr::filter(Case == "Lamp - Germany") %>% 
-                                magrittr::extract2("p_E_engr_units"))     # $/W-hr
-@
-
-In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
-\footnote{
-  For the car example,
-  the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
-  price in 2018~\citep{finanzen}.
-  For the lamp example,
-  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/year,
-  an average value for German households~\citep{bundesministerium}.
-  Converting currency (at 1 \euro{} = \$1.21) and
-  physical units gives 
-  \Sexpr{price_data %>% 
-           dplyr::filter(Country == "DEU" & Case == "Car") %>% 
-           magrittr::extract2("p_E_engr_units")}~\$/US~gallon and 
-  \Sexpr{price_data %>% 
-           dplyr::filter(Country == "DEU" & Case == "Lamp") %>% 
-           magrittr::extract2("p_E_engr_units")}~\$/kW-hr.}
-%
-are shown as vertical lines,
-providing an indication of possible energy price variations.
-All other things being equal, 
-if U.S.\ residents paid Germany's energy prices,
-energy rebound would be 
-$\Sexpr{formatC(unlist(Car_Germany_Re_tot * 100), digits = 3)}$\%
-for the car example and 
-$\Sexpr{formatC(unlist(Lamp_Germany_Re_tot * 100), digits = 3)}$\%
-for the lamp example, assuming $k = 1$.
-
-A limitation of the energy price sensitivity analysis arises from the fact that
-energy price is not independent of other parameters.
-Indeed, other rebound parameters
-would change along with energy price
-(especially if moving from one country to another),
-including capital cost ($\amacro{C}_{cap}$), 
-maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
-energy intensity of the economy ($I_E$), and
-energy service consumption rate ($\rbempl{q}_s$).
-
-<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines.", fig.width=6, fig.height=4>>=
-p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
-                        Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
-
-rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_params, 
-                    x_var = "p_E_engr_units", 
-                    Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
-  ggplot2::geom_vline(data = price_data, 
-                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
-                      mapping = ggplot2::aes(xintercept = p_E_engr_units), 
-                      linewidth = 0.1) +
-  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) +
-  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
-  ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/kW-hr (Lamp)]"),
-                y = "Rebound terms [-]",
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() +
-  ggplot2::theme(legend.text.align = 0,
-                 # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
-@
-
-
-%------------------------------
-\subsubsection{Effect of elasticity ($\eqspsUC$)} 
-\label{sec:effect_of_elasticity}
-%------------------------------
-
-Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
-with the uncompensated price elasticity of energy service demand ($\eqspsUC$).
-The effect is exponential, and
-total rebound increases with larger negative values of $\eqspsUC$, as expected.
-The lamp example also shows stronger exponential variation than the car example.
-The main reason that total rebound values 
-are different between the two examples
-is the larger absolute value of elasticity ($\eqspsUC$) 
-for the lamp ($-0.4$) compared to the car ($-0.2$).
-Were the car to have the same elasticity as the lamp ($-0.4$), 
-total rebound would be approximately the same for both examples ($\sim 50$\%).
-Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
-($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC$.
-For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
-substantially with $\eqspsUC$, 
-because net savings increases substantially with $\eqspsUC$. 
-
-A limitation of the elasticity sensitivity study derives from limitations of the 
-CES utility model itself, which constrains price elasticity variation
-given an elasticity of substitution.
-Uneconomic conditions should be avoided.
-For example, negative direct substitution rebound ($Re_{dsub} < 0$)
-is obtained when $\left| \eqspsUC \right| < \fCs$,
-because the elasticity of substitution goes negative ($\sigma < 0$).
-(See Eq.~(\ref{eq:sigma}) in Appendix~\ref{sec:utility_and_elasticities}.)
-In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
-would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
-thereby avoiding the uneconomic condition.
-However, a univariate sensitivity study cannot capture this effect and is
-best used for smaller variations in $\eqspsUC$
-about a nominal value.
-
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4>>=
-eps_sens_params <- list(Car = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)),
-                        Lamp = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)))
-
-rebound_terms_graph(rebound_data = actual_cases, parameterization = eps_sens_params,
-                    x_var = "e_qs_ps_UC", 
-                    Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
-  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
-  ggplot2::scale_x_reverse() +
-  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]),
-                y = "Rebound terms [-]",
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() +
-  ggplot2::theme(legend.text.align = 0,
-                 # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
-@
-
-
-%------------------------------
-\subsubsection{Effect of macro factor ($k$)} 
-\label{sec:effect_of_macro_factor}
-%------------------------------
-
-The sensitivity of energy rebound 
-to the macro factor ($k$) is shown 
-in Fig.~\ref{fig:all_Re_terms_k_graph}.
-The macro factor has a linear effect on total rebound ($Re_{tot}$)
-through the macro rebound component ($Re_{\macro}$).
-All other rebound components are constant when $k$ is varied independently.
-
-A limitation of the macro factor sensitivity analysis is that
-the macro factor ($k$) is unlikely to be 
-independent of $I_E$, because 
-different values of $k$ imply a different macroeconomy.
-
-<<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4>>=
-k_sens_params <- list(Car = list(k = seq(0.5, 3.5, by = 0.5)),
-                      Lamp = list(k = seq(0.5, 3.5, by = 0.5)))
-
-rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_params,
-                    x_var = "k", 
-                    Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
-  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) + 
-  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
-  ggplot2::labs(x = expression("k [-]"),
-                y = "Rebound terms [-]",
-                colour = ggplot2::element_blank(),
-                size = ggplot2::element_blank(),
-                linetype = ggplot2::element_blank()) +
-  MKHthemes::xy_theme() +
-  ggplot2::theme(legend.text.align = 0,
-                 # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
-@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2246,9 +1986,6 @@ Future work could be pursued in several areas.
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item Other utility models (besides the CES utility model) 
-        could be explored for the substitution effect.
-  
   \item Further empirical studies could be performed
         to estimate the magnitude of different 
         rebound effects in a variety of real-life EEUs.
@@ -2384,6 +2121,16 @@ using an early version of this framework.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{pieces/rebound_path_graph_details.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Income and macro effects and relation to the
+marginal propensity to consume (MPC)}
+\label{sec:income_macro_mpc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<MPCAppendix, child="pieces/mpc.Rnw">>=
+@
 
 
 
