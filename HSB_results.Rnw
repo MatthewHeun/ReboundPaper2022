@@ -102,19 +102,1972 @@ library(xtable)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods: development of the comprehensive rebound framework}
+\section{Methods: development of rebound path graphs}
 \label{sec:framework}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Methods ****
 
+<<eeu_data, echo=FALSE>>=
+# Load our test cases and perform rebound analyses.
+rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
+rebound_results <- ReboundTools::rebound_analysis(rebound_data)
+@
+
+
+Notional rebound path graphs
+(Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph})
+illustrate the framework.
+
+<<ExampleEnergyPathGraph,  echo=FALSE, warning=FALSE, fig.cap="Notional energy path graph.", fig.width=6, fig.height=4>>=
+stage_size <- 10
+orig_size <- stage_size
+star_size <- stage_size
+hat_size <- stage_size - 3
+bar_size <- stage_size - 5
+tilde_size <- stage_size - 5
+
+stage_colour <- "black"
+abcd_size <- 4
+abcd_colour <- "darkgray"
+
+annotation_angle <- -45.6
+annotation_size <- 4
+annotation_colour <- "black"
+
+example_arrow_angle <- 19.0 * pi/180
+example_arrow_size <- 0.5 # width
+
+example_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                         1.01, 1.008, 'degree', 
+                                           stage_colour, orig_size, 0,
+                                         0.11, 1.008, 'a', 
+                                           abcd_colour, abcd_size, 0,
+                                         0.085, 0.973, 'b', 
+                                           abcd_colour, abcd_size, 0,
+                                         0.085, 0.95, '"*"', 
+                                           stage_colour, star_size, 0,
+                                         0.09, 0.935, 'c', 
+                                           abcd_colour, abcd_size, 0,
+                                         0.2432, 0.923, '"^"', 
+                                           stage_colour, hat_size, 0,
+                                         0.2727, 0.932, 'd', 
+                                           abcd_colour, abcd_size, 0,
+                                         0.295, 1.033, 'bold("_")', 
+                                           stage_colour, bar_size, 0,
+                                         0.29, 1.126, '"~"', 
+                                           stage_colour, tilde_size, 0,
+                                         0.04, 0.923, 'Hyperconservation', 
+                                           annotation_colour, 
+                                           annotation_size-1,
+                                           annotation_angle,
+                                         0.02, 1.043, 'Re[tot] == 0*"%"', 
+                                           annotation_colour, 
+                                           annotation_size, 
+                                           annotation_angle,
+                                         0.033, 1.004, 'Re[empl]', 
+                                           annotation_colour,  
+                                           annotation_size - 1, 
+                                           annotation_angle + 90,
+                                         0.21, 0.90, 'Re[sub]', 
+                                           annotation_colour, 
+                                           annotation_size - 1,
+                                           annotation_angle + 90,
+                                         0.39, 0.936, 'Re[inc]', 
+                                           annotation_colour, 
+                                           annotation_size, 
+                                           annotation_angle + 90,
+                                         0.68, 0.935, 'Re[macro]', 
+                                           annotation_colour, 
+                                           annotation_size, 
+                                           annotation_angle + 90,
+                                         0.754, 1.1, 'Re[tot] == 100*"%"', 
+                                           annotation_colour, 
+                                           annotation_size, 
+                                           annotation_angle,
+                                         0.95, 1.1, 'Backfire', 
+                                           annotation_colour, 
+                                           annotation_size, 
+                                           annotation_angle)
+example_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
+                                     # Re_empl arrow
+                                     0.078, 1.01, example_arrow_angle, 
+                                       -0.063, annotation_colour, example_arrow_size,
+                                     # Re_sub arrow
+                                     0.249, 0.904, example_arrow_angle, 
+                                       0.042, annotation_colour, example_arrow_size,
+                                     # Re_inc arrow
+                                     0.329, 0.905, example_arrow_angle, 
+                                       0.154, annotation_colour, example_arrow_size,
+                                     # Re_macro arrow
+                                     0.622, 0.904, example_arrow_angle, 
+                                       0.14, annotation_colour, example_arrow_size) 
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Example", 
+                               graph_types = "Energy", 
+                               indexed = TRUE) + 
+  ggplot2::xlim(0, 1.1) +
+  ggplot2::ylim(0.9, 1.15) +
+  ggplot2::xlab(expression(dot(E)[dir] * " [MJ/year]")) +
+  ggplot2::ylab(expression(dot(E)[indir] * " [MJ/year]")) +
+  ggplot2::geom_spoke(data = example_Re_arrows,
+                        mapping = ggplot2::aes(x = x,
+                                               y = y,
+                                               angle = angle,
+                                               radius = radius,
+                                               colour = colour),
+                        arrow = ggplot2::arrow(length = ggplot2::unit(0.1,"cm"))) +
+  ggplot2::geom_text(data = example_energy_labels,
+                     mapping = ggplot2::aes(x = x,
+                                            y = y,
+                                            label = lab,
+                                            colour = colour,
+                                            size = size,
+                                            angle = angle),
+                     parse = TRUE) +
+  MKHthemes::xy_theme() + 
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
+
+
+<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure path graph. CV is compensating variation.", fig.width=6, fig.height=4>>=
+cost_line_angle <- -14
+example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                       1.01, 1.003, 'degree', 
+                                       stage_colour, orig_size, 0,
+                                       0.098, 1.003, 'a', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.09, 0.972, 'b', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.128, 0.955, '"*"', 
+                                       stage_colour, star_size, 0,
+                                       0.09, 0.936, 'c', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.24, 0.9385, '"^"', 
+                                       stage_colour, hat_size, 0,
+                                       0.283, 0.937, 'd', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.285, 1.034, 'bold("_")',
+                                       stage_colour, bar_size, 0,
+                                       0.635, 1.019, 'Original~expenditure', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.43, 0.9445, 'After~emplacement', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.55, 0.9835, 'After~expected~savings', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.17, 0.9425, 'After~CV', 
+                                       annotation_colour, annotation_size-1, cost_line_angle)
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Example", 
+                               graph_types = "Expenditure", 
+                               indexed = TRUE) + 
+  # ggplot2::xlim(0, 1.1) +
+  # ggplot2::ylim(0.9995, 1.0005) +
+  ggplot2::xlab(expression(dot(C)[dir] * " [$/year]")) +
+  ggplot2::ylab(expression(dot(C)[indir] * " [$/year]")) +
+  
+  ggplot2::geom_text(data = example_cost_labels,
+                     mapping = ggplot2::aes(x = x,
+                                            y = y,
+                                            label = lab,
+                                            colour = colour,
+                                            size = size,
+                                            angle = angle),
+                     parse = TRUE) +
+  MKHthemes::xy_theme() + 
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
+
+
+<<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption path graph.", fig.width=6, fig.height=4>>=
+orig_line_label_size <- orig_size - 3
+star_line_label_size <- star_size - 4
+hat_line_label_size <- hat_size - 3
+bar_line_label_size <- bar_size - 1
+r_line_label_size <- abcd_size
+i_line_label_size <- abcd_size
+line_label_colour <- "darkgray"
+  
+labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
+                          1.05, 1.005, 'degree', 
+                            annotation_colour, orig_size,
+                          1.09, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.14, 1.0052, 'a', 
+                            abcd_colour, abcd_size,
+                          1.18, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.22, 1.006, 'b', 
+                            abcd_colour, abcd_size,
+                          1.258, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.315, 1.001, '"*"', 
+                            annotation_colour, star_size,
+                          0.7, 1.01, 'degree', 
+                            line_label_colour, orig_line_label_size,
+                          1.56, 0.97, 'degree',
+                            line_label_colour, orig_line_label_size,
+                          0.7, 0.995, '"*"', 
+                            line_label_colour, star_line_label_size,
+                          3.5, 0.981, '"*"', 
+                            line_label_colour, star_line_label_size,
+                          0.96, 0.98, 'c', 
+                            abcd_colour, abcd_size,
+                          2.2, 0.9834, '"^"',  
+                            annotation_colour, hat_size,
+                          0.7, 0.989, '"^"',
+                            line_label_colour, hat_line_label_size,
+                          3.5, 0.975, '"^"', 
+                            line_label_colour, hat_line_label_size,
+                          2.52, 0.984, 'd', 
+                            abcd_colour, abcd_size,
+                          2.43, 1.085, 'bold("_")',  
+                            annotation_colour, bar_size,
+                          0.7, 1.0873, '"_"',
+                            line_label_colour, bar_line_label_size,
+                          3.5, 1.073, '"_"',
+                            line_label_colour, bar_line_label_size,
+                          2.18, 0.97, 'r',
+                            line_label_colour, r_line_label_size,
+                          2.6, 1.15, 'r',  
+                            line_label_colour, r_line_label_size,
+                          0.75, 1.027, 'i*degree', 
+                            line_label_colour, i_line_label_size,
+                          3.4, 0.981, 'i*degree', 
+                            line_label_colour, i_line_label_size,
+                          0.75, 1.143, 'bar(i)', 
+                            line_label_colour, i_line_label_size,
+                          3.4, 1.084, 'bar(i)', 
+                            line_label_colour, i_line_label_size,
+                          )
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Example", 
+                               graph_types = "Consumption") + 
+  ggplot2::xlim(0.7, 3.5) +
+  ggplot2::ylim(0.97, 1.15) +
+  ggplot2::geom_text(data = labels, 
+                     mapping = ggplot2::aes(x = x, y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size), 
+                     parse = TRUE) +
+  MKHthemes::xy_theme() + 
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results: Two applications of the rebound framework}
 \label{sec:examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Results ****
+To demonstrate application of the comprehensive rebound analysis framework
+developed in Section~\ref{sec:framework},
+we select two case studies:
+energy efficiency upgrades to a car and an electric lamp.
+We first collect parameter values
+for the equations for
+eight rebound components:
+$Re_{dempl}$ (Eq.~(\ref{eq:Re_dempl0})),
+$Re_{emb}$ (Eq.~(\ref{eq:Re_emb})),
+$Re_{\md}$ (Eq.~(\ref{eq:Re_md})),
+$Re_{dsub}$ (Eqs.~(\ref{eq:Re_dsub_prelim} and~\ref{eq:q_s_solution})),
+$Re_{isub}$ (Eq.~(\ref{eq:Re_isub_prelim} and~\ref{eq:C_o_solution})),
+$Re_{dinc}$ (Eq.~(\ref{eq:Re_dinc})),
+$Re_{iinc}$ (Eq.~(\ref{eq:Re_iinc})), and
+$Re_{\macro}$ (Eq.~(\ref{eq:Re_macro})).
+The total rebound 
+($Re_{tot}$)
+is given by the sum of the above components,
+which can also be verified against Eq.~(\ref{eq:Re_tot}).
+
+As discussed in Section~\ref{sec:macro_effect_main_paper},
+the link between macroeconomic and microeconomic rebound 
+is largely unexplored, and 
+we assume a placeholder value of $k = 1$ for both case studies.
+We return to the matter of calibrating $k$
+in the Discussion (Section~\ref{sec:calibrating_k}).
+ 
+
+%++++++++++++++++++++++++++++++
+\subsection{Case 1: Purchase of a new car}
+\label{sec:car_example}
+%++++++++++++++++++++++++++++++
+
+<<CarPrintableNumbers, echo=FALSE>>=
+val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, format = "f", big.mark = ",") {
+  val <- rebound_results %>% 
+    dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == case) %>% 
+    magrittr::extract2(val) %>% 
+    magrittr::multiply_by(scale)
+  if (to_perc) {
+    val <- val * 100
+  }
+  val %>% 
+    formatC(digits = digits, format = format, big.mark = big.mark)
+}
+# Parameters for first table
+mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
+mpg_better <- val_to_string(case = "Car", val = ReboundTools::star_vars$eta_engr_units_star, digits = 0)
+C_dot_cap_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 0)
+C_dot_cap_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_cap_star, digits = 0)
+t_own_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_own_orig, digits = 0)
+t_own_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_own_star, digits = 0)
+t_life_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_life_orig, digits = 0)
+t_life_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_life_star, digits = 0)
+E_emb_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$E_emb_orig, digits = 0)
+E_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$E_emb_star, digits = 0)
+C_dot_md_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 0)
+C_dot_md_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_md_star, digits = 0)
+
+# Parameters for second table
+q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
+M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+p_E_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 2)
+f_Cs_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$f_Cs_orig, digits = 3)
+k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k, digits = 1)
+
+# Parameters for elasticity table
+e_qs_ps_UC_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
+e_qs_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 3)
+e_qo_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 3)
+e_qs_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
+e_qo_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+
+# Parameters for discussion
+Re_dempl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
+Re_emb_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 0)
+Re_md_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE, digits = 1)
+Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
+Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
+Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
+Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
+N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
+Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+@
+
+For the first example, 
+we consider the purchase of a more fuel efficient car, 
+namely a gasoline-electric Ford Fusion Hybrid car,
+to replace a conventional gasoline Ford Fusion car. 
+The cars are matched as closely as possible, 
+except for the inclusion of an electric battery 
+in the hybrid car.  
+The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
+versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
+
+
+%------------------------------
+\subsubsection{Input parameters} 
+\label{sec:Car_input_data}
+%------------------------------
+
+We require four sets of data. 
+First, basic car parameters are summarized 
+in Table~\ref{tab:car_parameters}.
+Second, we require several general parameters, 
+mainly relating to the U.S.\ economy and personal finances 
+of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
+Third, we require elasticity parameters, 
+as given in Table~\ref{tab:car_elasticity_parameters}.
+Fourth, armed with the parameter values from 
+Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
+and the equations of Section~\ref{sec:framework},
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:car_stages_table}.
+Note that Table~\ref{tab:car_stages_table} applies to the car owner.
+Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
+changes occur only in the macroeconomy.
+For the car owner, no changes are observed across the macro effect.
+Thus, the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:car_stages_table} are identical.
+
+% Reduce spacing between table rows henceforth.
+\renewcommand{\arraystretch}{0.6}
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Vehicle parameters.} 
+\label{tab:car_parameters}
+\begin{tabular}{ r c c l }
+  \toprule
+    Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
+    Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
+  \midrule
+  Fuel economy                           & \Sexpr{mpg_worse} & \Sexpr{mpg_better} & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
+  $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
+                                                    &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
+                                                    &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
+  \midrule
+   Capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & -- resale value (purchase -- depreciation). Ford Fusion gasoline costs from \\
+                                                    &           &          & \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                    &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+ \midrule
+   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) length from \citet{BusinessWire:2015}, \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
+                                                    &           &          & taken as 84 months in 2020 (7 years) for our example. \\
+ \midrule
+   Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
+                                                    &           &          & \citet{SMMT:2020}. \\
+ \midrule
+   Embodied energy             & \Sexpr{E_emb_orig_car_char}    & \Sexpr{E_emb_star_car_char}   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
+   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
+                                                    &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
+                                                    &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
+                                                    &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
+                                                    &           &          & Battery lifetime assumed same as car lifetime, based on \\
+                                                    &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
+ \midrule
+  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & maintenance, repairs, taxes, and fees \\
+                                                    &           &          & (excluding financing, depreciation, fuel). \\
+                                                    &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                    &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Economic parameters (2020).}
+\label{tab:car_economic_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\ 
+  Parameter [units] & & \\
+  \midrule
+  Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/year, calculated from \citet{Car_Insurance:2019}.  \\
+  $\rbempl{q}_s$ [miles/year]                               &               & This is slightly lower than the average driver miles/year (13,476) \\
+                                                            &               & \citep{US_DoT:2018}, as there are \\
+                                                            &               & more registered U.S.\ vehicles than drivers. \\
+  \midrule
+  Real median personal income U.S., in 2018                 & 34,317        & Taken from \citet{St_Louis_Fed:2019}.\\
+  {} [\$/year]                                              &               & \\
+  \midrule
+  U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
+  real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
+  {} [--]                                                   &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\ 
+  \midrule
+  Share of savings from 2018 disposable income              & 0.07848       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
+  {} [--]                                                   &               & National and Products Accounts (NIPA) \\ 
+                                                            &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\
+  \midrule
+  Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$ \\
+  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  \midrule
+  Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Source: \citet{US_EIA:2020_gasoline} \\
+  $p_E$ [\$/gallon]                                         &               &  \\
+  \midrule  
+  Fractional spend on original energy service      & \Sexpr{f_Cs_orig_car_char}      & Calculation: \$1,306 (spend on energy service) \\
+  $\fCs$ [--]                                               &               & / [\$19,115 (other goods) + \$1,306 (energy service)] = 0.064, \\
+                                                            &               & where spend on energy service = 12,416 miles / 25 mpg \\
+                                                            &               & $\times$ \$2.63/gallon = \$1,306. \\
+  \midrule
+  Macro factor                                              & \Sexpr{k_car_char}           & Assumed value. \\  
+  $k$ [--]                                                  &               &               \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Elasticity parameters.}
+\label{tab:car_elasticity_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\
+  Parameter [units] & & \\
+  \midrule
+  Price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
+  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
+                                                           &           &   \citet{goetzke2018} who estimated values \\
+                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
+                                                             &           &   who estimated values between $-0.1$ and $-0.3$. \\  
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
+                                                            &            &     based on \citet{Parry2005}. \\
+  \midrule
+  Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{eq:slutsky})).  \\
+  $\eqspsC$ [--]                                           &                                &   \\    
+  \midrule   
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{eq:eqops}).  \\
+  $\eqopsC$ [--]                                           &                                &   \\ 
+  \midrule   
+  Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
+  $\eqsM$ [--]                                            &                                &   \\ 
+  \midrule   
+  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_car_char}      & Follows from CES utility function. \\
+  $\eqoM$ [--]                                            &                                &   \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+<<car_stages_table, results="asis", echo=FALSE>>=
+digs_car <- matrix(c(rep(1, 7), # eta_engr_units
+                     rep(3, 7), # eta
+                     rep(3, 7), # p_s
+                     rep(0, 7), # q_dot_s
+                     rep(0, 7), # E_dot_s
+                     rep(0, 7), # E_dot_emb
+                     rep(0, 7), # C_dot_s
+                     rep(0, 7), # C_dot_cap
+                     rep(0, 7), # C_dot_md
+                     rep(0, 7), # C_dot_o
+                     rep(0, 7), # N_dot
+                     rep(0, 7)), # M_dot
+                   nrow = 12, ncol = 7, byrow = TRUE)
+rebound_results %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::stages_table(label = "tab:car_stages_table", 
+                             caption = "Results for car example with macro factor ($k$) assumed to be 1.", 
+                             digits = digs_car, 
+                             align = "lrrrrrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","),
+        math.style.negative = TRUE)
+@
+
+  
+%------------------------------
+\subsubsection{Results} 
+\label{sec:Car_results}
+%------------------------------
+
+Results are represented graphically in quantified energy, expenditure, and consumption path graphs
+in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
+The energy path graph (Fig.~\ref{fig:CarEnergyGraph})
+shows the size of each rebound effect
+for the car example.
+
+
+<<CarGraphReResults, include=FALSE>>=
+Re_empl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
+Re_sub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_sub, to_perc = TRUE)
+Re_inc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_inc, to_perc = TRUE)
+Re_micro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_micro, to_perc = TRUE)
+Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
+@
+
+<<CarEnergyGraph, echo=FALSE, fig.cap="Energy path graph for the car example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4>>=
+car_Re_label_angle <- -77
+car_Re_arrow_angle <- pi/180 * 3.1
+
+car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                     63500, 73270, 'degree', 
+                                       stage_colour, orig_size, 0,
+                                     36900, 73150, 'a', 
+                                       abcd_colour, abcd_size, 0,
+                                     37520, 73750, 'b', 
+                                       abcd_colour, abcd_size, 0,
+                                     38200, 73400, '"*"', 
+                                       stage_colour, star_size, 0,
+                                     36900, 73300, 'c',
+                                       abcd_colour, abcd_size, 0,
+                                     40650, 73360, '"^"', 
+                                       stage_colour, hat_size, 0,
+                                     42000, 73370, 'd', 
+                                       abcd_colour, abcd_size, 0,
+                                     42200, 75300, 'bold("_")',
+                                       stage_colour, bar_size, 0,
+                                     42200, 77200, '"~"', 
+                                       stage_colour, tilde_size, 0,
+                                     34800, 73800, 'Hyperconservation', 
+                                       annotation_colour, 
+                                       annotation_size-1,
+                                       car_Re_label_angle,
+                                     35150, 74760, 'Re[tot] == 0*"%"', 
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle,
+                                     36830, 74800, paste0("Re[empl] == '", Re_empl_car_char_perc, "%'"),
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle,
+                                     36000, 76150, 'Re[sub]', 
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle + 90,
+                                     36300, 75950, paste0("'", Re_sub_car_char_perc, "%'"), 
+                                       annotation_colour, 
+                                       annotation_size - 1,
+                                       car_Re_label_angle + 90,
+                                     38800, 76300, 'Re[inc]', 
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle + 90,
+                                     39000, 76090, paste0("'", Re_inc_car_char_perc, "%'"), 
+                                       annotation_colour, 
+                                       annotation_size - 1,
+                                       car_Re_label_angle + 90,
+                                     43650, 74050, 'Re[macro]', 
+                                       annotation_colour, 
+                                       annotation_size - 2,
+                                       car_Re_label_angle + 90,
+                                     43890, 73900, paste0("'", Re_macro_car_char_perc, "%'"), 
+                                       annotation_colour, 
+                                       annotation_size - 1,
+                                       car_Re_label_angle + 90,
+                                     44500, 75000, paste0("Re[tot] == '", Re_tot_car_char_perc, "%'"),
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle,
+                                     59600, 75700, 'Re[tot] == 100*"%"', 
+                                       annotation_colour, 
+                                       annotation_size,
+                                       car_Re_label_angle,
+                                     62000, 76600, 'Backfire', 
+                                       annotation_colour, 
+                                       annotation_size-1,
+                                       car_Re_label_angle)
+
+car_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
+                                 34730, 76250, car_Re_arrow_angle, 2250, annotation_colour, 0.5, # Re_sub
+                                 37150, 76383, car_Re_arrow_angle, 2900, annotation_colour, 0.5, # Re_inc
+                                 42650, 74100, car_Re_arrow_angle, 1800, annotation_colour, 0.5) # Re_macro
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Car", 
+                            graph_types = "Energy") +
+  ggplot2::geom_spoke(data = car_Re_arrows, 
+                        mapping = ggplot2::aes(x = x,
+                                               y = y,
+                                               angle = angle, 
+                                               radius = radius, 
+                                               colour = colour), 
+                        arrow = ggplot2::arrow(length = ggplot2::unit(0.1,"cm"))) +
+  ggplot2::geom_text(data = car_energy_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size,
+                                            angle = angle), 
+                     parse = TRUE) +
+  MKHthemes::xy_theme()
+@
+
+
+<<CarCostGraph, echo=FALSE, fig.cap="Expenditure path graph for the car example. CV is compensating variation.", fig.width=6, fig.height=4>>=
+car_cost_line_angle <- -33
+car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                   1295, 26600, 'degree', 
+                                   stage_colour, orig_size, 0,
+                                   777, 26640, 'a', 
+                                   abcd_colour, abcd_size, 0,
+                                   767, 26576, 'b', 
+                                   abcd_colour, abcd_size, 0,
+                                   791, 26530, '"*"', 
+                                   stage_colour, star_size, 0,
+                                   766, 26475, 'c', 
+                                   abcd_colour, abcd_size, 0,
+                                   835, 26435, '"^"', 
+                                   stage_colour, hat_size, 0,
+                                   873, 26480, 'd', 
+                                   abcd_colour, abcd_size, 0,
+                                   845, 27070, 'bold("_")', 
+                                   stage_colour, bar_size, 0,
+                                   1075, 26885, 'Original~expenditure', 
+                                   annotation_colour, annotation_size, car_cost_line_angle,
+                                   930, 26495, 'After~exp.~sav.', 
+                                   annotation_colour, annotation_size, car_cost_line_angle,
+                                   720, 26620, 'After~empl.', 
+                                   annotation_colour, annotation_size-1, car_cost_line_angle,
+                                   705, 26580, 'After~CV', 
+                                   annotation_colour, annotation_size-1, car_cost_line_angle)
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Car", 
+                            graph_types = "Expenditure") + 
+  ggplot2::geom_text(data = car_cost_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size,
+                                            angle = angle), 
+                     parse = TRUE) +
+  ggplot2::scale_x_continuous(limits = c(700, NA)) +
+  MKHthemes::xy_theme()
+@
+
+
+<<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="Consumption path graph for the car example.", fig.width=6, fig.height=4>>=
+car_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
+                                    1.005, 1.0016, 'degree', 
+                                      stage_colour, orig_size, 
+                                    1.012, 1.0002, '","', 
+                                      annotation_colour, orig_size-3,
+                                    1.02, 1.0016, 'a',
+                                      abcd_colour, abcd_size,
+                                    1.0258, 1.0002, '","', 
+                                      annotation_colour, orig_size-3,
+                                    1.034, 1.0017, 'b',
+                                      abcd_colour, abcd_size,
+                                    1.041, 1.0002, '","', 
+                                      annotation_colour, orig_size-3,
+                                    1.05, 1.0002, '"*"', 
+                                      annotation_colour, star_size,
+                                    1.071, 0.998, '"^"',  
+                                      stage_colour, hat_size, 
+                                    1.118, 1.0283, 'bold("_")',  
+                                      stage_colour, bar_size, 
+                                    0.9, 1.008, 'degree', 
+                                      line_label_colour, orig_line_label_size, 
+                                    1.165, 0.99, 'degree', 
+                                      line_label_colour, orig_line_label_size, 
+                                    0.9, 1.0042, '"*"', 
+                                      line_label_colour, star_line_label_size, 
+                                    1.258, 0.9895, '"*"', 
+                                      line_label_colour, star_line_label_size, 
+                                    0.995, 0.9958, 'c',
+                                      abcd_colour, abcd_size,
+                                    0.9, 1.0017, '"^"', 
+                                      line_label_colour, hat_line_label_size, 
+                                    1.22, 0.9888, '"^"', 
+                                      line_label_colour, hat_line_label_size, 
+                                    1.115, 0.9965, 'd', 
+                                      abcd_colour, abcd_size,
+                                    0.9, 1.037, '"_"', 
+                                      line_label_colour, bar_line_label_size, 
+                                    1.275, 1.0215, '"_"', 
+                                      line_label_colour, bar_line_label_size, 
+                                    1.125, 1.037, 'r', 
+                                      line_label_colour, r_line_label_size,
+                                    1.075, 0.992, 'r', 
+                                      line_label_colour, r_line_label_size,
+                                    0.91, 1.0109, 'i*degree', 
+                                      line_label_colour, i_line_label_size,
+                                    1.27, 0.9933, 'i*degree', 
+                                      line_label_colour, i_line_label_size,
+                                    0.97, 1.0385, 'bar(i)', 
+                                      line_label_colour, i_line_label_size,
+                                    1.275, 1.025, 'bar(i)', 
+                                      line_label_colour, i_line_label_size,
+                                    )
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Car", 
+                            graph_types = "Consumption") + 
+  ggplot2::geom_text(data = car_prefs_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size), 
+                     parse = TRUE) +
+  ggplot2::xlim(0.9, 1.3) + 
+  ggplot2::ylim(NA, 1.04) +
+  MKHthemes::xy_theme()
+@
+
+
+Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+
+<<car_rebound_results_table, results="asis", echo=FALSE>>=
+rebound_results %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
+                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
+                                      label = "tab:car_results", 
+                                      caption = "Car example: rebound results with macro factor ($k$) assumed to be 1.", 
+                                      digits = 1, 
+                                      align = "rrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","), 
+        math.style.negative = TRUE)
+@
+
+
+The \empleffect{} has three components:
+the direct emplacement effect, 
+the embodied energy effect, and 
+the maintenance and disposal effect.
+Rebound from the direct emplacement effect 
+($Re_{dempl}$) is \Sexpr{Re_dempl_car_char_perc}\% always, 
+because energy takeback (and, therefore, rebound)
+occurs after the EEU is emplaced.
+Indirect rebound due to the embodied energy effect
+($Re_{emb}$) is \Sexpr{Re_emb_car_char_perc}\%,  
+due to the higher embodied energy rate
+($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/year)
+stemming from the electric battery in the hybrid EV car.
+Rebound due to the maintenance and disposal effect
+($Re_{\md}$) is small and negative
+($\Sexpr{Re_md_car_char_perc}$\%),
+because of the slightly lower maintenance and disposal costs
+for the hybrid EV car.
+
+The \subeffect{} has two components:
+direct and indirect substitution effect rebound.
+Rebound from direct substitution ($Re_{dsub}$) is 
+positive, as expected (\Sexpr{Re_dsub_car_char_perc}\%). 
+The car owner will, on average, prefer more driving, 
+because of fuel economy enhancements (\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
+In other words, with no other changes, 
+the more fuel-efficient car is driven \Sexpr{Re_dsub_car_char_perc}\% further per year. 
+Conversely, the indirect substitution effect ($Re_{isub}$)
+is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
+to achieve the same level of utility after increased driving. 
+Indeed, less money is spent on other goods
+($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/year).
+
+The \inceffect{} also has two components:
+direct and indirect income effect rebound.
+The direct income effect
+($Re_{dinc}$) is positive
+(\Sexpr{Re_dinc_car_char_perc}\%), 
+because the car owner allocates some
+net savings to additional driving. 
+Rebound from the indirect income effect 
+($Re_{iinc}$) is positive (\Sexpr{Re_iinc_car_char_perc}\%)
+due to higher spending on other goods. 
+Thus, the net savings after the substitution effect
+($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/year) 
+translates into positive direct and indirect income
+rebound at the microeconomic scale. 
+Total microeconomic rebound (emplacement, substitution, and income effects)
+sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
+
+Finally, 
+the \macroeffect{} leads to macroeconomic rebound
+($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%,
+with $k$ assumed to be 1,
+due to economic expansion caused by 
+productivity enhancements arising from the more-efficient provision of the 
+energy service (transportation).
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Case 2: Purchase of a new electric lamp}
+\label{sec:lamp_example}
+%++++++++++++++++++++++++++++++
+
+<<LampPrintableNumbers, echo=FALSE>>=
+# First table
+efficacy_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # lm-hr/W-hr
+efficacy_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # lm-hr/W-hr
+C_dot_cap_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 3)
+C_dot_cap_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_cap_star, digits = 3)
+t_own_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_own_orig, digits = 1)
+t_own_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_own_star, digits = 0)
+t_life_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_life_orig, digits = 1)
+t_life_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_life_star, digits = 0)
+E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
+E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
+C_dot_md_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 2)
+C_dot_md_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_md_star, digits = 2)
+
+# Second table
+q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
+M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+p_E_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 4)
+f_Cs_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$f_Cs_orig, digits = 7)
+k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$k, digits = 1)
+
+# Third table
+e_qs_ps_UC_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
+e_qs_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 4)
+e_qo_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 5)
+e_qs_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
+e_qo_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+
+# Results discussion
+Re_dempl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
+Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Delta_E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 2)
+E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
+E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
+E_dot_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_dot_emb_orig, digits = 2)
+E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_dot_emb_star, digits = 2)
+Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Re_md_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE)
+Re_dsub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
+eta_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # In lm/W
+eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # In lm/W
+q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/year
+q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/year
+Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
+Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
+Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
+N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
+Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_bar, digits = 2)
+Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+@
+
+
+For the second example, 
+we consider purchasing a Light Emitting Diode (LED) electric lamp
+to replace a baseline incandescent electric lamp. 
+Both lamps are matched as closely as possible 
+in terms of energy service delivery (measured in lumen output per lamp), 
+the key difference being the energy required to provide that energy service. 
+The LED lamp has a low 
+initial capital investment rate
+(less than the incumbent incandescent lamp, actually)
+and a long-term benefit of decreased direct energy expenditures
+at the same energy service delivery rate (lm-hr/year).
+
+
+%------------------------------
+\subsubsection{Input parameters} 
+\label{sec:lamp_input_data}
+%------------------------------
+
+Again, four sets of data are required. 
+First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
+Second, several general parameters, 
+mainly relating to the U.S.\ economy and 
+personal finances of the average U.S.\ citizen are 
+given in Table~\ref{tab:lamp_economic_parameters}.
+Third, we require the elasticity parameters, 
+as shown in Table~\ref{tab:lamp_elasticity_parameters}.
+Fourth, with the parameter values from 
+Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
+and the equations of Section~\ref{sec:framework} in hand,
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:lamp_stages_table}.
+Similar to Table~\ref{tab:car_stages_table}, 
+Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
+so no changes are observed across the macro effect, and
+the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:lamp_stages_table} are identical.
+
+
+%------------------------------
+\subsubsection{Results} 
+\label{sec:lamp_results}
+%------------------------------
+
+<<LampGraphReResults, include=FALSE>>=
+Re_empl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
+Re_sub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_sub, to_perc = TRUE)
+Re_inc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_inc, to_perc = TRUE)
+Re_micro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_micro, to_perc = TRUE)
+Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
+@
+
+
+Results are represented graphically in energy, expenditure, and consumption path graphs
+in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
+The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
+shows the size of each rebound effect
+for the lamp example.
+Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+
+The \empleffect{} rebound components start with
+the direct emplacement effect ($Re_{dempl}$),
+which is always $\Sexpr{Re_dempl_lamp_char_perc}$\%.
+Indirect rebound due to the embodied energy effect
+($Re_{emb}$) is $\Sexpr{Re_emb_lamp_char_perc}$\%.
+Although the LED lamp has higher embodied energy 
+($\aempl{E}_{emb} = \Sexpr{E_emb_star_lamp_char}$~MJ)
+than the incandescent lamp 
+($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
+the LED lamp has a much longer lifetime,
+meaning that the LED embodied energy \emph{rate}
+($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
+is less than the incandescent embodied energy rate
+($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
+Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
+is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
+and embodied energy rebound is negative
+($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
+Rebound due to the maintenance and disposal effect
+($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
+because we assume no difference in maintenance and disposal costs between 
+the incandescent lamp and the LED lamp.%
+\footnote{
+  Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
+  and negligible;
+  lamps are usually installed and forgotten.
+  Real-world disposal cost differences between the incandescent and LED technologies
+  are also likely to be negligible. 
+  However, if ``disposal'' includes recycling processes, 
+  cost rates may be different between the two technologies
+  due to the wide variety of materials in LED lamps compared to incandescent lamps.
+}
+
+Direct \subeffect{} rebound 
+($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
+due to the much higher LED lamp efficacy
+($\amacro{\eta} = \Sexpr{eta_better}$~lm/W) 
+compared to the incandescent lamp
+($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
+leading to increased demand for lighting
+(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/year
+to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/year)
+as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
+To maintain constant utility, 
+consumption of other goods is reduced
+($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/year), 
+as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
+yielding indirect substitution effect rebound
+($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
+
+\Inceffect{} rebound arises from spending net energy cost savings
+associated with converting from the incandescent lamp to the LED lamp
+($\rbinc{N} = \Sexpr{N_dot_hat_lamp_char}$~\$/year).
+Direct income effect rebound 
+($Re_{dinc}$) is \Sexpr{Re_dinc_lamp_char_perc}\%,
+positive but small, 
+as the lamp owner allocates
+some of the net savings to increased demand for lighting.
+The indirect income effect rebound is large
+($Re_{iinc} = \Sexpr{Re_iinc_lamp_char_perc}$\%),
+due to the energy implications of increased spending on other goods.
+Total microeconomic scale rebound (emplacement, substitution, and income effects)
+sums to $Re_{micro} = \Sexpr{Re_micro_lamp_char_perc}$\%.
+
+Finally, \macroeffect{} rebound
+($Re_{\macro}$) is coincidentally also \Sexpr{Re_macro_lamp_char_perc}\%
+with $k$ assumed to be 1,
+due to economic expansion caused by 
+productivity enhancements arising from the more-efficient provision of the 
+energy service (lighting).
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Electric lamp parameters.} 
+\label{tab:lamp_parameters}
+\begin{tabular}{ r c c l }
+  \toprule
+    Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
+    Parameters [units]                                &  &  & \\
+  \midrule
+  Lamp efficacy                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
+  $\bempl{\eta}$, $\amacro{\eta}$ [lm-hr/W-hr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
+  \midrule
+   Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
+                                                    &           &          & and \$1.21 for LED lamp from \\
+                                                    &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
+  \midrule
+   Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          &  \\
+ \midrule
+   Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hours/day  \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
+                                                    &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
+   \midrule
+   Life cycle analysis (LCA) embodied energy  & \Sexpr{E_emb_orig_lamp_char}      & \Sexpr{E_emb_star_lamp_char}     & Base document: Table 4.5 Manufacturing Phase Primary  \\
+   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million lumen-hours), contained in \\
+                                                    &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
+                                                    &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
+                                                    &           &          & Incandescent lamp: \\
+                                                    &           &          & LCA energy = 42.2 MJ/20 million lumen-hours.  \\
+                                                    &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
+                                                    &           &          & $\times$ 365 days/year $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
+                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
+                                                    &           &          & LED lamp:  \\
+                                                    &           &          & LCA energy = 132 MJ/20 Million lumen-hours \\
+                                                    &           &          & for pack of 5 LED lamps. \\
+                                                    &           &          & Lifetime output = 450 lumens $\times$ 3 hours/day  \\
+                                                    &           &          & $\times$ 365 days/year $\times$ 10 years = 4,926,405 lumen-hrs. \\
+                                                    &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+ \midrule
+  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Economic parameters (2020).}
+\label{tab:lamp_economic_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description  & Value & Data sources and notes \\ 
+  Parameter [units] & & \\
+  \midrule
+  Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/year). \\
+  $\rbempl{q}_s$ [lm-hr/year]                               &               & \\
+  \midrule
+  Real median personal income U.S.\, in 2018                & 34,317        & Refer to Table~\ref{tab:car_economic_parameters}.\\
+  {} [\$/year]                                              &               & \\
+  \midrule
+  U.S.\ 2018 disposable income /                            & 0.88319       & Refer to Table~\ref{tab:car_economic_parameters}. \\
+  real income (minus current taxes)                         &               &  \\
+  {} [--]                                                   &               &  \\
+  \midrule
+  Share of savings from 2018 disposable income              & 0.07848       & Refer to Table~\ref{tab:car_economic_parameters}. \\
+  {} [--]                                                   &               &  \\ 
+  \midrule
+  Personal consumption in 2018                   & \Sexpr{M_dot_orig_lamp_char}     & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$. \\
+  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  \midrule
+  Price of electricity                  & \Sexpr{p_E_orig_lamp_char}        & U.S.\ 2018 average U.S.\ household electricity price \\
+  $p_E$ [\$/kW-hr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
+  \midrule
+  Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/year (spend on energy service) / \\
+  $\fCs$ [--]                                               &               & [\$27,920/year (other goods) + \$8.5/year (energy service)] = 0.00030, \\
+                                                            &               & where spend on energy service = 580,350 lm-hrs/year /  \\
+                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
+  \midrule
+  Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
+  $k$ [--]                                                  &               &               \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Elasticity parameters.}
+\label{tab:lamp_elasticity_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\
+  Parameter [units] & & \\
+  \midrule
+  Price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
+  $\eqspsUC$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
+                                                            &            &     based on \citet{Fouquet2011}. \\
+  \midrule
+  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{eq:slutsky})).  \\
+  $\eqspsC$ [--]                                           &           &   \\    
+  \midrule   
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{eq:eqops}).  \\
+  $\eqopsC$ [--]                                           &           &   \\ 
+  \midrule   
+  Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
+  $\eqsM$ [--]                                            &           &   \\ 
+  \midrule   
+  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_lamp_char}     & Follows from CES utility function. \\
+  $\eqoM$ [--]                                            &           &   \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+<<lamp_stages_table, results="asis", echo=FALSE>>=
+digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
+                      rep(0, 7), # eta
+                      rep(8, 7), # p_s
+                      rep(0, 7), # q_dot_s
+                      rep(1, 7), # E_dot_s
+                      rep(3, 7), # E_dot_emb
+                      rep(2, 7), # C_dot_s
+                      rep(2, 7), # C_dot_cap
+                      rep(2, 7), # C_dot_md
+                      rep(0, 7), # C_dot_o
+                      rep(2, 7), # N_dot
+                      rep(0, 7)), # M_dot
+                    nrow = 12, ncol = 7, byrow = TRUE)
+rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::stages_table(label = "tab:lamp_stages_table", 
+                             caption = "Results for lamp example with macro factor ($k$) assumed to be 1.", 
+                             digits = digs_lamp, 
+                             align = "lrrrrrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","),
+        math.style.negative = TRUE)
+@
+
+
+<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="Energy path graph for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4>>=
+lamp_Re_label_angle <- -65
+lamp_Re_arrow_angle <- pi/180 * 13
+lamp_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                      240, 90411, 'degree', 
+                                        stage_colour, orig_size, 0,
+                                      27, 90411.5, 'a', 
+                                        abcd_colour, abcd_size, 0,
+                                      14, 90408.5, '"b,"', 
+                                        abcd_colour, abcd_size, 0,
+                                      20, 90406.5, '"*"', 
+                                        stage_colour, star_size, 0,
+                                      23, 90393, 'c', 
+                                        abcd_colour, abcd_size, 0,
+                                      61, 90391, '"^"', 
+                                        stage_colour, hat_size, 0,
+                                      67, 90395, '"d"', 
+                                        abcd_colour, abcd_size, 0,
+                                      68, 90433, 'bold("_")',
+                                        stage_colour, bar_size, 0,
+                                      68, 90467, '"~"', 
+                                        stage_colour, tilde_size, 0,
+                                      0, 90405, 'Hyperconservation', 
+                                        annotation_colour, 
+                                        annotation_size - 1,
+                                        lamp_Re_label_angle,
+                                      16, 90425, 'Re[tot] == 0*"%"', 
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle,
+                                     6, 90422, paste0("Re[empl] == '", Re_empl_lamp_char_perc, "%'"),
+                                        annotation_colour, 
+                                        annotation_size - 1, 
+                                        lamp_Re_label_angle,
+                                      1, 90444.2, 'Re[sub]', 
+                                        annotation_colour, 
+                                        annotation_size - 1, 
+                                        lamp_Re_label_angle + 90,
+                                      6, 90440.5, paste0("'", Re_sub_lamp_char_perc, "%'"), 
+                                        annotation_colour, 
+                                        annotation_size - 1, 
+                                        lamp_Re_label_angle + 90,
+                                      24, 90450, 'Re[inc]', 
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle + 90,
+                                      29, 90446, paste0("'", Re_inc_lamp_char_perc, "%'"), 
+                                        annotation_colour, 
+                                        annotation_size - 1, 
+                                        lamp_Re_label_angle + 90,
+                                      86, 90425.7, 'Re[macro]', 
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle + 90,
+                                      91, 90421, paste0("'", Re_macro_lamp_char_perc, "%'"), 
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle + 90,
+                                      202, 90450, 'Re[tot] == 100*"%"', 
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle,
+                                      105, 90432, paste0("Re[tot] == '", Re_tot_lamp_char_perc, "%'"),
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle,
+                                      230, 90457, 'Backfire',
+                                        annotation_colour, 
+                                        annotation_size, 
+                                        lamp_Re_label_angle)
+
+lamp_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
+                                  -6, 90440, lamp_Re_arrow_angle, 18.8, annotation_colour, example_arrow_size, # Re_sub arrow
+                                  13, 90444.35, lamp_Re_arrow_angle, 30, annotation_colour, example_arrow_size, # Re_inc arrow
+                                  74, 90420, lamp_Re_arrow_angle, 30, annotation_colour, example_arrow_size) # Re_macro arrow
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Lamp", 
+                               graph_types = "Energy") + 
+  ggplot2::geom_spoke(data = lamp_Re_arrows, 
+                        mapping = ggplot2::aes(x = x,
+                                               y = y,
+                                               angle = angle, 
+                                               radius = radius, 
+                                               colour = colour), 
+                        arrow = ggplot2::arrow(length = ggplot2::unit(0.1,"cm"))) +
+  ggplot2::geom_text(data = lamp_energy_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size,
+                                            angle = angle), 
+                     parse = TRUE) +
+  MKHthemes::xy_theme()
+@
+
+
+<<LampCostGraph, echo = FALSE, fig.cap="Expenditure pathgraph for the lamp example. CV is compensating variation.", fig.width=6, fig.height=4>>=
+lamp_cost_line_angle <- -23.6
+lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                    8.6, 27921.7, 'degree', 
+                                      stage_colour, orig_size, 0,
+                                    0.85, 27921.7, 'a', 
+                                      abcd_colour, abcd_size, 0,
+                                    1.05, 27920.7, '"b"', 
+                                      abcd_colour, abcd_size, 0,
+                                    0.75, 27920, '"*"',
+                                      stage_colour, star_size, 0,
+                                    0.8, 27916.5, 'c', 
+                                      abcd_colour, abcd_size, 0,
+                                    2.2, 27915.7, '"^"', 
+                                      stage_colour, hat_size, 0,
+                                    2.36, 27916.5, 'd', 
+                                      abcd_colour, abcd_size, 0,
+                                    2.45, 27927.7, 'bold("_")', 
+                                      stage_colour, bar_size, 0,
+                                    5.25, 27925, 'Original~expenditure',
+                                      annotation_colour, annotation_size, lamp_cost_line_angle,
+                                    3.75, 27917.2, 'After~emplacement',
+                                      annotation_colour, annotation_size, lamp_cost_line_angle,
+                                    1.54, 27917.3, 'After~CV',
+                                      annotation_colour, annotation_size-1, lamp_cost_line_angle,
+                                    4.1, 27918.6, 'After~expected~savings',
+                                      annotation_colour, annotation_size, lamp_cost_line_angle)
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Lamp", 
+                               graph_types = "Expenditure") + 
+  ggplot2::geom_text(data = lamp_cost_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size,
+                                            angle = angle), 
+                     parse = TRUE) +
+  ggplot2::scale_x_continuous(breaks = seq(2, 8, by = 2)) +
+  ggplot2::scale_y_continuous(breaks = seq(27916, 27928, by = 2)) +
+
+  MKHthemes::xy_theme()
+@
+
+
+<<LampConsGraph, echo=FALSE, warning=FALSE, fig.cap="Consumption path for the lamp example.", fig.width=6, fig.height=4>>=
+lamp_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
+                                     1.05, 1.00002, 'degree', 
+                                       stage_colour, orig_size,
+                                     1.097, 1.000005, '","', 
+                                       stage_colour, orig_size-3,
+                                     1.155, 1.000019, 'a', 
+                                       abcd_colour, abcd_size,
+                                     1.2, 1.000005, '","', 
+                                       stage_colour, orig_size-3,
+                                     1.26, 1.0000195, 'b', 
+                                       abcd_colour, abcd_size,
+                                     1.3, 1.000005, '","', 
+                                       stage_colour, orig_size-3,
+                                     1.37, 1.000001, '"*"', 
+                                       stage_colour, star_size,
+                                     0.7, 1.000074, 'degree',
+                                       line_label_colour, orig_line_label_size,
+                                     1.57, 0.999811, 'degree',
+                                       line_label_colour, orig_line_label_size,
+                                     0.7, 0.999988, '"*"', 
+                                       line_label_colour, star_line_label_size,
+                                     3.5, 0.999897, '"*"',
+                                       line_label_colour, star_line_label_size,
+                                     0.96, 0.99984, 'c', 
+                                       abcd_colour, abcd_size,
+                                     2.4, 0.999825, '"^"',
+                                       stage_colour, hat_size,
+                                     0.7, 0.999892, '"^"',
+                                       line_label_colour, hat_line_label_size,
+                                     3.4, 0.999804, '"^"', 
+                                       line_label_colour, hat_line_label_size,
+                                     2.49, 0.999865, 'd',
+                                       abcd_colour, abcd_size,
+                                     2.5, 1.00027, 'bold("_")', 
+                                       stage_colour, bar_size,
+                                     0.7, 1.000305, '"_"',  
+                                       line_label_colour, bar_line_label_size,
+                                     3.5, 1.000215, '"_"',  
+                                       line_label_colour, bar_line_label_size,
+                                     2.46, 0.9998, 'r', 
+                                       abcd_colour, r_line_label_size,
+                                     2.46, 1.0004, 'r',
+                                       abcd_colour, r_line_label_size,
+                                     0.75, 1.00016, 'i*degree',
+                                       line_label_colour, i_line_label_size,
+                                     3.4, 0.99985, 'i*degree',
+                                       line_label_colour, i_line_label_size,
+                                     1.21, 1.00038, 'bar(i)',
+                                       line_label_colour, i_line_label_size,
+                                     3.4, 1.000255, 'bar(i)',
+                                       line_label_colour, i_line_label_size,
+                                     )
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Lamp", 
+                               graph_types = "Consumption") + 
+    ggplot2::geom_text(data = lamp_prefs_labels, 
+                     mapping = ggplot2::aes(x = x, 
+                                            y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size), 
+                     parse = TRUE) +
+  ggplot2::xlim(0.7, 3.5) +
+  ggplot2::ylim(0.99979, 1.0004) +
+  MKHthemes::xy_theme()
+@
+
+
+<<lamp_rebound_results_table, results="asis", echo=FALSE>>=
+rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
+                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
+                                      label = "tab:lamp_results", 
+                                      caption = "Lamp example: rebound results with macro factor ($k$) assumed to be 1.", 
+                                      digits = 1, 
+                                      align = "rrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","),
+        math.style.negative = TRUE)
+@
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Sensitivity analyses}
+\label{sec:sensitivity_analyses}
+%++++++++++++++++++++++++++++++
+
+Sensitivity analyses show the effect of 
+independently varied parameters on total rebound and rebound components.
+In the context of this framework,
+sensitivity analyses
+can show important trends, tendencies, and relationships
+between rebound parameters and rebound magnitudes.
+Key rebound parameters include 
+post-EEU efficiency ($\amacro{\eta}$),
+capital cost ($\amacro{C}_{cap}$),
+energy price ($p_E$),
+uncompensated price elasticity of energy service demand ($\eqspsUC$), 
+and the macro factor ($k$).
+Sensitivity analyses must be interpreted carefully,
+because rebound parameters are not expected to be 
+independent from each other.
+
+In each subsection below, a series of graphs
+shows the effects of varying each of these five key rebound parameters
+($\amacro{\eta}$, 
+$\amacro{C}_{cap}$, 
+$p_E$, 
+$\eqspsUC$, 
+and $k$)
+on total energy rebound ($Re_{tot}$) and its components
+($Re_{emb}$, $Re_{md}$, $Re_{dsub}$, $Re_{isub}$,
+$Re_{dinc}$, $Re_{iinc}$, and $Re_{\macro}$).
+In the graphs, 
+nominal values for the rebound parameters are shown as points, 
+and sensitivity trends are shown as lines. 
+A limitation of each sensitivity analysis 
+is noted at the end of each subsection.
+
+
+%------------------------------
+\subsubsection{Effect of post-EEU efficiency ($\amacro{\eta}$)} 
+\label{sec:effect_of_efficiency}
+%------------------------------
+
+<<efficiency_ratios, echo=FALSE>>=
+car_efficiency_ratio <- (rebound_results %>% dplyr::filter(Case == "Car") %>% dplyr::select("eta_engr_units_star") / rebound_results %>% dplyr::filter(Case == "Car") %>% dplyr::select("eta_engr_units_orig")) %>% 
+  unlist() %>% 
+  formatC(digits = 3)
+
+lamp_efficacy_ratio <- (rebound_results %>% dplyr::filter(Case == "Lamp") %>% dplyr::select("eta_engr_units_star") / rebound_results %>% dplyr::filter(Case == "Lamp") %>% dplyr::select("eta_engr_units_orig")) %>% 
+  unlist() %>% 
+  formatC(digits = 3)
+@
+
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
+both the energy takeback rate and expected energy savings ($\Sdot$)
+increase with post-EEU efficiency ($\amacro{\eta}$), 
+but the relationship is asymptotic.
+Each unit increase of fuel economy or lighting efficacy is less effective than
+the previous unit increase of fuel economy or lighting efficacy
+for saving energy.
+At very high levels of fuel economy or lighting efficacy, 
+a unit increase leads to almost no additional energy savings.
+Thus, we can say there are diminishing returns of fuel economy and lighting efficacy,
+leading to saturation of energy savings at very high levels of fuel economy and lighting efficacy.
+A simple example illustrates.
+A $\bempl{\eta} = 25$ mpg car drives $\bempl{q}_s = 100$ miles 
+using $\bempl{E}_s = 4$ gallons of gasoline.
+A more-efficient car ($\amacro{\eta} = 30$ mpg) is expected to use
+$\aempl{E}_s = 3.33$ gallons to drive the same distance,
+a savings of $\Sdot = 0.67$ gallons.
+Another 5 mpg boost in efficiency (to $\amacro{\eta} = 35$ mpg)
+will use $\aempl{E}_s = 2.86$ gal to drive 100 miles, 
+a further expected savings of only $\Sdot = 0.47$ gallons.
+Each successive 5 mpg boost in fuel economy 
+saves less energy than the previous 5 mpg boost in fuel economy.
+
+
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4>>=
+actual_cases <- rebound_data %>% 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car", "Lamp"))
+
+eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
+                       Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
+
+eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases,
+                                                   parameterization = eta_sens_params) %>%
+  dplyr::mutate(
+    takeback = .data[[ReboundTools::rebound_terms$Re_tot]] * .data[[ReboundTools::star_vars$S_dot_dev]]
+  )
+
+# This is a hacky formatter function 
+# that formats the x-axis numbers of the graphs.
+# The argument x_breaks is the breaks for an axis.
+# The function checks to see if the breaks are > 1000 and divides by 1000 in that case.
+# This approach works, because lm-hr/kW-hr values are > 1000 for the lamp example
+# but the car example has mpg (which are all less than 100).
+# So this function divides the Lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
+eta_tilde_formatter <- function(x_breaks) {
+  if (all(x_breaks > 1000)) {
+    # To convert Lm-hr/kW-hr to Lm-hr/W-hr.
+    return(x_breaks/1000)
+  }
+  # To leave mpg alone.
+  return(x_breaks)
+}
+
+sensitivity_graphs(.parametric_data = eta_sens_data,
+                   x_var = "eta_engr_units_star", 
+                   y_var = c(ReboundTools::star_vars$S_dot_dev, "takeback")) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free") +
+  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
+  ggplot2::scale_y_continuous(limits = c(0, NA)) +
+  ggplot2::scale_colour_manual(values = c(S_dot_dev = "black", takeback = "black"), guide = "none") + 
+  ggplot2::scale_size_manual(values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
+  ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
+                y = expression("Takeback rate and "*dot(S)[dev]*" [MJ/yr]"),
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() + 
+  ggplot2::theme(        
+    # Move the facet labels out of the graphs slightly.
+    strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2))
+  )
+@
+
+
+Saturation can be seen mathematically, too.
+Taking the limit as $\amacro{\eta} \rightarrow \infty$ 
+in Eq.~(\ref{eq:Sdot}) gives $\Sdot = \rbempl{E}_s$, 
+not $\infty$. 
+Thus, efficiency saturation must occur.
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}
+shows that this framework correctly replicates
+expected efficiency saturation trends.
+
+Saturation is especially noticeable in the lamp example
+compared to the car example,
+the difference being that 
+the LED lamp is already much more efficient than the incandescent lamp
+(\Sexpr{lamp_efficacy_ratio}$\times$),
+whereas the hybrid car is only 
+\Sexpr{car_efficiency_ratio}$\times$ more efficient than the conventional gasoline car. 
+Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ lm-hr/W-hr, 
+the energy efficient LED
+is far closer to efficiency saturation than the hybrid vehicle 
+(at $\amacro{\eta} = \Sexpr{mpg_better}$ mpg).
+As a result, further increases in the LED lamp's efficiency 
+are less effective than further increases in the hybrid car's efficiency.
+
+That said, actual savings is the difference between the expected energy savings line (solid line)
+and the takeback line (dashed line) in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}.
+Because the gap between the lines grows, 
+higher efficiency yields greater energy savings,
+even after accounting for rebound effects.
+But the actual savings are always less than expected savings, due to takeback.
+
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
+expected energy savings ($\Sdot$) increase faster than takeback 
+as $\amacro{\eta}$ increases.
+Thus, total rebound ($Re_{tot}$, the ratio of 
+takeback rate to expected energy savings rate in Eq.~(\ref{eq:Re_takeback})),
+decreases as efficiency grows.
+The lamp exhibits a relatively smaller rebound decline with efficiency,
+because the lamp example is closer to saturation than the car example.
+
+Fig.~\ref{fig:all_Re_terms_eta_graph} shows the variation of all rebound components
+with post-EEU efficiency ($\amacro{\eta}$).
+In the car and lamp examples, 
+direct substitution rebound ($Re_{dsub}$) is the 
+rebound component 
+most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
+
+A limitation of the energy efficiency sensitivity analysis is that 
+post-EEU efficiency ($\amacro{\eta}$)
+is unlikely to be independent of other factors, 
+such as capital cost ($\amacro{C}_{cap}$).
+
+Note that the sensitivity analysis on post-upgrade efficiency 
+($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
+is the only sensitivity analysis that requires careful explication
+of both the numerator and denominator of Eq.~(\ref{eq:Re_takeback}),
+as in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}, 
+because both the numerator and denominator of Eq.~(\ref{eq:Re_takeback})
+change when post-upgrade efficiency ($\amacro{\eta}$) changes.
+The denominator of Eq.~(\ref{eq:Re_takeback}) doesn't change for
+the sensitivity analyses of Figs.~\ref{fig:all_Re_terms_C_cap_graph}--\ref{fig:all_Re_terms_k_graph}.
+Thus, for the remaining sensitivity analyses, 
+when the rebound percentage increases (decreases), 
+the energy takeback rate in the numerator of Eq.~(\ref{eq:Re_takeback})
+increases (decreases) proportionally,
+and the actual energy savings rate decreases (increases) accordingly.
+
+
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$).", fig.width=6, fig.height=4>>=
+Re_graph_params <- ReboundTools::sens_graph_params
+Re_graph_params[["include_x_axis"]] <- TRUE
+Re_graph_params[["use_latex_legend"]] <- TRUE
+
+Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
+                                                ReboundTools::rebound_terms$Re_macro,
+                                                ReboundTools::rebound_terms$Re_dinc,
+                                                ReboundTools::rebound_terms$Re_iinc,
+                                                ReboundTools::rebound_terms$Re_dsub,
+                                                ReboundTools::rebound_terms$Re_isub,
+                                                ReboundTools::rebound_terms$Re_dempl,
+                                                ReboundTools::rebound_terms$Re_emb,
+                                                ReboundTools::rebound_terms$Re_md)] %>% 
+  unlist()
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_params, 
+                    x_var = "eta_engr_units_tilde", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
+  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() + 
+  ggplot2::theme(legend.text.align = 0, 
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%------------------------------
+\subsubsection{Effect of capital cost ($\amacro{C}_{cap}$)} 
+\label{sec:effect_of_capital_cost}
+%------------------------------
+
+The sensitivity of energy rebound
+to capital cost ($\amacro{C}_{cap}$) is shown
+in Fig.~\ref{fig:all_Re_terms_C_cap_graph}.
+All other things being equal,
+as capital cost of the EEU rises, 
+less net savings result from the emplacement effect,
+leading to smaller income, macro, and total rebound.
+The same effects would be observed
+with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
+
+A limitation of the capital cost sensitivity analysis is that
+capital cost ($\amacro{C}_{cap}$) is unlikely to be
+independent of $\amacro{\eta}$.
+Within a given energy efficiency technology
+(e.g., hybrid cars or LED lamps),
+greater capital cost ($\amacro{C}_{cap}$) may be associated with
+greater service efficiency ($\amacro{\eta}$).
+$\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
+not independently.
+
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$).", fig.width=6, fig.height=4>>=
+C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
+                              Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_sens_params,
+                    x_var = "C_cap_star", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(30000, 36000, by = 2000))) + 
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::labs(x = expression(tilde(C)[cap]*" [$]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%------------------------------
+\subsubsection{Effect of energy price ($p_E$)} 
+\label{sec:effect_of_energy_price}
+%------------------------------
+
+<<Germany_results, echo=FALSE>>=
+# In the calculations, we include same parameters for German energy prices.
+# Extract that information here for use in the paragraph below.
+Car_Germany_Re_tot <- rebound_results %>% 
+  dplyr::filter(Case == "Car - Germany") %>% 
+  dplyr::select("Re_tot")
+Lamp_Germany_Re_tot <- rebound_results %>% 
+  dplyr::filter(Case == "Lamp - Germany") %>% 
+  dplyr::select("Re_tot")
+@
+
+
+The effect of energy price on rebound is shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}.
+Increasing energy prices lead to larger total rebound ($Re_{tot}$),
+because higher energy prices lead to more net savings ($\rasub{N}$)
+to be spent by the device owner.
+All other things being equal, more net savings leads to 
+more spending on other goods and services that demand energy.
+
+Fig.~\ref{fig:all_Re_terms_p_E_graph} also 
+shows the effect of energy price ($p_E$)
+on all rebound components.
+Most rebound components increase with energy price, 
+with the car and lamp examples exhibiting different sensitivities. 
+Substitution effects ($Re_{dsub}$ and $Re_{isub}$)
+are the only rebound components that decrease with energy price ($p_E$).
+Substitution effects decrease with energy price, because 
+at high energy price, less behavior adjustment is needed to re-equilibrate 
+after emplacement of the efficient device.
+
+<<GermanPrices, echo=FALSE>>=
+price_data <- tibble::tribble(~Case, ~Country, ~p_E_engr_units,
+                              "Car", "DEU", rebound_data %>% 
+                                dplyr::filter(Case == "Car - Germany") %>% 
+                                magrittr::extract2("p_E_engr_units"),     # $/USgal
+                              "Lamp", "DEU", rebound_data %>% 
+                                dplyr::filter(Case == "Lamp - Germany") %>% 
+                                magrittr::extract2("p_E_engr_units"))     # $/W-hr
+@
+
+In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
+\footnote{
+  For the car example,
+  the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
+  price in 2018~\citep{finanzen}.
+  For the lamp example,
+  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/year,
+  an average value for German households~\citep{bundesministerium}.
+  Converting currency (at 1 \euro{} = \$1.21) and
+  physical units gives 
+  \Sexpr{price_data %>% 
+           dplyr::filter(Country == "DEU" & Case == "Car") %>% 
+           magrittr::extract2("p_E_engr_units")}~\$/US~gallon and 
+  \Sexpr{price_data %>% 
+           dplyr::filter(Country == "DEU" & Case == "Lamp") %>% 
+           magrittr::extract2("p_E_engr_units")}~\$/kW-hr.}
+%
+are shown as vertical lines,
+providing an indication of possible energy price variations.
+All other things being equal, 
+if U.S.\ residents paid Germany's energy prices,
+energy rebound would be 
+$\Sexpr{formatC(unlist(Car_Germany_Re_tot * 100), digits = 3)}$\%
+for the car example and 
+$\Sexpr{formatC(unlist(Lamp_Germany_Re_tot * 100), digits = 3)}$\%
+for the lamp example, assuming $k = 1$.
+
+A limitation of the energy price sensitivity analysis arises from the fact that
+energy price is not independent of other parameters.
+Indeed, other rebound parameters
+would change along with energy price
+(especially if moving from one country to another),
+including capital cost ($\amacro{C}_{cap}$), 
+maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
+energy intensity of the economy ($I_E$), and
+energy service consumption rate ($\rbempl{q}_s$).
+
+<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines.", fig.width=6, fig.height=4>>=
+p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
+                        Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_params, 
+                    x_var = "p_E_engr_units", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::geom_vline(data = price_data, 
+                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
+                      mapping = ggplot2::aes(xintercept = p_E_engr_units), 
+                      linewidth = 0.1) +
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
+  ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/kW-hr (Lamp)]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%------------------------------
+\subsubsection{Effect of elasticity ($\eqspsUC$)} 
+\label{sec:effect_of_elasticity}
+%------------------------------
+
+Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
+with the uncompensated price elasticity of energy service demand ($\eqspsUC$).
+The effect is exponential, and
+total rebound increases with larger negative values of $\eqspsUC$, as expected.
+The lamp example also shows stronger exponential variation than the car example.
+The main reason that total rebound values 
+are different between the two examples
+is the larger absolute value of elasticity ($\eqspsUC$) 
+for the lamp ($-0.4$) compared to the car ($-0.2$).
+Were the car to have the same elasticity as the lamp ($-0.4$), 
+total rebound would be approximately the same for both examples ($\sim 50$\%).
+Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
+($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC$.
+For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
+substantially with $\eqspsUC$, 
+because net savings increases substantially with $\eqspsUC$. 
+
+A limitation of the elasticity sensitivity study derives from limitations of the 
+CES utility model itself, which constrains price elasticity variation
+given an elasticity of substitution.
+Uneconomic conditions should be avoided.
+For example, negative direct substitution rebound ($Re_{dsub} < 0$)
+is obtained when $\left| \eqspsUC \right| < \fCs$,
+because the elasticity of substitution goes negative ($\sigma < 0$).
+(See Eq.~(\ref{eq:sigma}) in Appendix~\ref{sec:utility_and_elasticities}.)
+In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
+would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
+thereby avoiding the uneconomic condition.
+However, a univariate sensitivity study cannot capture this effect and is
+best used for smaller variations in $\eqspsUC$
+about a nominal value.
+
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4>>=
+eps_sens_params <- list(Car = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)),
+                        Lamp = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = eps_sens_params,
+                    x_var = "e_qs_ps_UC", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::scale_x_reverse() +
+  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%------------------------------
+\subsubsection{Effect of macro factor ($k$)} 
+\label{sec:effect_of_macro_factor}
+%------------------------------
+
+The sensitivity of energy rebound 
+to the macro factor ($k$) is shown 
+in Fig.~\ref{fig:all_Re_terms_k_graph}.
+The macro factor has a linear effect on total rebound ($Re_{tot}$)
+through the macro rebound component ($Re_{\macro}$).
+All other rebound components are constant when $k$ is varied independently.
+
+A limitation of the macro factor sensitivity analysis is that
+the macro factor ($k$) is unlikely to be 
+independent of $I_E$, because 
+different values of $k$ imply a different macroeconomy.
+
+<<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4>>=
+k_sens_params <- list(Car = list(k = seq(0.5, 3.5, by = 0.5)),
+                      Lamp = list(k = seq(0.5, 3.5, by = 0.5)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_params,
+                    x_var = "k", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) + 
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::labs(x = expression("k [-]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,8 +2075,137 @@ library(xtable)
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-**** Discussion ****
+%++++++++++++++++++++++++++++++
+\subsection{Calibrating $k$}
+\label{sec:calibrating_k}
+%++++++++++++++++++++++++++++++
 
+<<Calibrate_k, echo = FALSE>>=
+Re_tot_expected <- 0.54
+calibrated_k <- rebound_results %>% 
+  dplyr::filter(.data[["Case"]] %in% c("Car", "Lamp")) %>% 
+  ReboundTools::calibrate_k(Re_tot_expected)
+
+# Land on k = 3 as a median value.
+# Do a sensitivity study with those k values to recalculate everything.
+k_cal_vals <- list(Car = list(k = 3),
+                   Lamp = list(k = 3))
+
+rebound_analysis_with_cal_k <- rebound_data %>% 
+  dplyr::filter(.data[["Case"]] %in% c("Car", "Lamp")) %>% 
+  ReboundTools::parametric_analysis(parameterization = k_cal_vals,
+                                    include_orig_point = FALSE)
+Re_macro_car_k_3 <- rebound_analysis_with_cal_k %>% 
+  dplyr::filter(.data[["Case"]] == "Car") %>% 
+  magrittr::extract2("Re_macro")
+Re_macro_lamp_k_3 <- rebound_analysis_with_cal_k %>% 
+  dplyr::filter(.data[["Case"]] == "Lamp") %>% 
+  magrittr::extract2("Re_macro")
+Re_tot_car_k_3 <- rebound_analysis_with_cal_k %>% 
+  dplyr::filter(.data[["Case"]] == "Car") %>% 
+  magrittr::extract2("Re_tot")
+Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>% 
+  dplyr::filter(.data[["Case"]] == "Lamp") %>% 
+  magrittr::extract2("Re_tot")
+@
+
+The framework developed in Section~\ref{sec:framework} 
+links macroeconomic rebound to microeconomic rebound 
+via a term that scales magnitudes in the microeconomic portion of the framework. 
+Few rebound studies have explored the macroeconomic scale
+between microeconomic and total rebound.
+Inspired by \citet{Borenstein:2015aa} and others, 
+we bridge macroeconomic and microeconomic scales with the macro factor ($k$), 
+as discussed in Section~\ref{sec:macro_effect_main_paper}.
+For the results presented in Section~\ref{sec:examples}, 
+we assumed a placeholder value of $k = 1$,
+meaning that every \$1 of spending by the device owner in the income effect
+generates only \$1 of additional economic activity in the broader economy.
+In combination, the framework presented in Section~\ref{sec:framework}, 
+the results obtained in Section~\ref{sec:examples}, and
+recent estimates of total rebound allow, 
+for the first time, 
+a discussion about calibrating $k$.
+
+To calibrate the macro factor ($k$),
+we treat macro rebound ($Re_{\macro}$) as a residual.
+The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
+such that $Re_{\macro}$
+is sufficient to achieve an expected value for total rebound ($Re_{tot}$).
+We take the expected value for $Re_{tot}$ from 
+\citet{Brockway2021}. 
+Four of 33 studies reviewed by \citet{Brockway2021}
+examined total rebound from only consumer EEUs in a computable general
+equilibrium framework. 
+The average total rebound ($Re_{tot}$) 
+for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
+\footnote{
+  The average total rebound among all 33 studies stood at 63\%,
+  supporting the claim by \citet{Turner:2013aa} that consumer
+  and producer rebounds vary.
+}
+%
+The calibrated values of $k$ that give identical $Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
+for both examples are
+$k = \Sexpr{formatC(calibrated_k[["Car"]], digits = 2)}$
+for the car example and
+$k = \Sexpr{formatC(calibrated_k[["Lamp"]], digits = 2)}$ 
+for the lamp example.
+
+Qualitative differences in benefits from EEUs as well as the considerable 
+variance in $Re_{tot}$ in 33 surveyed studies~\citep{Brockway2021}
+indicates that total rebound from one EEU is likely to be different from 
+total rebound from another EEU. 
+For the purposes of illustration we set $k = 3$,
+being between the values of $k$ 
+estimated from the car and lamp examples.
+Note that $k = 3$ implies that 
+every \$1 of net savings spent by the device owner
+generates \$3 of additional economic 
+activity in the broader economy
+after the income effect.
+We multiply $k \rasub{N}$ by the energy intensity of the economy ($I_E$) to 
+find the energy implications of macro-effect respending throughout the economy, 
+as shown in Eq.~(\ref{eq:Re_macro_def}).
+
+There are three ways to interpret $k = 3$.
+First, $k = 3$ can be considered the average long-run 
+economic growth generated by the device owner's spending of freed cash.
+Efficiency increases in equipment drive a significant part of 
+long-run productivity growth \citep{Greenwood1997}, therefore a large,
+long-run multiplier is plausible,
+even if the initial productivity
+change occurred in household production which is not accounted in GDP.
+Second, it could be that growth is less than 
+\$3 but that the macroeconomic ``energy price effect'' (a decline in 
+energy prices due to the fallen demand) induces consumption at a higher
+energy intensity than that of the pre-EEU economy. 
+Third, from the demand-side perspective
+entertained by \citet{Borenstein:2015aa}, 
+$k = 3$ could be interpreted as $\MPC = 0.75$. 
+(See Appendix~\ref{sec:income_macro_mpc}.)
+$\MPC = 0.75$ is a reasonable value, 
+being in the upper half of recent estimates by \citet{Carroll2017}.
+Although the cause of the growth in economic activity and energy consumption from an EEU 
+is a supply-side productivity shock,
+the subsequent demand-side effects may well be interpreted as a multiplier effect, 
+caused by higher real income instead of by higher monetary income.
+
+After calibrating $k = 3$, we see that choosing a placeholder value of $k = 1$
+in Section~\ref{sec:examples}
+underestimated $Re_{\macro}$ and, therefore, $Re_{tot}$.
+In Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph},
+the macro effect segments (\bartilde{})
+should be three times longer than they appear.
+In Tables~\ref{tab:car_results} and~\ref{tab:lamp_results},
+the values of macro rebound ($Re_{\macro}$) should triple to
+\Sexpr{formatC(Re_macro_car_k_3*100, digits = 3)}\% and
+\Sexpr{formatC(Re_macro_lamp_k_3*100, digits = 3)}\%, and
+the values of total rebound ($Re_{tot}$) should increase to 
+\Sexpr{sprintf("%.1f", round(Re_tot_car_k_3*100, 1))}\% and
+\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 3)}\%
+for the car and lamp examples,
+respectively.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
@@ -302,54 +2384,6 @@ using an early version of this framework.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{pieces/rebound_path_graph_details.tex}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Derivation of comprehensive, consumer-based rebound analysis framework}
-\label{sec:derivation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{pieces/derivation.tex}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Utility models and elasticities}
-\label{sec:utility_and_elasticities}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% <<UtilityAppendix, child="pieces/utility_and_elasticities.Rnw">>=
-% @
-% 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Proof: Income preference equations satisfy the budget constraint}
-\label{sec:proof_income_elasticities}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{pieces/proof_income_elasticities.tex}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Other goods expenditures and constant $p_o$}
-\label{sec:other_goods_expenditures}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{pieces/other_goods_expenditures.tex}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Income and macro effects and relation to the
-marginal propensity to consume (MPC)}
-\label{sec:income_macro_mpc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
 
 
 
