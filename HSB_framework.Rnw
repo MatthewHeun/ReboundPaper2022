@@ -1232,21 +1232,8 @@ we find
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Previous frameworks} 
-\label{sec:previous_frameworks}
-%++++++++++++++++++++++++++++++
-
-Bringing together the importance of energy efficiency 
-\emph{vis-\`{a}-vis} emissions reduction goals
-and the desirable characteristics of rebound frameworks discussed above,
-we see that comprehensive frameworks are needed to help develop 
-energy efficiency policy to meet emissions targets. 
-I.e., effective policy should be informed by rebound analyses conducted within
-a comprehensive rebound framework.
-
-We develop below (Section~\ref{sec:framework})
-a comprehensive partial equilibrium rebound framework for consumers. We note
-that many of its component are similar to one for a producer-sided framework
+We developed above a partial equilibrium rebound framework for consumers. 
+We note that many of its components are similar to those for a producer-sided framework
 due to the symmetry between neoclassical microeconomic producer and consumer theory.
 Partial equilibrium frameworks provide detailed assessment of individual EEUs
 with tractable, easy-to-understand mathematics.
@@ -1258,7 +1245,8 @@ general equilibrium effects are captured by
 a simplified, one-dimensional, macroeconomic-scale rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
-General equilibrium frameworks allow prices of all goods and services 
+Iun contrast, 
+general equilibrium frameworks allow prices of all goods and services 
 in an economy to adjust to the EEU.
 Recent examples include \citet{Hart2018}, 
 \citet{Lemoine:2020aa}, 
@@ -1281,7 +1269,7 @@ operationality.
 Only when all of the above characteristics are present can  
 a comprehensive picture of rebound emerge.
 Table~\ref{tab:previous_frameworks} shows our assessment
-of selected recent partial equilibrium frameworks (in columns)
+of selected previous partial equilibrium frameworks (in columns)
 relative to the characteristics discussed above (in rows).
 
 \renewcommand{\arraystretch}{0.6}
@@ -1385,7 +1373,7 @@ completing the ``This paper'' column with filled circles (\rating{100}).
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part I),
+In this paper (Part~I),
 we developed a partial equilibrium rebound analysis framework that
 combines all rebound effects, locations, and scales
 across energy, expenditure, and consumption spaces with 
@@ -1402,23 +1390,24 @@ facilitate interdisciplinary understanding of rebound phenomena
 toward the goal of enabling of more robust rebound estimates
 for sound energy and climate policy.
 
-From the development and application of the framework in Part~I, 
-we draw four important conclusions.
-Fourth, the discussion (Section~\ref{sec:discussion}) shows that
-        rebound is a headwind for efficiency-led reduction of energy consumption 
-        and CO$_2$ mitigation policies.
-        Quantification of rebound effect magnitudes
-        is an important precursor to devising effective energy policies
-        that would 
-        encourage energy efficiency, 
-        limit rebound effects, and
-        reduce CO$_2$ emissions.
+% From the development and application of the framework in Part~I, 
+% we draw four important conclusions.
+% Fourth, the discussion (Section~\ref{sec:discussion}) shows that
+%         rebound is a headwind for efficiency-led reduction of energy consumption 
+%         and CO$_2$ mitigation policies.
+%         Quantification of rebound effect magnitudes
+%         is an important precursor to devising effective energy policies
+%         that would 
+%         encourage energy efficiency, 
+%         limit rebound effects, and
+%         reduce CO$_2$ emissions.
 
 Future work could be pursued in several areas. 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item Other utility models (besides the CES utility model) 
+  \item Other utility models
+        (besides the CES utility model, but not a Cobb-Douglas utility model) 
         could be explored for the substitution effect.
   
   \item This framework could be extended to producer-sided energy rebound effects.
@@ -1430,6 +1419,18 @@ Future work could be pursued in several areas.
         CO$_2$ emissions mitigation.
 
 \end{enumerate*}
+
+In Part~II of this paper,
+we further attempt to bring clarity to rebound analysis
+in three ways. 
+First, 
+we develop a way to visualize rebound effects at all locations (direct and indirect)
+in energy, expenditure, and consumption spaces. 
+Second, we apply the partial equilibrium framework to two EEUs:
+an upgraded electric lamp and 
+an upgraded automobile.
+Finally, we provide rebound estimates for the two examples.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Competing interests}
