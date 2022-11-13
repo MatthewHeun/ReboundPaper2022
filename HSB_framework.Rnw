@@ -257,10 +257,12 @@ is the lack of consensus on rebound estimation methods and, hence, rebound magni
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
-is difficult because it is an inherently interdisciplinary topic.
+is difficult because it is an inherently interdisciplinary topic
+and suggest that additional clarity is needed.
 
 The \emph{objective} of this paper, then, is to 
-support the development of a rigorous analytical framework, 
+improve clarity to the rebound space by
+supporting the development of a rigorous analytical framework, 
 one that
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -268,7 +270,7 @@ one that
   \item starts at the microeconomics of rebound
         (building upon \citet{Borenstein:2015aa}) and 
         
-  \item is approachable for both energy analysts and economists.
+  \item is approachable for both energy analysts and economists alike.
 
 \end{enumerate*}
 
@@ -288,7 +290,11 @@ development of the first (to our knowledge)
         
 \end{enumerate*}
 
-
+The remainder of this paper is structured as follows.
+Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
+Section~\ref{sec:discussion} discusses the framework in relation to previous frameworks, and 
+Section~\ref{sec:conclusion} concludes.
+Results can be found in Part~II.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,8 +305,7 @@ development of the first (to our knowledge)
 In this section, we develop a partial equilibrium
 energy rebound analysis framework 
 (concisely, ``this framework'').
-We follow the rebound typology discussed in Section~\ref{sec:rebound_typologies}, 
-distinguishing between
+We distinguish between
 microeconomic rebound (at the single device or for the device owner)
 and 
 macroeconomic rebound (broader, economy-wide responses

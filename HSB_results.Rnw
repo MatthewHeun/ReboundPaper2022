@@ -116,7 +116,7 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Part I of this two-part paper, we argued that a new clarity is needed
+In Part I of this two-part paper, we argued that a improved clarity is needed
 about the effects and scales of energy rebound. 
 We said that
 %
@@ -139,7 +139,7 @@ We said that
   in ways economists can understand.
 \end{quote}
 
-To move toward that clarity, 
+To move improve clarity in the rebound space, 
 in Part~I of this two-part paper
 we developed a partial equilibrium framework for analyzing energy rebound, 
 one that is tractable for energy analysts and economists alike.
@@ -170,10 +170,17 @@ The key contributions of Part~II are
   
 \end{enumerate*}
 
+The remainder of this paper is structured as follows.
+Section~\ref{sec:methods} describes rebound path graphs.
+Section~\ref{sec:results} provides two examples: 
+energy efficiency upgrades to a car and an electric lamp.
+Section~\ref{sec:discussion} discusses the results, and 
+Section~\ref{sec:conclusion} concludes.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods: development of rebound path graphs}
-\label{sec:framework}
+\label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 <<eeu_data, echo=FALSE>>=
@@ -649,7 +656,7 @@ rebound_results %>%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results: Two applications of the rebound framework}
-\label{sec:examples}
+\label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To demonstrate application of the rebound analysis framework
