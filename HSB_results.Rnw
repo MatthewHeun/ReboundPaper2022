@@ -99,8 +99,6 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Eq.~(\ref{PartI-eq:Re_def})
-
 In Part I of this two-part paper, we argued that a new clarity is needed
 about the effects and scales of energy rebound. 
 We said that ``a description of rebound is needed that is both
@@ -141,9 +139,9 @@ The key contributions of Part~II are
 	
   \item development of the first (to our knowledge) 
         visualizations of rebound effects
-        in energy, expenditure, and consumption spaces and
+        in energy, expenditure, and consumption spaces,
         
-  \item documentation of new estimates of rebound for lighting and automobile 
+  \item documentation of new estimates of rebound for automobile and lighting 
         upgrades, and 
         
   \item creation of open source software tools to calculate and visualize rebound 
@@ -1844,9 +1842,6 @@ rebound_results %>%
 @
 
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 \label{sec:discussion}
@@ -1893,7 +1888,7 @@ Few rebound studies have explored the macroeconomic scale
 between microeconomic and total rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
 we bridge macroeconomic and microeconomic scales with the macro factor ($k$), 
-as discussed in Section~\ref{sec:macro_effect_main_paper}.
+as discussed in Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.
 For the results presented in Section~\ref{sec:examples}, 
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device owner in the income effect
@@ -1938,9 +1933,9 @@ being between the values of $k$
 estimated from the car and lamp examples.
 Note that $k = 3$ implies that 
 every \$1 of net savings spent by the device owner
-generates \$3 of additional economic 
+generates \$3 of economic 
 activity in the broader economy
-after the income effect.
+due to the income effect.
 We multiply $k \rasub{N}$ by the energy intensity of the economy ($I_E$) to 
 find the energy implications of macro-effect respending throughout the economy.
 
@@ -1959,7 +1954,8 @@ energy intensity than that of the pre-EEU economy.
 Third, from the demand-side perspective
 entertained by \citet{Borenstein:2015aa}, 
 $k = 3$ could be interpreted as $\MPC = 0.75$. 
-(See Appendix~\ref{sec:income_macro_mpc}.)
+(See Fig.~\ref{PartI-fig:k_vs_mpc} 
+in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
 $\MPC = 0.75$ is a reasonable value, 
 being in the upper half of recent estimates by \citet{Carroll2017}.
 Although the cause of the growth in economic activity and energy consumption from an EEU 
@@ -1983,26 +1979,62 @@ the values of total rebound ($Re_{tot}$) should increase to
 for the car and lamp examples,
 respectively.
 
+
+%++++++++++++++++++++++++++++++
+\subsection{Software tools}
+\label{sec:software_tools}
+%++++++++++++++++++++++++++++++
+
+The open source \texttt{R} package \texttt{ReboundTools} 
+can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
+(See \citet{Heun:2021us}.)
+\texttt{ReboundTools} provides functions for 
+%
+\begin{itemize}
+
+  \item reading input data from a spreadsheet,
+
+  \item performing rebound calculations, and 
+  
+  \item generating rebound path graphs.
+
+\end{itemize}
+%
+All calculations in this paper were performed with \texttt{ReboundTools}.
+All rebound path graphs were created by \texttt{ReboundTools}.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we develop the first visualizations of 
-rebound path graphs in energy, expenditure, and consumption spaces
-to bridge gaps between economists and energy analysts.
-And we operationalize and calibrate the macro factor ($k = 3$)
-to provide a link between effects at microeconomic and macroeconomic scales,
-missing from previous partial equilibrium frameworks. 
-
-With novel visualizations of rebound paths and ****
-we advance the analytical foundations for empirical estimates of rebound and
-facilitate interdisciplinary understanding of rebound phenomena
-toward the goal of enabling of more robust rebound estimates
-for sound energy and climate policy.
+In this paper (Part~II), we attempt to bring clarity to energy rebound
+by 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item developing of the first (to our knowledge) 
+        visualizations of rebound effects
+        in energy, expenditure, and consumption spaces 
+        
+  \item documenting new estimates of rebound for automobile and lighting  
+        upgrades, and 
+        
+  \item creating open source software tools to calculate and visualize rebound 
+        for any energy efficiency upgrade.
+  
+\end{enumerate*}
+%
+To the extent that Part~I and Part~II provide clarity, 
+we trust that the gap between 
+economists and energy analysts will be bridged, leading to
+better interdisciplinary understanding of rebound phenomena.
+In the end, we hope that greater clarity and understanding
+will bring about sound energy and climate policy.
 
 From the development and application of the framework in Part~II, 
-we draw four important conclusions.
+we draw two important conclusions.
 First, the car and lamp examples (Section~\ref{sec:examples}) show that
         the framework enables
         quantification of rebound magnitudes at microeconomic and macroeconomic scales, including 
@@ -2027,14 +2059,14 @@ Future work could be pursued in several areas.
         could be explored.
 
   \item The rebound effects of fossil-energy taxes 
-        could be studied further,
+        could be studied,
         especially for the web of interconnected dynamic effects
         among rebound components that are functions
         of the energy intensity of the economy ($I_E$).
         
   \item Sensitivities of rebound components to model parameters
         could be investigated, although
-        this will be challenging work because.
+        this will be challenging work because
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
         is unlikely to be independent of capital cost ($\amacro{C}_{cap}$).
@@ -2090,12 +2122,9 @@ Declarations of interest: none.
 \label{sec:data_repository}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Data and calculations are stored at 
+Data and example calculations in spreadsheet format are stored at the
 Research Data Leeds Repository
 (\url{https://doi.org/10.5518/1201}).
-An \texttt{R} package for performing all rebound calculations
-can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
-(See \citet{Heun:2021us}.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
