@@ -98,7 +98,7 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Part I, we argued that a new clarity is needed
+In Part I of thei two-part paper, we argued that a new clarity is needed
 about the effects and scales of energy rebound. 
 We said that ``a description of rebound is needed that is both
 %
