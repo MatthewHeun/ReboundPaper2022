@@ -31,8 +31,8 @@
 \usetikzlibrary{arrows,positioning}
 \usepackage{ulem}               % For strikeout command (\sout)
 \usepackage{xcolor}             % For ... colors
-% \usepackage{xr-hyper}           % For external references to the framework paper
-% \externaldocument[PartI-]{HSB_framework}
+\usepackage{xr}                 % For external references to the framework paper
+\externaldocument[PartI-]{HSB_framework}
 
 \usepackage{hyperref}           % hyperref should be the last package loaded
 
@@ -98,6 +98,8 @@ library(xtable)
 \section{Introduction}
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Eq.~(\ref{PartI-eq:Re_def})
 
 In Part I of this two-part paper, we argued that a new clarity is needed
 about the effects and scales of energy rebound. 
@@ -878,10 +880,10 @@ of Table~\ref{tab:car_stages_table} are identical.
                                                             &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
                                                             &            &     based on \citet{Parry2005}. \\
   \midrule
-  Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{eq:slutsky})).  \\
+  Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsC$ [--]                                           &                                &   \\    
   \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{eq:eqops}).  \\
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
   $\eqopsC$ [--]                                           &                                &   \\ 
   \midrule   
   Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
@@ -1555,10 +1557,10 @@ energy service (lighting).
                                                             &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
                                                             &            &     based on \citet{Fouquet2011}. \\
   \midrule
-  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{eq:slutsky})).  \\
+  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsC$ [--]                                           &           &   \\    
   \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{eq:eqops}).  \\
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
   $\eqopsC$ [--]                                           &           &   \\ 
   \midrule   
   Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\

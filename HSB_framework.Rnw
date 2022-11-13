@@ -418,13 +418,12 @@ we walk through four rebound effects,
 deriving rebound expressions for each. 
 But first 
 we define rebound relationships 
-(Section~\ref{sec:rebound_relationships}),  
+(Section~\ref{sec:rebound_relationships}), and
 show typical energy and cost relationships 
-(Section~\ref{sec:energy_and_cost_relationships}), and 
-introduce rebound path graphs
-(Section~\ref{sec:rebound_path_graphs}).
+(Section~\ref{sec:energy_and_cost_relationships}).
 In developing the framework,
-we endeavor provide sufficient detail to assist
+we endeavor to bring clarity by 
+providing sufficient detail to assist
 energy analysts to understand the economics and
 economists to understand the energy analysis.
 
