@@ -484,7 +484,7 @@ First, the consumption rate of the energy service~($\rate{q}_s$)
 is the product of final-to-service efficiency~($\eta$) and
 the rate of energy consumption by the energy conversion device~($\rate{E}_s$).
 Typical units for automotive transport and illumination
-(the examples in Section~\ref{sec:examples}) are shown
+(the examples in Part~II) are shown
 beneath each equation.%
 \footnote{
   Note that ``pass'' is short for ``passenger,'' and
@@ -1180,16 +1180,15 @@ The relationship between $k$ and $\MPC$ is given by
 of Eq.~(\ref{eq:mpc_and_k_converged}).)
 
 A further advantage of using the $\MPC$ approach is that there are
-many estimates of its magnitude, though we stress again that  $\MPC$ is a
+many estimates of its magnitude, though we stress again that $\MPC$ is a
 \emph{representation} of the effect, while the cause is higher
 energy efficiency on the supply side.
 A recent review by \citet{Carroll2017} 
 reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
-with the full range estimates spanning zero to 0.9.
-For now, we choose $\MPC = 0.5$ and $k = 1$ as a placeholder value,
-with further exploration of the macro effect
-in Sections~\ref{sec:effect_of_macro_factor} 
-and~\ref{sec:calibrating_k}.
+with the full range estimates spanning 0.0 to 0.9.
+% Commenting, because there is no need to discuss our placeholder value now.
+% For now, we choose $\MPC = 0.5$ and $k = 1$ as a placeholder value,
+% with further exploration of the macro effect in Part~II.
 We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
 implies energy consumption according to 
@@ -1492,7 +1491,7 @@ The authors are grateful for comments from internal reviewers
 Becky Haney and Jeremy Van Antwerp (Calvin University); 
 Nathan Chan (University of Massachusetts at Amherst); and 
 Zeke Marshall (University of Leeds).
-The authors benefitted from discussions with 
+The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
 Finally, the authors thank the students of MKH's Fall 2019 
@@ -1537,6 +1536,14 @@ using an early version of this framework.
 \input{pieces/derivation.tex}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Utility models and elasticities}
+\label{sec:utility_and_elasticities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<UtilityAppendix, child="pieces/utility_and_elasticities.Rnw">>=
+@
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proof: Income preference equations satisfy the budget constraint}
@@ -1554,6 +1561,15 @@ using an early version of this framework.
 
 \input{pieces/other_goods_expenditures.tex}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Income and macro effects and relation to the
+marginal propensity to consume (MPC)}
+\label{sec:income_macro_mpc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<MPCAppendix, child="pieces/mpc.Rnw">>=
+@
 
 
 

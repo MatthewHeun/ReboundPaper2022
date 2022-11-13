@@ -31,6 +31,8 @@
 \usetikzlibrary{arrows,positioning}
 \usepackage{ulem}               % For strikeout command (\sout)
 \usepackage{xcolor}             % For ... colors
+% \usepackage{xr-hyper}           % For external references to the framework paper
+% \externaldocument[PartI-]{HSB_framework}
 
 \usepackage{hyperref}           % hyperref should be the last package loaded
 
@@ -92,13 +94,12 @@ library(xtable)
 
 % \linenumbers
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Part I of thei two-part paper, we argued that a new clarity is needed
+In Part I of this two-part paper, we argued that a new clarity is needed
 about the effects and scales of energy rebound. 
 We said that ``a description of rebound is needed that is both
 %
@@ -2112,7 +2113,7 @@ The authors are grateful for comments from internal reviewers
 Becky Haney and Jeremy Van Antwerp (Calvin University); 
 Nathan Chan (University of Massachusetts at Amherst); and 
 Zeke Marshall (University of Leeds).
-The authors benefitted from discussions with 
+The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
 Finally, the authors thank the students of MKH's Fall 2019 
@@ -2156,16 +2157,6 @@ See nomenclature for Part~I.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{pieces/rebound_path_graph_details.tex}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Income and macro effects and relation to the
-marginal propensity to consume (MPC)}
-\label{sec:income_macro_mpc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
 
 
 
