@@ -73,11 +73,22 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-**** Abstract ****
+Widespread implementation of energy efficiency
+is a key greenhouse gas emissions mitigation measure, 
+but rebound can ``take back'' energy savings.
+However, conceptual foundations lag behind empirical estimates of the size of rebound.
+A new clarity is needed, one that is built upon solid analytical frameworks
+involving both economics and energy analysis.
+In this paper (Part~I), we help advance a rigorous analytical framework
+that starts at the microeconomics of rebound
+and is approachable for both energy analysts and economists alike. 
+We include emplacement, substitution, and income rebound effects and
+link them to macro rebound.
+In Part~II, we develop new visualization techniques and exercise the framework
+by estimating rebound for two examples.
 \end{abstract}
 
-Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound,
-**** Update for split paper ****
+Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
 
 
 
@@ -285,7 +296,7 @@ development of the first (to our knowledge)
 \label{sec:framework}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we develop a comprehensive, partial equilibrium, 
+In this section, we develop a partial equilibrium
 energy rebound analysis framework 
 (concisely, ``this framework'').
 We follow the rebound typology discussed in Section~\ref{sec:rebound_typologies}, 
@@ -1438,9 +1449,6 @@ Finally, we provide rebound estimates for the two examples.
 Declarations of interest: none.
 
 
-\clearpage
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Author contributions}
 \label{sec:author_contributions}
@@ -1528,7 +1536,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Derivation of comprehensive, consumer-based rebound analysis framework}
+\section{Derivation of the rebound analysis framework}
 \label{sec:derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
