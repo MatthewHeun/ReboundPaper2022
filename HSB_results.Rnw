@@ -770,7 +770,7 @@ Third, we require elasticity parameters,
 as given in Table~\ref{tab:car_elasticity_parameters}.
 Fourth, armed with the parameter values from 
 Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
-and the equations of Section~\ref{sec:framework},
+and the equations of Section~\ref{PartI-sec:framework} in Part~I,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car owner.
@@ -1362,7 +1362,7 @@ Third, we require the elasticity parameters,
 as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 Fourth, with the parameter values from 
 Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
-and the equations of Section~\ref{sec:framework} in hand,
+and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
 Similar to Table~\ref{tab:car_stages_table}, 
