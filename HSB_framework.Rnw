@@ -115,15 +115,20 @@ Rebound makes energy efficiency less effective
 at decreasing energy consumption and reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
 energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
+Recent evidence shows that rebound is both 
+(i)~larger than commonly assumed~\citep{Stern2020} and
+(ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
 Rebound is an explanation for why 
 energy consumption and carbon emissions 
 have never been absolutely decoupled 
 from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
 
-Recent evidence shows that rebound is both 
-(i)~larger than commonly assumed~\citep{Stern2020} and
-(ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
-despite a long history of research on the topic.
+
+%++++++++++++++++++++++++++++++
+\subsection{A short history of rebound}
+\label{sec:short_history}
+%++++++++++++++++++++++++++++++
+
 Famously, the roots of energy rebound trace back to 
 \citeauthor{Jevons:1865} who said 
 ``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
@@ -131,16 +136,13 @@ use of fuel is equivalent to a diminished consumption.
 The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
 Less famously, the origins of rebound extend further backward 
 from \citeauthor{Jevons:1865}
-to \citet{Williams1840} and \citet{Parkes1838}.%
-\footnote{
-  \citeauthor{Parkes1838} wrote, 
-  ``[t]he economy of fuel is the secret of the economy of the steam-engine; 
-  it is the fountain of its power, and the adopted measure of its effects. 
-  Whatever, therefore, conduces to increase the efficiency of coal, 
-  and to diminish the cost of its use, 
-  directly tends to augment the value of the steam-engine, 
-  and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
-}
+to \citet{Williams1840} and \citeauthor{Parkes1838} who wrote
+``[t]he economy of fuel is the secret of the economy of the steam-engine; 
+it is the fountain of its power, and the adopted measure of its effects. 
+Whatever, therefore, conduces to increase the efficiency of coal, 
+and to diminish the cost of its use, 
+directly tends to augment the value of the steam-engine, 
+and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
 For nearly 200 years, then, it has been understood 
 that efficiency gains may be taken back or, paradoxically even, 
 cause growth in energy consumption.
@@ -161,6 +163,12 @@ claim the evidence for large rebound
 (greater than 50\%)
 is growing.
 
+
+%++++++++++++++++++++++++++++++
+\subsection{Absence of solid analytical foundations}
+\label{sec:absence_of_foundations}
+%++++++++++++++++++++++++++++++
+
 \citeauthor{Turner:2013aa} contends that the lack of consensus 
 on the magnitude of rebound 
 in the modern empirical literature is caused by 
@@ -178,7 +186,7 @@ leading energy and climate modelers to either
 %
 \begin{enumerate*}[label={(\roman*)}]
 
-  \item use questionable numbers, or 
+  \item use questionable rebound estimates or 
   
   \item ignore rebound altogether.
 
@@ -231,18 +239,25 @@ economists need to have an energy analyst's understanding of energy, and
 energy analysts need to have an economist's understanding of finance and human behavior.
 That's a tall order, indeed.
 
+
+%++++++++++++++++++++++++++++++
+\subsection{New clarity is needed}
+\label{sec:clarity_needed}
+%++++++++++++++++++++++++++++++
+
 We contend that new clarity is needed.
-A description of rebound is needed that is both
+A description of rebound that is both
 %
 \begin{enumerate*}[label={(\roman*)}]
 
   \item technically rigorous and
   
   \item approachable from both sides
-        (economics and energy analysis).
+        (economics and energy analysis)
 
 \end{enumerate*}
 %
+will be a good starting point toward that clarity.
 In other words, 
 the finance and human behavior aspects of rebound need to be presented 
 in ways energy analysts can understand. 
@@ -257,11 +272,18 @@ is the lack of consensus on rebound estimation methods and, hence, rebound magni
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
-is difficult because it is an inherently interdisciplinary topic
-and suggest that additional clarity is needed.
+is difficult because it is an inherently interdisciplinary topic.
+We believe that providing a detailed explication of an analytical framework
+for energy rebound will go some way toward providing additional clarity on the topic.
 
-The \emph{objective} of this paper, then, is to 
-improve clarity to the rebound space by
+
+%++++++++++++++++++++++++++++++
+\subsection{Objective, contributions, and structure}
+\label{sec:objective_contributions_structure}
+%++++++++++++++++++++++++++++++
+
+The \emph{objective} of this paper is to 
+improve clarity in the rebound space by
 supporting the development of a rigorous analytical framework, 
 one that
 %
@@ -274,7 +296,7 @@ one that
 
 \end{enumerate*}
 
-The key contributions of this paper are 
+The key \emph{contributions} of this paper are 
 development of the first (to our knowledge)
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -290,7 +312,7 @@ development of the first (to our knowledge)
         
 \end{enumerate*}
 
-The remainder of this paper is structured as follows.
+The remainder of this paper is \emph{structured} as follows.
 Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
 Section~\ref{sec:discussion} discusses the framework in relation to previous frameworks, and 
 Section~\ref{sec:conclusion} concludes.
@@ -1537,7 +1559,6 @@ using an early version of this framework.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{pieces/nomenclature.tex}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
