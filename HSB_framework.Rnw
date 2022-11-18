@@ -327,6 +327,23 @@ Results can be found in Part~II.
 In this section, we develop a partial equilibrium
 energy rebound analysis framework 
 (concisely, ``this framework'').
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound typology}
+\label{sec:rebound_typology}
+%++++++++++++++++++++++++++++++
+
+Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
+
+\input{pieces/typology_table.tex}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound effects}
+\label{sec:rebound_mechanisms}
+%++++++++++++++++++++++++++++++
+
 We distinguish between
 microeconomic rebound (at the single device or for the device owner)
 and 
@@ -380,11 +397,6 @@ the progression of rebound effects through time.
 \label{fig:flowchart}
 \end{figure}
 
-
-%++++++++++++++++++++++++++++++
-\subsection{Rebound effects}
-\label{sec:rebound_mechanisms}
-%++++++++++++++++++++++++++++++
 
 We assume an energy conversion device (say, a car)
 that consumes final energy%
