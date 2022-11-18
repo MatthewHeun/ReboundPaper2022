@@ -179,15 +179,45 @@ Section~\ref{sec:conclusion} concludes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods: development of rebound path graphs}
+\section{Data and Methods}
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Data}
+\label{sec:data}
+%++++++++++++++++++++++++++++++
+
 
 <<eeu_data, echo=FALSE>>=
 # Load our test cases and perform rebound analyses.
 rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
 rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
+
+%------------------------------
+\subsubsection{Data for car example} 
+\label{sec:data_car_example}
+%------------------------------
+
+
+
+
+%------------------------------
+\subsubsection{Data for lamp example} 
+\label{sec:data_lamp_example}
+%------------------------------
+
+
+
+
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Development of rebound path graphs}
+\label{sec:path_graphs}
+%++++++++++++++++++++++++++++++
 
 Any rebound analysis should track
 energy, expenditure, and consumption
@@ -233,7 +263,7 @@ Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
 notional rebound path graphs in energy, expenditure, and consumption spaces,
 respectively.
 The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
-Later (Section~\ref{sec:examples}), 
+Later (Section~\ref{sec:results}), 
 rebound path graphs (with scales) illustrate the numerical examples.
 
 \begin{table}
@@ -260,10 +290,10 @@ rebound path graphs (with scales) illustrate the numerical examples.
 \end{table}
 
 
-%++++++++++++++++++++++++++++++
-\subsection{Energy path graphs}
+%------------------------------
+\subsubsection{Energy path graphs}
 \label{sec:energy_path_graphs}
-%++++++++++++++++++++++++++++++
+%------------------------------
 
 Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy path graph, with 
 the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
@@ -441,10 +471,10 @@ the upgraded device has a lower embodied energy rate than the original device,
 as shown by point \emph{b} being below point \emph{a}.
 
 
-%++++++++++++++++++++++++++++++
-\subsection{Expenditure path graphs}
+%------------------------------
+\subsubsection{Expenditure path graphs}
 \label{sec:expenditure_path_graphs}
-%++++++++++++++++++++++++++++++
+%------------------------------
 
 A notional expenditure path graph is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
 with 
@@ -518,10 +548,10 @@ depending on the results of the independent analyses for
 embodied energy and capital cost rates.
 
 
-%++++++++++++++++++++++++++++++
-\subsection{Consumption path graphs}
+%------------------------------
+\subsubsection{Consumption path graphs}
 \label{sec:consumption_path_graphs}
-%++++++++++++++++++++++++++++++
+%------------------------------
 
 A notional consumption path graph is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
 The indexed rate of energy service demand ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
@@ -660,8 +690,8 @@ rebound_results %>%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To demonstrate application of the rebound analysis framework
-developed in Section~\ref{sec:framework},
-we select two case studies:
+developed in Section~\ref{PartI-sec:framework} of Part I,
+we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
 We first collect parameter values
 for the equations for
