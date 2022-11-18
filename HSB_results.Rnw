@@ -144,11 +144,13 @@ in Part~I of this two-part paper
 we developed a partial equilibrium framework for analyzing energy rebound, 
 one that is tractable for energy analysts and economists alike.
 The framework contains 
-two locations (direct and indirect) and 
+two locations (direct, $d$, and indirect, $i$) and 
 four rebound effects
 (emplacement, substitution, income, and macro) 
-between five stages,
-as shown in Fig.~\ref{fig:flowchart}.
+between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
+Rebound terms and symbol decorations are
+shown in Fig.~\ref{fig:flowchart}.
+See Part~I for details.
 
 \begin{figure}
 \centering
@@ -162,7 +164,7 @@ In this paper (Part~II), we make further progress toward the goal of clarity
 in three ways.
 First, we develop a new way to visualize 
 components and mechanisms of rebound
-(the rebound path graph).
+(rebound path graphs).
 Second, we apply the framework to two energy efficiency upgrades (EEUs) 
 (an electric lamp and an automobile)
 with detailed explication of the examples.
