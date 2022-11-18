@@ -189,17 +189,265 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:data}
 %++++++++++++++++++++++++++++++
 
-
 <<eeu_data, echo=FALSE>>=
 # Load our test cases and perform rebound analyses.
 rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
 rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
 
+To demonstrate application of the rebound analysis framework
+developed in Section~\ref{PartI-sec:framework} of Part I,
+we analyze two case studies:
+energy efficiency upgrades to a car and an electric lamp.
+In this section, 
+we collect parameter values
+for the equations for
+eight rebound components:
+$Re_{dempl}$,
+$Re_{emb}$,
+$Re_{\md}$,
+$Re_{dsub}$,
+$Re_{isub}$,
+$Re_{dinc}$,
+$Re_{iinc}$, and
+$Re_{\macro}$.
+The total rebound 
+($Re_{tot}$)
+is given by the sum of the above components.
+
+
 %------------------------------
 \subsubsection{Data for car example} 
 \label{sec:data_car_example}
 %------------------------------
+
+<<CarPrintableNumbers, echo=FALSE>>=
+val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, format = "f", big.mark = ",") {
+  val <- rebound_results %>% 
+    dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == case) %>% 
+    magrittr::extract2(val) %>% 
+    magrittr::multiply_by(scale)
+  if (to_perc) {
+    val <- val * 100
+  }
+  val %>% 
+    formatC(digits = digits, format = format, big.mark = big.mark)
+}
+# Parameters for first table
+mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
+mpg_better <- val_to_string(case = "Car", val = ReboundTools::star_vars$eta_engr_units_star, digits = 0)
+C_dot_cap_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 0)
+C_dot_cap_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_cap_star, digits = 0)
+t_own_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_own_orig, digits = 0)
+t_own_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_own_star, digits = 0)
+t_life_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_life_orig, digits = 0)
+t_life_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_life_star, digits = 0)
+E_emb_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$E_emb_orig, digits = 0)
+E_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$E_emb_star, digits = 0)
+C_dot_md_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 0)
+C_dot_md_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_md_star, digits = 0)
+
+# Parameters for second table
+q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
+M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+p_E_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 2)
+f_Cs_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$f_Cs_orig, digits = 3)
+k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k, digits = 1)
+
+# Parameters for elasticity table
+e_qs_ps_UC_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
+e_qs_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 3)
+e_qo_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 3)
+e_qs_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
+e_qo_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+
+# Parameters for discussion
+Re_dempl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
+Re_emb_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 0)
+Re_md_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE, digits = 1)
+Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
+Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
+Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
+Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
+N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
+Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+@
+
+For the first example, 
+we consider the purchase of a more fuel efficient car, 
+namely a gasoline-electric Ford Fusion Hybrid car,
+to replace a conventional gasoline Ford Fusion car. 
+The cars are matched as closely as possible, 
+except for the inclusion of an electric battery 
+in the hybrid car.  
+The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
+versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
+
+We require four sets of data. 
+First, basic car parameters are summarized 
+in Table~\ref{tab:car_parameters}.
+Second, we require several general parameters, 
+mainly relating to the U.S.\ economy and personal finances 
+of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
+Third, we require elasticity parameters, 
+as given in Table~\ref{tab:car_elasticity_parameters}.
+Fourth, armed with the parameter values from 
+Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
+and the equations of Section~\ref{PartI-sec:framework} in Part~I,
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:car_stages_table}.
+Note that Table~\ref{tab:car_stages_table} applies to the car owner.
+Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
+changes occur only in the macroeconomy.
+For the car owner, no changes are observed across the macro effect.
+Thus, the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:car_stages_table} are identical.
+
+% Reduce spacing between table rows henceforth.
+\renewcommand{\arraystretch}{0.6}
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Vehicle parameters.} 
+\label{tab:car_parameters}
+\begin{tabular}{ r c c l }
+  \toprule
+    Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
+    Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
+  \midrule
+  Fuel economy                           & \Sexpr{mpg_worse} & \Sexpr{mpg_better} & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
+  $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
+                                                    &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
+                                                    &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
+  \midrule
+   Capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & -- resale value (purchase -- depreciation). Ford Fusion gasoline costs from \\
+                                                    &           &          & \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                    &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+ \midrule
+   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) length from \citet{BusinessWire:2015}, \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
+                                                    &           &          & taken as 84 months in 2020 (7 years) for our example. \\
+ \midrule
+   Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
+                                                    &           &          & \citet{SMMT:2020}. \\
+ \midrule
+   Embodied energy             & \Sexpr{E_emb_orig_car_char}    & \Sexpr{E_emb_star_car_char}   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
+   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
+                                                    &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
+                                                    &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
+                                                    &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
+                                                    &           &          & Battery lifetime assumed same as car lifetime, based on \\
+                                                    &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
+ \midrule
+  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & maintenance, repairs, taxes, and fees \\
+                                                    &           &          & (excluding financing, depreciation, fuel). \\
+                                                    &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                    &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Economic parameters (2020).}
+\label{tab:car_economic_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\ 
+  Parameter [units] & & \\
+  \midrule
+  Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/year, calculated from \citet{Car_Insurance:2019}.  \\
+  $\rbempl{q}_s$ [miles/year]                               &               & This is slightly lower than the average driver miles/year (13,476) \\
+                                                            &               & \citep{US_DoT:2018}, as there are \\
+                                                            &               & more registered U.S.\ vehicles than drivers. \\
+  \midrule
+  Real median personal income U.S., in 2018                 & 34,317        & Taken from \citet{St_Louis_Fed:2019}.\\
+  {} [\$/year]                                              &               & \\
+  \midrule
+  U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
+  real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
+  {} [--]                                                   &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\ 
+  \midrule
+  Share of savings from 2018 disposable income              & 0.07848       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
+  {} [--]                                                   &               & National and Products Accounts (NIPA) \\ 
+                                                            &               & Table 2.1.\ Personal Income and Its Disposition \\
+                                                            &               & \citep{US_BEA:2020}. \\
+  \midrule
+  Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$ \\
+  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  \midrule
+  Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Source: \citet{US_EIA:2020_gasoline} \\
+  $p_E$ [\$/gallon]                                         &               &  \\
+  \midrule  
+  Fractional spend on original energy service      & \Sexpr{f_Cs_orig_car_char}      & Calculation: \$1,306 (spend on energy service) \\
+  $\fCs$ [--]                                               &               & / [\$19,115 (other goods) + \$1,306 (energy service)] = 0.064, \\
+                                                            &               & where spend on energy service = 12,416 miles / 25 mpg \\
+                                                            &               & $\times$ \$2.63/gallon = \$1,306. \\
+  \midrule
+  Macro factor                                              & \Sexpr{k_car_char}           & Assumed value. \\  
+  $k$ [--]                                                  &               &               \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Car example: Elasticity parameters.}
+\label{tab:car_elasticity_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\
+  Parameter [units] & & \\
+  \midrule
+  Price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
+  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
+                                                           &           &   \citet{goetzke2018} who estimated values \\
+                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
+                                                             &           &   who estimated values between $-0.1$ and $-0.3$. \\  
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
+                                                            &            &     based on \citet{Parry2005}. \\
+  \midrule
+  Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
+  $\eqspsC$ [--]                                           &                                &   \\    
+  \midrule   
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
+  $\eqopsC$ [--]                                           &                                &   \\ 
+  \midrule   
+  Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
+  $\eqsM$ [--]                                            &                                &   \\ 
+  \midrule   
+  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_car_char}      & Follows from CES utility function. \\
+  $\eqoM$ [--]                                            &                                &   \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
 
 
 
@@ -208,6 +456,242 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 \subsubsection{Data for lamp example} 
 \label{sec:data_lamp_example}
 %------------------------------
+
+<<LampPrintableNumbers, echo=FALSE>>=
+# First table
+efficacy_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # lm-hr/W-hr
+efficacy_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # lm-hr/W-hr
+C_dot_cap_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 3)
+C_dot_cap_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_cap_star, digits = 3)
+t_own_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_own_orig, digits = 1)
+t_own_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_own_star, digits = 0)
+t_life_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_life_orig, digits = 1)
+t_life_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_life_star, digits = 0)
+E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
+E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
+C_dot_md_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 2)
+C_dot_md_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_md_star, digits = 2)
+
+# Second table
+q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
+M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+p_E_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 4)
+f_Cs_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$f_Cs_orig, digits = 7)
+k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$k, digits = 1)
+
+# Third table
+e_qs_ps_UC_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
+e_qs_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 4)
+e_qo_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 5)
+e_qs_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
+e_qo_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+
+# Results discussion
+Re_dempl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
+Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Delta_E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 2)
+E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
+E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
+E_dot_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_dot_emb_orig, digits = 2)
+E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_dot_emb_star, digits = 2)
+Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
+Re_md_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE)
+Re_dsub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
+eta_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # In lm/W
+eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # In lm/W
+q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/year
+q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/year
+Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
+Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
+Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
+N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
+Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_bar, digits = 2)
+Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+@
+
+
+For the second example, 
+we consider purchasing a Light Emitting Diode (LED) electric lamp
+to replace a baseline incandescent electric lamp. 
+Both lamps are matched as closely as possible 
+in terms of energy service delivery (measured in lumen output per lamp), 
+the key difference being the energy required to provide that energy service. 
+The LED lamp has a low 
+initial capital investment rate
+(less than the incumbent incandescent lamp, actually)
+and a long-term benefit of decreased direct energy expenditures
+at the same energy service delivery rate (lm-hr/year).
+
+Again, four sets of data are required. 
+First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
+Second, several general parameters, 
+mainly relating to the U.S.\ economy and 
+personal finances of the average U.S.\ citizen are 
+given in Table~\ref{tab:lamp_economic_parameters}.
+Third, we require the elasticity parameters, 
+as shown in Table~\ref{tab:lamp_elasticity_parameters}.
+Fourth, with the parameter values from 
+Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
+and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:lamp_stages_table}.
+Similar to Table~\ref{tab:car_stages_table}, 
+Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
+so no changes are observed across the macro effect, and
+the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:lamp_stages_table} are identical.
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Electric lamp parameters.} 
+\label{tab:lamp_parameters}
+\begin{tabular}{ r c c l }
+  \toprule
+    Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
+    Parameters [units]                                &  &  & \\
+  \midrule
+  Lamp efficacy                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
+  $\bempl{\eta}$, $\amacro{\eta}$ [lm-hr/W-hr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
+  \midrule
+   Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
+                                                    &           &          & and \$1.21 for LED lamp from \\
+                                                    &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
+  \midrule
+   Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          &  \\
+ \midrule
+   Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hours/day  \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
+                                                    &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
+   \midrule
+   Life cycle analysis (LCA) embodied energy  & \Sexpr{E_emb_orig_lamp_char}      & \Sexpr{E_emb_star_lamp_char}     & Base document: Table 4.5 Manufacturing Phase Primary  \\
+   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million lumen-hours), contained in \\
+                                                    &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
+                                                    &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
+                                                    &           &          & Incandescent lamp: \\
+                                                    &           &          & LCA energy = 42.2 MJ/20 million lumen-hours.  \\
+                                                    &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
+                                                    &           &          & $\times$ 365 days/year $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
+                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
+                                                    &           &          & LED lamp:  \\
+                                                    &           &          & LCA energy = 132 MJ/20 Million lumen-hours \\
+                                                    &           &          & for pack of 5 LED lamps. \\
+                                                    &           &          & Lifetime output = 450 lumens $\times$ 3 hours/day  \\
+                                                    &           &          & $\times$ 365 days/year $\times$ 10 years = 4,926,405 lumen-hrs. \\
+                                                    &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+ \midrule
+  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Economic parameters (2020).}
+\label{tab:lamp_economic_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description  & Value & Data sources and notes \\ 
+  Parameter [units] & & \\
+  \midrule
+  Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/year). \\
+  $\rbempl{q}_s$ [lm-hr/year]                               &               & \\
+  \midrule
+  Real median personal income U.S.\, in 2018                & 34,317        & Refer to Table~\ref{tab:car_economic_parameters}.\\
+  {} [\$/year]                                              &               & \\
+  \midrule
+  U.S.\ 2018 disposable income /                            & 0.88319       & Refer to Table~\ref{tab:car_economic_parameters}. \\
+  real income (minus current taxes)                         &               &  \\
+  {} [--]                                                   &               &  \\
+  \midrule
+  Share of savings from 2018 disposable income              & 0.07848       & Refer to Table~\ref{tab:car_economic_parameters}. \\
+  {} [--]                                                   &               &  \\ 
+  \midrule
+  Personal consumption in 2018                   & \Sexpr{M_dot_orig_lamp_char}     & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$. \\
+  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  \midrule
+  Price of electricity                  & \Sexpr{p_E_orig_lamp_char}        & U.S.\ 2018 average U.S.\ household electricity price \\
+  $p_E$ [\$/kW-hr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
+  \midrule
+  Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/year (spend on energy service) / \\
+  $\fCs$ [--]                                               &               & [\$27,920/year (other goods) + \$8.5/year (energy service)] = 0.00030, \\
+                                                            &               & where spend on energy service = 580,350 lm-hrs/year /  \\
+                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
+  \midrule
+  Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
+  $k$ [--]                                                  &               &               \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Lamp example: Elasticity parameters.}
+\label{tab:lamp_elasticity_parameters}
+\begin{tabular}{ r c l }
+  \toprule
+  Description & Value & Data sources and notes \\
+  Parameter [units] & & \\
+  \midrule
+  Price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
+  $\eqspsUC$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
+                                                            &            &     based on \citet{Fouquet2011}. \\
+  \midrule
+  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
+  $\eqspsC$ [--]                                           &           &   \\    
+  \midrule   
+  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
+  $\eqopsC$ [--]                                           &           &   \\ 
+  \midrule   
+  Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
+  $\eqsM$ [--]                                            &           &   \\ 
+  \midrule   
+  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_lamp_char}     & Follows from CES utility function. \\
+  $\eqoM$ [--]                                            &           &   \\
+  \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -689,24 +1173,7 @@ rebound_results %>%
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To demonstrate application of the rebound analysis framework
-developed in Section~\ref{PartI-sec:framework} of Part I,
-we analyze two case studies:
-energy efficiency upgrades to a car and an electric lamp.
-We first collect parameter values
-for the equations for
-eight rebound components:
-$Re_{dempl}$,
-$Re_{emb}$,
-$Re_{\md}$,
-$Re_{dsub}$,
-$Re_{isub}$,
-$Re_{dinc}$,
-$Re_{iinc}$, and
-$Re_{\macro}$.
-The total rebound 
-($Re_{tot}$)
-is given by the sum of the above components.
+
 
 The link between macroeconomic and microeconomic rebound 
 is largely unexplored, and 
@@ -719,239 +1186,6 @@ in the Discussion (Section~\ref{sec:calibrating_k}).
 \subsection{Case 1: Purchase of a new car}
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
-
-<<CarPrintableNumbers, echo=FALSE>>=
-val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, format = "f", big.mark = ",") {
-  val <- rebound_results %>% 
-    dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == case) %>% 
-    magrittr::extract2(val) %>% 
-    magrittr::multiply_by(scale)
-  if (to_perc) {
-    val <- val * 100
-  }
-  val %>% 
-    formatC(digits = digits, format = format, big.mark = big.mark)
-}
-# Parameters for first table
-mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
-mpg_better <- val_to_string(case = "Car", val = ReboundTools::star_vars$eta_engr_units_star, digits = 0)
-C_dot_cap_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 0)
-C_dot_cap_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_cap_star, digits = 0)
-t_own_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_own_orig, digits = 0)
-t_own_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_own_star, digits = 0)
-t_life_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_life_orig, digits = 0)
-t_life_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_life_star, digits = 0)
-E_emb_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$E_emb_orig, digits = 0)
-E_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$E_emb_star, digits = 0)
-C_dot_md_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 0)
-C_dot_md_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_md_star, digits = 0)
-
-# Parameters for second table
-q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
-M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
-p_E_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 2)
-f_Cs_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$f_Cs_orig, digits = 3)
-k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k, digits = 1)
-
-# Parameters for elasticity table
-e_qs_ps_UC_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
-e_qs_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 3)
-e_qo_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 3)
-e_qs_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
-e_qo_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
-
-# Parameters for discussion
-Re_dempl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
-Re_emb_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
-Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 0)
-Re_md_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE, digits = 1)
-Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
-Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
-Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
-Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
-N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
-Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
-@
-
-For the first example, 
-we consider the purchase of a more fuel efficient car, 
-namely a gasoline-electric Ford Fusion Hybrid car,
-to replace a conventional gasoline Ford Fusion car. 
-The cars are matched as closely as possible, 
-except for the inclusion of an electric battery 
-in the hybrid car.  
-The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
-versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
-
-
-%------------------------------
-\subsubsection{Input parameters} 
-\label{sec:Car_input_data}
-%------------------------------
-
-We require four sets of data. 
-First, basic car parameters are summarized 
-in Table~\ref{tab:car_parameters}.
-Second, we require several general parameters, 
-mainly relating to the U.S.\ economy and personal finances 
-of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
-Third, we require elasticity parameters, 
-as given in Table~\ref{tab:car_elasticity_parameters}.
-Fourth, armed with the parameter values from 
-Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
-and the equations of Section~\ref{PartI-sec:framework} in Part~I,
-we calculate important values at each rebound stage,
-as shown in Table~\ref{tab:car_stages_table}.
-Note that Table~\ref{tab:car_stages_table} applies to the car owner.
-Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
-changes occur only in the macroeconomy.
-For the car owner, no changes are observed across the macro effect.
-Thus, the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:car_stages_table} are identical.
-
-% Reduce spacing between table rows henceforth.
-\renewcommand{\arraystretch}{0.6}
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Car example: Vehicle parameters.} 
-\label{tab:car_parameters}
-\begin{tabular}{ r c c l }
-  \toprule
-    Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
-    Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
-  \midrule
-  Fuel economy                           & \Sexpr{mpg_worse} & \Sexpr{mpg_better} & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
-  $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
-                                                    &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
-                                                    &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
-  \midrule
-   Capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & -- resale value (purchase -- depreciation). Ford Fusion gasoline costs from \\
-                                                    &           &          & \citet{Edmunds:2020_fusion_gasoline}. \\
-                                                    &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
- \midrule
-   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) length from \citet{BusinessWire:2015}, \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
-                                                    &           &          & taken as 84 months in 2020 (7 years) for our example. \\
- \midrule
-   Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
-   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
-                                                    &           &          & \citet{SMMT:2020}. \\
- \midrule
-   Embodied energy             & \Sexpr{E_emb_orig_car_char}    & \Sexpr{E_emb_star_car_char}   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
-   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
-                                                    &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
-                                                    &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
-                                                    &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
-                                                    &           &          & Battery lifetime assumed same as car lifetime, based on \\
-                                                    &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
- \midrule
-  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & maintenance, repairs, taxes, and fees \\
-                                                    &           &          & (excluding financing, depreciation, fuel). \\
-                                                    &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-                                                    &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
-
-
-
-
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Car example: Economic parameters (2020).}
-\label{tab:car_economic_parameters}
-\begin{tabular}{ r c l }
-  \toprule
-  Description & Value & Data sources and notes \\ 
-  Parameter [units] & & \\
-  \midrule
-  Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/year, calculated from \citet{Car_Insurance:2019}.  \\
-  $\rbempl{q}_s$ [miles/year]                               &               & This is slightly lower than the average driver miles/year (13,476) \\
-                                                            &               & \citep{US_DoT:2018}, as there are \\
-                                                            &               & more registered U.S.\ vehicles than drivers. \\
-  \midrule
-  Real median personal income U.S., in 2018                 & 34,317        & Taken from \citet{St_Louis_Fed:2019}.\\
-  {} [\$/year]                                              &               & \\
-  \midrule
-  U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
-  real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
-  {} [--]                                                   &               & Table 2.1.\ Personal Income and Its Disposition \\
-                                                            &               & \citep{US_BEA:2020}. \\ 
-  \midrule
-  Share of savings from 2018 disposable income              & 0.07848       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
-  {} [--]                                                   &               & National and Products Accounts (NIPA) \\ 
-                                                            &               & Table 2.1.\ Personal Income and Its Disposition \\
-                                                            &               & \citep{US_BEA:2020}. \\
-  \midrule
-  Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$ \\
-  $\rate{M}$ [\$/year]                                      &               &                                              \\
-  \midrule
-  Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Source: \citet{US_EIA:2020_gasoline} \\
-  $p_E$ [\$/gallon]                                         &               &  \\
-  \midrule  
-  Fractional spend on original energy service      & \Sexpr{f_Cs_orig_car_char}      & Calculation: \$1,306 (spend on energy service) \\
-  $\fCs$ [--]                                               &               & / [\$19,115 (other goods) + \$1,306 (energy service)] = 0.064, \\
-                                                            &               & where spend on energy service = 12,416 miles / 25 mpg \\
-                                                            &               & $\times$ \$2.63/gallon = \$1,306. \\
-  \midrule
-  Macro factor                                              & \Sexpr{k_car_char}           & Assumed value. \\  
-  $k$ [--]                                                  &               &               \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
-
-
-
-
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Car example: Elasticity parameters.}
-\label{tab:car_elasticity_parameters}
-\begin{tabular}{ r c l }
-  \toprule
-  Description & Value & Data sources and notes \\
-  Parameter [units] & & \\
-  \midrule
-  Price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
-  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
-                                                           &           &   \citet{goetzke2018} who estimated values \\
-                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
-                                                             &           &   who estimated values between $-0.1$ and $-0.3$. \\  
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
-                                                            &            &     based on \citet{Parry2005}. \\
-  \midrule
-  Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsC$ [--]                                           &                                &   \\    
-  \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsC$ [--]                                           &                                &   \\ 
-  \midrule   
-  Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
-  $\eqsM$ [--]                                            &                                &   \\ 
-  \midrule   
-  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_car_char}      & Follows from CES utility function. \\
-  $\eqoM$ [--]                                            &                                &   \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
 
 
 
@@ -1310,96 +1544,7 @@ energy service (transportation).
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
-<<LampPrintableNumbers, echo=FALSE>>=
-# First table
-efficacy_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # lm-hr/W-hr
-efficacy_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # lm-hr/W-hr
-C_dot_cap_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 3)
-C_dot_cap_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_cap_star, digits = 3)
-t_own_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_own_orig, digits = 1)
-t_own_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_own_star, digits = 0)
-t_life_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_life_orig, digits = 1)
-t_life_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_life_star, digits = 0)
-E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
-E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
-C_dot_md_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 2)
-C_dot_md_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_md_star, digits = 2)
 
-# Second table
-q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
-M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
-p_E_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 4)
-f_Cs_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$f_Cs_orig, digits = 7)
-k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$k, digits = 1)
-
-# Third table
-e_qs_ps_UC_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
-e_qs_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 4)
-e_qo_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 5)
-e_qs_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
-e_qo_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
-
-# Results discussion
-Re_dempl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
-Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
-Delta_E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 2)
-E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
-E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
-E_dot_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_dot_emb_orig, digits = 2)
-E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_dot_emb_star, digits = 2)
-Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
-Re_md_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE)
-Re_dsub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
-eta_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # In lm/W
-eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # In lm/W
-q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/year
-q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/year
-Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
-Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
-Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
-N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
-Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_bar, digits = 2)
-Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
-@
-
-
-For the second example, 
-we consider purchasing a Light Emitting Diode (LED) electric lamp
-to replace a baseline incandescent electric lamp. 
-Both lamps are matched as closely as possible 
-in terms of energy service delivery (measured in lumen output per lamp), 
-the key difference being the energy required to provide that energy service. 
-The LED lamp has a low 
-initial capital investment rate
-(less than the incumbent incandescent lamp, actually)
-and a long-term benefit of decreased direct energy expenditures
-at the same energy service delivery rate (lm-hr/year).
-
-
-%------------------------------
-\subsubsection{Input parameters} 
-\label{sec:lamp_input_data}
-%------------------------------
-
-Again, four sets of data are required. 
-First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
-Second, several general parameters, 
-mainly relating to the U.S.\ economy and 
-personal finances of the average U.S.\ citizen are 
-given in Table~\ref{tab:lamp_economic_parameters}.
-Third, we require the elasticity parameters, 
-as shown in Table~\ref{tab:lamp_elasticity_parameters}.
-Fourth, with the parameter values from 
-Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
-and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
-we calculate important values at each rebound stage,
-as shown in Table~\ref{tab:lamp_stages_table}.
-Similar to Table~\ref{tab:car_stages_table}, 
-Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
-so no changes are observed across the macro effect, and
-the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:lamp_stages_table} are identical.
 
 
 %------------------------------
@@ -1495,140 +1640,6 @@ due to economic expansion caused by
 productivity enhancements arising from the more-efficient provision of the 
 energy service (lighting).
 
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Lamp example: Electric lamp parameters.} 
-\label{tab:lamp_parameters}
-\begin{tabular}{ r c c l }
-  \toprule
-    Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
-    Parameters [units]                                &  &  & \\
-  \midrule
-  Lamp efficacy                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
-  $\bempl{\eta}$, $\amacro{\eta}$ [lm-hr/W-hr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
-  \midrule
-   Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
-                                                    &           &          & and \$1.21 for LED lamp from \\
-                                                    &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
-  \midrule
-   Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          &  \\
- \midrule
-   Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hours/day  \\
-   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
-                                                    &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
-   \midrule
-   Life cycle analysis (LCA) embodied energy  & \Sexpr{E_emb_orig_lamp_char}      & \Sexpr{E_emb_star_lamp_char}     & Base document: Table 4.5 Manufacturing Phase Primary  \\
-   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million lumen-hours), contained in \\
-                                                    &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
-                                                    &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
-                                                    &           &          & Incandescent lamp: \\
-                                                    &           &          & LCA energy = 42.2 MJ/20 million lumen-hours.  \\
-                                                    &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
-                                                    &           &          & $\times$ 365 days/year $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
-                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
-                                                    &           &          & LED lamp:  \\
-                                                    &           &          & LCA energy = 132 MJ/20 Million lumen-hours \\
-                                                    &           &          & for pack of 5 LED lamps. \\
-                                                    &           &          & Lifetime output = 450 lumens $\times$ 3 hours/day  \\
-                                                    &           &          & $\times$ 365 days/year $\times$ 10 years = 4,926,405 lumen-hrs. \\
-                                                    &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
- \midrule
-  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
-
-
-
-
-
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Lamp example: Economic parameters (2020).}
-\label{tab:lamp_economic_parameters}
-\begin{tabular}{ r c l }
-  \toprule
-  Description  & Value & Data sources and notes \\ 
-  Parameter [units] & & \\
-  \midrule
-  Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/year). \\
-  $\rbempl{q}_s$ [lm-hr/year]                               &               & \\
-  \midrule
-  Real median personal income U.S.\, in 2018                & 34,317        & Refer to Table~\ref{tab:car_economic_parameters}.\\
-  {} [\$/year]                                              &               & \\
-  \midrule
-  U.S.\ 2018 disposable income /                            & 0.88319       & Refer to Table~\ref{tab:car_economic_parameters}. \\
-  real income (minus current taxes)                         &               &  \\
-  {} [--]                                                   &               &  \\
-  \midrule
-  Share of savings from 2018 disposable income              & 0.07848       & Refer to Table~\ref{tab:car_economic_parameters}. \\
-  {} [--]                                                   &               &  \\ 
-  \midrule
-  Personal consumption in 2018                   & \Sexpr{M_dot_orig_lamp_char}     & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$. \\
-  $\rate{M}$ [\$/year]                                      &               &                                              \\
-  \midrule
-  Price of electricity                  & \Sexpr{p_E_orig_lamp_char}        & U.S.\ 2018 average U.S.\ household electricity price \\
-  $p_E$ [\$/kW-hr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
-  \midrule
-  Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/year (spend on energy service) / \\
-  $\fCs$ [--]                                               &               & [\$27,920/year (other goods) + \$8.5/year (energy service)] = 0.00030, \\
-                                                            &               & where spend on energy service = 580,350 lm-hrs/year /  \\
-                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
-  \midrule
-  Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
-  $k$ [--]                                                  &               &               \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
-
-
-
-
-\begin{landscape}
-\begin{table}
-\footnotesize
-\begin{center}
-\caption{Lamp example: Elasticity parameters.}
-\label{tab:lamp_elasticity_parameters}
-\begin{tabular}{ r c l }
-  \toprule
-  Description & Value & Data sources and notes \\
-  Parameter [units] & & \\
-  \midrule
-  Price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
-  $\eqspsUC$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
-                                                            &            &     based on \citet{Fouquet2011}. \\
-  \midrule
-  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsC$ [--]                                           &           &   \\    
-  \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsC$ [--]                                           &           &   \\ 
-  \midrule   
-  Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
-  $\eqsM$ [--]                                            &           &   \\ 
-  \midrule   
-  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_lamp_char}     & Follows from CES utility function. \\
-  $\eqoM$ [--]                                            &           &   \\
-  \bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\end{landscape}
 
 
 
