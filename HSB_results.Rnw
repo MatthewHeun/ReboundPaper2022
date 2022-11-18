@@ -1168,6 +1168,39 @@ rebound_results %>%
 @
 
 
+
+%++++++++++++++++++++++++++++++
+\subsection{Software tools}
+\label{sec:software_tools}
+%++++++++++++++++++++++++++++++
+
+**** More here. 
+Discuss how these tools were used to create all graphs and calculations in this paper. ****
+
+The open source \texttt{R} package \texttt{ReboundTools} 
+can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
+(See \citet{Heun:2021us}.)
+\texttt{ReboundTools} provides functions for 
+%
+\begin{enumerate*}[label={(\alph*)}]
+	
+  \item reading input data from a spreadsheet,
+
+  \item performing rebound calculations, and 
+  
+  \item generating rebound path graphs.
+    
+\end{enumerate*}
+%
+\texttt{ReboundTools} was used for 
+all calculations and all rebound path graphs in this paper.
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results: Two applications of the rebound framework}
 \label{sec:results}
@@ -1186,9 +1219,6 @@ in the Discussion (Section~\ref{sec:calibrating_k}).
 \subsection{Case 1: Purchase of a new car}
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
-
-
-
 
 <<car_stages_table, results="asis", echo=FALSE>>=
 digs_car <- matrix(c(rep(1, 7), # eta_engr_units
@@ -1950,7 +1980,7 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
   magrittr::extract2("Re_tot")
 @
 
-The framework developed in Section~\ref{sec:framework} 
+The framework developed in Section~\ref{PartI-sec:framework} of Part~I
 links macroeconomic rebound to microeconomic rebound 
 via a term that scales magnitudes in the microeconomic portion of the framework. 
 Few rebound studies have explored the macroeconomic scale
@@ -1958,12 +1988,12 @@ between microeconomic and total rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
 we bridge macroeconomic and microeconomic scales with the macro factor ($k$), 
 as discussed in Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.
-For the results presented in Section~\ref{sec:examples}, 
+For the results presented in Section~\ref{sec:results}, 
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device owner in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-In combination, the framework presented in Section~\ref{sec:framework}, 
-the results obtained in Section~\ref{sec:examples}, and
+In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
+the results obtained in Section~\ref{sec:results}, and
 recent estimates of total rebound allow, 
 for the first time, 
 a discussion about calibrating $k$.
@@ -2034,7 +2064,7 @@ the subsequent demand-side effects may well be interpreted as a multiplier effec
 caused by higher real income instead of by higher monetary income.
 
 After calibrating $k \approx 3$, we see that choosing a placeholder value of $k = 1$
-in Section~\ref{sec:examples}
+in Section~\ref{sec:results}
 underestimated $Re_{\macro}$ and, therefore, $Re_{tot}$.
 In Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph},
 the macro effect segments (\bartilde{})
@@ -2059,30 +2089,6 @@ respectively.
 I think there is room for a section here that compares
 our estimates for car and electric lamp rebound to previous authors. ---MKH 
 ****
-
-
-%++++++++++++++++++++++++++++++
-\subsection{Software tools}
-\label{sec:software_tools}
-%++++++++++++++++++++++++++++++
-
-The open source \texttt{R} package \texttt{ReboundTools} 
-can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
-(See \citet{Heun:2021us}.)
-\texttt{ReboundTools} provides functions for 
-%
-\begin{enumerate*}[label={(\alph*)}]
-	
-  \item reading input data from a spreadsheet,
-
-  \item performing rebound calculations, and 
-  
-  \item generating rebound path graphs.
-    
-\end{enumerate*}
-%
-\texttt{ReboundTools} was used for 
-all calculations and all rebound path graphs in this paper.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
