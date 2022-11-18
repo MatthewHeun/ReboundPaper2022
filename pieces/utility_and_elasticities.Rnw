@@ -1,7 +1,7 @@
 % The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
 % instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
 % before building the paper.
-%!TEX root = ../HSB.Rnw
+%!TEX root = ../HSB_framework.Rnw
 
 
 <<efficiency_improvements, echo=FALSE>>=
@@ -58,14 +58,17 @@ the CES utility model is needed for
 the example EEUs in this paper,
 which have large, non-marginal
 percentage increases in energy efficiency.
-For the car example in Section~\ref{sec:car_example}, 
-energy efficiency increases from 
-$\orig{\eta} = \Sexpr{mpg_worse}$~mpg to
-$\amacro{\eta} = \Sexpr{mpg_better}$~mpg, 
-a \Sexpr{eta_car_perc_improvement}\% improvement.
-For the lamp example in Section~\ref{sec:lamp_example},
-energy efficiency increases by 
-\Sexpr{formatC(unlist(eta_lamp_perc_improvement))}\%.
+
+% Commenting, because these data are only available
+% in Part II, but this appendix is included in Part I.
+% For the car example in Section~\ref{sec:car_example}, 
+% energy efficiency increases from 
+% $\orig{\eta} = \Sexpr{mpg_worse}$~mpg to
+% $\amacro{\eta} = \Sexpr{mpg_better}$~mpg, 
+% a \Sexpr{eta_car_perc_improvement}\% improvement.
+% For the lamp example in Section~\ref{sec:lamp_example},
+% energy efficiency increases by 
+% \Sexpr{formatC(unlist(eta_lamp_perc_improvement))}\%.
 
 % For completeness,
 % we briefly mention a third utility model with Cobb-Douglas form.
@@ -210,12 +213,12 @@ equilibrium requirement,
 namely that the expenditure curve is tangent to the indifference curve
 in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
 prior to the EEU.
-For example, line \circcirc{} is tangent to preference curve 
-\iicirc{}
-at point $\circ$
-in Figs.~\ref{fig:ExampleConsPathGraph}, 
-\ref{fig:CarConsGraph}, and 
-\ref{fig:LampConsGraph}.
+% For example, line \circcirc{} is tangent to preference curve 
+% \iicirc{}
+% at point $\circ$
+% in Figs.~\ref{fig:ExampleConsPathGraph}, 
+% \ref{fig:CarConsGraph}, and 
+% \ref{fig:LampConsGraph}.
 
 To find the slope of the indifference curve,
 Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to find 
@@ -234,9 +237,9 @@ a form convenient for drawing
 constant utility rate ($\rate{u}/\rbempl{u}$) indifference curves in 
 $\rate{C}_o/\rbempl{C}_o$ vs.\ 
 $\rate{q}_s/\rbempl{q}_s$ space.
-(See Figs.~\ref{fig:ExampleConsPathGraph}, 
-\ref{fig:CarConsGraph}, and 
-\ref{fig:LampConsGraph}.)
+% (See Figs.~\ref{fig:ExampleConsPathGraph}, 
+% \ref{fig:CarConsGraph}, and 
+% \ref{fig:LampConsGraph}.)
 In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
 the slope of an indifference curve is found by taking the first 
 partial derivative of $\rate{C}_o/\rbempl{C}_o$
@@ -266,9 +269,9 @@ a generic version of Eqs.~(\ref{eq:M_acct_orig}),
 (\ref{eq:M_acct_asub}), and 
 (\ref{eq:M_acct_ainc})
 with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
-In a manner similar to derivations in
-Appendix~\ref{sec:pref_graph_constant_expenditure_lines}, 
-we solve for $\rate{C}_o$ and 
+% In a manner similar to derivations in
+% Appendix~\ref{sec:pref_graph_constant_expenditure_lines}, 
+We solve for $\rate{C}_o$ and 
 judiciously multiply by $\rbempl{C}_o/\rbempl{C}_o$
 and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
 

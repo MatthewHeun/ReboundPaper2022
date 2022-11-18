@@ -1,7 +1,7 @@
 % The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
 % instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
 % before building the paper.
-%!TEX root = ../HSB.Rnw
+%!TEX root = ../HSB_results.Rnw
 
 Rebound path graphs show the impact of direct and indirect rebound effects
 in energy space, expenditure space, and consumption space.
@@ -61,7 +61,7 @@ The equation of a constant total energy consumption line is derived from
   \rate{E}_{tot} = \rate{E}_{dir} + \rate{E}_{indir}
 \end{equation}
 %
-at any rebound stage. (See Fig.~\ref{fig:flowchart}.)
+at any rebound stage.
 Direct energy consumption is energy consumed by the energy conversion device
 ($\rate{E}_s$), and 
 indirect energy consumption is the sum of embodied energy, 
@@ -89,7 +89,7 @@ to obtain
 \end{equation}
 %
 where all of $\rate{E}_s$, $\rate{E}_{emb}$, $\rate{C}_{\md}$, and $\rate{C}_o$
-apply at the same rebound stage of Fig.~\ref{fig:flowchart}.
+apply at the same rebound stage.
 
 The constant total energy consumption line 
 that passes through the original point ($\circ$)
@@ -154,7 +154,7 @@ gives
 \end{equation}
 %
 where all of $\rate{C}_s$, $\rate{C}_{cap}$, $\rate{C}_{\md}$, and $\rate{C}_o$
-apply at the same rebound stage of Fig.~\ref{fig:flowchart}.
+apply at the same rebound stage.
 
 The constant total expenditure line 
 that passes through the original point ($\circ$)
@@ -164,7 +164,7 @@ shows the budget constraint for the device owner:
   y = -x + \rbempl{C}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o \; ,
 \end{equation}
 %
-into which Eq.~(\ref{eq:M_acct_orig}) can be substituted with 
+into which Eq.~(\ref{PartI-eq:M_acct_orig}) of Part~I can be substituted with 
 $\rorig{C}_s = p_E \rorig{E}_s$ and 
 $\rorig{N} = 0$ to obtain
 
@@ -232,7 +232,7 @@ lines of constant expenditure on a consumption path graph
 are derived from the budget constraint of the device owner
 at each of the four points.
 
-Prior to the EEU, the budget constraint is given by Eq.~(\ref{eq:M_acct_orig}).
+Prior to the EEU, the budget constraint is given by Eq.~(\ref{PartI-eq:M_acct_orig}) of Part~I.
 Substituting $\orig{p}_s \rorig{q}_s$ for $p_E \rorig{E}_s$ and 
 recognizing that there is no net savings before the EEU
 ($\rorig{N} = 0$) gives
@@ -253,8 +253,8 @@ to the original point ($\circ$) to obtain
 \end{equation}
 %
 where all of $\rbempl{M}$, $\bempl{p}_s$, $\rbempl{C}_{cap}$, and $\rbempl{C}_{\md}$
-apply at the same rebound stage of Fig.~\ref{fig:flowchart}, 
-namely the original point ($\circ$).
+apply at the same rebound stage, 
+namely the original point ($\circ$) in this instance.
 
 To derive the equation of the line representing the original budget constraint 
 in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
@@ -297,7 +297,7 @@ A similar procedure can be employed to derive the equation of the
 \starstar{} line through the $*$ point
 after the emplacement effect.
 The starting point is the budget constraint at the $*$ point
-(Eq.~(\ref{eq:M_acct_aemp}))
+(Eq.~(\ref{PartI-eq:M_acct_aemp}) of Part~I)
 with $\rorig{M}$ replacing $\raempl{M}$, 
 $\amacro{p}_s \rate{q}_s$ replacing $p_E \raempl{E}_s$, and
 $\rate{C}_o$ replacing $\raempl{C}_o$.
@@ -306,8 +306,8 @@ $\rate{C}_o$ replacing $\raempl{C}_o$.
   \rbempl{M} = \amacro{p}_s \rate{q}_s + \raempl{C}_{cap} + \raempl{C}_{\md} + \rate{C}_o + \raempl{N} \; .
 \end{equation}
 %
-Substituting Eq.~(\ref{eq:N_dot_star_empl}) for $\raempl{N}$,
-substituting Eq.~(\ref{eq:G_dot}) for $\rate{G}$,
+Substituting Eq.~(\ref{PartI-eq:N_dot_star_empl}) of Part~I for $\raempl{N}$,
+substituting Eq.~(\ref{PartI-eq:G_dot}) of Part~I to obtain $\rate{G}$,
 multiplying judiciously by $\rbempl{C}_o/\rbempl{C}_o$ and $\rbempl{q}_s/\rbempl{q}_s$, 
 rearranging, and noting that 
 $\rate{q}_s/\rbempl{q}_s$ is the $x$-axis and 
@@ -330,9 +330,9 @@ consumption path graphs
 The \circcirc{} and \starstar{} lines intersect at the coincident $\circ$ and $*$ points.
 
 A similar derivation process can be used to find the equation of 
-line representing the budget constraint
+the line representing the budget constraint
 after the substitution effect (the \hathat{} line through the $\wedge$ point).
-The starting point is Eq.~(\ref{eq:M_acct_asub}), and 
+The starting point is Eq.~(\ref{PartI-eq:M_acct_asub}) of Part~I, and 
 the equation for the constant expenditure line is
 
 \begin{equation} \label{eq:hat_line_prefs}
@@ -347,7 +347,7 @@ but a lower $y$-intercept.
 
 Finally, the corresponding derivation
 for the equation of the constant expenditure line through the 
-$-$ point (line \barbar{}) starts with Eq.~(\ref{eq:M_acct_ainc}) and ends with 
+$-$ point (line \barbar{}) starts with Eq.~(\ref{PartI-eq:M_acct_ainc}) of Part~I and ends with 
 
 \begin{equation} \label{eq:bar_line_prefs}
   y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
@@ -388,9 +388,9 @@ for the energy conversion device owner.
 In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
 any indifference curve 
 is given by 
-Eq.~(\ref{eq:utility_Co_form})
+Eq.~(\ref{PartI-eq:utility_Co_form}) of Part~I
 with $\fCs$ replacing the share parameter $a$, 
-as shown in Appendix~\ref{sec:utility_and_elasticities}.
+as shown in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.
 Recognizing that 
 $\rate{C}_o/\rbempl{C}_o$ is on the $y$-axis and 
 $\rate{q}_s/\rbempl{q}_s$ is on the $x$-axis
@@ -406,7 +406,7 @@ $x$ for $\rate{q}_s/\rbempl{q}_s$ to obtain
 At any point in 
 $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space,
 namely ($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{o,1}/\rbempl{C}_o$),
-indexed utility ($\rate{u}_1/\rbempl{u}$) is given by Eq.~(\ref{eq:ces_utility}) as
+indexed utility ($\rate{u}_1/\rbempl{u}$) is given by Eq.~(\ref{PartI-eq:ces_utility}) of Part~I as
 
 \begin{equation} \label{eq:utility_ratio_1_point}
   \frac{\rate{u}_1}{\rbempl{u}} =

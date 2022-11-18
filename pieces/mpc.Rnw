@@ -1,7 +1,7 @@
 % The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
 % instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
 % before building the paper.
-%!TEX root = ../HSB.Rnw
+%!TEX root = ../HSB_framework.Rnw
 
 \citet{Borenstein:2015aa} has postulated a demand-side argument that macro effects 
 can be represented by a multiplier, which we call the macro factor ($k$).
@@ -49,7 +49,7 @@ Solving for $k$ yields
 
 With $\MPC = 0.5$, as in Section~\ref{sec:macro_effect_main_paper}, 
 $k = 1$ is obtained.
-If $k = 3$, as in Section~\ref{sec:calibrating_k}, 
+If $k = 3$, as in Part~II, 
 $\MPC = 0.75$ is implied.
 The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
 
