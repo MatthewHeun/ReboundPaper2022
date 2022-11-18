@@ -1147,9 +1147,6 @@ rebound_results %>%
 \label{sec:software_tools}
 %++++++++++++++++++++++++++++++
 
-**** More here. 
-Discuss how these tools were used to create all graphs and calculations in this paper. ****
-
 We developed an open source \texttt{R} package \texttt{ReboundTools}
 to standardize and distribute our methods for calculating rebound magnitudes.
 \texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
@@ -1173,18 +1170,13 @@ In addition, an Excel workbook that performs rebound calculations
 using the framework of this paper
 can be found at the data repository for this paper at
 \url{https://doi.org/10.5518/1201}.
-**** Add bibliographic reference here, similar to the bib reference for \texttt{ReboundTools}.
+(See \citet{Brockway:2022aa}.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-**** Figure out where the next paragraph belongs. ****
-
- 
 
 %++++++++++++++++++++++++++++++
 \subsection{Case 1: Purchase of a new car}
