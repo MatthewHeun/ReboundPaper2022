@@ -143,6 +143,21 @@ To move improve clarity in the rebound space,
 in Part~I of this two-part paper
 we developed a partial equilibrium framework for analyzing energy rebound, 
 one that is tractable for energy analysts and economists alike.
+The framework contains 
+two locations (direct and indirect) and 
+four rebound effects
+(emplacement, substitution, income, and macro) 
+between five stages,
+as shown in Fig.~\ref{fig:flowchart}.
+
+\begin{figure}
+\centering
+  % The file is a Tikz picture.
+  \input{pieces/flowchart.tex}
+\caption{Flowchart of rebound effects and decorations.}
+\label{fig:flowchart}
+\end{figure}
+
 In this paper (Part~II), we make further progress toward the goal of clarity
 in three ways.
 First, we develop a new way to visualize 
@@ -2116,7 +2131,7 @@ will bring about sound energy and climate policy.
 
 From the development and application of the framework in Part~II, 
 we draw two important conclusions.
-First, the car and lamp examples (Section~\ref{sec:examples}) show that
+First, the car and lamp examples (Section~\ref{sec:results}) show that
         the framework enables
         quantification of rebound magnitudes at microeconomic and macroeconomic scales, including 
         direct and indirect locations 
