@@ -285,7 +285,7 @@ in the hybrid car.
 The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
 versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
 
-We require four sets of data. 
+We require three sets of data. 
 First, basic car parameters are summarized 
 in Table~\ref{tab:car_parameters}.
 Second, we require several general parameters, 
@@ -293,17 +293,8 @@ mainly relating to the U.S.\ economy and personal finances
 of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
 Third, we require elasticity parameters, 
 as given in Table~\ref{tab:car_elasticity_parameters}.
-Fourth, armed with the parameter values from 
-Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
-and the equations of Section~\ref{PartI-sec:framework} in Part~I,
-we calculate important values at each rebound stage,
-as shown in Table~\ref{tab:car_stages_table}.
-Note that Table~\ref{tab:car_stages_table} applies to the car owner.
-Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
-changes occur only in the macroeconomy.
-For the car owner, no changes are observed across the macro effect.
-Thus, the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:car_stages_table} are identical.
+
+
 
 % Reduce spacing between table rows henceforth.
 \renewcommand{\arraystretch}{0.6}
@@ -523,7 +514,7 @@ initial capital investment rate
 and a long-term benefit of decreased direct energy expenditures
 at the same energy service delivery rate (lm-hr/year).
 
-Again, four sets of data are required. 
+Again, three sets of data are required. 
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
 Second, several general parameters, 
 mainly relating to the U.S.\ economy and 
@@ -531,16 +522,6 @@ personal finances of the average U.S.\ citizen are
 given in Table~\ref{tab:lamp_economic_parameters}.
 Third, we require the elasticity parameters, 
 as shown in Table~\ref{tab:lamp_elasticity_parameters}.
-Fourth, with the parameter values from 
-Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
-and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
-we calculate important values at each rebound stage,
-as shown in Table~\ref{tab:lamp_stages_table}.
-Similar to Table~\ref{tab:car_stages_table}, 
-Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
-so no changes are observed across the macro effect, and
-the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:lamp_stages_table} are identical.
 
 
 \begin{landscape}
@@ -1220,6 +1201,18 @@ in the Discussion (Section~\ref{sec:calibrating_k}).
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
+Armed with the parameter values from 
+Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
+and the equations of Section~\ref{PartI-sec:framework} in Part~I,
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:car_stages_table}.
+Note that Table~\ref{tab:car_stages_table} applies to the car owner.
+Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
+changes occur only in the macroeconomy.
+For the car owner, no changes are observed across the macro effect.
+Thus, the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:car_stages_table} are identical.
+
 <<car_stages_table, results="asis", echo=FALSE>>=
 digs_car <- matrix(c(rep(1, 7), # eta_engr_units
                      rep(3, 7), # eta
@@ -1251,11 +1244,6 @@ rebound_results %>%
         math.style.negative = TRUE)
 @
 
-  
-%------------------------------
-\subsubsection{Results} 
-\label{sec:Car_results}
-%------------------------------
 
 Results are represented graphically in quantified energy, expenditure, and consumption path graphs
 in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
@@ -1574,13 +1562,48 @@ energy service (transportation).
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
+With the parameter values from 
+Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
+and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
+we calculate important values at each rebound stage,
+as shown in Table~\ref{tab:lamp_stages_table}.
+Similar to Table~\ref{tab:car_stages_table}, 
+Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
+so no changes are observed across the macro effect, and
+the $-$ (bar) and $\sim$ (tilde) columns
+of Table~\ref{tab:lamp_stages_table} are identical.
 
+<<lamp_stages_table, results="asis", echo=FALSE>>=
+digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
+                      rep(0, 7), # eta
+                      rep(8, 7), # p_s
+                      rep(0, 7), # q_dot_s
+                      rep(1, 7), # E_dot_s
+                      rep(3, 7), # E_dot_emb
+                      rep(2, 7), # C_dot_s
+                      rep(2, 7), # C_dot_cap
+                      rep(2, 7), # C_dot_md
+                      rep(0, 7), # C_dot_o
+                      rep(2, 7), # N_dot
+                      rep(0, 7)), # M_dot
+                    nrow = 12, ncol = 7, byrow = TRUE)
+rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::stages_table(label = "tab:lamp_stages_table", 
+                             caption = "Results for lamp example with macro factor ($k$) assumed to be 1.", 
+                             digits = digs_lamp, 
+                             align = "lrrrrrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","),
+        math.style.negative = TRUE)
+@
 
-
-%------------------------------
-\subsubsection{Results} 
-\label{sec:lamp_results}
-%------------------------------
 
 <<LampGraphReResults, include=FALSE>>=
 Re_empl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
@@ -1674,36 +1697,7 @@ energy service (lighting).
 
 
 
-<<lamp_stages_table, results="asis", echo=FALSE>>=
-digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
-                      rep(0, 7), # eta
-                      rep(8, 7), # p_s
-                      rep(0, 7), # q_dot_s
-                      rep(1, 7), # E_dot_s
-                      rep(3, 7), # E_dot_emb
-                      rep(2, 7), # C_dot_s
-                      rep(2, 7), # C_dot_cap
-                      rep(2, 7), # C_dot_md
-                      rep(0, 7), # C_dot_o
-                      rep(2, 7), # N_dot
-                      rep(0, 7)), # M_dot
-                    nrow = 12, ncol = 7, byrow = TRUE)
-rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::mutate(
-    Case = NULL
-  ) %>% 
-  ReboundTools::stages_table(label = "tab:lamp_stages_table", 
-                             caption = "Results for lamp example with macro factor ($k$) assumed to be 1.", 
-                             digits = digs_lamp, 
-                             align = "lrrrrrr") %>% 
-  print(include.rownames = FALSE, 
-        booktabs = TRUE,
-        caption.placement = "top",
-        sanitize.text.function = function(x) {x},
-        format.args = list(big.mark = ","),
-        math.style.negative = TRUE)
-@
+
 
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="Energy path graph for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4>>=
