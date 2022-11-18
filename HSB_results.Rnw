@@ -171,7 +171,10 @@ The key contributions of Part~II are
 \end{enumerate*}
 
 The remainder of this paper is structured as follows.
-Section~\ref{sec:methods} describes rebound path graphs.
+Section~\ref{sec:methods} describes 
+data for examples, 
+our method of visualizing rebound, and 
+software tools for calculating and visualizing rebound.
 Section~\ref{sec:results} provides two examples: 
 energy efficiency upgrades to a car and an electric lamp.
 Section~\ref{sec:discussion} discusses the results, and 
@@ -182,6 +185,10 @@ Section~\ref{sec:conclusion} concludes.
 \section{Data and Methods}
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The section contains data for the examples, 
+an explication of our method for visualizing rebound effects and magnitudes, and
+a description of software tools for rebound calculations and visualization.
 
 
 %++++++++++++++++++++++++++++++
@@ -199,8 +206,10 @@ To demonstrate application of the rebound analysis framework
 developed in Section~\ref{PartI-sec:framework} of Part I,
 we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
-In this section, 
-we collect parameter values
+The case studies are presented with much detail here
+to support our goal of bringing clarity to the process
+of estimating the magnitude of rebound effects.
+Here, we collect parameter values
 for the equations for
 eight rebound components:
 $Re_{dempl}$,
@@ -662,29 +671,10 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %++++++++++++++++++++++++++++++
 \subsection{Visualization}
 \label{sec:path_graphs}
 %++++++++++++++++++++++++++++++
-
-**** Say this is a method for displaying results. ****
 
 Any rebound analysis should track
 energy, expenditure, and consumption
@@ -1160,8 +1150,9 @@ rebound_results %>%
 **** More here. 
 Discuss how these tools were used to create all graphs and calculations in this paper. ****
 
-The open source \texttt{R} package \texttt{ReboundTools} 
-can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
+We developed an open source \texttt{R} package \texttt{ReboundTools}
+to standardize and distribute our methods for calculating rebound magnitudes.
+\texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 (See \citet{Heun:2021us}.)
 \texttt{ReboundTools} provides functions for 
 %
@@ -1178,10 +1169,11 @@ can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 \texttt{ReboundTools} was used for 
 all calculations and all rebound path graphs in this paper.
 
-
-
-
-
+In addition, an Excel workbook that performs rebound calculations 
+using the framework of this paper
+can be found at the data repository for this paper at
+\url{https://doi.org/10.5518/1201}.
+**** Add bibliographic reference here, similar to the bib reference for \texttt{ReboundTools}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1192,11 +1184,6 @@ all calculations and all rebound path graphs in this paper.
 
 **** Figure out where the next paragraph belongs. ****
 
-The link between macroeconomic and microeconomic rebound 
-is largely unexplored, and 
-we assume a value of $k = 1$ for both case studies, initially.
-We return to the matter of calibrating $k$
-in the Discussion (Section~\ref{sec:calibrating_k}).
  
 
 %++++++++++++++++++++++++++++++
@@ -1551,10 +1538,16 @@ rebound at the microeconomic scale.
 Total microeconomic rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
 
-Finally, 
+Finally, we note that 
+the link between macroeconomic and microeconomic rebound 
+is largely unexplored, and 
+we assume a value of $k = 1$ for both case studies, initially.
+We return to the matter of calibrating $k$
+in the Discussion (Section~\ref{sec:calibrating_k}).
+
+With $k$ assumed to be 1
 the \macroeffect{} leads to macroeconomic rebound
 ($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%,
-with $k$ assumed to be 1,
 due to economic expansion caused by 
 productivity enhancements arising from the more-efficient provision of the 
 energy service (transportation).
@@ -2078,13 +2071,22 @@ respectively.
 
 
 %++++++++++++++++++++++++++++++
+\subsection{Comparison between the car and lamp case studies}
+\label{sec:case_study_comparison}
+%++++++++++++++++++++++++++++++
+
+****
+MKH to write this section. 
+****
+
+
+%++++++++++++++++++++++++++++++
 \subsection{Comparison to previous rebound estimates} 
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
 
 **** 
-I think there is room for a section here that compares
-our estimates for car and electric lamp rebound to previous authors. ---MKH 
+PB to write first draft.
 ****
 
 
@@ -2112,7 +2114,7 @@ by
 %
 To the extent that Part~I and Part~II provide clarity, 
 we trust that the gap between 
-economists and energy analysts will be bridged, leading to
+economists and energy analysts will be reduced, leading to
 better interdisciplinary understanding of rebound phenomena.
 We encourage energy analysts and economists to use visualizations
 like the rebound path graphs to document their rebound estimates going forward.
@@ -2261,9 +2263,7 @@ using an early version of this framework.
 \label{sec:nomenclature}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-See Appendix~\ref{PartI-sec:nomenclature} of Part~I
-for the nomenclature for this paper.
-
+\input{pieces/nomenclature.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
