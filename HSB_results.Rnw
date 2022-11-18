@@ -680,9 +680,11 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Development of rebound path graphs}
+\subsection{Visualization}
 \label{sec:path_graphs}
 %++++++++++++++++++++++++++++++
+
+**** Say this is a method for displaying results. ****
 
 Any rebound analysis should track
 energy, expenditure, and consumption
@@ -1183,11 +1185,12 @@ all calculations and all rebound path graphs in this paper.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results: Two applications of the rebound framework}
+\section{Results}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+**** Figure out where the next paragraph belongs. ****
 
 The link between macroeconomic and microeconomic rebound 
 is largely unexplored, and 
