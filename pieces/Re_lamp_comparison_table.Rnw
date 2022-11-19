@@ -37,15 +37,19 @@ f_lmp <- function(Re_name) {
                                    & $\Sexpr{f_lmp("Re_indir")}$
                                    & $\Sexpr{f_lmp("Re_tot")}$  \\
 \midrule
-1 & \citet{Borenstein:2015aa}      &             & 14         & 6          &              &            &              &  \\
+1 & \cite{Guertin:2003aa}          &             &            &            &              & 32--49     &              &  \\
 \midrule
 2 & \citet{Freire-Gonzalez:2011aa} &             &            &            &              & 49         & 16           &  \\
 \midrule
 3 & \citet{Thomas:2013ab}          &             &            &            &              & 10         & 10           &  \\
 \midrule
-4 & \citet{Chitnis:2015}           &             &            &            &              & 41         &  8           &  \\
+4 & \citet{Borenstein:2015aa}      &             & 14         & 6          &              &            &              &  \\
 \midrule
-5 & \citet{Barkhordar:2019aa}      &             &            &            &              & 28         &              & 43 \\
+5 & \citet{Chitnis:2015}           &             &            &            &              & 41         &  8           &  \\
+\midrule
+6 & \cite{Duarte:2018aa}           &             &            &            &              &            &              & 51 \\
+\midrule
+7 & \citet{Barkhordar:2019aa}      &             &            &            &              & 28         &              & 43 \\
 \bottomrule
 \end{tabular}
 \end{center}
