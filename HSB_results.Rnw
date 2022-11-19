@@ -2098,9 +2098,15 @@ MKH to write this section.
 PB to write first draft.
 ****
 
-\input{pieces/Re_car_comparison_table.tex}
 
-\input{pieces/Re_lighting_comparison_table.tex}
+<<CarLiteratureComparisonTable, child="pieces/Re_car_comparison_table.Rnw">>=
+@
+
+
+
+
+<<LampLiteratureComparisonTable, child="pieces/Re_lamp_comparison_table.Rnw">>=
+@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
