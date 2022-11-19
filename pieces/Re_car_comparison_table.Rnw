@@ -35,7 +35,19 @@ f_car <- function(Re_name) {
                               & $\Sexpr{f_car("Re_indir")}$
                               & $\Sexpr{f_car("Re_tot")}$  \\
 \midrule
-1 & \citet{Borenstein:2015aa} &             & & & & & & 55 \\
+1 & \citet{Borenstein:2015aa} &             & 13         & 11         &              &            &              &  \\
+\midrule
+2 & \citet{Thomas:2013ab}     &             &            &            &              & 10         &  6           &  \\
+\midrule
+3 & \citet{Chitnis:2015}      &             &            &            &              & 55         & 23           &  \\
+\midrule
+4 & \citet{Greene:1998aa}     &             &            &            &              & 20         &              &  \\
+\midrule
+5 & \citet{Greene:1998aa}     &             &            &            &              & 20         &              &  \\
+\midrule
+6 & \citet{Small:2005aa}      &             &            &            &              & 22         &              &  \\
+\midrule
+6 & \cite{Dimitropoulos:2018aa}      &             &            &            &              & 26--29         &              &  \\
 \bottomrule
 \end{tabular}
 \end{center}
