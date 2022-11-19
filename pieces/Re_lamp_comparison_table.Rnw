@@ -27,17 +27,25 @@ f_lmp <- function(Re_name) {
 \label{tab:rebound_lighting_comparisons}
 \begin{tabular}{ c l c c c c c c c }
 \toprule
-  &                           & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  &                                & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-0 & This paper (2022)         & $\Sexpr{f_lmp("Re_empl")}$ 
-                              & $\Sexpr{f_lmp("Re_sub")}$
-                              & $\Sexpr{f_lmp("Re_inc")}$ 
-                              & $\Sexpr{f_lmp("Re_macro")}$ 
-                              & $\Sexpr{f_lmp("Re_dir")}$ 
-                              & $\Sexpr{f_lmp("Re_indir")}$ 
-                              & $\Sexpr{f_lmp("Re_tot")}$  \\
+0 & This paper (2022)              & $\Sexpr{f_lmp("Re_empl")}$
+                                   & $\Sexpr{f_lmp("Re_sub")}$
+                                   & $\Sexpr{f_lmp("Re_inc")}$
+                                   & $\Sexpr{f_lmp("Re_macro")}$
+                                   & $\Sexpr{f_lmp("Re_dir")}$
+                                   & $\Sexpr{f_lmp("Re_indir")}$
+                                   & $\Sexpr{f_lmp("Re_tot")}$  \\
 \midrule
-1 & \citet{Borenstein:2015aa} &             & & & & & & 55 \\
+1 & \citet{Borenstein:2015aa}      &             & 14         & 6          &              &            &              &  \\
+\midrule
+2 & \citet{Freire-Gonzalez:2011aa} &             &            &            &              & 49         & 16           &  \\
+\midrule
+3 & \citet{Thomas:2013ab}          &             &            &            &              & 10         & 10           &  \\
+\midrule
+4 & \citet{Chitnis:2015}           &             &            &            &              & 41         &  8           &  \\
+\midrule
+5 & \citet{Barkhordar:2019aa}      &             &            &            &              & 28         &              & 43 \\
 \bottomrule
 \end{tabular}
 \end{center}
