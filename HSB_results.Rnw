@@ -2115,8 +2115,8 @@ Possible points to make (according to MKH):
         (MKH asks: Are the studies that estimate total rebound accounting for all effects?)
         
   \item No previous authors decompose rebound into the effects that we think are important:
-        direct and indirect, substitution and income. 
-        Thus, our framework is bring conceptual clarity to this space.
+        direct and indirect for both substitution and income. 
+        Thus, our framework is bringing conceptual clarity to this space.
 
   \item We are the first to estimate emplacement rebound ($Re_{empl}$).
   
