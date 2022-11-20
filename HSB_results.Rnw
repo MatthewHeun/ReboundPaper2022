@@ -2094,9 +2094,40 @@ MKH to write this section.
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
 
+Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
+compare car and lamp rebound results from Section~\ref{sec:results} to 
+rebound results from previous studies.
+
 **** 
 PB to write first draft.
 ****
+
+Possible points to make (according to MKH):
+%
+\begin{itemize}
+
+  \item As discussed in Section~\ref{PartI-sec:introduction} of Part~I, 
+        there is little agreement on the magnitude of rebound effects.
+
+  \item No previous studies estimate all rebound effects, as we have done. 
+  
+  \item Few previous studies estimate total rebound. 
+        (MKH asks: Are the studies that estimate total rebound accounting for all effects?)
+        
+  \item No previous authors decompose rebound into the effects that we think are important:
+        direct and indirect, substitution and income. 
+        Thus, our framework is bring conceptual clarity to this space.
+
+  \item We are the first to estimate emplacement rebound ($Re_{empl}$).
+  
+  \item We are the first to estimate macro rebound ($Re_{macro}$).
+  
+  \item Are we comparing apples-to-apples?  
+        E.g., do the previous studies use the same elasticities that we have used?
+        Same cars? Same lamps?
+  
+\end{itemize}
+%
 
 
 <<CarLiteratureComparisonTable, child="pieces/Re_car_comparison_table.Rnw">>=
