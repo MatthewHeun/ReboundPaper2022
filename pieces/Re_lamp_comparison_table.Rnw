@@ -4,21 +4,6 @@
 %!TEX root = ../HSB_results.Rnw
 
 
-<<LampReFormatter, include=FALSE>>=
-# Function to extract and format numbers for the lamp below.
-# The goal of this function is to provide a short function call 
-# to fit into the table nicely.
-f_lmp <- function(Re_name) {
-  rebound_analysis_with_cal_k %>% 
-    dplyr::filter(.data[["Case"]] == "Lamp") %>% 
-    magrittr::extract2(Re_name) %>% 
-    magrittr::multiply_by(100) %>% 
-    formatC(format = "f", digits = 1)
-}
-@
-
-
-
 % \begin{landscape}
 \begin{table}
 \footnotesize

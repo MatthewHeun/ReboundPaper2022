@@ -2077,6 +2077,8 @@ the values of total rebound ($Re_{tot}$) should increase to
 \Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 3)}\%
 for the car and lamp examples,
 respectively.
+For the rest of this paper, 
+we assume $k \approx 3$.
 
 
 %++++++++++++++++++++++++++++++
@@ -2084,9 +2086,73 @@ respectively.
 \label{sec:case_study_comparison}
 %++++++++++++++++++++++++++++++
 
-****
-MKH to write this section. 
-****
+<<Formatters, include=FALSE>>=
+# Functions to extract and format numbers for rebound estimates below.
+# The goal of these functions is to provide a short function call 
+# to fit into the table nicely.
+f_car <- function(Re_name) {
+  rebound_analysis_with_cal_k %>% 
+    dplyr::filter(.data[["Case"]] == "Car") %>% 
+    magrittr::extract2(Re_name) %>% 
+    magrittr::multiply_by(100) %>% 
+    formatC(format = "f", digits = 1)
+}
+f_lmp <- function(Re_name) {
+  rebound_analysis_with_cal_k %>% 
+    dplyr::filter(.data[["Case"]] == "Lamp") %>% 
+    magrittr::extract2(Re_name) %>% 
+    magrittr::multiply_by(100) %>% 
+    formatC(format = "f", digits = 1)
+}
+@
+
+Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
+and our estimate of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
+enable comparisons between the two examples. 
+
+**** Points to be made:
+
+%
+\begin{itemize}
+
+  \item The magnitude of every rebound effect is different between the two examples, 
+        the exception being direct emplacement rebound ($Re_{dempl}$)
+        which is always 0.0 by definition.
+        Every EEU needs to be analyzed separately. 
+        Estimates of the magnitudes of rebound effects  
+        for one EEU should never be assumed to apply to a different EEU.
+  
+  \item One can never know \emph{a-priori} which rebound effects
+        will be large and which will be small.
+        Thus, it is important to estimate the magnitude of all rebound effects 
+        for each EEU in each economy.
+
+  \item The two examples illustrate the fact that 
+        embodied energy rebound ($Re_{emb}$) can be positive or negative,
+        as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
+        The car's embodied energy rebound is positive ($\Sexpr{f_car("Re_emb")}$\%) 
+        because of the high embodied energy of the EV's battery
+        relative to the internal combustion engine vehicle. 
+        Although the LED lamp's embodied energy is larger than the 
+        incandescent lamp's embodied energy, 
+        the LED lamp's embodied energy rebound is negative ($\Sexpr{f_lmp("Re_emb")}$\%),
+        due to the longer life of the LED lamp compared to the incandescent lamp.
+
+  \item Macro effect rebound is quite different between the two examples, 
+        owing to differences in freed cash.
+        (For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
+        For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
+        The efficiency gain for the lamp is far greater than the efficiency gain for the car,
+        leading to much different rates of freed cash ($\dot{G}$) and different macro rebound estimates.
+        
+  \item In our examples, the macro effect rebound ($Re_{macro}$) is much larger than any other single micro rebound component
+        ($Re_{dsub}$, $Re_{isub}$, $Re_{dinc}$, or $Re_{iinc}$). 
+        This feature of our results could be due to the fact that we do not 
+        decompose macro rebound into its components.
+        (See Table~\ref{PartI-tab:rebound_typology} in Part~I for a list of macro rebound effects.)
+
+\end{itemize}
+%
 
 
 %++++++++++++++++++++++++++++++
