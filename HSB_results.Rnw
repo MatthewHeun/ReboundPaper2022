@@ -2110,7 +2110,7 @@ Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
 and our estimate of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
 enable comparisons between the two examples. 
 
-**** Points to be made:
+**** Points to be made. ****
 
 %
 \begin{itemize}
@@ -2118,7 +2118,7 @@ enable comparisons between the two examples.
   \item The magnitude of every rebound effect is different between the two examples, 
         the exception being direct emplacement rebound ($Re_{dempl}$)
         which is always 0.0 by definition.
-        Every EEU needs to be analyzed separately. 
+        The implication is that every EEU needs to be analyzed separately. 
         Estimates of the magnitudes of rebound effects  
         for one EEU should never be assumed to apply to a different EEU.
   
@@ -2145,10 +2145,9 @@ enable comparisons between the two examples.
         The efficiency gain for the lamp is far greater than the efficiency gain for the car,
         leading to much different rates of freed cash ($\dot{G}$) and different macro rebound estimates.
         
-  \item In our examples, the macro effect rebound ($Re_{macro}$) is much larger than any other single micro rebound component
+  \item In both examples, the macro effect rebound ($Re_{macro}$) is much larger than any other single micro rebound component
         ($Re_{dsub}$, $Re_{isub}$, $Re_{dinc}$, or $Re_{iinc}$). 
-        This feature of our results could be due to the fact that we do not 
-        decompose macro rebound into its components.
+        However, the sum of micro rebound components is close in magnitude to the macro rebound.
         (See Table~\ref{PartI-tab:rebound_typology} in Part~I for a list of macro rebound effects.)
 
 \end{itemize}
