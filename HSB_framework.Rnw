@@ -983,9 +983,9 @@ The income effect under utility maximization
 satisfies the budget constraint, so that
 net savings are zero after
 the income effect ($\rainc{N} = 0$).
-The budget constraint can be seen in 
-expenditure path graphs (e.g., Fig.~\ref{fig:ExampleCostPathGraph})
-where the post-income-effect point ($-$) returns to the original expenditure isoquant.
+% The budget constraint can be seen in 
+% expenditure path graphs (e.g., Fig.~\ref{fig:ExampleCostPathGraph})
+% where the post-income-effect point ($-$) returns to the original expenditure isoquant.
 See Appendix~\ref{sec:proof_income_elasticities}
 for a mathematical proof that the income preference equations below
 (Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM}))
@@ -1234,6 +1234,7 @@ with the full range estimates spanning 0.0 to 0.9.
 % Commenting, because there is no need to discuss our placeholder value now.
 % For now, we choose $\MPC = 0.5$ and $k = 1$ as a placeholder value,
 % with further exploration of the macro effect in Part~II.
+
 We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
 implies energy consumption according to 
@@ -1289,7 +1290,7 @@ general equilibrium effects are captured by
 a simplified, one-dimensional, macroeconomic-scale rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
-Iun contrast, 
+In contrast, 
 general equilibrium frameworks allow prices of all goods and services 
 in an economy to adjust to the EEU.
 Recent examples include \citet{Hart2018}, 
@@ -1303,8 +1304,8 @@ make assumptions during calibration, and
 lose simplicity of exposition.  
 
 We are not the first to develop a partial equilibrium rebound analysis framework,
-so it is worthwhile to assess previous frameworks for
-the key features discussed above: 
+so it is worthwhile to compare our framework with others
+for key features: 
 analysis at all effects, locations, and scales; 
 analysis in energy, expenditure, and consumption spaces; 
 level of detail in the consumer preference model;
