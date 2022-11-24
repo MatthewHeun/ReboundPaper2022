@@ -1170,7 +1170,7 @@ to standardize and distribute our methods for calculating rebound magnitudes.
 (See \citet{Heun:2021us}.)
 \texttt{ReboundTools} provides functions for 
 %
-\begin{enumerate*}[label={(\alph*)}]
+\begin{enumerate*}[label={(\roman*)}]
 	
   \item reading input data from a spreadsheet,
 
@@ -2273,7 +2273,7 @@ Future work could be pursued in several areas.
         this will be challenging work because
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
-        is unlikely to be independent of capital cost ($\amacro{C}_{cap}$).
+        is unlikely to be independent of post-EEU capital cost ($\amacro{C}_{cap}$).
 
 \end{enumerate*}
 
