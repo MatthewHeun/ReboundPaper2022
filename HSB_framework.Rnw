@@ -334,22 +334,18 @@ energy rebound analysis framework
 \label{sec:rebound_typology}
 %++++++++++++++++++++++++++++++
 
-Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
-
 \input{pieces/typology_table.tex}
 
-
-%++++++++++++++++++++++++++++++
-\subsection{Rebound effects}
-\label{sec:rebound_mechanisms}
-%++++++++++++++++++++++++++++++
-
-We distinguish between
-microeconomic rebound (at the single device or for the device owner)
-and 
-macroeconomic rebound (broader, economy-wide responses
-to a single device upgrade).
+Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
+We distinguish between microeconomic and macroeconomic rebound effects.
+Microeconomic rebound occurs at the single device or for a single device owner.
+It is a partial equilibrium response. 
+Macroeconomic rebound is a broader, economy-wide response
+to a single device upgrade.
+It comprises market and price effects, composition effects, and
+productivity effects (growth, scale, labour supply, and disinvestment effects).
 (See \citet{greening2000}, \citet{Barker2009}, and \citet{FontVivanco2018}.) 
+
 We follow others, including \citet{Jenkins2011} and \citet{Walnum2014}, 
 in splitting microeconomic rebound into 
 direct and indirect locations.
@@ -1544,6 +1540,8 @@ Finally, the authors thank the students of MKH's Fall 2019
 Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
+
+**** Jeroen van den Bergh ****
 
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}

@@ -2353,6 +2353,8 @@ Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
 
+**** Jeroen van den Bergh ****
+
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}
 
