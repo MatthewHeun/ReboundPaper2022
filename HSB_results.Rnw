@@ -116,7 +116,7 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In Part I of this two-part paper, we argued that a improved clarity is needed
+In Part I of this two-part paper, we argued that improved clarity is needed
 about the effects and scales of energy rebound. 
 We said that
 %
@@ -150,7 +150,7 @@ four rebound effects
 between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
 Rebound terms and symbol decorations are
 shown in Fig.~\ref{fig:flowchart}.
-See Part~I for details.
+(See Part~I for details.)
 
 \begin{figure}
 \centering
@@ -169,7 +169,7 @@ Second, we apply the framework to two energy efficiency upgrades (EEUs)
 (an electric lamp and an automobile)
 with detailed explication of the examples.
 Finally, we provide 
-estimates rebound magnitudes for both examples.
+estimates of rebound magnitudes for both examples.
 
 The key contributions of Part~II are 
 %
@@ -183,7 +183,7 @@ The key contributions of Part~II are
         upgrades, and 
         
   \item creation of open source software tools to calculate and visualize rebound 
-        for any energy efficiency upgrade.
+        for any EEU.
   
 \end{enumerate*}
 
@@ -2109,49 +2109,56 @@ f_lmp <- function(Re_name) {
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
 and our estimate of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
 enable comparisons between the two examples. 
+Several points can be made.
 
-**** Points to be made. ****
+First, 
+the magnitude of every rebound effect is different between the two examples, 
+the exception being direct emplacement rebound ($Re_{dempl}$)
+which is always 0.0 by definition.
+The implication is that every EEU needs to be analyzed separately. 
+Estimates of the magnitudes of rebound effects  
+for one EEU should never be assumed to apply to a different EEU.
 
-%
-\begin{itemize}
+Second, 
+one cannot know \emph{a-priori} which rebound effects
+will be large and which will be small
+for a given EEU.
+Some rebound effects are dependent on economic parameters,
+such as energy intensity ($I_E$).
+Thus, it is important to estimate the magnitude of all rebound effects 
+for each EEU in each economy.
 
-  \item The magnitude of every rebound effect is different between the two examples, 
-        the exception being direct emplacement rebound ($Re_{dempl}$)
-        which is always 0.0 by definition.
-        The implication is that every EEU needs to be analyzed separately. 
-        Estimates of the magnitudes of rebound effects  
-        for one EEU should never be assumed to apply to a different EEU.
-  
-  \item One can never know \emph{a-priori} which rebound effects
-        will be large and which will be small.
-        Thus, it is important to estimate the magnitude of all rebound effects 
-        for each EEU in each economy.
+Third,
+the two examples illustrate the fact that 
+embodied energy rebound ($Re_{emb}$) can be positive or negative,
+as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
+The car's embodied energy rebound is positive ($\Sexpr{f_car("Re_emb")}$\%) 
+because of the high embodied energy of the EV's battery
+relative to the internal combustion engine vehicle. 
+Although the LED lamp's embodied energy is larger than the 
+incandescent lamp's embodied energy, 
+the LED lamp's embodied energy rebound is negative ($\Sexpr{f_lmp("Re_emb")}$\%),
+due to the longer life of the LED lamp compared to the incandescent lamp.
+Thus, each EEU should be analyzed independently for its embodied energy rebound.
 
-  \item The two examples illustrate the fact that 
-        embodied energy rebound ($Re_{emb}$) can be positive or negative,
-        as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
-        The car's embodied energy rebound is positive ($\Sexpr{f_car("Re_emb")}$\%) 
-        because of the high embodied energy of the EV's battery
-        relative to the internal combustion engine vehicle. 
-        Although the LED lamp's embodied energy is larger than the 
-        incandescent lamp's embodied energy, 
-        the LED lamp's embodied energy rebound is negative ($\Sexpr{f_lmp("Re_emb")}$\%),
-        due to the longer life of the LED lamp compared to the incandescent lamp.
+Fourth,
+macro effect rebound is quite different between the two examples, 
+owing to differences in freed cash.
+(For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
+For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
+The efficiency gain for the lamp is far greater than the efficiency gain for the car,
+leading to much different rates of freed cash ($\dot{G}$) and
+different macro rebound estimates.
 
-  \item Macro effect rebound is quite different between the two examples, 
-        owing to differences in freed cash.
-        (For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
-        For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
-        The efficiency gain for the lamp is far greater than the efficiency gain for the car,
-        leading to much different rates of freed cash ($\dot{G}$) and different macro rebound estimates.
-        
-  \item In both examples, the macro effect rebound ($Re_{macro}$) is much larger than any other single micro rebound component
-        ($Re_{dsub}$, $Re_{isub}$, $Re_{dinc}$, or $Re_{iinc}$). 
-        However, the sum of micro rebound components is close in magnitude to the macro rebound.
-        (See Table~\ref{PartI-tab:rebound_typology} in Part~I for a list of macro rebound effects.)
-
-\end{itemize}
-%
+Fifth,
+in both examples the macro effect rebound ($Re_{macro}$) is much larger than
+any single micro rebound component
+($Re_{dsub}$, $Re_{isub}$, $Re_{dinc}$, or $Re_{iinc}$). 
+However, the sum of micro rebound components ($Re_{micro}$) 
+is close in magnitude to the macro rebound ($Re_{macro}$).
+(See Table~\ref{PartI-tab:rebound_typology} in Part~I for a list of macro rebound effects.)
+These observations are likely the result of 
+$Re_{macro}$ being the sum of several macroeconomic sub-effects.
 
 
 %++++++++++++++++++++++++++++++
