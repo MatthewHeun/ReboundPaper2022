@@ -1466,7 +1466,7 @@ Future work could be pursued in several areas.
 \end{enumerate*}
 
 In Part~II of this paper,
-we further attempt to bring clarity to rebound analysis
+we attempt to bring further clarity to rebound analysis
 in three ways. 
 First, 
 we develop a way to visualize rebound effects at all locations (direct and indirect)
