@@ -2123,7 +2123,7 @@ Second,
 one cannot know \emph{a-priori} which rebound effects
 will be large and which will be small
 for a given EEU.
-Some rebound effects are dependent on economic parameters,
+Furthermore, some rebound effects are dependent on economic parameters,
 such as energy intensity ($I_E$).
 Thus, it is important to estimate the magnitude of all rebound effects 
 for each EEU in each economy.
@@ -2152,13 +2152,14 @@ different macro rebound estimates.
 
 Fifth,
 in both examples the macro effect rebound ($Re_{macro}$) is much larger than
-any single micro rebound component
-($Re_{dsub}$, $Re_{isub}$, $Re_{dinc}$, or $Re_{iinc}$). 
-However, the sum of micro rebound components ($Re_{micro}$) 
+any single micro rebound component. 
+However, the sum of micro rebound components 
+($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
 is close in magnitude to the macro rebound ($Re_{macro}$).
+These observations are likely to be the result of 
+$Re_{macro}$ being the sum of several macroeconomic sub-effects,
+which we don't discriminate in this framework.
 (See Table~\ref{PartI-tab:rebound_typology} in Part~I for a list of macro rebound effects.)
-These observations are likely the result of 
-$Re_{macro}$ being the sum of several macroeconomic sub-effects.
 
 
 %++++++++++++++++++++++++++++++
