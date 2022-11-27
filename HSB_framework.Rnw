@@ -407,6 +407,7 @@ that consumes final energy%
 (say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).%
 \footnote{
   We use ``rate'' to indicate any quantity measured per unit time.
+  None of the rates in this paper indicate \%/yr changes.
   Symbolically, rates are identified by a single dot above the symbol,
   a convention adopted from the engineering literature where, e.g.,
   $\dot{m}$ often indicates a mass flow rate in kg/s, 
@@ -421,7 +422,6 @@ that consumes final energy%
   embodied energy (in MJ) to create
   cost rates ($\dot{C}$ in \$/yr) and
   embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
-  None of the rates in this paper indicate \%/yr changes.
 }
 %
 The final energy is available at price $p_E$ (in \$/MJ).
