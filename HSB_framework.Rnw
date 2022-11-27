@@ -326,7 +326,7 @@ Results can be found in Part~II.
 
 In this section, we develop a partial equilibrium
 energy rebound analysis framework 
-(concisely, ``this framework'').
+(concisely, ``this framework'' or ``our framework'').
 
 
 %++++++++++++++++++++++++++++++
