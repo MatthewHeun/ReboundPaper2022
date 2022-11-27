@@ -217,8 +217,8 @@ in the past led to vastly differing points of view.''%
 \footnote{
   We prefer the term ``energy analysts'' over ``engineers,'' 
   because ``energy analysts'' better describes 
-  the group of people engaged in ``energy analysis’'. 
-  For this paper, we define “energy analysis" as
+  the group of people engaged in ``energy analysis.’'
+  For this paper, we define ``energy analysis'' as
   the study of energy transformations from stocks to flows
   to wastes and energy services
   along society's energy conversion chain 
