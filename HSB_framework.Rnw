@@ -409,13 +409,18 @@ that consumes final energy%
   We use ``rate'' to indicate any quantity measured per unit time.
   Symbolically, rates are identified by a single dot above the symbol,
   a convention adopted from the engineering literature where, e.g.,
-  $\dot{m}$ can indicate a mass flow rate in kg/s, 
-  $\dot{E}$ can indicate an energy flow rate in MJ/yr, and
-  $\dot{x}$ can indicate a velocity in m/s.
+  $\dot{m}$ often indicates a mass flow rate in kg/s, 
+  $\dot{E}$ often indicates an energy flow rate in MJ/yr, and
+  $\dot{x}$ often indicates a velocity in m/s.
   The overdot is an important way to maintain clarity of nomenclature
-  in this paper; 
+  in this paper. 
+  For example,  
   $E$ is a quantity of energy in, say, MJ, while
   $\dot{E}$ is a rate of energy in, say, MJ/yr.
+  We later annualize capital costs (in \$) and
+  embodied energy (in MJ) to create
+  cost rates ($\dot{C}$ in \$/yr)
+  and embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
 }
 %
 The final energy is available at price $p_E$ (in \$/MJ).
