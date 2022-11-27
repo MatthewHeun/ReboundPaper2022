@@ -419,8 +419,9 @@ that consumes final energy%
   $\dot{E}$ is a rate of energy in, say, MJ/yr.
   We later annualize capital costs (in \$) and
   embodied energy (in MJ) to create
-  cost rates ($\dot{C}$ in \$/yr)
-  and embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
+  cost rates ($\dot{C}$ in \$/yr) and
+  embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
+  None of the rates in this paper indicate \%/yr changes.
 }
 %
 The final energy is available at price $p_E$ (in \$/MJ).
