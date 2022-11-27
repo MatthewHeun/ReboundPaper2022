@@ -404,7 +404,20 @@ that consumes final energy%
   energy services (e.g., transport, illumination, and space heating).
 }
 %
-(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).
+(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).%
+\footnote{
+  We use ``rate'' to indicate any quantity measured per unit time.
+  Symbolically, rates are identified by a single dot above the symbol,
+  a convention adopted from the engineering literature where, e.g.,
+  $\dot{m}$ can indicate a mass flow rate in kg/s, 
+  $\dot{E}$ can indicate an energy flow rate in MJ/yr, and
+  $\dot{x}$ can indicate a velocity in m/s.
+  The overdot is an important way to maintain clarity of nomenclature
+  in this paper; 
+  $E$ is a quantity of energy in, say, MJ, while
+  $\dot{E}$ is a rate of energy in, say, MJ/yr.
+}
+%
 The final energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
 $\rbempl{q}_s$ (in vehicle-km/year)
