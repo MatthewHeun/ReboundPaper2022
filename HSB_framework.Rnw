@@ -505,7 +505,7 @@ Energy rebound is defined as
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
 \end{equation}
 %
-where both actual and expected final energy savings rates are in \$/year 
+where both actual and expected final energy savings rates are in MJ/year 
 and expected positive.
 Final energy ``takeback'' rate is defined as expected final energy savings rate less 
 actual final energy savings rate.
