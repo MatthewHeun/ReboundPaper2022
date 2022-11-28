@@ -110,7 +110,7 @@ library(xtable)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Energy rebound is an interdisciplinary challenge that threatens
-a low-carbon future~\citep{Brockway:2017a}.
+a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
 Rebound makes energy efficiency less effective
 at decreasing energy consumption and reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 

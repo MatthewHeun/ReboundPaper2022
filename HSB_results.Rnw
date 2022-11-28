@@ -2223,7 +2223,7 @@ Possible points to make (according to MKH):
 To the extent that energy rebound takes back energy savings
 from EEUs, 
 it is a threat to a low carbon future,
-as noted by \citet{Brockway:2017a}.
+as noted by \citet{van-den-Bergh:2017aa} and \citet{Brockway:2017a}.
 However, the results above highlight 
 two aspects make it difficult to determine
 the precise impact of rebound on CO$_2$ emissions.
