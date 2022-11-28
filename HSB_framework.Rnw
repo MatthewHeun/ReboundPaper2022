@@ -118,7 +118,7 @@ energy savings expected from an energy efficiency improvement~\citep{Sorrell:200
 Recent evidence shows that rebound is both 
 (i)~larger than commonly assumed~\citep{Stern2020} and
 (ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
-Rebound is an explanation for why 
+Rebound is one explanation for why 
 energy consumption and carbon emissions 
 have never been absolutely decoupled 
 from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
@@ -716,6 +716,7 @@ In the aggregate, evenly spaced (in time) replacements
 work out to the same embodied energy in every period.
 
 Thus, we allocate embodied energy over the life of the original and upgraded devices
+without discounting
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
 to obtain embodied energy rates, such that
 $\rbempl{E}_{emb} = \bempl{E}_{emb} / \bempl{t}_{\life}$
