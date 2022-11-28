@@ -1068,7 +1068,7 @@ direct and indirect income effect rebound.
 
 
 %..............................
-\paragraph{Direct income effect} 
+\paragraph{Direct income effect ($Re_{dinc}$)} 
 \label{sec:direct_income_effect}
 %..............................
 
@@ -1125,7 +1125,7 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
 
 
 %..............................
-\paragraph{Indirect income effect} 
+\paragraph{Indirect income effect ($Re_{iinc}$)} 
 \label{sec:indirect_income_effect}
 %..............................
 
