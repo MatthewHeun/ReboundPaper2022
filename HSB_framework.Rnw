@@ -632,6 +632,12 @@ due to the fact that a higher-efficiency device has been put in service
 (and will need to be decommissioned at a later date);
 behavior changes are addressed later,
 in the substitution and income effects. 
+
+
+%..............................
+\paragraph{Direct emplacement effects ($Re_{dempl}$)} 
+%..............................
+
 The direct emplacement effects of the EEU include
 device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$).
 The indirect effects of EEU emplacement are
@@ -681,6 +687,11 @@ account for the life cycle of the energy conversion device,
 including energy embodied by manufacturing processes (subscript $emb$) and
 maintenance and disposal activities (subscript $\md$).
 
+
+%..............................
+\paragraph{Embodied energy effects ($Re_{emb}$)} 
+%..............................
+
 One of the unique features of this framework
 is that independent analyses of embodied energy and 
 capital costs of the EEU are expected.
@@ -701,7 +712,15 @@ Consistent with the energy analysis literature,
 we define embodied energy 
 to be the sum of all energy
 consumed in the production of the energy conversion device, 
-all the way back to resource extraction.
+all the way back to resource extraction.%
+\footnote{
+  We take an energy approach here,
+  consistent with the literature on energy rebound. 
+  One could use an alternative quantification of energy, 
+  such as exergy, the work potential of energy \citep{Sciubba:2007aa} or
+  emergy, the solar content of energy \citep{Brown:1996wy}.
+  Doing so is left as an exercise for the reader.
+}
 Energy is embodied in the device within manufacturing and distribution supply chains
 prior to consumer acquisition of the device.
 No energy is embodied in the device while in service.
@@ -748,6 +767,11 @@ However, if the upgraded device has longer life than the original device
 ($\aempl{t}_{\life} > \bempl{t}_{\life}$),
 $\raempl{E}_{emb} - \rbempl{E}_{emb}$ could be negative,
 meaning that the upgraded device has a lower embodied energy rate than the original device.
+
+
+%..............................
+\paragraph{Maintenance and disposal effects ($Re_{md}$)} 
+%..............................
 
 In addition to embodied energy, 
 indirect emplacement effect rebound accounts for

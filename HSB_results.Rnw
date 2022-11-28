@@ -686,8 +686,6 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 
 
 
-
-
 %++++++++++++++++++++++++++++++
 \subsection{Visualization}
 \label{sec:path_graphs}
@@ -698,6 +696,9 @@ energy, expenditure, and consumption
 at the device (direct location) and elsewhere in the economy (indirect location)
 across all adjustments for all rebound effects. 
 Doing so involves many terms and much complexity.
+Until now, visualizing the energy, expenditure, and consumption 
+aspects of rebound phenomena has not been 
+possible in single graphs.
 
 We introduce rebound path graphs
 to bring clarity to
