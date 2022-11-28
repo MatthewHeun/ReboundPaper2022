@@ -145,7 +145,8 @@ directly tends to augment the value of the steam-engine,
 and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
 For nearly 200 years, then, it has been understood 
 that efficiency gains may be taken back or, paradoxically even, 
-cause growth in energy consumption.
+cause growth in energy consumption
+as \citeauthor{Jevons:1865} assumed.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
 research into rebound appeared late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
@@ -476,7 +477,7 @@ for the device owner is
 \end{equation}
 %
 where 
-original net savings ($\rorig{N}$) is zero.
+net savings prior to the EEU ($\rorig{N}$) is zero.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through four rebound effects, 
@@ -626,8 +627,10 @@ We begin with the emplacement effect.
 \label{sec:empl_effect_main_paper}
 %------------------------------
 
-The emplacement effect accounts for performance of the EEU only;
-behavior changes are addressed later, 
+The emplacement effect accounts for performance changes of the device
+due to the fact that a higher-efficiency device has been put in service 
+(and will need to be decommissioned at a later date);
+behavior changes are addressed later,
 in the substitution and income effects. 
 The direct emplacement effects of the EEU include
 device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$).
