@@ -82,10 +82,16 @@ involving both economics and energy analysis.
 In this paper (Part~I), we help advance a rigorous analytical framework
 that starts at the microeconomics of rebound
 and is approachable for both energy analysts and economists alike. 
-We include emplacement, substitution, and income rebound effects and
+We include emplacement effects 
+(including embodied energy and maintenance and disposal effects),
+substitution effects 
+(direct and indirect), and
+income effects 
+(direct and indirect) and
 link them to macro rebound.
 In Part~II, we develop new visualization techniques and exercise the framework
-by estimating rebound for two examples.
+by first calibrating the macro multiplier 
+then by estimating rebound for two examples.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
