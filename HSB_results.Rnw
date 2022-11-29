@@ -2171,47 +2171,122 @@ which we don't discriminate in this framework.
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 compare car and lamp rebound results from Section~\ref{sec:results} to 
 rebound results from previous studies.
-
-**** 
-PB to write first draft.
-****
-
-Possible points to make (according to MKH):
+The comparison studies are 
+not a comprehensive or definitive set of rebound studies 
+for car and lamp EEUs.
+The 10 studies chosen for each case should be considered 
+a sample set of studies, 
+to give an idea of the sort of estimations 
+that are carried out in the general literature.
+That said, many of them are also highly cited in their field.
+Although not exhaustive, the comparison studies
+carry a reasonable academic weight for our purposes here. 
+From viewing the comparison tables and their associated references, 
+we can make two types of observations: 
 %
-\begin{itemize}
-
-  \item As discussed in Section~\ref{PartI-sec:introduction} of Part~I, 
-        there is little agreement on the magnitude of rebound effects.
-
-  \item No previous studies estimate all rebound effects, as we have done. 
+\begin{enumerate*}[label={(\alph*)}]
+	
+  \item on the coverage of rebound components, and
   
-  \item Few previous studies estimate total rebound. 
-        (MKH asks: Are the studies that estimate total rebound accounting for all effects?)
-        
-  \item No previous authors decompose rebound into the effects that we think are important:
-        direct and indirect for both substitution and income. 
-        Thus, our framework is bringing conceptual clarity to this space.
-
-  \item We are the first to estimate emplacement rebound ($Re_{empl}$).
-  
-  \item We are the first to estimate macro rebound ($Re_{macro}$).
-  
-  \item Are we comparing apples-to-apples?  
-        E.g., do the previous studies use the same elasticities that we have used?
-        Same cars? Same lamps?
-  
-\end{itemize}
-%
-
+  \item on their magnitudes and associated estimation methods.
+    
+\end{enumerate*}
 
 <<CarLiteratureComparisonTable, child="pieces/Re_car_comparison_table.Rnw">>=
 @
 
-
-
-
 <<LampLiteratureComparisonTable, child="pieces/Re_lamp_comparison_table.Rnw">>=
 @
+
+Firstly, we can say that none of the comparison studies
+estimate all rebound effect components, as we have done. 
+Further, none of the studies decompose rebound 
+into both types of microeconomic rebound effects 
+that we think are important: 
+direct and indirect for both substitution and income. 
+Thus, our framework is bringing conceptual clarity to this space.
+In addition, none of the studies estimate 
+emplacement rebound ($Re_{empl}$) or macro rebound ($Re_{macro}$).
+In fact, only ****X**** of the 10 studies estimate total rebound ($Re_{tot}$).
+We also observe that studies that estimate total rebound 
+are based on a top-down estimation of overall, economy-wide rebound, 
+rather than a bottom-up ``sum-of-components'' approach 
+that we employ.
+That finding is instructive---it supports the view that
+a comprehensive framework that sets out individual rebound components
+is missing---something that informed our research aim.
+Top-down estimations of total, economy-wide rebound 
+may also inhibit comparison, as the effects included/excluded 
+are not clear, 
+giving an appearance of a ``black box'' estimation approach,
+where the magnitude of overall rebound can depend 
+on model/analysis assumptions.
+****
+Do we want to be quite so critical? 
+This paper relies on external estimates of total rebound to calibrate $k$.
+****
+
+Secondly, helpful insights can be gained
+from comparison of rebound magnitudes and estimation methods.
+Highest alignment in magnitudes appears
+within the direct (microeconomic) rebound ($Re_{dir}$),
+our car (16\%) and lamp (17\%) estimates
+are in the lower half of the studies
+sampled for both the case of the car (10\% - 49\%) and lamp (10\% to 55\%).
+This alignment may be due to the easier estimation
+of direct rebound, from either empirical data
+(e.g., \citet{Small:2005aa}) or
+via own-price elasticities (e.g., \citet{Chitnis:2015}).
+The empirical data approach appears to give lower rebound estimates,
+closer to our values.
+For indirect rebound,
+there is little agreement on the magnitude of rebound effects.
+Our estimates for the car (32\%) and lamp (63\%)
+are higher than those found in our sampled literature
+for either the car (6\% to 23\%) or lamp (8\% to 16\%) cases.
+The most likely cause of our much higher indirect rebound estimates
+is that our estimate include both micro and macro rebound,
+whereas the selected references
+focus mainly on microeconomic rebound
+(commonly via cross-price elasticities).
+Comparisons of our indirect rebound estimates ($Re_{indir}$) to others
+may be an apples-to-oranges comparison.
+For overall/total rebound ($Re_{tot}$),
+our estimates of 48\% (car) and 80\% (lamp)
+are very close for the car (49\% to 51\%), but
+nearly double for the lamp example (43\% to 51\%).
+Beyond that, comparison---as noted earlier---is inhibited
+by existing top-down methods versus our bottom up approach
+to estimate total rebound.
+
+
+% Possible points to make (according to MKH):
+% %
+% \begin{itemize}
+% 
+%   \item As discussed in Section~\ref{PartI-sec:introduction} of Part~I, 
+%         there is little agreement on the magnitude of rebound effects.
+% 
+%   \item No previous studies estimate all rebound effects, as we have done. 
+%   
+%   \item Few previous studies estimate total rebound. 
+%         (MKH asks: Are the studies that estimate total rebound accounting for all effects?)
+%         
+%   \item No previous authors decompose rebound into the effects that we think are important:
+%         direct and indirect for both substitution and income. 
+%         Thus, our framework is bringing conceptual clarity to this space.
+% 
+%   \item We are the first to estimate emplacement rebound ($Re_{empl}$).
+%   
+%   \item We are the first to estimate macro rebound ($Re_{macro}$).
+%   
+%   \item Are we comparing apples-to-apples?  
+%         E.g., do the previous studies use the same elasticities that we have used?
+%         Same cars? Same lamps?
+%   
+% \end{itemize}
+%
+
 
 
 

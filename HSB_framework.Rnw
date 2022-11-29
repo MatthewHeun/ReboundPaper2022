@@ -483,7 +483,7 @@ for the device owner is
 \end{equation}
 %
 where 
-net savings prior to the EEU ($\rorig{N}$) is zero.
+net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through four rebound effects, 
