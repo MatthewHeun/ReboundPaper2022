@@ -89,8 +89,9 @@ substitution effects
 income effects 
 (direct and indirect) and
 link them to macro rebound.
-In Part~II, we develop new visualization techniques and exercise the framework
-by first calibrating the macro multiplier 
+In Part~II, we develop new rebound visualization techniques 
+and exercise the framework
+by first calibrating the macro factor 
 then by estimating rebound for two examples.
 \end{abstract}
 
