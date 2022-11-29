@@ -2287,7 +2287,8 @@ How do we resolve this tension? ---MKH
 
 **** 
 This section is a response to Referee 1.
-Do we like it? ---MKH
+Do we like it/want to keep it?
+Is it in the right location? ---MKH
 ****
 
 To the extent that energy rebound takes back energy savings
@@ -2472,6 +2473,9 @@ The authors are grateful for comments from internal reviewers
 Becky Haney and Jeremy Van Antwerp (Calvin University); 
 Nathan Chan (University of Massachusetts at Amherst); and 
 Zeke Marshall (University of Leeds).
+The authors appreciate the many constructive comments 
+on a working paper version of this article from 
+Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam).
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
