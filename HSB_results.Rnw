@@ -200,7 +200,7 @@ Section~\ref{sec:conclusion} concludes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Data and Methods}
+\section{Data and methods}
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1204,7 +1204,7 @@ can be found at the data repository for this paper at
 
 Armed with the parameter values from 
 Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
-and the equations of Section~\ref{PartI-sec:framework} in Part~I,
+and the equations in Section~\ref{PartI-sec:framework} of Part~I,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car owner.
@@ -1571,7 +1571,7 @@ energy service (transportation).
 
 With the parameter values from 
 Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
-and the equations of Section~\ref{PartI-sec:framework} of Part~I in hand,
+and the equations in Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
 Similar to Table~\ref{tab:car_stages_table}, 
@@ -2270,39 +2270,14 @@ $\Sexpr{f_car("Re_tot")}$\% (car) and
 $\Sexpr{f_lmp("Re_tot")}$\% (lamp)
 are very close to the comparison studies for the car example (49\% to 51\%), but
 nearly double estimates from the comparison studies for the lamp example (43\% to 51\%).
-Beyond that, comparison---as noted earlier---is inhibited
+Beyond that, comparison (as noted earlier) is inhibited
 by existing top-down methods versus our bottom up approach
 to estimate total rebound.
-
-
-% Possible points to make (according to MKH):
-% %
-% \begin{itemize}
-% 
-%   \item As discussed in Section~\ref{PartI-sec:introduction} of Part~I, 
-%         there is little agreement on the magnitude of rebound effects.
-% 
-%   \item No previous studies estimate all rebound effects, as we have done. 
-%   
-%   \item Few previous studies estimate total rebound. 
-%         (MKH asks: Are the studies that estimate total rebound accounting for all effects?)
-%         
-%   \item No previous authors decompose rebound into the effects that we think are important:
-%         direct and indirect for both substitution and income. 
-%         Thus, our framework is bringing conceptual clarity to this space.
-% 
-%   \item We are the first to estimate emplacement rebound ($Re_{empl}$).
-%   
-%   \item We are the first to estimate macro rebound ($Re_{macro}$).
-%   
-%   \item Are we comparing apples-to-apples?  
-%         E.g., do the previous studies use the same elasticities that we have used?
-%         Same cars? Same lamps?
-%   
-% \end{itemize}
-%
-
-
+****
+Except that our bottom-up method
+relies upon a top-down calibration for $k$.
+How do we resolve this tension? ---MKH
+****
 
 
 %++++++++++++++++++++++++++++++
@@ -2310,12 +2285,17 @@ to estimate total rebound.
 \label{sec:implications_for_CO2}
 %++++++++++++++++++++++++++++++
 
+**** 
+This section is a response to Referee 1.
+Do we like it? ---MKH
+****
+
 To the extent that energy rebound takes back energy savings
 from EEUs, 
 it is a threat to a low carbon future,
 as noted by \citet{van-den-Bergh:2017aa} and \citet{Brockway:2017a}.
 However, the results above highlight 
-two aspects make it difficult to determine
+two aspects that make it difficult to determine
 the precise impact of rebound on CO$_2$ emissions.
 
 First, we see that rebound is measured at the final energy stage,

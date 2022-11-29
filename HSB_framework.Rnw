@@ -152,7 +152,7 @@ directly tends to augment the value of the steam-engine,
 and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
 For nearly 200 years, then, it has been understood 
 that efficiency gains may be taken back or, paradoxically even, 
-cause growth in energy consumption
+cause growth in energy consumption,
 as \citeauthor{Jevons:1865} assumed.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
@@ -165,11 +165,12 @@ claimed rebound was likely to be small.
 Debate over the size of energy rebound continues today.
 Advocates of small rebound (less than, say, 50\%),
 suggest ``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
-while others, 
-including \citet{Saunders2015},
+while others
 claim the evidence for large rebound
-(greater than 50\%)
-is growing.
+(greater than 50\%) is growing \citep{Saunders2015},
+and rebound will negatively impact the effectiveness of energy efficiency
+to reduce carbon emissions
+\citep{van-den-Bergh:2017aa}.
 
 
 %++++++++++++++++++++++++++++++
@@ -305,17 +306,17 @@ one that
 \end{enumerate*}
 
 The key \emph{contributions} of this paper are 
-development of the first (to our knowledge)
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item rebound analysis framework that combines 
+  \item development of the first (to our knowledge)
+        rebound analysis framework that combines 
         embodied energy effects, 
         maintenance and disposal effects, 
         non-marginal energy efficiency increases, and 
         non-marginal energy service price decreases and
 
-  \item operationalized link between 
+  \item the first operationalized link between 
         rebound effects on microeconomic and macroeconomic scales.
         
 \end{enumerate*}
@@ -1213,7 +1214,7 @@ it does not eventually lead to additional economic growth.%
   The household takes more trips
   (direct rebound), without effect on GDP.
   In the other case, 
-  the household buys the energy service directly from a taxi company. 
+  the household buys the energy service (transport) directly from a taxi company. 
   Here, the taxi company lowers the price but gains more customers, 
   leading immediately to growth in inflation-adjusted, i.e.\ real, GDP. 
   Yet, the physical change of more car trips is the same in both cases.
@@ -1360,7 +1361,7 @@ lose simplicity of exposition.
 We are not the first to develop a partial equilibrium rebound analysis framework,
 so it is worthwhile to compare our framework with others
 for key features: 
-analysis at all effects, locations, and scales; 
+analysis of all effects, locations, and scales; 
 analysis in energy, expenditure, and consumption spaces; 
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
