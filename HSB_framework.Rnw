@@ -83,13 +83,24 @@ involving both economics and energy analysis.
 In this paper (Part~I), we help advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists alike. 
-We include embodied energy and maintenance and disposal effects
-(under a new emplacement effect term), 
-substitution effects 
-(direct and indirect), and
-income effects 
-(direct and indirect) and
-link them to macro rebound.
+We develop the first (to our knowledge)
+rebound analysis framework that 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item combines 
+        embodied energy effects with
+        maintenance and disposal effects
+        (under a new ``emplacement effect'' term), 
+
+  \item non-marginal energy efficiency increases, and 
+  
+  \item non-marginal energy service price decreases.
+    
+\end{enumerate*}
+%
+Furthermore, we provide the first operationalized link between 
+rebound effects on microeconomic and macroeconomic levels.
 In Part~II, we develop new rebound visualization techniques 
 and exercise the framework
 by first calibrating the macro factor 
@@ -97,7 +108,6 @@ then by estimating rebound for two examples.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
-
 
 
 <<setup, echo=FALSE, message=FALSE>>=
@@ -323,7 +333,7 @@ The key \emph{contributions} of this paper are
         non-marginal energy service price decreases and
 
   \item the first operationalized link between 
-        rebound effects on microeconomic and macroeconomic scales.
+        rebound effects on microeconomic and macroeconomic levels.
         
 \end{enumerate*}
 
@@ -331,7 +341,9 @@ The remainder of this paper is \emph{structured} as follows.
 Section~\ref{sec:framework} describes the comprehensive rebound analysis framework.
 Section~\ref{sec:discussion} discusses the framework in relation to previous frameworks, and 
 Section~\ref{sec:conclusion} concludes.
-Results can be found in Part~II.
+Results from the application of our framework
+to energy efficiency upgrades to a car and an electric lamp
+can be found in Part~II.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
