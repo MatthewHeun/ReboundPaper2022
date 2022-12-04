@@ -134,8 +134,15 @@ at decreasing energy consumption and reducing carbon emissions
 by taking back (or reversing, in the case of ``backfire'') 
 energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
 Recent evidence shows that rebound is both 
-(i)~larger than commonly assumed~\citep{Stern2020} and
-(ii)~mostly missing from large energy and climate models~\citep{Brockway:2021ww},
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item larger than commonly assumed~\citep{Stern2020} and
+  
+  \item mostly missing from large energy and climate models~\citep{Brockway:2021ww}.
+    
+\end{enumerate*}
+%
 Rebound is one explanation for why 
 energy consumption and carbon emissions 
 have never been absolutely decoupled 
@@ -365,11 +372,13 @@ energy rebound analysis framework
 
 Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
 We distinguish between microeconomic and macroeconomic rebound effects.
-Microeconomic rebound occurs at the single device or for a single device owner.
-It is a partial equilibrium response. 
+Microeconomic rebound occurs at the single device level or for a single device owner.
+We assume a partial equilibrium response
+in which the rest of the economy is unchanged.
 Macroeconomic rebound is a broader, economy-wide response
-to a single device upgrade.
-It comprises market and price effects, composition effects, and
+to the single device upgrade.
+It comprises effects including 
+market and price effects, composition effects, and
 productivity effects (growth, scale, labour supply, and disinvestment effects).
 (See \citet{greening2000}, \citet{Barker2009}, and \citet{FontVivanco2018}.) 
 
