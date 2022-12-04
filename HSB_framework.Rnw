@@ -203,16 +203,19 @@ leading energy and climate modelers to either
 \end{enumerate*}
 %
 We suggest that 
-improving the conceptual space around rebound and solidifying the analytical frameworks
+improving the conceptual foundations of rebound and
+solidifying the analytical frameworks
 will
 %
 \begin{enumerate*}[label={(\roman*)}]
 
   \item help generate more robust estimates of rebound,
   
-  \item lead to rebound being better included in more energy and climate models, and 
+  \item lead to rebound being more fully included
+        in energy and climate models, and 
   
-  \item provide improved policymaking around energy efficiency. 
+  \item provide improved evidence 
+        for policymaking around energy efficiency. 
 
 \end{enumerate*}
 
@@ -241,7 +244,7 @@ in the past led to vastly differing points of view.''%
 ``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
 However, \ldots{} it is often not clear what different authors 
 mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
-If authors from the two disciplines cannot even agree on the terms, 
+If authors from the two disciplines cannot even agree on the key terms, 
 it is unsurprising that only modest progress has been made 
 on analytical foundations.
 To fully understand rebound, 
@@ -283,8 +286,10 @@ We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magni
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks for rebound
 is difficult because it is an inherently interdisciplinary topic.
-We believe that providing a detailed explication of an analytical framework
-for energy rebound will go some way toward providing additional clarity on the topic.
+We believe that providing a detailed explication of a rigorous analytical framework
+for energy rebound,
+which is approachable by both energy analysts and economists alike,
+will go some way toward providing additional clarity on the topic.
 
 
 %++++++++++++++++++++++++++++++
@@ -293,7 +298,7 @@ for energy rebound will go some way toward providing additional clarity on the t
 %++++++++++++++++++++++++++++++
 
 The \emph{objective} of this paper is to 
-improve clarity in the rebound space by
+improve clarity in the field of energy rebound by
 supporting the development of a rigorous analytical framework, 
 one that
 %
