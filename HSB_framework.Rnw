@@ -430,8 +430,39 @@ the progression of rebound effects through time.
 \end{figure}
 
 
-We assume an energy conversion device (say, a car)
-that consumes final energy%
+%++++++++++++++++++++++++++++++
+\subsection{Rebound relationships}
+\label{sec:rebound_relationships}
+%++++++++++++++++++++++++++++++
+
+Energy rebound is defined as
+
+\begin{equation} \label{eq:Re_def}
+  Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
+\end{equation}
+%
+where both actual and expected final energy savings rates are in MJ/year 
+and expected positive.
+Final energy ``takeback'' rate is defined as expected final energy savings rate less 
+actual final energy savings rate.
+Note that the takeback rate can be negative, indicating that the actual final energy savings rate
+is greater than the expected final energy savings rate, 
+a condition called hyperconservation.
+Thus,
+
+\begin{equation}
+  Re = 1 - \frac{\text{expected final energy savings rate} - \text{takeback rate}}{\text{expected final energy savings rate}} \; .
+\end{equation}
+%
+Simplifying gives
+
+\begin{equation} \label{eq:Re_takeback}
+  Re = \frac{\text{takeback rate}}{\text{expected final energy savings rate}} \; .
+\end{equation}
+%
+Energy rebound can be given by either Eq.~(\ref{eq:Re_def}) or Eq.~(\ref{eq:Re_takeback}).
+
+We define rebound at the final energy%
 \footnote{
   Conventionally, stages of the energy conversion chain are 
   primary energy (e.g., coal, oil, natural gas, wind, and solar),
@@ -440,6 +471,25 @@ that consumes final energy%
   energy services (e.g., transport, illumination, and space heating).
 }
 %
+stage of the energy conversion chain,
+because that is the point of energy purchase by the device owner.
+To simplify derivations, 
+we choose not to apply final-to-primary energy multipliers
+to final energy rates in the numerators and denominators of rebound expressions
+derived from Eqs.~(\ref{eq:Re_def}) and~(\ref{eq:Re_takeback});
+they divide out anyway.
+Henceforth, we drop the adjective ``final'' 
+from the noun ``energy,''
+unless there is reason to indicate a specific stage of the energy conversion chain.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Energy conversion device and energy efficiency upgrage (EEU)}
+\label{sec:ecd_and_eeu}
+%++++++++++++++++++++++++++++++
+
+We assume an energy conversion device (say, a car)
+that consumes energy
 (say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).%
 \footnote{
   We use ``rate'' to indicate any quantity measured per unit time.
@@ -527,50 +577,6 @@ we endeavor to bring clarity by
 providing sufficient detail to assist
 energy analysts to understand the economics and
 economists to understand the energy analysis.
-
-
-%++++++++++++++++++++++++++++++
-\subsection{Rebound relationships}
-\label{sec:rebound_relationships}
-%++++++++++++++++++++++++++++++
-
-Energy rebound is defined as
-
-\begin{equation} \label{eq:Re_def}
-  Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
-\end{equation}
-%
-where both actual and expected final energy savings rates are in MJ/year 
-and expected positive.
-Final energy ``takeback'' rate is defined as expected final energy savings rate less 
-actual final energy savings rate.
-Note that the takeback rate can be negative, indicating that the actual final energy savings rate
-is greater than the expected final energy savings rate, 
-a condition called hyperconservation.
-Thus,
-
-\begin{equation}
-  Re = 1 - \frac{\text{expected final energy savings rate} - \text{takeback rate}}{\text{expected final energy savings rate}} \; .
-\end{equation}
-%
-Simplifying gives
-
-\begin{equation} \label{eq:Re_takeback}
-  Re = \frac{\text{takeback rate}}{\text{expected final energy savings rate}} \; .
-\end{equation}
-%
-Energy rebound can be given by either Eq.~(\ref{eq:Re_def}) or Eq.~(\ref{eq:Re_takeback}).
-
-We define rebound at the final energy stage of the energy conversion chain,
-because that is the point of energy purchase by the device owner.
-To simplify derivations, 
-we choose not to apply final-to-primary energy multipliers
-to final energy rates in the numerators and denominators of rebound expressions
-derived from Eqs.~(\ref{eq:Re_def}) and~(\ref{eq:Re_takeback});
-they divide out anyway.
-Henceforth, we drop the adjective ``final'' 
-from the noun ``energy,''
-unless there is reason to indicate a specific stage of the energy conversion chain.
 
 
 %++++++++++++++++++++++++++++++
