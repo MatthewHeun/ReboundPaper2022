@@ -725,6 +725,11 @@ Thus,
 \end{equation}
 %
 
+
+%..............................
+\paragraph{Indirect emplacement effects ($Re_{iempl}$)} 
+%..............................
+
 Although the direct emplacement effect does not cause rebound, 
 indirect emplacement effects may indeed cause rebound.
 Indirect emplacement effects 
@@ -734,15 +739,7 @@ maintenance and disposal activities (subscript $\md$).
 
 
 %..............................
-\paragraph{Indirect emplacement effects ($Re_{iempl}$)} 
-%..............................
-
-Indirect emplacement effects include
-the embodied energy effect ($Re_{emb}$) and
-maintenance and disposal effects ($Re_{\md}$).
-
-%..............................
-\paragraph{Embodied energy effects ($Re_{emb}$)} 
+\subparagraph{Embodied energy effects ($Re_{emb}$)} 
 %..............................
 
 One of the unique features of this framework
@@ -822,7 +819,7 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\paragraph{Maintenance and disposal effects ($Re_{\md}$)} 
+\subparagraph{Maintenance and disposal effects ($Re_{\md}$)} 
 %..............................
 
 In addition to embodied energy, 
