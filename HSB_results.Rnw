@@ -2316,7 +2316,7 @@ E.g., the emplacement effect ($Re_{empl}$) includes
 embodying of energy during manufacture and distribution, 
 but its rebound effect ($Re_{emb}$) also takes account of device longevity.
 The emplacement effect also includes maintenance and disposal 
-activities ($Re_{md}$); 
+activities ($Re_{\md}$); 
 maintenance occurs throughout the life of the device, but  
 disposal occurs at end of life.
 The macro effect also occurs occurs throughout the life of the device, but

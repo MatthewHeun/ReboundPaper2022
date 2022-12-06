@@ -375,7 +375,7 @@ economists to understand the energy analysis.
 \input{pieces/typology_table.tex}
 
 Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
-We distinguish between microeconomic and macroeconomic rebound effects.
+We distinguish between microeconomic and macroeconomic levels.
 Microeconomic rebound occurs at the single device level or for a single device owner.
 We follow others, including \citet{Jenkins2011} and \citet{Walnum2014}, 
 in splitting microeconomic rebound into 
@@ -655,7 +655,6 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 
 The four rebound effects
 (emplacement, substitution, income, and macro)
-shown in the rebound path graphs
 are discussed in subsections below.
 In each subsection, we
 define each effect and
@@ -735,6 +734,14 @@ maintenance and disposal activities (subscript $\md$).
 
 
 %..............................
+\paragraph{Indirect emplacement effects ($Re_{iempl}$)} 
+%..............................
+
+Indirect emplacement effects include
+the embodied energy effect ($Re_{emb}$) and
+maintenance and disposal effects ($Re_{\md}$).
+
+%..............................
 \paragraph{Embodied energy effects ($Re_{emb}$)} 
 %..............................
 
@@ -765,7 +772,6 @@ all the way back to resource extraction.%
   One could use an alternative quantification of energy, 
   such as exergy, the work potential of energy \citep{Sciubba:2007aa} or
   emergy, the solar content of energy \citep{Brown:1996wy}.
-  Doing so is left as an exercise for the reader.
 }
 Energy is embodied in the device within manufacturing and distribution supply chains
 prior to consumer acquisition of the device.
@@ -816,7 +822,7 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\paragraph{Maintenance and disposal effects ($Re_{md}$)} 
+\paragraph{Maintenance and disposal effects ($Re_{\md}$)} 
 %..............................
 
 In addition to embodied energy, 
