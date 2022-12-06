@@ -1003,8 +1003,8 @@ where its slope is equal to the slope of the
 original expenditure line, 
 assuming the CES utility model.%
 \footnote{
-  Other utility models could be used.
-  However, the Cobb-Douglas utility model is inappropriate for this framework, 
+  Other utility models could be used; however, 
+  the Cobb-Douglas utility model is inappropriate for this framework, 
   because it assumes that the sum of substitution and income rebound is 100\% \emph{always}.
   Regardless of the utility model, expressions for
   $\rasub{q}_s/\rorig{q}_s$ and
@@ -1105,12 +1105,20 @@ The CES utility function
 allocates spending on the energy service and other goods 
 in the same proportion as post-substitution-effect 
 expenditures on the energy service and other goods,
-due to its homotheticity.
+due to its homotheticity.%
+\footnote{
+  Homothetic consumer preferences are independent 
+  of the magnitude of the consumer's consumption. 
+  In this case, the proportions of expenditures on the energy service
+  and on other goods remain the same, even if the 
+  overall spending level rises due to income expansion. 
+}
+%
 This constraint is satisfied by construction below, 
 particularly via an effective income term ($\Mdothatprime$).
 However, this framework could accommodate non-homothetic preferences
 for spending across the income effect (turning the income
-expansion path into a more general curve).
+expansion path into a more general curve instead of a line).
 
 We next show expressions for 
 direct and indirect income effect rebound.
