@@ -622,16 +622,6 @@ of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
   \rate{C}_s &= p_E \rate{E}_s \\
   \text{[\$/yr]} &= \text{[\$/MJ]}\text{[MJ/yr]} \nonumber
 \end{align}
-%
-% Fourth, indirect energy rates~($\rate{E}_j$)
-% for maintenance and disposal ($j = \md$) and other goods expenditures ($j = o$)
-% are the product 
-% of expenditures rates~($\rate{C}_j$) and energy intensity of the economy~($I_E$).
-% 
-% \begin{align} \label{eq:indirect_energy_rates}
-%   \rate{E}_j &= \rate{C}_j I_E \\
-%   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
-% \end{align}
 
 Fourth, indirect energy rates for
 maintenance and disposal ($\rate{E}_{\md}$) and
