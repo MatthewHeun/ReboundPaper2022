@@ -806,7 +806,8 @@ over the lifetime of the device
 to provide a constant embodied energy rate ($\rate{E}_{emb}$).
 (We later take the same approach to capital costs ($\rate{C}_{cap}$) and
 maintenance and disposal costs ($\rate{C}_{\md}$).)
-A justification for spreading embodied energy purchase costs comes from considering
+A justification for spreading embodied energy and 
+purchase costs comes from considering
 device replacements by many consumers across several years.
 In the aggregate, evenly spaced (in time) replacements
 work out to the same embodied energy in every period.
@@ -902,14 +903,22 @@ behavior change into
 This section develops mathematical expressions 
 for substitution effect rebound ($Re_{sub}$),
 thereby accepting the standard neoclassical microeconomic assumptions
-about consumer behavior.
+about consumer behavior.%
+\footnote{
+  Alternative assumptions on behavior would arise from,
+  e.g., adopting a behavioral economic framework
+  \citep{Dutschke:2018aa, Dorner:2019aa} or
+  an informational entropy-constrained economic framework \cite{Foley:2020aa}.
+}
+%
 (The next section addresses income effect rebound, $Re_{inc}$.)
 The substitution effect alters compensated demand, which is the demand for
 the expenditure-minimizing consumption bundle that
 maintains utility at the pre-EEU level, given the new prices.
 Compensated demand is a technical term for a thought experiment from welfare economics: 
 the device owner's budget is altered so that the owner is ``compensated''
-for the change in price while maintaining the same level of utility as before. 
+(that is, the budget is reduced)
+for the change in price so as to maintain the same level of utility as before. 
 The change in the budget is called ``compensating variation'' (CV).
 The substitution effect involves
 %
@@ -927,26 +936,15 @@ Thus, two terms comprise substitution effect rebound,
 direct substitution rebound ($Re_{dsub}$) and
 indirect substitution rebound ($Re_{isub}$).
 
-% The substitution effect is best described 
-% with reference to a consumption path graph (e.g., Fig.~\ref{fig:ExampleConsPathGraph}).
 After emplacement of the more efficient device
 (but before the substitution effect), 
 the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
-% pivoting the budget constraint counterclockwise about the $\circ$ point.
-This compensating variation
-translates into a lower budget constraint % \hathat{} 
-% in Fig.~\ref{fig:ExampleConsPathGraph}.
-% The $\wedge$ point shows consumption with new prices yielding utility
-After compensating variation, consumption at the new prices yields utility
-at the same level as prior to the EEU and minimizing expenditure, 
+After compensating variation that tightens the budget constraint,
+consumption at the new prices yields utility
+at the same level as prior to the EEU, 
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
 
-Rebound from the substitution effect is typically decomposed into 
-indirect (the decrease in other goods consumption) 
-and 
-direct (the increase in energy service consumption)
-components.
 An approximate utility model
 is often used in the literature
 (e.g., see \citet[p.~17, footnote~43]{Borenstein:2015aa})
