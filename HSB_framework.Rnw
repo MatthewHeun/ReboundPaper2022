@@ -328,9 +328,9 @@ one that
 \begin{enumerate*}[label={(\roman*)}]
 
   \item starts at the microeconomics of rebound
-        (building upon \citet{Borenstein:2015aa}) and 
+        (building especially upon \citet{Borenstein:2015aa}) and 
         
-  \item is approachable for both energy analysts and economists alike.
+  \item is approachable for both energy analysts and economists.
 
 \end{enumerate*}
 
@@ -364,9 +364,13 @@ can be found in Part~II.
 \label{sec:framework}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section, we develop a partial equilibrium
-energy rebound analysis framework 
-(concisely, ``this framework'' or ``our framework'').
+In this section, we develop 
+an energy rebound framework
+at the level of an individual consumer who upgrades the energy efficiency 
+of a single device, 
+analyzed in partial equilibrium 
+where the prices of other goods and services are unchanged
+(concisely, ``the framework,'' ``this framework,'' or ``our framework'').
 We endeavor to bring clarity to the energy rebound field by 
 providing sufficient detail to assist
 energy analysts to understand the economics and
