@@ -131,8 +131,8 @@ library(xtable)
 % Energy rebound is an interdisciplinary challenge that threatens
 % a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
 
-Energy efficiency is considered to be an important means
-to reduce energy consumption
+Energy efficiency is often considered to be
+the most important means to reduce energy consumption
 and CO$_2$ emissions \citep[Fig.~3.15, p.~139]{International-Energy-Agency:2017b}.
 But energy rebound makes energy efficiency less effective
 at decreasing energy consumption 
@@ -205,7 +205,7 @@ of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
 \citet{Borenstein:2015aa} made some progress toward solidifying the analytical 
 foundations for microeconomic rebound, but
 more is needed 
-to support empirical estimation efforts.
+to support empirical efforts.
 In the absence of solid analytical foundations, 
 the wide variety of rebound estimation approaches yields
 a wide range of rebound estimates, 
@@ -269,7 +269,7 @@ To fully understand rebound,
 economists need to have an energy analyst's understanding of energy, and 
 energy analysts need to have an economist's understanding of finance and human behavior.
 Developing the knowledge and skills required 
-to assess and address rebound effects is a tall order, indeed.
+to assess, calculate, and address rebound effects is a tall order, indeed.
 
 
 %++++++++++++++++++++++++++++++
@@ -303,8 +303,8 @@ We suspect that one reason rebound is not sufficiently included in energy and cl
 is the lack of consensus on rebound estimation methods and, hence, rebound magnitude.
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
-We posit that developing solid analytical frameworks for rebound
-is difficult because it is an inherently interdisciplinary topic.
+We posit that developing solid analytical frameworks 
+is difficult because energy rebound an inherently interdisciplinary topic.
 We believe that providing a detailed explication of a rigorous analytical framework
 for energy rebound,
 which is approachable by both energy analysts and economists alike,
