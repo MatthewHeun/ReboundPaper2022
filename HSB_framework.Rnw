@@ -403,7 +403,8 @@ economy-wide response to the single device upgrade.
 It comprises effects including 
 market and price effects, composition effects, and
 productivity effects (growth, scale, labour supply, and disinvestment effects).
-(See \citet{greening2000}, \citet{Barker2009}, and \citet{FontVivanco2018}.) 
+(See \citet{greening2000}, \citet{Barker2009}, and \citet{FontVivanco2018}
+for more.) 
 Like other authors, we recognize many macroeconomic effects, 
 even if we don't later distinguish among them.%
 \footnote{
@@ -418,6 +419,14 @@ even if we don't later distinguish among them.%
   \citet{VandenBergh2011} distinguishes 14 types of rebound, 
   providing, perhaps, the greatest complexity.   
 }
+%
+This well accepted typology is somewhat oblique 
+to recent general equilibrium approaches 
+that include both 
+microeconomic effects and
+price changes in other goods including energy 
+yet do not include dynamic effects. 
+For an approach combining both see \citet{Hart2018}.
 
 Fig.~\ref{fig:flowchart} shows rebound effects
 arranged in left-to-right order of their discussion in this paper.
