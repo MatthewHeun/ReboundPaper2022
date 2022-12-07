@@ -680,7 +680,7 @@ in the substitution and income effects.
 
 
 %..............................
-\paragraph{Direct emplacement effects ($Re_{dempl}$)} 
+\paragraph{Direct emplacement effect ($Re_{dempl}$)} 
 %..............................
 
 The direct emplacement effects of the EEU include
@@ -739,7 +739,7 @@ maintenance and disposal activities (subscript $\md$).
 
 
 %..............................
-\subparagraph{Embodied energy effects ($Re_{emb}$)} 
+\subparagraph{Embodied energy effect ($Re_{emb}$)} 
 %..............................
 
 One of the unique features of this framework
@@ -819,7 +819,7 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\subparagraph{Maintenance and disposal effects ($Re_{\md}$)} 
+\subparagraph{Maintenance and disposal effect ($Re_{\md}$)} 
 %..............................
 
 In addition to embodied energy, 
