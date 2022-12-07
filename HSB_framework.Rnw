@@ -506,7 +506,14 @@ To simplify derivations,
 we choose not to apply final-to-primary energy multipliers
 to final energy rates in the numerators and denominators of rebound expressions
 derived from Eqs.~(\ref{eq:Re_def}) and~(\ref{eq:Re_takeback});
-they divide out anyway.
+they divide out anyway.%
+\footnote{
+  Primary energy may be important when when the upgraded device consumes a different 
+  final energy carrier
+  compared to the original device, 
+  i.e., when fuel-switching occurs \citep{Chan2015}.
+}
+%
 Henceforth, we drop the adjective ``final'' 
 from the noun ``energy,''
 unless there is reason to indicate a specific stage of the energy conversion chain.
@@ -519,27 +526,26 @@ unless there is reason to indicate a specific stage of the energy conversion cha
 
 We assume an energy conversion device (say, a car)
 that consumes energy
-(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).%
-\footnote{
-  We use ``rate'' to indicate any quantity measured per unit time.
-  None of the rates in this paper indicate \%/yr changes.
-  Symbolically, rates are identified by a single dot above the symbol,
-  a convention adopted from the engineering literature where, e.g.,
-  $\dot{m}$ often indicates a mass flow rate in kg/s, 
-  $\dot{E}$ often indicates an energy flow rate in MJ/yr, and
-  $\dot{x}$ often indicates a velocity in m/s.
-  The overdot is an important way to maintain clarity of nomenclature
-  in this paper. 
-  For example,  
-  $E$ is a quantity of energy in, say, MJ, while
-  $\dot{E}$ is a rate of energy in, say, MJ/yr.
-  We later annualize capital costs ($C_{cap}$ in \$) and
-  embodied energy ($E_{emb}$ in MJ) to create
-  cost rates ($\dot{C}$ in \$/yr) and
-  embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
-}
-%
-The energy is available at price $p_E$ (in \$/MJ).
+(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).
+We use ``rate'' to indicate any quantity measured per unit time, 
+such as a flow of energy per year or a flow of income per year.
+None of the rates in this paper indicate \%/yr changes.
+Symbolically, rates are identified by a single dot above the symbol,
+a convention adopted from the engineering literature where, e.g.,
+$\dot{x}$ often indicates a velocity in m/s, 
+$\dot{m}$ often indicates a mass flow rate in kg/s, and
+$\dot{E}$ often indicates an energy flow rate in kW.
+The overdot is an important way to maintain clarity of nomenclature
+in this paper. 
+For example,  
+$E$ is a quantity of energy in, say, MJ, while
+$\dot{E}$ is a rate of energy in, say, MJ/yr.
+We later annualize capital costs ($C_{cap}$ in \$) and
+embodied energy ($E_{emb}$ in MJ) to create
+cost rates ($\dot{C}$ in \$/yr) and
+embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
+
+Energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
 $\rbempl{q}_s$ (in vehicle-km/year)
 with final-to-service efficiency $\bempl{\eta}$ (in vehicle-km/MJ).
