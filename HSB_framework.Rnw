@@ -83,7 +83,7 @@ involving both economics and energy analysis.
 In this paper (Part~I of two-part paper),
 we help advance a rigorous analytical framework
 that starts at the microeconomic level
-and is approachable for both energy analysts and economists alike. 
+and is approachable for both energy analysts and economists. 
 We develop the first (to our knowledge)
 rebound analysis framework that 
 %
@@ -105,7 +105,7 @@ rebound effects on microeconomic and macroeconomic levels.
 In Part~II, we develop new rebound visualization techniques 
 and exercise the framework
 by first calibrating the macro factor 
-then by estimating rebound for two examples.
+then by calculating rebound for two examples.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
