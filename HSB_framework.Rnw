@@ -128,23 +128,23 @@ library(xtable)
 \label{sec:introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Energy rebound is an interdisciplinary challenge that threatens
-a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
-Rebound makes energy efficiency less effective
-at decreasing energy consumption and reducing carbon emissions
+% Energy rebound is an interdisciplinary challenge that threatens
+% a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
+
+Energy efficiency is considered to be an important means
+to reduce energy consumption
+and CO$_2$ emissions \citep[Fig.~3.15, p.~139]{International-Energy-Agency:2017b}.
+But energy rebound makes energy efficiency less effective
+at decreasing energy consumption 
 by taking back (or reversing, in the case of ``backfire'') 
-energy savings expected from an energy efficiency improvement~\citep{Sorrell:2009cg}.
+energy savings expected from energy efficiency improvements~\citep{Sorrell:2009cg}.
+As such, energy rebound is a threat to
+a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
+
 Recent evidence shows that rebound is both 
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item larger than commonly assumed~\citep{Stern2020} and
-  
-  \item mostly missing from large energy and climate models~\citep{Brockway:2021ww}.
-    
-\end{enumerate*}
-%
-Rebound is one explanation for why 
+larger than commonly assumed~\citep{Stern2020} and
+mostly missing from large energy and climate models~\citep{Brockway:2021ww}.
+Thus, rebound is one explanation for why 
 energy consumption and carbon emissions 
 have never been absolutely decoupled 
 from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
@@ -268,7 +268,8 @@ on analytical foundations.
 To fully understand rebound, 
 economists need to have an energy analyst's understanding of energy, and 
 energy analysts need to have an economist's understanding of finance and human behavior.
-That's a tall order, indeed.
+Developing the knowledge and skills required 
+to assess and address rebound effects is a tall order, indeed.
 
 
 %++++++++++++++++++++++++++++++
