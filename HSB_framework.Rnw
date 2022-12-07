@@ -400,7 +400,7 @@ even if we don't later distinguish among them.%
   For example, \citet{Sorrell:2009cg} 
   sets out five macroeconomic rebound effects:
   embodied energy effects, respending effects, output effects, energy market effects, and composition effects.
-  (We place the embodied energy effect at the microeconomic scale.)
+  (We place the embodied energy effect at the microeconomic level.)
   \citet{Santarius2016} and \citet{Lange2021} 
   introduce 
   meso (i.e., sectoral) level rebound
@@ -1109,9 +1109,12 @@ due to its homotheticity.%
 \footnote{
   Homothetic consumer preferences are independent 
   of the magnitude of the consumer's consumption. 
-  In this case, the proportions of expenditures on the energy service
-  and on other goods remain the same, even if the 
-  overall spending level rises due to income expansion. 
+  In this case, the proportions of expenditures on the energy service ($\rate{C}_s$)
+  and on other goods ($\rate{C}_o$) remain the same across the income effect. 
+  Because prices are exogenous, 
+  the proportions of consumption rates of the energy service and other goods
+  ($\rate{q}_s$ and $\rate{q}_o$, respectively)
+  are also unchanged across the income effect.
 }
 %
 This constraint is satisfied by construction below, 
@@ -1234,9 +1237,9 @@ of direct and indirect income effect rebound.)
 
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
-occur at the microeconomic scale. 
-However, changes at the microeconomic scale can 
-have important implications at the macroeconomic scale, including
+occur at the microeconomic level. 
+However, changes at the microeconomic level can 
+have important implications at the macroeconomic level, including
 via aggregate economic growth from the energy-augmenting
 productivity increase.
 
@@ -1294,10 +1297,10 @@ savings ($\rasub{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
 
 Another novel contribution of this paper
-(in addition to the framework itself and rebound path graphs)
+(in addition to the framework itself)
 is the first operationalization of the macro rebound multiplier idea.
 To operationalize the macro rebound effect, we scale
-the net savings gained by the device owner at the microeconomic scale ($\rasub{N}$)
+the net savings gained by the device owner at the microeconomic level ($\rasub{N}$)
 by a macro factor ($k$) that represents the economic activity generated
 by the infinite series of respending of net savings ($\rasub{N}$)
 throughout the economy.%
@@ -1311,6 +1314,7 @@ throughout the economy.%
 The macro factor ($k$) can be likened to 
 the total respending described by
 a marginal propensity to consume ($\MPC$).
+(See \citet{Carroll2017}.)
 $k$ represents respending in the broader economy 
 after the income effect has occurred
 and is not tied to any particular EEU or economic sector.
@@ -1343,7 +1347,7 @@ We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
 implies energy consumption according to 
 the average energy intensity of the economy ($I_E$).
-Macro rebound is given by
+Macro rebound is therefore given by
 
 \begin{equation} \label{eq:Re_macro_def}
   Re_{\macro} = \frac{k \rbinc{N} I_E}{\Sdot} \; .
@@ -1513,8 +1517,8 @@ for the simplest case (understandable across disciplines)
 of a single fuel and a single energy service.
 In particular, non-marginal price changes and the macro effect
 require conceptual development and operationalization.
-This paper aims addresses the gaps in Table~\ref{tab:previous_frameworks},
-completing the ``This paper'' column with filled circles (\rating{100}).
+This paper addresses the gaps in Table~\ref{tab:previous_frameworks};
+hence we complete the ``This paper'' column with filled circles (\rating{100}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1551,7 +1555,7 @@ for sound energy and climate policy.
 %         limit rebound effects, and
 %         reduce CO$_2$ emissions.
 
-Future work could be pursued in several areas. 
+Future work could be pursued in two areas. 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -1561,12 +1565,6 @@ Future work could be pursued in several areas.
   
   \item This framework could be extended to producer-sided energy rebound effects.
   
-  \item This framework could be embedded 
-        in energy-economy models to better include rebound effects in discussions of 
-        macro energy modeling, 
-        energy policy, and 
-        CO$_2$ emissions mitigation.
-
 \end{enumerate*}
 
 In Part~II of this paper,
@@ -1613,7 +1611,7 @@ Declarations of interest: none.
   Visualization               & \rating{100} & \rating{100} &              \\
   Supervision                 & \rating{100} &              &              \\
   Project administration      & \rating{100} &              &              \\
-  Funding acquisition         &              &              &              \\
+  Funding acquisition         &              &              & \rating{100} \\
 \bottomrule
 \end{tabular}
 \label{tab:credit}
