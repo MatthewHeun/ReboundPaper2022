@@ -2481,7 +2481,9 @@ Nathan Chan (University of Massachusetts at Amherst); and
 Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
-Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam).
+Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
+Kenneth Gillingham (Yale University), and 
+Harry Saunders (Carnegie Institution for Science).
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).

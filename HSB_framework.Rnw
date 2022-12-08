@@ -1602,6 +1602,10 @@ Future work could be pursued in two areas.
   
   \item This framework could be extended to producer-sided energy rebound effects.
   
+  \item This framework could be extended to include some of the advanced topics
+        in \citet{Chan2015} and \citet{Wang2021}, 
+        such as **** GS to provide a few additional topics. ---MKH ****.
+  
 \end{enumerate*}
 
 In Part~II of this paper,
@@ -1675,7 +1679,9 @@ Nathan Chan (University of Massachusetts at Amherst); and
 Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
-Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam).
+Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
+Kenneth Gillingham (Yale University), and 
+Harry Saunders (Carnegie Institution for Science).
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
