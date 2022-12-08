@@ -1109,7 +1109,6 @@ See Appendix~\ref{sec:proof_income_elasticities}
 for a mathematical proof that the income preference equations below
 (Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM}))
 satisfy the budget constraint.
-
 A second constraint is that net savings are spent completely on
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -1119,8 +1118,6 @@ A second constraint is that net savings are spent completely on
   \item additional spending on other goods ($\rbinc{q}_o < \rainc{q}_o$).
     
 \end{enumerate*}
-%
-This constraint is satisfied by construction below.
 
 The proportions in which income-effect spending is allocated depends on preferences, 
 which prescribe an income expansion path. 
@@ -1212,7 +1209,7 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
 \label{sec:indirect_income_effect}
 %..............................
 
-But not all net savings ($\rbinc{N}$) are spent on more energy for the energy conversion device.
+Not all net savings ($\rbinc{N}$) are spent on more energy for the energy conversion device.
 The income elasticity of other goods demand ($\eqoM$)
 quantifies the amount of net savings spent 
 on additional other goods ($\rbinc{q}_o < \rainc{q}_o$).
@@ -1265,6 +1262,11 @@ However, changes at the microeconomic level can
 have important implications at the macroeconomic level, including
 via aggregate economic growth from the energy-augmenting
 productivity increase.
+**** Gregor says, ``Here I would like to consider inserting 
+a bit more discussion on the macro effect, 
+which includes more than a growth effect. 
+I'm not sure whether it works out in the end to insert anything, but 
+I want to think on it, especially given we now have the typology table above.'' ****
 
 \citet{Turner:2013aa} cautions that when households
 see the productivity of their non-market activities increase,
@@ -1302,7 +1304,9 @@ would be inferred from evaluating only the direct income gain from
 the end user's transaction'' \citep[p.~11]{Borenstein:2015aa} and 
 likening it to the Keynesian macroeconomic multiplier.
 However, the dynamic macro rebound effect 
-is not an autonomous expansion of expenditure in an otherwise unchanged economy 
+is not an autonomous expansion of expenditure,
+a demand-side shock,
+in an otherwise unchanged economy 
 (like the Keynesian multiplier).
 Rather, macroeconomic rebound is caused by an energy productivity improvement,
 a supply-side shock.
@@ -1408,37 +1412,46 @@ we find
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We developed above a partial equilibrium rebound framework for consumers. 
+We developed above a rebound framework for consumers. 
 We note that many of its components are similar to those for a producer-sided framework
 due to the symmetry between neoclassical microeconomic producer and consumer theory.
-Partial equilibrium frameworks provide detailed assessment of individual EEUs
-with tractable, easy-to-understand mathematics.
+Ours is a partial equilibrium framework
+that provides a detailed assessment of individual EEUs with tractable,
+easy-to-understand mathematics.
 Partial equilibrium frameworks are easier to understand, in part, because
 they constrain price variation to the energy service only; 
-all other prices remain constant.
+all other prices remain constant.%
+\footnote{
+  General equilibrium frameworks provide detail and precision
+  on economy-wide price adjustments, but
+  they give up specificity about individual device upgrades, 
+  make assumptions during calibration, and 
+  lose simplicity of exposition.
+}
+%
 In our partial equilibrium framework, 
 general equilibrium effects are captured by 
 a simplified, one-dimensional, macroeconomic-scale rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
-In contrast, 
-general equilibrium frameworks allow prices of all goods and services 
-in an economy to adjust to the EEU.
-Recent examples include \citet{Hart2018}, 
-\citet{Lemoine:2020aa}, 
-\citet{Fullerton2020}, and 
-\citet{blackburn2020energy}.
-General equilibrium frameworks provide detail and precision 
-on economy-wide price adjustments, 
-but they give up specificity about individual device upgrades, 
-make assumptions during calibration, and
-lose simplicity of exposition.  
+% In contrast, 
+% general equilibrium frameworks allow prices of all goods and services 
+% in an economy to adjust to the EEU.
+% Recent examples include \citet{Hart2018}, 
+% \citet{Lemoine:2020aa}, 
+% \citet{Fullerton2020}, and 
+% \citet{blackburn2020energy}.
+% General equilibrium frameworks provide detail and precision 
+% on economy-wide price adjustments, 
+% but they give up specificity about individual device upgrades, 
+% make assumptions during calibration, and
+% lose simplicity of exposition.  
 
 We are not the first to develop a partial equilibrium rebound analysis framework,
 so it is worthwhile to compare our framework with others
 for key features: 
-analysis of all effects, locations, and scales; 
-analysis in energy, expenditure, and consumption spaces; 
+analysis of all levels, locations, and effects; 
+analysis of energy, expenditure, and consumption; 
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
 operationality.
@@ -1477,7 +1490,8 @@ earning high ratings (\rating{100}) in the
 They extend their frameworks to advanced topics such as
 multiple fuels,  
 energy services, and
-nested utility functions with intermediate inputs. 
+nested utility functions with intermediate inputs
+that our framework does not presently incorporate. 
 However, neither framework exhibits operationality,
 earning \rating{0} in the last row of Table~\ref{tab:previous_frameworks}. 
 In the middle of the table (and between the other studies in time), 
