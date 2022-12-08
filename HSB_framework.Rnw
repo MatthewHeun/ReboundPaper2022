@@ -77,7 +77,7 @@ Widespread implementation of energy efficiency
 is a key greenhouse gas emissions mitigation measure, 
 but rebound can ``take back'' energy savings.
 However, the absence of solid analytical foundations hinders
-empirical estimates of the size of rebound.
+empirical determination of the size of rebound.
 A new clarity is needed, one that is built upon solid analytical frameworks
 involving both economics and energy analysis.
 In this paper (Part~I of two-part paper),
@@ -212,13 +212,13 @@ made progress toward solidifying the analytical foundations,
 but more is needed to support empirical efforts.
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
-a wide range of rebound estimates, 
+a wide range of rebound values, 
 giving the appearance of uncertainty and
 leading energy and climate modelers to either 
 %
 \begin{enumerate*}[label={(\roman*)}]
 
-  \item use questionable rebound estimates or 
+  \item use questionable rebound values or 
   
   \item ignore rebound altogether.
 
@@ -1365,10 +1365,7 @@ many estimates of its magnitude, though we stress again that $\MPC$ is a
 energy efficiency on the supply side.
 A recent review by \citet{Carroll2017} 
 reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
-with the full range estimates spanning 0.0 to 0.9.
-% Commenting, because there is no need to discuss our placeholder value now.
-% For now, we choose $\MPC = 0.5$ and $k = 1$ as a placeholder value,
-% with further exploration of the macro effect in Part~II.
+with the full range of estimates spanning 0.0 to 0.9.
 
 We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
@@ -1575,9 +1572,9 @@ simplest case of a single fuel and a single energy service.
 With
 careful explication of rebound effects and 
 clear derivation of rebound expressions,
-we advance the analytical foundations for empirical estimates of rebound and
+we advance the analytical foundations for empirical determination of rebound and
 facilitate interdisciplinary understanding of rebound phenomena
-toward the goal of enabling of more robust rebound estimates
+toward the goal of enabling of more robust rebound calculations
 for sound energy and climate policy.
 
 % From the development and application of the framework in Part~I, 
@@ -1617,7 +1614,7 @@ in energy, expenditure, and consumption spaces.
 Second, we apply the partial equilibrium framework to two EEUs:
 an upgraded electric lamp and 
 an upgraded automobile.
-Finally, we provide rebound estimates for the two examples.
+Finally, we provide rebound calculations for the two examples.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
