@@ -1545,7 +1545,7 @@ due to higher spending on other goods.
 Thus, the net savings after the substitution effect
 ($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/year) 
 translates into positive direct and indirect income
-rebound at the microeconomic scale. 
+rebound at the microeconomic level. 
 Total microeconomic rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
 
@@ -1690,7 +1690,7 @@ some of the net savings to increased demand for lighting.
 The indirect income effect rebound is large
 ($Re_{iinc} = \Sexpr{Re_iinc_lamp_char_perc}$\%),
 due to the energy implications of increased spending on other goods.
-Total microeconomic scale rebound (emplacement, substitution, and income effects)
+Total microeconomic level rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_lamp_char_perc}$\%.
 
 Finally, \macroeffect{} rebound
@@ -1984,10 +1984,10 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
 The framework developed in Section~\ref{PartI-sec:framework} of Part~I
 links macroeconomic rebound to microeconomic rebound 
 via a term that scales magnitudes in the microeconomic portion of the framework. 
-Few rebound studies have explored the macroeconomic scale
+Few rebound studies have explored the macroeconomic level
 between microeconomic and total rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
-we bridge macroeconomic and microeconomic scales with the macro factor ($k$), 
+we bridge macroeconomic and microeconomic levels with the macro factor ($k$), 
 as discussed in Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.
 For the results presented in Section~\ref{sec:results}, 
 we assumed a placeholder value of $k = 1$,
@@ -2316,7 +2316,7 @@ E.g., the emplacement effect ($Re_{empl}$) includes
 embodying of energy during manufacture and distribution, 
 but its rebound effect ($Re_{emb}$) also takes account of device longevity.
 The emplacement effect also includes maintenance and disposal 
-activities ($Re_{md}$); 
+activities ($Re_{\md}$); 
 maintenance occurs throughout the life of the device, but  
 disposal occurs at end of life.
 The macro effect also occurs occurs throughout the life of the device, but
@@ -2369,7 +2369,7 @@ From the development and application of the framework in Part~II,
 we draw two important conclusions.
 First, the car and lamp examples (Section~\ref{sec:results}) show that
         the framework enables
-        quantification of rebound magnitudes at microeconomic and macroeconomic scales, including 
+        quantification of rebound magnitudes at microeconomic and macroeconomic levels, including 
         direct and indirect locations 
         for emplacement, substitution, income, and macro effects.
 Second, the examples show that magnitudes of rebound effects
@@ -2389,7 +2389,7 @@ Future work could be pursued in several areas.
   \item The rebound implications of the distribution of $\MPC$ values 
         across socioeconomic groups~\citep{Carroll2017}
         could be explored.
-
+        
   \item The rebound effects of fossil-energy taxes 
         could be studied,
         especially for the web of interconnected dynamic effects
@@ -2402,6 +2402,12 @@ Future work could be pursued in several areas.
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
         is unlikely to be independent of post-EEU capital cost ($\amacro{C}_{cap}$).
+
+  \item This framework could be embedded 
+        in energy-economy models to better include rebound effects in discussions of 
+        macro energy modeling, 
+        energy policy, and 
+        CO$_2$ emissions mitigation.
 
 \end{enumerate*}
 
@@ -2438,7 +2444,7 @@ Declarations of interest: none.
   Visualization               & \rating{100} & \rating{100} &              \\
   Supervision                 & \rating{100} &              &              \\
   Project administration      & \rating{100} &              &              \\
-  Funding acquisition         &              &              &              \\
+  Funding acquisition         &              &              & \rating{100} \\
 \bottomrule
 \end{tabular}
 \label{tab:credit}
@@ -2475,7 +2481,9 @@ Nathan Chan (University of Massachusetts at Amherst); and
 Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
-Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam).
+Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
+Kenneth Gillingham (Yale University), and 
+Harry Saunders (Carnegie Institution for Science).
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
