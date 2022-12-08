@@ -132,7 +132,7 @@ library(xtable)
 % a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
 
 Energy efficiency is often considered to be
-the most important means to reduce energy consumption
+the most important means of reducing energy consumption
 and CO$_2$ emissions \citep[Fig.~3.15, p.~139]{International-Energy-Agency:2017b}.
 But energy rebound makes energy efficiency less effective
 at decreasing energy consumption 
@@ -187,7 +187,7 @@ suggest ``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
 while others
 claim the evidence for large rebound
 (greater than 50\%) is growing \citep{Saunders2015, Berner:2022tb},
-and rebound will negatively impact the effectiveness of energy efficiency
+and that rebound will negatively impact the effectiveness of energy efficiency
 to reduce carbon emissions
 \citep{van-den-Bergh:2017aa}.
 
@@ -198,7 +198,7 @@ to reduce carbon emissions
 %++++++++++++++++++++++++++++++
 
 \citeauthor{Turner:2013aa} contends that the lack of consensus 
-on the magnitude of rebound 
+on the magnitude of energy rebound 
 in the modern empirical literature is caused by 
 ``a rush to empirical estimation in the absence 
 of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
@@ -273,7 +273,9 @@ To fully understand rebound,
 economists need to have an energy analyst's understanding of energy, and 
 energy analysts need to have an economist's understanding of finance and human behavior.
 Developing the knowledge and skills required 
-to assess, calculate, and address rebound effects is a tall order, indeed.
+to assess and calculate, 
+let along mitigate, 
+rebound effects is a tall order, indeed.
 
 
 %++++++++++++++++++++++++++++++
