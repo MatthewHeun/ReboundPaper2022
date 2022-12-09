@@ -300,6 +300,14 @@ Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound
 Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
 N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
 Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+q_dot_s_orig_car <- rebound_results %>% 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Car") %>% 
+  magrittr::extract2("q_dot_s_orig")
+q_dot_s_hat_car <- rebound_results %>% 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Car") %>% 
+  magrittr::extract2("q_dot_s_hat")
+perc_increase_driving <- (q_dot_s_hat_car / q_dot_s_orig_car - 1) * 100
+perc_increase_driving_char <- formatC(perc_increase_driving, digits = 1, format = "f", big.mark = ",")
 @
 
 For the first example, 
@@ -1523,9 +1531,10 @@ direct and indirect substitution effect rebound.
 Rebound from direct substitution ($Re_{dsub}$) is 
 positive, as expected (\Sexpr{Re_dsub_car_char_perc}\%). 
 The car owner will, on average, prefer more driving, 
-because of fuel economy enhancements (\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
-In other words, with no other changes, 
-the more fuel-efficient car is driven \Sexpr{Re_dsub_car_char_perc}\% further per year. 
+purely from the change in relative prices 
+because of the fuel economy enhancements (\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
+In our example, due to the relative price change, 
+the more fuel-efficient car is driven \Sexpr{perc_increase_driving_char}\% further. 
 Conversely, the indirect substitution effect ($Re_{isub}$)
 is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
 to achieve the same level of utility after increased driving. 
