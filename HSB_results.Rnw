@@ -1037,12 +1037,21 @@ rebound_results %>%
 In the notional graphs of
 Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
 embodied energy rates and capital cost rates
-(represented by segments \ab{}) 
+(represented by segments \ab{} and \bstar{}) 
 move in the same direction (both in the negative $y$ direction).
-However, both segments \ab{} could move in the positive $y$ direction, or
+However, segments \ab{} and \bstar{} 
+could both move in the positive $y$ direction, or
 they could move in opposite directions, 
 depending on the results of the independent analyses for 
 embodied energy and capital cost rates.
+The substitution effect along segments \starc{} and \chat{}
+will, by definition, lead to a lower expenditure 
+due to the price decline and hence the budget reducing compensating variation (CV). 
+The income effect (segments \hatd{} and \dbar{}) must bring expenditure
+back to the original expenditure line 
+(equal to the budget constraint set by income in dollar or nominal terms) 
+by assumptions about non-satiation and utility maximization 
+in the device owner's decision function.
 
 
 %------------------------------
