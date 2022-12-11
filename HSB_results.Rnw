@@ -979,6 +979,13 @@ the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-
 the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
 indicate expenditure isoquants.
+The line through the $\circ$ point is an isoquant for the
+cost of purchasing the original consumption bundle
+at the original prices.
+The line through the $*$ point is an isoquant for the
+cost of purchasing the original consumption bundle
+at the new prices.
+
 
 <<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure path graph. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
 cost_line_angle <- -14
@@ -1063,50 +1070,66 @@ A notional consumption path graph is shown in Fig.~\ref{fig:ExampleConsPathGraph
 The indexed rate of energy service demand ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
 the indexed rate of other goods demand ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
 Iso-cost loci of energy service and other goods demand
-are shown as lines with negative slope. 
-
-The substitution effect is shown by segments
-\starc{} (the indirect component) and \chat{} (the direct component) 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
-Indifference curves are denoted by \iicirc{} and \iibar{}. 
-A ray from the origin through the $\wedge$ point is denoted \rr{}.
-Note that points $\circ$, $a$, $b$, and $*$ collapse together
-on consumption path graphs, because both
+are shown as lines with negative slope
+(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}). 
+Note that isoquants \circcirc{} and \barbar{} intersect the $y$-axis 
+at the same point, because the prices of other goods and services haven't changed
+as a result of the EEU.
+(The $x$-axis of Fig.~\ref{fig:ExampleConsPathGraph} does not extend to $0$ at the left, 
+so the intersection is not visible.)
+Emplacement does not alter consumption patterns, so
 the rate of energy service consumption and 
 the rate of other goods consumption are
 unchanged across the emplacement effect
 ($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_o = \raempl{C}_o$, respectively).
+Thus, 
+only movements after the $*$ point are visible as a path in the consumption plane, and
+points $\circ$, \emph{a}, \emph{b}, and $*$ 
+collapse to the same location.
 
+Indifference curves are denoted by \iicirc{} and \iibar{}. 
 Prior to the EEU, the consumption basket (of the energy service and other goods)
 is represented by the $\circ$ point. 
 The budget constraint,
-i.e.\ the amount of money available for final goods purchases,
+here in real terms, i.e.,
+the capacity to purchase either the energy service or other goods and services,
 is shown as isoquant \circcirc{}.
 The \circcirc{} line is tangent to the lower indifference curve 
 (\iicirc{}) at point $\circ$, the optimal consumption
 bundle prior to the EEU.
-The budget line \starstar{} indicates the
-cost of purchasing the original consumption bundle
-at the new prices.
-The substitution effect indicates the cheaper, optimal
-consumption bundle at the $\wedge$ point. 
+The real budget line \starstar{}
+indicates the (higher) capacity to purchase 
+combinations of energy services and other goods and services
+using the same money needed to purchase
+the old consumption bundle but at the new, lower price
+for the energy service,
+thanks to the EEU.
 
-Rebound from the substitution effect is typically decomposed into 
-indirect (the decrease in other goods consumption, segment \starc{}) 
-and 
-direct (the increase in energy service consumption, segment \chat{})
-components.
-The impact of the substitution effect on energy consumption rates and expenditure rates
-can be seen in Figs.~\ref{fig:ExampleEnergyPathGraph}
-and~\ref{fig:ExampleCostPathGraph}, respectively.
-The income expansion path is a ray (\rr{}) on consumption path graphs.
+The substitution effect leads to the cheaper, optimal
+consumption bundle at the $\wedge$ point. 
+The substitution effect is shown by segments
+\starc{} (the indirect component, which represents the decrease in other goods consumption) and
+\chat{} (the direct component, which represents the increase in energy service consumption).
+Although the substitution effect is calculated 
+on the consumption plane, 
+its impact 
+can be seen in
+the energy and expenditures planes 
+(Figs.~\ref{fig:ExampleEnergyPathGraph}
+and~\ref{fig:ExampleCostPathGraph}, respectively).
+
+The income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
+in the consumption plane.
 In the consumption path graph, the pre- and post-income-effect 
 points ($\wedge$ and $-$, respectively)
-lie along ray \rr{} from the origin through point $\wedge$ in Fig.~\ref{fig:ExampleConsPathGraph}.
-
+lie along the \rr{} ray.
 The increased consumption rate of the energy service is 
-represented by segments \hatd{} 
+represented by segment \hatd{} 
 in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+The increased consumption rate of other goods and services is 
+represented by segments \dbar{} 
+in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+
 
 <<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption path graph.", fig.width=6, fig.height=4, fig.align = "center">>=
 orig_line_label_size <- orig_size - 3
@@ -1196,7 +1219,7 @@ rebound_results %>%
 \label{sec:software_tools}
 %++++++++++++++++++++++++++++++
 
-We developed an open source \texttt{R} package \texttt{ReboundTools}
+We developed an open source \texttt{R} package called \texttt{ReboundTools}
 to standardize and distribute our methods for calculating rebound magnitudes.
 \texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 (See \citet{Heun:2021us}.)
@@ -1208,14 +1231,24 @@ to standardize and distribute our methods for calculating rebound magnitudes.
 
   \item performing rebound calculations, and 
   
-  \item generating rebound path graphs.
+  \item generating rebound tables and path graphs.
     
 \end{enumerate*}
 %
 \texttt{ReboundTools} was used for 
 all calculations and all rebound path graphs in this paper.
 
-In addition, an Excel workbook that performs rebound calculations 
+To find the path to an example spreadsheet bundled with the package, 
+users of the \texttt{ReboundTools} package
+can call the function \texttt{ReboundTools::sample\_eeu\_data\_path()}.
+After filling the example spreadsheet with parameters for an EEU, 
+users can call two functions
+(\texttt{ReboundTools::load\_eeu\_data()} and \texttt{ReboundTools::rebound\_analysis()})
+to perform all rebound calculations described in this paper.
+The function \texttt{ReboundTools::path\_graphs()} creates 
+rebound path graphs on the energy, expenditure, and consumption planes.
+
+In addition, a separate Excel workbook that performs identical rebound calculations 
 using the framework of this paper
 can be found at the data repository for this paper at
 \url{https://doi.org/10.5518/1201}.
