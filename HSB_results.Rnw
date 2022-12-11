@@ -1760,17 +1760,11 @@ Total microeconomic level rebound (emplacement, substitution, and income effects
 sums to $Re_{micro} = \Sexpr{Re_micro_lamp_char_perc}$\%.
 
 Finally, \macroeffect{} rebound
-($Re_{\macro}$) is coincidentally also \Sexpr{Re_macro_lamp_char_perc}\%
+($Re_{\macro}$) is \Sexpr{Re_macro_lamp_char_perc}\%
 with $k$ assumed to be 1,
 due to economic expansion caused by 
 productivity enhancements arising from the more-efficient provision of the 
 energy service (lighting).
-
-
-
-
-
-
 
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="Energy path graph for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4, fig.align = "center">>=
@@ -2117,12 +2111,15 @@ long-run multiplier is plausible,
 even if the initial productivity
 change occurred in household production which is not accounted in GDP.
 Second, it could be that growth is less than 
-\$3 but that the macroeconomic ``energy price effect'' (a decline in 
+\$3 for every \$1 of freed cash,
+but that the macroeconomic ``energy price effect'' (a decline in 
 energy prices due to the fallen demand) induces consumption at a higher
 energy intensity than that of the pre-EEU economy. 
 Third, from the demand-side perspective
 entertained by \citet{Borenstein:2015aa}, 
-$k \approx 3$ could be interpreted as $\MPC \approx 0.75$. 
+$k \approx 3$ could be interpreted as 
+a marginal propensity to consume (MPC)
+of approximately $0.75$. 
 (See Fig.~\ref{PartI-fig:k_vs_mpc} 
 in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
 $\MPC \approx 0.75$ is a reasonable value, 
@@ -2137,8 +2134,8 @@ we can calculate all rebound components in our framework.
 Emplacement ($Re_{empl}$), substitution ($Re_{sub}$), and income ($Re_{inc}$) rebound
 magnitudes are unchanged after calibrating $k \approx 3$.
 However, we see that choosing a placeholder value of $k = 1$
-in Section~\ref{sec:results}
-underestimated $Re_{\macro}$ and, therefore, $Re_{tot}$ in Section~\ref{sec:results}.
+resulted in a low value for $Re_{\macro}$ and, therefore, $Re_{tot}$
+in Section~\ref{sec:results}.
 In Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph},
 the macro effect segments (\bartilde{})
 should be three times longer than they appear.
@@ -2197,7 +2194,7 @@ Second,
 one cannot know \emph{a-priori} which rebound effects
 will be large and which will be small
 for a given EEU.
-Furthermore, some rebound effects are dependent on economic parameters,
+Furthermore, some rebound effects are dependent upon economic parameters,
 such as energy intensity ($I_E$).
 Thus, it is important to calculate the magnitude of all rebound effects 
 for each EEU in each economy.
@@ -2224,17 +2221,18 @@ The efficiency gain for the lamp is far greater than the efficiency gain for the
 leading to much different rates of freed cash ($\dot{G}$) and
 different macro rebound values.
 
-Fifth,
-in both examples the macro effect rebound ($Re_{macro}$) is much larger than
-any single micro rebound component. 
-However, the sum of micro rebound components 
-($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
-is close in magnitude to the macro rebound ($Re_{macro}$).
-These observations are likely to be the result of 
-$Re_{macro}$ being the sum of several macroeconomic sub-effects,
-among which we don't discriminate in this framework.
-(See Table~\ref{PartI-tab:rebound_typology} in Part~I
-for a list of macro rebound effects.)
+% I think there is really no claim in this.
+% Fifth,
+% in both examples the macro effect rebound ($Re_{macro}$) is much larger than
+% any single micro rebound component. 
+% However, the sum of micro rebound components 
+% ($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
+% is close in magnitude to the macro rebound ($Re_{macro}$).
+% These observations are likely to be the result of 
+% $Re_{macro}$ being the sum of several macroeconomic sub-effects,
+% among which we don't discriminate in this framework.
+% (See Table~\ref{PartI-tab:rebound_typology} in Part~I
+% for a list of macro rebound effects.)
 
 
 %++++++++++++++++++++++++++++++
@@ -2272,33 +2270,30 @@ enable two types of observations:
 @
 
 Firstly, we can say that none of the comparison studies
-give all rebound effect components, as we have done
+report all rebound effect components, as we have done
 in Sections~\ref{sec:results} and~\ref{sec:calibrating_k}. 
 Further, none of the studies decompose rebound 
 into both locations and both effects of microeconomic rebound
 that we think are important: 
 direct and indirect locations and substitution and income effects. 
 Thus, our framework is bringing conceptual clarity to this space.
-In addition, none of the studies provide 
+In addition, none of the studies report 
 emplacement rebound ($Re_{empl}$) or macro rebound ($Re_{macro}$).
-In fact, only ****X**** of the 10 studies give total rebound ($Re_{tot}$).
+In fact, only ****X**** of the 10 studies report total rebound ($Re_{tot}$).
 We also observe that studies that provide total rebound 
-are based on a top-down estimation of overall, economy-wide rebound, 
+are based on a top-down calculation of overall, economy-wide rebound, 
 rather than a bottom-up ``sum-of-components'' approach 
 that we employ.
 That finding is instructive---it supports the view that
 a comprehensive framework that sets out individual rebound components
 has been missing---something that informed the objective for Part~I of this paper.
 Top-down estimations or calculations of total, economy-wide rebound 
-may also inhibit comparison, as the effects included/excluded 
-are not clear, 
-giving an appearance of a ``black box'' calculation approach,
-where the magnitude of overall rebound can depend 
-on model/analysis assumptions.
-****
-Do we want to be quite so critical? 
-This paper relies on external estimates of total rebound to calibrate $k$.
-****
+may also inhibit comparison, as the effects included or excluded 
+may not be clear, 
+giving an appearance of a ``black box'' calculation approach.
+That said, without the top-down approaches,
+we would not have the information needed to calibrate 
+the macro factor ($k$) in Section~\ref{sec:calibrating_k}.
 
 Secondly, helpful insights can be gained
 from comparison of rebound magnitudes and calculation methods.
@@ -2328,7 +2323,8 @@ focus mainly on microeconomic rebound only
 (commonly via cross-price elasticities).
 In other words, 
 comparisons of our indirect rebound values with the comparison studies
-may be unfair, as we include macro-scale effects. 
+may be too simple and not very meaningful,
+as we include macro-scale effects at the indirect location. 
 
 For total rebound ($Re_{tot}$),
 our values of
@@ -2339,11 +2335,6 @@ nearly double the values from the comparison studies for the lamp example (43\% 
 Beyond that, comparison (as noted earlier) is inhibited
 by existing top-down methods versus our bottom up approach
 to calculate total rebound.
-****
-Except that our bottom-up method
-relies upon a top-down calibration for $k$.
-How do we resolve this tension? ---MKH
-****
 
 
 %++++++++++++++++++++++++++++++
@@ -2429,7 +2420,8 @@ We encourage energy analysts and economists to use visualizations
 like the rebound path graphs to document their rebound calculations going forward.
 We hope that greater clarity about and understanding of 
 energy rebound
-will bring about sound energy and climate policy.
+will help inform energy and climate policy
+that takes account of rebound more centrally.
 
 From the development and application of the framework in Part~II, 
 we draw two important conclusions.
