@@ -1273,7 +1273,7 @@ as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car owner.
 Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
 changes occur only in the macroeconomy.
-For the car owner, no changes are observed across the macro effect.
+For the car owner, no changes are recorded across the macro effect.
 Thus, the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:car_stages_table} are identical.
 
@@ -1309,7 +1309,7 @@ rebound_results %>%
 @
 
 
-Results are represented graphically in quantified energy, expenditure, and consumption path graphs
+Results are represented graphically on energy, expenditure, and consumption planes
 in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
 The energy path graph (Fig.~\ref{fig:CarEnergyGraph})
 shows the size of each rebound effect
@@ -1585,11 +1585,13 @@ The \subeffect{} has two components:
 direct and indirect substitution effect rebound.
 Rebound from direct substitution ($Re_{dsub}$) is 
 positive, as expected (\Sexpr{Re_dsub_car_char_perc}\%). 
-The car owner will, on average, prefer more driving, 
-purely from the change in relative prices 
-because of the fuel economy enhancements (\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
-In our example, due to the relative price change, 
-the more fuel-efficient car is driven \Sexpr{perc_increase_driving_char}\% further. 
+The car owner will, on average, prefer more driving purely 
+from the change in relative prices because of the fuel economy enhancements
+(\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
+In other words, 
+due the relative price change,
+the more fuel-efficient car is driven \Sexpr{perc_increase_driving_char}\% further
+each year. 
 Conversely, the indirect substitution effect ($Re_{isub}$)
 is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
 to achieve the same level of utility after increased driving. 
@@ -1640,7 +1642,7 @@ we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
 Similar to Table~\ref{tab:car_stages_table}, 
 Table~\ref{tab:lamp_stages_table} applies to the lamp owner, 
-so no changes are observed across the macro effect, and
+so no changes are recorded across the macro effect, and
 the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:lamp_stages_table} are identical.
 
@@ -1686,7 +1688,7 @@ Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::reboun
 @
 
 
-Results are represented graphically in energy, expenditure, and consumption path graphs
+Results are represented graphically on energy, expenditure, and consumption planes
 in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
 The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
 shows the size of each rebound effect
