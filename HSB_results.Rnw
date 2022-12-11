@@ -953,11 +953,19 @@ as shown by point \emph{b} being below point \emph{a})
 and has a lesser energy consumption rate for maintenance and disposal 
 ($\rbempl{E}_{\md} > \raempl{E}_{\md}$, 
 as shown by point $*$ being below point \emph{b})
-due to lower expenditure on these two categories
+due to lower expenditure rates on these two categories
 compared to the original device.
+
 In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
 move in the negative $y$ direction,
 consistent with the description above.
+Segment \starc{} is negative by definition of the indirect substitution effect 
+and segment \chat{} is positive by the same definition. 
+Both income effect segments (\hatd{} and \dbar{}) will always
+lead to more energy consumption, because net savings are spent
+on goods and services that rely on at least some energy consumption.
+Segment \bartilde{} always moves in the positive $y$ direction,
+because macro effects lead to additional indirect energy consumption.
 
 
 %------------------------------
@@ -970,7 +978,7 @@ with
 the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
 the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
-indicate expenditure isoquants (sum of direct and indirect components).
+indicate expenditure isoquants.
 
 <<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure path graph. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
 cost_line_angle <- -14
