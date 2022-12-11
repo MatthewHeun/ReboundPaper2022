@@ -1433,19 +1433,6 @@ general equilibrium effects are captured by
 a simplified, one-dimensional, macroeconomic-scale rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
-% In contrast, 
-% general equilibrium frameworks allow prices of all goods and services 
-% in an economy to adjust to the EEU.
-% Recent examples include \citet{Hart2018}, 
-% \citet{Lemoine:2020aa}, 
-% \citet{Fullerton2020}, and 
-% \citet{blackburn2020energy}.
-% General equilibrium frameworks provide detail and precision 
-% on economy-wide price adjustments, 
-% but they give up specificity about individual device upgrades, 
-% make assumptions during calibration, and
-% lose simplicity of exposition.  
-
 We are not the first to develop a partial equilibrium rebound analysis framework,
 so it is worthwhile to compare our framework with others
 for key features: 
@@ -1527,6 +1514,8 @@ but does not develop the idea into an operational theory,
 earning \rating{25} in the ``Macro effect'' row. 
 No other frameworks even discuss the link between macro and micro rebound effects, 
 leading to \rating{0} in the ``Macro effect'' row for all other previous frameworks. 
+Our framework operationalizes the macro effect
+earning \rating{50} in the ``This paper (2022)'' column.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly ``marginal'' or small improvements in efficiency, 
 excluding the analysis of important non-incremental upgrades
@@ -1553,8 +1542,9 @@ for the simplest case (understandable across disciplines)
 of a single fuel and a single energy service.
 In particular, non-marginal price changes and the macro effect
 require conceptual development and operationalization.
-This paper addresses the gaps in Table~\ref{tab:previous_frameworks};
-hence we complete the ``This paper'' column with filled circles (\rating{100}).
+This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
+hence we fill the ``This paper (2022)'' column 
+with mostly filled circles (\rating{100}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
