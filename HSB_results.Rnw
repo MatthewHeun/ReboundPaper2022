@@ -703,28 +703,33 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 \label{sec:path_graphs}
 %++++++++++++++++++++++++++++++
 
-Any rebound analysis should track
+A comprehensive rebound analysis should track
 energy, expenditure, and consumption
+aspects of rebound 
 at the device (direct location) and elsewhere in the economy (indirect location)
 across all adjustments for all rebound effects. 
 Doing so involves many terms and much complexity.
 Until now, visualizing the energy, expenditure, and consumption 
 aspects of rebound phenomena has not been 
-possible in single graphs.
+done in a set of mutually consistent graphs.
 
 We introduce rebound path graphs
 to bring clarity to
 the rebound locations (direct and indirect) and 
 adjustments (via emplacement, substitution, income, and macro effects)
-across all spaces (energy, expenditure, and consumption).
+across all aspects (energy, expenditure, and consumption).
 In rebound path graphs, 
-each space is represented by a plane that contains a path
-that shows adjustments to energy, expenditure, or consumption in response to the EEU.
+each aspect is represented by a plane that contains a path
+that shows adjustments to its aspect in response to the EEU.
 
-Axes for the rebound path graphs are formed from important rebound quantities.
-Effects at the direct location are placed on the $x$-axis, and 
-effects at the indirect location are placed on the $y$-axis.
-Thus,
+Axes for the rebound path graphs
+represent direct and indirect rebound locations.
+Effects at the direct location are shown on the $x$-axis, and 
+effects at the indirect location are shown on the $y$-axis.
+Thus, rebound effects that cut across both direct and indirect locations
+will show displacement along both axes and 
+create a path in the $x$-$y$ plane.
+For the three aspects (planes), we construct the path graphs as follows:
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -751,7 +756,7 @@ notional rebound path graphs in energy, expenditure, and consumption spaces,
 respectively.
 The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
 Later (Section~\ref{sec:results}), 
-rebound path graphs (with scales) illustrate the numerical examples.
+rebound path graphs with numerical scales illustrate the examples.
 
 \begin{table}
 \centering % Centered table
@@ -792,7 +797,7 @@ Points $a$, $b$, $c$, and $d$ represent intermediate stages.
 Lines with negative slope through points 
 $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
 indicate energy consumption isoquants
-(sum of direct and indirect components) at key points.
+at key points.
 Table~\ref{tab:path_graph_segments} shows 
 segments and rebound effects for all rebound path graphs.
 Note that segment \bartilde{} appears only on energy path graphs, 
@@ -943,19 +948,16 @@ i.e.\ greater total energy consumption after the EEU than before it.
 In the notional energy path graph (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
 emplacement rebound is negative ($Re_{empl} < 0$),
 because the upgraded device has a lesser
-embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$)
-and a lesser maintenance and disposal expenditure rate ($\rbempl{C}_{\md} > \raempl{C}_{\md}$)
-than the original device.
-Fig.~\ref{fig:ExampleCostPathGraph} shows segments \ab{} and \bstar{}
-moving in the negative $y$ direction,
-consistent with a lower capital expenditure rate
-($\rbempl{C}_{cap} > \raempl{C}_{cap}$) and 
-a reduced maintenance and disposal expenditure rate
-($\rbempl{C}_{\md} > \raempl{C}_{\md}$).
-
-In the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph},
-the upgraded device has a lower embodied energy rate than the original device,
-as shown by point \emph{b} being below point \emph{a}.
+embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$,
+as shown by point \emph{b} being below point \emph{a})
+and has a lesser energy consumption rate for maintenance and disposal 
+($\rbempl{E}_{\md} > \raempl{E}_{\md}$, 
+as shown by point $*$ being below point \emph{b})
+due to lower expenditure on these two categories
+compared to the original device.
+In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
+move in the negative $y$ direction,
+consistent with the description above.
 
 
 %------------------------------
