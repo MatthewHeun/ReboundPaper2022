@@ -1581,7 +1581,7 @@ for sound energy and climate policy.
 %         limit rebound effects, and
 %         reduce CO$_2$ emissions.
 
-Future work could be pursued in two areas. 
+Future work could be pursued in several areas. 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -1594,6 +1594,13 @@ Future work could be pursued in two areas.
   \item This framework could be extended to include some of the advanced topics
         in \citet{Chan2015} and \citet{Wang2021}, 
         such as **** GS to provide a few additional topics. ---MKH ****.
+        
+  \item The greenhouse gas emissions implications of energy rebound
+        could be evaluated using this framework,
+        provided that the primary energy associated with final energy
+        purchases were available. 
+        \citet{Borenstein:2015aa} went some way to analyzing emissions
+        and could provide a starting point for such work.
   
 \end{enumerate*}
 
