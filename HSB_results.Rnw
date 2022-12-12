@@ -768,7 +768,7 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 \caption{Segments in rebound planes.} 
 \begin{tabular}{r l l c}
   \toprule
-  \multicolumn{1}{l}{Segment} & Rebound effect            & Symbol           \\
+  \multicolumn{1}{c}{Segment} & Rebound effect            & Symbol           \\
   \midrule
   \circa{} \hspace{52.0mm}    & Direct emplacement        & $Re_{dempl}$     \\
   \ab{}    \hspace{45.0mm}    & Embodied energy           & $Re_{emb}$       \\
