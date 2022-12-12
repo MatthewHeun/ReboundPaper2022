@@ -992,7 +992,7 @@ cost of purchasing the original consumption bundle
 at the new prices.
 
 
-<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 cost_line_angle <- -14
 example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        1.01, 1.003, 'degree', 
@@ -1430,7 +1430,7 @@ rebound_results %>%
 @
 
 
-<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_cost_line_angle <- -33
 car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    1295, 26600, 'degree', 
@@ -1871,7 +1871,7 @@ rebound_results %>%
 @
 
 
-<<LampCostGraph, echo = FALSE, fig.cap="Expenditure pathgraph for the lamp example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampCostGraph, echo = FALSE, fig.cap="Expenditure pathgraph for the lamp example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_cost_line_angle <- -23.6
 lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                     8.6, 27921.7, 'degree', 
@@ -2014,7 +2014,7 @@ rebound_results %>%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++
-\subsection{Calibrating $k$}
+\subsection{A first attempt at calibrating $k$}
 \label{sec:calibrating_k}
 %++++++++++++++++++++++++++++++
 
