@@ -225,7 +225,7 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
 
 To demonstrate application of the rebound analysis framework
-developed in Part I,
+developed in Part~I,
 we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
 The case studies are presented with much detail here
@@ -242,9 +242,11 @@ $Re_{isub}$,
 $Re_{dinc}$,
 $Re_{iinc}$, and
 $Re_{\macro}$.
-The total rebound 
+Total rebound 
 ($Re_{tot}$)
-is given by the sum of the above components.
+is given by the sum of the above components
+or equivalently by Eq.~\ref{PartI-eq:Re_tot} of Part~I, 
+as shown in Appendix~\ref{PartI-sec:total_rebound} of Part~I.
 
 
 %------------------------------
@@ -327,7 +329,7 @@ versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \
 We require three sets of data. 
 First, basic car parameters are summarized 
 in Table~\ref{tab:car_parameters}.
-Second, we require several general parameters, 
+Second, we require several general economic parameters, 
 mainly relating to the U.S.\ economy and personal finances 
 of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
 Third, we require elasticity parameters, 
@@ -430,7 +432,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_car_char}           & Assumed value. \\  
+  Macro factor                                              & \Sexpr{k_car_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -556,7 +558,7 @@ at the same energy service delivery rate (lm-hr/year).
 
 Again, three sets of data are required. 
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
-Second, several general parameters, 
+Second, several general economic parameters, 
 mainly relating to the U.S.\ economy and 
 personal finances of the average U.S.\ citizen are 
 given in Table~\ref{tab:lamp_economic_parameters}.
@@ -655,7 +657,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
+  Macro factor                                              & \Sexpr{k_lamp_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
