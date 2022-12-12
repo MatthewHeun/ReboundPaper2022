@@ -2185,7 +2185,7 @@ f_lmp <- function(Re_name) {
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
 and our calibration of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
-enable comparisons between the car and lamp examples. 
+enable fuller comparisons between the car and lamp examples. 
 Several points can be made.
 
 First, 
@@ -2247,7 +2247,7 @@ different macro rebound values.
 %++++++++++++++++++++++++++++++
 
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-compare car and lamp results from Section~\ref{sec:calibrating_k} to 
+compare car and lamp results (with $k \approx 3$) to 
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
 The comparison studies in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
