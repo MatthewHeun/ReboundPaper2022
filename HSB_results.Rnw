@@ -205,9 +205,12 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The section contains data for the examples, 
-an explication of our method for visualizing rebound effects and magnitudes, and
-a description of software tools for rebound calculations and visualization.
+The section contains data for the examples
+(Section~\ref{sec:data}), 
+an explication of our method for visualizing rebound effects and magnitudes
+(Section~\ref{sec:path_graphs}), and
+a description of software tools for rebound calculations and visualization
+(Section~\ref{sec:software_tools}).
 
 
 %++++++++++++++++++++++++++++++
@@ -222,7 +225,7 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
 
 To demonstrate application of the rebound analysis framework
-developed in Section~\ref{PartI-sec:framework} of Part I,
+developed in Part~I,
 we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
 The case studies are presented with much detail here
@@ -239,9 +242,11 @@ $Re_{isub}$,
 $Re_{dinc}$,
 $Re_{iinc}$, and
 $Re_{\macro}$.
-The total rebound 
+Total rebound 
 ($Re_{tot}$)
-is given by the sum of the above components.
+is given by the sum of the above components
+or equivalently by Eq.~\ref{PartI-eq:Re_tot} of Part~I, 
+as shown in Appendix~\ref{PartI-sec:total_rebound} of Part~I.
 
 
 %------------------------------
@@ -324,7 +329,7 @@ versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \
 We require three sets of data. 
 First, basic car parameters are summarized 
 in Table~\ref{tab:car_parameters}.
-Second, we require several general parameters, 
+Second, we require several general economic parameters, 
 mainly relating to the U.S.\ economy and personal finances 
 of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
 Third, we require elasticity parameters, 
@@ -427,7 +432,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_car_char}           & Assumed value. \\  
+  Macro factor                                              & \Sexpr{k_car_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -553,7 +558,7 @@ at the same energy service delivery rate (lm-hr/year).
 
 Again, three sets of data are required. 
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
-Second, several general parameters, 
+Second, several general economic parameters, 
 mainly relating to the U.S.\ economy and 
 personal finances of the average U.S.\ citizen are 
 given in Table~\ref{tab:lamp_economic_parameters}.
@@ -652,7 +657,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
+  Macro factor                                              & \Sexpr{k_lamp_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -763,19 +768,19 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 \caption{Segments in rebound planes.} 
 \begin{tabular}{r l l c}
   \toprule
-  Segment      & Rebound effect            & Symbol           \\
+  \multicolumn{1}{l}{Segment} & Rebound effect            & Symbol           \\
   \midrule
-  \circa{}     & Direct emplacement        & $Re_{dempl}$     \\
-  \ab{}        & Embodied energy           & $Re_{emb}$       \\
-  \bstar{}     & Maintenance and disposal  & $Re_{\md}$       \\
+  \circa{} \hspace{52.0mm}    & Direct emplacement        & $Re_{dempl}$     \\
+  \ab{}    \hspace{45.0mm}    & Embodied energy           & $Re_{emb}$       \\
+  \bstar{} \hspace{37.8mm}    & Maintenance and disposal  & $Re_{\md}$       \\
   \midrule
-  \starc{}     & Indirect substitution     & $Re_{isub}$      \\ 
-  \chat{}      & Direct substitution       & $Re_{dsub}$      \\ 
+  \starc{} \hspace{30.9mm}    & Indirect substitution     & $Re_{isub}$      \\ 
+  \chat{}  \hspace{23.2mm}    & Direct substitution       & $Re_{dsub}$      \\ 
   \midrule
-  \hatd{}      & Direct income             & $Re_{dinc}$      \\ 
-  \dbar{}      & Indirect income           & $Re_{iinc}$      \\ 
+  \hatd{}  \hspace{16.0mm}    & Direct income             & $Re_{dinc}$      \\ 
+  \dbar{}  \hspace{ 7.7mm}    & Indirect income           & $Re_{iinc}$      \\ 
   \midrule
-  \bartilde{}  & Macro                     & $Re_{macro}$     \\
+  \bartilde{}                 & Macro                     & $Re_{macro}$     \\
   \bottomrule
 \end{tabular}
 \label{tab:path_graph_segments}
@@ -987,7 +992,7 @@ cost of purchasing the original consumption bundle
 at the new prices.
 
 
-<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 cost_line_angle <- -14
 example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        1.01, 1.003, 'degree', 
@@ -1425,7 +1430,7 @@ rebound_results %>%
 @
 
 
-<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_cost_line_angle <- -33
 car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    1295, 26600, 'degree', 
@@ -1866,7 +1871,7 @@ rebound_results %>%
 @
 
 
-<<LampCostGraph, echo = FALSE, fig.cap="Expenditure pathgraph for the lamp example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampCostGraph, echo = FALSE, fig.cap="Expenditure pathgraph for the lamp example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_cost_line_angle <- -23.6
 lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                     8.6, 27921.7, 'degree', 
@@ -2009,7 +2014,7 @@ rebound_results %>%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %++++++++++++++++++++++++++++++
-\subsection{Calibrating $k$}
+\subsection{A first attempt at calibrating $k$}
 \label{sec:calibrating_k}
 %++++++++++++++++++++++++++++++
 
@@ -2180,7 +2185,7 @@ f_lmp <- function(Re_name) {
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
 and our calibration of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
-enable comparisons between the car and lamp examples. 
+enable fuller comparisons between the car and lamp examples. 
 Several points can be made.
 
 First, 
@@ -2242,7 +2247,7 @@ different macro rebound values.
 %++++++++++++++++++++++++++++++
 
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-compare car and lamp results from Section~\ref{sec:calibrating_k} to 
+compare car and lamp results (with $k \approx 3$) to 
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
 The comparison studies in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
