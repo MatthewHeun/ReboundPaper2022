@@ -225,7 +225,7 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
 
 To demonstrate application of the rebound analysis framework
-developed in Section~\ref{PartI-sec:framework} of Part I,
+developed in Part I,
 we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
 The case studies are presented with much detail here
