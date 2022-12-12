@@ -86,7 +86,7 @@ In Part~I, we developed a rigorous analytical framework
 built upon the microeconomics of rebound
 that is approachable for both energy analysts and economists alike. 
 In this paper (Part~II), we bring further clarity to energy rebound by 
-developing rebound path graphs, 
+developing rebound planes, 
 a novel way to visualize and illustrate rebound phenomena  
 through energy, expenditure, and consumption spaces.
 Further, we perform the first calibration of the macro factor
@@ -142,8 +142,8 @@ We said that
 \end{quote}
 
 To move improve clarity in the rebound space, 
-in Part~I of this two-part paper
-we developed a partial equilibrium framework for analyzing energy rebound, 
+in Part~I we developed a partial equilibrium framework 
+for analyzing energy rebound, 
 one that is tractable for energy analysts and economists alike.
 The framework contains 
 two locations (direct, $d$, and indirect, $i$) and 
@@ -152,7 +152,7 @@ four rebound effects
 between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
 Rebound terms and symbol decorations are
 shown in Fig.~\ref{fig:flowchart}.
-(See Part~I for details.)
+(See Table~\ref{PartI-tab:rebound_typology} in Part~I for details.)
 
 \begin{figure}
 \centering
@@ -166,7 +166,7 @@ In this paper (Part~II), we make further progress toward the goal of clarity
 in three ways.
 First, we develop a new way to visualize 
 components and mechanisms of rebound
-(rebound path graphs).
+(rebound planes).
 Second, we apply the framework to two energy efficiency upgrades (EEUs) 
 (an electric lamp and an automobile)
 with detailed explication of the examples.
@@ -707,60 +707,60 @@ A comprehensive rebound analysis should track
 energy, expenditure, and consumption
 aspects of rebound 
 at the device (direct location) and elsewhere in the economy (indirect location)
-across all adjustments for all rebound effects. 
+across all adjustments for all rebound effects
+(emplacement, substitution, income, and macro). 
 Doing so involves many terms and much complexity.
 Until now, visualizing the energy, expenditure, and consumption 
 aspects of rebound phenomena has not been 
 done in a set of mutually consistent graphs.
 
-We introduce rebound path graphs
+We introduce rebound planes
 to bring clarity to
 the rebound locations (direct and indirect) and 
 adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
-In rebound path graphs, 
-each aspect is represented by a plane that contains a path
-that shows adjustments to its aspect in response to the EEU.
+Each aspect is represented by a path in its own plane,
+showing adjustments in response to the EEU.
 
-Axes for the rebound path graphs
+Axes of the rebound planes
 represent direct and indirect rebound locations.
 Effects at the direct location are shown on the $x$-axis, and 
 effects at the indirect location are shown on the $y$-axis.
-Thus, rebound effects that cut across both direct and indirect locations
-will show displacement along both axes and 
-create a path in the $x$-$y$ plane.
-For the three aspects (planes), we construct the path graphs as follows:
+Specifically, 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
   \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
-        the $x$- and $y$-axes of the energy path graph, respectively;
+        the $x$- and $y$-axes of the energy plane, respectively;
   
   \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$) are placed on 
-        the $x$- and $y$-axes of the expenditure path graph, respectively; and
+        the $x$- and $y$-axes of the expenditure plane, respectively; and
   
   \item the consumption rate of the energy service ($\rate{q}_s$) and
         the expenditure rate on other consumption goods ($\rate{C}_o$) are placed on
-        the $x$- and $y$-axes of the consumption path graph, respectively.
+        the $x$- and $y$-axes of the consumption plane, respectively.
     
 \end{enumerate*}
 %
-Paths through energy, expenditure, and consumption spaces
+Paths through energy, expenditure, and consumption planes
 consist of segments that represent changes due to the various rebound effects.
-Table~\ref{tab:path_graph_segments} provides the key for rebound path graph segments.
+Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
+Rebound effects that cut across both direct and indirect locations
+will show displacement along both axes and 
+create a path in the $x$-$y$ plane.
 (See Appendix~\ref{sec:graph_details} for 
-detailed mathematical descriptions of rebound path graphs.)
+detailed mathematical descriptions for constructing paths on the rebound planes.)
 
 Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
-notional rebound path graphs in energy, expenditure, and consumption spaces,
+notional energy, expenditure, and consumption planes,
 respectively.
-The notional path graphs are not quantified, i.e.\ there are no scales on the axes.
+The notional planes are not quantified, i.e.\ there are no scales on the axes.
 Later (Section~\ref{sec:results}), 
-rebound path graphs with numerical scales illustrate the examples.
+rebound planes with numerical scales illustrate the car and lamp examples.
 
 \begin{table}
 \centering % Centered table
-\caption{Rebound path graph segments.} 
+\caption{Segments in rebound planes.} 
 \begin{tabular}{r l l c}
   \toprule
   Segment      & Rebound effect            & Symbol           \\
@@ -783,11 +783,11 @@ rebound path graphs with numerical scales illustrate the examples.
 
 
 %------------------------------
-\subsubsection{Energy path graphs}
+\subsubsection{The energy plane}
 \label{sec:energy_path_graphs}
 %------------------------------
 
-Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy path graph, with 
+Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy plane, with 
 the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
 and
 the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.
@@ -799,12 +799,12 @@ $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
 indicate energy consumption isoquants
 at key points.
 Table~\ref{tab:path_graph_segments} shows 
-segments and rebound effects for all rebound path graphs.
-Note that segment \bartilde{} appears only on energy path graphs, 
+segments and rebound effects for all rebound planes.
+Note that segment \bartilde{} appears only in the energy plane, 
 because the framework tracks energy consumption but not expenditures or consumption
-in the macro effect.
+for the macro effect.
 
-<<ExampleEnergyPathGraph,  echo=FALSE, warning=FALSE, fig.cap="Notional energy path graph.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<ExampleEnergyPathGraph,  echo=FALSE, warning=FALSE, fig.cap="Notional energy plane.", fig.width=6, fig.height=4, fig.align = "center">>=
 stage_size <- 10
 orig_size <- stage_size
 star_size <- stage_size
@@ -919,7 +919,7 @@ rebound_results %>%
                  axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
 @
 
-In the notional energy path graph of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
+In the notional energy plane of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
 point $a$ lies on the $Re_{tot} = 0\%$ line
 indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
 is the point from which all rebound effects 
@@ -945,7 +945,7 @@ The region above and to the right of the $Re_{tot} = 100\%$ line
 shows backfire, 
 i.e.\ greater total energy consumption after the EEU than before it. 
 
-In the notional energy path graph (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
+In the notional energy plane (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
 emplacement rebound is negative ($Re_{empl} < 0$),
 because the upgraded device has a lesser
 embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$,
@@ -969,11 +969,11 @@ because macro effects lead to additional indirect energy consumption.
 
 
 %------------------------------
-\subsubsection{Expenditure path graphs}
+\subsubsection{The expenditure plane}
 \label{sec:expenditure_path_graphs}
 %------------------------------
 
-A notional expenditure path graph is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
+A notional expenditure plane is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
 with 
 the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
 the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
@@ -987,7 +987,7 @@ cost of purchasing the original consumption bundle
 at the new prices.
 
 
-<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure path graph. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
 cost_line_angle <- -14
 example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        1.01, 1.003, 'degree', 
@@ -1041,7 +1041,7 @@ rebound_results %>%
                  axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
 @
 
-In the notional graphs of
+In the notional planes of
 Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
 embodied energy rates and capital cost rates
 (represented by segments \ab{} and \bstar{}) 
@@ -1062,18 +1062,19 @@ in the device owner's decision function.
 
 
 %------------------------------
-\subsubsection{Consumption path graphs}
+\subsubsection{The consumption plane}
 \label{sec:consumption_path_graphs}
 %------------------------------
 
-A notional consumption path graph is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
-The indexed rate of energy service demand ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
-the indexed rate of other goods demand ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
-Iso-cost loci of energy service and other goods demand
+A notional consumption plane is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
+The indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
+the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
+Iso-consumption loci of indexed energy service and other goods demand
 are shown as lines with negative slope
 (lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}). 
-Note that isoquants \circcirc{} and \barbar{} intersect the $y$-axis 
-at the same point, because the prices of other goods and services haven't changed
+Note that isoquants \circcirc{} and \barbar{} 
+intersect at the $y$-axis,
+because the prices of other goods and services don't change
 as a result of the EEU.
 (The $x$-axis of Fig.~\ref{fig:ExampleConsPathGraph} does not extend to $0$ at the left, 
 so the intersection is not visible.)
@@ -1120,7 +1121,7 @@ and~\ref{fig:ExampleCostPathGraph}, respectively).
 
 The income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
 in the consumption plane.
-In the consumption path graph, the pre- and post-income-effect 
+In the consumption plane, the pre- and post-income-effect 
 points ($\wedge$ and $-$, respectively)
 lie along the \rr{} ray.
 The increased consumption rate of the energy service is 
@@ -1131,7 +1132,7 @@ represented by segments \dbar{}
 in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
 
 
-<<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption path graph.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption plane.", fig.width=6, fig.height=4, fig.align = "center">>=
 orig_line_label_size <- orig_size - 3
 star_line_label_size <- star_size - 4
 hat_line_label_size <- hat_size - 3
@@ -1231,14 +1232,14 @@ to standardize and distribute our methods for calculating rebound magnitudes.
 
   \item performing rebound calculations, and 
   
-  \item generating rebound tables and path graphs.
+  \item generating rebound tables and rebound planes.
     
 \end{enumerate*}
 %
 \texttt{ReboundTools} was used for 
-all calculations and all rebound path graphs in this paper.
+all calculations and all rebound planes in this paper.
 
-To find the path to an example spreadsheet bundled with the package, 
+To find the path in storage to an example spreadsheet bundled with the package, 
 users of the \texttt{ReboundTools} package
 can call the function \texttt{ReboundTools::sample\_eeu\_data\_path()}.
 After filling the example spreadsheet with parameters for an EEU, 
@@ -1246,7 +1247,7 @@ users can call two functions
 (\texttt{ReboundTools::load\_eeu\_data()} and \texttt{ReboundTools::rebound\_analysis()})
 to perform all rebound calculations described in this paper.
 The function \texttt{ReboundTools::path\_graphs()} creates 
-rebound path graphs on the energy, expenditure, and consumption planes.
+rebound paths in the energy, expenditure, and consumption planes.
 
 In addition, a separate Excel workbook that performs identical rebound calculations 
 using the framework of this paper
@@ -1311,7 +1312,7 @@ rebound_results %>%
 
 Results are represented graphically on energy, expenditure, and consumption planes
 in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
-The energy path graph (Fig.~\ref{fig:CarEnergyGraph})
+The energy plane (Fig.~\ref{fig:CarEnergyGraph})
 shows the size of each rebound effect
 for the car example.
 
@@ -1325,7 +1326,7 @@ Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::reboun
 Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
 @
 
-<<CarEnergyGraph, echo=FALSE, fig.cap="Energy path graph for the car example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_Re_label_angle <- -77
 car_Re_arrow_angle <- pi/180 * 3.1
 
@@ -1424,7 +1425,7 @@ rebound_results %>%
 @
 
 
-<<CarCostGraph, echo=FALSE, fig.cap="Expenditure path graph for the car example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_cost_line_angle <- -33
 car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    1295, 26600, 'degree', 
@@ -1468,7 +1469,7 @@ rebound_results %>%
 @
 
 
-<<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="Consumption path graph for the car example.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="The consumption plane for the car example.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
                                     1.005, 1.0016, 'degree', 
                                       stage_colour, orig_size, 
@@ -1690,7 +1691,7 @@ Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::reboun
 
 Results are represented graphically on energy, expenditure, and consumption planes
 in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
-The energy path graph (Fig.~\ref{fig:LampEnergyGraph})
+The energy plane (Fig.~\ref{fig:LampEnergyGraph})
 shows the size of each rebound effect
 for the lamp example.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
@@ -1767,7 +1768,7 @@ productivity enhancements arising from the more-efficient provision of the
 energy service (lighting).
 
 
-<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="Energy path graph for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_Re_label_angle <- -65
 lamp_Re_arrow_angle <- pi/180 * 13
 lamp_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
@@ -2417,7 +2418,7 @@ we trust that the gap between
 economists and energy analysts will be reduced, leading to
 better interdisciplinary understanding of rebound phenomena.
 We encourage energy analysts and economists to use visualizations
-like the rebound path graphs to document their rebound calculations going forward.
+like the rebound planes to document their rebound calculations going forward.
 We hope that greater clarity about and understanding of 
 energy rebound
 will help inform energy and climate policy
@@ -2579,7 +2580,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mathematical details of rebound path graphs}
+\section{Mathematical details of rebound planes}
 \label{sec:graph_details}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -3,29 +3,29 @@
 % before building the paper.
 %!TEX root = ../HSB_results.Rnw
 
-Rebound path graphs show the impact of direct and indirect rebound effects
-in energy space, expenditure space, and consumption space.
-Notional rebound path graphs can be found in 
+Rebound planes show the impact of direct and indirect rebound effects
+for energy, expenditure, and consumption aspects of rebound.
+Notional rebound planes can be found in 
 Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
-Rebound path graphs for the car example can be found in 
+Rebound planes for the car example can be found in 
 Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
-Graphs for the lamp example can be found in
+Rebound planes for the lamp example can be found in
 Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
 
-This appendix shows the mathematical details of rebound path graphs,
+This appendix shows the mathematical details of rebound planes,
 specifically derivations of equations for lines and curves 
 shown in Table~\ref{tab:lines_and_curves}.
 The lines and curves enable construction of numerically accurate
-rebound path graphs 
+paths in rebound planes
 as shown in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}.
 
 \begin{table}
 \centering
-\caption{Lines and curves for rebound path graphs.}
+\caption{Lines and curves for rebound planes.}
 \label{tab:lines_and_curves}
 \begin{tabular}{rl}
 \toprule
-Rebound path graph           & Lines and curves                        \\ 
+Rebound plane                & Lines and curves                        \\ 
 \midrule
 \multirow{2}{*}{Energy}      & Constant total energy consumption lines \\
                              & 0\% and 100\% rebound lines             \\
@@ -41,19 +41,19 @@ Expenditure                  & Constant expenditure lines              \\
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Energy path graphs}
+\subsection{Energy planes}
 \label{sec:energy_path_graph_details}
 %++++++++++++++++++++++++++++++
 
-Energy path graphs show direct (on the $x$-axis) and indirect (on the $y$-axis)
+The energy plane shows direct (on the $x$-axis) and indirect (on the $y$-axis)
 energy consumption associated with the energy conversion device 
 and the device owner.
-Lines of constant total energy consumption comprise a 
+Lines of total energy consumption isoquants provide a 
 scale for total rebound.
 For example, the 0\% and 100\% rebound lines are constant total energy consumption
 lines which pass through the original point ($\circ$) and
 the post-direct-emplacement-effect point ($a$) 
-on an energy path graph.
+in the energy plane.
 
 The equation of a constant total energy consumption line is derived from 
 
@@ -69,7 +69,7 @@ energy associated with maintenanace and disposal, and energy associated
 with expenditures on other goods
 ($\rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E$).
 
-For the energy path graph, 
+For the energy plane, 
 direct energy consumption is placed on the $x$-axis and 
 indirect energy consumption is placed on the $y$-axis.
 To derive the equation of a constant energy consumption line, 
@@ -107,15 +107,15 @@ that accounts for expected energy savings ($\Sdot$) only:
           + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E \; .
 \end{equation}
 %
-The above line passes through the $a$ point on an energy path graph.
+The above line passes through the $a$ point in the energy plane.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Expenditure path graphs}
+\subsection{Expenditure planes}
 \label{sec:expenditure_path_graph_details}
 %++++++++++++++++++++++++++++++
 
-Expenditure path graphs show direct (on the $x$-axis) and indirect (on the $y$-axis)
+The expenditure plane shows direct (on the $x$-axis) and indirect (on the $y$-axis)
 expenses associated with the energy conversion device 
 and the device owner.
 Lines of constant expenditure are important, 
@@ -129,7 +129,7 @@ the budget constraint
 \end{equation}
 %
 at any rebound stage.
-For the expenditure path graph,
+In the expenditure plane,
 indirect expenditures are placed on the $y$-axis
 and direct expenditures on energy for the energy conversion device are place on the $x$-axis.
 Direct expenditure is the cost of energy consumed by the energy conversion device
@@ -188,19 +188,19 @@ or
 \end{equation}
 %
 The line given by the above equation
-passes through the $a$ point on an expenditure path graph.
+passes through the $a$ point in the expenditure plane.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Consumption path graphs}
+\subsection{Consumption planes}
 \label{sec:cons_path_graph_details}
 %++++++++++++++++++++++++++++++
 
-Consumption path graphs show expenditures in 
+The consumption plane shows expenditures in 
 $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
 to accord with the utility model.
 (See Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
-Consumption path graphs include 
+Consumption planes include 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -220,15 +220,15 @@ Derivations for each are shown in the following subsections.
 \label{sec:pref_graph_constant_expenditure_lines}
 %------------------------------
 
-There are four constant expenditure lines on the consumption path graphs of
+There are four constant expenditure lines in the consumption planes of
 Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}.
 The constant expenditure lines pass through 
 the original point (line \circcirc{}), 
 the post-emplacement point (line \starstar{}), 
 the post-substitution point (line \hathat{}), and 
 the post-income point (line \barbar{}).
-Like the expenditure path graph, 
-lines of constant expenditure on a consumption path graph 
+Similar to the expenditure plane, 
+lines of constant expenditure in the consumption plane
 are derived from the budget constraint of the device owner
 at each of the four points.
 
@@ -241,9 +241,9 @@ recognizing that there is no net savings before the EEU
   \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_o \; .
 \end{equation}
 
-To create the line of constant expenditure on the consumption path graph, 
+To create the line of constant expenditure in the consumption plane, 
 we allow $\rorig{q}_s$ and $\rorig{C}_o$ to vary in a compensatory manner:
-when one increases, the other must decrease.  
+when one increases, the other must decrease.
 To show that variation along the constant expenditure line, 
 we remove the notation that ties $\rorig{q}_s$ and $\rorig{C}_o$
 to the original point ($\circ$) to obtain
@@ -259,7 +259,7 @@ namely the original point ($\circ$) in this instance.
 To derive the equation of the line representing the original budget constraint 
 in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
 (the \circcirc{} line through the $\circ$ point
-in consumption path graphs), 
+in consumption planes), 
 we solve for $\rate{C}_o$ to obtain
 
 \begin{equation}
@@ -286,7 +286,7 @@ Noting that
 $\rate{q}_s/\rbempl{q}_s$ and 
 $\rate{C}_o/\rbempl{C}_o$ are
 the $x$-axis and $y$-axis, respectively,
-on a consumption path graph gives
+of the consumption plane gives
 
 \begin{equation} \label{eq:orig_line_prefs}
   y = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
@@ -325,7 +325,7 @@ The $y$-intercept of Eq.~(\ref{eq:star_line_prefs}) is less than the
 $y$-intercept of Eq.~(\ref{eq:orig_line_prefs}),
 reflecting freed cash.
 Both effects are seen in
-consumption path graphs 
+the consumption planes
 (Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}).
 The \circcirc{} and \starstar{} lines intersect at the coincident $\circ$ and $*$ points.
 
@@ -361,7 +361,7 @@ $-$ point (line \barbar{}) starts with Eq.~(\ref{PartI-eq:M_acct_ainc}) of Part~
 \label{sec:pref_graph_ray}
 %------------------------------
 
-On consumption path graphs, 
+In the consumption plane,
 the ray from the origin to the $\wedge$ point 
 (line \rr{})
 defines the path along which the income effect
@@ -382,10 +382,11 @@ Therefore, the equation of line \rr{} is
 \label{sec:cons_graph_indifference_curves}
 %------------------------------
 
-On a consumption path graph, 
+In the consumption plane,
 indifference curves represent lines of constant utility
 for the energy conversion device owner.
-In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
+In the consumption plane
+($\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$), 
 any indifference curve 
 is given by 
 Eq.~(\ref{PartI-eq:utility_Co_form}) of Part~I
@@ -403,8 +404,8 @@ $x$ for $\rate{q}_s/\rbempl{q}_s$ to obtain
             - \frac{\fCs}{1 - \fCs} (x)^\rho \right]^{(1/\rho)} \; .
 \end{equation}
 
-At any point in 
-$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space,
+At any point on the 
+$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane,
 namely ($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{o,1}/\rbempl{C}_o$),
 indexed utility ($\rate{u}_1/\rbempl{u}$) is given by Eq.~(\ref{PartI-eq:ces_utility}) of Part~I as
 

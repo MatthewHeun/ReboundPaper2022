@@ -1104,9 +1104,6 @@ The income effect under utility maximization
 satisfies the budget constraint, so that
 net savings are zero after
 the income effect ($\rainc{N} = 0$).
-% The budget constraint can be seen in 
-% expenditure path graphs (e.g., Fig.~\ref{fig:ExampleCostPathGraph})
-% where the post-income-effect point ($-$) returns to the original expenditure isoquant.
 See Appendix~\ref{sec:proof_income_elasticities}
 for a mathematical proof that the income preference equations below
 (Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM}))
