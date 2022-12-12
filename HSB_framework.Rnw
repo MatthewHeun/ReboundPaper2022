@@ -1509,8 +1509,9 @@ embodied energy or maintenance and disposal effects.
 \citet{Borenstein:2015aa} postulates the macro effect, 
 but does not develop the idea into an operational theory, 
 earning \rating{25} in the ``Macro effect'' row. 
-No other frameworks even discuss the link between macro and micro rebound effects, 
-leading to \rating{0} in the ``Macro effect'' row for all other previous frameworks. 
+No other framework even discusses the link between macro and micro rebound effects, 
+leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
+apart from \citet{Borenstein:2015aa}. 
 Our framework operationalizes the macro effect
 earning \rating{50} in the ``This paper (2022)'' column.
 Finally, all previous frameworks assume constant price elasticities and
