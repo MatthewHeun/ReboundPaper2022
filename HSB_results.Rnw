@@ -205,9 +205,12 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The section contains data for the examples, 
-an explication of our method for visualizing rebound effects and magnitudes, and
-a description of software tools for rebound calculations and visualization.
+The section contains data for the examples
+(Section~\ref{sec:data}), 
+an explication of our method for visualizing rebound effects and magnitudes
+(Section~\ref{sec:path_graphs}), and
+a description of software tools for rebound calculations and visualization
+(Section~\ref{sec:software_tools}).
 
 
 %++++++++++++++++++++++++++++++
