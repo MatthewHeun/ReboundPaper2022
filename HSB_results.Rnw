@@ -768,19 +768,19 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 \caption{Segments in rebound planes.} 
 \begin{tabular}{r l l c}
   \toprule
-  Segment      & Rebound effect            & Symbol           \\
+  \multicolumn{1}{l}{Segment} & Rebound effect            & Symbol           \\
   \midrule
-  \circa{}     & Direct emplacement        & $Re_{dempl}$     \\
-  \ab{}        & Embodied energy           & $Re_{emb}$       \\
-  \bstar{}     & Maintenance and disposal  & $Re_{\md}$       \\
+  \circa{} \hspace{52.0mm}    & Direct emplacement        & $Re_{dempl}$     \\
+  \ab{}    \hspace{45.0mm}    & Embodied energy           & $Re_{emb}$       \\
+  \bstar{} \hspace{37.8mm}    & Maintenance and disposal  & $Re_{\md}$       \\
   \midrule
-  \starc{}     & Indirect substitution     & $Re_{isub}$      \\ 
-  \chat{}      & Direct substitution       & $Re_{dsub}$      \\ 
+  \starc{} \hspace{30.9mm}    & Indirect substitution     & $Re_{isub}$      \\ 
+  \chat{}  \hspace{23.2mm}    & Direct substitution       & $Re_{dsub}$      \\ 
   \midrule
-  \hatd{}      & Direct income             & $Re_{dinc}$      \\ 
-  \dbar{}      & Indirect income           & $Re_{iinc}$      \\ 
+  \hatd{}  \hspace{16.0mm}    & Direct income             & $Re_{dinc}$      \\ 
+  \dbar{}  \hspace{ 7.7mm}    & Indirect income           & $Re_{iinc}$      \\ 
   \midrule
-  \bartilde{}  & Macro                     & $Re_{macro}$     \\
+  \bartilde{}                 & Macro                     & $Re_{macro}$     \\
   \bottomrule
 \end{tabular}
 \label{tab:path_graph_segments}
