@@ -1627,7 +1627,7 @@ Declarations of interest: none.
 \label{sec:author_contributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Author contributions for Part~I of this two-part paper are shown in Table~\ref{tab:credit}.
+Author contributions for this paper (Part~I of the two-part paper) are shown in Table~\ref{tab:credit1}.
 
 \begin{table}[h]
 \begin{center}
@@ -1652,7 +1652,7 @@ Author contributions for Part~I of this two-part paper are shown in Table~\ref{t
   Funding acquisition         &              &              & \rating{100} \\
 \bottomrule
 \end{tabular}
-\label{tab:credit}
+\label{tab:credit1}
 \end{center}
 \end{table}
 
