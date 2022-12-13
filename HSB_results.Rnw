@@ -795,7 +795,13 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy plane, with 
 the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
 and
-the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.
+the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
+\footnote{
+  A related, notional-only (not quantified as in Section~\ref{sec:results}), 
+  one-dimensional visualization of direct and indirect energy rebound 
+  (but not on expenditure or consumption planes)
+  can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
+%
 Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent the rebound stages
 between the rebound effects.
 Points $a$, $b$, $c$, and $d$ represent intermediate stages.
