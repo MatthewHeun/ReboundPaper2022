@@ -1627,8 +1627,11 @@ Declarations of interest: none.
 \label{sec:author_contributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Author contributions are shown in Table~\ref{tab:credit}.
+
 \begin{table}[h]
 \begin{center}
+\caption{Author contributions.} 
 \begin{tabular}{r c c c}
   \toprule
                               & MKH          & GS           & PEB          \\
