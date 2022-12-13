@@ -1627,7 +1627,7 @@ Declarations of interest: none.
 \label{sec:author_contributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Author contributions are shown in Table~\ref{tab:credit}.
+Author contributions for Part~I of this two-part paper are shown in Table~\ref{tab:credit}.
 
 \begin{table}[h]
 \begin{center}
@@ -1638,15 +1638,15 @@ Author contributions are shown in Table~\ref{tab:credit}.
   \midrule
   Conceptualization           & \rating{100} & \rating{100} &              \\
   Methodology                 & \rating{100} & \rating{100} & \rating{100} \\
-  Software                    & \rating{100} &              &              \\
+  Software                    &              &              &              \\
   Validation                  & \rating{100} &              & \rating{100} \\
-  Formal analysis             & \rating{100} & \rating{100} & \rating{100} \\
+  Formal analysis             &              &              &              \\
   Investigation               & \rating{100} & \rating{100} & \rating{100} \\
-  Resources                   & \rating{100} &              &              \\
-  Data curation               &              &              & \rating{100} \\
+  Resources                   & \rating{100} & \rating{100} & \rating{100} \\
+  Data curation               &              &              &              \\
   Writing--original draft     & \rating{100} & \rating{100} & \rating{100} \\
   Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
-  Visualization               & \rating{100} & \rating{100} &              \\
+  Visualization               &              &              &              \\
   Supervision                 & \rating{100} &              &              \\
   Project administration      & \rating{100} &              &              \\
   Funding acquisition         &              &              & \rating{100} \\

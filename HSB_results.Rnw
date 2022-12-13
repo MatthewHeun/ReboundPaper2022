@@ -2493,7 +2493,7 @@ Declarations of interest: none.
 \label{sec:author_contributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Author contributions are shown in Table~\ref{tab:credit}.
+Author contributions for Part~II of this two-part paper are shown in Table~\ref{tab:credit}.
 
 \begin{table}[h]
 \begin{center}
@@ -2508,7 +2508,7 @@ Author contributions are shown in Table~\ref{tab:credit}.
   Validation                  & \rating{100} &              & \rating{100} \\
   Formal analysis             & \rating{100} & \rating{100} & \rating{100} \\
   Investigation               & \rating{100} & \rating{100} & \rating{100} \\
-  Resources                   & \rating{100} &              &              \\
+  Resources                   & \rating{100} & \rating{100} & \rating{100} \\
   Data curation               &              &              & \rating{100} \\
   Writing--original draft     & \rating{100} & \rating{100} & \rating{100} \\
   Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
