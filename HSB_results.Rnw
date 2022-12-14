@@ -85,9 +85,9 @@ In Part~I, we developed a rigorous analytical framework
 built upon the microeconomics of rebound
 that is approachable for both energy analysts and economists alike. 
 In this paper (Part~II), we bring further clarity to energy rebound by 
-developing rebound planes, 
-a novel way to visualize and illustrate rebound phenomena  
-through energy, expenditure, and consumption spaces.
+clearly defining energy, expenditure, and consumption aspects of rebound
+in energy, expenditure, and consumption rebound planes, 
+a novel way to visualize and illustrate rebound phenomena.
 Further, we perform the first calibration of the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
 Finally, we apply the framework developed in Part~I to 

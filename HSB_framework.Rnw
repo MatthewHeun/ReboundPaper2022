@@ -88,20 +88,21 @@ rebound analysis framework that
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
+  \item clarifies the energy, expenditure, and consumption aspects of rebound,
+
   \item combines 
         embodied energy effects with
         maintenance and disposal effects
-        (under a new ``emplacement effect'' term), 
+        (under a new ``emplacement effect'' term), and
 
-  \item non-marginal energy efficiency increases, and 
+  \item encompasses non-marginal energy efficiency increases and
+        non-marginal energy service price decreases, 
   
-  \item non-marginal energy service price decreases.
-    
 \end{enumerate*}
 %
 Furthermore, we provide the first operationalized link between 
 rebound effects on microeconomic and macroeconomic levels.
-In Part~II, we develop new rebound visualization techniques 
+In Part~II, we develop new rebound visualization approaches 
 and exercise the framework
 by first calibrating the macro factor 
 then by calculating rebound for two examples.
