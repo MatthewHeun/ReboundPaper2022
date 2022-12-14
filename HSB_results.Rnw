@@ -84,16 +84,20 @@ involving both economics and energy analysis.
 In Part~I, we developed a rigorous analytical framework
 built upon the microeconomics of rebound
 that is approachable for both energy analysts and economists alike. 
-In this paper (Part~II), we bring further clarity to energy rebound by 
-clearly defining energy, expenditure, and consumption aspects of rebound
-in energy, expenditure, and consumption rebound planes, 
-a novel way to visualize and illustrate rebound phenomena.
+In this paper (Part~II of a two-part paper),
+we bring further clarity to energy rebound by 
+developing energy, expenditure, and consumption rebound planes, 
+a novel way to visualize and illustrate those three aspects of rebound.
 Further, we perform the first calibration of the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
-Finally, we apply the framework developed in Part~I to 
-calculate total rebound for two case studies: 
-upgrades of a car (**** 48\% ****) and an electric lamp (**** 80\% ****).
-Comparison of our values to previously estimated values is provided.
+Finally, we apply
+the framework developed in Part~I 
+and the visualization advances described in Part~II 
+to calculate and show total rebound for two case studies: 
+energy efficiency upgrades of
+a car (**** 48\% ****) and
+an electric lamp (**** 80\% ****).
+Comparison of our rebound values to previously estimated values is provided.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
