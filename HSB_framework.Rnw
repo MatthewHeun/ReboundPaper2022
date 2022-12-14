@@ -387,19 +387,19 @@ economists to understand the energy analysis.
 \input{pieces/typology_table.tex}
 
 Table~\ref{tab:rebound_typology} shows our topology of rebound effects.
-We distinguish between microeconomic and macroeconomic levels.
-Microeconomic rebound occurs at the single device level or for a single device owner.
 We follow others, including \citet{Jenkins2011} and \citet{Walnum2014}, 
-in splitting microeconomic rebound into 
-direct and indirect locations.
-Microeconomic rebound comprises three effects:
+in identifying both direct and indirect rebound.
+Direct rebound occurs at the device and 
+indirect rebound occurs elsewhere in the economy.
+
+Further, we distinguish between microeconomic and macroeconomic levels.
+Microeconomic rebound comprises three rebound effects:
 an emplacement effect, 
 a substitution effect, and 
 an income effect.
 We assume a partial equilibrium response
 in which the rest of the economy is unchanged
 in response to the energy efficiency upgrade (EEU).
-
 Macroeconomic rebound is a broader, indirect, and 
 economy-wide response to the single device upgrade.
 It comprises effects including 
@@ -435,7 +435,7 @@ arranged in left-to-right order of their discussion in this paper.
 The left-to-right order does not necessarily represent 
 the progression of rebound effects through time.
 Rebound symbols are shown above each effect ($Re_{empl}$, etc.).
-Nomenclature for direct and indirect locations are shown beneath each effect ($Re_{dempl}$, etc.).
+Nomenclature for direct and indirect rebound is shown beneath each effect ($Re_{dempl}$, etc.).
 Decorations for each stage are shown between rebound effects
 ($\circ$, $*$, etc.).
 Names for the decorations are given at the bottom of the figure
@@ -1433,8 +1433,8 @@ discussed in Section~\ref{sec:macro_effect_main_paper}.
 We are not the first to develop a partial equilibrium rebound analysis framework,
 so it is worthwhile to compare our framework with others
 for key features: 
-analysis of all levels, locations, and effects; 
-analysis of energy, expenditure, and consumption; 
+analysis of all rebound effects; 
+analysis of energy, expenditure, and consumption aspects of rebound; 
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
 operationality.
@@ -1531,8 +1531,8 @@ consumer theory and move towards more rigorous theoretical treatment over time,
 with recent frameworks making important advanced theoretical contributions
 at the expense of operationality.
 In the end, no previous rebound analysis framework 
-combines all rebound effects, locations, and scales
-across energy, expenditure, and consumption spaces with 
+combines all rebound effects
+across energy, expenditure, and consumption aspects with 
 a detailed model of consumer preferences and
 non-marginal energy service price changes
 in an operational manner
@@ -1551,9 +1551,9 @@ with mostly filled circles (\rating{100}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this paper (Part~I),
-we developed a partial equilibrium rebound analysis framework that
-combines all rebound effects, locations, and scales
-across energy, expenditure, and consumption spaces with 
+we developed a rebound analysis framework that
+combines all rebound effects
+across energy, expenditure, and consumption aspects with 
 a detailed model of consumer preferences and
 non-marginal energy service price changes
 in an operational manner
@@ -1606,8 +1606,8 @@ In Part~II of this paper,
 we attempt to bring further clarity to rebound analysis
 in three ways. 
 First, 
-we develop a way to visualize rebound effects at all locations (direct and indirect)
-in energy, expenditure, and consumption spaces. 
+we develop a way to visualize rebound effects 
+for energy, expenditure, and consumption aspects. 
 Second, we apply the partial equilibrium framework to two EEUs:
 an upgraded electric lamp and 
 an upgraded automobile.
