@@ -2510,13 +2510,13 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
   \midrule
   Conceptualization           & \rating{100} & \rating{100} &              \\
   Methodology                 & \rating{100} & \rating{100} & \rating{100} \\
-  Software                    & \rating{100} &              &              \\
+  Software                    & \rating{100} &              & \rating{100} \\
   Validation                  & \rating{100} &              & \rating{100} \\
-  Formal analysis             & \rating{100} & \rating{100} & \rating{100} \\
+  Formal analysis             & \rating{100} & \rating{100} &              \\
   Investigation               & \rating{100} & \rating{100} & \rating{100} \\
   Resources                   & \rating{100} & \rating{100} & \rating{100} \\
   Data curation               &              &              & \rating{100} \\
-  Writing--original draft     & \rating{100} & \rating{100} & \rating{100} \\
+  Writing--original draft     & \rating{100} & \rating{100} &              \\
   Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
   Visualization               & \rating{100} & \rating{100} &              \\
   Supervision                 & \rating{100} &              &              \\

@@ -1641,10 +1641,10 @@ Author contributions for this paper (Part~I of the two-part paper) are shown in 
   Software                    &              &              &              \\
   Validation                  & \rating{100} &              & \rating{100} \\
   Formal analysis             &              &              &              \\
-  Investigation               & \rating{100} & \rating{100} & \rating{100} \\
+  Investigation               & \rating{100} & \rating{100} &              \\
   Resources                   & \rating{100} & \rating{100} & \rating{100} \\
   Data curation               &              &              &              \\
-  Writing--original draft     & \rating{100} & \rating{100} & \rating{100} \\
+  Writing--original draft     & \rating{100} & \rating{100} &              \\
   Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
   Visualization               &              &              &              \\
   Supervision                 & \rating{100} &              &              \\
