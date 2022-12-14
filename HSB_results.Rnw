@@ -47,9 +47,8 @@
 \bibliographystyle{apa-good.bst}
 
 % Author info
-\title{Advancing the necessary foundations \\
-              for empirical energy rebound estimates, Part II: \\
-              Visualization, examples, and results}
+\title{Energy, expenditure, and consumption aspects of rebound,\\
+          Part II: Applications}
 \author[1,*]{Matthew Kuperus Heun}
 \author[2]{Gregor Semieniuk}
 \author[3]{Paul E.\ Brockway}
