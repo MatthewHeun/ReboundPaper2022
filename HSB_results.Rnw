@@ -797,7 +797,7 @@ the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
 and
 the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
 \footnote{
-  A related, notional-only (not quantified as in Section~\ref{sec:results}), 
+  A related notional-only (not quantified as in Section~\ref{sec:results}), 
   one-dimensional visualization of direct and indirect energy rebound 
   (but not on expenditure or consumption planes)
   can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
