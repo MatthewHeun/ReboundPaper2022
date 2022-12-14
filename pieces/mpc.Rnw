@@ -47,9 +47,9 @@ Solving for $k$ yields
   k = \frac{1}{\frac{1}{\MPC} - 1} \; .  \tag{\ref{eq:mpc_and_k_converged}}
 \end{equation}
 
-With $\MPC = 0.5$, as in Section~\ref{sec:macro_effect_main_paper}, 
-$k = 1$ is obtained.
-If $k = 3$, as in Part~II, 
+With $k = 1$, as assumed early in Part~II, 
+$\MPC = 0.5$ is implied.
+If $k = 3$, as calibrated later in Part~II, 
 $\MPC = 0.75$ is implied.
 The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
 
