@@ -147,9 +147,12 @@ We said that
 To move improve clarity in the rebound space, 
 in Part~I we developed a partial equilibrium framework 
 for analyzing energy rebound, 
-one that is tractable for energy analysts and economists alike.
-The framework contains 
-two locations (direct, $d$, and indirect, $i$) and 
+one that is tractable for both energy analysts and economists.
+Three aspects of rebound are analyzed in the framework:
+energy, expenditure, and consumption.
+The framework contains both
+direct and indirect rebound
+($d$ and $i$, respectively) and 
 four rebound effects
 (emplacement, substitution, income, and macro) 
 between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
@@ -714,26 +717,26 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 A comprehensive rebound analysis should track
 energy, expenditure, and consumption
 aspects of rebound 
-at the device (direct location) and elsewhere in the economy (indirect location)
+at the device (direct rebound) and elsewhere in the economy (indirect rebound)
 across all adjustments for all rebound effects
 (emplacement, substitution, income, and macro). 
 Doing so involves many terms and much complexity.
-Until now, visualizing the energy, expenditure, and consumption 
+To date, visualizing the energy, expenditure, and consumption 
 aspects of rebound phenomena has not been 
 done in a set of mutually consistent graphs.
 
 We introduce rebound planes
 to bring clarity to
-the rebound locations (direct and indirect) and 
+(direct and indirect) rebound and 
 adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
 Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
 
 Axes of the rebound planes
-represent direct and indirect rebound locations.
-Effects at the direct location are shown on the $x$-axis, and 
-effects at the indirect location are shown on the $y$-axis.
+represent direct and indirect rebound.
+Direct rebound is shown on the $x$-axis, and 
+indirect rebound is shown on the $y$-axis.
 Specifically, 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -744,8 +747,8 @@ Specifically,
   \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$) are placed on 
         the $x$- and $y$-axes of the expenditure plane, respectively; and
   
-  \item the consumption rate of the energy service ($\rate{q}_s$) and
-        the expenditure rate on other consumption goods ($\rate{C}_o$) are placed on
+  \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
+        the indexed expenditure rate of other consumption goods ($\rate{C}_o$) are placed on
         the $x$- and $y$-axes of the consumption plane, respectively.
     
 \end{enumerate*}
@@ -753,7 +756,7 @@ Specifically,
 Paths through energy, expenditure, and consumption planes
 consist of segments that represent changes due to the various rebound effects.
 Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
-Rebound effects that cut across both direct and indirect locations
+Effects that include both direct and indirect rebound
 will show displacement along both axes and 
 create a path in the $x$-$y$ plane.
 (See Appendix~\ref{sec:graph_details} for 
@@ -2289,13 +2292,11 @@ enable two types of observations:
 @
 
 First, we can say that none of the comparison studies
-report all rebound effect components, as we have done
+report all rebound effects, as we have done
 in Sections~\ref{sec:results} and~\ref{sec:calibrating_k}. 
-Further, none of the studies decompose rebound 
-into both locations and both effects of microeconomic rebound
-that we think are important: 
-direct and indirect locations and substitution and income effects. 
-Thus, our framework is bringing conceptual clarity to this space.
+Further, none of the other studies includes
+all of direct and indirect, substitution and income microeconomic rebound effects. 
+Thus, our framework is bringing conceptual clarity to the field.
 In addition, none of the studies report 
 emplacement rebound ($Re_{empl}$) or macro rebound ($Re_{macro}$).
 In fact, only ****X**** of the 10 studies report total rebound ($Re_{tot}$).
@@ -2343,7 +2344,7 @@ focus mainly on microeconomic rebound only
 In other words, 
 comparisons of our indirect rebound values with the comparison studies
 may be too simple and not very meaningful,
-as we include macro-scale effects at the indirect location. 
+as we include macro-scale effects in indirect rebound. 
 
 For total rebound ($Re_{tot}$),
 our values of
@@ -2447,7 +2448,8 @@ we draw two important conclusions.
 First, the car and lamp examples (Section~\ref{sec:results}) show that
         the framework enables
         quantification of rebound magnitudes at microeconomic and macroeconomic levels, including 
-        direct and indirect locations 
+        energy, expenditure, and consumption aspects of 
+        direct and indirect rebound 
         for emplacement, substitution, income, and macro effects.
 Second, the examples show that magnitudes of rebound effects
         vary with the type of EEU performed.
