@@ -122,7 +122,7 @@ library(xtable)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In Part I of this two-part paper, we argued that improved clarity is needed
-about the effects and scales of energy rebound. 
+about energy rebound. 
 We said that
 %
 \begin{quote}
@@ -2337,14 +2337,14 @@ lamp ($\Sexpr{f_lmp("Re_indir")}$\%) rebound magnitudes
 are higher than those found in the comparison studies
 for either the car (6\% to 23\%) or lamp (8\% to 16\%) cases.
 The most likely cause of our larger indirect rebound values
-is that we include both micro and macro rebound scales,
+is that we include both micro and macro rebound levels,
 whereas the comparison studies 
 focus mainly on microeconomic rebound only
 (commonly via cross-price elasticities).
 In other words, 
 comparisons of our indirect rebound values with the comparison studies
 may be too simple and not very meaningful,
-as we include macro-scale effects in indirect rebound. 
+as we include macro-level effects in indirect rebound. 
 
 For total rebound ($Re_{tot}$),
 our values of

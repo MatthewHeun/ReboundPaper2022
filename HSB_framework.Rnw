@@ -1427,7 +1427,7 @@ all other prices remain constant.%
 %
 In our partial equilibrium framework, 
 general equilibrium effects are captured by 
-a simplified, one-dimensional, macroeconomic-scale rebound effect
+a simplified, one-dimensional, macroeconomic-level rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
 We are not the first to develop a partial equilibrium rebound analysis framework,
