@@ -102,7 +102,7 @@ rebound analysis framework that
 %
 Furthermore, we provide the first operationalized link between 
 rebound effects on microeconomic and macroeconomic levels.
-In Part~II, we develop new rebound visualization approaches 
+In Part~II, we develop new a rebound visualization approach
 and exercise the framework
 by first calibrating the macro factor 
 then by calculating rebound for two examples.
