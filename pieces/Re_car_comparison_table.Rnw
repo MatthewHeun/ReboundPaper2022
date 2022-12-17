@@ -36,8 +36,8 @@
                                   & 
                                   &   \\
 \midrule
-\multirow{3}*{1} & \multirow{3}*{\citet{Greene2012}} & U.S., & Elasticities of        &             &            &            &              & 4 (short-run)         &              &  \\
- &                     &  1966--2007 & transport fuel w.r.t.\ &             &            &            &              & 16 (long-run) &              &  \\
+\multirow{3}*{1} & \multirow{3}*{\citet{Greene2012}} & \multirow{2}*{U.S.,} & Elasticities of        &             &            &            &              & \multirow{2}*{4 (short-run)}         &              &  \\
+ &                     &  \multirow{2}*{1966--2007} & transport fuel w.r.t.\ &             &            &            &              & \multirow{2}*{16 (long-run)} &              &  \\
  &                     &                  & price \& efficiency\   &             &            &            &              &            &              &  \\
 \midrule
 2 & \citet{Small:2005aa}**    & U.S.,  & Elasticity of VMT     &  &            &            &              & 22         &              &  \\
