@@ -13,7 +13,7 @@
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
          $Re_{tot} = Re_{dir} + Re_{indir}$.}
 \label{tab:rebound_car_comparisons}
-\begin{tabular}{ c l c c c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
+\begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
   &                           & Coverage & Study method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
@@ -36,9 +36,11 @@
                                   & 
                                   &   \\
 \midrule
-1 & \citet{Greene:1998aa}     & &     &             &            &            &              & 20         &              &  \\
+\multirow{3}*{1} & \multirow{3}*{\citet{Greene2012}} & \multirow{3}*{U.S., 1966--2007} & Elasticities of        &             &            &            &              & 4 (short-run)         &              &  \\
+ &                     &        & transport fuel w.r.t.\ &             &            &            &              & 16 (long-run) &              &  \\
+ &                     &                  & price \& efficiency\   &             &            &            &              &            &              &  \\
 \midrule
-2 & \citet{Small:2005aa}      & &     &             &            &            &              & 22         &              &  \\
+2 & \citet{Small:2005aa}**    & US, 1967--2001 &     &             &            &            &              & 22         &              &  \\
 \midrule
 3 & \citet{Koesler:2013aa}    & &     &             &            &            &              &            &              & 49  \\
 \midrule
