@@ -17,13 +17,24 @@
 \toprule
   &                           & Coverage & Study method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-0 & This paper (2022)         & &     & $\Sexpr{f_car("Re_empl")}$
-                                  & $\Sexpr{f_car("Re_sub")}$
-                                  & $\Sexpr{f_car("Re_inc")}$
-                                  & $\Sexpr{f_car("Re_macro")}$
-                                  & $\Sexpr{f_car("Re_dir")}$
-                                  & $\Sexpr{f_car("Re_indir")}$
-                                  & $\Sexpr{f_car("Re_tot")}$  \\
+\multirow{2}*{0} & \multirow{2}*{This paper (2022)} & \multirow{2}*{U.S., 2020}
+                                  & Energy, expenditure, 
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_empl")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_sub")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_inc")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_macro")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_dir")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_indir")}$}
+                                  & \multirow{2}*{$\Sexpr{f_car("Re_tot")}$}  \\
+                 &                                  &
+                                  & and consumption planes 
+                                  & 
+                                  & 
+                                  & 
+                                  & 
+                                  & 
+                                  & 
+                                  &   \\
 \midrule
 1 & \citet{Greene:1998aa}     & &     &             &            &            &              & 20         &              &  \\
 \midrule
