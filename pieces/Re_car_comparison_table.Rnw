@@ -4,7 +4,7 @@
 %!TEX root = ../HSB_results.Rnw
 
 
-% \begin{landscape}
+\begin{landscape}
 \begin{table}
 \footnotesize
 \begin{center}
@@ -13,11 +13,11 @@
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
          $Re_{tot} = Re_{dir} + Re_{indir}$.}
 \label{tab:rebound_car_comparisons}
-\begin{tabular}{ c l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
+\begin{tabular}{ c l c c c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
-  &                               & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  &                           & Coverage & Study method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-0 & This paper (2022)             & $\Sexpr{f_car("Re_empl")}$
+0 & This paper (2022)         & &     & $\Sexpr{f_car("Re_empl")}$
                                   & $\Sexpr{f_car("Re_sub")}$
                                   & $\Sexpr{f_car("Re_inc")}$
                                   & $\Sexpr{f_car("Re_macro")}$
@@ -25,23 +25,23 @@
                                   & $\Sexpr{f_car("Re_indir")}$
                                   & $\Sexpr{f_car("Re_tot")}$  \\
 \midrule
-1 & \citet{Greene:1998aa}         &             &            &            &              & 20         &              &  \\
+1 & \citet{Greene:1998aa}     & &     &             &            &            &              & 20         &              &  \\
 \midrule
-2 & \citet{Small:2005aa}          &             &            &            &              & 22         &              &  \\
+2 & \citet{Small:2005aa}      & &     &             &            &            &              & 22         &              &  \\
 \midrule
-3 & \citet{Koesler:2013aa}        &             &            &            &              &            &              & 49  \\
+3 & \citet{Koesler:2013aa}    & &     &             &            &            &              &            &              & 49  \\
 \midrule
-4 & \citet{Thomas:2013ab}         &             &            &            &              & 10         &  6           &  \\
+4 & \citet{Thomas:2013ab}     & &     &             &            &            &              & 10         &  6           &  \\
 \midrule
-5 & \citet{Borenstein:2015aa}     &             & 13         & 11         &              &            &              &  \\
+5 & \citet{Borenstein:2015aa} & &     &             & 13         & 11         &              &            &              &  \\
 \midrule
-6 & \citet{Chitnis:2015}          &             &            &            &              & 55         & 23           &  \\
+6 & \citet{Chitnis:2015}      & &     &             &            &            &              & 55         & 23           &  \\
 \midrule
-7 & \citet{Dimitropoulos:2018aa}  &             &            &            &              & 26--29     &              &  \\
+7 & \citet{Dimitropoulos:2018aa}& &   &             &            &            &              & 26--29     &              &  \\
 \midrule
-8 & \citet{Duarte:2018aa}         &             &            &            &              &            &              & 51  \\
+8 & \citet{Duarte:2018aa}     & &     &             &            &            &              &            &              & 51  \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
-% \end{landscape}
+\end{landscape}
