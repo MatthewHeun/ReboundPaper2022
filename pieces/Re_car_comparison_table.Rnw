@@ -40,9 +40,14 @@
  &                     &  \multirow{2}*{1966--2007} & transport fuel w.r.t.\ &             &            &            &              & \multirow{2}*{16 (long-run)} &              &  \\
  &                     &                  & price \& efficiency\   &             &            &            &              &            &              &  \\
 \midrule
-2 & \citet{Small:2005aa}**    & U.S.,  & Elasticity of VMT     &  &            &            &              & 22         &              &  \\
-  &                           & 1967--2001 & w.r.t.\ fuel cost &      &            &            &              &            &  &  \\
-  &                           &            & per mile          &      &            &            &              &            &  &  \\
+  &                           &            &                   &      &            &            &          & 4.5 (short run,         &  &  \\
+  &                           &            &                   &      &            &            &          & 1967--2001)             &  &  \\
+  &                           &            & \multirow{2}*{Elasticity of VMT} &  &  &           &          & 22.2 (long run,         &  &  \\
+\multirow{2}*{2} & \multirow{2}*{\citet{Small:2005aa}**} & U.S.,      & \multirow{2}*{w.r.t.\ fuel cost} &  &  &  &          & 1967--2001)             &  &  \\
+  &                           & 1967--2001 & \multirow{2}*{per mile}  & &           &           &          & 2.2 (short run,         &  &  \\
+  &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
+  &                           &            &                   &      &            &            &          & 10.7 (long run,         &  &  \\
+  &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
 \midrule
 3 & \citet{Koesler:2013aa}    & &     &             &            &            &              &            &              & 49  \\
 \midrule
