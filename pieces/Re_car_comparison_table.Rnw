@@ -17,7 +17,7 @@
 \toprule
   &                           & Coverage & Study method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-\multirow{2}*{0} & \multirow{2}*{This paper (2022)} & U.S., 
+                 & \multirow{2}*{This paper (2022)} & U.S., 
                                   & Energy, expenditure, 
                                   & \multirow{2}*{$\Sexpr{f_car("Re_empl")}$}
                                   & \multirow{2}*{$\Sexpr{f_car("Re_sub")}$}
@@ -43,13 +43,14 @@
   &                           &            &                   &      &            &            &          & 4.5 (short run,         &  &  \\
   &                           &            &                   &      &            &            &          & 1967--2001)             &  &  \\
   &                           &            & \multirow{2}*{Elasticity of VMT} &  &  &           &          & 22.2 (long run,         &  &  \\
-\multirow{2}*{2} & \multirow{2}*{\citet{Small:2005aa}**} & U.S.,      & \multirow{2}*{w.r.t.\ fuel cost} &  &  &  &          & 1967--2001)             &  &  \\
-  &                           & 1967--2001 & \multirow{2}*{per mile}  & &           &           &          & 2.2 (short run,         &  &  \\
+\multirow{2}*{2} & \multirow{2}*{\citet{Small:2005aa}**} & U.S.,      & \multirow{2}*{w.r.t.\ fuel cost} &  &  &  &  & 1967--2001)   &  &  \\
+  &                           & 1967--2001 & \multirow{2}*{per mile}  & &          &            &          & 2.2 (short run,         &  &  \\
   &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
   &                           &            &                   &      &            &            &          & 10.7 (long run,         &  &  \\
   &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
 \midrule
-3 & \citet{Koesler:2013aa}    & &     &             &            &            &              &            &              & 49  \\
+\multirow{2}*{3} & \multirow{2}*{\citet{Koesler:2013aa}} & Germany, &     & & & & & \multirow{2}*{(up to) 64}  & \multirow{2}*{(up to) 16}           & \multirow{2}*{56}  \\
+  &                        & 2009     &     &             &            &            &              &            &              &     \\
 \midrule
 4 & \citet{Thomas:2013ab}     & &     &             &            &            &              & 10         &  6           &  \\
 \midrule
