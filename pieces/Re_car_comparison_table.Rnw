@@ -52,7 +52,8 @@
 \multirow{2}*{3} & \multirow{2}*{\citet{Koesler:2013aa}} & Germany, &     & & & & & \multirow{2}*{(up to) 64}  & \multirow{2}*{(up to) 16}           & \multirow{2}*{56}  \\
   &                        & 2009     &     &             &            &            &              &            &              &     \\
 \midrule
-4 & \citet{Thomas:2013ab}     & &     &             &            &            &              & 10         &  6           &  \\
+\multirow{2}*{4} & \multirow{2}*{\citet{Thomas:2013ab}} & U.S., &     &     &    &  &   & \multirow{2}*{10} & \multirow{2}*{6} &  \\
+                 &                                      & 2004  &     &     &    &  &   &                   &                  &  \\
 \midrule
 5 & \citet{Borenstein:2015aa} & &     &             & 13         & 11         &              &            &              &  \\
 \midrule
