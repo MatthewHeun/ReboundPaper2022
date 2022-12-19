@@ -63,8 +63,8 @@
   &                      &                           & Estimated own/cross-  & &    &   & &    &    &  \\
   &                      & \multirow{2}*{UK,}        & price elasticities of & &    &   & &    &    &  \\
 6 & \citet{Chitnis:2015} & \multirow{2}*{1964--2014} & transport fuels, uses & & 72 & 5 & & 55 & 23 & 86 \\
-  &                      &                           & household spending    & & & & &    &    &  \\
-  &                      &                           & survey data           & & & & &    &    &  \\
+  &                      &                           & household spending    & &    &   & &    &    &  \\
+  &                      &                           & survey data           & &    &   & &    &    &  \\
 \midrule
 7 & \citet{Dimitropoulos:2018aa}& &   &             &            &            &              & 26--29     &              &  \\
 \midrule
