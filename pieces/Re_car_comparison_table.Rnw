@@ -15,58 +15,52 @@
 \label{tab:rebound_car_comparisons}
 \begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
-  &                           & Coverage & Study method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  &                           & Coverage & Analysis method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-                 & \multirow{2}*{This paper (2022)} & U.S., 
-                                  & Energy, expenditure, 
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_empl")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_sub")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_inc")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_macro")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_dir")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_indir")}$}
-                                  & \multirow{2}*{$\Sexpr{f_car("Re_tot")}$}  \\
-                 &                                  & 2020
-                                  & and consumption planes 
-                                  & 
-                                  & 
-                                  & 
-                                  & 
-                                  & 
-                                  & 
-                                  &   \\
+ & This paper (2022) & U.S., & Energy, expenditure,   & $\Sexpr{f_car("Re_empl")}$
+                                                      & $\Sexpr{f_car("Re_sub")}$
+                                                      & $\Sexpr{f_car("Re_inc")}$
+                                                      & $\Sexpr{f_car("Re_macro")}$
+                                                      & $\Sexpr{f_car("Re_dir")}$
+                                                      & $\Sexpr{f_car("Re_indir")}$
+                                                      & $\Sexpr{f_car("Re_tot")}$  \\
+ &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
-\multirow{3}*{1} & \multirow{3}*{\citet{Greene2012}} & \multirow{2}*{U.S.,} & Elasticities of & & & & & \multirow{2}*{4 (short-run)} &  &  \\
-                 &                                   & \multirow{2}*{1966--2007} & transport fuel w.r.t.\ & & & & & \multirow{2}*{16 (long-run)} & &  \\
-                 &                                   &                           & price \& efficiency    & & & & & & & \\
+1 & \citet{Greene2012} & U.S.,      & Elasticities of        & & & & &  4 (short-run) & & \\
+  &                    & 1966--2007 & transport fuel w.r.t.\ & & & & & 16 (long-run)  & & \\
+  &                    &            & price \& efficiency    & & & & &                & & \\
 \midrule
-  &                           &            &                   &      &            &            &          & 4.5 (short run,         &  &  \\
-  &                           &            &                   &      &            &            &          & 1967--2001)             &  &  \\
-  &                           &            & \multirow{2}*{Elasticity of VMT} &  &  &           &          & 22.2 (long run,         &  &  \\
-\multirow{2}*{2} & \multirow{2}*{\citet{Small:2005aa}**} & U.S.,      & \multirow{2}*{w.r.t.\ fuel cost} &  &  &  &  & 1967--2001)   &  &  \\
-  &                           & 1967--2001 & \multirow{2}*{per mile}  & &          &            &          & 2.2 (short run,         &  &  \\
-  &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
-  &                           &            &                   &      &            &            &          & 10.7 (long run,         &  &  \\
-  &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
+2 & \citet{Small:2005aa}** & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
+  &                        & 1967--2001 & w.r.t.\ fuel cost & & & & & 1967--2001)     &  &  \\
+  &                        &            & per mile          & & & & & 22.2 (long run, &  &  \\
+  &                        &            &                   & & & & & 1967--2001)     &  &  \\
+  &                        &            &                   & & & & & 2.2 (short run, &  &  \\
+  &                        &            &                   & & & & & 1997--2001)     &  &  \\
+  &                        &            &                   & & & & & 10.7 (long run, &  &  \\
+  &                        &            &                   & & & & & 1997--2001)     &  &  \\
 \midrule
-\multirow{2}*{3} & \multirow{2}*{\citet{Koesler:2013aa}} & Germany, & Static CGE model, & & & & & \multirow{2}*{$\le$ 64}  & \multirow{2}*{$\le$ 16}           & \multirow{2}*{56}  \\
-  &                        & 2009     & 10\% efficiency shock    &             &            &            &              &            &              &     \\
+ 3 & \citet{Koesler:2013aa} & Germany, & Static CGE model,        & & & & & $\le$ 64 & $\le$ 16 & 56  \\
+   &                        & 2009     & 10\% efficiency shock    & & & & &          &          &     \\
 \midrule
-                 &                                      &       & Expenditure/cross-price   & & & & &                   &                  &  \\
-\multirow{2}*{4} & \multirow{2}*{\citet{Thomas:2013ab}} & U.S., & elasticities of transport & & & & & \multirow{2}*{10} & \multirow{2}*{6} &  \\
-                 &                                      & 2004  & fuels, uses household     & & & & &                   &                  &  \\
-                 &                                      &       & spending survey data      & & & & &                   &                  &  \\
+4 & \citet{Thomas:2013ab} & U.S., & Expenditure/cross-price   & & & & & 10 & 6 &  \\
+  &                       & 2004  & elasticities of transport & & & & &    &   &  \\
+  &                       &       & fuels, using household    & & & & &    &   &  \\
+  &                       &       & spending survey data      & & & & &    &   &  \\
 \midrule
-\multirow{2}*{5} & \multirow{2}*{\citet{Borenstein:2015aa}} & U.S.,  & Microeconomic &  & 13      & \multirow{2}*{11} & & & &  \\
-                 &                                          & 2012   & framework     &  & (6--28) &                   & & & &  \\
+5 & \citet{Borenstein:2015aa} & U.S., & Microeconomic &  & 13      & 11 & & & &  \\
+  &                           & 2012  & framework     &  & (6--28) &    & & & &  \\
 \midrule
-  &                      &                           & Estimated own/cross-  & &    &   & &    &    &  \\
-  &                      & \multirow{2}*{UK,}        & price elasticities of & &    &   & &    &    &  \\
-6 & \citet{Chitnis:2015} & \multirow{2}*{1964--2014} & transport fuels, uses & & 72 & 5 & & 55 & 23 & 86 \\
+6 & \citet{Chitnis:2015} & UK,                       & Estimated own/cross-  & &    &   & &    &    &  \\
+  &                      & 1964--2014                & price elasticities of & &    &   & &    &    &  \\
+  &                      &                           & transport fuels, uses & & 72 & 5 & & 55 & 23 & 86 \\
   &                      &                           & household spending    & &    &   & &    &    &  \\
   &                      &                           & survey data           & &    &   & &    &    &  \\
 \midrule
-7 & \citet{Dimitropoulos:2018aa}& &   &             &            &            &              & 26--29     &              &  \\
+7 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12 &    & \\
+  &                              & are U.S.\         & transport direct         &   &  &            & & (short run) &  & \\
+  &                              & studies           & rebound studies, all     &   &  &            & & 26--29      &  & \\
+  &                              &                   & using elasticity-        &   &  &            & & (long run)  &  & \\
+  &                              &                   & based methods            &   &  &            & &             &  & \\
 \midrule
 8 & \citet{Duarte:2018aa}     & &     &             &            &            &              &            &              & 51  \\
 \bottomrule
