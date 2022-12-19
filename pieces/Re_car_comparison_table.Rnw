@@ -62,7 +62,10 @@
   &                              &                   & using elasticity-        &   &  &            & & (long run)  &  & \\
   &                              &                   & based methods            &   &  &            & &             &  & \\
 \midrule
-8 & \citet{Duarte:2018aa}     & &     &             &            &            &              &            &              & 51  \\
+8 & \citet{Duarte:2018aa} & Spain,     & & & & & & & & 26          \\
+  &                       & 2010--2030 & & & & & & & & (short run) \\
+  &                       &            & & & & & & & & 52          \\
+  &                       &            & & & & & & & & (long run)  \\
 \bottomrule
 \end{tabular}
 \end{center}
