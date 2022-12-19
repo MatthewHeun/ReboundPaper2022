@@ -26,8 +26,8 @@
                                                       & $\Sexpr{f_car("Re_tot")}$  \\
  &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
-1 & \citet{Greene2012} & U.S.,      & Elasticities of        & & & & &  4 (short-run) & & \\
-  &                    & 1966--2007 & transport fuel w.r.t.\ & & & & & 16 (long-run)  & & \\
+1 & \citet{Greene2012} & U.S.,      & Elasticities of        & & & & &  4 (short run) & & \\
+  &                    & 1966--2007 & transport fuel w.r.t.\ & & & & & 16 (long run)  & & \\
   &                    &            & price \& efficiency    & & & & &                & & \\
 \midrule
 2 & \citet{Small:2005aa}** & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
@@ -56,7 +56,7 @@
   &                      &                           & household spending    & &    &   & &    &    &  \\
   &                      &                           & survey data           & &    &   & &    &    &  \\
 \midrule
-7 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12 &    & \\
+7 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12      &  & \\
   &                              & are U.S.\         & transport direct         &   &  &            & & (short run) &  & \\
   &                              & studies           & rebound studies, all     &   &  &            & & 26--29      &  & \\
   &                              &                   & using elasticity-        &   &  &            & & (long run)  &  & \\
@@ -66,6 +66,14 @@
   &                       & 2010--2030 & & & & & & & & (short run) \\
   &                       &            & & & & & & & & 52          \\
   &                       &            & & & & & & & & (long run)  \\
+\midrule
+9 & Moshiri **  & Canada,    & Price elasticity of & & & & & 82--88 & & \\
+  &             & 1997--2009 & transport fuel,     & & & & &        & & \\
+  &             &            & using household     & & & & &        & & \\
+  &             &            & spending survey     & & & & &        & & \\
+  &             &            & data                & & & & &        & & \\
+\midrule
+10 & Stapleton            &            & & & & & & & & \\
 \bottomrule
 \end{tabular}
 \end{center}
