@@ -11,7 +11,10 @@
 \caption{Rebound magnitude comparisons for the car example. All numbers in \%.
          Note that 
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
-         $Re_{tot} = Re_{dir} + Re_{indir}$.}
+         $Re_{tot} = Re_{dir} + Re_{indir}$.
+         ``VMT'' is ``vehicle miles traveled.'' 
+         ``CGE'' is ``computable general equilibrium.''
+         ``w.r.t.'' is ``with respect to.''}
 \label{tab:rebound_car_comparisons}
 \begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
@@ -26,11 +29,7 @@
                                                       & $\Sexpr{f_car("Re_tot")}$  \\
  &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
-1 & \citet{Greene2012} & U.S.,      & Elasticities of        & & & & &  4 (short run) & & \\
-  &                    & 1966--2007 & transport fuel w.r.t.\ & & & & & 16 (long run)  & & \\
-  &                    &            & price \& efficiency    & & & & &                & & \\
-\midrule
-2 & \citet{Small:2005aa}** & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
+1 & \citet{Small:2005aa}** & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
   &                        & 1967--2001 & w.r.t.\ fuel cost & & & & & 1967--2001)     &  &  \\
   &                        &            & per mile          & & & & & 22.2 (long run, &  &  \\
   &                        &            &                   & & & & & 1967--2001)     &  &  \\
@@ -39,8 +38,12 @@
   &                        &            &                   & & & & & 10.7 (long run, &  &  \\
   &                        &            &                   & & & & & 1997--2001)     &  &  \\
 \midrule
- 3 & \citet{Koesler:2013aa} & Germany, & Static CGE model,        & & & & & $\le$ 64 & $\le$ 16 & 56  \\
-   &                        & 2009     & 10\% efficiency shock    & & & & &          &          &     \\
+2 & \citet{Greene2012} & U.S.,      & Elasticities of        & & & & &  4 (short run) & & \\
+  &                    & 1966--2007 & transport fuel w.r.t.\ & & & & & 16 (long run)  & & \\
+  &                    &            & price \& efficiency    & & & & &                & & \\
+\midrule
+3 & \citet{Koesler:2013aa} & Germany, & Static CGE model,        & & & & & $\le$ 64 & $\le$ 16 & 56  \\
+  &                        & 2009     & 10\% efficiency shock    & & & & &          &          &     \\
 \midrule
 4 & \citet{Thomas:2013ab} & U.S., & Expenditure/cross-price   & & & & & 10 & 6 &  \\
   &                       & 2004  & elasticities of transport & & & & &    &   &  \\
@@ -56,25 +59,25 @@
   &                      &                           & household spending    & &    &   & &    &    &  \\
   &                      &                           & survey data           & &    &   & &    &    &  \\
 \midrule
-7 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12      &  & \\
+7 & Stapleton ** (2016) & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
+  &                     & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\
+\midrule
+8 & Moshiri ** (2017)  & Canada,    & Price elasticity of & & & & & 82--88 & & \\
+  &                    & 1997--2009 & transport fuel,     & & & & &        & & \\
+  &                    &            & using household     & & & & &        & & \\
+  &                    &            & spending survey     & & & & &        & & \\
+  &                    &            & data                & & & & &        & & \\
+\midrule
+9 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12      &  & \\
   &                              & are U.S.\         & transport direct         &   &  &            & & (short run) &  & \\
   &                              & studies           & rebound studies, all     &   &  &            & & 26--29      &  & \\
   &                              &                   & using elasticity-        &   &  &            & & (long run)  &  & \\
   &                              &                   & based methods            &   &  &            & &             &  & \\
 \midrule
-8 & \citet{Duarte:2018aa} & Spain,     & & & & & & & & 26          \\
-  &                       & 2010--2030 & & & & & & & & (short run) \\
-  &                       &            & & & & & & & & 52          \\
-  &                       &            & & & & & & & & (long run)  \\
-\midrule
-9 & Moshiri **  & Canada,    & Price elasticity of & & & & & 82--88 & & \\
-  &             & 1997--2009 & transport fuel,     & & & & &        & & \\
-  &             &            & using household     & & & & &        & & \\
-  &             &            & spending survey     & & & & &        & & \\
-  &             &            & data                & & & & &        & & \\
-\midrule
-10 & Stapleton ** & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
-   &              & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\
+10 & \citet{Duarte:2018aa} & Spain,     & & & & & & & & 26          \\
+   &                       & 2010--2030 & & & & & & & & (short run) \\
+   &                       &            & & & & & & & & 52          \\
+   &                       &            & & & & & & & & (long run)  \\
 \bottomrule
 \end{tabular}
 \end{center}
