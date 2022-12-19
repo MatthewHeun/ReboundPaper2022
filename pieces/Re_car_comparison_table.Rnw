@@ -73,7 +73,8 @@
   &             &            & spending survey     & & & & &        & & \\
   &             &            & data                & & & & &        & & \\
 \midrule
-10 & Stapleton            &            & & & & & & & & \\
+10 & Stapleton ** & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
+   &              & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\
 \bottomrule
 \end{tabular}
 \end{center}
