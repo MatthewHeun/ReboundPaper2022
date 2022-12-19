@@ -49,16 +49,22 @@
   &                           &            &                   &      &            &            &          & 10.7 (long run,         &  &  \\
   &                           &            &                   &      &            &            &          & 1997--2001)             &  &  \\
 \midrule
-\multirow{2}*{3} & \multirow{2}*{\citet{Koesler:2013aa}} & Germany, &     & & & & & \multirow{2}*{(up to) 64}  & \multirow{2}*{(up to) 16}           & \multirow{2}*{56}  \\
-  &                        & 2009     &     &             &            &            &              &            &              &     \\
+\multirow{2}*{3} & \multirow{2}*{\citet{Koesler:2013aa}} & Germany, & Static CGE model, & & & & & \multirow{2}*{$\le$ 64}  & \multirow{2}*{$\le$ 16}           & \multirow{2}*{56}  \\
+  &                        & 2009     & 10\% efficiency shock    &             &            &            &              &            &              &     \\
 \midrule
-\multirow{2}*{4} & \multirow{2}*{\citet{Thomas:2013ab}} & U.S., &     &     &    &  &   & \multirow{2}*{10} & \multirow{2}*{6} &  \\
-                 &                                      & 2004  &     &     &    &  &   &                   &                  &  \\
+                 &                                      &       & Expenditure/cross-price   & & & & &                   &                  &  \\
+\multirow{2}*{4} & \multirow{2}*{\citet{Thomas:2013ab}} & U.S., & elasticities of transport & & & & & \multirow{2}*{10} & \multirow{2}*{6} &  \\
+                 &                                      & 2004  & fuels, uses household     & & & & &                   &                  &  \\
+                 &                                      &       & spending survey data      & & & & &                   &                  &  \\
 \midrule
 \multirow{2}*{5} & \multirow{2}*{\citet{Borenstein:2015aa}} & U.S.,  & Microeconomic &  & 13      & \multirow{2}*{11} & & & &  \\
                  &                                          & 2012   & framework     &  & (6--28) &                   & & & &  \\
 \midrule
-6 & \citet{Chitnis:2015}      & &     &             &            &            &              & 55         & 23           &  \\
+  &                      &                           & Estimated own/cross-  & & & & &    &    &  \\
+  &                      & \multirow{2}*{UK,}        & price elasticities of & & & & &    &    &  \\
+6 & \citet{Chitnis:2015} & \multirow{2}*{1964--2014} & transport fuels, uses & & & & & 55 & 23 &  \\
+  &                      &                           & household spending    & & & & &    &    &  \\
+  &                      &                           & survey data           & & & & &    &    &  \\
 \midrule
 7 & \citet{Dimitropoulos:2018aa}& &   &             &            &            &              & 26--29     &              &  \\
 \midrule
