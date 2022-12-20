@@ -39,7 +39,7 @@
 \midrule
 8 & \citet{Schleich2014} & Germany, & Survey of electricity & & & & & 6 & &  \\
   &                      & 2012     & consumption in 6409   & & & & &   & &  \\
-  &                      &          & households            & & & & &   & &  \\
+  &                      &          & German households     & & & & &   & &  \\
 \midrule
 5 & \citet{Borenstein:2015aa} & U.S., & Microeconomic &  & 14      & 6 & & & &  \\
   &                           & 2012  & framework     &  & (6--37) &   & & & &  \\
