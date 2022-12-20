@@ -53,11 +53,11 @@
 5 & \citet{Borenstein:2015aa} & U.S., & Microeconomic &  & 13      & 11 & & & &  \\
   &                           & 2012  & framework     &  & (6--28) &    & & & &  \\
 \midrule
-6 & \citet{Chitnis:2015} & UK,                       & Estimated own/cross-  & &    &   & &    &    &  \\
-  &                      & 1964--2014                & price elasticities of & &    &   & &    &    &  \\
-  &                      &                           & transport fuels, uses & & 72 & 5 & & 55 & 23 & 86 \\
-  &                      &                           & household spending    & &    &   & &    &    &  \\
-  &                      &                           & survey data           & &    &   & &    &    &  \\
+6 & \citet{Chitnis:2015} & UK,                       & Estimated own/cross-  & & 72 & 5 & & 55 & 23 & 86 \\
+  &                      & 1964--2014                & price elasticities of & &    &   & &    &    &    \\
+  &                      &                           & transport fuels, uses & &    &   & &    &    &    \\
+  &                      &                           & household spending    & &    &   & &    &    &    \\
+  &                      &                           & survey data           & &    &   & &    &    &    \\
 \midrule
 7 & \cite{Stapleton:2016} & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
   &                       & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\

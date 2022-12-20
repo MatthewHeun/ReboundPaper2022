@@ -13,31 +13,46 @@
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
          $Re_{tot} = Re_{dir} + Re_{indir}$.}
 \label{tab:rebound_lamp_comparisons}
-\begin{tabular}{ c l c c c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
+\begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
   &                           & Coverage & Analysis method      & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
-0 & This paper (2022)         & &  & $\Sexpr{f_lmp("Re_empl")}$
-                                   & $\Sexpr{f_lmp("Re_sub")}$
-                                   & $\Sexpr{f_lmp("Re_inc")}$
-                                   & $\Sexpr{f_lmp("Re_macro")}$
-                                   & $\Sexpr{f_lmp("Re_dir")}$
-                                   & $\Sexpr{f_lmp("Re_indir")}$
-                                   & $\Sexpr{f_lmp("Re_tot")}$  \\
+ & This paper (2022) & U.S., & Energy, expenditure,   & $\Sexpr{f_lmp("Re_empl")}$
+                                                      & $\Sexpr{f_lmp("Re_sub")}$
+                                                      & $\Sexpr{f_lmp("Re_inc")}$
+                                                      & $\Sexpr{f_lmp("Re_macro")}$
+                                                      & $\Sexpr{f_lmp("Re_dir")}$
+                                                      & $\Sexpr{f_lmp("Re_indir")}$
+                                                      & $\Sexpr{f_lmp("Re_tot")}$  \\
+ &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
 1 & \cite{Guertin:2003aa}     & &      &             &            &            &              & 32--49     &              &  \\
 \midrule
-2 & \citet{Freire-Gonzalez:2011aa}& &  &             &            &            &              & 49         & 16           &  \\
+2 & \citet{Freire-Gonzalez:2011aa} & Catalonia, &  &             &            &            &              & 49         & 16           &  \\
+  &                                & Spain,     &  &             &            &            &              &            &              &  \\
+  &                                & 2000--2008 &  &             &            &            &              &            &              &  \\
 \midrule
-3 & \citet{Thomas:2013ab}     & &      &             &            &            &              & 10         & 10           &  \\
+4 & \citet{Thomas:2013ab} & U.S., & Expenditure/cross-price   & & & & & 10 & 10 &  \\
+  &                       & 2004  & elasticities of transport & & & & &    &    &  \\
+  &                       &       & fuels, using household    & & & & &    &    &  \\
+  &                       &       & spending survey data      & & & & &    &    &  \\
 \midrule
-4 & \citet{Borenstein:2015aa} & &      &             & 14         & 6          &              &            &              &  \\
+5 & \citet{Borenstein:2015aa} & U.S., & Microeconomic &  & 14      & 6 & & & &  \\
+  &                           & 2012  & framework     &  & (6--37) &   & & & &  \\
 \midrule
-5 & \citet{Chitnis:2015}      & &      &             &            &            &              & 41         &  8           &  \\
+6 & \citet{Chitnis:2015} & UK,                       & Estimated own/cross-  & & 14 & 35 & & 41 & 8 & 49 \\
+  &                      & 1964--2014                & price elasticities of & &    &    & &    &   &    \\
+  &                      &                           & transport fuels, uses & &    &    & &    &   &    \\
+  &                      &                           & household spending    & &    &    & &    &   &    \\
+  &                      &                           & survey data           & &    &    & &    &   &    \\
 \midrule
-6 & \cite{Duarte:2018aa}      & &      &             &            &            &              &            &              & 51 \\
+10 & \citet{Duarte:2018aa} & Spain,     & Dynamic CGE model, & & & & & & & 12          \\
+   &                       & 2010--2030 & efficiency shock   & & & & & & & (short run) \\
+   &                       &            &                    & & & & & & & 51          \\
+   &                       &            &                    & & & & & & & (long run)  \\
 \midrule
-7 & \citet{Barkhordar:2019aa} & &      &             &            &            &              & 28         &              & 43 \\
+7 & \citet{Barkhordar:2019aa} & Iran,      & Dynamic CGE model & & & & & 28        & & 43        \\
+  &                           & 2018--2040 &                   & & & & & (average) & & (average) \\
 \bottomrule
 \end{tabular}
 \end{center}
