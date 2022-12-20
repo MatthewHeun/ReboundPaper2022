@@ -29,7 +29,7 @@
                                                       & $\Sexpr{f_car("Re_tot")}$  \\
  &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
-1 & \citet{Small:2005aa}** & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
+1 & \cite{Small:2007aa}    & U.S.,      & Elasticity of VMT & & & & & 4.5 (short run, &  &  \\
   &                        & 1967--2001 & w.r.t.\ fuel cost & & & & & 1967--2001)     &  &  \\
   &                        &            & per mile          & & & & & 22.2 (long run, &  &  \\
   &                        &            &                   & & & & & 1967--2001)     &  &  \\
@@ -59,14 +59,13 @@
   &                      &                           & household spending    & &    &   & &    &    &  \\
   &                      &                           & survey data           & &    &   & &    &    &  \\
 \midrule
-7 & Stapleton ** (2016) & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
-  &                     & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\
+7 & \cite{Stapleton:2016} & UK         & Elasticity of VMT        & & & & & 9--36 & & \\
+  &                       & 1970--2011 & w.r.t.\ fuel cost/prices & & & & &       & & \\
 \midrule
-8 & Moshiri ** (2017)  & Canada,    & Price elasticity of & & & & & 82--88 & & \\
-  &                    & 1997--2009 & transport fuel,     & & & & &        & & \\
-  &                    &            & using household     & & & & &        & & \\
-  &                    &            & spending survey     & & & & &        & & \\
-  &                    &            & data                & & & & &        & & \\
+8 & \cite{Moshiri2017}  & Canada,    & Price elasticity of   & & & & & 82--88 & & \\
+  &                     & 1997--2009 & transport fuel, using & & & & &        & & \\
+  &                     &            & household spending    & & & & &        & & \\
+  &                     &            & survey data           & & & & &        & & \\
 \midrule
 9 & \citet{Dimitropoulos:2018aa} & Over half         & Meta study of 74         &   &  &            & & 10--12      &  & \\
   &                              & are U.S.\         & transport direct         &   &  &            & & (short run) &  & \\
@@ -74,10 +73,10 @@
   &                              &                   & using elasticity-        &   &  &            & & (long run)  &  & \\
   &                              &                   & based methods            &   &  &            & &             &  & \\
 \midrule
-10 & \citet{Duarte:2018aa} & Spain,     & & & & & & & & 26          \\
-   &                       & 2010--2030 & & & & & & & & (short run) \\
-   &                       &            & & & & & & & & 52          \\
-   &                       &            & & & & & & & & (long run)  \\
+10 & \citet{Duarte:2018aa} & Spain,     & Dynamic CGE model, & & & & & & & 26          \\
+   &                       & 2010--2030 & efficiency shock   & & & & & & & (short run) \\
+   &                       &            &                    & & & & & & & 52          \\
+   &                       &            &                    & & & & & & & (long run)  \\
 \bottomrule
 \end{tabular}
 \end{center}
