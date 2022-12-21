@@ -953,29 +953,27 @@ indirect income effect rebound is zero ($Re_{iinc} = 0$), as expected.
 %------------------------------
 
 Macro rebound~($Re_{\macro}$) is given by Eq.~(\ref{eq:Re_macro_def}).
-Substituting Eq.~(\ref{eq:N_dot_after_sub}) for net savings~($\rbinc{N}$) gives
+Substituting Eq.~(\ref{eq:N_dot_star_empl}) for net savings~($\raempl{N}$) gives
 
 \begin{equation}
-  Re_{\macro} = \frac{k \rate{G} I_E}{\Sdot}
-                                - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
-                                - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot}
-                                - \frac{k p_E I_E \Delta \rasub{E}_s}{\Sdot}
-                                - \frac{k \Delta \rasub{C}_o I_E}{\Sdot} \; .
+  % Re_{\macro} = \frac{k \rate{G} I_E}{\Sdot}
+  %                               - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
+  %                               - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot}
+  %                               - \frac{k p_E I_E \Delta \rasub{E}_s}{\Sdot}
+  %                               - \frac{k \Delta \rasub{C}_o I_E}{\Sdot} \; .
+  Re_{\macro} = \frac{k (p_E \Sdot - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md}) I_E}{\Sdot} \; .
 \end{equation}
 %
-Substituting Eq.~(\ref{eq:G_dot}) for $\rate{G}$
-and Eqs.~(\ref{eq:Re_md_def}), (\ref{eq:Re_dsub_def}), and (\ref{eq:Re_isub_def})
-for rebound terms gives
+Separating terms gives
 
 \begin{equation}
   Re_{\macro} = \frac{k p_E \cancel{\Sdot} I_E}{\cancel{\Sdot}}
                                 - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
-                                - k Re_{\md}
-                                - k p_E I_E Re_{dsub}
-                                - k Re_{isub} \; .
+                                - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot} \; .
 \end{equation}
 %
-Canceling terms and defining $Re_{cap}$ as
+Canceling terms, substituting Eq.~(\ref{eq:Re_md_def}) to obtain $Re_{\md}$, and
+defining $Re_{cap}$ as
 
 \begin{equation} \label{eq:Re_cap}
   Re_{cap} \equiv \Recapeqn{}
@@ -1016,7 +1014,7 @@ Substituting Eq.~(\ref{eq:Re_macro}) gives
   Re_{tot} = \; &Re_{emb} + Re_{\md}      & \mathrm{\empleffect}       \nonumber \\
                 &+ Re_{dsub} + Re_{isub}   & \mathrm{\subeffect}        \nonumber \\
                 &+ Re_{dinc} + Re_{iinc}   & \mathrm{\inceffect}        \nonumber \\
-                &+ k p_E I_E - k Re_{cap} - k Re_{\md} - k p_E I_E Re_{dsub} - k Re_{isub} \; .  & \mathrm{\macroeffect}
+                &+ k p_E I_E - k Re_{cap} - k Re_{\md} \; .  & \mathrm{\macroeffect}
 \end{align}
 %
 Rearranging distributes macro effect terms 
@@ -1039,11 +1037,11 @@ Eq.~(\ref{eq:Re_tot}) shows that determining seven rebound values,
   
   \item $Re_{dsub}$ (Eq.~(\ref{eq:Re_dsub_CES})),
   
-  \item $Re_{isub}$ (Eqs.~(\ref{eq:Re_isub_CES})), 
+  \item $Re_{isub}$ (Eq.~(\ref{eq:Re_isub_CES})), 
   
-  \item $Re_{dinc}$ (Eqs.~(\ref{eq:Re_dinc})), and
+  \item $Re_{dinc}$ (Eq.~(\ref{eq:Re_dinc})), and
   
-  \item $Re_{iinc}$ (Eqs.~(\ref{eq:Re_iinc})),
+  \item $Re_{iinc}$ (Eq.~(\ref{eq:Re_iinc})),
 
 \end{itemize}
 %
