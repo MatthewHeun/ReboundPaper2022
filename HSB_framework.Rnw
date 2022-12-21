@@ -1269,30 +1269,34 @@ occur at the microeconomic level.
 However, changes at the microeconomic level can 
 have important implications at the macroeconomic or economy-wide level.
 In the short run, these changes comprise price changes in
-other goods than the energy service: for instance, other goods in
+goods other than the energy service: 
+for instance, other goods to
 which the energy service is an input could become cheaper, and
 changes in demand from cross-price elasticities could alter
-other prices due as quantities supplied and demanded adjust to
-each other. The most notable price change is the price of
-energy itself which could fall due to lower deman. The energy price
-or market effect is therefore typically noted as an
+other prices as quantities supplied and demanded adjust to each other. 
+The most notable price change is the price of
+energy itself which could fall due to lower demand.
+The energy price or market effect is accordingly typically noted as an
 important macroeconomic rebound effect \citep{Borenstein:2015aa}.
-In the long-run, i.e. when capital stock can be replaced in response
+In the long-run, i.e.\ when capital stock can be replaced in response
 to changes in relative costs and demand, rebound
 could change further. These kinds of rebounds can be captured
 by a general equilibrium model \citep{Stern2020}.
 
 In addition, there are dynamic effects that arise from economic growth
-and structural change. It is one of the basic tenets of economics
+and structural change.
+It is one of the basic tenets of economics
 that productivity gains have been the main long-run driver of economic growth
-in the last couple of centuries \citep{Smith1776,Marx1867,Solow1957} and that such growth is accompanied by structural changes, i.e. a changing
-composition of economic activity \citep{Schumpeter1939,Kuznets1971}. 
+in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957} and
+that such growth is accompanied by structural changes, i.e.\ a changing
+composition of economic activity \citep{Schumpeter1939, Kuznets1971}. 
 Structural changes pose complicated problems for rebound, as
 network effects can lead to path-dependencies in 
-using low- or high-energy intensity technologies \citep{Arthur1989,Fouquet2016}.
+using low- or high-energy intensity technologies \citep{Arthur1989, Fouquet2016}.
 Structural changes also interact with economic growth.
 Industrialization has been a key driver of
-economic growth. We focus here on rebound from economic growth
+economic growth. 
+We focus here on rebound from economic growth
 as one important long-run dynamic factor in total rebound.
 %We think
 %rebound from grwoth is important because it could be argued to encompass and
