@@ -12,29 +12,29 @@ In this appendix, we show the relationship between the macro factor ($k$) and $\
 The relationship between the macro factor ($k$) and $\MPC$ spans
 the income and macro effects.
 In this framework, the device owner's net savings 
-after the substitution effect ($\rasub{N}$) is respent completely.
+after the emplacement effect ($\raempl{N}$) is respent completely.
 One may assume that firms and other consumers who receive the net savings have a 
 marginal propensity to re-spend of $\MPC$.
-The total spending throughout the economy of each year's net savings ($\rasub{N}$)
+The total spending throughout the economy of each year's net savings ($\raempl{N}$)
 is given by the infinite series
 
 \begin{equation} \label{eq:infinite_series_spending}
-  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N} \; ,
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N} \; ,
 \end{equation}
 %
-where the first term ($1 \times \rasub{N}$) represents spending of net savings by the device owner
-in the direct and indirect income effects, and
+where the first term ($1 \times \raempl{N}$) represents spending 
+of net savings after emplacement by the device owner and
 the remaining terms 
-[$(\MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N}$]
+[$(\MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N}$]
 represent macro-effect spending in the broader economy.
 
 The macro effect portion of the spending can be represented by the macro factor ($k$).
 
 \begin{equation} \label{eq:mpc_and_k}
-  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \rasub{N} = (1 + k) \rasub{N}
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N} = (1 + k) \raempl{N}
 \end{equation}
 
-Canceling $\rasub{N}$ and simplifying the infinite series to its converged fraction
+Canceling $\raempl{N}$ and simplifying the infinite series to its converged fraction
 (assuming $\MPC < 1$) gives
 
 \begin{equation}
