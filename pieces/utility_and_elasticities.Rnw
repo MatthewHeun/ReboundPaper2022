@@ -140,9 +140,9 @@ $\rasub{q}_o/\rbsub{q}_o$,
 respectively).
 In so doing, 
 utility models quantify the decrease in other goods consumption
-($\rasub{q}_o\rbsub{q}_o < 1$)
+($\rasub{q}_o/\rbsub{q}_o < 1$)
 caused by the increase of energy service consumption
-($\rasub{q}_s\rbsub{q}_s > 1$)
+($\rasub{q}_s/\rbsub{q}_s > 1$)
 resulting from the decrease of the energy service price ($\aempl{p}_s < \orig{p}_s$).
 Across the substitution effect, 
 the utility increase of the larger energy service consumption rate
@@ -190,7 +190,7 @@ is normalized by (indexed to) conditions prior to emplacement:
         + (1-a) \left( \frac{\rate{q}_o}{\rbempl{q}_o} \right)^\rho  \right]^{(1/\rho)} \; ,
 \end{equation}
 %
-where $\rho = (\sigma - 1)/\sigma$,
+where $\rho \equiv (\sigma - 1)/\sigma$,
 $a$ is a share parameter (determined below), and 
 $\sigma$ is the elasticity of substitution between
 the normalized consumption rate of the energy service and 
