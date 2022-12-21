@@ -1712,7 +1712,7 @@ using an early version of this framework.
 \label{sec:nomenclature}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{pieces/nomenclature.tex}
+\input{pieces/nomenclature_framework.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
