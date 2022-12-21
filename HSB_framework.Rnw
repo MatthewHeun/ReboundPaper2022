@@ -592,7 +592,7 @@ so the energy purchaser (the device owner) is a price taker.%
 \footnote{
   Relaxing the exogenous energy price assumption
   would require a general equilibrium model that is beyond the scope of this paper.
-  Rebound due to energy price change is included in the macro effect.
+  %Rebound due to energy price change is included in the macro effect.
 }
 %
 Initially, the device owner spends income ($\rorig{M}$)
