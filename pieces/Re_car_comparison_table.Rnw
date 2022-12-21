@@ -11,10 +11,7 @@
 \caption{Rebound magnitude comparisons for the car example. All numbers in \%.
          Note that 
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
-         $Re_{tot} = Re_{dir} + Re_{indir}$.
-         ``VMT'' is ``vehicle miles traveled.'' 
-         ``CGE'' is ``computable general equilibrium.''
-         ``w.r.t.'' is ``with respect to.''}
+         $Re_{tot} = Re_{dir} + Re_{indir}$.}
 \label{tab:rebound_car_comparisons}
 \begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule

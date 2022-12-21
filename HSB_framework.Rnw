@@ -1359,24 +1359,25 @@ That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side
 and demand-side effects both play a role as the consequences of the
 technology shock play themselves out.
 Furthermore, his approach has the advantage that it can be directly
-linked to our income effect and its consequences for macroeconomic rebound. 
+linked to the compensating variation and the income effect and
+their consequences for macroeconomic rebound. 
 \citeauthor{Borenstein:2015aa} also notes that scaling from net 
-savings ($\rasub{N}$) at the device level
+savings ($\raempl{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
 
 Another novel contribution of this paper
 (in addition to the framework itself)
 is the first operationalization of the macro rebound multiplier idea.
 To operationalize the macro rebound effect, we scale
-the net savings gained by the device owner at the microeconomic level ($\rasub{N}$)
+the net savings gained by the device owner at the microeconomic level ($\raempl{N}$)
 by a macro factor ($k$) that represents the economic activity generated
-by the infinite series of respending of net savings ($\rasub{N}$)
+by the infinite series of respending of net savings ($\raempl{N}$)
 throughout the economy.%
 \footnote{
   The macro factor ($k$) appears unitless,
   but its units are actually \$ of economic growth created 
-  per \$ of net savings spent
-  by the device owner in the income effect ($\rbinc{N}$).
+  per \$ of net savings gained
+  by the device owner in the emplacement effect ($\raempl{N}$).
 }
 %
 The macro factor ($k$) can be likened to 
@@ -1415,7 +1416,7 @@ the average energy intensity of the economy ($I_E$).
 Macro rebound is therefore given by
 
 \begin{equation} \label{eq:Re_macro_def}
-  Re_{\macro} = \frac{k \rbinc{N} I_E}{\Sdot} \; .
+  Re_{\macro} = \frac{k \raempl{N} I_E}{\Sdot} \; .
 \end{equation}
 %
 (See Table~\ref{tab:macroeffect}.) 

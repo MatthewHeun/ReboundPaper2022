@@ -348,12 +348,16 @@ bottom=2pt}
          {\etaratiostacked - 1}}
 
 % Equation for Re_macro
-\newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md} - p_E I_E Re_{dsub} - Re_{isub})}
+% \newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md} - p_E I_E Re_{dsub} - Re_{isub})}
+\newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md})}
 
 % Equation for Re_tot
-\newcommand{\Retoteqn}{&Re_{emb} - k Re_{cap} + (1-k) Re_{\md}         \nonumber \\
-                       &+ (1 - k p_E I_E) Re_{dsub} + (1 - k) Re_{isub}   \nonumber \\
-                       &+ Re_{dinc} + Re_{iinc} +  k p_E I_E}
+% \newcommand{\Retoteqn}{&Re_{emb} - k Re_{cap} + (1-k) Re_{\md}         \nonumber \\
+%                        &+ (1 - k p_E I_E) Re_{dsub} + (1 - k) Re_{isub}   \nonumber \\
+%                        &+ Re_{dinc} + Re_{iinc} +  k p_E I_E}
+\newcommand{\Retoteqn}{&Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\md}   \nonumber \\
+                       &+ Re_{dsub} + Re_{isub}                              \nonumber \\
+                       &+ Re_{dinc} + Re_{iinc}}
                  
 
 %%%% Income preference equations
