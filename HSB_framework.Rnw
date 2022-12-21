@@ -424,7 +424,7 @@ even if we don't later distinguish among them.%
 %
 This well accepted typology is complemented by
 recent general equilibrium approaches to rebound
-analysis. They include microeconomic effects and
+analysis. General equilibrium approaches include microeconomic effects 
 as described here but also allow 
 price changes in other goods including energy.
 However, they do not include dynamic effects. 
