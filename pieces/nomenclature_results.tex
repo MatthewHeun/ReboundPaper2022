@@ -1,7 +1,7 @@
-% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
-% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
 % before building the paper.
-%!TEX root = ../HSB_framework.Rnw
+%!TEX root = ../HSB_results.Rnw
 
 Presentation of the comprehensive rebound analysis framework is aided by a 
 nomenclature that describes energy stages and rebound effects.
@@ -42,6 +42,8 @@ Table~\ref{tab:subscripts} shows subscripts and their meanings.
   $S$  & energy cost savings [\$] \\
   $t$  & energy conversion device lifetime [years] \\
   $u$  & utility [utils] \\
+  $x$  & the abscissa coordinate \\
+  $y$  & the ordinate coordinate \\
   \bottomrule
 \end{tabular}
 \label{tab:symbols}
@@ -68,6 +70,7 @@ Table~\ref{tab:subscripts} shows subscripts and their meanings.
   $\eqspsC$   & compensated energy service price ($p_s$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
   $\eqopsC$   & compensated energy service price ($p_s$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
   $\eta$      & final-energy-to-service efficiency [vehicle-km/MJ] \\
+  $\rho$      & exponent in the CES utility function, $\rho \equiv (\sigma - 1) / \sigma$ [--] \\
   $\sigma$    & elasticity of substitution between the energy service ($\rbempl{q}_s$) and other goods ($\rbempl{q}_o$) [--] \\
   \bottomrule
 \end{tabular}
@@ -86,14 +89,23 @@ Table~\ref{tab:subscripts} shows subscripts and their meanings.
   \toprule
   Abbreviation & Meaning \\
   \midrule
-  APF & aggregate production function \\
-  CES & constant elasticity of substitution \\
-  CV & compensating variation \\
-  EEU & energy efficiency upgrade \\
-  GDP & gross domestic product \\
-  MPC & marginal propensity to consume \\
-  mpg & miles per U.S.\ gallon \\
-  U.S.\ & United States \\
+  APF    & aggregate production function \\
+  CES    & constant elasticity of substitution \\
+  CGE    & computable general equilibrium \\
+  CV     & compensating variation \\
+  EEU    & energy efficiency upgrade \\
+  EPSRC  & engineering and physical sciences research council \\
+  GDP    & gross domestic product \\
+  LAIDS  & linear approximation to almost ideal demand system \\
+  LED    & light emitting diode \\
+  MPC    & marginal propensity to consume \\
+  mpg    & miles per U.S.\ gallon \\
+  RECS   & residential energy consumption survey \\
+  UK     & United Kingdom \\
+  UKRI   & UK research and innovation \\
+  U.S.\  & United States \\
+  VMT    & vehicle miles traveled \\
+  w.r.t. & with respect to \\
   \bottomrule
 \end{tabular}
 \label{tab:abbreviations}
@@ -135,30 +147,31 @@ Table~\ref{tab:subscripts} shows subscripts and their meanings.
   \toprule
   Subscript & Meaning \\
   \midrule
-  $0$ & quantity at an initial time \\
-  $1$ & a specific point on a consumption plane \\
-  $c$ & compensated \\
-  $cap$ & capital costs \\
-  $dev$ & device \\
-  $dempl$ & direct emplacement effect \\
-  $d$ & disposal \\
-  $dinc$ & direct income effect \\
-  $dir$ & direct effects (at the energy conversion device) \\
-  $dsub$ & direct substitution effect \\
-  $emb$ & embodied \\
-  $i$ & index for other goods purchased in the economy \\
-  $iempl$ & indirect emplacement effects \\
-  $iinc$ & indirect income effect \\
-  $indir$ & indirect effects (beyond the energy conversion device) \\
-  $isub$ & indirect substitution effect \\
-  $\life$ & lifetime \\
-  $m$ & maintenance \\
-  $\md$ & maintenance and disposal costs \\
-  $o$ & other expenditures (besides energy) by the device owner \\
-  $own$ & ownership duration \\
+  $0$      & quantity at an initial time \\
+  $1$      & a specific point on the consumption plane \\
+  $c$      & compensated \\
+  $cap$    & capital costs \\
+  $dev$    & device \\
+  $dempl$  & direct emplacement effect \\
+  $dinc$   & direct income effect \\
+  $dir$    & direct effects (at the energy conversion device) \\
+  $dsub$   & direct substitution effect \\
+  $E$      & energy \\
+  $emb$    & embodied \\
+  $empl$   & emplacement effect \\
+  $iempl$  & indirect emplacement effects \\
+  $iinc$   & indirect income effect \\
+  $inc$    & income effect \\
+  $indir$  & indirect effects (beyond the energy conversion device) \\
+  $isub$   & indirect substitution effect \\
+  $\life$  & lifetime \\
   $\macro$ & macro effect \\
-  $s$ & service stage of the energy conversion chain \\
-  $tot$ & sum of all rebound effects in the framework \\
+  $\md$    & maintenance and disposal costs \\
+  $o$      & other expenditures (besides energy) by the device owner \\
+  $own$    & ownership duration \\
+  $s$      & service stage of the energy conversion chain \\
+  $sub$    & substitution effect \\
+  $tot$    & sum of all rebound effects in the framework \\
   \bottomrule
 \end{tabular}
 \label{tab:subscripts}
