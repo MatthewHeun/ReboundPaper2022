@@ -26,11 +26,11 @@
                                                       & $\Sexpr{f_lmp("Re_tot")}$  \\
  &                   & 2020  & and consumption planes & & & & & & &   \\
 \midrule
-1 & \cite{Guertin:2003aa}     & &      &             &            &            &              & 32--49     &              &  \\
+1 & \cite{Guertin:2003aa} & & & & & & & 32--49 & &  \\
 \midrule
-2 & \citet{Freire-Gonzalez:2011aa} & Catalonia, &  &             &            &            &              & 49         & 16           &  \\
-  &                                & Spain,     &  &             &            &            &              &            &              &  \\
-  &                                & 2000--2008 &  &             &            &            &              &            &              &  \\
+2 & \citet{Freire-Gonzalez:2011aa} & Catalonia, & & & & & & 49 & 16 &  \\
+  &                                & Spain,     & & & & & &    &    &  \\
+  &                                & 2000--2008 & & & & & &    &    &  \\
 \midrule
 3 & \citet{Thomas:2013ab} & U.S., & Expenditure/cross-price   & & & & & 10 & 10 &  \\
   &                       & 2004  & elasticities of transport & & & & &    &    &  \\
