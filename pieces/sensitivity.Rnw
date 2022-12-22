@@ -44,17 +44,19 @@ is noted at the end of each subsection.
 
 <<efficiency_ratios, echo=FALSE>>=
 car_efficiency_ratio <- (rebound_results %>% 
-                           dplyr::filter(Case == "Car") %>% 
-                           dplyr::select("eta_engr_units_star") / rebound_results %>% 
-                           dplyr::filter(Case == "Car") %>% 
+                           dplyr::filter(Case == "Car (k = 3)") %>% 
+                           dplyr::select("eta_engr_units_star") / 
+                           rebound_results %>% 
+                           dplyr::filter(Case == "Car (k = 3)") %>% 
                            dplyr::select("eta_engr_units_orig")) %>% 
   unlist() %>% 
   formatC(digits = 3)
 
 lamp_efficacy_ratio <- (rebound_results %>% 
-                          dplyr::filter(Case == "Lamp") %>%
-                          dplyr::select("eta_engr_units_star") / rebound_results %>%
-                          dplyr::filter(Case == "Lamp") %>%
+                          dplyr::filter(Case == "Lamp (k = 3)") %>%
+                          dplyr::select("eta_engr_units_star") / 
+                          rebound_results %>%
+                          dplyr::filter(Case == "Lamp (k = 3)") %>%
                           dplyr::select("eta_engr_units_orig")) %>% 
   unlist() %>% 
   formatC(digits = 3)
@@ -84,9 +86,13 @@ Each successive 5~mpg boost in fuel economy
 saves less energy than the previous 5~mpg boost in fuel economy.
 
 
-<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). $k$ is set to its calibrated value (3). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
 actual_cases <- rebound_data %>% 
-  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car", "Lamp"))
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car (k = 3)", "Lamp (k = 3)")) %>% 
+  # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
+  dplyr::mutate(
+    Case = c("Car", "Lamp")
+  )
 
 eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
                        Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
@@ -203,7 +209,7 @@ increases (decreases) proportionally,
 and the actual energy savings rate decreases (increases) accordingly.
 
 
-<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
 Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
@@ -231,6 +237,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
                 size = ggplot2::element_blank(),
                 linewidth = ggplot2::element_blank(),
                 linetype = ggplot2::element_blank()) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 0.7, by = 0.1)) +
   MKHthemes::xy_theme() + 
   ggplot2::theme(legend.text.align = 0, 
                  # Move the facet labels out of the graphs slightly.
@@ -263,7 +270,7 @@ greater service efficiency ($\amacro{\eta}$).
 $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
 not independently.
 
-<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
                               Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
 
@@ -279,6 +286,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_se
                 size = ggplot2::element_blank(),
                 linewidth = ggplot2::element_blank(),
                 linetype = ggplot2::element_blank()) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 0.7, by = 0.1)) +
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text.align = 0,
                  # Move the facet labels out of the graphs slightly.
@@ -368,7 +376,7 @@ maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
 energy intensity of the economy ($I_E$), and
 energy service consumption rate ($\rbempl{q}_s$).
 
-<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines.", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
 p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
                         Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
 
@@ -380,7 +388,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
                       # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
                       mapping = ggplot2::aes(xintercept = p_E_engr_units), 
                       linewidth = 0.1) +
-  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) +
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 2, by = 0.2)) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
   ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/kW-hr (Lamp)]"),
                 y = "Rebound terms [-]",
@@ -432,7 +440,7 @@ However, a univariate sensitivity study cannot capture this effect and is
 best used for smaller variations in $\eqspsUC$
 about a nominal value.
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). $k$ is set to its calibrated value (3). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)))
 
@@ -442,6 +450,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eps_sens_par
                     graph_params = Re_graph_params) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::scale_x_reverse() +
+  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
   ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
@@ -473,14 +482,14 @@ independent of $I_E$, because
 different values of $k$ imply a different macroeconomy.
 
 <<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4, fig.align="center">>=
-k_sens_params <- list(Car = list(k = seq(0.5, 3.5, by = 0.5)),
-                      Lamp = list(k = seq(0.5, 3.5, by = 0.5)))
+k_sens_params <- list(Car = list(k = seq(0.5, 5, by = 0.5)),
+                      Lamp = list(k = seq(0.5, 5, by = 0.5)))
 
 rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_params,
                     x_var = "k", 
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
-  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.2)) + 
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.1)) + 
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::labs(x = expression("k [-]"),
                 y = "Rebound terms [-]",
