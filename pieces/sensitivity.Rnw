@@ -80,8 +80,8 @@ a savings of $\Sdot = 0.67$ gallons.
 Another 5 mpg boost in efficiency (to $\amacro{\eta} = 35$ mpg)
 will use $\aempl{E}_s = 2.86$ gal to drive 100 miles, 
 a further expected savings of only $\Sdot = 0.47$ gallons.
-Each successive 5 mpg boost in fuel economy 
-saves less energy than the previous 5 mpg boost in fuel economy.
+Each successive 5~mpg boost in fuel economy 
+saves less energy than the previous 5~mpg boost in fuel economy.
 
 
 <<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
