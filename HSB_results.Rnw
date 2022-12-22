@@ -2024,6 +2024,11 @@ rebound_results %>%
 @
 
 
+Univariate sensitivity studies for both examples (car and lamp)
+can be found in Appendix~\ref{sec:sensitivity_analyses}.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 \label{sec:discussion}
