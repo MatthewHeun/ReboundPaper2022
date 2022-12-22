@@ -63,10 +63,10 @@
   &                       &                & to the Almost Ideal       & & & & &    &       &     \\
   &                       &                & Demand System (LAIDS)     & & & & &    &       &     \\
 \midrule
-10 & \citet{Shojaeddini:2022aa} & U.S., & Cross sectional data from & & & & &    &       &     \\
-   &                            & 2009  & the 2009 Residential      & & & & &    &       &     \\
-   &                            &       & Energy Consumption        & & & & &    &       &     \\
-   &                            &       & Survey (RECS)             & & & & &    &       &     \\
+10 & \citet{Shojaeddini:2022aa} & U.S., & Cross sectional data from & & & & & & &     \\
+   &                            & 2009  & the 2009 Residential      & & & & & & &     \\
+   &                            &       & Energy Consumption        & & & & & & &     \\
+   &                            &       & Survey (RECS)             & & & & & & &     \\
 \bottomrule
 \end{tabular}
 \end{center}
