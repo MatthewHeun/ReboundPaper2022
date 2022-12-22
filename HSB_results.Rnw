@@ -2611,5 +2611,13 @@ using an early version of this framework.
 \input{pieces/rebound_path_graph_details.tex}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sensitivity analyses}
+\label{sec:sensitivity_analyses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%t
+
+<<SensitivityAppendix, child="pieces/sensitivity.Rnw">>=
+@
+
 
 \end{document}
