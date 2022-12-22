@@ -16,12 +16,14 @@ capital cost ($\amacro{C}_{cap}$),
 energy price ($p_E$),
 uncompensated price elasticity of energy service demand ($\eqspsUC$), 
 and the macro factor ($k$).
-Sensitivity analyses must be interpreted carefully,
-because rebound parameters are not expected to be 
-independent from each other.
+Univariate sensitivity analyses 
+(the kind shown here)
+should be interpreted carefully,
+because some rebound parameters are not expected to be 
+independent from others.
 
-In each subsection below, a series of graphs
-shows the effects of varying each of these five key rebound parameters
+In each subsection below, a figure
+shows the effect of independently varying each of five key rebound parameters
 ($\amacro{\eta}$, 
   $\amacro{C}_{cap}$, 
   $p_E$, 
@@ -33,8 +35,8 @@ on total energy rebound ($Re_{tot}$) and its components
 In the graphs, 
 nominal values for the rebound parameters are shown as points, 
 and sensitivity trends are shown as lines. 
-A limitation of each sensitivity analysis 
-is noted at the end of each subsection.
+% A limitation of each sensitivity analysis 
+% is noted at the end of each subsection.
 
 
 %++++++++++++++++++++++++++++++
@@ -360,10 +362,10 @@ providing an indication of possible energy price variations.
 All other things being equal, 
 if U.S.\ residents paid Germany's energy prices,
 energy rebound would be 
-$\Sexpr{formatC(unlist(Car_Germany_Re_tot * 100), digits = 3)}$\%
+$\Sexpr{formatC(unlist(Car_Germany_Re_tot * 100), digits = 2)}$\%
 for the car example and 
 $\Sexpr{formatC(unlist(Lamp_Germany_Re_tot * 100), digits = 3)}$\%
-for the lamp example, assuming $k = 1$.
+for the lamp example.
 
 % A limitation of the energy price sensitivity analysis arises from the fact that
 % energy price is not independent of other parameters.
@@ -456,9 +458,9 @@ Re_tot_car_with_lamp_e_ps_qs <- eps_graph_parametric_data %>%
   dplyr::filter(abs(.data[["e_qs_ps_UC"]] - eps_lamp_base) < 0.00001) %>% 
   dplyr::select(Re_tot)
 Re_tot_car_with_lamp_e_ps_qs <- Re_tot_car_with_lamp_e_ps_qs %>% 
-  magrittr::multiply_by(100) %>% 
-  unlist() %>% 
-  formatC(format = "f", digits = 1)
+  # magrittr::multiply_by(100) %>% 
+  unlist() # %>% 
+  # formatC(format = "f", digits = 1)
 @
 
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
@@ -472,8 +474,8 @@ is the larger absolute value of elasticity ($\eqspsUC$)
 for the lamp ($\Sexpr{eqspsUC_lamp}$) compared to the car ($\Sexpr{eqspsUC_car}$).
 Were the car to have the same elasticity as the lamp ($\Sexpr{eqspsUC_lamp}$), 
 total rebound would be closer for both examples 
-($\Sexpr{Re_tot_car_with_lamp_e_ps_qs}$\% for the car and 
-\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 3)}\% for the lamp).
+($\Sexpr{formatC(Re_tot_car_with_lamp_e_ps_qs*100, digits = 2)}$\% for the car and 
+$\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 2)}$\% for the lamp).
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
 ($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC$.
 For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
