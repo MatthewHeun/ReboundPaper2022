@@ -10,12 +10,14 @@
 \begin{center}
 \caption{Rebound magnitude comparisons for the car example. All numbers in \%.
          Note that 
-         $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, and
+         $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, 
+         $Re_{tot} = Re_{micro} + Re_{macro}$, and 
          $Re_{tot} = Re_{dir} + Re_{indir}$.}
 \label{tab:rebound_car_comparisons}
 \begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
-  &                           & Coverage & Analysis method     & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  & &          &                 & \multicolumn{3}{c}{$Re_{micro}$}      & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  & & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ &              &            &              &            \\ 
 \midrule
  & This paper (2023) & U.S., & Energy, expenditure,   & $\Sexpr{f_car("Re_empl")}$
                                                       & $\Sexpr{f_car("Re_sub")}$
