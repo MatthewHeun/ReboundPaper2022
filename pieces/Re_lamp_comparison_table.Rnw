@@ -15,7 +15,7 @@
 \label{tab:rebound_lamp_comparisons}
 \begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
 \toprule
-  &                           & Coverage & Analysis method      & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  & & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
  & This paper (2023) & U.S., & Energy, expenditure,   & $\Sexpr{f_lmp("Re_empl")}$
                                                       & $\Sexpr{f_lmp("Re_sub")}$
@@ -63,10 +63,10 @@
   &                       &                & to the Almost Ideal       & & & & &    &       &     \\
   &                       &                & Demand System (LAIDS)     & & & & &    &       &     \\
 \midrule
-10 & \citet{Shojaeddini:2022aa} & U.S., & Cross sectional data from & & & & & & &     \\
-   &                            & 2009  & the 2009 Residential      & & & & & & &     \\
-   &                            &       & Energy Consumption        & & & & & & &     \\
-   &                            &       & Survey (RECS)             & & & & & & &     \\
+10 & \citet{Shojaeddini:2022aa} & U.S., & Cross sectional data from & & & & & & & \\
+   &                            & 2009  & the 2009 Residential      & & & & & & & \\
+   &                            &       & Energy Consumption        & & & & & & & \\
+   &                            &       & Survey (RECS)             & & & & & & & \\
 \bottomrule
 \end{tabular}
 \end{center}
