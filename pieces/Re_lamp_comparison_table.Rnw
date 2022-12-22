@@ -17,7 +17,7 @@
 \toprule
   &                           & Coverage & Analysis method      & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
 \midrule
- & This paper (2022) & U.S., & Energy, expenditure,   & $\Sexpr{f_lmp("Re_empl")}$
+ & This paper (2023) & U.S., & Energy, expenditure,   & $\Sexpr{f_lmp("Re_empl")}$
                                                       & $\Sexpr{f_lmp("Re_sub")}$
                                                       & $\Sexpr{f_lmp("Re_inc")}$
                                                       & $\Sexpr{f_lmp("Re_macro")}$

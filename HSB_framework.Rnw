@@ -1563,7 +1563,7 @@ No other framework even discusses the link between macro and micro rebound effec
 leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
 apart from \citet{Borenstein:2015aa}. 
 Our framework operationalizes the macro effect
-earning \rating{50} in the ``This paper (2022)'' column.
+earning \rating{50} in the ``This paper (2023)'' column.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly ``marginal'' or small improvements in efficiency, 
 excluding the analysis of important non-incremental upgrades
@@ -1591,7 +1591,7 @@ of a single fuel and a single energy service.
 In particular, non-marginal price changes and the macro effect
 require conceptual development and operationalization.
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
-hence we fill the ``This paper (2022)'' column 
+hence we fill the ``This paper (2023)'' column 
 with mostly filled circles (\rating{100}).
 
 
