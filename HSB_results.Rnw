@@ -95,8 +95,8 @@ the framework developed in Part~I
 and the visualization advances described in Part~II 
 to calculate and show total rebound for two case studies: 
 energy efficiency upgrades of
-a car (**** 48\% ****) and
-an electric lamp (**** 80\% ****).
+a car (47\%) and
+an electric lamp (67\%).
 Comparison of our rebound values to previously estimated values is provided.
 \end{abstract}
 
@@ -2610,6 +2610,14 @@ using an early version of this framework.
 
 \input{pieces/rebound_path_graph_details.tex}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sensitivity analyses}
+\label{sec:sensitivity_analyses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%t
+
+<<SensitivityAppendix, child="pieces/sensitivity.Rnw">>=
+@
 
 
 \end{document}
