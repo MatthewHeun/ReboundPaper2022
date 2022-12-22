@@ -28,7 +28,7 @@ shows the effects of varying each of these five key rebound parameters
   $\eqspsUC$, 
   and $k$)
 on total energy rebound ($Re_{tot}$) and its components
-($Re_{emb}$, $Re_{md}$, $Re_{dsub}$, $Re_{isub}$,
+($Re_{emb}$, $Re_{\md}$, $Re_{dsub}$, $Re_{isub}$,
   $Re_{dinc}$, $Re_{iinc}$, and $Re_{\macro}$).
 In the graphs, 
 nominal values for the rebound parameters are shown as points, 
@@ -129,7 +129,6 @@ sensitivity_graphs(.parametric_data = eta_sens_data,
   ggplot2::scale_discrete_manual(aesthetics = "linewidth", values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
   ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
   ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
-                # y = expression("Takeback rate and "*dot(S)[dev]*" [MJ/yr]"),
                 y = expression(""*dot(S)[dev]*" and takeback rate [MJ/yr]"),
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -144,7 +143,7 @@ sensitivity_graphs(.parametric_data = eta_sens_data,
   
 Saturation can be seen mathematically, too.
 Taking the limit as $\amacro{\eta} \rightarrow \infty$ 
-in Eq.~(\ref{eq:Sdot}) gives $\Sdot = \rbempl{E}_s$, 
+in Eq.~(\ref{PartI-eq:Sdot}) of Part~I gives $\Sdot = \rbempl{E}_s$, 
 not $\infty$. 
 Thus, efficiency saturation must occur.
 Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}
@@ -188,10 +187,10 @@ direct substitution rebound ($Re_{dsub}$) is the
 rebound component 
 most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
 
-A limitation of the energy efficiency sensitivity analysis is that 
-post-EEU efficiency ($\amacro{\eta}$)
-is unlikely to be independent of other factors, 
-such as capital cost ($\amacro{C}_{cap}$).
+% A limitation of the energy efficiency sensitivity analysis is that 
+% post-EEU efficiency ($\amacro{\eta}$)
+% is unlikely to be independent of other factors, 
+% such as capital cost ($\amacro{C}_{cap}$).
 
 Note that the sensitivity analysis on post-upgrade efficiency 
 ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
@@ -260,15 +259,15 @@ leading to smaller income, macro, and total rebound.
 The same effects would be observed
 with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 
-A limitation of the capital cost sensitivity analysis is that
-capital cost ($\amacro{C}_{cap}$) is unlikely to be
-independent of $\amacro{\eta}$.
-Within a given energy efficiency technology
-(e.g., hybrid cars or LED lamps),
-greater capital cost ($\amacro{C}_{cap}$) may be associated with
-greater service efficiency ($\amacro{\eta}$).
-$\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
-not independently.
+% A limitation of the capital cost sensitivity analysis is that
+% capital cost ($\amacro{C}_{cap}$) is unlikely to be
+% independent of $\amacro{\eta}$.
+% Within a given energy efficiency technology
+% (e.g., hybrid cars or LED lamps),
+% greater capital cost ($\amacro{C}_{cap}$) may be associated with
+% greater service efficiency ($\amacro{\eta}$).
+% $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
+% not independently.
 
 <<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
@@ -366,15 +365,15 @@ for the car example and
 $\Sexpr{formatC(unlist(Lamp_Germany_Re_tot * 100), digits = 3)}$\%
 for the lamp example, assuming $k = 1$.
 
-A limitation of the energy price sensitivity analysis arises from the fact that
-energy price is not independent of other parameters.
-Indeed, other rebound parameters
-would change along with energy price
-(especially if moving from one country to another),
-including capital cost ($\amacro{C}_{cap}$), 
-maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
-energy intensity of the economy ($I_E$), and
-energy service consumption rate ($\rbempl{q}_s$).
+% A limitation of the energy price sensitivity analysis arises from the fact that
+% energy price is not independent of other parameters.
+% Indeed, other rebound parameters
+% would change along with energy price
+% (especially if moving from one country to another),
+% including capital cost ($\amacro{C}_{cap}$), 
+% maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
+% energy intensity of the economy ($I_E$), and
+% energy service consumption rate ($\rbempl{q}_s$).
 
 <<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
 p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
@@ -425,20 +424,20 @@ For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
 substantially with $\eqspsUC$, 
 because net savings increases substantially with $\eqspsUC$. 
 
-A limitation of the elasticity sensitivity study derives from limitations of the 
-CES utility model itself, which constrains price elasticity variation
-given an elasticity of substitution.
-Uneconomic conditions should be avoided.
-For example, negative direct substitution rebound ($Re_{dsub} < 0$)
-is obtained when $\left| \eqspsUC \right| < \fCs$,
-because the elasticity of substitution goes negative ($\sigma < 0$).
-(See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
-In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
-would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
-thereby avoiding the uneconomic condition.
-However, a univariate sensitivity study cannot capture this effect and is
-best used for smaller variations in $\eqspsUC$
-about a nominal value.
+% A limitation of the elasticity sensitivity study derives from limitations of the 
+% CES utility model itself, which constrains price elasticity variation
+% given an elasticity of substitution.
+% Uneconomic conditions should be avoided.
+% For example, negative direct substitution rebound ($Re_{dsub} < 0$)
+% is obtained when $\left| \eqspsUC \right| < \fCs$,
+% because the elasticity of substitution goes negative ($\sigma < 0$).
+% (See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
+% In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
+% would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
+% thereby avoiding the uneconomic condition.
+% However, a univariate sensitivity study cannot capture this effect and is
+% best used for smaller variations in $\eqspsUC$
+% about a nominal value.
 
 <<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). $k$ is set to its calibrated value (3). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)),
@@ -476,10 +475,10 @@ The macro factor has a linear effect on total rebound ($Re_{tot}$)
 through the macro rebound component ($Re_{\macro}$).
 All other rebound components are constant when $k$ is varied independently.
 
-A limitation of the macro factor sensitivity analysis is that
-the macro factor ($k$) is unlikely to be 
-independent of $I_E$, because 
-different values of $k$ imply a different macroeconomy.
+% A limitation of the macro factor sensitivity analysis is that
+% the macro factor ($k$) is unlikely to be 
+% independent of $I_E$, because 
+% different values of $k$ imply a different macroeconomy.
 
 <<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4, fig.align="center">>=
 k_sens_params <- list(Car = list(k = seq(0.5, 5, by = 0.5)),
