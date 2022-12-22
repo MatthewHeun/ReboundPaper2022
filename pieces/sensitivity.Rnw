@@ -400,7 +400,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
 \label{sec:effect_of_elasticity}
 %++++++++++++++++++++++++++++++
 
-  Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
+Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
 with the uncompensated price elasticity of energy service demand ($\eqspsUC$).
 The effect is exponential, and
 total rebound increases with larger negative values of $\eqspsUC$, as expected.
