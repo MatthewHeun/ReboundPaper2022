@@ -502,9 +502,26 @@ Substituting $\sigma$ from Section~\ref{sec:elasticity_ces} (Eq.~(\ref{eq:sigma}
 
 
 %------------------------------
-\subsubsection{Elasticity for the CES utility model ($\sigma$)} 
+\subsubsection{Elasticities for the CES utility model} 
 \label{sec:elasticity_ces}
 %------------------------------
+
+Only one elasticity is required for the CES utility model:
+the elasticity of substitution between the energy service 
+and other goods ($\sigma$). 
+Although only $\sigma$ is required to fully describe the CES utility model, 
+it is interesting to note that,
+while not needed,
+both the compensated own price elasticity of energy service demand~($\eqspsC$) and
+the compensated cross price elasticity of other goods demand~($\eqopsC$)
+can be determined from the elasticity of substitution~($\sigma$).
+The subsections below discuss these elasticities and show how to determine each.
+
+
+%..............................
+\paragraph{Elasticity of substitution for the CES utility model ($\sigma$)} 
+\label{sec:sigma_CES}
+%..............................
 
 \citet{Gortz1977} shows that
 the elasticity of substitution ($\sigma$)
@@ -525,6 +542,20 @@ can be determined from two pieces of readily available information:
         from Eq.~(\ref{eq:fCs})).
 
 \end{enumerate*}
+
+
+%..............................
+\paragraph{Compensated own price elasticity of energy service demand for the CES utility model ($\eqspsC$)} 
+\label{sec:eqspsC_CES}
+%..............................
+
+
+
+%..............................
+\paragraph{Compensated cross price elasticity of energy service demand for the CES utility model ($\eqopsC$)} 
+\label{sec:eqopsC_CES}
+%..............................
+
 
 
 %++++++++++++++++++++++++++++++
