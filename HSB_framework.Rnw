@@ -1034,7 +1034,7 @@ which can be rearranged to
 To find the post-substitution effect point ($\wedge$),
 we solve for the location on the indifference curve
 where its slope is equal to the slope of the
-original expenditure line, 
+expenditure line after the EEU, 
 assuming the CES utility model.%
 \footnote{
   Other utility models could be used; however, 
