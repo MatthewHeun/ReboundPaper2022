@@ -1047,6 +1047,7 @@ assuming the CES utility model.%
   and substituted into Eqs.~\ref{eq:Re_dsub_prelim} and~\ref{eq:Re_isub_prelim}, 
   respectively.
 }
+%
 The results are
 
 \begin{equation} \label{eq:q_s_solution}
