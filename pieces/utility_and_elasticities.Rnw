@@ -55,7 +55,7 @@ in this framework.
 (See Section~\ref{sec:sub_effect_main_paper}.)
 Furthermore,
 the CES utility model is needed for 
-the example EEUs in this paper,
+the example EEUs in Part~II,
 which have large, non-marginal
 percentage increases in energy efficiency.
 
