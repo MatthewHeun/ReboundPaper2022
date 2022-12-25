@@ -519,7 +519,7 @@ The subsections below discuss these elasticities and show how to determine each.
 
 
 %..............................
-\paragraph{Elasticity of substitution for the CES utility model ($\sigma$)} 
+\paragraph{Elasticity of substitution ($\sigma$)} 
 \label{sec:sigma_CES}
 %..............................
 
@@ -545,14 +545,29 @@ can be determined from two pieces of readily available information:
 
 
 %..............................
-\paragraph{Compensated own price elasticity of energy service demand for the CES utility model ($\eqspsC$)} 
+\paragraph{Compensated own price elasticity of energy service demand ($\eqspsC$)} 
 \label{sec:eqspsC_CES}
 %..............................
 
+The compensated own price elasticity of energy service demand ($\eqspsC$)
+gives the percentage change of the consumption rate of the energy service ($\rate{q}_s$)
+as the price of the energy service ($\amacro{p}_s$) changes 
+as a result of the efficiency increase of the EEU
+under the constraint that utility is unchanged across the substitution effect.
+In the CES utility model,
+the compensated own price elasticity of energy service demand ($\eqspsC$)
+is not constant (as in the approximate utility model).
+Rather, $\eqspsC$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
+The definition of $\eqspsC$ is 
+
+\begin{equation} \label{eq:epsqsC_def}
+  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \frac{\partial \rasub{q}_s}{\partial \amacro{p}_s} \; .
+\end{equation}
+%
 
 
 %..............................
-\paragraph{Compensated cross price elasticity of energy service demand for the CES utility model ($\eqopsC$)} 
+\paragraph{Compensated cross price elasticity of energy service demand ($\eqopsC$)} 
 \label{sec:eqopsC_CES}
 %..............................
 
