@@ -569,7 +569,8 @@ we need to first find the partial derivative of an expression for the rate of en
 as a function of energy service price~($\amacro{p}_s$)
 with respect to energy service price~($\amacro{p}_s$) at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
-That equation was already derived as Eq.~(\ref{eq:q_s_solution}) and repeated here.
+The equation from which the derivation commences 
+was already derived as Eq.~(\ref{eq:q_s_solution}) and is repeated here for convenience.
 
 \begin{equation}
   \frac{\rasub{q}_s}{\rbempl{q}_s} = \qssolution{} \tag{\ref{eq:q_s_solution}}
