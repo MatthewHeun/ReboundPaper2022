@@ -553,17 +553,36 @@ The compensated own price elasticity of energy service demand ($\eqspsC$)
 gives the percentage change of the consumption rate of the energy service ($\rate{q}_s$)
 as the price of the energy service ($\amacro{p}_s$) changes 
 as a result of the efficiency increase of the EEU
-under the constraint that utility is unchanged across the substitution effect.
+under the constraint that utility is unchanged across the substitution effect ($\rate{u} = \rbsub{u} = \rasub{u}$).
 In the CES utility model,
 the compensated own price elasticity of energy service demand ($\eqspsC$)
-is not constant (as in the approximate utility model).
+is not constant (as in the approximate utility model above).
 Rather, $\eqspsC$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
 The definition of $\eqspsC$ is 
 
 \begin{equation} \label{eq:epsqsC_def}
-  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \frac{\partial \rasub{q}_s}{\partial \amacro{p}_s} \; .
+  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
 \end{equation}
-%
+
+To find an expression for $\eqspsC$ in the CES utility function, 
+we need to first find the partial derivative of an expression for the rate of energy service consumption~($\rate{q}_s$)
+as a function of energy service price~($\amacro{p}_s$)
+with respect to energy service price~($\amacro{p}_s$) at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
+across the substitution effect.
+That equation was already derived as Eq.~(\ref{eq:q_s_solution}) and repeated here.
+
+\begin{equation}
+  \frac{\rasub{q}_s}{\rbempl{q}_s} = \qssolution{} \tag{\ref{eq:q_s_solution}}
+\end{equation}
+
+In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
+for the purposes of the derivative. 
+So finding the derivative amounts to applying the chain rule repeatedly.
+To simplify the derivation, 
+we can define the following constants:
+
+
+
 
 
 %..............................

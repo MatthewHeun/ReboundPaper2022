@@ -23,6 +23,7 @@
 \usepackage{nccmath}            % For the \useshortskip command above equations
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
+\usepackage{physics}            % For the \eval command.
 \usepackage{setspace}           % For double spacing
 \doublespacing
 \usepackage{soul}               % For text highlighting
