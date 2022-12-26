@@ -551,12 +551,14 @@ can be determined from two pieces of readily available information:
 
 The compensated own price elasticity of energy service demand ($\eqspsC$)
 gives the percentage change of the consumption rate of the energy service ($\rate{q}_s$)
-as the price of the energy service ($\amacro{p}_s$) changes 
-as a result of the efficiency increase of the EEU
-under the constraint that utility is unchanged across the substitution effect ($\rate{u} = \rbsub{u} = \rasub{u}$).
-In the CES utility model,
+across the substitution effect
+due to a unit percentage change in the energy service price ($\amacro{p}_s$)
+resulting from the EEU
+under the constraint that utility is unchanged 
+($\rate{u} = \rbsub{u} = \rasub{u}$).
+In contrast to the approximate utility model above, 
 the compensated own price elasticity of energy service demand ($\eqspsC$)
-is not constant (as in the approximate utility model above).
+is not constant in the CES utility model.
 Rather, $\eqspsC$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
 The definition of $\eqspsC$ is 
 
@@ -580,10 +582,58 @@ In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\amacro{p}_s
 for the purposes of the derivative. 
 So finding the derivative amounts to applying the chain rule repeatedly.
 To simplify the derivation, 
-we can define the following constants:
+we can define the following constants
 
+\begin{align}
+  f &\equiv \fCs{} \; , \\
+  g &\equiv 1 - \fCs{} \; , \\
+  h &\equiv \frac{\rorig{q}_s}{\rorig{C}_o} \; , \\
+  m &\equiv \frac{\rho}{1 - \rho} \; , \\
+  n &\equiv - \frac{1}{\rho} \; , \; \mathrm{and} \\
+  z &\equiv \frac{g}{f} h = \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s}{\rorig{C}_o}
+\end{align}
+%
+and rearrange slightly to obtain
 
+\begin{equation} 
+  \rasub{q}_s = \rorig{q}_s \left[ f + g \left( z \amacro{p}_s \right) ^ m \right] ^ n \; .
+\end{equation}
 
+Taking the partial derivative of $\rasub{q}_s$ with respect to $\amacro{p}_s$ 
+via repeated application of the chain rule gives
+
+\begin{equation}
+  \pdv{\rasub{q}_s}{\amacro{p}_s} = \rorig{q}_s m n g z^m \amacro{p}_s^{m-1} 
+                \left\{ \left[ f + g \left( z \amacro{p}_s \right)^m \right]^{n-1} \right\} \; .
+\end{equation}
+
+Forming the elasticity via its definition (Eq.~(\ref{eq:epsqsC_def})) gives
+
+\begin{equation}
+  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
+         = \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \amacro{p}_s \right)^m \right]^n } \;
+           \cancel{\rorig{q}_s} m n g z^m \amacro{p}_s^{m-1} 
+                \left\{ \left[ f + g \left( z \amacro{p}_s \right)^m \right]^{n-1} \right\} \; .
+\end{equation}
+%
+Cancelling terms and
+combining $\amacro{p}_s$ and $\left[ f + g \left( z \amacro{p}_s \right)^m \right]$ 
+terms with different exponents gives
+
+\begin{equation}
+  \eqspsC = \frac{m n g (z \amacro{p}_s)^m}{f + g(z \amacro{p}_s)^m} \; .
+\end{equation}
+%
+Back-substituting the constants and simplifying where possible yields
+
+\begin{equation} \label{eq:eqspsC_exact}
+  \eqspsC = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s \amacro{p}_s}{\rorig{C}_o} \right] ^ {\frac{\rho}{1 - \rho}} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s \amacro{p}_s}{\rorig{C}_o} \right] ^ {\frac{\rho}{1 - \rho}} } \; .
+\end{equation}
+
+Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated 
+energy service price elasticity of energy service consumption ($\eqspsC$)
+under the exact utility model is a function 
+of the energy service price after the EEU~($\amacro{p}_s$).
 
 
 %..............................
