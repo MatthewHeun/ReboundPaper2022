@@ -579,7 +579,7 @@ was already derived as Eq.~(\ref{eq:q_s_solution}) and is repeated here for conv
 \end{equation}
 
 In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
-for the purposes of the derivative. 
+for the purposes of the partial derivative. 
 So finding the derivative amounts to applying the chain rule repeatedly.
 To simplify the derivation, 
 we can define the following constants
@@ -588,7 +588,7 @@ we can define the following constants
   f &\equiv \fCs{} \; , \\
   g &\equiv 1 - \fCs{} \; , \\
   h &\equiv \frac{\rorig{q}_s}{\rorig{C}_o} \; , \\
-  m &\equiv 1 / (1 - \rho) \; , \\
+  m &\equiv \rho / (1 - \rho) \; , \\
   n &\equiv - 1 / \rho \; , \; \mathrm{and} \\
   z &\equiv \frac{g}{f} h = \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s}{\rorig{C}_o}
 \end{align}
@@ -684,10 +684,29 @@ repeated here for convenience:
 \begin{equation}
   \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
 \end{equation}
+
+In Eq.~(\ref{eq:C_o_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
+for the purposes of the partial derivative. 
+So finding the derivative amounts to applying the chain rule repeatedly.
+To simplify the derivation, 
+we can define the following constants
+
+\begin{align}
+  f &\equiv \fCs{} \; , \\
+  g &\equiv 1 - \fCs{} \; , \\
+  h &\equiv \frac{\rorig{q}_s}{\rorig{C}_o} \; , \\
+  m &\equiv \rho / (\rho - 1) \; , \\
+  n &\equiv - 1 / \rho \; , \; \mathrm{and} \\
+  z &\equiv \frac{g}{f} h = \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s}{\rorig{C}_o}
+\end{align}
 %
+and rearrange slightly to obtain
 
-
-
+\begin{equation} 
+  \rasub{q}_o = \rorig{q}_o \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^m - 1 \right] \right\}^n \; .
+\end{equation}
+%
+Note that only $m$ is different between the derivations of $\eqspsC$ and $\eqopsC$.
 
 
 
