@@ -545,7 +545,7 @@ can be determined from two pieces of readily available information:
 
 
 %..............................
-\paragraph{Compensated own price elasticity of energy service demand ($\eqspsC$)} 
+\paragraph{Compensated own price elasticity of energy service consumption ($\eqspsC$)} 
 \label{sec:eqspsC_CES}
 %..............................
 
@@ -562,14 +562,14 @@ is not constant in the CES utility model.
 Rather, $\eqspsC$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
 The definition of $\eqspsC$ is 
 
-\begin{equation} \label{eq:epsqsC_def}
+\begin{equation} \label{eq:eqspsC_def}
   \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
 \end{equation}
 
 To find an expression for $\eqspsC$ in the CES utility function, 
 we need to first find the partial derivative of an expression for the rate of energy service consumption~($\rate{q}_s$)
 as a function of energy service price~($\amacro{p}_s$)
-with respect to energy service price~($\amacro{p}_s$) at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
+with respect to $\amacro{p}_s$ at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
 The equation from which the derivation commences 
 was already derived as Eq.~(\ref{eq:q_s_solution}) and is repeated here for convenience.
@@ -607,7 +607,7 @@ via repeated application of the chain rule gives
                 \left\{ \left[ f + g \left( z \amacro{p}_s \right)^m \right]^{n-1} \right\} \; .
 \end{equation}
 
-Forming the elasticity via its definition (Eq.~(\ref{eq:epsqsC_def})) gives
+Forming the elasticity via its definition (Eq.~(\ref{eq:eqspsC_def})) gives
 
 \begin{equation}
   \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
@@ -637,9 +637,57 @@ of the energy service price after the EEU~($\amacro{p}_s$).
 
 
 %..............................
-\paragraph{Compensated cross price elasticity of energy service demand ($\eqopsC$)} 
+\paragraph{Compensated cross price elasticity of other goods consumption ($\eqopsC$)} 
 \label{sec:eqopsC_CES}
 %..............................
+
+The compensated cross price elasticity of other goods demand ($\eqopsC$)
+gives the percentage change of the consumption rate of other goods ($\rate{q}_o$)
+across the substitution effect
+due to a unit percentage change in the energy service price ($\amacro{p}_s$)
+resulting from the EEU
+under the constraint that utility is unchanged 
+($\rate{u} = \rbsub{u} = \rasub{u}$).
+To find the compensated cross-price elasticity of other goods consumption ($\eqopsC$),
+we follow a similar procedure as for deriving the 
+own-price elasticity of energy service consumption ($\eqspsC$), 
+with two differences being 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item the elasticity definition and
+  
+  \item the equation from which the partial derivative is derived.
+    
+\end{enumerate*}
+
+The first difference is 
+the definition of the compensated cross-price elasticity
+of other goods consumption($\eqopsC$) being
+
+\begin{equation} \label{eq:eqopsC_def}
+  \eqopsC \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
+\end{equation}
+
+Again, we need to first find the partial
+derivative of an expression for the rate of other goods consumption ($\rate{q}_o$) 
+as a function of the energy service price ($\amacro{p}_s$) 
+with respect to $\amacro{p}_s$ 
+at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
+across the substitution effect.
+The second difference is 
+the starting point for this derivation, 
+Eq.~(\ref{eq:C_o_solution}) 
+(instead of Eq.~(\ref{eq:q_s_solution}) for the derivation of $\eqspsC$ above), 
+repeated here for convenience:
+
+\begin{equation}
+  \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
+\end{equation}
+%
+
+
+
 
 
 
