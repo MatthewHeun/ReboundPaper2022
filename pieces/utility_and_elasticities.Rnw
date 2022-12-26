@@ -588,8 +588,8 @@ we can define the following constants
   f &\equiv \fCs{} \; , \\
   g &\equiv 1 - \fCs{} \; , \\
   h &\equiv \frac{\rorig{q}_s}{\rorig{C}_o} \; , \\
-  m &\equiv \frac{\rho}{1 - \rho} \; , \\
-  n &\equiv - \frac{1}{\rho} \; , \; \mathrm{and} \\
+  m &\equiv 1 / (1 - \rho) \; , \\
+  n &\equiv - 1 / \rho \; , \; \mathrm{and} \\
   z &\equiv \frac{g}{f} h = \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s}{\rorig{C}_o}
 \end{align}
 %
@@ -627,7 +627,7 @@ terms with different exponents gives
 Back-substituting the constants and simplifying where possible yields
 
 \begin{equation} \label{eq:eqspsC_exact}
-  \eqspsC = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s \amacro{p}_s}{\rorig{C}_o} \right] ^ {\frac{\rho}{1 - \rho}} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\rorig{q}_s \amacro{p}_s}{\rorig{C}_o} \right] ^ {\frac{\rho}{1 - \rho}} } \; .
+  \eqspsC = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} } \; .
 \end{equation}
 
 Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated 
