@@ -719,6 +719,20 @@ Forming the elasticity via its definition (Eq.~(\ref{eq:eqopsC_def})) gives
            \cancel{\rorig{q}_o} m_o n f z^{m_o} \amacro{p}_s^{m_o - 1} 
                 \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\} ^{n-1}  \; .
 \end{equation}
+%
+Cancelling terms and
+combining $\amacro{p}_s$ and $\left\{ 1 + f  \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}$ 
+terms with different exponents gives
+
+\begin{equation}
+  \eqopsC = \frac{m_o n f (z \amacro{p}_s)^{m_o}}{1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right]} \; .
+\end{equation}
+%
+
+
+
+
+
 
 
 
