@@ -697,7 +697,9 @@ we can define
   m_o \equiv \rho / (\rho - 1) \; , \\
 \end{equation}
 %
-and rearrange slightly to obtain
+invoke the constancy of other prices ($\orig{p}_o = \asub{p}_o$)
+from Appendix~\ref{sec:other_goods_expenditures} and
+rearrange slightly to obtain
 
 \begin{equation} 
   \rasub{q}_o = \rorig{q}_o \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n \; ,
