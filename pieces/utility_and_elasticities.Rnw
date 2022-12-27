@@ -698,7 +698,7 @@ we can define
 \end{equation}
 %
 invoke the constancy of other prices ($\orig{p}_o = \asub{p}_o$)
-from Appendix~\ref{sec:other_goods_expenditures} and
+from Appendix~\ref{sec:other_goods_expenditures}, and
 rearrange slightly to obtain
 
 \begin{equation} 
