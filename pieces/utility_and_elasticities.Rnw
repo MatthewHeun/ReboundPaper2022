@@ -567,12 +567,14 @@ The definition of $\eqspsC$ is
 \end{equation}
 
 To find an expression for $\eqspsC$ in the CES utility function, 
-we need to first find the partial derivative of an expression for the rate of energy service consumption~($\rate{q}_s$)
-as a function of energy service price~($\amacro{p}_s$)
-with respect to $\amacro{p}_s$ at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
+we need to first find the partial derivative of the rate of energy service consumption~($\rasub{q}_s$)
+with respect to the energy service price $\amacro{p}_s$ 
+at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
-The equation from which the derivation commences 
-was already derived as Eq.~(\ref{eq:q_s_solution}) and is repeated here for convenience.
+This derivation of an expression for $\eqspsC$ in the exact utility model
+commences with Eq.~(\ref{eq:q_s_solution}),
+which was derived for constant utility across the 
+substitution effect. 
 
 \begin{equation}
   \frac{\rasub{q}_s}{\rbempl{q}_s} = \qssolution{} \tag{\ref{eq:q_s_solution}}
@@ -580,7 +582,9 @@ was already derived as Eq.~(\ref{eq:q_s_solution}) and is repeated here for conv
 
 In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
 for the purposes of the partial derivative. 
-So finding the derivative amounts to applying the chain rule repeatedly.
+Finding the partial derivative 
+of $\rasub{q}_s$ with respect to $\amacro{p}_s$
+amounts to applying the chain rule repeatedly.
 To simplify the derivation, 
 we can define the following constants
 
@@ -663,23 +667,21 @@ with two differences being
 
 The first difference is 
 the definition of the compensated cross-price elasticity
-of other goods consumption($\eqopsC$) being
+of other goods consumption($\eqopsC$).
 
 \begin{equation} \label{eq:eqopsC_def}
-  \eqopsC \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
+  \eqopsC \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
 \end{equation}
 
-Again, we need to first find the partial
-derivative of an expression for the rate of other goods consumption ($\rate{q}_o$) 
-as a function of the energy service price ($\amacro{p}_s$) 
-with respect to $\amacro{p}_s$ 
+Again, we need to find the partial
+derivative of the rate of other goods consumption ($\rate{q}_o$) 
+with respect to the energy service price ($\amacro{p}_s$) 
 at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
 The second difference is 
 the starting point for this derivation, 
 Eq.~(\ref{eq:C_o_solution}) 
-(instead of Eq.~(\ref{eq:q_s_solution}) for the derivation of $\eqspsC$ above), 
-repeated here for convenience:
+(instead of Eq.~(\ref{eq:q_s_solution})).
 
 \begin{equation}
   \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
@@ -698,10 +700,10 @@ we can define
 and rearrange slightly to obtain
 
 \begin{equation} 
-  \rasub{q}_o = \rorig{q}_o \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n \; .
+  \rasub{q}_o = \rorig{q}_o \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n \; ,
 \end{equation}
 %
-Note that $f$, $n$, and $z$ are unchanged from above.
+with $f$, $n$, and $z$ being constants defined in the derivation of $\eqspsC$ above.
 
 Taking the partial derivative of $\rasub{q}_o$ with respect to $\amacro{p}_s$ 
 via repeated application of the chain rule gives
