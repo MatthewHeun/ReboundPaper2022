@@ -1,7 +1,7 @@
-% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
-% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% The next command tells RStudio to do "Compile PDF" on HSB_framework.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_framework.Rnw 
 % before building the paper.
-%!TEX root = ../HSB.Rnw
+%!TEX root = ../HSB_framework.Rnw
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,12 +297,11 @@ bottom=2pt}
 % Equation for q_s_hat/q_s_orig
 \newcommand{\qssolution}{\left\{ \fCs + (1-\fCs)
       \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o}  \right]
-                                                  ^{\frac{\rho}{1-\rho}} \right\} ^ {-1/\rho}}
+                                                  ^{\rho / (1 - \rho)} \right\} ^ {-1/\rho}}
 
 % Equation for C_o_hat/C_o_orig
-\newcommand{\Cosolution}{\left[ \left( 1 + \fCs \left\{ \left[ \left( \frac{1-\fCs}{\fCs} \right)
-          \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} \right] ^{1-\sigma} - 1 \right\} \right)^{-1}  \right] 
-                                                ^{1/\rho}}
+\newcommand{\Cosolution}{ \left( 1 + \fCs \left\{ \left[ \left( \frac{1-\fCs}{\fCs} \right)
+          \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
 
 % Equation for Re_dsub for the CES utility model
 \newcommand{\RedsubCES}{\frac{\qssolution{} - 1}{\etaratiostacked{} - 1}}
