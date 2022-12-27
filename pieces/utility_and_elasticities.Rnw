@@ -728,13 +728,16 @@ terms with different exponents gives
   \eqopsC = \frac{m_o n f (z \amacro{p}_s)^{m_o}}{1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right]} \; .
 \end{equation}
 %
+Back-substituting the constants and simplifying where possible yields
 
+\begin{equation} \label{eq:eqopsC_exact}
+  \eqopsC = - \frac{\frac{1}{\rho - 1} \fCs \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right) ^ {\rho / (\rho - 1)} }{1 + \fCs \left[ \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right)^{\rho/(\rho - 1)} - 1 \right]} \; .
+\end{equation}
 
-
-
-
-
-
+Eq.~(\ref{eq:eqopsC_exact}) shows that the compensated 
+energy service price elasticity of other goods consumption ($\eqopsC$)
+under the exact utility model is a function 
+of the energy service price after the EEU~($\amacro{p}_s$).
 
 
 %++++++++++++++++++++++++++++++
