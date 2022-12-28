@@ -603,8 +603,8 @@ and rearrange slightly to obtain
   \rasub{q}_s = \rorig{q}_s \left[ f + g \left( z \amacro{p}_s \right) ^ {m_s} \right] ^ n \; .
 \end{equation}
 
-Taking the partial derivative of $\rasub{q}_s$ with respect to $\amacro{p}_s$ 
-via repeated application of the chain rule gives
+Taking the partial derivative of $\rasub{q}_s$ with respect to $\amacro{p}_s$,
+via repeated application of the chain rule, gives
 
 \begin{equation}
   \pdv{\rasub{q}_s}{\amacro{p}_s} = \rorig{q}_s m_s n g z^{m_s} \amacro{p}_s^{m_s-1} 
@@ -707,8 +707,8 @@ rearrange slightly to obtain
 %
 with $f$, $n$, and $z$ being constants defined in the derivation of $\eqspsC$ above.
 
-Taking the partial derivative of $\rasub{q}_o$ with respect to $\amacro{p}_s$ 
-via repeated application of the chain rule gives
+Taking the partial derivative of $\rasub{q}_o$ with respect to $\amacro{p}_s$, 
+via repeated application of the chain rule, gives
 
 \begin{equation}
   \pdv{\rasub{q}_o}{\amacro{p}_s} = \rorig{q}_o m_o n f z^{m_o} \amacro{p}_s^{m_o-1} 
