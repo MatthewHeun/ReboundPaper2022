@@ -544,7 +544,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 %++++++++++++++++++++++++++++++
 
 
-<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\epsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$)", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
+<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\epsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
 # Run a new sensitivity study on the car and lamp examples
 eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
@@ -568,7 +568,10 @@ eta_sens_data_for_eps_graph <- eta_sens_data_for_eps %>%
                       names_to = "elasticity_type", 
                       values_to = "elasticity") %>% 
   dplyr::mutate(
-    elasticity_type = factor(elasticity_type, levels = c("e_qo_ps_UC_hat", "e_qo_ps_C_hat", "e_qs_ps_C_hat", "e_qs_ps_UC_hat"))
+    elasticity_type = factor(elasticity_type, levels = c("e_qo_ps_UC_hat", 
+                                                         "e_qo_ps_C_hat",
+                                                         "e_qs_ps_C_hat",
+                                                         "e_qs_ps_UC_hat"))
   )
 
 # Create a data frame of original and upgrade points.
@@ -584,7 +587,8 @@ ggplot2::ggplot() +
                      mapping = ggplot2::aes(x = p_s_star, 
                                             y = elasticity, 
                                             color = elasticity_type,
-                                            linetype = elasticity_type)) +
+                                            linetype = elasticity_type), 
+                     linewidth = 1) +
   ggplot2::geom_line() + 
   ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
                 y = "Elasticity [-]") +
@@ -597,9 +601,9 @@ ggplot2::ggplot() +
                                          e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
                                          e_qo_ps_UC_hat = expression(epsilon[q[o]*","*p[s]]))) +
   ggplot2::scale_linetype_manual(values = c(e_qs_ps_C_hat = "solid", 
-                                            e_qs_ps_UC_hat = "dashed", 
+                                            e_qs_ps_UC_hat = "dotted", 
                                             e_qo_ps_C_hat = "solid", 
-                                            e_qo_ps_UC_hat = "dashed"), 
+                                            e_qo_ps_UC_hat = "dotted"), 
                                  labels = c(e_qs_ps_C_hat = expression(epsilon[q[s]*","*p[s]*","*c]), 
                                             e_qs_ps_UC_hat = expression(epsilon[q[s]*","*p[s]]), 
                                             e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
