@@ -588,8 +588,8 @@ ggplot2::ggplot() +
                                             y = elasticity, 
                                             color = elasticity_type,
                                             linetype = elasticity_type), 
-                     linewidth = 1) +
-  ggplot2::geom_line() + 
+                     linewidth = 1, 
+                     lineend = "round") +
   ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
                 y = "Elasticity [-]") +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
