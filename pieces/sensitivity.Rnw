@@ -544,28 +544,20 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 %++++++++++++++++++++++++++++++
 
 
-<<ElasticityGraph>>=
+<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\epsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$)", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
 # Run a new sensitivity study on the car and lamp examples
-
-# eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
-#                        Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
-# 
-# eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases,
-#                                                    parameterization = eta_sens_params)
-
-
-eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(26, 1000, by = 1)), 
+eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
 
 eta_sens_data_for_eps <- ReboundTools::parametric_analysis(original_cases = actual_cases,
                                                            parameterization = eta_sens_params_for_eps) %>% 
   dplyr::mutate(
     p_s_orig = dplyr::case_when(
-      Case == "Car"  ~ p_s_orig * 100,   # Convert to $/hundred miles
+      Case == "Car"  ~ p_s_orig * 100,  # Convert to $/hundred miles or cents/mile
       Case == "Lamp" ~ p_s_orig * 1e06  # Convert to micro$/lm-hr
     ),
     p_s_star = dplyr::case_when(
-      Case == "Car"  ~ p_s_star * 100,   # Convert to $/hundred miles
+      Case == "Car"  ~ p_s_star * 100,  # Convert to $/hundred miles
       Case == "Lamp" ~ p_s_star * 1e06  # Convert to micro$/lm-hr
     )
   )
@@ -574,7 +566,10 @@ eta_sens_data_for_eps_graph <- eta_sens_data_for_eps %>%
   dplyr::select(Case, eta_engr_units_star, p_s_star, e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat) %>% 
   tidyr::pivot_longer(cols = c(e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat), 
                       names_to = "elasticity_type", 
-                      values_to = "elasticity")
+                      values_to = "elasticity") %>% 
+  dplyr::mutate(
+    elasticity_type = factor(elasticity_type, levels = c("e_qo_ps_UC_hat", "e_qo_ps_C_hat", "e_qs_ps_C_hat", "e_qs_ps_UC_hat"))
+  )
 
 # Create a data frame of original and upgrade points.
 
@@ -591,17 +586,29 @@ ggplot2::ggplot() +
                                             color = elasticity_type,
                                             linetype = elasticity_type)) +
   ggplot2::geom_line() + 
-  # ggplot2::labs(x = paste0(expression(p[s]), " [¢/mile (Car) or ", expression(mu), "$/lm-hr (Lamp)]"), 
-  ggplot2::labs(x = expression(p[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
+  ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
                 y = "Elasticity [-]") +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
                                          e_qs_ps_UC_hat = "red", 
                                          e_qo_ps_C_hat = "black", 
-                                         e_qo_ps_UC_hat = "black")) +
+                                         e_qo_ps_UC_hat = "black"), 
+                              labels = c(e_qs_ps_C_hat = expression(epsilon[q[s]*","*p[s]*","*c]), 
+                                         e_qs_ps_UC_hat = expression(epsilon[q[s]*","*p[s]]), 
+                                         e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
+                                         e_qo_ps_UC_hat = expression(epsilon[q[o]*","*p[s]]))) +
   ggplot2::scale_linetype_manual(values = c(e_qs_ps_C_hat = "solid", 
-                                            e_qs_ps_UC_hat = "dotted", 
+                                            e_qs_ps_UC_hat = "dashed", 
                                             e_qo_ps_C_hat = "solid", 
-                                            e_qo_ps_UC_hat = "dotted")) +
+                                            e_qo_ps_UC_hat = "dashed"), 
+                                 labels = c(e_qs_ps_C_hat = expression(epsilon[q[s]*","*p[s]*","*c]), 
+                                            e_qs_ps_UC_hat = expression(epsilon[q[s]*","*p[s]]), 
+                                            e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
+                                            e_qo_ps_UC_hat = expression(epsilon[q[o]*","*p[s]]))) +
+  ggplot2::labs(colour = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
-  MKHthemes::xy_theme()
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
 @
