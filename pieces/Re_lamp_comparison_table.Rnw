@@ -19,14 +19,14 @@
   &               &          &                 & \multicolumn{3}{c}{$Re_{micro}$}      & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
   & Rebound study & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ &              &            &              &            \\ 
 \midrule
- & This paper & U.S., & Energy, expenditure,   & $\Sexpr{f_lmp("Re_empl")}$
-                                               & $\Sexpr{f_lmp("Re_sub")}$
-                                               & $\Sexpr{f_lmp("Re_inc")}$
-                                               & $\Sexpr{f_lmp("Re_macro")}$
-                                               & $\Sexpr{f_lmp("Re_dir")}$
-                                               & $\Sexpr{f_lmp("Re_indir")}$
-                                               & $\Sexpr{f_lmp("Re_tot")}$  \\
- & (2023)            & 2020  & and consumption planes & & & & & & &   \\
+ & This paper & U.S., & Energy, expenditure, and  & $\Sexpr{f_lmp("Re_empl")}$
+                                                  & $\Sexpr{f_lmp("Re_sub")}$
+                                                  & $\Sexpr{f_lmp("Re_inc")}$
+                                                  & $\Sexpr{f_lmp("Re_macro")}$
+                                                  & $\Sexpr{f_lmp("Re_dir")}$
+                                                  & $\Sexpr{f_lmp("Re_indir")}$
+                                                  & $\Sexpr{f_lmp("Re_tot")}$  \\
+ & (2023)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
 1 & \citeauthor{Guertin:2003aa}  & & & & & & & 32--49 & &  \\
   & \citeyearpar{Guertin:2003aa} & & & & & & &        & &  \\
@@ -47,11 +47,10 @@
 5 & \citeauthor{Borenstein:2015aa}  & U.S., & Microeconomic &  & 14      & 6 & & & &  \\
   & \citeyearpar{Borenstein:2015aa} & 2012  & framework     &  & (6--37) &   & & & &  \\
 \midrule
-6 & \citeauthor{Chitnis:2015}  & UK,        & Estimated own/cross-  & & 14 & 35 & & 41 & 8 & 49 \\
-  & \citeyearpar{Chitnis:2015} & 1964--2014 & price elasticities of & &    &    & &    &   &    \\
-  &                            &            & transport fuels, uses & &    &    & &    &   &    \\
-  &                            &            & household spending    & &    &    & &    &   &    \\
-  &                            &            & survey data           & &    &    & &    &   &    \\
+6 & \citeauthor{Chitnis:2015}  & UK,        & Estimated own/cross-price  & & 14 & 35 & & 41 & 8 & 49 \\
+  & \citeyearpar{Chitnis:2015} & 1964--2014 & elasticities of transport  & &    &    & &    &   &    \\
+  &                            &            & fuels, uses household      & &    &    & &    &   &    \\
+  &                            &            & spending survey data       & &    &    & &    &   &    \\
 \midrule
 7 & \citeauthor{Duarte:2018aa}  & Spain,     & Dynamic CGE model, & & & & & & & 12          \\
   & \citeyearpar{Duarte:2018aa} & 2010--2030 & efficiency shock   & & & & & & & (short run) \\

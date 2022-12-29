@@ -66,8 +66,8 @@
 \midrule
 9 & \citeauthor{Dimitropoulos:2018aa}  & Over half  & Meta study of 74 transport  &   &  &  & & 10--12      &  & \\
   & \citeyearpar{Dimitropoulos:2018aa} & are U.S.\  & direct rebound studies, all &   &  &  & & (short run) &  & \\
-  &                                    & studies    & using elasticity-based      &   &  &            & & 26--29      &  & \\
-  &                                    &            & methods                     &   &  &            & & (long run)  &  & \\
+  &                                    & studies    & using elasticity-based      &   &  &  & & 26--29      &  & \\
+  &                                    &            & methods                     &   &  &  & & (long run)  &  & \\
 \midrule
 10 & \citeauthor{Duarte:2018aa}  & Spain,     & Dynamic CGE model, & & & & & & & 26          \\
    & \citeyearpar{Duarte:2018aa} & 2010--2030 & efficiency shock   & & & & & & & (short run) \\
