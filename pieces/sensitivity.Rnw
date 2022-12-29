@@ -412,21 +412,21 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
 <<ElasticityValuesForSens, echo=FALSE>>=
 eqspsUC_car <- actual_cases %>% 
   dplyr::filter(Case == "Car") %>% 
-  dplyr::select("e_qs_ps_UC")
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 eqspsUC_lamp <- actual_cases %>% 
   dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select("e_qs_ps_UC")
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
 <<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). $k$ is set to its calibrated value (3). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
-eps_sens_params <- list(Car = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)),
-                        Lamp = list(e_qs_ps_UC = seq(-0.7, -0.1, by = 0.01)))
+eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
+                        Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
 # We want to get the parameterized data so we can find a specific data point for the text.
 eps_graph_parametric_data <- ReboundTools::parametric_analysis(original_cases = actual_cases, parameterization = eps_sens_params)
 
 rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterization = eps_sens_params,
-                    x_var = "e_qs_ps_UC", 
+                    x_var = ReboundTools::orig_vars$e_qs_ps_UC_orig, 
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
@@ -449,13 +449,13 @@ rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterizati
 # Get the base eps value for the lamp case.
 eps_lamp_base <- actual_cases %>% 
   dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select("e_qs_ps_UC") %>% 
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig) %>% 
   unlist() %>% 
   unname()
 # Now get the equivalent Re_tot for the Car case for this e_qs_ps_UC value
 Re_tot_car_with_lamp_e_ps_qs <- eps_graph_parametric_data %>% 
   dplyr::filter(Case == "Car") %>%
-  dplyr::filter(abs(.data[["e_qs_ps_UC"]] - eps_lamp_base) < 0.00001) %>% 
+  dplyr::filter(abs(.data[[ReboundTools::orig_vars$e_qs_ps_UC_orig]] - eps_lamp_base) < 0.00001) %>% 
   dplyr::select(Re_tot)
 Re_tot_car_with_lamp_e_ps_qs <- Re_tot_car_with_lamp_e_ps_qs %>% 
   # magrittr::multiply_by(100) %>% 
@@ -537,4 +537,39 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
                  strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
 @
   
-  
+
+%++++++++++++++++++++++++++++++
+\subsection{Elasticities}
+\label{sec:elasticities_sensitivity}
+%++++++++++++++++++++++++++++++
+
+
+<<ElasticityGraph>>=
+# Run a new sensitivity study on the car and lamp examples
+
+# eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
+#                        Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
+# 
+# eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases,
+#                                                    parameterization = eta_sens_params)
+
+
+eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(26, 1000, by = 1)), 
+                                 Lamp = list(eta_engr_units_star = seq(7000000, 9000000, by = 5000)))
+
+eta_sens_data_for_eps <- ReboundTools::parametric_analysis(original_cases = actual_cases,
+                                                           parameterization = eta_sens_params_for_eps) %>% 
+  dplyr::select(Case, p_s_star, e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat) %>% 
+  tidyr::pivot_longer(cols = c(e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat), 
+                      names_to = "elasticity_type", 
+                      values_to = "elasticity")
+
+
+
+
+eta_sens_data_for_eps %>% 
+  ggplot2::ggplot(mapping = ggplot2::aes(x = p_s_star, y = elasticity, linetype = elasticity_type)) + 
+  ggplot2::geom_line() + 
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  MKHthemes::xy_theme()
+@
