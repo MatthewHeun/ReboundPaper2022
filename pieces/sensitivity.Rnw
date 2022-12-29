@@ -592,7 +592,7 @@ ggplot2::ggplot() +
                                             linetype = elasticity_type)) +
   ggplot2::geom_line() + 
   # ggplot2::labs(x = paste0(expression(p[s]), " [¢/mile (Car) or ", expression(mu), "$/lm-hr (Lamp)]"), 
-  ggplot2::labs(x = expression(p[s]*" [¢/mile (Car) or "*mu*"$/lm-hr (Lamp)]"), 
+  ggplot2::labs(x = expression(p[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
                 y = "Elasticity [-]") +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
                                          e_qs_ps_UC_hat = "red", 
