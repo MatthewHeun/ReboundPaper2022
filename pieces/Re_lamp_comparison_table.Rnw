@@ -28,12 +28,15 @@
                                                   & $\Sexpr{f_lmp("Re_tot")}$  \\
  & (2023)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
-1 & \citeauthor{Guertin:2003aa}  & & & & & & & 32--49 & &  \\
-  & \citeyearpar{Guertin:2003aa} & & & & & & &        & &  \\
+1 & \citeauthor{Guertin:2003aa}  & Canada, & Econometric residential  & & & & & 32--49 & &  \\
+  & \citeyearpar{Guertin:2003aa} & 1993    & energy demand model      & & & & &        & &  \\
+  &                              &         & based on Canadian house- & & & & &        & &  \\
+  &                              &         & hold data                & & & & &        & &  \\
 \midrule
-2 & \citeauthor{Freire-Gonzalez:2011aa}  & Catalonia, & & & & & & 49 & 16 &  \\
-  & \citeyearpar{Freire-Gonzalez:2011aa} & Spain,     & & & & & &    &    &  \\
-  &                                      & 2000--2008 & & & & & &    &    &  \\
+2 & \citeauthor{Freire-Gonzalez:2011aa}  & Catalonia, & Input-output based      & & & & & 49 & 16 &  \\
+  & \citeyearpar{Freire-Gonzalez:2011aa} & Spain,     & energy model, utilising & & & & &    &    &  \\
+  &                                      & 2000--2008 & expenditure/cross-price & & & & &    &    &  \\
+  &                                      &            & elasticities            & & & & &    &    &  \\
 \midrule
 3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross-price   & & & & & 10 & 10 &  \\
   & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of transport & & & & &    &    &  \\
@@ -65,10 +68,11 @@
   &                              &                & to the Almost Ideal       & & & & &    &       &     \\
   &                              &                & Demand System (LAIDS)     & & & & &    &       &     \\
 \midrule
-10 & \citeauthor{Shojaeddini:2022aa}  & U.S., & Cross sectional data from & & & & & & & \\
-   & \citeyearpar{Shojaeddini:2022aa} & 2009  & the 2009 Residential      & & & & & & & \\
-   &                                  &       & Energy Consumption        & & & & & & & \\
-   &                                  &       & Survey (RECS)             & & & & & & & \\
+10 & \citeauthor{Shojaeddini:2022aa}  & U.S., & Price elasticity of lighting & & & & & 18--29 & & \\
+   & \citeyearpar{Shojaeddini:2022aa} & 2009  & from cross sectional data    & & & & &        & & \\
+   &                                  &       & from the 2009 Residential    & & & & &        & & \\
+   &                                  &       & Energy Consumption           & & & & &        & & \\
+   &                                  &       & Survey (RECS)                & & & & &        & & \\
 \bottomrule
 \end{tabular}
 \end{center}

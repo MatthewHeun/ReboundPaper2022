@@ -2298,20 +2298,21 @@ enable two types of observations:
 
 First, we can say that none of the comparison studies
 report all rebound effects, as we have done
-in Sections~\ref{sec:results} and~\ref{sec:calibrating_k}. 
+in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
 Further, none of the other studies includes
 all of direct and indirect, substitution and income microeconomic rebound effects. 
-Thus, our framework is bringing conceptual clarity to the field.
+Thus, our framework adds conceptual clarity to the field.
 In addition, none of the studies report 
 emplacement rebound ($Re_{empl}$) or macro rebound ($Re_{macro}$).
-In fact, only ****X**** of the 10 studies report total rebound ($Re_{tot}$).
+In fact, only 4 or 5 of the 10 studies
+in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
 We also observe that studies that provide total rebound 
 are based on a top-down calculation of overall, economy-wide rebound, 
 rather than a bottom-up ``sum-of-components'' approach 
 that we employ.
 That finding is instructive---it supports the view that
 a comprehensive framework that sets out individual rebound components
-has been missing---something that informed the objective for Part~I of this paper.
+has been missing---and something that informed the objective for Part~I of this paper.
 Top-down estimations or calculations of total, economy-wide rebound 
 may also inhibit comparison, as the effects included or excluded 
 may not be clear, 
