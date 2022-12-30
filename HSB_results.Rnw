@@ -106,6 +106,7 @@ Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebo
 
 <<setup, echo=FALSE, message=FALSE>>=
 library(dplyr)
+library(latex2exp)
 library(magrittr)
 library(MKHthemes)
 library(ReboundTools)
