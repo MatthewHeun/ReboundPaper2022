@@ -539,9 +539,10 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
   
 
 %++++++++++++++++++++++++++++++
-\subsection{Price elasticities}
-\label{sec:elasticities_sensitivity}
+\subsection{Effect of energy service price ($\amacro{p}_s$) on price elasticities ($\asub{\varepsilon}$)}
+\label{sec:price_elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
+
 
 
 <<PriceElasticitySensGraph, fig.cap="Sensitivity of price elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) from the examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
@@ -603,23 +604,23 @@ ggplot2::ggplot() +
                      linewidth = 0.5, 
                      lineend = "round") +
   ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
-                y = expression("Price elasticity, "*epsilon*" [-]")) +
+                y = expression("Price elasticity, "*hat(epsilon)*" [-]")) +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
                                          e_qs_ps_UC_hat = "red", 
                                          e_qo_ps_C_hat = "black", 
                                          e_qo_ps_UC_hat = "black"), 
-                              labels = c(e_qs_ps_C_hat = expression(epsilon[q[s]*","*p[s]*","*c]), 
-                                         e_qs_ps_UC_hat = expression(epsilon[q[s]*","*p[s]]), 
-                                         e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
-                                         e_qo_ps_UC_hat = expression(epsilon[q[o]*","*p[s]]))) +
+                              labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[q[s]*","*p[s]*","*c]), 
+                                         e_qs_ps_UC_hat = expression(hat(epsilon)[q[s]*","*p[s]]), 
+                                         e_qo_ps_C_hat = expression(hat(epsilon)[q[o]*","*p[s]*","*c]), 
+                                         e_qo_ps_UC_hat = expression(hat(epsilon)[q[o]*","*p[s]]))) +
   ggplot2::scale_linetype_manual(values = c(e_qs_ps_C_hat = "solid", 
                                             e_qs_ps_UC_hat = "dashed", 
                                             e_qo_ps_C_hat = "solid", 
                                             e_qo_ps_UC_hat = "dashed"), 
-                                 labels = c(e_qs_ps_C_hat = expression(epsilon[q[s]*","*p[s]*","*c]), 
-                                            e_qs_ps_UC_hat = expression(epsilon[q[s]*","*p[s]]), 
-                                            e_qo_ps_C_hat = expression(epsilon[q[o]*","*p[s]*","*c]), 
-                                            e_qo_ps_UC_hat = expression(epsilon[q[o]*","*p[s]]))) +
+                                 labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[q[s]*","*p[s]*","*c]), 
+                                            e_qs_ps_UC_hat = expression(hat(epsilon)[q[s]*","*p[s]]), 
+                                            e_qo_ps_C_hat = expression(hat(epsilon)[q[o]*","*p[s]*","*c]), 
+                                            e_qo_ps_UC_hat = expression(hat(epsilon)[q[o]*","*p[s]]))) +
   ggplot2::labs(colour = ggplot2::element_blank(),
                 linetype = ggplot2::element_blank()) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
