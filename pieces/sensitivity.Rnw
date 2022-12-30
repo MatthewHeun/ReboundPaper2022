@@ -543,7 +543,25 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 \label{sec:price_elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
 
-
+The sensitivity of post-substition effect price elasticities 
+to post-upgrade energy service price ($\amacro{p}_s$)
+is shown in Fig.~\ref{fig:PriceElasticitySensGraph}
+for the exact utility model described 
+in Section~\ref{PartI-sec:sub_effect_main_paper} 
+and Appendix~\ref{PartI-sec:utility_and_elasticities}
+of Part~I.
+As expected, both of the
+uncompensated elasticities ($\eqspsUChat$ and $\eqopsUChat$) 
+are negative, regardless of the energy service price ($\amacro{p}_s$):
+a higher price means less consumption.
+The compensated own price elasticity ($\eqspsChat$) is negative
+regardless of $\amacro{p}_s$,
+such that as $\amacro{p}_s$ declines with increased device efficiency ($\amacro{\eta}_s$),
+consumption rises. 
+The compensated cross price elasticity ($\eqopsChat$) is positive,
+regardless of $\amacro{p}_s$
+such that as $\amacro{p}_s$ declines with increased $\amacro{\eta}_s$,
+consumption of other goods falls.
 
 <<PriceElasticitySensGraph, fig.cap="Sensitivity of price elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) from the examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
 # Run a new sensitivity study on the car and lamp examples
