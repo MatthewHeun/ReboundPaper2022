@@ -2071,18 +2071,18 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
 
 The framework developed in Section~\ref{PartI-sec:framework} of Part~I
 links macroeconomic rebound to microeconomic rebound 
-via a term that scales magnitudes in the microeconomic portion of the framework. 
+via a term~($k$) that scales magnitudes in the microeconomic portion of the framework. 
 Few rebound studies have explored the macroeconomic level
 between microeconomic and total rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
 we bridge macroeconomic and microeconomic levels with the macro factor ($k$), 
 as discussed in Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.
-For the results presented in Section~\ref{sec:results}, 
+For the results presented in Section~\ref{sec:results} of this paper, 
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device owner in the income effect
 generates only \$1 of additional economic activity in the broader economy.
 In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
-the results obtained in Section~\ref{sec:results}, and
+the results obtained in Section~\ref{sec:results} of this paper, and
 recent calculations of total rebound in general equilibrium frameworks allow, 
 for the first time, 
 a discussion about calibrating $k$.
@@ -2093,12 +2093,18 @@ To calibrate the macro factor ($k$),
 we treat macro rebound ($Re_{\macro}$) as a residual.
 The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
 such that $Re_{\macro}$
-is sufficient to achieve an expected value for total rebound ($Re_{tot}$).
+is sufficient to achieve an expected value for total rebound ($Re_{tot}$).%
+\footnote{
+  This approach means that the calibrated value of $k$ incorporates all 
+  macroeconomic rebound sub-effects included in the studies
+  whose total rebound value we calibrate against.
+}
+%
 We take the expected value for $Re_{tot}$ from 
 \citet{Brockway:2021ww}.
 Four of 33 studies reviewed by \citet{Brockway:2021ww}
 examined total rebound from only consumer EEUs in a computable general
-equilibrium framework. 
+equilibrium (CGE) framework. 
 The average total rebound ($Re_{tot}$) 
 for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
 \footnote{

@@ -32,6 +32,8 @@
 \usetikzlibrary{arrows,positioning}
 \usepackage{ulem}               % For strikeout command (\sout)
 \usepackage{xcolor}             % For ... colors
+\usepackage{xr}                 % For external references to the results paper
+\externaldocument[PartII-]{HSB_results}
 
 \usepackage{hyperref}           % hyperref should be the last package loaded
 
@@ -426,6 +428,11 @@ even if we don't later distinguish among them.%
   \citet{VandenBergh2011} distinguishes 14 types of rebound, 
   providing, perhaps, the greatest complexity.   
 }
+%
+Further treatment of macroeconomic rebound
+can be found 
+in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
+in Section~\ref{PartII-sec:calibrating_k} of Part~II.
 
 Fig.~\ref{fig:flowchart} shows rebound effects
 arranged in left-to-right order of their discussion in this paper.
@@ -1305,7 +1312,7 @@ as one important long-run dynamic factor in total rebound.
 %we do not mean to imply that other macroeconomic rebounds are less
 %important to study.
 
-Before setting up a formalism, we clarify the link between consumer theory
+Before establishing a formalism, we clarify the link between consumer theory
 and economic growth. \citet{Turner:2013aa} cautions that when households
 see the productivity of their non-market activities increase,
 GDP remains unchanged.\footnote{
@@ -1324,6 +1331,7 @@ GDP remains unchanged.\footnote{
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
 }
+%
 That may be true in the short run. But
 the question over longer periods is whether the higher productivity
 of household production of energy services does not affect also their
