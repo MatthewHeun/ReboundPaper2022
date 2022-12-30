@@ -528,7 +528,7 @@ the elasticity of substitution ($\sigma$)
 in the CES utility model is given by
 
 \begin{equation} \label{eq:sigma}
-  \sigma = \frac{\fCs + \eqspsUC}{\fCs - 1} \; .
+  \sigma = \frac{\fCs + \eqspsUCorig}{\fCs - 1} \; .
 \end{equation}
 %
 Thus, the elasticity of substitution ($\sigma$) 
@@ -536,42 +536,42 @@ can be determined from two pieces of readily available information:
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item the uncompensated own price elasticity ($\eqspsUC$) and 
+  \item the original uncompensated own price elasticity ($\eqspsUCorig$) and 
   
-  \item the share of income spent on the energy service ($\fCs$ 
+  \item the share of income spent on the energy service prior to the EEU ($\fCs$ 
         from Eq.~(\ref{eq:fCs})).
 
 \end{enumerate*}
 
 
 %..............................
-\paragraph{Compensated own price elasticity of energy service consumption ($\eqspsC$)} 
+\paragraph{Compensated own price elasticity of energy service consumption ($\eqspsChat$)} 
 \label{sec:eqspsC_CES}
 %..............................
 
-The compensated own price elasticity of energy service demand ($\eqspsC$)
+The compensated own price elasticity of energy service demand ($\eqspsChat$)
 gives the percentage change of the consumption rate of the energy service ($\rate{q}_s$)
 across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
 ($\rate{u} = \rbsub{u} = \rasub{u}$).
-In contrast to the approximate utility model above, 
-the compensated own price elasticity of energy service demand ($\eqspsC$)
+In contrast to the CPE utility model above, 
+the compensated own price elasticity of energy service demand ($\eqspsChat$)
 is not constant in the CES utility model.
-Rather, $\eqspsC$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
-The definition of $\eqspsC$ is 
+Rather, $\eqspsChat$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
+The definition of $\eqspsChat$ is 
 
 \begin{equation} \label{eq:eqspsC_def}
-  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
+  \eqspsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
 \end{equation}
 
-To find an expression for $\eqspsC$ in the CES utility function, 
+To find an expression for $\eqspsChat$ for the CES utility function, 
 we need to first find the partial derivative of the rate of energy service consumption~($\rasub{q}_s$)
-with respect to the energy service price $\amacro{p}_s$ 
+with respect to the post-EEU energy service price $\amacro{p}_s$ 
 at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
-This derivation of an expression for $\eqspsC$ in the exact utility model
+This derivation of an expression for $\eqspsChat$ for the CES utility model
 commences with Eq.~(\ref{eq:q_s_solution}),
 which was derived for constant utility across the 
 substitution effect. 
@@ -614,7 +614,7 @@ via repeated application of the chain rule, gives
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqspsC_def})) gives
 
 \begin{equation}
-  \eqspsC \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
+  \eqspsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
          = \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]^n } \;
            \cancel{\rorig{q}_s} m_s n g z^{m_s} \amacro{p}_s^{m_s - 1} 
                 \left\{ \left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
@@ -625,36 +625,39 @@ combining $\amacro{p}_s$ and $\left[ f + g \left( z \amacro{p}_s \right)^{m_s} \
 terms with different exponents gives
 
 \begin{equation}
-  \eqspsC = \frac{m_s n g (z \amacro{p}_s)^{m_s}}{f + g(z \amacro{p}_s)^{m_s}} \; .
+  \eqspsChat = \frac{m_s n g (z \amacro{p}_s)^{m_s}}{f + g(z \amacro{p}_s)^{m_s}} \; .
 \end{equation}
 %
 Back-substituting the constants and simplifying where possible yields
 
 \begin{equation} \label{eq:eqspsC_exact}
-  \eqspsC = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} } \; .
+  \eqspsChat = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right] ^ {\rho / (1 - \rho)} } \; .
 \end{equation}
 
 Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated 
-energy service price elasticity of energy service consumption ($\eqspsC$)
-under the exact utility model is a function 
+energy service price elasticity of energy service consumption ($\eqspsChat$)
+under the CES utility model is a function 
 of the energy service price after the EEU~($\amacro{p}_s$).
+See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
+for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
+to energy service price ($\amacro{p}_s$).
 
 
 %..............................
-\paragraph{Compensated cross price elasticity of other goods consumption ($\eqopsC$)} 
+\paragraph{Compensated cross price elasticity of other goods consumption ($\eqopsChat$)} 
 \label{sec:eqopsC_CES}
 %..............................
 
-The compensated cross price elasticity of other goods demand ($\eqopsC$)
+The compensated cross price elasticity of other goods demand ($\eqopsChat$)
 gives the percentage change of the consumption rate of other goods ($\rate{q}_o$)
 across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
 ($\rate{u} = \rbsub{u} = \rasub{u}$).
-To find the compensated cross-price elasticity of other goods consumption ($\eqopsC$),
+To find the compensated cross-price elasticity of other goods consumption ($\eqopsChat$),
 we follow a similar procedure as for deriving the 
-own-price elasticity of energy service consumption ($\eqspsC$), 
+own-price elasticity of energy service consumption ($\eqspsChat$), 
 with two differences being 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -667,10 +670,10 @@ with two differences being
 
 The first difference is 
 the definition of the compensated cross-price elasticity
-of other goods consumption($\eqopsC$).
+of other goods consumption($\eqopsChat$).
 
 \begin{equation} \label{eq:eqopsC_def}
-  \eqopsC \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
+  \eqopsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
 \end{equation}
 
 Again, we need to find the partial
@@ -705,7 +708,7 @@ rearrange slightly to obtain
   \rasub{q}_o = \rorig{q}_o \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n \; ,
 \end{equation}
 %
-with $f$, $n$, and $z$ being constants defined in the derivation of $\eqspsC$ above.
+with $f$, $n$, and $z$ being constants defined in the derivation of $\eqspsChat$ above.
 
 Taking the partial derivative of $\rasub{q}_o$ with respect to $\amacro{p}_s$, 
 via repeated application of the chain rule, gives
@@ -718,7 +721,7 @@ via repeated application of the chain rule, gives
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqopsC_def})) gives
 
 \begin{equation}
-  \eqopsC \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
+  \eqopsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
          = \frac{\amacro{p}_s}{\cancel{\rorig{q}_o} \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n } \;
            \cancel{\rorig{q}_o} m_o n f z^{m_o} \amacro{p}_s^{m_o - 1} 
                 \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\} ^{n-1}  \; .
@@ -729,19 +732,22 @@ combining $\amacro{p}_s$ and $\left\{ 1 + f  \left[ \left( z \amacro{p}_s \right
 terms with different exponents gives
 
 \begin{equation}
-  \eqopsC = \frac{m_o n f (z \amacro{p}_s)^{m_o}}{1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right]} \; .
+  \eqopsChat = \frac{m_o n f (z \amacro{p}_s)^{m_o}}{1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right]} \; .
 \end{equation}
 %
 Back-substituting the constants and simplifying where possible yields
 
 \begin{equation} \label{eq:eqopsC_exact}
-  \eqopsC = - \frac{\frac{1}{\rho - 1} \fCs \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right) ^ {\rho / (\rho - 1)} }{1 + \fCs \left[ \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right)^{\rho/(\rho - 1)} - 1 \right]} \; .
+  \eqopsChat = - \frac{\frac{1}{\rho - 1} \fCs \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right) ^ {\rho / (\rho - 1)} }{1 + \fCs \left[ \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_o} \right)^{\rho/(\rho - 1)} - 1 \right]} \; .
 \end{equation}
 
 Eq.~(\ref{eq:eqopsC_exact}) shows that the compensated 
-energy service price elasticity of other goods consumption ($\eqopsC$)
-under the exact utility model is a function 
+energy service price elasticity of other goods consumption ($\eqopsChat$)
+under the CES utility model is a function 
 of the energy service price after the EEU~($\amacro{p}_s$).
+See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
+for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
+to energy service price ($\amacro{p}_s$).
 
 
 %++++++++++++++++++++++++++++++
