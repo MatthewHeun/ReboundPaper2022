@@ -232,7 +232,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
                     graph_params = Re_graph_params) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
   ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -405,7 +405,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
   
   
 %++++++++++++++++++++++++++++++
-\subsection{Effect of elasticity ($\eqspsUC$)} 
+\subsection{Effect of original uncompensated own prices elasticity ($\eqspsUC^\circ$)} 
 \label{sec:effect_of_elasticity}
 %++++++++++++++++++++++++++++++
 
@@ -432,7 +432,7 @@ rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterizati
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::scale_x_reverse() +
   ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
-  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]),
+  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]^o),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -464,23 +464,24 @@ Re_tot_car_with_lamp_e_ps_qs <- Re_tot_car_with_lamp_e_ps_qs %>%
 @
 
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
-with the uncompensated price elasticity of energy service demand ($\eqspsUC$).
+with the original uncompensated price elasticity of energy service demand ($\eqspsUC^\circ$).
 The effect is exponential, and
-total rebound increases with larger negative values of $\eqspsUC$, as expected.
+total rebound increases with larger negative values of $\eqspsUC^\circ$, as expected.
 The lamp example also shows stronger exponential variation than the car example.
 The main reason that total rebound values 
 are different between the two examples
-is the larger absolute value of elasticity ($\eqspsUC$) 
+is the larger absolute value of original uncompensated own price elasticity ($\eqspsUC^\circ$) 
 for the lamp ($\Sexpr{eqspsUC_lamp}$) compared to the car ($\Sexpr{eqspsUC_car}$).
-Were the car to have the same elasticity as the lamp ($\Sexpr{eqspsUC_lamp}$), 
+Were the car to have the same original uncompensated own price elasticity
+as the lamp (i.e., $\Sexpr{eqspsUC_lamp}$), 
 total rebound would be closer for both examples 
 ($\Sexpr{formatC(Re_tot_car_with_lamp_e_ps_qs*100, digits = 2)}$\% for the car and 
 $\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 2)}$\% for the lamp).
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
-($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC$.
+($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC^\circ$.
 For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
-substantially with $\eqspsUC$, 
-because net savings increases substantially with $\eqspsUC$. 
+substantially with $\eqspsUC^\circ$, 
+because net savings increases substantially with $\eqspsUC^\circ$. 
 
 % A limitation of the elasticity sensitivity study derives from limitations of the 
 % CES utility model itself, which constrains price elasticity variation
@@ -543,27 +544,31 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 \label{sec:price_elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
 
-The sensitivity of post-substition effect price elasticities 
+The sensitivity of post-substition effect price elasticities ($\asub{\varepsilon}$)
 to post-upgrade energy service price ($\amacro{p}_s$)
 is shown in Fig.~\ref{fig:PriceElasticitySensGraph}
-for the exact utility model described 
+for the CES utility model described 
 in Section~\ref{PartI-sec:sub_effect_main_paper} 
 and Appendix~\ref{PartI-sec:utility_and_elasticities}
 of Part~I.
+Note that the left side of each graph ($\amacro{p}_{s} = 0$)
+represents infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
+i.e., delivery of the energy service without energy consumption.
+
 As expected, both of the
-uncompensated elasticities ($\eqspsUChat$ and $\eqopsUChat$) 
+uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$) 
 are negative, regardless of the energy service price ($\amacro{p}_s$):
-a higher price means less consumption.
+a higher price means less consumption, all other things being equal.
 The compensated own price elasticity ($\eqspsChat$) is negative
 regardless of $\amacro{p}_s$,
 such that as $\amacro{p}_s$ declines with increased device efficiency ($\amacro{\eta}_s$),
-consumption rises. 
+consumption of the energy service rises. 
 The compensated cross price elasticity ($\eqopsChat$) is positive,
 regardless of $\amacro{p}_s$
 such that as $\amacro{p}_s$ declines with increased $\amacro{\eta}_s$,
 consumption of other goods falls.
 
-<<PriceElasticitySensGraph, fig.cap="Sensitivity of price elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) from the examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
+<<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
 # Run a new sensitivity study on the car and lamp examples
 eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
@@ -647,3 +652,27 @@ ggplot2::ggplot() +
                  # Move the facet labels out of the graphs slightly.
                  strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
 @
+
+
+Fig.~\ref{fig:PriceElasticitySensGraph} shows that the car example exhibits
+more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\asub{p}_s$)
+than the lamp example, 
+because the expenditure share ($\fCs$) for the lamp example is very small
+compared to the car example.
+Using the constant price elasticity (CPE) approximation may have acceptably
+small errors in the lamp example. 
+However, for the car example, using the CES utility function will be necessary
+to eliminate errors that will be present in the CPE approximation.
+This result is an important finding that should encourage 
+analysts to prefer the CES utility model over the CPE approximation.
+
+Fig.~\ref{fig:PriceElasticitySensGraph} shows that
+as efficiency increases (and $\amacro{p}_s$ decreases), 
+the absolute value of the uncompensated price elasticities 
+($\eqspsUChat$ and $\eqopsUChat$) decreases, 
+a change that exceeds the slightly increasing (in absolute value terms)
+compensated own price elasticity ($\eqspsChat$). 
+Thus, substitution rebound ($Re_{sub}$) is attenuated as efficiency increases.
+(See the $Re_{dsub}$ line of Fig.~\ref{fig:all_Re_terms_eta_graph},
+which, combined with the near-constant $Re_{isub}$ line,
+shows the same trend.)
