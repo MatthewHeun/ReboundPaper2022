@@ -544,7 +544,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 %++++++++++++++++++++++++++++++
 
 
-<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\epsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
+<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s$) from the examples.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
 # Run a new sensitivity study on the car and lamp examples
 eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
@@ -553,12 +553,12 @@ eta_sens_data_for_eps <- ReboundTools::parametric_analysis(original_cases = actu
                                                            parameterization = eta_sens_params_for_eps) %>% 
   dplyr::mutate(
     p_s_orig = dplyr::case_when(
-      Case == "Car"  ~ p_s_orig * 100,  # Convert to $/hundred miles or cents/mile
-      Case == "Lamp" ~ p_s_orig * 1e06  # Convert to micro$/lm-hr
+      Case == "Car"  ~ p_s_orig * 100, # Convert to $/hundred miles or cents/mile
+      Case == "Lamp" ~ p_s_orig * 1e6  # Convert to micro$/lm-hr
     ),
     p_s_star = dplyr::case_when(
       Case == "Car"  ~ p_s_star * 100,  # Convert to $/hundred miles
-      Case == "Lamp" ~ p_s_star * 1e06  # Convert to micro$/lm-hr
+      Case == "Lamp" ~ p_s_star * 1e6  # Convert to micro$/lm-hr
     )
   )
 
@@ -574,24 +574,26 @@ eta_sens_data_for_eps_graph <- eta_sens_data_for_eps %>%
                                                          "e_qs_ps_UC_hat"))
   )
 
-# Create a data frame of original and upgrade points.
-orig_and_upgrade_df <- eta_sens_data_for_eps %>% 
+# Create a data frame of original and upgrade prices.
+orig_ps_df <- eta_sens_data_for_eps %>% 
   dplyr::select(Case, eta_engr_units_orig, p_s_orig) %>% 
-  unique() %>% 
+  unique() 
+upgrade_ps_df <- rebound_results %>% 
+  dplyr::filter(Case %in% c("Car", "Lamp")) %>% 
+  dplyr::select(Case, p_s_star) %>% 
   dplyr::mutate(
-    # For now, add these manually.  
-    # If GS likes the graph, add automatically from another data source.
-    eta_engr_units_tilde = c(42, 81800), 
-    p_s_tilde = c(6.261905, 1.573350)
+    p_s_star = dplyr::case_when(
+      Case == "Car" ~ p_s_star * 100,  # Convert to $/hundred miles or cents/mile
+      Case == "Lamp" ~ p_s_star * 1e6  # Convert to micro$/lm-hr
+    )
   )
+orig_and_upgrade_ps_df <- dplyr::full_join(orig_ps_df, upgrade_ps_df, by = "Case")
 
-
-  
 ggplot2::ggplot() +
   # Original energy service price
-  ggplot2::geom_vline(data = orig_and_upgrade_df, mapping = ggplot2::aes(xintercept = p_s_orig), linewidth = 0.1) +
+  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_orig), linewidth = 0.1) +
   # Upgraded energy service price
-  ggplot2::geom_vline(data = orig_and_upgrade_df, mapping = ggplot2::aes(xintercept = p_s_tilde), linewidth = 0.1) +
+  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_star), linewidth = 0.1, linetype = "dashed") +
   ggplot2::geom_hline(yintercept = 0, linewidth = 0.2) +
   ggplot2::geom_line(data = eta_sens_data_for_eps_graph, 
                      mapping = ggplot2::aes(x = p_s_star, 
