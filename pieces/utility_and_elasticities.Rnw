@@ -30,12 +30,12 @@ that compares the perceived benefits of
 consuming the energy service ($\rate{q}_s$) to
 consuming other goods and services ($\rate{q}_o$).
 In this appendix, we describe two utility models.
-The first utility model is an approximate model
+The first utility model is a constant price elasticity (CPE) utility model 
 that applies only for small and marginal
 changes in energy efficiency and 
 energy service price, 
 such that $\Delta \aempl{\eta} \approx 0$ and $\Delta \aempl{p}_s \approx 0$.
-The approximate utility model 
+The CPE utility model 
 is discussed for continuity with the literature only.
 (See, for example, \citet{Borenstein:2015aa}.)
 
@@ -151,11 +151,12 @@ by the utility decrease of the smaller other goods consumption rate.
 
 
 %------------------------------
-\subsubsection{Approximate utility model} 
-\label{sec:derivation_approx_utility_model}
+\subsubsection{Constant price elasticity (CPE) utility model} 
+\label{sec:derivation_cpe_utility_model}
 %------------------------------
 
-The approximate utility model is given by Eqs.~(\ref{eq:approx_qshat_over_qsorig})
+The constant price elasticity (CPE) utility model is given
+by Eqs.~(\ref{eq:approx_qshat_over_qsorig})
 and~(\ref{eq:Cdot_o_ratio}).
 The equations for the approximate utility model are repeated here
 for convenience.
@@ -180,6 +181,13 @@ for convenience.
 
 The CES utility model is given by Eq.~(\ref{eq:ces_utility}).
 Here, its derivation is shown.
+Throughout the derivation, 
+references to Part~II are provided
+for visual representations  
+of several important concepts. 
+Those concepts (equilibrium tangency requirements, e.g.)
+are best visualized in rebound planes that are 
+introduced in Section~\ref{PartII-sec:path_graphs} of Part~II.
 
 The CES model for utility ($\rate{u}$)
 is normalized by (indexed to) conditions prior to emplacement:
@@ -193,8 +201,8 @@ is normalized by (indexed to) conditions prior to emplacement:
 where $\rho \equiv (\sigma - 1)/\sigma$,
 $a$ is a share parameter (determined below), and 
 $\sigma$ is the elasticity of substitution between
-the normalized consumption rate of the energy service and 
-the normalized consumption rate of other goods.
+the normalized consumption rate of the energy service ($\rate{q}_s$) and 
+the normalized consumption rate of other goods ($\rate{q}_o$).
 
 With the assumption of exogenous other goods prices 
 in Eq.~(\ref{eq:exogenous_p_o}), 
@@ -210,17 +218,18 @@ Eq.~(\ref{eq:ces_utility_with_a}) is the functional form of the CES utility mode
 whose share parameter ($a$) is yet to be determined.
 The correct expression for the share parameter ($a$) is found from the 
 equilibrium requirement,
-namely that the expenditure curve is tangent to the indifference curve
-in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+namely that the expenditure curve 
+is tangent to the indifference curve
+in the $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane
+(the ``consumption plane'' in Part~II)
 prior to the EEU.
-% For example, line \circcirc{} is tangent to preference curve 
-% \iicirc{}
-% at point $\circ$
-% in Figs.~\ref{fig:ExampleConsPathGraph}, 
-% \ref{fig:CarConsGraph}, and 
-% \ref{fig:LampConsGraph}.
+For example, the \circcirc{} line is tangent to preference curve
+\iicirc{}
+at point $\circ$
+in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
 
-To find the slope of the indifference curve,
+To find the slope of the indifference curve 
+(\iicirc{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II),
 Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to find 
 the normalized consumption rate of other goods ($\rate{C}_o/\rbempl{C}_o$)
 as a function of the normalized consumption rate of the energy service
@@ -234,13 +243,12 @@ and the normalized utility rate ($\rate{u}/\rbempl{u}$):
 \end{equation}
 %
 a form convenient for drawing 
-constant utility rate ($\rate{u}/\rbempl{u}$) indifference curves in 
+constant utility rate ($\rate{u}/\rbempl{u}$) indifference curves on a graph of
 $\rate{C}_o/\rbempl{C}_o$ vs.\ 
-$\rate{q}_s/\rbempl{q}_s$ space.
-% (See Figs.~\ref{fig:ExampleConsPathGraph}, 
-% \ref{fig:CarConsGraph}, and 
-% \ref{fig:LampConsGraph}.)
-In $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space, 
+$\rate{q}_s/\rbempl{q}_s$ 
+(the consumption plane of
+Fig.~\ref{PartII-fig:ExampleConsPathGraph} in Part~II).
+In the consumption plane, 
 the slope of an indifference curve is found by taking the first 
 partial derivative of $\rate{C}_o/\rbempl{C}_o$
 with respect to $\rate{q}_s/\rbempl{q}_s$,
@@ -257,8 +265,7 @@ The result is
 \end{align}
 
 The budget constraint is the starting point for finding 
-the slope of the expenditure line in 
-$\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space:
+the slope of the expenditure line in the consumption plane:
 
 \begin{equation}
   \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N} \; ,
@@ -269,9 +276,9 @@ a generic version of Eqs.~(\ref{eq:M_acct_orig}),
 (\ref{eq:M_acct_asub}), and 
 (\ref{eq:M_acct_ainc})
 with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
-% In a manner similar to derivations in
-% Appendix~\ref{sec:pref_graph_constant_expenditure_lines}, 
-We solve for $\rate{C}_o$ and 
+In a manner similar to derivations in
+Appendix~\ref{PartII-sec:pref_graph_constant_expenditure_lines},
+we solve for $\rate{C}_o$ and 
 judiciously multiply by $\rbempl{C}_o/\rbempl{C}_o$
 and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
 
@@ -289,7 +296,7 @@ Solving for $\rate{C}_o/\rbempl{C}_o$ and rearranging gives
                                           (\rate{M} - \rate{C}_{cap} - \rate{C}_{\md} - \rate{N}) \; ,
 \end{equation}
 %
-from which the slope in $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+from which the slope of the indifference curve in the consumption plane 
 is taken by inspection to be
 
 \begin{equation} \label{eq:slope_expenditure_line}
@@ -312,7 +319,10 @@ equal to the slope of the indifference curve (Eq.~(\ref{eq:slope_indifference_cu
 \end{align}
 %
 For the equilibrium point 
-prior to emplacement, $\rate{q}_s/\rbempl{q}_s = 1$, $\rate{u}/\rbempl{u} = 1$, and
+prior to emplacement
+(point $\circ$
+in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II),
+$\rate{q}_s/\rbempl{q}_s = 1$, $\rate{u}/\rbempl{u} = 1$, and
 $p_s = \bempl{p}_s$, which reduces Eq.~(\ref{eq:generic_expenditure_line}) to
 
 \begin{equation}
