@@ -539,12 +539,12 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
   
 
 %++++++++++++++++++++++++++++++
-\subsection{Elasticities}
+\subsection{Price elasticities}
 \label{sec:elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
 
 
-<<ElasticityGraph, fig.cap="Sensitivity of elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s$) from the examples.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
+<<PriceElasticitySensGraph, fig.cap="Sensitivity of price elasticities ($\\varepsilon$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the exact utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$). The dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) from the examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.", echo=FALSE, fig.width=6, fig.height=4, fig.align="center">>=
 # Run a new sensitivity study on the car and lamp examples
 eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
@@ -593,7 +593,7 @@ ggplot2::ggplot() +
   # Original energy service price
   ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_orig), linewidth = 0.1) +
   # Upgraded energy service price
-  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_star), linewidth = 0.1, linetype = "dashed") +
+  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_star), linewidth = 0.1, linetype = "FA") +
   ggplot2::geom_hline(yintercept = 0, linewidth = 0.2) +
   ggplot2::geom_line(data = eta_sens_data_for_eps_graph, 
                      mapping = ggplot2::aes(x = p_s_star, 
@@ -603,7 +603,7 @@ ggplot2::ggplot() +
                      linewidth = 0.5, 
                      lineend = "round") +
   ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
-                y = "Elasticity [-]") +
+                y = expression("Price elasticity, "*epsilon*" [-]")) +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
                                          e_qs_ps_UC_hat = "red", 
                                          e_qo_ps_C_hat = "black", 
