@@ -425,6 +425,30 @@ with
 % in a rebound analysis context with the Cobb-Douglas production function.
 
 
+
+
+% (1)	Utility models for the substitution effect
+%    a.	CPE
+%    b.	CES
+% (2)	Elasticities for the substitution effect
+%    a.	Pre-EEU elasticities
+%       i.	Show calculations for price elasticities
+%       ii.	Say they apply to both the CPE and CES utility models
+%       iii.	Elasticity of substitution (sigma) for the CES utility model
+%          1.	calculated from pre-EEU parameters
+%          2.	then assumed constant across substitution effect
+%          3.	Say that the above are all that is needed for all rebound calculations
+%    b.	Post substitution effect price elasticities
+%       i.	CPE: Constant at their original values across the substitution effect
+%       ii.	CES: 
+%          1.	Not needed for application of the rebound framework.
+%          2.	But post substitution effect price elasticities are useful for describing rebound phenomena and understanding the framework
+%          3.	Post substitution effect price elasticities vary with eta~ and sigma in the CES utility model
+%          4.	Show equations for all price elasticities
+% (3)	Elasticities for the income effect
+
+
+
 %++++++++++++++++++++++++++++++
 \subsection{Elasticities for the substitution effect ($\eqspsC$, $\eqopsC$, and $\sigma$)}
 \label{sec:elasticities_for_sub_effect}
