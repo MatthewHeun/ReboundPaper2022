@@ -501,8 +501,30 @@ consumption of the energy service and a basket of other goods.
 
 Economists use surveys, statistical data, and other means to 
 estimate values for the uncompensated own price price elasticity 
-of energy service consumption ($\eqspsUCorig$).
+of energy service consumption ($\eqspsUCorig$)
+prior to the EEU.
 With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
+
+Analytical expressions for the compensated elasticities
+in the utility model
+can be derived using the Slutsky equation, 
+whereby the uncompensated price elasticity 
+of the energy service ($\eqspsUCorig$) 
+is decomposed into the compensated price elasticity ($\eqspsCorig$) and
+the income elasticity ($\eqsM$) as follows:
+
+\begin{equation} \label{eq:slutsky}
+  \eqspsUCorig = \eqspsCorig - \fCs \eqsM \; ,
+\end{equation}
+%
+where $\fCs$ is given by Eq.~(\ref{eq:fCs}), and 
+$\eqsM$ is given in Section~\ref{sec:income_elasticities}.
+Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gives
+
+\begin{equation} \label{eq:eqsps}
+  \eqspsCorig = \eqspsUCorig + \fCs \eqsM \; .
+\end{equation}
+
 
 
 
@@ -550,20 +572,20 @@ With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
 %++++++++++++++++++++++++++++++
 
 %%%%%%%%%%%%%%%%%%%%%%% Start editing here %%%%%%%%%%%%%%%%%%%%%%%
-In fact, there are three elasticies across the two utility models:
-$\eqspsC$, $\eqopsC$, and $\sigma$.
-The  utility model requires 
-the compensated price elasticity of energy service demand ($\eqspsC$) and
-the compensated cross-price elasticity of energy service demand ($\eqopsC$).
-The CES utility model requires the elasticity of substitution ($\sigma$)
-between energy service consumption and other goods consumption.
-Because the uncompensated price elasticity of energy service 
-demand ($\eqspsUC$) tends to be more widely estimated,
-e.g.\ in studies about driver behavior \citep{Gillingham:2020aa}, 
-the usual approach is to use $\eqspsUC$ and the Slutsky equation to derive the compensated
-elasticity ($\eqspsC$).
-The CES utility model then imposes enough restrictions to determine
-the elasticity of substitution.
+% In fact, there are three elasticies across the two utility models:
+% $\eqspsC$, $\eqopsC$, and $\sigma$.
+% The  utility model requires 
+% the compensated price elasticity of energy service demand ($\eqspsC$) and
+% the compensated cross-price elasticity of energy service demand ($\eqopsC$).
+% The CES utility model requires the elasticity of substitution ($\sigma$)
+% between energy service consumption and other goods consumption.
+% Because the uncompensated price elasticity of energy service 
+% demand ($\eqspsUC$) tends to be more widely estimated,
+% e.g.\ in studies about driver behavior \citep{Gillingham:2020aa}, 
+% the usual approach is to use $\eqspsUC$ and the Slutsky equation to derive the compensated
+% elasticity ($\eqspsC$).
+% The CES utility model then imposes enough restrictions to determine
+% the elasticity of substitution.
 
 
 %------------------------------
@@ -571,25 +593,11 @@ the elasticity of substitution.
 \label{sec:elasticities_approx}
 %------------------------------
 
-Analytical expressions for the compensated elasticities
-in the  utility model
-can be derived using the Slutsky equation, 
-whereby the price elasticity 
-of the energy service ($\eqspsUC$) 
-is decomposed into the compensated price elasticity ($\eqspsC$) and
-the income elasticity ($\eqsM$) as follows:
 
-\begin{equation} \label{eq:slutsky}
-  \eqspsUC = \eqspsC - \fCs \eqsM \; ,
-\end{equation}
-%
-where $\fCs$ is given by Eq.~(\ref{eq:fCs}), and 
-$\eqsM$ is given in Section~\ref{sec:income_elasticities}.
-Solving for the compensated price elasticity ($\eqspsC$) gives
 
-\begin{equation} \label{eq:eqsps}
-  \eqspsC = \eqspsUC + \fCs \eqsM \; .
-\end{equation}
+
+
+
 
 A similar argument allows straightforward derivation 
 of the compensated cross-price elasticity ($\eqopsC$).
