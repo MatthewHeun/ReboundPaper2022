@@ -265,7 +265,10 @@ The result is
 \end{align}
 
 The budget constraint is the starting point for finding 
-the slope of the expenditure line in the consumption plane:
+the slope of an expenditure line in the consumption plane.
+Example expenditure lines include
+the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
+in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
 
 \begin{equation}
   \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N} \; ,
@@ -306,7 +309,7 @@ is taken by inspection to be
 
 At any equilibrium point, the expenditure line must be tangent to its indifference curve.
 Applying the tangency requirement before emplacement enables 
-solving for the correct expression for $a$.
+solving for the correct expression for $a$, the share parameter in the CES utility model.
 Setting the slope of the expenditure line (Eq.~(\ref{eq:slope_expenditure_line}))
 equal to the slope of the indifference curve (Eq.~(\ref{eq:slope_indifference_curve})) gives
 
@@ -350,7 +353,7 @@ which is called $\fCs$,
 the share of energy service expenditure ($\rbempl{C}_s$) 
 relative to the sum of energy service and other goods expenditures 
 ($\rbempl{C}_s + \rbempl{C}_o$) 
-before emplacement.
+before emplacement of the EEU.
 Thus, the CES utility equation (Eq.~(\ref{eq:ces_utility_with_a})) becomes
 
 \begin{equation} 
@@ -429,8 +432,10 @@ with
 
 The substitution effect requires a utility model.
 In this paper, we describe two utility models: 
-an approximate model and a CES model.
+a constant price elasticity (CPE) model and 
+a constant elasticity of substitution (CES) model.
 All utility models require elasticities to describe consumer preferences.
+%%%%%%%%%%%%%%%%%%%%%%% Start editing here %%%%%%%%%%%%%%%%%%%%%%%
 In fact, there are three elasticies across the two utility models:
 $\eqspsC$, $\eqopsC$, and $\sigma$.
 The approximate utility model requires 
