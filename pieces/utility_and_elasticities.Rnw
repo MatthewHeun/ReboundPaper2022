@@ -525,7 +525,52 @@ Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gi
   \eqspsCorig = \eqspsUCorig + \fCs \eqsM \; .
 \end{equation}
 
+The cross-price version of the Slutsky equation provides
 
+\begin{equation} \label{eq:slutsky_cross}
+  \eqopsUCorig = \eqopsCorig - \fCs \eqoM \; .
+\end{equation}
+%
+directly as the cross-price complement to Eq.~(\ref{eq:eqsps}).
+
+A similar argument allows straightforward derivation 
+of the compensated cross-price elasticity ($\eqopsCorig$).
+With \citet{Hicks1934}, 
+we note that the pre-EEU uncompensated cross-price elasticity ($\eqopsUCorig$)
+can generally be expressed as
+
+\begin{equation} \label{eq:Allen}
+  \eqopsUCorig = \fCs (\sigma - \eqoM) \; ,
+\end{equation}
+%
+where $\sigma$ is the elasticity of substitution 
+between the consumption rate of the energy service ($\rorig{q}_s$) and
+the consumption rate of other goods ($\rorig{q}_o$)
+prior to the EEU. 
+We set Eq.~(\ref{eq:Allen}) equal to 
+the cross-price version of the Slutsky equation
+
+\begin{equation} \label{eq:slutsky_cross}
+  \eqopsUCorig = \eqopsCorig - \fCs \eqoM \; ,
+\end{equation}
+%
+to obtain
+
+\begin{equation}
+  \fCs (\sigma - \eqoM) = \eqopsCorig - \fCs \eqoM \; .
+\end{equation}
+%
+Solving for $\eqopsCorig$ gives
+
+\begin{equation} \label{eq:eqops_general}
+  \eqopsCorig = \fCs \sigma \; .
+\end{equation}
+%
+Substituting $\sigma$ from Section~\ref{sec:elasticity_ces} (Eq.~(\ref{eq:sigma})) gives
+
+\begin{equation} \label{eq:eqops}
+  \eqopsCorig = \frac{\fCs (\fCs + \eqspsUCorig)}{\fCs - 1} \; .
+\end{equation}
 
 
 
@@ -599,43 +644,7 @@ Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gi
 
 
 
-A similar argument allows straightforward derivation 
-of the compensated cross-price elasticity ($\eqopsC$).
-With \citet{Hicks1934}, 
-we note that the uncompensated cross-price elasticity ($\eqopsUC$)
-can generally be expressed as
 
-\begin{equation} \label{eq:Allen}
-  \eqopsUC = \fCs (\sigma - \eqoM) \; ,
-\end{equation}
-%
-where $\sigma$ is the elasticity of substitution 
-between the consumption rate of the energy service ($\rate{q}_s$) and
-the consumption rate of other goods ($\rate{q}_o$). 
-We set Eq.~(\ref{eq:Allen}) equal to 
-the cross-price version of the Slutsky equation
-
-\begin{equation} \label{eq:slutsky_cross}
-  \eqopsUC = \eqopsC - \fCs \eqoM \; ,
-\end{equation}
-%
-to obtain
-
-\begin{equation}
-  \fCs (\sigma - \eqoM) = \eqopsC - \fCs \eqoM \; .
-\end{equation}
-%
-Solving for $\eqopsC$ gives
-
-\begin{equation} \label{eq:eqops_general}
-  \eqopsC = \fCs \sigma \; .
-\end{equation}
-%
-Substituting $\sigma$ from Section~\ref{sec:elasticity_ces} (Eq.~(\ref{eq:sigma})) gives
-
-\begin{equation} \label{eq:eqops}
-  \eqopsC = \frac{\fCs (\fCs + \eqspsUC)}{\fCs - 1} \; .
-\end{equation}
 
 
 %------------------------------
