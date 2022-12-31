@@ -189,7 +189,7 @@ Those concepts (equilibrium tangency requirements, e.g.)
 are best visualized in rebound planes that are 
 introduced in Section~\ref{PartII-sec:path_graphs} of Part~II.
 
-The CES model for utility ($\rate{u}$)
+The CES utility model
 is normalized by (indexed to) conditions prior to emplacement:
 
 \begin{equation}
@@ -454,15 +454,102 @@ with
 \label{sec:elasticities_for_sub_effect}
 %++++++++++++++++++++++++++++++
 
-The substitution effect requires a utility model.
-In this paper, we describe two utility models: 
+Calculating the change in consumer preferences
+across the substitution effect requires a utility model, 
+two of which are described in the section above: 
 a constant price elasticity (CPE) model and 
 a constant elasticity of substitution (CES) model.
-All utility models require elasticities to describe consumer preferences.
+Within those utility models, 
+price ($\varepsilon$) and substitution ($\sigma$) elasticities
+describe consumer preferences.
+
+Price elasticities apply to both utility models (CPE and CES) and 
+describe consumer preferences for consumption of 
+energy service consumption ($\rate{q}_s$)
+and other goods consumption ($\rate{q}_o$)
+as the price of the energy service ($p_s$) changes
+due to the EEU.
+Own-price and cross-price elasticities describe consumer preferences
+for consumption of the energy service (own-price) and
+other goods (cross-price) as the price of the energy service ($p_{s}$) changes
+in response to the EEU.
+Thus, there are four price elasticities:
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item the uncompensated own-price elasticity of energy service consumption ($\eqspsUC$),
+  
+  \item the uncompensated cross-price elasticity of other goods consumption ($\eqopsUC$),
+    
+  \item the compensated own-price elasticity of energy service consumption ($\eqspsC$), and 
+  
+  \item the compensated cross-price elasticity of other goods consumption ($\eqopsC$).
+
+\end{enumerate*}
+%
+
+
+, 
+as discussed in the subsections following.
+
+
+
+%------------------------------
+\subsubsection{Pre-EEU elasticities} 
+\label{sec:pre_eeu_elasticities}
+%------------------------------
+
+Economists use surveys, statistical data, and other means to 
+estimate values for the uncompensated own price price elasticity 
+of energy service consumption ($\eqspsUC$).
+
+
+%------------------------------
+\subsubsection{Post substitution effect elasticities} 
+\label{sec:post_sub_elasticities}
+%------------------------------
+
+
+%..............................
+\paragraph{CPE utility model} 
+%..............................
+
+
+
+%..............................
+\paragraph{CES utility model} 
+%..............................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Elasticities for the substitution effect ($\eqspsC$, $\eqopsC$, and $\sigma$)}
+\label{sec:elasticities_for_sub_effect}
+%++++++++++++++++++++++++++++++
+
 %%%%%%%%%%%%%%%%%%%%%%% Start editing here %%%%%%%%%%%%%%%%%%%%%%%
 In fact, there are three elasticies across the two utility models:
 $\eqspsC$, $\eqopsC$, and $\sigma$.
-The approximate utility model requires 
+The  utility model requires 
 the compensated price elasticity of energy service demand ($\eqspsC$) and
 the compensated cross-price elasticity of energy service demand ($\eqopsC$).
 The CES utility model requires the elasticity of substitution ($\sigma$)
@@ -477,12 +564,12 @@ the elasticity of substitution.
 
 
 %------------------------------
-\subsubsection{Elasticities for the approximate utility model ($\eqspsC$ and $\eqopsC$)} 
+\subsubsection{Elasticities for the  utility model ($\eqspsC$ and $\eqopsC$)} 
 \label{sec:elasticities_approx}
 %------------------------------
 
 Analytical expressions for the compensated elasticities
-in the approximate utility model
+in the  utility model
 can be derived using the Slutsky equation, 
 whereby the price elasticity 
 of the energy service ($\eqspsUC$) 
