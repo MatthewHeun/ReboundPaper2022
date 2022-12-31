@@ -450,7 +450,7 @@ with
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Elasticities for the substitution effect ($\eqspsC$, $\eqopsC$, and $\sigma$)}
+\subsection{Elasticities for the substitution effect}
 \label{sec:elasticities_for_sub_effect}
 %++++++++++++++++++++++++++++++
 
@@ -488,10 +488,10 @@ Thus, there are four price elasticities:
 \end{enumerate*}
 %
 
-
-, 
-as discussed in the subsections following.
-
+The elasticity of substitution describes the willingness of consumers
+to substitute one good for another.
+In the context of rebound, substitution is considered between
+consumption of the energy service and a basket of other goods.
 
 
 %------------------------------
@@ -501,7 +501,10 @@ as discussed in the subsections following.
 
 Economists use surveys, statistical data, and other means to 
 estimate values for the uncompensated own price price elasticity 
-of energy service consumption ($\eqspsUC$).
+of energy service consumption ($\eqspsUCorig$).
+With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
+
+
 
 
 %------------------------------
