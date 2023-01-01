@@ -382,12 +382,12 @@ can be found in Part~II.
 
 In this section, we develop 
 an energy rebound framework
-at the level of an individual consumer who upgrades the energy efficiency 
+for an individual consumer who upgrades the energy efficiency 
 of a single device, 
-analyzed in partial equilibrium 
+analyzed in partial equilibrium at the microeconomic level
 where the prices of other goods and services are unchanged
 (concisely, ``the framework,'' ``this framework,'' or ``our framework'').
-We endeavor to bring clarity to the energy rebound field by 
+We endeavor to bring clarity to the field of energy rebound by 
 providing sufficient detail to assist
 energy analysts to understand the economics and
 economists to understand the energy analysis.
@@ -462,7 +462,7 @@ Names for the decorations are given at the bottom of the figure
   notational elements used throughout this paper, including
   symbols, Greek letters, abbreviations, decorations, and subscripts.
   The notational elements 
-  can be mixed to provide a rich and expressive ``language'' of energy rebound.
+  can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
   In several places, including Fig.~\ref{fig:flowchart},
   we use colored backgrounds on rebound effects for visual convenience. 
 }
@@ -489,7 +489,7 @@ Energy rebound is defined as
 %
 where both actual and expected final energy savings rates are in MJ/year 
 and expected positive.
-Final energy ``takeback'' rate is defined as expected final energy savings rate less 
+The final energy ``takeback'' rate is defined as expected final energy savings rate less 
 actual final energy savings rate.
 Note that the takeback rate can be negative, indicating that the actual final energy savings rate
 is greater than the expected final energy savings rate, 
@@ -505,9 +505,6 @@ Simplifying gives
 \begin{equation} \label{eq:Re_takeback}
   Re = \frac{\text{takeback rate}}{\text{expected final energy savings rate}} \; .
 \end{equation}
-%
-Energy rebound can be calculated by either
-Eq.~(\ref{eq:Re_def}) or Eq.~(\ref{eq:Re_takeback}).
 
 We define rebound at the final energy%
 \footnote{
@@ -519,7 +516,8 @@ We define rebound at the final energy%
 }
 %
 stage of the energy conversion chain,
-because that is the point of energy purchase by the device owner.
+because the final energy stage is
+the point of energy purchase by the device owner.
 To simplify derivations, 
 we choose not to apply final-to-primary energy multipliers
 to final energy rates in the numerators and denominators of rebound expressions
@@ -550,19 +548,20 @@ such as a flow of energy per year or a flow of income per year.
 None of the rates in this paper indicate \%/yr changes.
 Symbolically, rates are identified by a single dot above the symbol,
 a convention adopted from the engineering literature where, e.g.,
-$\dot{x}$ often indicates a velocity in m/s, 
-$\dot{m}$ often indicates a mass flow rate in kg/s, and
-$\dot{E}$ often indicates an energy flow rate in kW.
-The overdot is an important way to maintain clarity of nomenclature
-in this paper. 
+$\rate{x}$ often indicates a velocity in m/s, 
+$\rate{m}$ often indicates a mass flow rate in kg/s, and
+$\rate{E}$ often indicates an energy flow rate in kW.
+The overdot is an important notational element in this paper, 
+as it maintains clarity between stocks (without overdots)
+and flows (with overdots). 
 For example,  
 $E$ is a quantity of energy in, say, MJ, while
-$\dot{E}$ is a rate of energy in, say, MJ/yr.
+$\rate{E}$ is a rate of energy in, say, MJ/yr.
 We later annualize capital costs ($C_{cap}$ in \$) and
 energy embodied in the device during
 its production ($E_{emb}$ in MJ) to create
-cost rates ($\dot{C}$ in \$/yr) and
-embodied energy rates ($\dot{E}_{emb}$ in MJ/yr).
+cost rates ($\rate{C}_{cap}$ in \$/yr) and
+embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
 
 Energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
@@ -597,9 +596,12 @@ $\bempl{\eta} < \amacro{\eta}$.
 %(This is not a costless EEU.)
 The EEU is not costless. It may be more expensive to buy
 than replacing the original device with a newer version 
-of itself. We call this increased capital cost, 
-$\bempl{C}_{cap} < \amacro{C}_{cap}$. It may also 
-be more costly to maintain and dispose of $\rbempl{C}_{\md} < \ramacro{C}_{\md}$. However, the opposite may hold, too.
+of itself.
+We call this increased capital cost, 
+$\bempl{C}_{cap} < \amacro{C}_{cap}$. 
+It may also 
+be more costly to maintain and dispose of the device $\rbempl{C}_{\md} < \ramacro{C}_{\md}$. 
+However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
 The final energy price ($p_E$) is assumed exogenous
@@ -979,9 +981,9 @@ for determining
 post-substitution effect consumption 
 and therefore $Re_{dsub}$ and $Re_{isub}$.
 The approximate utility model assumes that 
-the compensated energy service price elasticity of energy service demand ($\eqspsC$) and
-the compensated energy service cross-price elasticity of other goods demand ($\eqopsC$)
-are constant along an indifference curve.
+compensated and uncompensated, own and cross price elasticities
+remain constant along an indifference curve. 
+(See Appendix~\ref{sec:utility_and_elasticities}.)
 Whether that is true depends on the utility function used.
 Constant price elasticities (as in the approximate utility model)
 are approximations that are in general only applicable to marginal price changes. 
@@ -1633,7 +1635,8 @@ careful explication of rebound effects and
 clear derivation of rebound expressions,
 we advance the analytical foundations for empirical determination of rebound and
 facilitate interdisciplinary understanding of rebound phenomena
-toward the goal of enabling of more robust rebound calculations
+toward the goal of enhancing clarity in the field of energy rebound and
+enabling more robust rebound calculations
 for sound energy and climate policy.
 
 % From the development and application of the framework in Part~I, 
