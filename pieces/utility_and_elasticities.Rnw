@@ -457,13 +457,13 @@ with
 Calculating the change in consumer preferences
 across the substitution effect requires a utility model, 
 two of which are described in the section above: 
-a constant price elasticity (CPE) model and 
-a constant elasticity of substitution (CES) model.
+the constant price elasticity (CPE) model and 
+the constant elasticity of substitution (CES) model.
 Within those utility models, 
 price ($\varepsilon$) and substitution ($\sigma$) elasticities
 describe consumer preferences.
 
-Price elasticities apply to both utility models (CPE and CES) and 
+Price elasticities 
 describe consumer preferences for consumption of 
 energy service consumption ($\rate{q}_s$)
 and other goods consumption ($\rate{q}_o$)
@@ -486,12 +486,13 @@ Thus, there are four price elasticities:
   \item the compensated cross-price elasticity of other goods consumption ($\eqopsC$).
 
 \end{enumerate*}
-%
 
 The elasticity of substitution describes the willingness of consumers
 to substitute one good for another.
-In the context of rebound, substitution is considered between
-consumption of the energy service and a basket of other goods.
+In the context of rebound from an EEU,
+substitution is considered between
+consumption of the energy service ($\rate{q}_s$) and
+a basket of other goods ($\rate{q}_o$).
 
 
 %------------------------------
@@ -505,8 +506,64 @@ of energy service consumption ($\eqspsUCorig$)
 prior to the EEU.
 With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
 
-Analytical expressions for the compensated elasticities
-in the utility model
+
+%..............................
+\paragraph{Elasticity of substitution ($\sigma$)} 
+\label{sec:sigma_gortz}
+%..............................
+
+\citet{Gortz1977} shows that
+the elasticity of substitution ($\sigma$)
+can be computed by
+
+\begin{equation} \label{eq:sigma}
+  \sigma = \frac{\fCs + \eqspsUCorig}{\fCs - 1} \; .
+\end{equation}
+%
+Thus, the elasticity of substitution ($\sigma$) 
+can be determined from two pieces of readily available information:
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item the original uncompensated own price elasticity ($\eqspsUCorig$) and 
+  
+  \item the share of income spent on the energy service prior to the EEU ($\fCs$ 
+        from Eq.~(\ref{eq:fCs})).
+
+\end{enumerate*}
+
+
+%..............................
+\paragraph{Uncompensated cross price elasticity ($\eqopsUCorig$)} 
+\label{sec:placeholder_label}
+%..............................
+
+With \citet{Hicks1934}, 
+we note that the pre-EEU uncompensated cross-price elasticity ($\eqopsUCorig$)
+can be expressed as
+
+\begin{equation} \label{eq:Allen}
+  \eqopsUCorig = \fCs (\sigma - \eqoM) \; ,
+\end{equation}
+%
+where $\sigma$ is the elasticity of substitution 
+between the consumption rate of the energy service ($\rorig{q}_s$) and
+the consumption rate of other goods ($\rorig{q}_o$)
+prior to the EEU. 
+
+
+
+
+
+
+
+
+
+
+
+
+Next, analytical expressions for the compensated elasticities
+in the utility models
 can be derived using the Slutsky equation, 
 whereby the uncompensated price elasticity 
 of the energy service ($\eqspsUCorig$) 
@@ -535,18 +592,14 @@ directly as the cross-price complement to Eq.~(\ref{eq:eqsps}).
 
 A similar argument allows straightforward derivation 
 of the compensated cross-price elasticity ($\eqopsCorig$).
-With \citet{Hicks1934}, 
-we note that the pre-EEU uncompensated cross-price elasticity ($\eqopsUCorig$)
-can generally be expressed as
 
-\begin{equation} \label{eq:Allen}
-  \eqopsUCorig = \fCs (\sigma - \eqoM) \; ,
-\end{equation}
-%
-where $\sigma$ is the elasticity of substitution 
-between the consumption rate of the energy service ($\rorig{q}_s$) and
-the consumption rate of other goods ($\rorig{q}_o$)
-prior to the EEU. 
+
+
+
+
+
+
+
 We set Eq.~(\ref{eq:Allen}) equal to 
 the cross-price version of the Slutsky equation
 
@@ -669,25 +722,6 @@ The subsections below discuss these elasticities and show how to determine each.
 \label{sec:sigma_CES}
 %..............................
 
-\citet{Gortz1977} shows that
-the elasticity of substitution ($\sigma$)
-in the CES utility model is given by
-
-\begin{equation} \label{eq:sigma}
-  \sigma = \frac{\fCs + \eqspsUCorig}{\fCs - 1} \; .
-\end{equation}
-%
-Thus, the elasticity of substitution ($\sigma$) 
-can be determined from two pieces of readily available information:
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item the original uncompensated own price elasticity ($\eqspsUCorig$) and 
-  
-  \item the share of income spent on the energy service prior to the EEU ($\fCs$ 
-        from Eq.~(\ref{eq:fCs})).
-
-\end{enumerate*}
 
 
 %..............................
