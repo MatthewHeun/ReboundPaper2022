@@ -37,7 +37,7 @@ energy service price,
 such that $\Delta \aempl{\eta} \approx 0$ and $\Delta \aempl{p}_s \approx 0$.
 The CPE utility model 
 is discussed for continuity with the literature only.
-(See, for example, \citet{Borenstein:2015aa}.)
+(See, for example, \citet[p. 17, footnote 43]{Borenstein:2015aa}.)
 
 We note that larger and non-marginal efficiency gains cause greater rebound
 (measured in joules)
@@ -55,9 +55,17 @@ in this framework.
 (See Section~\ref{sec:sub_effect_main_paper}.)
 Furthermore,
 the CES utility model is needed for 
-the example EEUs in Part~II,
+the example energy efficiency upgrades (EEUs) in Part~II,
 which have large, non-marginal
 percentage increases in energy efficiency.
+
+In addition to the substitution effect,
+the income effect requires income elasticities
+to describe consumer behavior. 
+Elasticities for both the substitution effect and the income effect
+are discussed below, 
+after we lay out the CPE and CES utility models.
+
 
 % Commenting, because these data are only available
 % in Part II, but this appendix is included in Part I.
@@ -105,10 +113,6 @@ percentage increases in energy efficiency.
 % Then, elasticities for the substitution effect are 
 % discussed.
 
-Both the substitution effect and the income effect
-use elasticities to model consumer preferences, and those elasticities are discussed below. 
-Finally, elasticities for the income effect are discussed. 
-
 Before proceeding with the utility models and elasticities,
 we note briefly that the rate of other goods consumption ($\rate{q}_o$)
 is not known independently from the prices of other goods ($p_o$).
@@ -143,7 +147,8 @@ utility models quantify the decrease in other goods consumption
 ($\rasub{q}_o/\rbsub{q}_o < 1$)
 caused by the increase of energy service consumption
 ($\rasub{q}_s/\rbsub{q}_s > 1$)
-resulting from the decrease of the energy service price ($\aempl{p}_s < \orig{p}_s$).
+resulting from the decrease of the energy service price ($\aempl{p}_s < \orig{p}_s$)
+under the constraint of constant device owner utility.
 Across the substitution effect, 
 the utility increase of the larger energy service consumption rate
 must be exactly offset
@@ -189,7 +194,7 @@ Those concepts (equilibrium tangency requirements, e.g.)
 are best visualized in rebound planes that are 
 introduced in Section~\ref{PartII-sec:path_graphs} of Part~II.
 
-The CES model for utility ($\rate{u}$)
+The CES utility model
 is normalized by (indexed to) conditions prior to emplacement:
 
 \begin{equation}
@@ -203,6 +208,8 @@ $a$ is a share parameter (determined below), and
 $\sigma$ is the elasticity of substitution between
 the normalized consumption rate of the energy service ($\rate{q}_s$) and 
 the normalized consumption rate of other goods ($\rate{q}_o$).
+By definition, $\sigma$ is assumed constant such that
+$\orig{\sigma} = \aempl{\sigma} = \asub{\sigma} = \ainc{\sigma} = \amacro{\sigma} = \sigma$.
 
 With the assumption of exogenous other goods prices 
 in Eq.~(\ref{eq:exogenous_p_o}), 
@@ -223,14 +230,13 @@ is tangent to the indifference curve
 in the $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane
 (the ``consumption plane'' in Part~II)
 prior to the EEU.
-For example, the \circcirc{} line is tangent to preference curve
-\iicirc{}
-at point $\circ$
+For example, the \circcirc{} line is tangent to constant-utility 
+indifference curve \iicirc{} at point $\circ$
 in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
 
-To find the slope of the indifference curve 
+To find the slope at any point on the indifference curve 
 (\iicirc{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II),
-Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to find 
+Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to give 
 the normalized consumption rate of other goods ($\rate{C}_o/\rbempl{C}_o$)
 as a function of the normalized consumption rate of the energy service
 ($\rate{q}_s/\rbempl{q}_s$)
@@ -269,18 +275,18 @@ the slope of an expenditure line in the consumption plane.
 Example expenditure lines include
 the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
 in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
+The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
+(\ref{eq:M_acct_aemp}), 
+(\ref{eq:M_acct_asub}), and 
+(\ref{eq:M_acct_ainc})
+with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
 
 \begin{equation}
   \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N} \; ,
 \end{equation}
 %
-a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
-(\ref{eq:M_acct_aemp}), 
-(\ref{eq:M_acct_asub}), and 
-(\ref{eq:M_acct_ainc})
-with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
 In a manner similar to derivations in
-Appendix~\ref{PartII-sec:pref_graph_constant_expenditure_lines},
+Appendix~\ref{PartII-sec:pref_graph_constant_expenditure_lines} of Part~II,
 we solve for $\rate{C}_o$ and 
 judiciously multiply by $\rbempl{C}_o/\rbempl{C}_o$
 and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
@@ -426,127 +432,73 @@ with
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Elasticities for the substitution effect ($\eqspsC$, $\eqopsC$, and $\sigma$)}
+\subsection{Elasticities for the substitution effect}
 \label{sec:elasticities_for_sub_effect}
 %++++++++++++++++++++++++++++++
 
-The substitution effect requires a utility model.
-In this paper, we describe two utility models: 
-a constant price elasticity (CPE) model and 
-a constant elasticity of substitution (CES) model.
-All utility models require elasticities to describe consumer preferences.
-%%%%%%%%%%%%%%%%%%%%%%% Start editing here %%%%%%%%%%%%%%%%%%%%%%%
-In fact, there are three elasticies across the two utility models:
-$\eqspsC$, $\eqopsC$, and $\sigma$.
-The approximate utility model requires 
-the compensated price elasticity of energy service demand ($\eqspsC$) and
-the compensated cross-price elasticity of energy service demand ($\eqopsC$).
-The CES utility model requires the elasticity of substitution ($\sigma$)
-between energy service consumption and other goods consumption.
-Because the uncompensated price elasticity of energy service 
-demand ($\eqspsUC$) tends to be more widely estimated,
-e.g.\ in studies about driver behavior \citep{Gillingham:2020aa}, 
-the usual approach is to use $\eqspsUC$ and the Slutsky equation to derive the compensated
-elasticity ($\eqspsC$).
-The CES utility model then imposes enough restrictions to determine
-the elasticity of substitution.
+Calculating the change in consumer preferences
+across the substitution effect requires a utility model, 
+two of which are described in the section above: 
+the constant price elasticity (CPE) model and 
+the constant elasticity of substitution (CES) model.
+Within those utility models, 
+price ($\varepsilon$) and substitution ($\sigma$) elasticities
+describe consumer preferences.
+
+Own and cross price elasticities 
+describe consumer preferences for consumption of the
+energy service ($\rate{q}_s$)
+and other goods ($\rate{q}_o$)
+as the price of the energy service ($p_s$) changes
+due to the EEU.
+Thus, there are four price elasticities:
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item the uncompensated own-price elasticity of energy service consumption ($\eqspsUC$),
+  
+  \item the uncompensated cross-price elasticity of other goods consumption ($\eqopsUC$),
+    
+  \item the compensated own-price elasticity of energy service consumption ($\eqspsC$), and 
+  
+  \item the compensated cross-price elasticity of other goods consumption ($\eqopsC$).
+
+\end{enumerate*}
+
+The elasticity of substitution ($\sigma$) 
+describes the willingness of consumers
+to substitute one good for another.
+In the context of rebound from an EEU,
+substitution is considered between
+consumption of the energy service ($\rate{q}_s$) and
+the basket of other goods ($\rate{q}_o$).
 
 
 %------------------------------
-\subsubsection{Elasticities for the approximate utility model ($\eqspsC$ and $\eqopsC$)} 
-\label{sec:elasticities_approx}
+\subsubsection{Pre-EEU ($\circ$) elasticities} 
+\label{sec:pre_eeu_elasticities}
 %------------------------------
 
-Analytical expressions for the compensated elasticities
-in the approximate utility model
-can be derived using the Slutsky equation, 
-whereby the price elasticity 
-of the energy service ($\eqspsUC$) 
-is decomposed into the compensated price elasticity ($\eqspsC$) and
-the income elasticity ($\eqsM$) as follows:
-
-\begin{equation} \label{eq:slutsky}
-  \eqspsUC = \eqspsC - \fCs \eqsM \; ,
-\end{equation}
-%
-where $\fCs$ is given by Eq.~(\ref{eq:fCs}), and 
-$\eqsM$ is given in Section~\ref{sec:income_elasticities}.
-Solving for the compensated price elasticity ($\eqspsC$) gives
-
-\begin{equation} \label{eq:eqsps}
-  \eqspsC = \eqspsUC + \fCs \eqsM \; .
-\end{equation}
-
-A similar argument allows straightforward derivation 
-of the compensated cross-price elasticity ($\eqopsC$).
-With \citet{Hicks1934}, 
-we note that the uncompensated cross-price elasticity ($\eqopsUC$)
-can generally be expressed as
-
-\begin{equation} \label{eq:Allen}
-  \eqopsUC = \fCs (\sigma - \eqoM) \; ,
-\end{equation}
-%
-where $\sigma$ is the elasticity of substitution 
-between the consumption rate of the energy service ($\rate{q}_s$) and
-the consumption rate of other goods ($\rate{q}_o$). 
-We set Eq.~(\ref{eq:Allen}) equal to 
-the cross-price version of the Slutsky equation
-
-\begin{equation} \label{eq:slutsky_cross}
-  \eqopsUC = \eqopsC - \fCs \eqoM \; ,
-\end{equation}
-%
-to obtain
-
-\begin{equation}
-  \fCs (\sigma - \eqoM) = \eqopsC - \fCs \eqoM \; .
-\end{equation}
-%
-Solving for $\eqopsC$ gives
-
-\begin{equation} \label{eq:eqops_general}
-  \eqopsC = \fCs \sigma \; .
-\end{equation}
-%
-Substituting $\sigma$ from Section~\ref{sec:elasticity_ces} (Eq.~(\ref{eq:sigma})) gives
-
-\begin{equation} \label{eq:eqops}
-  \eqopsC = \frac{\fCs (\fCs + \eqspsUC)}{\fCs - 1} \; .
-\end{equation}
-
-
-%------------------------------
-\subsubsection{Elasticities for the CES utility model} 
-\label{sec:elasticity_ces}
-%------------------------------
-
-Only one elasticity is required for the CES utility model:
-the elasticity of substitution between the energy service 
-and other goods ($\sigma$). 
-Although only $\sigma$ is required to fully describe the CES utility model, 
-it is interesting to note that,
-while not needed,
-both the compensated own price elasticity of energy service demand~($\eqspsC$) and
-the compensated cross price elasticity of other goods demand~($\eqopsC$)
-can be determined from the elasticity of substitution~($\sigma$).
-The subsections below discuss these elasticities and show how to determine each.
+Economists use surveys, statistical data, and other means to 
+estimate values for the uncompensated own price price elasticity 
+of energy service consumption ($\eqspsUCorig$)
+prior to the EEU.
+With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
 
 
 %..............................
 \paragraph{Elasticity of substitution ($\sigma$)} 
-\label{sec:sigma_CES}
 %..............................
 
 \citet{Gortz1977} shows that
-the elasticity of substitution ($\sigma$)
-in the CES utility model is given by
+the elasticity of substitution 
+prior to the EEU ($\orig{\sigma}$) can be computed by
 
 \begin{equation} \label{eq:sigma}
-  \sigma = \frac{\fCs + \eqspsUCorig}{\fCs - 1} \; .
+  \orig{\sigma} = \frac{\fCs + \eqspsUCorig}{\fCs - 1} \; .
 \end{equation}
 %
-Thus, the elasticity of substitution ($\sigma$) 
+Thus, the original elasticity of substitution ($\orig{\sigma}$) 
 can be determined from two pieces of readily available information:
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -557,11 +509,168 @@ can be determined from two pieces of readily available information:
         from Eq.~(\ref{eq:fCs})).
 
 \end{enumerate*}
+%
+In the CES utility model, $\orig{\sigma}$ is assumed invariant
+and given the undecorated symbol $\sigma$
+to indicate it applies across all rebound effects.
 
 
 %..............................
-\paragraph{Compensated own price elasticity of energy service consumption ($\eqspsChat$)} 
-\label{sec:eqspsC_CES}
+\paragraph{Uncompensated cross price elasticity ($\eqopsUCorig$)} 
+%..............................
+
+From \citet{Hicks1934}, 
+we note that the pre-EEU uncompensated cross-price elasticity ($\eqopsUCorig$)
+can be expressed as
+
+\begin{equation} \label{eq:Allen}
+  \eqopsUCorig = \fCs (\sigma - \eqoM) \; .
+\end{equation}
+
+
+%..............................
+\paragraph{Compensated own price elasticity ($\eqspsCorig$)} 
+%..............................
+
+An expression for the compensated own price elasticity ($\eqspsCorig$)
+can be derived using the Slutsky equation, 
+whereby the uncompensated own price elasticity 
+of the energy service ($\eqspsUCorig$) 
+is decomposed into the compensated price elasticity ($\eqspsCorig$) and
+the income elasticity ($\eqsM$) as follows:
+
+\begin{equation} \label{eq:slutsky}
+  \eqspsUCorig = \eqspsCorig - \fCs \eqsM \; ,
+\end{equation}
+%
+where $\fCs$ is given by Eq.~(\ref{eq:fCs}), and 
+the income elasticity ($\eqsM$) is given in Section~\ref{sec:income_elasticities}.
+Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gives
+
+\begin{equation} \label{eq:eqsps}
+  \eqspsCorig = \eqspsUCorig + \fCs \eqsM \; .
+\end{equation}
+
+
+%..............................
+\paragraph{Compensated cross price elasticity ($\eqopsCorig$)} 
+%..............................
+
+The cross-price version of the Slutsky equation is the starting point
+for deriving the compensated cross price elasticity ($\eqopsCorig$):
+
+\begin{equation} \label{eq:slutsky_cross}
+  \eqopsUCorig = \eqopsCorig - \fCs \eqoM \; .
+\end{equation}
+%
+The income elasticity of other goods consumption ($\eqoM$) 
+is given in Section~\ref{sec:income_elasticities}.
+Solving for $\eqopsCorig$ gives
+
+\begin{equation} \label{eq:slutsky_cross_modified}
+  \eqopsCorig = \eqopsUCorig + \fCs \eqoM \; .
+\end{equation}
+
+An alternative formulation can be derived by setting 
+Eq.~(\ref{eq:Allen}) equal to 
+Eq.~(\ref{eq:slutsky_cross})
+to obtain
+
+\begin{equation}
+  \fCs (\sigma - \eqoM) = \eqopsCorig - \fCs \eqoM \; .
+\end{equation}
+%
+Solving for $\eqopsCorig$ gives
+
+\begin{equation} \label{eq:eqops_general}
+  \eqopsCorig = \fCs \sigma \; .
+\end{equation}
+%
+Substituting $\sigma$ from Eq.~(\ref{eq:sigma}) gives
+
+\begin{equation} \label{eq:eqops}
+  \eqopsCorig = \frac{\fCs (\fCs + \eqspsUCorig)}{\fCs - 1} \; .
+\end{equation}
+
+Assuming a given value for the uncompensated own price elasticity ($\eqspsUCorig$), 
+all other pre-EEU elasticities can be calculated from 
+Eqs.~(\ref{eq:sigma}), (\ref{eq:Allen}), (\ref{eq:eqsps}), and
+(\ref{eq:slutsky_cross_modified}) or (\ref{eq:eqops}).
+
+Note that the rebound framework in this paper uses the CES utility model and
+needs only the uncompensated own price elasticity ($\eqspsUCorig$)
+and the derived elasticity of substitution ($\sigma$) to calculate rebound values.
+The other price elasticities ($\eqspsUCorig$, $\eqspsCorig$, and $\eqopsCorig$)
+are helpful for elucidating results derived from the framework,
+a task left for Part~II.
+
+
+%------------------------------
+\subsubsection{Post substitution effect ($\wedge$) elasticities} 
+\label{sec:post_sub_elasticities}
+%------------------------------
+
+The stage after the substitution effect ($\wedge$)
+represents the re-equilibration of device owner 
+preferences and behavior after the energy service price drop
+caused by the EEU.
+Post-EEU, elasticities may be different from the original condition.
+This section derives expressions for elasticities at the $\wedge$ stage.
+
+
+%..............................
+\paragraph{CPE utility model} 
+%..............................
+
+By definition, all price elasticities are assumed unchanged 
+from their original values 
+across the substitution effect
+in the constant price elasticity (CPE) utility model. 
+Thus, 
+
+\begin{align} \label{eq:cpe_hat_elasticities}
+  \eqspsUChat &= \eqspsUCorig \; , \\
+  \eqopsUChat &= \eqopsUCorig \; , \\
+  \eqspsChat &= \eqspsCorig \; , \mathrm{and} \\
+  \eqopsChat &= \eqopsCorig \; .
+\end{align}
+
+Under the CPE approximation, the post-EEU elasticity of substitution will
+be different from its original value ($\asub{\sigma} \ne \orig{\sigma}$) but
+we don't derive $\asub{\sigma}$ here
+as the CPE utility model is only an approximation
+for vanishingly small changes in energy efficiency.
+
+
+%..............................
+\paragraph{CES utility model} 
+%..............................
+
+The CES utility model is rather different to the CPE model with respect to the 
+behavior of elasticities across the substitution effect.
+
+
+%..............................
+\subparagraph{Elasticity of substitution ($\sigma$)} 
+%..............................
+
+Be definition, the elasticity of substitution ($\sigma$)
+is constant across the substitution effect for the CES utility model.
+Thus,
+
+\begin{equation}
+  \asub{\sigma} = \orig{\sigma} \; .
+\end{equation}
+%
+Because the elasticity of substitution is unchanged, 
+we refer to $\sigma$ without decoration for the CES utility model.
+The constancy of $\sigma$ means that the price elasticities ($\varepsilon$)
+will vary with the energy service price ($\amacro{p}_s$) 
+across the substitution effect.
+
+
+%..............................
+\subparagraph{Compensated own price elasticity ($\eqspsChat$)} 
 %..............................
 
 The compensated own price elasticity of energy service demand ($\eqspsChat$)
@@ -570,7 +679,7 @@ across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
-($\rate{u} = \rbsub{u} = \rasub{u}$).
+($\rasub{u} = \rbsub{u}$).
 In contrast to the CPE utility model above, 
 the compensated own price elasticity of energy service demand ($\eqspsChat$)
 is not constant in the CES utility model.
@@ -659,7 +768,7 @@ to energy service price ($\amacro{p}_s$).
 
 
 %..............................
-\paragraph{Compensated cross price elasticity of other goods consumption ($\eqopsChat$)} 
+\subparagraph{Compensated cross price elasticity ($\eqopsChat$)} 
 \label{sec:eqopsC_CES}
 %..............................
 
@@ -669,7 +778,7 @@ across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
-($\rate{u} = \rbsub{u} = \rasub{u}$).
+($\rasub{u} = \rbsub{u}$).
 To find the compensated cross-price elasticity of other goods consumption ($\eqopsChat$),
 we follow a similar procedure as for deriving the 
 own-price elasticity of energy service consumption ($\eqspsChat$), 
@@ -694,7 +803,7 @@ of other goods consumption($\eqopsChat$).
 Again, we need to find the partial
 derivative of the rate of other goods consumption ($\rate{q}_o$) 
 with respect to the energy service price ($\amacro{p}_s$) 
-at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
+at constant utility ($\rbsub{u} = \rasub{u}$)
 across the substitution effect.
 The second difference is 
 the starting point for this derivation, 
@@ -763,6 +872,33 @@ of the energy service price after the EEU~($\amacro{p}_s$).
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
 to energy service price ($\amacro{p}_s$).
+
+
+%..............................
+\subparagraph{Uncompensated own price elasticity ($\eqspsUChat$)} 
+%..............................
+
+After finding the compensated own price elasticity ($\eqspsChat$),
+the Slutsky equation can be used directly to find the 
+uncompensated own price elasticity ($\eqspsUChat$)
+after the substitution effect for the CES utility model.
+
+\begin{equation}
+  \eqspsUChat = \eqspsChat - \fCshat \eqsM
+\end{equation}
+
+
+%..............................
+\subparagraph{Uncompensated cross price elasticity ($\eqopsUChat$)} 
+%..............................
+
+The result from \citet{Hicks1934} can be used to 
+calculate the uncompensated cross price elasticity ($\eqopsUChat$)
+for the CES utility model.
+
+\begin{equation}
+  \eqopsUChat = \fCshat (\sigma - \eqoM) \; .
+\end{equation}
 
 
 %++++++++++++++++++++++++++++++
