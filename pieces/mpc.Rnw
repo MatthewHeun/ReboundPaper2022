@@ -10,7 +10,7 @@ are reminiscent of the marginal propensity to consume (MPC).
 In this appendix, we show the relationship between the macro factor ($k$) and $\MPC$.
 
 The relationship between the macro factor ($k$) and $\MPC$ spans
-the income and macro effects.
+the substitution, income, and macro effects.
 In this framework, the device owner's net savings 
 after the emplacement effect ($\raempl{N}$) is respent completely.
 One may assume that firms and other consumers who receive the net savings have a 

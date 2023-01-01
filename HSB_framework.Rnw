@@ -974,31 +974,36 @@ at the same level as prior to the EEU,
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
 
-An approximate utility model
+A constant price elasticity (CPE) utility model
 is often used in the literature
 (e.g., see \citet[p.~17, footnote~43]{Borenstein:2015aa})
 for determining 
 post-substitution effect consumption 
 and therefore $Re_{dsub}$ and $Re_{isub}$.
-The approximate utility model assumes that 
+By definition, the CPE utility model assumes that 
 compensated and uncompensated, own and cross price elasticities
 remain constant along an indifference curve. 
 (See Appendix~\ref{sec:utility_and_elasticities}.)
 Whether that is true depends on the utility function used.
-Constant price elasticities (as in the approximate utility model)
+Constant price elasticities (as in the CPE utility model)
 are approximations that are in general only applicable to marginal price changes. 
 Appendix~\ref{sec:Resub_approximate_method}
 contains details of the approximate utility model.
 
 Here, we present an exact utility model that allows 
-the compensated energy service price elasticity of energy service demand ($\eqspsC$) and
-the compensated energy service cross-price elasticity of other goods demand ($\eqopsC$)
+all of
+the uncompensated own price elasticity ($\eqspsUC$),
+the uncompensated cross price elasticity ($\eqopsUC$),
+the compensated own price elasticity ($\eqspsC$), and
+the compensated cross-price elasticity ($\eqopsC$)
 to vary along an indifference curve, 
-allowing analysis of non-marginal energy service price changes ($\orig{p}_s >\!\!> \aempl{p}_s$). 
-We employ a fully specified CES utility model,
+thereby enabling analysis of non-marginal energy service price changes 
+($\orig{p}_s >\!\!> \aempl{p}_s$). 
+We employ a fully specified 
+constant elasticity of substitution (CES) utility model,
 which allows the direct calculation
 of the utility-maximizing consumption bundle for any constraint.
-The utility model describes the device owner's behavior as
+The CES utility model describes the device owner's behavior as
 
 \begin{equation} \label{eq:ces_utility}
   \frac{\rate{u}}{\rbempl{u}} = \cesutility{} \; .
@@ -1062,7 +1067,7 @@ assuming the CES utility model.%
   $\rasub{q}_s/\rorig{q}_s$ and
   $\rasub{C}_o/\rorig{C}_o$
   must be determined
-  and substituted into Eqs.~\ref{eq:Re_dsub_prelim} and~\ref{eq:Re_isub_prelim}, 
+  and substituted into Eqs.~(\ref{eq:Re_dsub_prelim}) and~(\ref{eq:Re_isub_prelim}), 
   respectively.
 }
 %
@@ -1325,7 +1330,7 @@ as one important long-run dynamic factor in total rebound.
 %we do not mean to imply that other macroeconomic rebounds are less
 %important to study.
 
-Before establishing a formalism, we clarify the link between consumer theory
+Before establishing a formalism for $Re_{macro}$, we clarify the link between consumer theory
 and economic growth. \citet{Turner:2013aa} cautions that when households
 see the productivity of their non-market activities increase,
 GDP remains unchanged.\footnote{
@@ -1487,7 +1492,8 @@ that provides a detailed assessment of individual EEUs with tractable,
 easy-to-understand mathematics.
 Partial equilibrium frameworks are easier to understand, in part, because
 they constrain price variation to the energy service only; 
-all other prices remain constant.%
+all other prices remain constant
+(at least at the microeconomic level).%
 \footnote{
   General equilibrium frameworks provide detail and precision
   on economy-wide price adjustments, but
@@ -1496,9 +1502,9 @@ all other prices remain constant.%
   lose simplicity of exposition.
 }
 %
-In our partial equilibrium framework, 
-general equilibrium effects are captured by 
-a simplified, one-dimensional, macroeconomic-level rebound effect
+In our partial equilibrium framework (at the microeconomic level), 
+general equilibrium effects at the macroeconomic level are captured by 
+a simplified, one-dimensional rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
 We are not the first to develop a partial equilibrium rebound analysis framework,
@@ -1509,8 +1515,13 @@ analysis of energy, expenditure, and consumption aspects of rebound;
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
 operationality.
-Only when all of the above characteristics are present can  
-a comprehensive picture of rebound emerge.
+When all of the above characteristics are present, 
+a comprehensive picture of rebound can emerge.%
+\footnote{
+  See Section~\ref{PartII-sec:path_graphs} of Part~II for literal pictures of rebound in 
+  energy, expenditure, and consumption planes.
+}
+%
 Table~\ref{tab:previous_frameworks} shows our assessment
 of selected previous partial equilibrium frameworks (in columns)
 relative to the characteristics discussed above (in rows).
@@ -1614,6 +1625,7 @@ require conceptual development and operationalization.
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
 hence we fill the ``This paper (2023)'' column 
 with mostly filled circles (\rating{100}).
+In the process, we enhance clarity in the field of energy rebound.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1678,12 +1690,13 @@ In Part~II of this paper,
 we attempt to bring further clarity to rebound analysis
 in three ways. 
 First, 
-we develop a way to visualize rebound effects 
-for energy, expenditure, and consumption aspects. 
-Second, we apply the partial equilibrium framework to two EEUs:
+we develop a way to visualize 
+the energy, expenditure, and consumption aspects
+of rebound effects.
+Second, we apply the framework to two EEUs:
 an upgraded electric lamp and 
 an upgraded automobile.
-Finally, we provide rebound calculations for the two examples.
+Finally, we provide results of rebound calculations for the two examples.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1823,7 +1836,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Income and macro effects and relation to the
+\section{Respending and the
 marginal propensity to consume (MPC)}
 \label{sec:income_macro_mpc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
