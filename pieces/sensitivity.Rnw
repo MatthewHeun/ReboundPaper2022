@@ -553,10 +553,11 @@ and Appendix~\ref{PartI-sec:utility_and_elasticities}
 of Part~I.
 Note that the left side of each graph ($\amacro{p}_{s} = 0$)
 represents infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
-i.e., delivery of the energy service without energy consumption.
+i.e.\ delivery of the energy service without energy consumption.
 
 As expected, both of the
-uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$) 
+uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$,
+dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph}) 
 are negative, regardless of the energy service price ($\amacro{p}_s$):
 a higher price means less consumption, all other things being equal.
 The compensated own price elasticity ($\eqspsChat$) is negative
@@ -659,7 +660,7 @@ more variation of price elasticities ($\asub{\varepsilon}$) with energy service 
 than the lamp example, 
 because the expenditure share ($\fCs$) for the lamp example is very small
 compared to the car example.
-Using the constant price elasticity (CPE) approximation may have acceptably
+Using the constant price elasticity (CPE) utility model may have acceptably
 small errors in the lamp example. 
 However, for the car example, using the CES utility function will be necessary
 to eliminate errors that will be present in the CPE approximation.
