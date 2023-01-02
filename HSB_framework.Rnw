@@ -768,16 +768,29 @@ $\Sdot$ can be rewritten conveniently as
 %
 (See Appendix~\ref{sec:Sdot} for the derivation.)
 
-Because behavior changes are not considered
-in the direct emplacement effect,
-actual and expected energy savings rates are identical, and there is no takeback.
+Because the original and upgraded device are assumed to 
+have equal performance%
+\footnote{
+  Of course, it is often true that the original and upgraded device
+  have small performance differences. 
+  E.g., a high-efficiency LED lamp may have slightly greater or slightly smaller 
+  lumen output than an incandescent lamp it replaces. 
+  For the purposes of this framework,
+  we assume that the upgraded device can be matched closely enough
+  to the original device 
+  that the differences are immaterial to the owner.
+}
+%
+and because
+behavior changes are not considered in the direct emplacement effect,
+actual and expected energy savings rates are identical, and
+there is no takeback.
 By definition, then, the direct emplacement effect causes no rebound.
 Thus, 
 
 \begin{equation} \label{eq:Re_dempl0}
   Re_{dempl} = 0 \; .
 \end{equation}
-%
 
 
 %..............................
