@@ -1001,10 +1001,11 @@ Whether that is true depends on the utility function used.
 Constant price elasticities (as in the CPE utility model)
 are approximations that are in general only applicable to marginal price changes. 
 Appendix~\ref{sec:Resub_approximate_method}
-contains details of the approximate utility model.
+contains details of the CPE utility model.
 
-Here, we present an exact utility model that allows 
-all of
+Here, we present a
+constant elasticity of substitution (CES) utility model
+that allows all of
 the uncompensated own price elasticity ($\eqspsUC$),
 the uncompensated cross price elasticity ($\eqopsUC$),
 the compensated own price elasticity ($\eqspsC$), and
@@ -1012,9 +1013,7 @@ the compensated cross price elasticity ($\eqopsC$)
 to vary along an indifference curve, 
 thereby enabling analysis of non-marginal energy service price changes 
 ($\orig{p}_s >\!\!> \aempl{p}_s$). 
-We employ a fully specified 
-constant elasticity of substitution (CES) utility model,
-which allows the direct calculation
+The CES utility model allows the direct calculation
 of the utility-maximizing consumption bundle for any constraint.
 The CES utility model describes the device owner's behavior as
 
