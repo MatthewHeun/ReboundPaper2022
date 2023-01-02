@@ -217,7 +217,8 @@ affect economy-wide rebound
 in general equilibrium frameworks
 \citep{Lemoine:2020aa, Fullerton2020, blackburn2020energy}.
 Arguments from microeconomics (i.e., at sectoral and individual level) have
-been used from the outset of the modern debate \citep[e.g.]{Khazzoom1980,Greening2000}
+been used from the outset of the modern debate 
+(e.g., \citet{Khazzoom1980} and \citet{Greening2000}),
 and \citet{Borenstein:2015aa} and \citet{Chan2015}
 recently made progress toward solidifying the microeconomic analytical foundations. 
 Yet more is needed to support empirical efforts. **** HERE GS MORE INPUT ****
