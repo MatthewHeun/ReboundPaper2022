@@ -341,7 +341,10 @@ is captured by indirect substitution rebound~($Re_{isub}$).
 
 We begin by deriving an expression for direct and indirect 
 substitution effect rebound ($Re_{dsub}$ and $Re_{isub}$, respectively).
-Thereafter, we develop an approximate model and a CES utility model for determining the 
+Thereafter, we develop 
+a constant price elasticity (CPE) utility model and
+a constant elasticity of substitution (CES) utility model
+for determining the 
 post-substitution point ($\rasub{q}_s$ and $\rasub{C}_o$).
 
 
@@ -440,27 +443,28 @@ indirect substitution rebound.
 
 Determining the post-substitution effect conditions
 requires reference to a consumer utility model.
-We first show an approximate model, often used in the literature. 
+We first show the CPE utility model, often used in the literature. 
 Second, we use a constant elasticity of substitution (CES)
 utility model. 
 The CES model is used for all calculations and graphs in this paper.
 
 
 %..............................
-\paragraph{Approximate utility model} 
+\paragraph{Constant price elasticity (CPE) utility model} 
 \label{sec:Resub_approximate_method}
 %..............................
 
-In the literature, an approximate utility model is often used 
+In the literature, a constant price elasticity (CPE) utility model
+is often used 
 \citep[p.~17, footnote~43]{Borenstein:2015aa}.
 In the two examples of Part~II (car and electric lamp upgrades),
 rebound calculated using the approximate utility model (here)
-differs from rebound calculated using the exact utility model (below) 
+differs from rebound calculated using the CES utility model (below) 
 by as much as 5\%.
-Thus, we do not recommend use of the approximate utility model.
-We discuss the approximate utility model here for completeness only.
+Thus, we do not recommend use of the CPE utility model.
+We discuss the CPE utility model here for completeness only.
 
-In the approximate model, 
+In the CPE utility model, 
 the relationship between energy service price and energy service consumption rate
 is given by the compensated price elasticity of energy service demand~($\eqspsC$),
 such that
@@ -492,7 +496,7 @@ as energy service efficiency increases ($\amacro{\eta} > \bempl{\eta}$),
 the energy service consumption rate increases ($\rasub{q}_s > \rbsub{q}_s = \rorig{q}_s$).
 
 Substituting Eq.~(\ref{eq:approx_qshat_over_qsorig}) into Eq.~(\ref{eq:Re_dsub_prelim})
-yields the approximate expression for direct substitution rebound.
+yields the CPE model's expression for direct substitution rebound.
 
 \begin{equation} \label{eq:Re_dsub_approx}
   Re_{dsub} = \Redsubeqn
@@ -505,12 +509,12 @@ $\eqspsC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
 yields $Re_{dsub} = 0.15$.
 
 With $\eqspsC \in (-1, 0)$ expected,
-the approximate model indicates that
+the CPE utility model indicates that
 direct substitution rebound will never be larger than 1.
 I.e., the direct substitution effect alone
 can never cause backfire. 
 
-To quantify the substitution effect on other purchases in the approximate model,
+To quantify the substitution effect on other purchases in the CPE utility model,
 we introduce another elasticity,
 the compensated energy service cross price elasticity of other goods demand~($\eqopsC$), 
 such that
@@ -553,7 +557,7 @@ on other goods in the economy~($\rasub{C}_o$) by
 
 Substituting Eq.~(\ref{eq:C_dot_hat_o_eqn}) into Eq.~(\ref{eq:Re_isub_prelim})
 gives the expression for 
-indirect substitution rebound for the approximate utility model.
+indirect substitution rebound for the CPE utility model.
 
 \begin{equation}
   Re_{isub} = \Reisubeqn{}
@@ -572,7 +576,7 @@ reduce the energy takeback rate by direct substitution effects.
 \label{sec:Resub_exact_method}
 %..............................
 
-The approximate utility model assumes that 
+The CPE utility model assumes that 
 the compensated price elasticity of energy service demand ($\eqspsC$) and
 the compensated cross price elasticity of other goods demand ($\eqopsC$)
 are constant along an indifference curve.
@@ -597,13 +601,15 @@ the consumption rate of the energy service ($\rate{q}_s$)
 and the expenditure rate for other goods ($\rate{C}_o$)
 across the substitution effect.
 Thus, we employ a CES utility model in our framework.
+Fig.~\ref{PartII-fig:ExampleConsPathGraph} in Part~II
+(especially segments \starc{} and \chat{})
+illustrates features
+of the CES utility model for determining the new consumption bundle.
 
-% Fig.~\ref{fig:ExampleConsPathGraph} 
-% (especially segments \starc{} and \chat{})
-% illustrates features
-% of the CES utility model for determining the new consumption bundle.
 Two equations are helpful for this analysis.
-First, the slope at any point on indifference curve % \iicirc{} 
+First, the slope at any point on indifference curve 
+(the \iicirc{} curve in 
+Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II)
 is given by Eq.~(\ref{eq:slope_indifference_curve}) with 
 $\rate{u}/\rbempl{u} = 1$ and 
 the share parameter ($a$) replaced by $\fCs$,
@@ -617,8 +623,9 @@ as discussed in Appendix~\ref{sec:utility_and_elasticities}.
                           \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1 - \rho)/\rho} \; .
 \end{align}
 %
-Second, the equation of the % \starstar{} 
-expenditure line is
+Second, the equation of the expenditure line 
+(\starstar{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} 
+of Part~II) is
 
 \begin{equation} \label{eq:starstar_line}
   \frac{\rate{C}_o}{\rbempl{C}_o} = 
@@ -630,10 +637,12 @@ expenditure line is
 \end{equation}
 
 To find the rate of energy service consumption after the substitution effect
-($\rasub{q}_s$), we set the slope of the % \starstar{} 
-expenditure line (Eq.~(\ref{eq:starstar_line}))
-equal to the slope of the % \iicirc{}
+($\rasub{q}_s$), we set the slope of the 
+expenditure line (Eq.~(\ref{eq:starstar_line})
+and line \starstar{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II)
+equal to the slope of the 
 indifference curve 
+(\iicirc{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II)
 at the original utility rate of $\rate{u}/\rbempl{u} = 1$ (Eq.~(\ref{eq:slope_indifference_curve_u1})).
 
 \begin{equation}
@@ -663,7 +672,7 @@ via the CES utility model.
 The rate of other goods consumption after the substitution effect ($\rasub{C}_o$) 
 can be found by substituting Eq.~(\ref{eq:q_s_solution}) and 
 $\rate{u}/\rbempl{u} = 1$ 
-into the functional form of the utility model (Eq.~(\ref{eq:utility_Co_form}))
+into the functional form of the CES utility model (Eq.~(\ref{eq:utility_Co_form}))
 to obtain
 
 \begin{equation}
