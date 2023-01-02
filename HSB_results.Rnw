@@ -2288,7 +2288,7 @@ The comparison studies in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:
 are neither comprehensive nor definitive of car and lamp EEUs;
 rather, they are examples
 that show the sort of calculations and estimations 
-carried out in the general literature.
+carried out in the general literature using a variety of methods.
 That said, many of the comparison studies are highly cited in their field
 and carry reasonable academic weight suitable for our purposes. 
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
