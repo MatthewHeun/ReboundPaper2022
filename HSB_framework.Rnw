@@ -267,7 +267,7 @@ in the past led to vastly differing points of view.''%
   the group of people engaged in ``energy analysis.’'
   For this paper, we define ``energy analysis'' as
   the study of energy transformations from stocks to flows
-  to wastes and energy services
+  energy services and wastes 
   along society's energy conversion chain 
   for the purpose of generating 
   energy services, 
