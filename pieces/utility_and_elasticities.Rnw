@@ -398,7 +398,7 @@ with
 % rebound ($Re_{dsub} + Re_{dinc}$) of 1, by definition.
 % 
 % To see how $Re_{dsub} + Re_{dinc} = 1$,
-% note that the own-price elasticity ($\eqspsUC$)
+% note that the own price elasticity ($\eqspsUC$)
 % in the Cobb-Douglas utility model is a constant, namely $-1$.
 % The Cobb-Douglas uncompensated (Marshallian) demand 
 % for the energy service is of the form
@@ -455,13 +455,13 @@ Thus, there are four price elasticities:
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item the uncompensated own-price elasticity of energy service consumption ($\eqspsUC$),
+  \item the uncompensated own price elasticity of energy service consumption ($\eqspsUC$),
   
-  \item the uncompensated cross-price elasticity of other goods consumption ($\eqopsUC$),
+  \item the uncompensated cross price elasticity of other goods consumption ($\eqopsUC$),
     
-  \item the compensated own-price elasticity of energy service consumption ($\eqspsC$), and 
+  \item the compensated own price elasticity of energy service consumption ($\eqspsC$), and 
   
-  \item the compensated cross-price elasticity of other goods consumption ($\eqopsC$).
+  \item the compensated cross price elasticity of other goods consumption ($\eqopsC$).
 
 \end{enumerate*}
 
@@ -520,7 +520,7 @@ to indicate it applies across all rebound effects.
 %..............................
 
 From \citet{Hicks1934}, 
-we note that the pre-EEU uncompensated cross-price elasticity ($\eqopsUCorig$)
+we note that the pre-EEU uncompensated cross price elasticity ($\eqopsUCorig$)
 can be expressed as
 
 \begin{equation} \label{eq:Allen}
@@ -556,7 +556,7 @@ Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gi
 \paragraph{Compensated cross price elasticity ($\eqopsCorig$)} 
 %..............................
 
-The cross-price version of the Slutsky equation is the starting point
+The cross price version of the Slutsky equation is the starting point
 for deriving the compensated cross price elasticity ($\eqopsCorig$):
 
 \begin{equation} \label{eq:slutsky_cross}
@@ -779,9 +779,9 @@ due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
 ($\rasub{u} = \rbsub{u}$).
-To find the compensated cross-price elasticity of other goods consumption ($\eqopsChat$),
+To find the compensated cross price elasticity of other goods consumption ($\eqopsChat$),
 we follow a similar procedure as for deriving the 
-own-price elasticity of energy service consumption ($\eqspsChat$), 
+own price elasticity of energy service consumption ($\eqspsChat$), 
 with two differences being 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -793,7 +793,7 @@ with two differences being
 \end{enumerate*}
 
 The first difference is 
-the definition of the compensated cross-price elasticity
+the definition of the compensated cross price elasticity
 of other goods consumption($\eqopsChat$).
 
 \begin{equation} \label{eq:eqopsC_def}

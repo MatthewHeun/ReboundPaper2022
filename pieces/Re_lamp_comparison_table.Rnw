@@ -35,10 +35,10 @@
 \midrule
 2 & \citeauthor{Freire-Gonzalez:2011aa}  & Catalonia, & Input-output based      & & & & & 49 & 16 &  \\
   & \citeyearpar{Freire-Gonzalez:2011aa} & Spain,     & energy model, utilising & & & & &    &    &  \\
-  &                                      & 2000--2008 & expenditure/cross-price & & & & &    &    &  \\
+  &                                      & 2000--2008 & expenditure/cross price & & & & &    &    &  \\
   &                                      &            & elasticities            & & & & &    &    &  \\
 \midrule
-3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross-price   & & & & & 10 & 10 &  \\
+3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 10 &  \\
   & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of transport & & & & &    &    &  \\
   &                             &       & fuels, using household    & & & & &    &    &  \\
   &                             &       & spending survey data      & & & & &    &    &  \\
@@ -50,7 +50,7 @@
 5 & \citeauthor{Borenstein:2015aa}  & U.S., & Microeconomic &  & 14      & 6 & & & &  \\
   & \citeyearpar{Borenstein:2015aa} & 2012  & framework     &  & (6--37) &   & & & &  \\
 \midrule
-6 & \citeauthor{Chitnis:2015}  & UK,        & Estimated own/cross-price  & & 14 & 35 & & 41 & 8 & 49 \\
+6 & \citeauthor{Chitnis:2015}  & UK,        & Estimated own/cross price  & & 14 & 35 & & 41 & 8 & 49 \\
   & \citeyearpar{Chitnis:2015} & 1964--2014 & elasticities of transport  & &    &    & &    &   &    \\
   &                            &            & fuels, uses household      & &    &    & &    &   &    \\
   &                            &            & spending survey data       & &    &    & &    &   &    \\

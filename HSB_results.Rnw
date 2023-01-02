@@ -472,7 +472,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsCorig$ [--]                                           &                                &   \\    
   \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
+  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
   $\eqopsCorig$ [--]                                           &                                &   \\ 
   \midrule   
   Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
@@ -693,7 +693,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Compensated own price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsCorig$ [--]                                           &           &   \\    
   \midrule   
-  Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
+  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
   $\eqopsCorig$ [--]                                           &           &   \\ 
   \midrule   
   Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
@@ -2349,7 +2349,7 @@ for both the case of the car (10\% to 49\%) and lamp (10\% to 55\%).
 This alignment may be due to the easier determination
 of direct rebound, from either empirical data
 (e.g., \citet{Small:2005aa}) or
-via own-price elasticities (e.g., \citet{Chitnis:2015}).
+via own price elasticities (e.g., \citet{Chitnis:2015}).
 The empirical data approach appears to give lower rebound values,
 closer to our values.
 
@@ -2364,7 +2364,7 @@ The most likely cause of our larger indirect rebound values
 is that we include both micro and macro rebound levels,
 whereas the comparison studies 
 focus mainly on microeconomic rebound only
-(commonly via cross-price elasticities).
+(commonly via cross price elasticities).
 In other words, 
 comparisons of our indirect rebound values with the comparison studies
 may be too simple and not very meaningful,

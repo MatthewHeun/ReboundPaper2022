@@ -44,7 +44,7 @@
 3 & \citeauthor{Koesler:2013aa}  & Germany, & Static CGE model,        & & & & & $\le$ 64 & $\le$ 16 & 56  \\
   & \citeyearpar{Koesler:2013aa} & 2009     & 10\% efficiency shock    & & & & &          &          &     \\
 \midrule
-4 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross-price   & & & & & 10 & 6 &  \\
+4 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 6 &  \\
   & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of transport & & & & &    &   &  \\
   &                             &       & fuels, using household    & & & & &    &   &  \\
   &                             &       & spending survey data      & & & & &    &   &  \\
@@ -52,7 +52,7 @@
 5 & \citeauthor{Borenstein:2015aa}  & U.S., & Microeconomic &  & 13      & 11 & & & &  \\
   & \citeyearpar{Borenstein:2015aa} & 2012  & framework     &  & (6--28) &    & & & &  \\
 \midrule
-6 & \citeauthor{Chitnis:2015}  & UK,                       & Estimated own/cross-price  & & 72 & 5 & & 55 & 23 & 86 \\
+6 & \citeauthor{Chitnis:2015}  & UK,                       & Estimated own/cross price  & & 72 & 5 & & 55 & 23 & 86 \\
   & \citeyearpar{Chitnis:2015} & 1964--2014                & elasticities of transport  & &    &   & &    &    &    \\
   &                            &                           & fuels, uses household      & &    &   & &    &    &    \\
   &                            &                           & spending survey data       & &    &   & &    &    &    \\

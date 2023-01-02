@@ -995,7 +995,7 @@ all of
 the uncompensated own price elasticity ($\eqspsUC$),
 the uncompensated cross price elasticity ($\eqopsUC$),
 the compensated own price elasticity ($\eqspsC$), and
-the compensated cross-price elasticity ($\eqopsC$)
+the compensated cross price elasticity ($\eqopsC$)
 to vary along an indifference curve, 
 thereby enabling analysis of non-marginal energy service price changes 
 ($\orig{p}_s >\!\!> \aempl{p}_s$). 
@@ -1296,7 +1296,7 @@ In the short run, macroeconomic changes include price changes in
 goods other than the energy service. 
 For instance, other goods to
 which the energy service is an input could become cheaper, and
-changes in demand from cross-price elasticities could alter
+changes in demand from cross price elasticities could alter
 other prices as quantities supplied and demanded adjust to each other. 
 The most notable price change is the price of
 energy itself which could fall due to lower demand.
