@@ -216,10 +216,11 @@ Progress has been made recently on how price changes
 affect economy-wide rebound 
 in general equilibrium frameworks
 \citep{Lemoine:2020aa, Fullerton2020, blackburn2020energy}.
-At the microeconomic (i.e., sectoral and individual) level,
-\citet{Borenstein:2015aa} and \citet{Chan2015}
-made progress toward solidifying the analytical foundations, 
-but more is needed to support empirical efforts.
+Arguments from microeconomics (i.e., at sectoral and individual level) have
+been used from the outset of the modern debate \citep[e.g.]{Khazzoom1980,Greening2000}
+and \citet{Borenstein:2015aa} and \citet{Chan2015}
+reently made progress toward solidifying the microeconomic analytical foundations. 
+Yet more is needed to support empirical efforts. **** HERE GS MORE INPUT ****
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
 a wide range of rebound values, 
@@ -414,6 +415,13 @@ in our framework comprises three effects:
 an emplacement effect, 
 a substitution effect, and
 an income effect. 
+These partition direct and indirect rebound effects.
+For instance, the direct rebound effect can be partitioned into
+a direct substitution and direct income effect. Both 
+change the consumption of the energy service whose efficiency has been
+upgraded due to the microeconomic behavioral model of the consumer that
+responds to the cheaper energy service.
+
 We assume a partial equilibrium response to the 
 energy efficiency upgrade (EEU)
 at the microeconomic level;
@@ -1309,7 +1317,7 @@ goods other than the energy service.
 For instance, other goods to
 which the energy service is an input could become cheaper, and
 changes in demand from cross price elasticities could alter
-other prices as quantities supplied and demanded adjust to each other. 
+other prices as quantities supplied adjust to the new demand schedule. 
 The most notable price change is the price of
 energy itself which could fall due to lower demand.
 The energy price or market effect is accordingly typically noted as an
@@ -1331,10 +1339,9 @@ Structural changes pose complicated problems for rebound, as
 network effects can lead to path-dependencies in 
 using low- or high-energy intensity technologies \citep{Arthur1989, Fouquet2016}.
 Structural changes also interact with economic growth.
-% Industrialization has been a key driver of
-% economic growth. 
-We focus here on rebound from economic growth
-as one important long-run dynamic factor in total rebound.
+We propose a simple rule for incorporating these dynamic effects into our analysis.
+%We focus here on rebound from economic growth
+%as one important long-run dynamic factor in total rebound.
 %We think
 %rebound from grwoth is important because it could be argued to encompass and
 %be an expression of some of the other macroeconomic rebounds and
@@ -1363,9 +1370,9 @@ GDP remains unchanged.\footnote{
 }
 %
 That may be true in the short run. But
-the question over longer periods is whether the higher productivity
-of household production of energy services does not affect also their
-capacity to contribute to economic growth accounted for by GDP.
+the question over longer periods is whether the more productive
+household energy services do not also feed through into economic
+growth accounted for by GDP.
 People in affluent countries spend about as much time on
 unpaid (i.e.\ non-market) work as on paid work \citep{Folbre2021}.
 Therefore productivity improvements in unpaid work can spill over
@@ -1380,8 +1387,8 @@ then the freed cash could be spent on more effective
 or even be used to start a venture. 
 In all cases, it would be rash to conclude that 
 just because some EEUs lead to productivity increases
-not captured by directly GDP,
-it does not eventually lead to additional economic growth.
+not captured directly by GDP,
+they do not eventually lead to additional economic growth.
 
 \citeauthor{Borenstein:2015aa} also addressed these macro effects 
 from consumer behavior
@@ -1392,8 +1399,8 @@ likening it to the Keynesian macroeconomic multiplier.
 However, the dynamic macro rebound effect 
 is not an autonomous expansion of expenditure,
 a demand-side shock,
-in an otherwise unchanged economy 
-(like the Keynesian multiplier).
+in an otherwise unchanged economy,
+like the Keynesian multiplier \citep{Kahn1931,Keynes1936}.
 Rather, macroeconomic rebound is caused by an energy productivity improvement,
 a supply-side shock.
 After the EEU, 
@@ -1404,8 +1411,8 @@ That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side
 and demand-side effects both play a role as the consequences of the
 technology shock play themselves out.
 Furthermore, his approach has the advantage that it can be directly
-linked to the compensating variation, the income effect, and
-their consequences for macroeconomic rebound. 
+linked to the income effect less compensating variation and
+its consequence for macroeconomic rebound. 
 \citeauthor{Borenstein:2015aa} also notes that scaling from net 
 savings ($\raempl{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
@@ -1437,7 +1444,7 @@ $k = 0$ means there is no dynamic effect
 resulting from the energy efficiency upgrade.
 $k > 0$ means that productivity-driven macroeconomic growth has occurred
 with consequent implications for additional energy consumption in the wider economy.
-The relationship between $k$ and $\MPC$ is given by
+The relationship between $k$ and $\MPC$ is given by the multiplier relationship
 
 \begin{equation} \label{eq:mpc_and_k_converged}
   k = \frac{1}{\frac{1}{\MPC} - 1} \; .
@@ -1446,8 +1453,9 @@ The relationship between $k$ and $\MPC$ is given by
 (See Appendix~\ref{sec:income_macro_mpc} for the derivation 
 of Eq.~(\ref{eq:mpc_and_k_converged}).)
 
-A further advantage of using the $\MPC$ approach is that there are
-many estimates of its magnitude, though we stress again that $\MPC$ is a
+A further advantage of using the macro factor approach is that there are
+many estimates of the magnitude of $\MPC$, though we stress again that
+using consumption multipliers is a
 \emph{representation} of the effect, while the cause is higher
 energy efficiency on the supply side.
 A recent review by \citet{Carroll2017} 
