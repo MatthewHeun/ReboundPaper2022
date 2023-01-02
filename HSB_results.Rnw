@@ -2439,7 +2439,7 @@ and our bottom up approach for calculating total rebound.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we attempt to bring clarity to energy rebound
+In this paper (Part~II), we add clarity to the field of energy rebound
 by 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -2456,16 +2456,21 @@ by
   
 \end{enumerate*}
 %
-To the extent that Part~I and Part~II provide clarity, 
-we trust that the gap between 
-economists and energy analysts will be reduced, leading to
-better interdisciplinary understanding of rebound phenomena.
 We encourage energy analysts and economists to use visualizations
-like the rebound planes to document their rebound calculations going forward.
-We hope that greater clarity about and understanding of 
-energy rebound
-will help inform energy and climate policy
-that takes account of rebound more centrally.
+like the energy, expenditure, and consumption 
+rebound planes to document rebound calculations going forward.
+Our hope is that additional clarity will 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item narrow the gap between economists and energy analysts,
+  
+  \item lead to deeper interdisciplinary understanding of rebound phenomena, and
+  
+  \item enable energy and climate policy
+        that takes full account of rebound.
+
+\end{enumerate*}
 
 From the development and application of the framework in Part~II, 
 we draw two important conclusions.
@@ -2475,14 +2480,14 @@ First, the car and lamp examples (Section~\ref{sec:results}) show that
         energy, expenditure, and consumption aspects of 
         direct and indirect rebound 
         for emplacement, substitution, income, and macro effects.
-Second, the examples show that magnitudes of rebound effects
+Second, the examples show that magnitudes of all rebound effects
         vary with the type of EEU performed.
 
-Future work could be pursued in several areas. 
+Further work could be pursued in several areas. 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item Further empirical studies could be performed
+  \item Additional empirical studies could be performed
         to calculate the magnitude of different 
         rebound effects in a variety of real-life EEUs.
 
@@ -2500,16 +2505,16 @@ Future work could be pursued in several areas.
         of the energy intensity of the economy ($I_E$).
         
   \item Sensitivities of rebound components to model parameters
-        could be investigated, although
+        could be investigated more fully 
+        than in Appendix~\ref{sec:sensitivity_analyses}, although
         this will be challenging work because
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
         is unlikely to be independent of post-EEU capital cost ($\amacro{C}_{cap}$).
 
   \item This framework could be embedded 
-        in energy-economy models to better include rebound effects in discussions of 
-        macro energy modeling, 
-        energy policy, and 
+        in energy-economy models to better include rebound effects 
+        in discussions of macro energy modeling, energy policy, and 
         CO$_2$ emissions mitigation.
         
 \end{enumerate*}
