@@ -97,7 +97,7 @@ to calculate and show total rebound for two case studies:
 energy efficiency upgrades of
 a car (47\%) and
 an electric lamp (67\%).
-Comparison of our rebound values to previously estimated values is provided.
+Comparison of our rebound values to previous values is provided.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -145,8 +145,8 @@ We said that
   in ways economists can understand.
 \end{quote}
 
-To move improve clarity in the rebound space, 
-in Part~I we developed a partial equilibrium framework 
+To move improve clarity in the rebound field, 
+we developed in Part~I a framework 
 for analyzing energy rebound, 
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
@@ -186,10 +186,10 @@ The key contributions of Part~II are
 	
   \item development of the first (to our knowledge) 
         visualizations of rebound effects
-        in energy, expenditure, and consumption spaces,
+        in energy, expenditure, and consumption planes,
         
   \item documentation of new rebound values for automobile and lighting 
-        upgrades based on a calibrated version of our model from Part~I, and 
+        upgrades based on a calibrated version of our framework from Part~I, and 
         
   \item creation of open source software tools to calculate and visualize rebound 
         for any EEU.
@@ -212,11 +212,11 @@ Section~\ref{sec:conclusion} concludes.
 \label{sec:methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The section contains data for the examples
+This section contains data for the examples
 (Section~\ref{sec:data}), 
-an explication of our method for visualizing rebound effects and magnitudes
+an explication of our new method for visualizing rebound effects and magnitudes
 (Section~\ref{sec:path_graphs}), and
-a description of software tools for rebound calculations and visualization
+a description of new software tools for rebound calculations and visualization
 (Section~\ref{sec:software_tools}).
 
 
@@ -239,7 +239,7 @@ The case studies are presented with much detail here
 to support our goal of bringing clarity to the process
 of calculating the magnitude of rebound effects.
 Here, we collect parameter values
-for the equations for
+for the equations to calculate
 eight rebound components:
 $Re_{dempl}$,
 $Re_{emb}$,
@@ -252,8 +252,7 @@ $Re_{\macro}$.
 Total rebound 
 ($Re_{tot}$)
 is given by the sum of the above components
-or equivalently by Eq.~\ref{PartI-eq:Re_tot} of Part~I, 
-as shown in Appendix~\ref{PartI-sec:total_rebound} of Part~I.
+or equivalently by Eq.~\ref{PartI-eq:Re_tot} of Part~I.
 
 
 %------------------------------
@@ -439,7 +438,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_car_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Macro factor                                              & \Sexpr{k_car_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -462,8 +461,8 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   Description & Value & Data sources and notes \\
   Parameter [units] & & \\
   \midrule
-  Price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
-  $\eqspsUC$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
+  Uncompensated own price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
+  $\eqspsUCorig$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
                                                            &           &   \citet{goetzke2018} who estimated values \\
                                                            &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
                                                              &           &   who estimated values between $-0.1$ and $-0.3$. \\  
@@ -471,10 +470,10 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &            &     based on \citet{Parry2005}. \\
   \midrule
   Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsC$ [--]                                           &                                &   \\    
+  $\eqspsCorig$ [--]                                           &                                &   \\    
   \midrule   
   Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsC$ [--]                                           &                                &   \\ 
+  $\eqopsCorig$ [--]                                           &                                &   \\ 
   \midrule   
   Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
   $\eqsM$ [--]                                            &                                &   \\ 
@@ -664,7 +663,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
-  Macro factor                                              & \Sexpr{k_lamp_char}           & Initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Macro factor                                              & \Sexpr{k_lamp_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -686,16 +685,16 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Description & Value & Data sources and notes \\
   Parameter [units] & & \\
   \midrule
-  Price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
-  $\eqspsUC$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
+  Uncompensated own price elasticity of lighting demand  &   $\Sexpr{e_qs_ps_UC_lamp_char}$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
+  $\eqspsUCorig$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
                                                             &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
                                                             &            &     based on \citet{Fouquet2011}. \\
   \midrule
-  Compensated price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsC$ [--]                                           &           &   \\    
+  Compensated own price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
+  $\eqspsCorig$ [--]                                           &           &   \\    
   \midrule   
   Compensated cross-price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsC$ [--]                                           &           &   \\ 
+  $\eqopsCorig$ [--]                                           &           &   \\ 
   \midrule   
   Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
   $\eqsM$ [--]                                            &           &   \\ 
@@ -735,9 +734,9 @@ Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
 
 Axes of the rebound planes
-represent direct and indirect rebound.
-Direct rebound is shown on the $x$-axis, and 
-indirect rebound is shown on the $y$-axis.
+represent direct and indirect rebound, with 
+direct rebound shown on the $x$-axis, and 
+indirect rebound shown on the $y$-axis.
 Specifically, 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -1104,9 +1103,10 @@ unchanged across the emplacement effect
 Thus, 
 only movements after the $*$ point are visible as a path in the consumption plane, and
 points $\circ$, \emph{a}, \emph{b}, and $*$ 
-collapse to the same location.
+collapse to the same location in the consumption plane.
 
-Indifference curves are denoted by \iicirc{} and \iibar{}. 
+Indifference curves are denoted by \iicirc{} and \iibar{}
+and represent lines of constant utility through the $\circ$ and $-$ points. 
 Prior to the EEU, the consumption basket (of the energy service and other goods)
 is represented by the $\circ$ point. 
 The budget constraint,
@@ -1141,7 +1141,7 @@ The income expansion path is a ray (\rr{}) from the origin through the $\wedge$ 
 in the consumption plane.
 In the consumption plane, the pre- and post-income-effect 
 points ($\wedge$ and $-$, respectively)
-lie along the \rr{} ray.
+lie along the \rr{} ray, due to homotheticity.
 The increased consumption rate of the energy service is 
 represented by segment \hatd{} 
 in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
@@ -1239,7 +1239,7 @@ rebound_results %>%
 %++++++++++++++++++++++++++++++
 
 We developed an open source \texttt{R} package called \texttt{ReboundTools}
-to standardize and distribute our methods for calculating rebound magnitudes.
+to standardize and distribute the methods for calculating rebound magnitudes in our framework.
 \texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 (See \citet{Heun:2021us}.)
 \texttt{ReboundTools} provides functions for 
@@ -1258,7 +1258,7 @@ to standardize and distribute our methods for calculating rebound magnitudes.
 all calculations and all rebound planes in this paper.
 
 To find the path in storage to an example spreadsheet bundled with the package, 
-users of the \texttt{ReboundTools} package
+users of \texttt{ReboundTools}
 can call the function \texttt{ReboundTools::sample\_eeu\_data\_path()}.
 After filling the example spreadsheet with parameters for an EEU, 
 users can call two functions
@@ -1266,6 +1266,8 @@ users can call two functions
 to perform all rebound calculations described in this paper.
 The function \texttt{ReboundTools::path\_graphs()} creates 
 rebound paths in the energy, expenditure, and consumption planes.
+Extensive documentation for \texttt{ReboundTools}
+can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
 In addition, a separate Excel workbook that performs identical rebound calculations 
 using the framework of this paper
@@ -1333,6 +1335,7 @@ in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
 The energy plane (Fig.~\ref{fig:CarEnergyGraph})
 shows the size of each rebound effect
 for the car example.
+Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 
 <<CarGraphReResults, include=FALSE>>=
@@ -1561,7 +1564,6 @@ rebound_results %>%
 @
 
 
-Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 <<car_rebound_results_table, results="asis", echo=FALSE>>=
 rebound_results %>% 
@@ -1641,7 +1643,7 @@ sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
 Finally, we note that 
 the link between macroeconomic and microeconomic rebound 
 is largely unexplored, and 
-we assume a value of $k = 1$ for both case studies, initially.
+we assume a value of $k = 1$ for both examples, initially.
 We return to the matter of calibrating $k$
 in the Discussion (Section~\ref{sec:calibrating_k}).
 
@@ -2069,14 +2071,15 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
   magrittr::extract2("Re_tot")
 @
 
-The framework developed in Section~\ref{PartI-sec:framework} of Part~I
-links macroeconomic rebound to microeconomic rebound 
-via a term~($k$) that scales magnitudes in the microeconomic portion of the framework. 
 Few rebound studies have explored the macroeconomic level
 between microeconomic and total rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
-we bridge macroeconomic and microeconomic levels with the macro factor ($k$), 
-as discussed in Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.
+the framework developed in Section~\ref{PartI-sec:framework} of Part~I
+links macroeconomic rebound to microeconomic rebound 
+via the macro factor~($k$) that scales
+magnitudes in the microeconomic portion of the framework. 
+(See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.)
+
 For the results presented in Section~\ref{sec:results} of this paper, 
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device owner in the income effect
@@ -2113,7 +2116,8 @@ for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
   and producer rebounds vary.
 }
 %
-The calibrated values of $k$ that give identical $Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
+The calibrated values of $k$ that give identical 
+$Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
 for both examples are
 $k = \Sexpr{formatC(calibrated_k[["Car"]], digits = 2)}$
 for the car example and
@@ -2133,7 +2137,7 @@ every \$1 of net savings spent by the device owner
 generates \$3 of economic 
 activity in the broader economy
 due to the income effect.
-We multiply $k \rasub{N}$ by the energy intensity of the economy ($I_E$) to 
+We multiply $k \raempl{N}$ by the energy intensity of the economy ($I_E$) to 
 find the energy implications of macro-effect respending throughout the economy.
 
 There are three ways to interpret $k \approx 3$.
@@ -2144,8 +2148,10 @@ long-run productivity growth \citep{Greenwood1997}, therefore a large
 long-run multiplier is plausible,
 even if the initial productivity
 change occurred in household production which is not accounted in GDP.
+(See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I 
+for further discussion of this point.)
 Second, it could be that growth is less than 
-\$3 for every \$1 of freed cash,
+\$3 for every \$1 of respending,
 but that the macroeconomic ``energy price effect'' (a decline in 
 energy prices due to the fallen demand) induces consumption at a higher
 energy intensity than that of the pre-EEU economy. 
@@ -2183,7 +2189,7 @@ the values of total rebound ($Re_{tot}$) should increase to
 for the car and lamp examples,
 respectively.
 For the rest of this paper, 
-we assume $k \approx 3$.
+we use the calibrated value of $k \approx 3$.
 
 
 %++++++++++++++++++++++++++++++
@@ -2252,7 +2258,7 @@ owing to differences in freed cash.
 (For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
 For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
 The efficiency gain for the lamp is far greater than the efficiency gain for the car,
-leading to much different rates of freed cash ($\dot{G}$) and
+leading to much different rates of net income ($\raempl{N}$) and
 different macro rebound values.
 
 % I think there is really no claim in this.
@@ -2289,7 +2295,7 @@ Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 and their associated references 
 enable two types of observations: 
 %
-\begin{enumerate*}[label={(\alph*)}]
+\begin{enumerate*}[label={(\roman*)}]
 	
   \item on the coverage of rebound components, and
   
@@ -2306,13 +2312,17 @@ enable two types of observations:
 First, we can say that none of the comparison studies
 report all rebound effects, as we have done
 in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
-Further, none of the other studies includes
-all of direct and indirect, substitution and income microeconomic rebound effects. 
-Thus, our framework adds conceptual clarity to the field.
-In addition, none of the studies report 
-emplacement rebound ($Re_{empl}$) or macro rebound ($Re_{macro}$).
+Further, none of the studies report 
+emplacement rebound ($Re_{empl} = Re_{emb} + Re_{\md}$).
+None of the other studies includes
+all of direct and indirect, substitution and income microeconomic rebound effects, and
+none of the other studies report macro rebound ($Re_{macro}$) by itself.
 In fact, only 4 or 5 of the 10 studies
 in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
+By carefully including all rebound components in the framework and by 
+elucidating all rebound components in Part~II, 
+we are adding conceptual clarity to the field of energy rebound.
+
 We also observe that studies that provide total rebound 
 are based on a top-down calculation of overall, economy-wide rebound, 
 rather than a bottom-up ``sum-of-components'' approach 
@@ -2321,7 +2331,8 @@ That finding is instructive---it supports the view that
 a comprehensive framework that sets out individual rebound components
 has been missing---and something that informed the objective for Part~I of this paper.
 Top-down estimations or calculations of total, economy-wide rebound 
-may also inhibit comparison, as the effects included or excluded 
+may also inhibit comparison, 
+because the effects included or excluded 
 may not be clear, 
 giving an appearance of a ``black box'' calculation approach.
 That said, without the top-down approaches,
@@ -2365,9 +2376,9 @@ $\Sexpr{f_car("Re_tot")}$\% (car) and
 $\Sexpr{f_lmp("Re_tot")}$\% (lamp)
 are very close to the comparison studies for the car example (49\% to 51\%), but
 nearly double the values from the comparison studies for the lamp example (43\% to 51\%).
-Beyond that, comparison (as noted earlier) is inhibited
-by existing top-down methods versus our bottom up approach
-to calculate total rebound.
+Beyond that, comparisons (as noted earlier) are inhibited
+by methodological differences between previous studies (top-down methods)
+and our bottom up approach for calculating total rebound.
 
 
 %++++++++++++++++++++++++++++++
