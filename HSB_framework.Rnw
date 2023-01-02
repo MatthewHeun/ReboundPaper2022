@@ -219,7 +219,7 @@ in general equilibrium frameworks
 Arguments from microeconomics (i.e., at sectoral and individual level) have
 been used from the outset of the modern debate \citep[e.g.]{Khazzoom1980,Greening2000}
 and \citet{Borenstein:2015aa} and \citet{Chan2015}
-reently made progress toward solidifying the microeconomic analytical foundations. 
+recently made progress toward solidifying the microeconomic analytical foundations. 
 Yet more is needed to support empirical efforts. **** HERE GS MORE INPUT ****
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
@@ -321,11 +321,11 @@ is the lack of consensus on rebound calculation methods and, hence, rebound magn
 We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks 
-is difficult because energy rebound an inherently interdisciplinary topic.
+is difficult because energy rebound is an inherently interdisciplinary topic.
 We believe that providing a detailed explication of a rigorous analytical framework
 for energy rebound,
 which is approachable by both energy analysts and economists alike,
-will go some way toward providing additional clarity on the topic.
+will go some way toward providing additional clarity in the field.
 
 
 %++++++++++++++++++++++++++++++
