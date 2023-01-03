@@ -6,7 +6,7 @@
 \citet{Borenstein:2015aa} has postulated a demand-side argument that macro effects 
 can be represented by a multiplier, which we call the macro factor ($k$).
 \citeauthor{Borenstein:2015aa}'s formulation and our implementation 
-are reminiscent of the marginal propensity to consume (MPC).
+rely on the marginal propensity to consume (MPC).
 In this appendix, we show the relationship between the macro factor ($k$) and $\MPC$.
 
 The relationship between the macro factor ($k$) and $\MPC$ spans
