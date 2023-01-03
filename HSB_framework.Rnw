@@ -422,7 +422,9 @@ The direct rebound effect can be partitioned into
 a direct emplacement effect, 
 a direct substitution effect, and
 a direct income effect. 
-All change the consumption of the energy service
+At the level of the device, 
+all of the direct rebound effects change the consumption 
+of the energy service 
 provided by the machine whose efficiency has been upgraded,  
 according to a microeconomic behavioral model of the consumer who
 responds to the cheaper energy service.
