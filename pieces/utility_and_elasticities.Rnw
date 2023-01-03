@@ -25,14 +25,20 @@ eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 
 
 As discussed in Section~\ref{sec:sub_effect_main_paper}
 and Appendix~\ref{sec:Re_sub}, 
-the substitution effect requires a model for device owner utility
-that compares the perceived benefits of 
-consuming the energy service ($\rate{q}_s$) to
-consuming other goods and services ($\rate{q}_o$).
+the substitution effect requires a model for device owner behavior,
+Behavior is typically represented by a model of utility that is maximized
+with arguments of consuming the energy service ($\rate{q}_s$)
+and other goods and services ($\rate{q}_o$) and
+subject to income and price constraints.
+%that compares the perceived benefits of 
+%consuming the energy service ($\rate{q}_s$) to
+%consuming other goods and services ($\rate{q}_o$).
 In this appendix, we describe two utility models.
-The first utility model is a constant price elasticity (CPE) utility model 
-that applies only for small and marginal
-changes in energy efficiency and 
+The first utility model is a constant price elasticity (CPE) utility model,
+which allows an easy calculation of price-demand relationships as Appendix
+~\ref{sec:Re_sub} illustrates.
+It gives a good approximation of the behavioral response
+for very small changes in energy efficiency and 
 energy service price, 
 such that $\Delta \aempl{\eta} \approx 0$ and $\Delta \aempl{p}_s \approx 0$.
 The CPE utility model 
@@ -44,6 +50,14 @@ We note that larger and non-marginal efficiency gains cause greater rebound
 than small and marginal efficiency gains.
 Thus, any rebound analysis framework needs to accommodate 
 large, non-marginal efficiency changes.
+Since in analytical utility models, price elasticities are point-measures,
+an operational version of such a model should account for the changing price
+elasticity along an indifference curve.\footnote{In principle,
+arc elasticities could give an accurate measure of the relationship
+between price and quantity change with any EEU by calculating the
+percentage price and quantity changes between any two consumption bundles \citep{Allen1934}.
+However, the problem is that we are trying to calculate the new consumption bundle
+using the elasticity, not the other way around.}
 The second utility model discussed in this appendix is the
 Constant Elasticity of Substitution (CES)
 utility model which does, in fact,
@@ -536,7 +550,7 @@ An expression for the compensated own price elasticity ($\eqspsCorig$)
 can be derived using the Slutsky equation, 
 whereby the uncompensated own price elasticity 
 of the energy service ($\eqspsUCorig$) 
-is decomposed into the compensated price elasticity ($\eqspsCorig$) and
+is decomposed into the compensated own price elasticity ($\eqspsCorig$) and
 the income elasticity ($\eqsM$) as follows:
 
 \begin{equation} \label{eq:slutsky}
@@ -611,10 +625,11 @@ a task left for Part~II.
 %------------------------------
 
 The stage after the substitution effect ($\wedge$)
-represents the re-equilibration of device owner 
-preferences and behavior after the energy service price drop
-caused by the EEU.
-Post-EEU, elasticities may be different from the original condition.
+represents utility-maximizing behavior after the energy service price drop
+caused by the EEU and the compensating variation.
+Post-EEU, elasticities may be different from the original condition,
+because the consumption bundle has changed (a move along
+the indifference curve).
 This section derives expressions for elasticities at the $\wedge$ stage.
 
 
@@ -748,7 +763,7 @@ Cancelling terms and
 combining $\amacro{p}_s$ and $\left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]$ 
 terms with different exponents gives
 
-\begin{equation}
+\begin{equation} \label{eq:eqspsC_exact_simple}
   \eqspsChat = \frac{m_s n g (z \amacro{p}_s)^{m_s}}{f + g(z \amacro{p}_s)^{m_s}} \; .
 \end{equation}
 %
@@ -761,10 +776,27 @@ Back-substituting the constants and simplifying where possible yields
 Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated 
 energy service price elasticity of energy service consumption ($\eqspsChat$)
 under the CES utility model is a function 
-of the energy service price after the EEU~($\amacro{p}_s$).
+of the energy service price after the EEU~($\amacro{p}_s$). It is negative,
+as it should, because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
+
+Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
+the derivative of \ref{eq:eqspsC_exact_simple} and simplifying gives
+
+\begin{equation} \label{eq:eqspsC_exact_d}
+ \pdv{\eqspsChat}{\amacro{p}_s} = \frac{m_s^2 n g (z \amacro{p}_s)^{m_s}}{\amacro{p}_s(f + g(z \amacro{p}_s)^{m_s})^2} \; .
+\end{equation}
+
+All terms taken to their power are positive with the exception of $n$.
+For $\sigma>1$, $n$ is positive, and for $\sigma<1$ negative.
+Since we expect $\sigma<1$ (otherwise we have backfire rebound conditions),
+the derivative is negative: the compensated own price
+elasticity becomes more negative.\footnote{For $\sigma=1$, $m_s=0$ and the derivative
+is zero: the Cobb-Douglas special case.} Since the
+share of income spent on the energy service declines for $\sigma<1$,
+it is not immediately clear in which direction $\eqspsUChat$ moves according to equation \ref{eq:Allen}.
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
-to energy service price ($\amacro{p}_s$).
+to energy service price ($\amacro{p}_s$) for concrete examples.
 
 
 %..............................
@@ -855,7 +887,7 @@ Cancelling terms and
 combining $\amacro{p}_s$ and $\left\{ 1 + f  \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}$ 
 terms with different exponents gives
 
-\begin{equation}
+\begin{equation} \label{eq:eqopsC_exact_simple}
   \eqopsChat = \frac{m_o n f (z \amacro{p}_s)^{m_o}}{1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right]} \; .
 \end{equation}
 %
@@ -869,9 +901,24 @@ Eq.~(\ref{eq:eqopsC_exact}) shows that the compensated
 energy service price elasticity of other goods consumption ($\eqopsChat$)
 under the CES utility model is a function 
 of the energy service price after the EEU~($\amacro{p}_s$).
+It is positive, because all terms except $\frac{1}{\rho - 1}$ are positive,
+with $\rho$ and $\fCs$ being bounded above by 1.
+
+Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
+the derivative of \ref{eq:eqopsC_exact_simple} and simplifying gives
+
+\begin{equation}
+ \pdv{\eqopsChat}{\amacro{p}_s} = \frac{m_o^2 n f (z \amacro{p}_s)^{m_o}}{\amacro{p}_s (1 + f \left[ (z \amacro{p}_s)^{m_o} - 1 \right])^2} \; .
+\end{equation}
+
+All terms taken to their power are positive with the exception of $n$,
+analogous to the derivative of the own price elasticity in equation \ref{eq:eqspsC_exact_d}. 
+Thus, with $\sigma<1$ and $n$ negative, the compensated cross price
+elasticity becomes less positive.
+
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
-to energy service price ($\amacro{p}_s$).
+to energy service price ($\amacro{p}_s$) for concrete examples.
 
 
 %..............................
