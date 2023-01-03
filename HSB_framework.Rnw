@@ -192,11 +192,11 @@ while others claim
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item the evidence for large rebound
+  \item that the evidence for large rebound
         (greater than 50\%) is growing 
         \citep{Saunders2015, Berner:2022tb} and
   
-  \item that rebound will negatively impact the effectiveness of energy efficiency
+  \item that rebound will reduce the effectiveness of energy efficiency
         to reduce carbon emissions
         \citep{van-den-Bergh:2017aa}.
     
@@ -241,10 +241,10 @@ Further, analytical studies have stressed the importance of the
 cost of buying the new device as well as energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
-Finally, there are simultaneous changes in energy, expenditure
+Finally, there are simultaneous changes in energy, expenditure,
 and consumption aspects of rebound, and keeping an overview of all
 aspects is hard, with no approach to our knowledge documenting all 
-changes in a transparent way.
+changes in a straightforward manner.
 
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
@@ -1697,8 +1697,8 @@ In the process, we enhance clarity in the field of energy rebound.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this paper (Part~I),
-we developed a rebound analysis framework that
-combines all rebound effects
+we developed a rigorous analytical framework that
+includes all rebound effects
 across energy, expenditure, and consumption aspects with 
 a detailed model of consumer preferences and
 non-marginal energy service price changes
@@ -1708,7 +1708,7 @@ simplest case of a single fuel and a single energy service.
 With
 careful explication of rebound effects and 
 clear derivation of rebound expressions,
-we advance the analytical foundations for empirical determination of rebound and
+we advance the analytical foundations for empirical analyses and
 facilitate interdisciplinary understanding of rebound phenomena
 toward the goal of enhancing clarity in the field of energy rebound and
 enabling more robust rebound calculations
