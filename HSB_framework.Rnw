@@ -100,7 +100,7 @@ rebound analysis framework that
         (under a new ``emplacement effect'' term), and
 
   \item encompasses non-marginal energy efficiency increases and
-        non-marginal energy service price decreases, 
+        non-marginal energy service price decreases.
   
 \end{enumerate*}
 %
