@@ -368,6 +368,9 @@ one that
   \item is approachable for both energy analysts and economists.
 
 \end{enumerate*}
+We strive to keep the framework as simple as possible and in this spirit limit our
+attention to a model of consumer demand for energy services, while stressing that
+the approach is transferable to a producer model with few modifications.
 
 The key \emph{contributions} of this paper are 
 %

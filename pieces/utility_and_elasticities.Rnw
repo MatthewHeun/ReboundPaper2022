@@ -225,7 +225,9 @@ where $\rho \equiv (\sigma - 1)/\sigma$,
 $a$ is a share parameter (determined below), and 
 $\sigma$ is the elasticity of substitution between
 the normalized consumption rate of the energy service ($\rate{q}_s$) and 
-the normalized consumption rate of other goods ($\rate{q}_o$).
+the normalized consumption rate of other goods ($\rate{q}_o$).\footnote{In the
+international trade literature, where the CES utility is
+often used, the elasticity of substitution is also called the Armington elasticity \citep{Feenstra2018}.}
 By definition, $\sigma$ is assumed constant such that
 $\orig{\sigma} = \aempl{\sigma} = \asub{\sigma} = \ainc{\sigma} = \amacro{\sigma} = \sigma$.
 
