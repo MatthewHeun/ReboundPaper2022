@@ -14,8 +14,9 @@
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
 \usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
-\usepackage[]{lineno}   % For line numbers
+\usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
+\usepackage{microtype}          % For beautiful typesetting
 \usepackage{multicol}           % For multi-column layout
 \usepackage{multirow}           % For multi-row layout
 \usepackage{natbib}
@@ -446,7 +447,9 @@ The direct rebound effect can be partitioned into
 a direct emplacement effect, 
 a direct substitution effect, and
 a direct income effect. 
-All change the consumption of the energy service
+At the level of the device, 
+all of the direct rebound effects change the consumption 
+of the energy service 
 provided by the machine whose efficiency has been upgraded,  
 according to a microeconomic behavioral model of the consumer who
 responds to the cheaper energy service.

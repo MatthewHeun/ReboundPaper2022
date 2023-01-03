@@ -14,8 +14,9 @@
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
 \usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
-\usepackage[]{lineno}   % For line numbers
+\usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
+\usepackage{microtype}          % For beautiful typesetting
 \usepackage{multicol}           % For multi-column layout
 \usepackage{multirow}           % For multi-row layout
 \usepackage{natbib}
@@ -1790,6 +1791,8 @@ with $k$ assumed to be 1,
 due to economic expansion caused by 
 productivity enhancements arising from the more-efficient provision of the 
 energy service (lighting).
+Univariate sensitivity studies for both examples (car and lamp)
+can be found in Appendix~\ref{sec:sensitivity_analyses}.
 
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
@@ -2025,10 +2028,6 @@ rebound_results %>%
         format.args = list(big.mark = ","),
         math.style.negative = TRUE)
 @
-
-
-Univariate sensitivity studies for both examples (car and lamp)
-can be found in Appendix~\ref{sec:sensitivity_analyses}.
 
 
 
