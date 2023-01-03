@@ -453,7 +453,7 @@ a direct income effect.
 At the level of the device, 
 all of the direct rebound effects change the consumption 
 of the energy service 
-provided by the machine whose efficiency has been upgraded,  
+provided by the device whose efficiency has been upgraded,  
 according to a microeconomic behavioral model of the consumer who
 responds to the cheaper energy service.
 Similarly, the indirect rebound effect can be partitioned into
