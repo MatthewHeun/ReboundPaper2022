@@ -88,7 +88,8 @@ that is approachable for both energy analysts and economists alike.
 In this paper (Part~II of a two-part paper),
 we bring further clarity to energy rebound by 
 developing energy, expenditure, and consumption rebound planes, 
-a novel way to visualize and illustrate those three aspects of rebound.
+a novel, mutually consistent, and numerically precise
+way to visualize and illustrate those three aspects of rebound.
 Further, we perform the first calibration of the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
 Finally, we apply
