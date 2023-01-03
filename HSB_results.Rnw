@@ -2350,7 +2350,7 @@ are in the lower half of the comparison studies
 for both the case of the car (10\% to 49\%) and lamp (10\% to 55\%).
 This alignment may be due to the easier determination
 of direct rebound, from either empirical data
-(e.g., \citet{Small:2005aa}) or
+(e.g., \citet{Small:2007aa}) or
 via own price elasticities (e.g., \citet{Chitnis:2015}).
 The empirical data approach appears to give lower rebound values,
 closer to our values.
