@@ -186,6 +186,7 @@ The key contributions of Part~II are
 \begin{enumerate*}[label={(\roman*)}]
 	
   \item development of the first (to our knowledge) 
+        mutually consistent and numerically precise
         visualizations of rebound effects
         in energy, expenditure, and consumption planes,
         
@@ -724,7 +725,8 @@ across all adjustments for all rebound effects
 Doing so involves many terms and much complexity.
 To date, visualizing the energy, expenditure, and consumption 
 aspects of rebound phenomena has not been 
-done in a set of mutually consistent graphs.
+done in a numerically precise manner 
+with a set of mutually consistent graphs.
 
 We introduce rebound planes
 to bring clarity to
@@ -2444,6 +2446,7 @@ by
 \begin{enumerate*}[label={(\roman*)}]
 	
   \item developing of the first (to our knowledge) 
+        mutually consistent and numerically precise
         visualizations of rebound effects
         in energy, expenditure, and consumption spaces 
         
@@ -2456,8 +2459,8 @@ by
 \end{enumerate*}
 %
 We encourage energy analysts and economists to use visualizations
-like the energy, expenditure, and consumption 
-rebound planes to document rebound calculations going forward.
+like the energy, expenditure, and consumption planes
+to document rebound calculations going forward.
 Our hope is that additional clarity will 
 %
 \begin{enumerate*}[label={(\roman*)}]
