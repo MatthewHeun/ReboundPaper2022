@@ -16,6 +16,7 @@
 \usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
 \usepackage[]{lineno}   % For line numbers
 % \modulolinenumbers[5]
+\usepackage{microtype}          % For beautify typesetting
 \usepackage{multicol}           % For multi-column layout
 \usepackage{multirow}           % For multi-row layout
 \usepackage{natbib}
