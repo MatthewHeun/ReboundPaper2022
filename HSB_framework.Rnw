@@ -1740,12 +1740,21 @@ Future work could be pursued in several areas.
         in \citet{Chan2015} and \citet{Wang2021}, 
         such as **** GS to provide a few additional topics. ---MKH ****.
         
+  \item This framework could be extended to include fuel-switching EEUs,
+        wherein the upgraded device uses a different fuel from the original device.
+        
   \item The greenhouse gas emissions implications of energy rebound
         could be evaluated using this framework,
         provided that the primary energy associated with final energy
         purchases were available. 
         \citet{Borenstein:2015aa} went some way to analyzing emissions
         and could provide a starting point for such work.
+        The capability to analyze fuel-switching EEUs
+        will be important for analyzing the greenhouse gas emissions
+        implications of many EEUs that involve electrification, 
+        such as the transition to all-electric vehicles and 
+        the conversion of natural gas and oil furnaces to heat pumps 
+        for home heating.
   
 \end{enumerate*}
 
