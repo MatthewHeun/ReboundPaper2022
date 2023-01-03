@@ -464,7 +464,7 @@ All of the indirect effects
 change the induced energy consumption
 beyond the upgraded device, 
 again according to a microeconomic behavioral model.
-We assume a partial equilibrium response to the 
+We assume a \emph{partial equilibrium} response to the 
 energy efficiency upgrade (EEU)
 at the microeconomic level;
 other prices in the economy remain unchanged
@@ -473,9 +473,6 @@ in response to the EEU.
 In contrast, 
 macroeconomic rebound is a broader, economy-wide response 
 to the single device upgrade. 
-At the macroeconomic level, general equilibrium effects
-can occur as prices for all goods and services (even energy)
-may change in response to the EEU.
 Like other authors, we recognize many macroeconomic rebound effects, 
 even if we don't later distinguish among them.%
 \footnote{
@@ -491,6 +488,9 @@ even if we don't later distinguish among them.%
   providing, perhaps, the greatest complexity.   
 }
 %
+At the macroeconomic level, \emph{general equilibrium} effects
+can occur as prices for all goods and services (even energy)
+may change in response to the EEU.
 Further treatment of macroeconomic rebound
 can be found 
 in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
