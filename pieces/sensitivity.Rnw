@@ -544,7 +544,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_param
 \label{sec:price_elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
 
-The sensitivity of post-substition effect price elasticities ($\asub{\varepsilon}$)
+The sensitivity of post-substitution effect price elasticities ($\asub{\varepsilon}$)
 to post-upgrade energy service price ($\amacro{p}_s$)
 is shown in Fig.~\ref{fig:PriceElasticitySensGraph}
 for the CES utility model described 
@@ -665,7 +665,9 @@ small errors in the lamp example.
 However, for the car example, using the CES utility function will be necessary
 to eliminate errors that will be present in the CPE approximation.
 This result is an important finding that should encourage 
-analysts to prefer the CES utility model over the CPE approximation.
+analysts implementing an analytical rebound calculation
+with substitution and income effects
+to prefer the CES utility model over the CPE approximation.
 
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that
 as efficiency increases (and $\amacro{p}_s$ decreases), 
