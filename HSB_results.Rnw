@@ -92,7 +92,7 @@ a novel, mutually consistent, and numerically precise
 way to visualize and illustrate those three aspects of rebound.
 Further, we perform the first calibration of the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
-Finally, we apply
+We apply
 the framework developed in Part~I 
 and the visualization advances described in Part~II 
 to calculate and show total rebound for two case studies: 
@@ -100,6 +100,8 @@ energy efficiency upgrades of
 a car (47\%) and
 an electric lamp (67\%).
 Comparison of our rebound values to previous values is provided.
+Finally, we provide information about new open source software tools for calculating
+rebound magnitudes using the framework.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -148,8 +150,8 @@ We said that
 \end{quote}
 
 To move improve clarity in the rebound field, 
-we developed in Part~I a framework 
-for analyzing energy rebound, 
+we developed in Part~I a rigorous analytical framework 
+for energy rebound, 
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
 energy, expenditure, and consumption.
@@ -172,11 +174,13 @@ shown in Fig.~\ref{fig:flowchart}.
 \end{figure}
 
 In this paper (Part~II), we make further progress toward the goal of clarity
-in three ways.
+in four ways.
 First, we develop a new way to visualize 
 components and mechanisms of rebound
 (rebound planes).
-Second, we apply the framework to two energy efficiency upgrades (EEUs) 
+Second, we make a first attempt at calibrating the macro rebound effect 
+via a macro factor ($k$). 
+Third, we apply the framework to two energy efficiency upgrades (EEUs) 
 (an electric lamp and an automobile)
 with detailed explication of the examples.
 Finally, we show 
@@ -191,10 +195,14 @@ The key contributions of Part~II are
         visualizations of rebound effects
         in energy, expenditure, and consumption planes,
         
-  \item documentation of new rebound values for automobile and lighting 
+  \item calibration of the macro factor ($k$) to link
+        microeconomic and macroeconomic rebound levels,
+        
+  \item presentation of new rebound values for automobile and lighting 
         upgrades based on a calibrated version of our framework from Part~I, and 
         
-  \item creation of open source software tools to calculate and visualize rebound 
+  \item documentation of new open source software tools
+        to calculate and visualize rebound 
         for any EEU.
   
 \end{enumerate*}
@@ -203,10 +211,11 @@ The remainder of this paper is structured as follows.
 Section~\ref{sec:methods} describes 
 data for examples, 
 our method of visualizing rebound, and 
-software tools for calculating and visualizing rebound.
+open source software tools for calculating and visualizing rebound.
 Section~\ref{sec:results} provides two examples: 
 energy efficiency upgrades to a car and an electric lamp.
-Section~\ref{sec:discussion} discusses the results, and 
+Section~\ref{sec:discussion} discusses the results and
+calibrates the macro factor ($k$), and 
 Section~\ref{sec:conclusion} concludes.
 
 
@@ -219,7 +228,8 @@ This section contains data for the examples
 (Section~\ref{sec:data}), 
 an explication of our new method for visualizing rebound effects and magnitudes
 (Section~\ref{sec:path_graphs}), and
-a description of new software tools for rebound calculations and visualization
+a description of new open source software tools
+for rebound calculations and visualization
 (Section~\ref{sec:software_tools}).
 
 
@@ -2446,7 +2456,7 @@ and our bottom up approach for calculating total rebound.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we add clarity to the field of energy rebound
+In this paper (Part~II), we advance clarity to the field of energy rebound
 by 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -2454,12 +2464,15 @@ by
   \item developing of the first (to our knowledge) 
         mutually consistent and numerically precise
         visualizations of rebound effects
-        in energy, expenditure, and consumption spaces 
+        in energy, expenditure, and consumption planes, 
         
+  \item calibrating the macro factor ($k \approx 3$),
+
   \item documenting new calculations of rebound for automobile and lighting  
         upgrades, and 
         
-  \item creating open source software tools to calculate and visualize rebound 
+  \item providing information about new open source software tools
+        for calculating and visualizing rebound 
         for any energy efficiency upgrade.
   
 \end{enumerate*}
