@@ -2282,6 +2282,11 @@ different macro rebound values.
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
 
+% Text with these references will be forthcoming from PB.
+% \cite{Sorrell:2009aa}
+% \cite{Dimitropoulos:2018aa}
+% \cite{Gillingham:2020aa}
+
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 compare car and lamp results (with $k \approx 3$) to 
 results from previous studies.
