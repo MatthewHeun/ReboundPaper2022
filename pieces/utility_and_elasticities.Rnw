@@ -50,14 +50,18 @@ We note that larger and non-marginal efficiency gains cause greater rebound
 than small and marginal efficiency gains.
 Thus, any rebound analysis framework needs to accommodate 
 large, non-marginal efficiency changes.
-Since in analytical utility models, price elasticities are point-measures,
+Since price elasticities are point-measures in analytical utility models,
 an operational version of such a model should account for the changing price
-elasticity along an indifference curve.\footnote{In principle,
-arc elasticities could give an accurate measure of the relationship
-between price and quantity change with any EEU by calculating the
-percentage price and quantity changes between any two consumption bundles \citep{Allen1934}.
-However, the problem is that we are trying to calculate the new consumption bundle
-using the elasticity, not the other way around.}
+elasticity along an indifference curve.%
+\footnote{
+  In principle,
+  arc elasticities could give an accurate measure of the relationship
+  between price and quantity change with any EEU by calculating the
+  percentage price and quantity changes between any two consumption bundles \citep{Allen1934}.
+  However, the problem is that we are trying to calculate the new consumption bundle
+  using the elasticity, not the other way around. 
+}
+%
 The second utility model discussed in this appendix is the
 Constant Elasticity of Substitution (CES)
 utility model which does, in fact,
