@@ -221,7 +221,28 @@ been used from the outset of the modern debate
 (e.g., \citet{Khazzoom1980} and \citet{Greening2000}),
 and \citet{Borenstein:2015aa} and \citet{Chan2015}
 recently made progress toward solidifying the microeconomic analytical foundations. 
-Yet more is needed to support empirical efforts. **** HERE GS MORE INPUT ****
+Yet more is needed to support empirical efforts.
+
+For instance, while the microeconomic categories of substitution and
+income effects provide analytical clarity about how behavior
+changes energy service consumption, it is unclear how
+they can be used for precise numerical rebound calculations. 
+Where previous numerical calculations were made, these have tended to use 
+approximate substitutions, not utility preserving ones.
+They have also used constant price elasticities
+for non-marginal efficiency improvements
+even though these constant elasticities only
+provide good approximations of substitution and
+income effects for small efficiency changes.
+For another instance, analytical studies have stressed the importance of the
+cost of buying the new device as well as energy embodied in the device.
+Yet, there is no clearly formulated approach for how to incorporate these 
+cost and energy components into rebound calculations. 
+Finally, there are simultaneous changes in energy, expenditure
+and consumption aspects of rebound, and keeping an overview of all
+aspects is hard, with no approach to our knowledge documenting all 
+changes in a transparent way.
+
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
 a wide range of rebound values, 
