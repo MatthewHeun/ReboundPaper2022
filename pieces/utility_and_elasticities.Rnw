@@ -55,11 +55,13 @@ an operational version of such a model should account for the changing price
 elasticity along an indifference curve.%
 \footnote{
   In principle,
-  arc elasticities could give an accurate measure of the relationship
-  between price and quantity change with any EEU by calculating the
-  percentage price and quantity changes between any two consumption bundles \citep{Allen1934}.
-  However, the problem is that we are trying to calculate the new consumption bundle
-  using the elasticity, not the other way around. 
+  calculated arc elasticities could describe the relationship
+  between price and quantity changes for any EEU
+  by representing the
+  percentage price and quantity changes between any two known consumption bundles \citep{Allen1934}.
+  However, we do not know the new consumption bundle
+  and instead determine it with the CES utility function whose price elasticities vary
+  along the indifference curve. 
 }
 %
 The second utility model discussed in this appendix is the
