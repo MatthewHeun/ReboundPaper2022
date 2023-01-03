@@ -66,8 +66,6 @@
 
 \date{} % Kill the date
 
-\singlespace
-
 \begin{document}
 
 \maketitle
