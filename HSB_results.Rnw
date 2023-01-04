@@ -2309,13 +2309,13 @@ carried out in the general literature using a variety of methods.
 That said, many of the studies are highly cited in their field, thereby carrying sufficient academic weight for our purposes.
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 and their associated references 
-enable two types of observations, comparing: 
+enable two types of observations, comparing their
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item their coverage of rebound components, , and
+  \item coverage of rebound components and
   
-  \item their magnitudes and associated calculation or estimation methods.
+  \item magnitudes and associated calculation or estimation methods.
     
 \end{enumerate*}
 
