@@ -2211,19 +2211,27 @@ we use the calibrated value of $k \approx 3$.
 # Functions to extract and format numbers for rebound calculations below.
 # The goal of these functions is to provide a short function call 
 # to fit into the table nicely.
-f_car <- function(Re_name) {
-  rebound_analysis_with_cal_k %>% 
+f_car <- function(Re_name, string_val = TRUE) {
+  out_val <- rebound_analysis_with_cal_k %>% 
     dplyr::filter(.data[["Case"]] == "Car") %>% 
     magrittr::extract2(Re_name) %>% 
-    magrittr::multiply_by(100) %>% 
-    formatC(format = "f", digits = 1)
+    magrittr::multiply_by(100)
+  if (string_val) {
+    return(formatC(out_val, format = "f", digits = 1))
+  } else {
+    return(out_val)
+  }
 }
-f_lmp <- function(Re_name) {
-  rebound_analysis_with_cal_k %>% 
+f_lmp <- function(Re_name, string_val = TRUE) {
+  out_val <- rebound_analysis_with_cal_k %>% 
     dplyr::filter(.data[["Case"]] == "Lamp") %>% 
     magrittr::extract2(Re_name) %>% 
-    magrittr::multiply_by(100) %>% 
-    formatC(format = "f", digits = 1)
+    magrittr::multiply_by(100)
+  if (string_val) {
+    return(formatC(out_val, format = "f", digits = 1))
+  } else {
+    return(out_val)
+  } 
 }
 @
 
@@ -2362,7 +2370,8 @@ giving an appearance of a ``black box'' calculation approach.%
 Second, helpful insights can be gained
 from comparison of rebound magnitudes and calculation methods.
 Greatest alignment between our values and earlier values
-appears within the direct (microeconomic) rebound ($Re_{dir}$) column.
+appears within the direct (microeconomic) rebound ($Re_{dir}$) column
+in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}.
 Our car ($\Sexpr{f_car("Re_dir")}$\%) and lamp ($\Sexpr{f_lmp("Re_dir")}$\%) values
 are in the lower half of the comparison studies
 for both cases (10\% to 49\% for the car and 10\% to 55\% for the lamp).
@@ -2380,6 +2389,12 @@ via own price elasticities (e.g., \citet{Chitnis:2015}).%
   \citet{Gillingham:2020aa}.
 }
 
+<<calculate_without_macro, echo=FALSE>>=
+Re_indir_no_macro_car <- f_car("Re_indir", string_val = FALSE) - f_car("Re_macro", string_val = FALSE)
+Re_indir_no_macro_car_str <- formatC(Re_indir_no_macro_car, format = "f", digits = 1)
+Re_indir_no_macro_lamp <- f_lmp("Re_indir", string_val = FALSE) - f_lmp("Re_macro", string_val = FALSE)
+Re_indir_no_macro_lamp_str <- formatC(Re_indir_no_macro_lamp, format = "f", digits = 1)
+@
 For indirect rebound ($Re_{indir}$),
 there is little agreement on the magnitude of rebound effects.
 Our values for 
@@ -2398,15 +2413,9 @@ in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparison
 may be too simple and not very meaningful,
 as we (alone) include macro-level effects in indirect rebound. 
 If we exclude our $Re_{macro}$ values, 
-our indirect microeconomic rebound values are 
-7.3\% (car) and 10.7\% (lamp),
-%%%%%%%%%%%%%%%% use \Sexpr
-
-
-
-
-
-
+our indirect microeconomic rebound values become 
+\Sexpr{Re_indir_no_macro_car_str}\% (car) and
+\Sexpr{Re_indir_no_macro_lamp_str}\% (lamp),
 which fit within the ranges reported by the
 car (6-23\%) and lamp (-41\% to 16\%)
 comparison studies.
