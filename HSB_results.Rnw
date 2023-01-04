@@ -2417,7 +2417,7 @@ our indirect microeconomic rebound values become
 \Sexpr{Re_indir_no_macro_car_str}\% (car) and
 \Sexpr{Re_indir_no_macro_lamp_str}\% (lamp),
 which fit within the ranges reported by the
-car (6-23\%) and lamp (-41\% to 16\%)
+car ($6$\% to $23$\%) and lamp ($-41$\% to $16$\%)
 comparison studies.
 
 For total rebound ($Re_{tot}$),
