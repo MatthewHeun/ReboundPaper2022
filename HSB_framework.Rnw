@@ -496,7 +496,8 @@ arranged in left-to-right order of their discussion in this paper.
 The left-to-right order does not necessarily represent 
 the progression of rebound effects through time.
 Rebound symbols are shown above each effect ($Re_{empl}$, etc.).
-Nomenclature for direct and indirect rebound is shown beneath each effect ($Re_{dempl}$, etc.).
+Nomenclature for partitions of direct and indirect rebound 
+is shown beneath each effect ($Re_{dempl}$, etc.).
 Decorations for each stage are shown between rebound effects
 ($\circ$, $*$, etc.).
 Names for the decorations are given at the bottom of the figure
@@ -535,8 +536,8 @@ Energy rebound is defined as
 %
 where both actual and expected final energy savings rates are in MJ/year 
 and expected positive.
-The final energy ``takeback'' rate is defined as expected final energy savings rate less 
-actual final energy savings rate.
+The final energy ``takeback'' rate is defined as the expected final energy savings rate less 
+the actual final energy savings rate.
 Note that the takeback rate can be negative, indicating that the actual final energy savings rate
 is greater than the expected final energy savings rate, 
 a condition called hyperconservation.
@@ -640,8 +641,8 @@ $\bempl{\eta} < \amacro{\eta}$.
 %$\bempl{C}_{cap} < \amacro{C}_{cap}$ and 
 %$\rbempl{C}_{\md} < \ramacro{C}_{\md}$.
 %(This is not a costless EEU.)
-The EEU is not costless. 
-The upgraded device may be more expensive to buy
+The EEU is not costless, so
+the upgraded device may be more expensive to purchase
 than a like-for-like replacement of the original device.
 We call this increased capital cost, 
 $\bempl{C}_{cap} < \amacro{C}_{cap}$. 
@@ -652,6 +653,7 @@ However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
 The energy price ($p_E$) is assumed exogenous
+at the microeconomic level
 ($\bempl{p}_E = \bsub{p}_E = \binc{p}_E = \bmacro{p}_E  = \amacro{p}_E$),
 so the energy purchaser (the device owner) is a price taker.%
 \footnote{
@@ -677,8 +679,8 @@ net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through four rebound effects, 
-deriving rebound expressions for each. 
-But first 
+deriving rebound expressions for each, 
+but first 
 we show typical energy and cost relationships 
 (Section~\ref{sec:energy_and_cost_relationships}).
 
@@ -1030,7 +1032,7 @@ After emplacement of the more efficient device
 the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
 After compensating variation that tightens the budget constraint,
 consumption at the new prices yields utility
-at the same level as prior to the EEU, 
+at the same level as prior to the EEU
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
 
@@ -1044,9 +1046,9 @@ By definition, the CPE utility model assumes that
 compensated and uncompensated, own and cross price elasticities
 remain constant along an indifference curve. 
 (See Appendix~\ref{sec:utility_and_elasticities}.)
-Whether that is true depends on the utility function used.
+Whether that is true or not depends on the utility function used.
 Constant price elasticities (as in the CPE utility model)
-are approximations that are in general only applicable to marginal price changes. 
+are approximations that are applicable only to marginal price changes. 
 Appendix~\ref{sec:Resub_approximate_method}
 contains details of the CPE utility model.
 
@@ -1058,11 +1060,12 @@ the uncompensated cross price elasticity ($\eqopsUC$),
 the compensated own price elasticity ($\eqspsC$), and
 the compensated cross price elasticity ($\eqopsC$)
 to vary along an indifference curve, 
-thereby enabling analysis of non-marginal energy service price changes 
+thereby enabling numerically precise analysis 
+of non-marginal energy service price changes 
 ($\orig{p}_s >\!\!> \aempl{p}_s$). 
 The CES utility model allows the direct calculation
-of the utility-maximizing consumption bundle for any constraint.
-The CES utility model describes the device owner's behavior as
+of the utility-maximizing consumption bundle for any constraint,
+describing the device owner's behavior as
 
 \begin{equation} \label{eq:ces_utility}
   \frac{\rate{u}}{\rbempl{u}} = \cesutility{} \; .
