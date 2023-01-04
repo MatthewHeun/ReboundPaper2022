@@ -573,7 +573,7 @@ to final energy rates in the numerators and denominators of rebound expressions
 derived from Eqs.~(\ref{eq:Re_def}) and~(\ref{eq:Re_takeback});
 they divide out anyway.%
 \footnote{
-  Primary energy may be important when when the upgraded device consumes a different 
+  Primary energy may be important when the upgraded device consumes a different 
   final energy carrier
   compared to the original device, 
   i.e., when fuel-switching occurs \citep{Chan2015}.
