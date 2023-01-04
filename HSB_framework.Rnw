@@ -81,7 +81,7 @@ However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
 A new clarity is needed, one that 
 involves both economics and energy analysis.
-We help advance a rigorous analytical framework
+We advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
 We develop the first (to our knowledge)
@@ -190,7 +190,7 @@ while others claim
         \citep{Saunders2015, Berner:2022tb} and
   
   \item that rebound will reduce the effectiveness of energy efficiency
-        to reduce carbon emissions
+        to decrease carbon emissions
         \citep{van-den-Bergh:2017aa}.
     
 \end{enumerate*}
@@ -231,19 +231,19 @@ even though constant price elasticities
 provide only approximations of substitution and
 income effects for small efficiency changes.
 Further, previous analytical studies have stressed the importance of the
-cost of buying the new device as well as energy embodied in the device.
+cost of buying an upgraded device as well as the energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
 Finally, rebound involves simultaneous changes in energy, expenditure,
 and consumption aspects, and keeping an overview of all
 aspects is hard, with no approach to our knowledge documenting all 
-changes in a straightforward manner.
+changes in a straightforward and consistent manner.
 
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
 a wide range of rebound values, 
 giving the appearance of uncertainty and
-leading energy and climate modelers to either 
+leading some energy and climate modelers to either 
 %
 \begin{enumerate*}[label={(\roman*)}]
 
@@ -313,10 +313,12 @@ rebound effects is a tall order, indeed.
 %++++++++++++++++++++++++++++++
 
 We contend that new clarity is needed.
-A description of rebound that is both
+A description of rebound that is 
 %
 \begin{enumerate*}[label={(\roman*)}]
 
+  \item consistent across energy, expenditure, and consumption aspects,
+  
   \item technically rigorous and
   
   \item approachable from both sides
@@ -353,7 +355,7 @@ will go some way toward providing additional clarity in the field.
 
 The \emph{objective} of this paper is to 
 improve clarity in the field of energy rebound by
-supporting the development of a rigorous analytical framework, 
+supporting the development of a comprehensive and rigorous analytical framework, 
 one that
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -391,7 +393,7 @@ The key \emph{contributions} of this paper are
 
 The remainder of this paper is \emph{structured} as follows.
 Section~\ref{sec:framework} describes the rebound analysis framework.
-Section~\ref{sec:discussion} discusses this framework in relation to previous frameworks, and 
+Section~\ref{sec:discussion} discusses this framework relative to previous frameworks, and 
 Section~\ref{sec:conclusion} concludes.
 Results from the application of our framework
 to energy efficiency upgrades to a car and an electric lamp
@@ -405,13 +407,13 @@ can be found in Part~II.
 
 In this section, we develop 
 an energy rebound framework
-for analysis of an individual consumer who upgrades the energy efficiency 
+for an individual consumer who upgrades the energy efficiency 
 of a single device, 
 analyzed in partial equilibrium at the microeconomic level
 where the prices of other goods and services are unchanged
 (concisely, ``the framework,'' ``this framework,'' or ``our framework'').
 We endeavor to bring clarity to the field of energy rebound by 
-providing sufficient detail of the framework to assist
+providing sufficient detail to assist
 energy analysts to understand the economics and
 economists to understand the energy analysis.
 
