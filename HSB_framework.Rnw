@@ -601,7 +601,7 @@ $\rate{x}$ often indicates a velocity in m/s,
 $\rate{m}$ often indicates a mass flow rate in kg/s, and
 $\rate{E}$ often indicates an energy flow rate in kW.
 The overdot is an important notational element in this paper, 
-as it maintains clarity between stocks (without overdots)
+as it provides clarity between stocks (without overdots)
 and flows (with overdots). 
 For example,  
 $E$ is a quantity of energy in, say, MJ, while
@@ -614,8 +614,8 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
 
 Energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
-$\rbempl{q}_s$ (in vehicle-km/year)
-with final-to-service efficiency $\bempl{\eta}$ (in vehicle-km/MJ).
+$\rbempl{q}_s$ (in, say, vehicle-km/year)
+with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
 final-to-service efficiency%
 \footnote{
@@ -643,17 +643,18 @@ $\bempl{\eta} < \amacro{\eta}$.
 %$\bempl{C}_{cap} < \amacro{C}_{cap}$ and 
 %$\rbempl{C}_{\md} < \ramacro{C}_{\md}$.
 %(This is not a costless EEU.)
-The EEU is not costless. It may be more expensive to buy
-than replacing the original device with a newer version 
-of itself.
+The EEU is not costless. 
+The upgraded device may be more expensive to buy
+than a like-for-like replacement of the original device.
 We call this increased capital cost, 
 $\bempl{C}_{cap} < \amacro{C}_{cap}$. 
 It may also 
-be more costly to maintain and dispose of the device $\rbempl{C}_{\md} < \ramacro{C}_{\md}$. 
+be more costly to maintain and dispose of the upgraded device
+$\rbempl{C}_{\md} < \ramacro{C}_{\md}$. 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
-The final energy price ($p_E$) is assumed exogenous
+The energy price ($p_E$) is assumed exogenous
 ($\bempl{p}_E = \bsub{p}_E = \binc{p}_E = \bmacro{p}_E  = \amacro{p}_E$),
 so the energy purchaser (the device owner) is a price taker.%
 \footnote{
@@ -820,14 +821,14 @@ $\Sdot$ can be rewritten conveniently as
 Because the original and upgraded device are assumed to 
 have equal performance%
 \footnote{
-  Of course, it is often true that the original and upgraded device
+  Of course, it is often the case that the original and upgraded devices
   have small performance differences. 
-  E.g., a high-efficiency LED lamp may have slightly greater or slightly smaller 
-  lumen output than an incandescent lamp it replaces. 
-  For the purposes of this framework,
-  we assume that the upgraded device can be matched closely enough
-  to the original device 
-  that the differences are immaterial to the owner.
+  E.g., a high-efficiency LED lamp may have slightly greater or slightly lesser 
+  lumen output than the incandescent lamp it replaces. 
+  For the purpose of explicating this framework,
+  we assume that the performance of the upgraded device can be matched closely enough
+  to the performance of the original device 
+  such that the differences are immaterial to the owner.
 }
 %
 and because
