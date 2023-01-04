@@ -2290,31 +2290,24 @@ different macro rebound values.
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
 
-% Text with these references will be forthcoming from PB.
-% \cite{Sorrell:2009aa}
-% \cite{Dimitropoulos:2018aa}
-% \cite{Gillingham:2020aa}
-
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 compare car and lamp results (with $k \approx 3$) to 
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
-The comparison studies in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-are neither comprehensive nor definitive of car and lamp EEUs;
-rather, they are examples
-that show the sort of calculations and estimations 
-carried out in the general literature using a variety of methods.
-That said, many of the comparison studies are highly cited in their field
-and carry reasonable academic weight suitable for our purposes. 
+These comparison studies are neither comprehensive nor
+definitive of car and lamp EEUs; 
+rather, they are examples that show the sort of calculations and estimations
+carried out in the general literature using a variety of methods. 
+That said, many of the studies are highly cited in their field, thereby carrying sufficient academic weight for our purposes.
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 and their associated references 
-enable two types of observations: 
+enable two types of observations, comparing: 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item on the coverage of rebound components, and
+  \item their coverage of rebound components, , and
   
-  \item on their magnitudes and associated calculation or estimation methods.
+  \item their magnitudes and associated calculation or estimation methods.
     
 \end{enumerate*}
 
@@ -2324,51 +2317,70 @@ enable two types of observations:
 <<LampLiteratureComparisonTable, child="pieces/Re_lamp_comparison_table.Rnw">>=
 @
 
-First, we can say that none of the comparison studies
+First, we see that none of the comparison studies
 report all rebound effects, as we have done
 in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
-Further, none of the studies report 
-emplacement rebound ($Re_{empl} = Re_{emb} + Re_{\md}$).
-None of the other studies includes
-all of direct and indirect, substitution and income microeconomic rebound effects, and
-none of the other studies report macro rebound ($Re_{macro}$) by itself.
+Also, no studies report either emplacement rebound 
+($Re_{empl} = Re_{emb} + Re_{\md}$)
+or include all of direct and indirect, substitution and income microeconomic rebound effects.
+In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
 In fact, only 4 or 5 of the 10 studies
 in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
-By carefully including all rebound components in the framework and by 
-elucidating all rebound components in Part~II, 
-we are adding conceptual clarity to the field of energy rebound.
+Therefore, by carefully including all rebound components 
+in the framework and 
+elucidating all rebound components in Part~II, we are 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item adding conceptual clarity to the field of energy rebound, which
+  
+  \item may allow future studies to estimate a broader range of rebound components.
+    
+\end{enumerate*}
 
-We also observe that studies that provide total rebound 
+We also observe that studies which provide total rebound 
 are based on a top-down calculation of overall, economy-wide rebound, 
-rather than a bottom-up ``sum-of-components'' approach 
+rather than the bottom-up ``sum-of-components'' approach 
 that we employ.
-That finding is instructive---it supports the view that
+That finding is instructive. 
+It supports the view that
 a comprehensive framework that sets out individual rebound components
-has been missing---and something that informed the objective for Part~I of this paper.
-Top-down estimations or calculations of total, economy-wide rebound 
-may also inhibit comparison, 
-because the effects included or excluded 
-may not be clear, 
-giving an appearance of a ``black box'' calculation approach.
-That said, without the top-down approaches,
-we would not have the information needed to calibrate 
-the macro factor ($k$) in Section~\ref{sec:calibrating_k}.
+has been missing, and 
+it informed the objective for Part~I of this paper.
+Further, the finding means that 
+comparisons between top-down estimations or calculations 
+of total, economy-wide rebound 
+may also be of limited value,
+because the rebound effects included or excluded may not be clear, 
+giving an appearance of a ``black box'' calculation approach.%
+\footnote{
+  That said, without the top-down approaches,
+  we would not have the information needed to calibrate 
+  the macro factor ($k$) in Section~\ref{sec:calibrating_k}.
+}
 
 Second, helpful insights can be gained
 from comparison of rebound magnitudes and calculation methods.
-Greatest alignment between our values and earlier values for rebound magnitudes
-appears within the direct (microeconomic) rebound ($Re_{dir}$).
+Greatest alignment between our values and earlier values
+appears within the direct (microeconomic) rebound ($Re_{dir}$) column.
 Our car ($\Sexpr{f_car("Re_dir")}$\%) and lamp ($\Sexpr{f_lmp("Re_dir")}$\%) values
 are in the lower half of the comparison studies
-for both the case of the car (10\% to 49\%) and lamp (10\% to 55\%).
+for both cases (10\% to 49\% for the car and 10\% to 55\% for the lamp).
 This alignment may be due to the easier determination
 of direct rebound, from either empirical data
 (e.g., \citet{Small:2007aa}) or
-via own price elasticities (e.g., \citet{Chitnis:2015}).
-The empirical data approach appears to give lower rebound values,
-closer to our values.
+via own price elasticities (e.g., \citet{Chitnis:2015}).%
+\footnote{
+  Also worthy of note is that direct (microeconomic) rebound 
+  of personal transport may be the most-studied subfield 
+  in the rebound literature and likely the only topic with enough studies
+  to enable meta-reviews such as 
+  \citet{Sorrell:2009aa}, 
+  \citet{Dimitropoulos:2018aa}, and 
+  \citet{Gillingham:2020aa}.
+}
 
-For indirect (microeconomic) rebound ($Re_{indir}$),
+For indirect rebound ($Re_{indir}$),
 there is little agreement on the magnitude of rebound effects.
 Our values for 
 car ($\Sexpr{f_car("Re_indir")}$\%) and 
@@ -2381,19 +2393,33 @@ whereas the comparison studies
 focus mainly on microeconomic rebound only
 (commonly via cross price elasticities).
 In other words, 
-comparisons of our indirect rebound values with the comparison studies
+comparisons of our indirect rebound values with the studies
+in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 may be too simple and not very meaningful,
-as we include macro-level effects in indirect rebound. 
+as we (alone) include macro-level effects in indirect rebound. 
+If we exclude our $Re_{macro}$ values, 
+our indirect microeconomic rebound values are 
+7.3\% (car) and 10.7\% (lamp),
+%%%%%%%%%%%%%%%% use \Sexpr
+
+
+
+
+
+
+which fit within the ranges reported by the
+car (6-23\%) and lamp (-41\% to 16\%)
+comparison studies.
 
 For total rebound ($Re_{tot}$),
 our values of
 $\Sexpr{f_car("Re_tot")}$\% (car) and
 $\Sexpr{f_lmp("Re_tot")}$\% (lamp)
-are very close to the comparison studies for the car example (49\% to 51\%), but
-nearly double the values from the comparison studies for the lamp example (43\% to 51\%).
+are very close to those in the comparison studies for both the car (49\% to 51\%) and
+lamp (43\% to 51\%) examples.
 Beyond that, comparisons (as noted earlier) are inhibited
 by methodological differences between previous studies (top-down methods)
-and our bottom up approach for calculating total rebound.
+and our bottom-up approach for calculating total rebound.
 
 
 %++++++++++++++++++++++++++++++
