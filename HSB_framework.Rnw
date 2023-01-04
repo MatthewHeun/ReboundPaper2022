@@ -1549,7 +1549,7 @@ we find
 We developed above a rebound framework for consumers. 
 We note that many of its components are similar to those for a producer-sided framework
 due to the symmetry between neoclassical microeconomic producer and consumer theory.
-Ours is a partial equilibrium framework
+Ours is a partial equilibrium framework at the microeconomic level
 that provides a detailed assessment of individual EEUs with tractable,
 easy-to-understand mathematics.
 Partial equilibrium frameworks are easier to understand, in part, because
@@ -1564,12 +1564,12 @@ all other prices remain constant
   lose simplicity of exposition.
 }
 %
-In our partial equilibrium framework (at the microeconomic level), 
-general equilibrium effects at the macroeconomic level are captured by 
+In our framework, 
+general equilibrium effects are captured at the macroeconomic level by 
 a simplified, one-dimensional rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
-We are not the first to develop a partial equilibrium rebound analysis framework,
+We are not the first to develop a rebound analysis framework,
 so it is worthwhile to compare our framework with others
 for key features: 
 analysis of all rebound effects; 
