@@ -39,7 +39,7 @@
   &                                      &            & elasticities            & & & & &    &    &  \\
 \midrule
 3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 10 &  \\
-  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of transport & & & & &    &    &  \\
+  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of household & & & & &    &    &  \\
   &                             &       & fuels, using household    & & & & &    &    &  \\
   &                             &       & spending survey data      & & & & &    &    &  \\
 \midrule
