@@ -225,7 +225,7 @@ Yet more is needed to support empirical efforts.
 For instance, while the microeconomic categories of substitution and
 income effects provide analytical clarity about how behavior
 changes affect energy service consumption,
-it is unclear how they can be used 
+it has been unclear how they could be used 
 for precise numerical rebound calculations. 
 Where previous numerical calculations were made, 
 they tended to use 
@@ -235,12 +235,12 @@ for non-marginal efficiency improvements,
 even though constant price elasticities 
 provide only approximations of substitution and
 income effects for small efficiency changes.
-Further, analytical studies have stressed the importance of the
+Further, previous analytical studies have stressed the importance of the
 cost of buying the new device as well as energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
-Finally, there are simultaneous changes in energy, expenditure,
-and consumption aspects of rebound, and keeping an overview of all
+Finally, rebound involves simultaneous changes in energy, expenditure,
+and consumption aspects, and keeping an overview of all
 aspects is hard, with no approach to our knowledge documenting all 
 changes in a straightforward manner.
 

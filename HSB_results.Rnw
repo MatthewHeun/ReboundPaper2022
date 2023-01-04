@@ -2431,59 +2431,6 @@ by methodological differences between previous studies (top-down methods)
 and our bottom-up approach for calculating total rebound.
 
 
-%++++++++++++++++++++++++++++++
-% \subsection{Implications for CO$_2$ emissions}
-% \label{sec:implications_for_CO2}
-%++++++++++++++++++++++++++++++
-
-% **** 
-% This section is a response to Referee 1.
-% Do we like it/want to keep it?
-% Is it in the right location? ---MKH
-% ****
-% 
-% To the extent that energy rebound takes back energy savings
-% from EEUs, 
-% it is a threat to a low carbon future,
-% as noted by \citet{van-den-Bergh:2017aa} and \citet{Brockway:2017a}.
-% However, the results above highlight 
-% two aspects that make it difficult to determine
-% the precise impact of rebound on CO$_2$ emissions.
-% 
-% First, we see that rebound is measured at the final energy stage,
-% while CO$_2$ emissions are the result of
-% primary energy consumption (coal, oil, natural gas, wind, solar, hydro, etc.).
-% Determining the CO$_2$ implications of rebound requires
-% untangling the amount of each primary energy source 
-% associated with each type of final energy consumed.
-% Such untangling will be different for each economy.
-% Furthermore, this untangling would need to be accomplished
-% for each rebound effect, something that is
-% beyond the scope of this framework.
-% 
-% Second, we note that the various rebound effects take place 
-% at different times throughout the life of a device.
-% E.g., the emplacement effect ($Re_{empl}$) includes 
-% embodying of energy during manufacture and distribution, 
-% but its rebound effect ($Re_{emb}$) also takes account of device longevity.
-% The emplacement effect also includes maintenance and disposal 
-% activities ($Re_{\md}$); 
-% maintenance occurs throughout the life of the device, but  
-% disposal occurs at end of life.
-% The macro effect also occurs occurs throughout the life of the device, but
-% it depends on the magnitude of adjustments
-% in the substitution and income effects.
-% It will be difficult to know, \emph{a-priori},
-% the source primary energies for each adjustment
-% for each rebound effect
-% during societal energy transitions.
-% 
-% Thus, further work will be required to utilize 
-% this rebound framework
-% (and other frameworks that aspire to describe both direct and indirect rebound effects)
-% for precise determination of the CO$_2$ emissions impacts of rebound.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 \label{sec:conclusion}

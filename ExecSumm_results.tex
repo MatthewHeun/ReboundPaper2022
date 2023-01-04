@@ -34,20 +34,21 @@
 \label{sec:motivations}
 %++++++++++++++++++++++++++++++
 
-**** All of the text below is from our working paper submission. 
-Need to edit. ****
-
 Widespread implementation of energy efficiency
 is a key greenhouse gas emissions mitigation measure, 
-but rebound can ``take back''
-energy savings.
-However, conceptual foundations lag behind empirical estimates of the size of rebound.
-We posit that development of solid analytical frameworks for rebound
-is hampered by the interdisciplinary nature of the topic, 
+but rebound can ``take back'' energy savings.
+However, the absence of solid analytical foundations hinders
+empirical determination of the size of rebound.
+A new clarity is needed, one that is built upon solid analytical frameworks
 involving both economics and energy analysis.
-As such, further progress overcoming interdisciplinary barriers
-to support development of conceptual foundations is
-both urgent and welcome.
+In particular, a way to visualize energy, expenditure, and consumption 
+aspects of rebound will be helpful for communication of energy analysis
+findings to broader audiences. 
+Software tools for rebound analysis will be a welcome addition
+to energy analysis.
+And demonstration of the rigorous analytical framework 
+developed in Part~I via detailed numerical examples
+will be a benefit to energy analysts.  
 
 
 %++++++++++++++++++++++++++++++
@@ -55,45 +56,23 @@ both urgent and welcome.
 \label{sec:account}
 %++++++++++++++++++++++++++++++
 
-In this paper, we help advance a rigorous analytical framework
-that starts at the microeconomic level of rebound
-and is approachable for both energy analysts and economists.
-We include emplacement, substitution, and income rebound effects and
-link them to macro rebound.
-We apply our framework to two examples, energy efficiency upgrades 
-%
-\begin{enumerate*}[label={(\roman*)}]
-
-  \item from a gasoline-powered vehicle to an electric vehicle and
-  
-  \item from an incandescent electric lamp to a light-emitting diode electric lamp.
-
-\end{enumerate*}
-%
-In addition, we develop a series of novel graphs
-to show rebound paths through energy, expenditure, and consumption spaces.
-
-The key contributions of this paper are 
-development of the first (to our knowledge)
-%
-\begin{enumerate}[label={(\roman*)}]
-	
-  \item rebound analysis framework that combines 
-        embodied energy effects, 
-        maintenance and disposal effects, 
-        non-marginal energy efficiency increases, and 
-        non-marginal energy service price decreases, 
-
-  \item visualizations of rebound effects
-        in energy, expenditure, and consumption spaces,
-        
-  \item operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels, and 
-        
-  \item open source tools to calculate rebound 
-        for other energy efficiency upgrades.
-  
-\end{enumerate}
+In this paper (Part~II of a two-part paper),
+we develop and demonstrate
+energy, expenditure, and consumption rebound planes, 
+a novel, mutually consistent, and numerically precise
+way to visualize and illustrate those three aspects of rebound.
+Further, we perform the first calibration of the macro factor
+for macroeconomic rebound, finding $k \approx 3$. 
+We apply
+the rigorous analytical framework developed in Part~I 
+and the visualization advances described in Part~II 
+to calculate and show total rebound for two case studies: 
+energy efficiency upgrades of
+a car (47\%) and
+an electric lamp (67\%).
+Comparison of our rebound values to previous values is provided.
+Finally, we provide information about new open source software tools for calculating
+rebound magnitudes using the framework.
 
 
 %++++++++++++++++++++++++++++++
@@ -101,33 +80,16 @@ development of the first (to our knowledge)
 \label{sec:conclusions}
 %++++++++++++++++++++++++++++++
 
-The work presented in this paper leads to four conclusions.
-%
-\begin{enumerate}[label={(\roman*)}]
-
-  \item The framework enables
+From the application of the rebound framework in Part~II, 
+we draw two important conclusions.
+First, the car and lamp examples show that
+        the framework enables
         quantification of rebound magnitudes at microeconomic and macroeconomic levels, including 
-        direct and indirect locations 
+        energy, expenditure, and consumption aspects of 
+        direct and indirect rebound 
         for emplacement, substitution, income, and macro effects.
-        
-  \item We obtained estimates of total rebound in two case studies: 
-        upgrades of a car (48\%) and an electric lamp (80\%).
-        As expected, magnitudes of rebound effects
-        vary with the type of energy efficiency upgrade performed.
-        
-  \item For our two examples, total rebound is   
-        more sensitive to
-        the price of energy,
-        the elasticity of energy service demand, and
-        the macro factor
-        than either
-        energy efficiency or
-        the capital cost of the upgraded device.
-        
-  \item Rebound is a headwind for efficiency-led reduction of both energy consumption 
-        and CO$_2$ emissions.
-
-\end{enumerate}
+Second, the examples show that magnitudes of all rebound effects
+        vary with the type of EEU performed.
 
 
 %++++++++++++++++++++++++++++++
@@ -135,23 +97,20 @@ The work presented in this paper leads to four conclusions.
 \label{sec:benefits}
 %++++++++++++++++++++++++++++++
 
-Laying solid conceptual foundations for rebound analysis leads to 
-firmer quantification of rebound effect magnitudes, 
-which is itself an important precursor
-to devising effective energy policies
-that would 
-encourage energy efficiency, 
-limit rebound effects, and
-reduce CO$_2$ emissions.
-With
-careful explication of rebound effects, 
-clear derivation of rebound expressions, 
-novel visualizations of rebound paths, and
-open source tools for quantification of rebound,
-we advance the analytical foundations for empirical estimates of rebound and
-facilitate interdisciplinary understanding of rebound phenomena
-toward the goal of enabling of more robust rebound estimates
-for sound energy and climate policy.
+There are two implications of this work for energy analysis and policy.
+First, 
+the magnitude of every rebound effect is different between the car and lamp examples.
+The implication is that every EEU needs to be analyzed separately. 
+Values for rebound effects  
+for one EEU should never be assumed to apply to a different EEU.
+Second, 
+one cannot know \emph{a-priori} which rebound effects
+will be large and which will be small
+for a given EEU.
+Furthermore, some rebound effects are dependent upon economic parameters,
+such as energy intensity of the economy.
+Thus, it is important to calculate the magnitude of all rebound effects 
+for each EEU in each economy.
 
 
 \end{document}
