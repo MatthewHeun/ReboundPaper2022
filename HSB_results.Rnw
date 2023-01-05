@@ -275,8 +275,7 @@ val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, for
   if (to_perc) {
     val <- val * 100
   }
-  val %>% 
-    formatC(digits = digits, format = format, big.mark = big.mark)
+  format(round(val, digits), nsmall = digits)
 }
 # Parameters for first table
 mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
@@ -325,7 +324,7 @@ q_dot_s_hat_car <- rebound_results %>%
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Car") %>% 
   magrittr::extract2("q_dot_s_hat")
 perc_increase_driving <- (q_dot_s_hat_car / q_dot_s_orig_car - 1) * 100
-perc_increase_driving_char <- formatC(perc_increase_driving, digits = 1, format = "f", big.mark = ",")
+perc_increase_driving_char <- format(round(perc_increase_driving, 1), nsmall = 1)
 @
 
 For the first example, 
@@ -724,7 +723,7 @@ A comprehensive rebound analysis should track
 energy, expenditure, and consumption
 aspects of rebound 
 at the device (direct rebound) and elsewhere in the economy (indirect rebound)
-across all adjustments for all rebound effects
+across adjustments for all rebound effects
 (emplacement, substitution, income, and macro). 
 Doing so involves many terms and much complexity.
 To date, visualizing the energy, expenditure, and consumption 
@@ -741,9 +740,9 @@ Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
 
 Axes of the rebound planes
-represent direct and indirect rebound, with 
-direct rebound shown on the $x$-axis, and 
-indirect rebound shown on the $y$-axis.
+represent direct and indirect effects, with 
+direct effects shown on the $x$-axis, and 
+indirect effects shown on the $y$-axis.
 Specifically, 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -984,7 +983,7 @@ In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
 move in the negative $y$ direction,
 consistent with the description above.
 Segment \starc{} is negative by definition of the indirect substitution effect 
-and segment \chat{} is positive by the same definition. 
+and segment \chat{} is positive by the definition of the direct substitution effect. 
 Both income effect segments (\hatd{} and \dbar{}) will always
 lead to more energy consumption, because net savings are spent
 on goods and services that rely on at least some energy consumption.
@@ -1076,8 +1075,9 @@ they could move in opposite directions,
 depending on the results of the independent analyses for 
 embodied energy and capital cost rates.
 The substitution effect along segments \starc{} and \chat{}
-will, by definition, lead to a lower expenditure 
-due to the price decline and hence the budget reducing compensating variation (CV). 
+will, by definition, lead to lower expenditure 
+due to the energy service price decline and
+the budget reducing compensating variation (CV). 
 The income effect (segments \hatd{} and \dbar{}) must bring expenditure
 back to the original expenditure line 
 (equal to the budget constraint set by income in dollar or nominal terms) 
@@ -1102,7 +1102,7 @@ because the prices of other goods and services don't change
 as a result of the EEU.
 (The $x$-axis of Fig.~\ref{fig:ExampleConsPathGraph} does not extend to $0$ at the left, 
 so the intersection is not visible.)
-Emplacement does not alter consumption patterns, so
+Emplacement (by itself) does not alter consumption patterns, so
 the rate of energy service consumption and 
 the rate of other goods consumption are
 unchanged across the emplacement effect
@@ -1120,7 +1120,7 @@ The budget constraint,
 here in real terms, i.e.,
 the capacity to purchase either the energy service or other goods and services,
 is shown as isoquant \circcirc{}.
-The \circcirc{} line is tangent to the lower indifference curve 
+The \circcirc{} line is tangent to the original indifference curve 
 (\iicirc{}) at point $\circ$, the optimal consumption
 bundle prior to the EEU.
 The real budget line \starstar{}
@@ -1248,7 +1248,7 @@ rebound_results %>%
 We developed an open source \texttt{R} package called \texttt{ReboundTools}
 to standardize and distribute the methods for calculating rebound magnitudes in our framework.
 \texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
-(See \citet{Heun:2021us}.)
+(See \citet{Heun:2023aa}.)
 \texttt{ReboundTools} provides functions for 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -1276,7 +1276,7 @@ rebound paths in the energy, expenditure, and consumption planes.
 Extensive documentation for \texttt{ReboundTools}
 can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
-In addition, a separate Excel workbook that performs identical rebound calculations 
+In addition, an Excel workbook that performs identical rebound calculations 
 using the framework of this paper
 can be found at the data repository for this paper at
 \url{https://doi.org/10.5518/1201}.
@@ -1627,7 +1627,8 @@ each year.
 Conversely, the indirect substitution effect ($Re_{isub}$)
 is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
 to achieve the same level of utility after increased driving. 
-Indeed, less money is spent on other goods
+Indeed, across the substitution effect,
+less money is spent on other goods
 ($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/year).
 
 The \inceffect{} also has two components:
@@ -1653,7 +1654,6 @@ is largely unexplored, and
 we assume a value of $k = 1$ for both examples, initially.
 We return to the matter of calibrating $k$
 in the Discussion (Section~\ref{sec:calibrating_k}).
-
 With $k$ assumed to be 1
 the \macroeffect{} leads to macroeconomic rebound
 ($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%,
@@ -1784,7 +1784,7 @@ Direct income effect rebound
 ($Re_{dinc}$) is \Sexpr{Re_dinc_lamp_char_perc}\%,
 positive but small, 
 as the lamp owner allocates
-some of the net savings to increased demand for lighting.
+some of the net savings to additional demand for lighting.
 The indirect income effect rebound is large
 ($Re_{iinc} = \Sexpr{Re_iinc_lamp_char_perc}$\%),
 due to the energy implications of increased spending on other goods.
@@ -2124,9 +2124,9 @@ for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
 The calibrated values of $k$ that give identical 
 $Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
 for both examples are
-$k = \Sexpr{formatC(calibrated_k[["Car"]], digits = 2)}$
+$k = \Sexpr{format(round(calibrated_k[["Car"]], 1), nsmall = 1)}$
 for the car example and
-$k = \Sexpr{formatC(calibrated_k[["Lamp"]], digits = 2)}$ 
+$k = \Sexpr{format(round(calibrated_k[["Lamp"]], 1), nsmall = 1)}$ 
 for the lamp example.
 
 Qualitative differences in benefits from EEUs as well as the considerable 
@@ -2147,7 +2147,7 @@ find the energy implications of macro-effect respending throughout the economy.
 
 There are three ways to interpret $k \approx 3$.
 First, $k \approx 3$ can be considered the average long-run 
-economic growth generated by the device owner's spending of freed cash.
+economic growth generated by the device owner's spending of net savings.
 Efficiency increases in equipment drive a significant part of 
 long-run productivity growth \citep{Greenwood1997}, therefore a large
 long-run multiplier is plausible,
@@ -2175,7 +2175,7 @@ the subsequent demand-side effects may well be interpreted as a multiplier effec
 caused by higher real income instead of by higher monetary income.
 
 After calibrating $k \approx 3$, 
-we can calculate all rebound components in our framework.
+we can recalculate all rebound components in our framework.
 Emplacement ($Re_{empl}$), substitution ($Re_{sub}$), and income ($Re_{inc}$) rebound
 magnitudes are unchanged after calibrating $k \approx 3$.
 However, we see that choosing a placeholder value of $k = 1$
@@ -2186,11 +2186,11 @@ the macro effect segments (\bartilde{})
 should be three times longer than they appear.
 In Tables~\ref{tab:car_results} and~\ref{tab:lamp_results},
 the values of macro rebound ($Re_{\macro}$) should triple to
-\Sexpr{formatC(Re_macro_car_k_3*100, digits = 3)}\% and
-\Sexpr{formatC(Re_macro_lamp_k_3*100, digits = 3)}\%, and
+\Sexpr{format(round(Re_macro_car_k_3*100, 1), nsmall = 1)}\% and
+\Sexpr{format(round(Re_macro_lamp_k_3*100, 1), nsmall = 1)}\%, and
 the values of total rebound ($Re_{tot}$) should increase to 
-\Sexpr{sprintf("%.1f", round(Re_tot_car_k_3*100, 1))}\% and
-\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 3)}\%
+\Sexpr{format(round(Re_tot_car_k_3*100, 1), nsmall = 1)}\% and
+\Sexpr{format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)}\%
 for the car and lamp examples,
 respectively.
 For the rest of this paper, 
@@ -2212,7 +2212,7 @@ f_car <- function(Re_name, string_val = TRUE) {
     magrittr::extract2(Re_name) %>% 
     magrittr::multiply_by(100)
   if (string_val) {
-    return(formatC(out_val, format = "f", digits = 1))
+    return(format(round(out_val, 1), nsmall = 1))
   } else {
     return(out_val)
   }
@@ -2223,7 +2223,7 @@ f_lmp <- function(Re_name, string_val = TRUE) {
     magrittr::extract2(Re_name) %>% 
     magrittr::multiply_by(100)
   if (string_val) {
-    return(formatC(out_val, format = "f", digits = 1))
+    return(format(round(out_val, 1), nsmall = 1))
   } else {
     return(out_val)
   } 
@@ -2266,8 +2266,8 @@ due to the longer life of the LED lamp compared to the incandescent lamp.
 Thus, each EEU should be analyzed independently for its embodied energy rebound.
 
 Fourth,
-macro effect rebound is quite different between the two examples, 
-owing to differences in freed cash.
+macro effect rebound is different between the two examples, 
+owing to differences in net income ($\raempl{N}$) relative to expected savings ($\Sdot$).
 (For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
 For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
 The efficiency gain for the lamp is far greater than the efficiency gain for the car,
@@ -2297,14 +2297,15 @@ Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 compare car and lamp results (with $k \approx 3$) to 
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
-These comparison studies are neither comprehensive nor
+The comparison studies are neither comprehensive nor
 definitive of car and lamp EEUs; 
 rather, they are examples that show the sort of calculations and estimations
 carried out in the general literature using a variety of methods. 
-That said, many of the studies are highly cited in their field, thereby carrying sufficient academic weight for our purposes.
+That said, many of the studies are highly cited,
+thereby carrying sufficient academic weight for our purposes.
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 and their associated references 
-enable two types of observations, comparing their
+enable two types of observations, comparing
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -2325,7 +2326,8 @@ report all rebound effects, as we have done
 in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
 Also, no studies report either emplacement rebound 
 ($Re_{empl} = Re_{emb} + Re_{\md}$)
-or include all of direct and indirect, substitution and income microeconomic rebound effects.
+or include all of direct and indirect, substitution and
+income microeconomic rebound effect combinations.
 In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
 In fact, only 4 or 5 of the 10 studies
 in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
@@ -2337,7 +2339,7 @@ elucidating all rebound components in Part~II, we are
 	
   \item adding conceptual clarity to the field of energy rebound, which
   
-  \item may allow future studies to estimate a broader range of rebound components.
+  \item may enable future studies to estimate a broader range of rebound components.
     
 \end{enumerate*}
 
@@ -2348,8 +2350,8 @@ that we employ.
 That finding is instructive. 
 It supports the view that
 a comprehensive framework that sets out individual rebound components
-has been missing, and 
-it informed the objective for Part~I of this paper.
+has been missing, which
+informed the objective for Part~I of this paper.
 Further, the finding means that 
 comparisons between top-down estimations or calculations 
 of total, economy-wide rebound 
@@ -2386,17 +2388,17 @@ via own price elasticities (e.g., \citet{Chitnis:2015}).%
 
 <<calculate_without_macro, echo=FALSE>>=
 Re_indir_no_macro_car <- f_car("Re_indir", string_val = FALSE) - f_car("Re_macro", string_val = FALSE)
-Re_indir_no_macro_car_str <- formatC(Re_indir_no_macro_car, format = "f", digits = 1)
+Re_indir_no_macro_car_str <- format(round(Re_indir_no_macro_car, 1), nsmall = 1)
 Re_indir_no_macro_lamp <- f_lmp("Re_indir", string_val = FALSE) - f_lmp("Re_macro", string_val = FALSE)
-Re_indir_no_macro_lamp_str <- formatC(Re_indir_no_macro_lamp, format = "f", digits = 1)
+Re_indir_no_macro_lamp_str <- format(round(Re_indir_no_macro_lamp, 1), nsmall = 1)
 @
 For indirect rebound ($Re_{indir}$),
 there is little agreement on the magnitude of rebound effects.
 Our values for 
 car ($\Sexpr{f_car("Re_indir")}$\%) and 
-lamp ($\Sexpr{f_lmp("Re_indir")}$\%) rebound magnitudes
+lamp ($\Sexpr{f_lmp("Re_indir")}$\%) indirect rebound magnitudes
 are higher than those found in the comparison studies
-for either the car (6\% to 23\%) or lamp (8\% to 16\%) cases.
+for either the car (6\% to 23\%) or the lamp (8\% to 16\%) cases.
 The most likely cause of our larger indirect rebound values
 is that we include both micro and macro rebound levels,
 whereas the comparison studies 
@@ -2407,7 +2409,7 @@ comparisons of our indirect rebound values with the studies
 in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 may be too simple and not very meaningful,
 as we (alone) include macro-level effects in indirect rebound. 
-If we exclude our $Re_{macro}$ values, 
+If we exclude $Re_{macro}$ from $Re_{indir}$, 
 our indirect microeconomic rebound values become 
 \Sexpr{Re_indir_no_macro_car_str}\% (car) and
 \Sexpr{Re_indir_no_macro_lamp_str}\% (lamp),
@@ -2443,7 +2445,7 @@ by
         
   \item calibrating the macro factor ($k \approx 3$),
 
-  \item documenting new calculations of rebound for automobile and lighting  
+  \item documenting in detail new calculations of rebound for automobile and lighting  
         upgrades, and 
         
   \item providing information about new open source software tools
@@ -2478,6 +2480,10 @@ First, the car and lamp examples (Section~\ref{sec:results}) show that
         for emplacement, substitution, income, and macro effects.
 Second, the examples show that magnitudes of all rebound effects
         vary with the type of EEU performed.
+Thus, Values for rebound effects  
+for one EEU should never be assumed to apply to a different EEU, and
+it is important to calculate the magnitude of all rebound effects 
+for each EEU in each economy.
 
 Further work could be pursued in several areas. 
 %
@@ -2485,10 +2491,10 @@ Further work could be pursued in several areas.
 	
   \item Additional empirical studies could be performed
         to calculate the magnitude of different 
-        rebound effects in a variety of real-life EEUs.
+        rebound effects for a variety of real-life EEUs.
 
   \item Deeper study of macro rebound is needed, including improved determination 
-        of values of the macro factor ($k$) and its relation to the MPC.
+        of the value of the macro factor ($k$) and its relation to the MPC.
         
   \item The rebound implications of the distribution of $\MPC$ values 
         across socioeconomic groups~\citep{Carroll2017}
