@@ -317,7 +317,7 @@ Lamp_Germany_Re_tot <- rebound_results %>%
 The effect of energy price on rebound is shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}.
 Increasing energy prices lead to larger total rebound ($Re_{tot}$),
 because higher energy prices lead to more net savings ($\rasub{N}$)
-to be spent by the device owner.
+to be spent by the device user.
 All other things being equal, more net savings leads to 
 more spending on other goods and services that demand energy.
 

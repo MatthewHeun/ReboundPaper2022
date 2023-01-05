@@ -25,7 +25,7 @@ eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 
 
 As discussed in Section~\ref{sec:sub_effect_main_paper}
 and Appendix~\ref{sec:Re_sub}, 
-the substitution effect requires a model for device owner behavior,
+the substitution effect requires a model for device user behavior,
 Behavior is typically represented by a model of utility that is maximized
 with arguments of consuming the energy service ($\rate{q}_s$)
 and other goods and services ($\rate{q}_o$) and
@@ -168,7 +168,7 @@ utility models quantify the decrease in other goods consumption
 caused by the increase of energy service consumption
 ($\rasub{q}_s/\rbsub{q}_s > 1$)
 resulting from the decrease of the energy service price ($\aempl{p}_s < \orig{p}_s$)
-under the constraint of constant device owner utility.
+under the constraint of constant device user utility.
 Across the substitution effect, 
 the utility increase of the larger energy service consumption rate
 must be exactly offset
