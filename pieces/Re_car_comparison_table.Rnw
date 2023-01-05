@@ -57,17 +57,19 @@
   &                            &                           & fuels, uses household      & &    &   & &    &    &    \\
   &                            &                           & spending survey data       & &    &   & &    &    &    \\
 \midrule
-7 & \citeauthor{Stapleton:2016}  & UK         & Elasticity of VMT w.r.t.\ & & & & & 9--36 & & \\
+7 & \citeauthor{Gillingham:2015aa}  & Pennsylvania, & Estimation of gasoline      & & & & & 10 (short run) & &  \\
+  & \citeyearpar{Gillingham:2015aa} & 2000--2010    & price elasticity of driving & & & & &                & &  \\
+  &                                 &               & demand, from dataset        & & & & &                & &  \\
+  &                                 &               & of 75 million vehicle       & & & & &                & &  \\
+  &                                 &               & inspection records,         & & & & &                & &  \\
+  &                                 &               & including odometer data     & & & & &                & &  \\
+\midrule
+8 & \citeauthor{Stapleton:2016}  & UK         & Elasticity of VMT w.r.t.\ & & & & & 9--36 & & \\
   & \citeyearpar{Stapleton:2016} & 1970--2011 & fuel cost/prices          & & & & &       & & \\
 \midrule
-8 & \citeauthor{Moshiri2017}  & Canada,    & Price elasticity of transport & & & & & 82--88 & & \\
+9 & \citeauthor{Moshiri2017}  & Canada,    & Price elasticity of transport & & & & & 82--88 & & \\
   & \citeyearpar{Moshiri2017} & 1997--2009 & fuel, using household         & & & & &        & & \\
   &                           &            & spending survey data          & & & & &        & & \\
-\midrule
-9 & \citeauthor{Dimitropoulos:2018aa}  & Over half  & Meta study of 74 transport  &   &  &  & & 10--12      &  & \\
-  & \citeyearpar{Dimitropoulos:2018aa} & are U.S.\  & direct rebound studies, all &   &  &  & & (short run) &  & \\
-  &                                    & studies    & using elasticity-based      &   &  &  & & 26--29      &  & \\
-  &                                    &            & methods                     &   &  &  & & (long run)  &  & \\
 \midrule
 10 & \citeauthor{Duarte:2018aa}  & Spain,     & Dynamic CGE model, & & & & & & & 26          \\
    & \citeyearpar{Duarte:2018aa} & 2010--2030 & efficiency shock   & & & & & & & (short run) \\

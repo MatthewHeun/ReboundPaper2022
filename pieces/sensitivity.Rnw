@@ -52,7 +52,8 @@ car_efficiency_ratio <- (rebound_results %>%
                            dplyr::filter(Case == "Car (k = 3)") %>% 
                            dplyr::select("eta_engr_units_orig")) %>% 
   unlist() %>% 
-  formatC(digits = 3)
+  round(digits = 2) %>% 
+  format(nsmall = 2)
 
 lamp_efficacy_ratio <- (rebound_results %>% 
                           dplyr::filter(Case == "Lamp (k = 3)") %>%
@@ -61,7 +62,8 @@ lamp_efficacy_ratio <- (rebound_results %>%
                           dplyr::filter(Case == "Lamp (k = 3)") %>%
                           dplyr::select("eta_engr_units_orig")) %>% 
   unlist() %>% 
-  formatC(digits = 3)
+  round(digits = 2) %>% 
+  format(nsmall = 2)
 @
   
 Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
@@ -362,9 +364,9 @@ providing an indication of possible energy price variations.
 All other things being equal, 
 if U.S.\ residents paid Germany's energy prices,
 energy rebound would be 
-$\Sexpr{formatC(unlist(Car_Germany_Re_tot * 100), digits = 2)}$\%
+$\Sexpr{format(round(unlist(Car_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
 for the car example and 
-$\Sexpr{formatC(unlist(Lamp_Germany_Re_tot * 100), digits = 3)}$\%
+$\Sexpr{format(round(unlist(Lamp_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
 for the lamp example.
 
 % A limitation of the energy price sensitivity analysis arises from the fact that
@@ -458,25 +460,23 @@ Re_tot_car_with_lamp_e_ps_qs <- eps_graph_parametric_data %>%
   dplyr::filter(abs(.data[[ReboundTools::orig_vars$e_qs_ps_UC_orig]] - eps_lamp_base) < 0.00001) %>% 
   dplyr::select(Re_tot)
 Re_tot_car_with_lamp_e_ps_qs <- Re_tot_car_with_lamp_e_ps_qs %>% 
-  # magrittr::multiply_by(100) %>% 
-  unlist() # %>% 
-  # formatC(format = "f", digits = 1)
+  unlist()
 @
 
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
-with the original uncompensated price elasticity of energy service demand ($\eqspsUC^\circ$).
+with the original uncompensated price elasticity of energy service demand ($\eqspsUCorig$).
 The effect is exponential, and
-total rebound increases with larger negative values of $\eqspsUC^\circ$, as expected.
+total rebound increases with larger negative values of $\eqspsUCorig$, as expected.
 The lamp example also shows stronger exponential variation than the car example.
 The main reason that total rebound values 
 are different between the two examples
-is the larger absolute value of original uncompensated own price elasticity ($\eqspsUC^\circ$) 
+is the larger absolute value of original uncompensated own price elasticity ($\eqspsUCorig$) 
 for the lamp ($\Sexpr{eqspsUC_lamp}$) compared to the car ($\Sexpr{eqspsUC_car}$).
 Were the car to have the same original uncompensated own price elasticity
 as the lamp (i.e., $\Sexpr{eqspsUC_lamp}$), 
 total rebound would be closer for both examples 
-($\Sexpr{formatC(Re_tot_car_with_lamp_e_ps_qs*100, digits = 2)}$\% for the car and 
-$\Sexpr{formatC(Re_tot_lamp_k_3*100, digits = 2)}$\% for the lamp).
+($\Sexpr{format(round(Re_tot_car_with_lamp_e_ps_qs*100, 1), nsmall = 1)}$\% for the car and 
+$\Sexpr{format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)}$\% for the lamp).
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
 ($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC^\circ$.
 For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
