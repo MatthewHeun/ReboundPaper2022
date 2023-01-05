@@ -1480,25 +1480,47 @@ to productivity-driven growth at the macro level is unexplored territory.
 Another novel contribution of this paper
 (in addition to the framework itself)
 is the first operationalization of the macro rebound multiplier idea.
-To operationalize the macro rebound effect, we scale
-the net savings gained by the device owner at the microeconomic level ($\raempl{N}$)
-by a macro factor ($k$) that represents the economic activity generated
-by the infinite series of respending of net savings ($\raempl{N}$)
-throughout the economy.%
+First we stress that such a multiplier stands for the cumulative
+productivity growth triggered by
+the initial productivity increase in the EEU.
+%To operationalize the macro rebound effect, 
+%we scale
+%the net savings gained by the device owner at the microeconomic level ($\raempl{N}$)
+%by a macro factor ($k$) that represents the economic activity generated
+%by the infinite series of respending of net savings ($\raempl{N}$)
+%throughout the economy.%
+%\footnote{
+%  The macro factor ($k$) appears unitless,
+%  but its units are actually \$ of economic expansion created 
+%  per \$ of net savings gained
+%  by the device owner in the emplacement effect ($\raempl{N}$).
+%}
+%
+But to operationalize the macro rebound effect, 
+we note that the net savings gained by the 
+device owner at the microeconomic level ($\raempl{N}$)
+are spent on new goods that create new incomes and,
+according to the marginal propensity to consume (MPC),
+expenditures throughout the economy. Over time, 
+and allowing for temporary contractions \citep{Basu2006},
+this leads to the infinite series of
+respending of net savings ($\raempl{N}$),
+a multiplier which we represent by a macro factor ($k$).
 \footnote{
   The macro factor ($k$) appears unitless,
   but its units are actually \$ of economic expansion created 
   per \$ of net savings gained
   by the device owner in the emplacement effect ($\raempl{N}$).
+  throughout the economy
 }
-%
-The macro factor ($k$) can be likened to 
-the total respending described by
-a marginal propensity to consume ($\MPC$).
-(See \citet{Carroll2017}.)
+%The macro factor ($k$) can be likened to 
+%the total respending described by
+%a marginal propensity to consume ($\MPC$).
+%(See \citet{Carroll2017}.)
+
 $k$ represents respending in the broader economy 
 after the emplacement effect has occurred
-and is not tied to any particular EEU or economic sector.
+and is is not tied to any particular EEU or economic sector.
 $k \ge 0$ is expected.
 $k = 0$ means there is no dynamic effect
 resulting from the energy efficiency upgrade.
@@ -1516,8 +1538,12 @@ of Eq.~(\ref{eq:mpc_and_k_converged}).)
 A further advantage of using the macro factor approach is that there are
 many estimates of the magnitude of $\MPC$, though we stress again that
 using consumption multipliers is a
-\emph{representation} of the effect, while the cause is higher
-energy efficiency on the supply side.
+%\emph{representation} of the effect, while the cause is higher
+\emph{representation} of the effect, while the cause is not
+a demand-side fiscal expansion, but
+energy efficiency on the supply side.\footnote{In particular,
+this avoids the problem of crowding out, since
+productive capacity expands, not just expenditure \citep{Gillingham2016}.}
 A recent review by \citet{Carroll2017} 
 reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
 with the full range of estimates spanning 0.0 to 0.9.
@@ -1565,8 +1591,10 @@ we find
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We developed above a rebound framework for consumers. 
-We note that many of its components are similar to those for a producer-sided framework
-due to the symmetry between neoclassical microeconomic producer and consumer theory.
+We note that many of its components are similar
+to those for a producer-sided framework
+due to the symmetry between
+neoclassical microeconomic producer and consumer theory.
 Ours is a partial equilibrium framework at the microeconomic level
 that provides a detailed assessment of individual EEUs with tractable,
 easy-to-understand mathematics.
@@ -1583,7 +1611,9 @@ all other prices remain constant
 }
 %
 In our framework, 
-general equilibrium effects are captured at the macroeconomic level by 
+%general equilibrium effects are captured at the macroeconomic level by 
+general equilibrium effects and other dynamic effects 
+at the macroeconomic level are captured by 
 a simplified, one-dimensional rebound effect
 discussed in Section~\ref{sec:macro_effect_main_paper}.
 
@@ -1701,7 +1731,9 @@ non-marginal energy service price changes
 in an operational manner
 for the simplest case (understandable across disciplines)
 of a single fuel and a single energy service.
-In particular, non-marginal price changes and the macro effect
+In particular, 
+treating capital cost,
+non-marginal price changes and the macro effect
 required conceptual development and operationalization
 as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
