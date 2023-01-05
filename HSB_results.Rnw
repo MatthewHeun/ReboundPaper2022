@@ -123,14 +123,16 @@ about energy rebound.
 We said that
 %
 \begin{quote}
-  a description of rebound is needed that is both
+  [a] description of rebound [is needed] that is 
   %
   \begin{enumerate*}[label={(\roman*)}]
 
+    \item consistent across energy, expenditure, and consumption aspects,
+  
     \item technically rigorous and
   
     \item approachable from both sides
-        (economics and energy analysis).
+          (economics and energy analysis). \ldots
 
   \end{enumerate*}
   %
@@ -142,20 +144,20 @@ We said that
 \end{quote}
 
 To move improve clarity in the rebound field, 
-we developed in Part~I a rigorous analytical framework 
+we developed in Part~I a comprehensive and rigorous analytical framework 
 for energy rebound, 
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
 energy, expenditure, and consumption.
 The framework contains both
-direct and indirect rebound
-($d$ and $i$, respectively) and 
+direct and indirect rebound and 
 four rebound effects
 (emplacement, substitution, income, and macro) 
 between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
 Rebound terms and symbol decorations are
 shown in Fig.~\ref{fig:flowchart}.
-(See Table~\ref{PartI-tab:rebound_typology} in Part~I for details.)
+(See Table~\ref{PartI-tab:rebound_typology} in Part~I for details.
+See Appendix~\ref{sec:nomenclature} for nomenclature.)
 
 \begin{figure}
 \centering
@@ -178,7 +180,7 @@ with detailed explication of the examples.
 Finally, we show 
 calculations of rebound magnitudes for both examples.
 
-The key contributions of Part~II are 
+The key contributions of this paper are 
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -190,7 +192,7 @@ The key contributions of Part~II are
   \item calibration of the macro factor ($k$) to link
         microeconomic and macroeconomic rebound levels,
         
-  \item presentation of new rebound values for automobile and lighting 
+  \item presentation of new rebound values for car and electric lamp 
         upgrades based on a calibrated version of our framework from Part~I, and 
         
   \item documentation of new open source software tools
@@ -200,14 +202,13 @@ The key contributions of Part~II are
 \end{enumerate*}
 
 The remainder of this paper is structured as follows.
-Section~\ref{sec:methods} describes 
-data for examples, 
+Section~\ref{sec:methods} describes data for the examples, 
 our method of visualizing rebound, and 
 open source software tools for calculating and visualizing rebound.
 Section~\ref{sec:results} provides two examples: 
 energy efficiency upgrades to a car and an electric lamp.
-Section~\ref{sec:discussion} discusses the results and
-calibrates the macro factor ($k$), and 
+Section~\ref{sec:discussion} calibrates the macro factor ($k$)
+and discusses results, and 
 Section~\ref{sec:conclusion} concludes.
 
 
@@ -240,7 +241,7 @@ To demonstrate application of the rebound analysis framework
 developed in Part~I,
 we analyze two case studies:
 energy efficiency upgrades to a car and an electric lamp.
-The case studies are presented with much detail here
+The case studies are presented with much detail 
 to support our goal of bringing clarity to the process
 of calculating the magnitude of rebound effects.
 Here, we collect parameter values
@@ -335,7 +336,7 @@ The cars are matched as closely as possible,
 except for the inclusion of an electric battery 
 in the hybrid car.  
 The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
-versus the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
+for the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
 
 We require three sets of data. 
 First, basic car parameters are summarized 
@@ -559,13 +560,13 @@ we consider purchasing a Light Emitting Diode (LED) electric lamp
 to replace a baseline incandescent electric lamp. 
 Both lamps are matched as closely as possible 
 in terms of energy service delivery (measured in lumen output per lamp), 
-the key difference being the energy required to provide that energy service. 
+the key difference being the energy required to provide that service. 
 The LED lamp has a low 
 initial capital investment rate
 when spread out over the lifetime of the lamp
 (less than the incumbent incandescent lamp, actually)
 and a long-term benefit of decreased direct energy expenditures
-at the same energy service delivery rate (lm-hr/year).
+at approximately the same energy service delivery rate (lm-hr/year).
 
 Again, three sets of data are required. 
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 

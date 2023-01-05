@@ -1740,7 +1740,9 @@ Future work could be pursued in several areas.
   
   \item This framework could be extended to include some of the advanced topics
         in \citet{Chan2015} and \citet{Wang2021}, 
-        such as **** GS to provide a few additional topics. ---MKH ****.
+        such as multiple fuels,  
+        energy services, and
+        nested utility functions with intermediate inputs.
         
   \item This framework could be extended to include fuel-switching EEUs,
         wherein the upgraded device uses a different fuel from the original device.
