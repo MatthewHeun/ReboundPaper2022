@@ -1737,7 +1737,8 @@ Future work could be pursued in several areas.
   
   \item This framework could be extended to include some of the advanced topics
         in \citet{Chan2015} and \citet{Wang2021}, 
-        such as **** GS to provide a few additional topics. ---MKH ****.
+        such as multiple fuels, nested household production functions or more
+        than two consumption goods.
         
   \item The greenhouse gas emissions implications of energy rebound
         could be evaluated using this framework,
