@@ -795,16 +795,8 @@ The indirect effects of EEU emplacement are
         ($\Delta \raempl{E}_{\md}$ and $\Delta \raempl{C}_{\md}$).
     
 \end{enumerate*}
-
-The rate of energy savings
-due to the direct emplacement effect ($\Sdot$)
-is given by
-
-\begin{equation} \label{eq:S_dot_def}
-  \Sdot \equiv \rbempl{E}_s - \raempl{E}_s = - \Delta \raempl{E}_s \; .
-\end{equation}
 %
-$\Sdot$ can be rewritten conveniently as
+$\Sdot$ can be written conveniently as
 
 \begin{equation} \label{eq:Sdot}
   \Sdot = \Sdoteqn \; .
