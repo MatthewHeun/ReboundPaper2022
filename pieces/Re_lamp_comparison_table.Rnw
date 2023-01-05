@@ -39,9 +39,10 @@
   &                                      &            & elasticities            & & & & &    &    &  \\
 \midrule
 3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 10 &  \\
-  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of household & & & & &    &    &  \\
-  &                             &       & fuels, using household    & & & & &    &    &  \\
-  &                             &       & spending survey data      & & & & &    &    &  \\
+  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of home      & & & & &    &    &  \\
+  &                             &       & electricity use, using    & & & & &    &    &  \\
+  &                             &       & household spending        & & & & &    &    &  \\
+  &                             &       & survey data               & & & & &    &    &  \\
 \midrule
 4 & \citeauthor{Schleich2014}  & Germany, & Survey of electricity & & & & & 6 & &  \\
   & \citeyearpar{Schleich2014} & 2012     & consumption in 6409   & & & & &   & &  \\

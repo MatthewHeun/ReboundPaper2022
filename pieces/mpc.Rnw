@@ -11,7 +11,7 @@ In this appendix, we show the relationship between the macro factor ($k$) and $\
 
 The relationship between the macro factor ($k$) and $\MPC$ spans
 the substitution, income, and macro effects.
-In this framework, the device owner's net savings 
+In this framework, the device user's net savings 
 after the emplacement effect ($\raempl{N}$) is respent completely.
 One may assume that firms and other consumers who receive the net savings have a 
 marginal propensity to re-spend of $\MPC$.
@@ -23,7 +23,7 @@ is given by the infinite series
 \end{equation}
 %
 where the first term ($1 \times \raempl{N}$) represents spending 
-of net savings after emplacement by the device owner and
+of net savings after emplacement by the device user and
 the remaining terms 
 [$(\MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N}$]
 represent macro-effect spending in the broader economy.
