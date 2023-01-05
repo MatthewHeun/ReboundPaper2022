@@ -96,8 +96,12 @@ rebound analysis framework that
         maintenance and disposal effects
         (under a new ``emplacement effect'' term), and
 
-  \item encompasses non-marginal energy efficiency increases and
-        non-marginal energy service price decreases.
+  %\item encompasses non-marginal energy efficiency increases and
+  %      non-marginal energy service price decreases.
+  
+  \item allows exact analytical determination of
+        the effects of non-marginal energy efficiency
+        increases and non-marginal energy service price decreases.
   
 \end{enumerate*}
 %
@@ -227,17 +231,21 @@ they tended to use
 approximate substitutions, not utility preserving ones.
 They also used constant price elasticities
 for non-marginal efficiency improvements,
-even though constant price elasticities 
+even though constant price elasticities typically
 provide only approximations of substitution and
 income effects for small efficiency changes.
 Further, previous analytical studies have stressed the importance of the
 cost of buying an upgraded device as well as the energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
-Finally, rebound involves simultaneous changes in energy, expenditure,
+And rebound involves simultaneous changes in energy, expenditure,
 and consumption aspects, and keeping an overview of all
 aspects is hard, with no approach to our knowledge documenting all 
 changes in a straightforward and consistent manner.
+Finally, while recent general equilibrium rebound modeling has led to 
+important insights about the effects of changing prices,
+dynamic aspects of a macroeconomic rebound have
+been neglected by these approaches.
 
 In the absence of solid analytical foundations, 
 the wide variety of rebound calculation approaches yields
@@ -430,7 +438,7 @@ We follow others, including \citet{Jenkins2011} and \citet{Walnum2014},
 in identifying and including both direct and indirect rebound effects, 
 which occur at (direct) and beyond (indirect) 
 the level of the device and its owner.
-Again following others, we distinguish between rebound effects 
+Again following others, such as \citet{Gillingham2016}, we distinguish between rebound effects 
 at the microeconomic and macroeconomic levels.
 
 Microeconomic rebound occurs at the level 
@@ -447,8 +455,10 @@ a direct substitution effect, and
 a direct income effect. 
 At the level of the device, 
 all of the direct rebound effects change the consumption 
-of the energy service 
-provided by the device whose efficiency has been upgraded,  
+%of the energy service 
+of energy
+%provided by the device whose efficiency has been upgraded,  
+by the device whose efficiency has been upgraded,  
 according to a microeconomic behavioral model of the consumer who
 responds to the cheaper energy service.
 Similarly, the indirect rebound effect can be partitioned into
@@ -999,17 +1009,20 @@ about consumer behavior.%
   Alternative assumptions on behavior would arise from,
   e.g., adopting a behavioral economic framework
   \citep{Dutschke:2018aa, Dorner:2019aa} or
-  an informational entropy-constrained economic framework \cite{Foley:2020aa}.
+  an informational entropy-constrained economic framework \citep{Foley:2020aa}.
 }
 %
 (The next section addresses income effect rebound, $Re_{inc}$.)
-The substitution effect alters compensated demand, which is the demand for
+The substitution effect determines compensated demand,
+which is the demand for
 the expenditure-minimizing consumption bundle that
 maintains utility at the pre-EEU level, given the new prices.
 Compensated demand is a technical term for a thought experiment from welfare economics: 
 the device owner's budget is altered so that the owner is ``compensated''
-(that is, the budget is reduced)
-for the change in price so as to maintain the same level of utility as before. 
+for the change in price so as to maintain the same level of utility as before.
+In the case of an EEU, this implies the budget is reduced
+because the energy service price has fallen, so that it becomes
+cheaper to maintain a given level of utility.
 The change in the budget is called ``compensating variation'' (CV).
 The substitution effect involves
 %
@@ -1047,7 +1060,9 @@ compensated and uncompensated, own and cross price elasticities
 remain constant along an indifference curve. 
 (See Appendix~\ref{sec:utility_and_elasticities}.)
 Whether that is true or not depends on the utility function used.
-Constant price elasticities (as in the CPE utility model)
+Typically,
+%Constant price elasticities (as in the CPE utility model)
+constant price elasticities (as in the CPE utility model)
 are approximations that are applicable only to marginal price changes. 
 Appendix~\ref{sec:Resub_approximate_method}
 contains details of the CPE utility model.
@@ -1364,7 +1379,7 @@ other prices as quantities supplied adjust to the new demand schedule.
 The most notable price change is the price of
 energy itself which could fall due to lower demand.
 The energy price or market effect is accordingly typically noted as an
-important macroeconomic rebound effect \citep{Borenstein:2015aa}.
+important macroeconomic rebound effect \citep{Gillingham2016}.
 In the long-run, i.e.\ when capital stock can be replaced in response
 to changes in relative costs and demand,
 rebound could change further. 
@@ -1454,8 +1469,10 @@ That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side
 and demand-side effects both play a role as the consequences of the
 technology shock play themselves out.
 Furthermore, his approach has the advantage that it can be directly
-linked to the income effect (less compensating variation) and
-its consequence for macroeconomic rebound. 
+linked to the income effect
+%(less compensating variation) # 'less' could be misunderstood as a smaller CV
+(minus compensating variation) 
+and its consequence for macroeconomic rebound. 
 \citeauthor{Borenstein:2015aa} also notes that scaling from net 
 savings ($\raempl{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
