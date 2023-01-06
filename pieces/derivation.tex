@@ -189,7 +189,7 @@ at the upgraded device.
 
 
 %..............................
-\paragraph{Indirec emplacement effect rebound expression ($Re_{iempl}$)} 
+\paragraph{Indirect emplacement effect rebound expression ($Re_{iempl}$)} 
 \label{sec:Re_iempl}
 %..............................
 
@@ -463,7 +463,7 @@ rebound calculated using the CPE utility model (here)
 differs from rebound calculated using the CES utility model (below) 
 by as much as 5\%.
 Thus, in an analytical approach to rebound
-using substitution and rebound effects,
+using substitution and income effects,
 we do not recommend use of the CPE utility model.
 We discuss the CPE utility model here for completeness only.
 
@@ -505,17 +505,20 @@ yields the CPE model's expression for direct substitution rebound.
   Re_{dsub} = \Redsubeqn
 \end{equation}
 
-The compensated price elasticity of energy service demand is
-expected to be negative ($\eqspsC < 0$), 
+%The compensated price elasticity of energy service demand is
+%expected to be negative ($\eqspsC < 0$), % GS: this is too repetitive for my taste, it was already said two times in teh previous 2 paragraphs.
 such that, e.g.\
 $\eqspsC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
 yields $Re_{dsub} = 0.15$.
 
-With $\eqspsC \in (-1, 0)$ expected,
+%With $\eqspsC \in (-1, 0)$ expected,
+As long as $\eqspsC \in (-1, 0)$,
 the CPE utility model indicates that
-direct substitution rebound will never be larger than 1.
+%direct substitution rebound will never be larger than 1.
+direct substitution rebound will be below 1.
 I.e., the direct substitution effect alone
-can never cause backfire. 
+%can never cause backfire. 
+will not cause backfire. 
 
 To quantify the substitution effect on other purchases in the CPE utility model,
 we use another elasticity,
@@ -526,8 +529,10 @@ such that
   \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right) ^ {\eqopsC} \; .
 \end{equation}
 %
-Because the compensated cross price elasticity of other goods demand
-is positive ($\eqopsC > 0$),
+%Because the compensated cross price elasticity of other goods demand
+%is positive ($\eqopsC > 0$),
+For substitution to take place, the compensated cross price elasticity
+of other goods demand must be positive ($\eqopsC > 0$). Thus,
 an energy service price decrease ($\amacro{p}_s < \bempl{p}_s$)
 implies a reduction in the rate of consumption of other goods ($\rasub{q}_o < \rbsub{q}_o$).
 
@@ -566,7 +571,7 @@ indirect substitution rebound for the CPE utility model.
   Re_{isub} = \Reisubeqn{}
 \end{equation}
 
-Because the compensated cross-elasticity of other goods consumption is positive ($\eqopsC > 0$) and
+Because the compensated cross price elasticity of other goods consumption is positive ($\eqopsC > 0$) and
 the energy service efficiency ratio is greater than 1 ($\amacro{\eta} > \bempl{\eta}$),
 indirect substitution rebound will be negative always ($Re_{isub} < 0$),
 as expected.
@@ -583,12 +588,19 @@ The CPE utility model assumes that
 the compensated price elasticity of energy service demand ($\eqspsC$) and
 the compensated cross price elasticity of other goods demand ($\eqopsC$)
 are constant along an indifference curve.
-These assumptions are approximations that hold only 
+%These assumptions are approximations that hold only 
+%for infinitesimally small energy service price changes
+%($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$)
+%when an analytical utility model is used.
+These assumptions hold only 
 for infinitesimally small energy service price changes
 ($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$)
-when an analytical utility model is used.
+when an analytical utility model is used. They also 
+provide reasonable approximations for a one or two per cent change.
 However, in the case of an energy efficiency upgrade (EEU), 
-the energy service price change is not infinitesimal.
+%the energy service price change is not infinitesimal.
+the energy service price change is neither infinitesimal nor confined
+to single percent.
 Rather, 
 $\Delta \aempl{p}_s$ is finite and may be large.
 
