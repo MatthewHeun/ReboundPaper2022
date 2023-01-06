@@ -144,7 +144,7 @@ We said that
 \end{quote}
 
 To move improve clarity in the rebound field, 
-we developed in Part~I a comprehensive and rigorous analytical framework 
+we developed in Part~I a rigorous analytical framework 
 for energy rebound, 
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
@@ -719,7 +719,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 \label{sec:path_graphs}
 %++++++++++++++++++++++++++++++
 
-A comprehensive rebound analysis should track
+A rigorous rebound analysis should track
 energy, expenditure, and consumption
 aspects of rebound 
 at the device (direct rebound) and elsewhere in the economy (indirect rebound)
@@ -2349,7 +2349,7 @@ rather than the bottom-up ``sum-of-components'' approach
 that we employ.
 That finding is instructive. 
 It supports the view that
-a comprehensive framework that sets out individual rebound components
+a rigorous analysis framework that sets out individual rebound components
 has been missing, which
 informed the objective for Part~I of this paper.
 Further, the finding means that 

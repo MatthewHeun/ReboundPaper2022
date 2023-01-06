@@ -357,7 +357,7 @@ will go some way toward providing additional clarity in the field.
 
 The \emph{objective} of this paper is to 
 improve clarity in the field of energy rebound by
-supporting the development of a comprehensive and rigorous analytical framework, 
+supporting the development of a rigorous analytical framework, 
 one that
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -1582,7 +1582,7 @@ level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
 operationality.
 When all of the above characteristics are present, 
-a comprehensive picture of rebound can emerge.%
+a fuller picture of rebound can emerge.%
 \footnote{
   See Section~\ref{PartII-sec:path_graphs} of Part~II for literal pictures of rebound in 
   energy, expenditure, and consumption planes.
