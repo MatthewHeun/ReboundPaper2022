@@ -798,12 +798,11 @@ the derivative of \ref{eq:eqspsC_exact_simple} and simplifying gives
 \end{equation}
 
 All terms taken to their power are positive with the exception of $n$.
-For $\sigma > 1$, $n$ is positive; for $\sigma<1$, $n$ is negative.
+For $\sigma < 1$, $n$ is positive; for $\sigma>1$, $n$ is negative.
 Since we expect $\sigma < 1$ (otherwise we have backfire rebound conditions),
-the derivative is negative: 
+the derivative is positive: 
 the compensated own price
-elasticity becomes more negative.%
-% more negative as what happens? As p_s gets smaller or something like that?
+elasticity becomes less negative as $\amacro{p}_s$ increases.
 \footnote{
   For $\sigma = 1$, $m_s = 0$ and the derivative
   is zero: the Cobb-Douglas special case.
@@ -931,9 +930,8 @@ the derivative of \ref{eq:eqopsC_exact_simple} and simplifying gives
 
 All terms taken to their power are positive with the exception of $n$,
 analogous to the derivative of the own price elasticity in equation \ref{eq:eqspsC_exact_d}. 
-Thus, with $\sigma<1$ and $n$ negative, the compensated cross price
-elasticity becomes less positive.
-% becomes less positive as what happens? As p_s gets smaller or something like that?
+Thus, with $\sigma<1$ and $n$ positive, the compensated cross price
+elasticity becomes more positive as $\amacro{p}_s$ increases.
 
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
