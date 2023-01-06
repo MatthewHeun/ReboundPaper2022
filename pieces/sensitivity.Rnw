@@ -15,7 +15,8 @@ post-EEU efficiency ($\amacro{\eta}$),
 capital cost ($\amacro{C}_{cap}$),
 energy price ($p_E$),
 uncompensated price elasticity of energy service demand ($\eqspsUC$), 
-and the macro factor ($k$).
+the macro factor ($k$), and
+post-EEU energy service price ($\amacro{p}_s$).
 Univariate sensitivity analyses 
 (the kind shown here)
 should be interpreted carefully,
@@ -23,17 +24,18 @@ because some rebound parameters are not expected to be
 independent from others.
 
 In each subsection below, a figure
-shows the effect of independently varying each of five key rebound parameters
+shows the effect of independently varying each of six key rebound parameters
 ($\amacro{\eta}$, 
   $\amacro{C}_{cap}$, 
   $p_E$, 
   $\eqspsUC$, 
-  and $k$)
+  $k$, and 
+  $\amacro{p}_s$)
 on total energy rebound ($Re_{tot}$) and its components
 ($Re_{emb}$, $Re_{\md}$, $Re_{dsub}$, $Re_{isub}$,
   $Re_{dinc}$, $Re_{iinc}$, and $Re_{\macro}$).
-In the graphs, 
-nominal values for the rebound parameters are shown as points, 
+In many of the graphs, 
+nominal values for rebound parameters are shown as points, 
 and sensitivity trends are shown as lines. 
 % A limitation of each sensitivity analysis 
 % is noted at the end of each subsection.
@@ -363,7 +365,7 @@ are shown as vertical lines,
 providing an indication of possible energy price variations.
 All other things being equal, 
 if U.S.\ residents paid Germany's energy prices,
-energy rebound would be 
+total energy rebound ($Re_{tot}$) would be 
 $\Sexpr{format(round(unlist(Car_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
 for the car example and 
 $\Sexpr{format(round(unlist(Lamp_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
@@ -656,7 +658,7 @@ ggplot2::ggplot() +
 
 
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that the car example exhibits
-more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\asub{p}_s$)
+more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\amacro{p}_s$)
 than the lamp example, 
 because the expenditure share ($\fCs$) for the lamp example is very small
 compared to the car example.
