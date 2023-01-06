@@ -786,7 +786,7 @@ Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated
 energy service price elasticity of energy service consumption ($\eqspsChat$)
 under the CES utility model is a function 
 of the energy service price after the EEU~($\amacro{p}_s$). It is negative,
-as it should, because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
+as it should be, because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
 
 Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
 the derivative of \ref{eq:eqspsC_exact_simple} and simplifying gives
@@ -796,11 +796,18 @@ the derivative of \ref{eq:eqspsC_exact_simple} and simplifying gives
 \end{equation}
 
 All terms taken to their power are positive with the exception of $n$.
-For $\sigma>1$, $n$ is positive, and for $\sigma<1$ negative.
-Since we expect $\sigma<1$ (otherwise we have backfire rebound conditions),
-the derivative is negative: the compensated own price
-elasticity becomes more negative.\footnote{For $\sigma=1$, $m_s=0$ and the derivative
-is zero: the Cobb-Douglas special case.} Since the
+For $\sigma > 1$, $n$ is positive; for $\sigma<1$, $n$ is negative.
+Since we expect $\sigma < 1$ (otherwise we have backfire rebound conditions),
+the derivative is negative: 
+the compensated own price
+elasticity becomes more negative.%
+% more negative as what happens? As p_s gets smaller or something like that?
+\footnote{
+  For $\sigma = 1$, $m_s = 0$ and the derivative
+  is zero: the Cobb-Douglas special case.
+}
+%
+Since the
 share of income spent on the energy service declines for $\sigma<1$,
 it is not immediately clear in which direction $\eqspsUChat$ moves according to equation \ref{eq:Allen}.
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
@@ -885,12 +892,12 @@ via repeated application of the chain rule, gives
 
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqopsC_def})) gives
 
-\begin{equation}
-  \eqopsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
-         = \frac{\amacro{p}_s}{\cancel{\rorig{q}_o} \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n } \;
+\begin{align}
+  \eqopsChat &\equiv \frac{\amacro{p}_s}{\rasub{q}_o} \eval{\pdv{\rasub{q}_o}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
+         &= \frac{\amacro{p}_s}{\cancel{\rorig{q}_o} \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}^n } \;
            \cancel{\rorig{q}_o} m_o n f z^{m_o} \amacro{p}_s^{m_o - 1} 
                 \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\} ^{n-1}  \; .
-\end{equation}
+\end{align}
 %
 Cancelling terms and
 combining $\amacro{p}_s$ and $\left\{ 1 + f  \left[ \left( z \amacro{p}_s \right)^{m_o} - 1 \right] \right\}$ 
@@ -924,6 +931,7 @@ All terms taken to their power are positive with the exception of $n$,
 analogous to the derivative of the own price elasticity in equation \ref{eq:eqspsC_exact_d}. 
 Thus, with $\sigma<1$ and $n$ negative, the compensated cross price
 elasticity becomes less positive.
+% becomes less positive as what happens? As p_s gets smaller or something like that?
 
 See Appendix~\ref{PartII-sec:price_elasticities_sensitivity} of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
