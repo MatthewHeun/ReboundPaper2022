@@ -554,22 +554,27 @@ in Section~\ref{PartI-sec:sub_effect_main_paper}
 and Appendix~\ref{PartI-sec:utility_and_elasticities}
 of Part~I.
 Note that the left side of each graph ($\amacro{p}_{s} = 0$)
-represents infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
+represents unattainable infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
 i.e.\ delivery of the energy service without energy consumption.
 
-As expected, both of the
+First, note the sign of the elasticities. As expected, both of the
 uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$,
 dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph}) 
 are negative, regardless of the energy service price ($\amacro{p}_s$):
-a higher price means less consumption, all other things being equal.
+a lower price means more consumption of both
+goods, all other things being equal.
+%The compensated own price elasticity ($\eqspsChat$) is negative
+%regardless of $\amacro{p}_s$,
+%such that as $\amacro{p}_s$ declines with increased device efficiency ($\amacro{\eta}_s$),
+%consumption of the energy service rises. 
+%The compensated cross price elasticity ($\eqopsChat$) is positive,
+%regardless of $\amacro{p}_s$
+%such that as $\amacro{p}_s$ declines with increased $\amacro{\eta}_s$,
+%consumption of other goods falls.
 The compensated own price elasticity ($\eqspsChat$) is negative
-regardless of $\amacro{p}_s$,
-such that as $\amacro{p}_s$ declines with increased device efficiency ($\amacro{\eta}_s$),
-consumption of the energy service rises. 
-The compensated cross price elasticity ($\eqopsChat$) is positive,
-regardless of $\amacro{p}_s$
-such that as $\amacro{p}_s$ declines with increased $\amacro{\eta}_s$,
-consumption of other goods falls.
+and hte compensate cross price elasticity ($\eqopsChat$) is positive.
+As $\amacro{p}_s$ declines, the consumers substitutes the energy
+service for other goods.
 
 <<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
 # Run a new sensitivity study on the car and lamp examples
@@ -657,6 +662,7 @@ ggplot2::ggplot() +
 @
 
 
+Second, the magnitude of price elasticities varies.
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that the car example exhibits
 more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\amacro{p}_s$)
 than the lamp example, 
@@ -677,7 +683,8 @@ the absolute value of the uncompensated price elasticities
 ($\eqspsUChat$ and $\eqopsUChat$) decreases, 
 a change that exceeds the slightly increasing (in absolute value terms)
 compensated own price elasticity ($\eqspsChat$). 
-Thus, substitution rebound ($Re_{sub}$) is attenuated as efficiency increases.
-(See the $Re_{dsub}$ line of Fig.~\ref{fig:all_Re_terms_eta_graph},
-which, combined with the near-constant $Re_{isub}$ line,
-shows the same trend.)
+%Thus, substitution rebound ($Re_{sub}$) is attenuated as efficiency increases.
+Thus, direct rebound is attenuated as efficiency increases,
+relative to a constant price elasticity model.
+(See also the patterns of lines of Fig.~\ref{fig:all_Re_terms_eta_graph},
+which show a declining trend.)
