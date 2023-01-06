@@ -342,7 +342,9 @@ First, basic car parameters are summarized
 in Table~\ref{tab:car_parameters}.
 Second, we require several general economic parameters, 
 mainly relating to the U.S.\ economy and personal finances 
-of the average U.S.\ citizen, shown in Table~\ref{tab:car_economic_parameters}.
+%of the average U.S.\ citizen, 
+of a representative U.S.-based user
+shown in Table~\ref{tab:car_economic_parameters}.
 Third, we require elasticity parameters, 
 as given in Table~\ref{tab:car_elasticity_parameters}.
 
@@ -571,7 +573,8 @@ Again, three sets of data are required.
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
 Second, several general economic parameters, 
 mainly relating to the U.S.\ economy and 
-personal finances of the average U.S.\ citizen are 
+personal finances %of the average U.S.\ citizen are 
+of a representative U.S.-based user are
 given in Table~\ref{tab:lamp_economic_parameters}.
 Third, we require the elasticity parameters, 
 as shown in Table~\ref{tab:lamp_elasticity_parameters}.
@@ -984,9 +987,15 @@ move in the negative $y$ direction,
 consistent with the description above.
 Segment \starc{} is negative by definition of the indirect substitution effect 
 and segment \chat{} is positive by the definition of the direct substitution effect. 
-Both income effect segments (\hatd{} and \dbar{}) will always
+%Both income effect segments (\hatd{} and \dbar{}) will always
+Both income effect segments (\hatd{} and \dbar{})
 lead to more energy consumption, because net savings are spent
-on goods and services that rely on at least some energy consumption.
+on goods and services that rely on at least some energy consumption.\footnote{
+We are excluding the case of an inferior good, whose consumption decreases
+as real income increases, but note the possibility of such behavior. This behavior would
+however require another than the CES utility function,
+which we use throughout this analysis.
+}
 Segment \bartilde{} always moves in the positive $y$ direction,
 because macro effects lead to additional indirect energy consumption.
 
