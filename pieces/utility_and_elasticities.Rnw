@@ -25,7 +25,7 @@ eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 
 
 As discussed in Section~\ref{sec:sub_effect_main_paper}
 and Appendix~\ref{sec:Re_sub}, 
-the substitution effect requires a model for device user behavior,
+the substitution effect requires a model for device user behavior.
 Behavior is typically represented by a model of utility that is maximized
 with arguments of consuming the energy service ($\rate{q}_s$)
 and other goods and services ($\rate{q}_o$) and
@@ -497,7 +497,7 @@ the basket of other goods ($\rate{q}_o$).
 
 
 %------------------------------
-\subsubsection{Pre-EEU ($\circ$) elasticities} 
+\subsubsection{Original, pre-EEU ($\circ$) elasticities} 
 \label{sec:pre_eeu_elasticities}
 %------------------------------
 
@@ -614,7 +614,7 @@ Substituting $\sigma$ from Eq.~(\ref{eq:sigma}) gives
   \eqopsCorig = \frac{\fCs (\fCs + \eqspsUCorig)}{\fCs - 1} \; .
 \end{equation}
 
-Assuming a given value for the uncompensated own price elasticity ($\eqspsUCorig$), 
+Assuming a known value for the original uncompensated own price elasticity ($\eqspsUCorig$), 
 all other pre-EEU elasticities can be calculated from 
 Eqs.~(\ref{eq:sigma}), (\ref{eq:Allen}), (\ref{eq:eqsps}), and
 (\ref{eq:slutsky_cross_modified}) or (\ref{eq:eqops}).
@@ -623,7 +623,8 @@ Note that the rebound framework in this paper uses the CES utility model and
 needs only the uncompensated own price elasticity ($\eqspsUCorig$)
 and the derived elasticity of substitution ($\sigma$) to calculate rebound values.
 The other price elasticities ($\eqspsUCorig$, $\eqspsCorig$, and $\eqopsCorig$)
-are helpful for elucidating results derived from the framework,
+are not necessary for the model. 
+However, they are helpful for elucidating results derived from the framework,
 a task left for Part~II.
 
 
@@ -636,7 +637,7 @@ The stage after the substitution effect ($\wedge$)
 represents utility-maximizing behavior after the energy service price drop
 caused by the EEU and the compensating variation.
 Post-EEU, elasticities may be different from the original condition,
-because the consumption bundle has changed (a move along
+because the consumption bundle has changed (due to a move along
 the indifference curve).
 This section derives expressions for elasticities at the $\wedge$ stage.
 

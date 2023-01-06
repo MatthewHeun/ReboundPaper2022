@@ -5,7 +5,7 @@
 
 
 This appendix provides a detailed derivation of 
-the partial equilibrium rebound analysis framework,
+the rigorous analytical framework,
 beginning with relationships for each rebound effect.
 
 
@@ -174,7 +174,7 @@ Both direct and indirect emplacement effects are discussed below.
 
 
 %..............................
-\paragraph{$Re_{dempl}$}
+\paragraph{Direct emplacement effect rebound expression ($Re_{dempl}$)}
 \label{sec:Re_dempl}
 %..............................
 
@@ -182,13 +182,14 @@ As shown in Table~\ref{tab:empleffect},
 the direct rebound from the emplacement effect is
 $Re_{dempl} = 0$.
 This result is expected, 
-because, in the absence of behavior changes,
+because we assume an upgraded device with equal performance 
+as the original device and, in the absence of behavior changes,
 there is no takeback of energy savings
 at the upgraded device.
 
 
 %..............................
-\paragraph{$Re_{iempl}$} 
+\paragraph{Indirec emplacement effect rebound expression ($Re_{iempl}$)} 
 \label{sec:Re_iempl}
 %..............................
 
@@ -210,7 +211,7 @@ two distinct indirect emplacement rebound effects:
 
 
 %..............................
-\paragraph{$Re_{emb}$}
+\paragraph{Embodied energy effect rebound expression ($Re_{emb}$)}
 \label{sec:Re_emb}
 %..............................
 
@@ -268,7 +269,7 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\paragraph{$Re_{\md}$} 
+\paragraph{Maintenance and disposal effect rebound expression ($Re_{\md}$)} 
 \label{sec:Re_OMd}
 %..............................
 
@@ -400,7 +401,7 @@ Canceling terms yields
 \end{equation}
 %
 Eq.~(\ref{eq:Re_dsub_prelim}) is the basis for
-developing both approximate and CES models of determining
+developing both CPE and CES models of determining
 direct substitution rebound.
 
 
@@ -438,7 +439,7 @@ Substituting Eq.~($\ref{eq:Sdot}$) for $\Sdot$ and rearranging gives
 \end{equation}
 %
 Eq.~(\ref{eq:Re_isub_prelim}) is the basis for
-developing both approximate and CES models of determining
+developing both CPE and CES models of determining
 indirect substitution rebound.
 
 Determining the post-substitution effect conditions
@@ -458,7 +459,7 @@ In the literature, a constant price elasticity (CPE) utility model
 is often used 
 \citep[p.~17, footnote~43]{Borenstein:2015aa}.
 In the two examples of Part~II (car and electric lamp upgrades),
-rebound calculated using the approximate utility model (here)
+rebound calculated using the CPE utility model (here)
 differs from rebound calculated using the CES utility model (below) 
 by as much as 5\%.
 Thus, in an analytical approach to rebound
@@ -477,7 +478,7 @@ such that
 %
 Note that the compensated price elasticity of energy service demand ($\eqspsC$)
 is assumed constant along an indifference curve
-in the approximate model. 
+in the CPE utility model. 
 A negative value for the compensated price elasticity of energy service demand
 is expected ($\eqspsC < 0$),
 such that when the energy service price decreases ($\amacro{p}_s < \bempl{p}_s$),
@@ -517,8 +518,8 @@ I.e., the direct substitution effect alone
 can never cause backfire. 
 
 To quantify the substitution effect on other purchases in the CPE utility model,
-we introduce another elasticity,
-the compensated energy service cross price elasticity of other goods demand~($\eqopsC$), 
+we use another elasticity,
+the compensated cross price elasticity of other goods demand~($\eqopsC$), 
 such that
 
 \begin{equation}
@@ -779,7 +780,7 @@ The purpose of this section is derivation of expressions for
     
 \end{enumerate*}
 
-But first, we derive a helpful expression 
+But first, we derive an expression 
 for device energy consumption rate prior to the income effect 
 ($\rbinc{E}_s$).
 This expression will be helpful later.
@@ -811,7 +812,7 @@ Canceling terms yields
 
 \begin{equation}
   \rbinc{E}_s = \left( \frac{\rasub{q}_s}{\rbsub{q}_s} \right)
-                \left( \cancel{\frac{\raempl{q}_s}{\rbempl{q}_s}} \right)
+                \left( \frac{\cancel{\raempl{q}_s}}{\cancel{\rbempl{q}_s}} \right)
                 \left( \frac{\bempl{\eta}}{\amacro{\eta}}  \right)
                 \rbempl{E}_s \; .
 \end{equation}
@@ -852,7 +853,7 @@ and
   Re_{dinc} = \frac{\left( \frac{\rainc{E}_s}{\rbinc{E}_s} - 1  \right) \rbinc{E}_s}{\Sdot} \; .
 \end{equation}
 %
-Substituting the Eq.~(\ref{eq:typ_qs_eta_Edot}) as
+Substituting Eq.~(\ref{eq:typ_qs_eta_Edot}) as
 $\rainc{E}_s = \frac{\rainc{q}_s}{\amacro{\eta}}$ and  
 $\rbinc{E}_s = \frac{\rbinc{q}_s}{\amacro{\eta}}$ gives
 
