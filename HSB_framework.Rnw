@@ -81,7 +81,8 @@ However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
 A new clarity is needed, one that 
 involves both economics and energy analysis.
-We advance a rigorous analytical framework
+In this paper (Part~I of a two-part paper), 
+we advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
 We develop the first (to our knowledge)
@@ -139,7 +140,7 @@ a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
 Recent evidence shows that rebound is both 
 larger than commonly assumed~\citep{Stern2020} and
 mostly missing from large energy and climate models~\citep{Brockway:2021ww}.
-Thus, rebound is one explanation for why 
+Thus, rebound could be an important reason why
 energy consumption and carbon emissions 
 have never been absolutely decoupled 
 from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
@@ -167,7 +168,7 @@ and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
 For nearly 200 years, then, it has been understood 
 that efficiency gains may be taken back or, paradoxically even, 
 cause growth in energy consumption,
-as \citeauthor{Jevons:1865} assumed.
+as \citeauthor{Jevons:1865} suggested.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
 research into rebound appeared late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
@@ -213,16 +214,17 @@ been used from the outset of the modern debate
 (e.g., \citet{Khazzoom1980} and \citet{Greening2000}),
 and \citet{Borenstein:2015aa} and \citet{Chan2015}
 recently made progress toward solidifying the microeconomic analytical foundations. 
-Yet more is needed to support empirical efforts.
 
+Yet more is needed to support empirical efforts.
 For instance, while the microeconomic categories of substitution and
 income effects provide analytical clarity about how behavior
 changes affect energy service consumption,
 it has been unclear how they could be used 
 for precise numerical rebound calculations. 
 Where previous numerical calculations were made, 
-they tended to use 
-approximate substitutions, not utility preserving ones.
+they tended approximate the substitution effect
+from other goods to the cheaper energy service, 
+without maintaining constant utility for the device user.
 They also used constant price elasticities
 for non-marginal efficiency improvements,
 even though constant price elasticities typically
