@@ -2600,9 +2600,15 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
 \label{sec:data_repository}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Data and example calculations in spreadsheet format are stored at the
-Research Data Leeds Repository
-(\url{https://doi.org/10.5518/1201}).
+% Data and example calculations in spreadsheet format are stored at the
+% Research Data Leeds Repository
+% (\url{https://doi.org/10.5518/1201}).
+
+Data and example calculations in spreadsheet format will be stored at the
+Research Data Leeds Repository.  
+The same file is included with the submission of this paper.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
