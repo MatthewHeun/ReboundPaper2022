@@ -1680,8 +1680,10 @@ earning \rating{25} in the ``Macro effect'' row.
 No other framework even discusses the link between macro and micro rebound effects, 
 leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
 apart from \citet{Borenstein:2015aa}. 
-Our framework operationalizes the macro effect
-earning \rating{50} in the ``This paper (2023)'' column.
+Our framework operationalizes the link between micro and macro levels, 
+via the macro factor ($k$), 
+but more work can be done in this area.
+Thus, ``This paper (2023)'' earns \rating{50} in the ``Macro effect'' row.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly marginal or small improvements in efficiency, 
 excluding the numerically precise analysis of important non-incremental upgrades
@@ -1782,9 +1784,8 @@ we develop a way to visualize
 the energy, expenditure, and consumption aspects
 of rebound effects.
 Second, we apply the framework to two EEUs:
-an upgraded electric lamp and 
-an upgraded automobile.
-Finally, we provide results of rebound calculations for two examples.
+an upgraded car and an upgraded electric lamp.
+Finally, we provide results of rebound calculations for the two examples.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
