@@ -92,9 +92,9 @@ energy efficiency upgrades of
 a car (47\%) and
 an electric lamp (67\%).
 Comparison of our rebound values to previous values is provided.
-Finally, we provide information about new open source software tools for calculating
-and visualizing
-rebound magnitudes using the framework.
+Finally, we provide information about new open source software tools 
+for calculating magnitudes and
+visualizing rebound effects using the framework.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
