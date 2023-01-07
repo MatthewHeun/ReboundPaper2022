@@ -548,14 +548,18 @@ Energy rebound is defined as
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
 \end{equation}
 %
-where both actual and expected final energy savings rates are in megajoules per year (MJ/yr)
+where both actual and expected final energy savings rates are in MJ/yr (megajoules per year)
 and expected positive.
 The final energy ``takeback'' rate is defined as the expected final energy savings rate less 
-the actual final energy savings rate.
-Note that the takeback rate can be negative, indicating that the actual final energy savings rate
-is greater than the expected final energy savings rate, 
-a condition called hyperconservation.
-Thus,
+the actual final energy savings rate.%
+\footnote{
+  Note that the takeback rate can be negative, 
+  indicating that the actual final energy savings rate
+  is greater than the expected final energy savings rate, 
+  a condition called hyperconservation.
+}
+%
+Rewriting Eq.~(\ref{eq:Re_def}) with the definition of takeback gives
 
 \begin{equation}
   Re = 1 - \frac{\text{expected final energy savings rate} - \text{takeback rate}}{\text{expected final energy savings rate}} \; .
@@ -603,15 +607,15 @@ unless there is reason to indicate a specific stage of the energy conversion cha
 
 We assume an energy conversion device (say, a car)
 that consumes energy
-(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).
+(say, gasoline) at a rate $\rbempl{E}$ (in MJ/yr).
 We use ``rate'' to indicate any quantity measured per unit time, 
 such as a flow of energy per year or a flow of income per year.
 None of the rates in this paper indicate \%/yr changes.
 Symbolically, rates are identified by a single dot above the symbol,
 a convention adopted from the engineering literature where, e.g.,
-$\rate{x}$ often indicates a velocity in m/s, 
-$\rate{m}$ often indicates a mass flow rate in kg/s, and
-$\rate{E}$ often indicates an energy flow rate in kW.
+$\rate{x}$ often indicates a velocity in m/s (meters per second), 
+$\rate{m}$ often indicates a mass flow rate in kg/s (kilograms per second), and
+$\rate{E}$ often indicates an energy flow rate in kW (kilowatts).
 The overdot is an important notational element in this paper, 
 as it provides clarity between stocks (without overdots)
 and flows (with overdots). 
@@ -626,7 +630,7 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
 
 Energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
-$\rbempl{q}_s$ (in, say, vehicle-km/year)
+$\rbempl{q}_s$ (in, say, vehicle-km/yr)
 with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
 final-to-service efficiency%
@@ -683,7 +687,8 @@ where
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
-we walk through four rebound effects, 
+we walk through the four rebound effects
+(emplacement, substitution, income, and macro), 
 deriving rebound expressions for each, 
 but first 
 we show typical energy and cost relationships 

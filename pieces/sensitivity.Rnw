@@ -350,7 +350,7 @@ In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
   the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
   price in 2018~\citep{finanzen}.
   For the lamp example,
-  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/year,
+  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/yr,
   an average value for German households~\citep{bundesministerium}.
   Converting currency (at 1 \euro{} = \$1.21) and
   physical units gives 

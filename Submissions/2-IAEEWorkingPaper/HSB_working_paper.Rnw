@@ -741,10 +741,10 @@ that consumes final energy%
   energy services (e.g., transport, illumination, and space heating).
 }
 %
-(say, gasoline) at a rate $\rbempl{E}$ (in MJ/year).
+(say, gasoline) at a rate $\rbempl{E}$ (in MJ/yr).
 The final energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
-$\rbempl{q}_s$ (in vehicle-km/year)
+$\rbempl{q}_s$ (in vehicle-km/yr)
 with final-to-service efficiency $\bempl{\eta}$ (in vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
 final-to-service efficiency%
@@ -823,7 +823,7 @@ Energy rebound is defined as
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
 \end{equation}
 %
-where both actual and expected final energy savings rates are in \$/year 
+where both actual and expected final energy savings rates are in \$/yr 
 and expected positive.
 Final energy ``takeback'' rate is defined as expected final energy savings rate less 
 actual final energy savings rate.
@@ -1105,8 +1105,8 @@ rebound_results %>%
                                indexed = TRUE) + 
   ggplot2::xlim(0, 1.1) +
   ggplot2::ylim(0.9, 1.15) +
-  ggplot2::xlab(expression(dot(E)[dir] * " [MJ/year]")) +
-  ggplot2::ylab(expression(dot(E)[indir] * " [MJ/year]")) +
+  ggplot2::xlab(expression(dot(E)[dir] * " [MJ/yr]")) +
+  ggplot2::ylab(expression(dot(E)[indir] * " [MJ/yr]")) +
   ggplot2::geom_spoke(data = example_Re_arrows,
                         mapping = ggplot2::aes(x = x,
                                                y = y,
@@ -1166,8 +1166,8 @@ rebound_results %>%
                                indexed = TRUE) + 
   # ggplot2::xlim(0, 1.1) +
   # ggplot2::ylim(0.9995, 1.0005) +
-  ggplot2::xlab(expression(dot(C)[dir] * " [$/year]")) +
-  ggplot2::ylab(expression(dot(C)[indir] * " [$/year]")) +
+  ggplot2::xlab(expression(dot(C)[dir] * " [$/yr]")) +
+  ggplot2::ylab(expression(dot(C)[indir] * " [$/yr]")) +
   
   ggplot2::geom_text(data = example_cost_labels,
                      mapping = ggplot2::aes(x = x,
@@ -2207,7 +2207,7 @@ of Table~\ref{tab:car_stages_table} are identical.
                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
   \midrule
    Capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & -- resale value (purchase -- depreciation). Ford Fusion gasoline costs from \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation). Ford Fusion gasoline costs from \\
                                                     &           &          & \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  \midrule
@@ -2228,7 +2228,7 @@ of Table~\ref{tab:car_stages_table} are identical.
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
  \midrule
   Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & maintenance, repairs, taxes, and fees \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
                                                     &           &          & (excluding financing, depreciation, fuel). \\
                                                     &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
@@ -2253,13 +2253,13 @@ of Table~\ref{tab:car_stages_table} are identical.
   Description & Value & Data sources and notes \\ 
   Parameter [units] & & \\
   \midrule
-  Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/year, calculated from \citet{Car_Insurance:2019}.  \\
-  $\rbempl{q}_s$ [miles/year]                               &               & This is slightly lower than the average driver miles/year (13,476) \\
+  Distance driven prior to upgrade   & \Sexpr{q_dot_s_orig_car_char}        & Average U.S.\ vehicle miles/yr, calculated from \citet{Car_Insurance:2019}.  \\
+  $\rbempl{q}_s$ [miles/yr]                               &               & This is slightly lower than the average driver miles/yr (13,476) \\
                                                             &               & \citep{US_DoT:2018}, as there are \\
                                                             &               & more registered U.S.\ vehicles than drivers. \\
   \midrule
   Real median personal income U.S., in 2018                 & 34,317        & Taken from \citet{St_Louis_Fed:2019}.\\
-  {} [\$/year]                                              &               & \\
+  {} [\$/yr]                                              &               & \\
   \midrule
   U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
   real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
@@ -2271,8 +2271,8 @@ of Table~\ref{tab:car_stages_table} are identical.
                                                             &               & Table 2.1.\ Personal Income and Its Disposition \\
                                                             &               & \citep{US_BEA:2020}. \\
   \midrule
-  Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$ \\
-  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  Personal consumption in 2018                  & \Sexpr{M_dot_orig_car_char}      & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$ \\
+  $\rate{M}$ [\$/yr]                                      &               &                                              \\
   \midrule
   Price of gasoline                       & \Sexpr{p_E_orig_car_char}       & Source: \citet{US_EIA:2020_gasoline} \\
   $p_E$ [\$/gallon]                                         &               &  \\
@@ -2634,7 +2634,7 @@ occurs after the EEU is emplaced.
 Indirect rebound due to the embodied energy effect
 ($Re_{emb}$) is \Sexpr{Re_emb_car_char_perc}\%,  
 due to the higher embodied energy rate
-($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/year)
+($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/yr)
 stemming from the electric battery in the hybrid EV car.
 Rebound due to the maintenance and disposal effect
 ($Re_{\md}$) is small and negative
@@ -2654,7 +2654,7 @@ Conversely, the indirect substitution effect ($Re_{isub}$)
 is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
 to achieve the same level of utility after increased driving. 
 Indeed, less money is spent on other goods
-($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/year).
+($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/yr).
 
 The \inceffect{} also has two components:
 direct and indirect income effect rebound.
@@ -2667,7 +2667,7 @@ Rebound from the indirect income effect
 ($Re_{iinc}$) is positive (\Sexpr{Re_iinc_car_char_perc}\%)
 due to higher spending on other goods. 
 Thus, the net savings after the substitution effect
-($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/year) 
+($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/yr) 
 translates into positive direct and indirect income
 rebound at the microeconomic scale. 
 Total microeconomic rebound (emplacement, substitution, and income effects)
@@ -2729,8 +2729,8 @@ Re_md_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound
 Re_dsub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 eta_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # In lm/W
 eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # In lm/W
-q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/year
-q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/year
+q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/yr
+q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/yr
 Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
 Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
 Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
@@ -2751,7 +2751,7 @@ The LED lamp has a low
 initial capital investment rate
 (less than the incumbent incandescent lamp, actually)
 and a long-term benefit of decreased direct energy expenditures
-at the same energy service delivery rate (lm-hr/year).
+at the same energy service delivery rate (lm-hr/yr).
 
 
 %------------------------------
@@ -2812,11 +2812,11 @@ than the incandescent lamp
 ($\bempl{E}_{emb} = \Sexpr{E_emb_orig_lamp_char}$~MJ),
 the LED lamp has a much longer lifetime,
 meaning that the LED embodied energy \emph{rate}
-($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/year)
+($\raempl{E}_{emb} = \Sexpr{E_dot_emb_star_lamp_char}$~MJ/yr)
 is less than the incandescent embodied energy rate
-($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/year).
+($\rbempl{E}_{emb} = \Sexpr{E_dot_emb_orig_lamp_char}$~MJ/yr).
 Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
-is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/year, 
+is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/yr, 
 and embodied energy rebound is negative
 ($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
 Rebound due to the maintenance and disposal effect
@@ -2841,19 +2841,19 @@ due to the much higher LED lamp efficacy
 compared to the incandescent lamp
 ($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
 leading to increased demand for lighting
-(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/year
-to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/year)
+(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/yr
+to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/yr)
 as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
 To maintain constant utility, 
 consumption of other goods is reduced
-($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/year), 
+($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/yr), 
 as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
 yielding indirect substitution effect rebound
 ($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
 
 \Inceffect{} rebound arises from spending net energy cost savings
 associated with converting from the incandescent lamp to the LED lamp
-($\rbinc{N} = \Sexpr{N_dot_hat_lamp_char}$~\$/year).
+($\rbinc{N} = \Sexpr{N_dot_hat_lamp_char}$~\$/yr).
 Direct income effect rebound 
 ($Re_{dinc}$) is \Sexpr{Re_dinc_lamp_char_perc}\%,
 positive but small, 
@@ -2888,7 +2888,7 @@ energy service (lighting).
   $\bempl{\eta}$, $\amacro{\eta}$ [lm-hr/W-hr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
    Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/year] &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
                                                     &           &          & and \$1.21 for LED lamp from \\
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
   \midrule
@@ -2906,17 +2906,17 @@ energy service (lighting).
                                                     &           &          & Incandescent lamp: \\
                                                     &           &          & LCA energy = 42.2 MJ/20 million lumen-hours.  \\
                                                     &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
-                                                    &           &          & $\times$ 365 days/year $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
+                                                    &           &          & $\times$ 365 days/yr $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
                                                     &           &          & LED lamp:  \\
                                                     &           &          & LCA energy = 132 MJ/20 Million lumen-hours \\
                                                     &           &          & for pack of 5 LED lamps. \\
                                                     &           &          & Lifetime output = 450 lumens $\times$ 3 hours/day  \\
-                                                    &           &          & $\times$ 365 days/year $\times$ 10 years = 4,926,405 lumen-hrs. \\
+                                                    &           &          & $\times$ 365 days/yr $\times$ 10 years = 4,926,405 lumen-hrs. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
  \midrule
   Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/year]  &           &          & \\
+  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -2939,11 +2939,11 @@ energy service (lighting).
   Description  & Value & Data sources and notes \\ 
   Parameter [units] & & \\
   \midrule
-  Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/year). \\
-  $\rbempl{q}_s$ [lm-hr/year]                               &               & \\
+  Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/yr). \\
+  $\rbempl{q}_s$ [lm-hr/yr]                               &               & \\
   \midrule
   Real median personal income U.S.\, in 2018                & 34,317        & Refer to Table~\ref{tab:car_economic_parameters}.\\
-  {} [\$/year]                                              &               & \\
+  {} [\$/yr]                                              &               & \\
   \midrule
   U.S.\ 2018 disposable income /                            & 0.88319       & Refer to Table~\ref{tab:car_economic_parameters}. \\
   real income (minus current taxes)                         &               &  \\
@@ -2952,16 +2952,16 @@ energy service (lighting).
   Share of savings from 2018 disposable income              & 0.07848       & Refer to Table~\ref{tab:car_economic_parameters}. \\
   {} [--]                                                   &               &  \\ 
   \midrule
-  Personal consumption in 2018                   & \Sexpr{M_dot_orig_lamp_char}     & Calculation: $(\$34,317\mathrm{/year}) (0.88319) (1 - 0.07848)$. \\
-  $\rate{M}$ [\$/year]                                      &               &                                              \\
+  Personal consumption in 2018                   & \Sexpr{M_dot_orig_lamp_char}     & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$. \\
+  $\rate{M}$ [\$/yr]                                      &               &                                              \\
   \midrule
   Price of electricity                  & \Sexpr{p_E_orig_lamp_char}        & U.S.\ 2018 average U.S.\ household electricity price \\
   $p_E$ [\$/kW-hr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
   \midrule
-  Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/year (spend on energy service) / \\
-  $\fCs$ [--]                                               &               & [\$27,920/year (other goods) + \$8.5/year (energy service)] = 0.00030, \\
-                                                            &               & where spend on energy service = 580,350 lm-hrs/year /  \\
-                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/year.  \\
+  Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/yr (spend on energy service) / \\
+  $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] = 0.00030, \\
+                                                            &               & where spend on energy service = 580,350 lm-hrs/yr /  \\
+                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/yr.  \\
   \midrule
   Macro factor                                              & \Sexpr{k_lamp_char}           & Assumed value. \\  
   $k$ [--]                                                  &               &               \\
@@ -3604,7 +3604,7 @@ In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
   the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
   price in 2018~\citep{finanzen}.
   For the lamp example,
-  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/year,
+  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/yr,
   an average value for German households~\citep{bundesministerium}.
   Converting currency (at 1 \euro{} = \$1.21) and
   physical units gives 
