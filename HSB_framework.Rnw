@@ -1028,7 +1028,7 @@ The substitution effect involves
 
 \end{enumerate*}
 %
-Thus, two terms comprise substitution effect rebound,
+Thus, two terms comprise substitution effect rebound:
 direct substitution rebound ($Re_{dsub}$) and
 indirect substitution rebound ($Re_{isub}$).
 
@@ -1232,7 +1232,8 @@ due to its homotheticity.%
 \footnote{
   Homothetic consumer preferences are independent 
   of the magnitude of the consumer's consumption. 
-  In this case, the proportions of expenditures on the energy service ($\rate{C}_s$)
+  In this framework, homotheticity means that 
+  the proportions of expenditures on the energy service ($\rate{C}_s$)
   and on other goods ($\rate{C}_o$) remain the same across the income effect. 
   Because prices are exogenous in the microeconomic portion of the framework, 
   the proportions of consumption rates of the energy service and other goods
@@ -1363,7 +1364,7 @@ The previous rebound effects
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic level. 
 However, changes at the microeconomic level can 
-have important implications at the macroeconomic or economy-wide level.
+have important impacts at the macroeconomic or economy-wide level.
 In the short run, macroeconomic changes include price changes in
 goods other than the energy service. 
 For instance, other goods to
@@ -1468,7 +1469,7 @@ is the first operationalization of the macro rebound multiplier idea.
 First we stress that such a multiplier stands for the cumulative
 productivity growth triggered by
 the initial productivity increase in the EEU.
-But to operationalize the macro rebound effect, 
+But to operationalize the macro rebound multiplier, 
 we note that the net savings gained by the 
 device user at the microeconomic level ($\raempl{N}$)
 are spent on new goods that create new incomes and,
