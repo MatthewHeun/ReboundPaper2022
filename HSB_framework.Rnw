@@ -422,9 +422,7 @@ can be found in Part~II.
 In this section, we develop 
 an energy rebound framework
 for an individual consumer who upgrades the energy efficiency 
-of a single device, 
-analyzed in partial equilibrium at the microeconomic level
-where the prices of other goods and services are unchanged
+of a single device
 (concisely, ``the framework,'' ``this framework,'' or ``our framework'').
 We endeavor to bring clarity to the field of energy rebound by 
 providing sufficient detail to assist
@@ -550,7 +548,7 @@ Energy rebound is defined as
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
 \end{equation}
 %
-where both actual and expected final energy savings rates are in MJ/year 
+where both actual and expected final energy savings rates are in megajoules per year (MJ/yr)
 and expected positive.
 The final energy ``takeback'' rate is defined as the expected final energy savings rate less 
 the actual final energy savings rate.
