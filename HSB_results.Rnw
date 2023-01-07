@@ -80,7 +80,7 @@ However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
 In Part~I, we developed a rigorous analytical framework
 that is approachable for both energy analysts and economists. 
-In this paper,
+In this paper (Part~II),
 develop energy, expenditure, and consumption rebound planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
@@ -93,6 +93,7 @@ a car (47\%) and
 an electric lamp (67\%).
 Comparison of our rebound values to previous values is provided.
 Finally, we provide information about new open source software tools for calculating
+and visualizing
 rebound magnitudes using the framework.
 \end{abstract}
 
@@ -175,7 +176,7 @@ components and mechanisms of rebound
 Second, we make a first attempt at calibrating the macro rebound effect 
 via a macro factor ($k$). 
 Third, we apply the framework to two energy efficiency upgrades (EEUs) 
-(an electric lamp and an automobile)
+(a car and an electric lamp)
 with detailed explication of the examples.
 Finally, we show 
 calculations of rebound magnitudes for both examples.
@@ -205,7 +206,7 @@ The remainder of this paper is structured as follows.
 Section~\ref{sec:methods} describes data for the examples, 
 our method of visualizing rebound, and 
 open source software tools for calculating and visualizing rebound.
-Section~\ref{sec:results} provides two examples: 
+Section~\ref{sec:results} provides results for two examples: 
 energy efficiency upgrades to a car and an electric lamp.
 Section~\ref{sec:discussion} calibrates the macro factor ($k$)
 and discusses results, and 
@@ -275,7 +276,7 @@ val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, for
   if (to_perc) {
     val <- val * 100
   }
-  format(round(val, digits), nsmall = digits)
+  format(round(val, digits), nsmall = digits, big.mark = big.mark)
 }
 # Parameters for first table
 mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
@@ -1301,8 +1302,15 @@ can be found at the data repository for this paper at
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+In this section we present rebound calculation results for two examples: 
+energy efficiency upgrades of a car (Section~\ref{sec:car_example}) and 
+an electric lamp (Section~\ref{sec:lamp_example}). 
+Univariate sensitivity studies for both examples (car and lamp) 
+can be found in Appendix~\ref{sec:sensitivity_analyses}.
+
+
 %++++++++++++++++++++++++++++++
-\subsection{Case 1: Purchase of a new car}
+\subsection{Example 1: Purchase of a new car}
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
@@ -1669,20 +1677,21 @@ relative to assuming constant price elasticities.
 
 Finally, we note that 
 the link between macroeconomic and microeconomic rebound 
-is largely unexplored, and 
-we assume a value of $k = 1$ for both examples, initially.
+is largely unexplored, 
+so we assume a value of $k = 1$ for both examples, initially.
 We return to the matter of calibrating $k$
 in the Discussion (Section~\ref{sec:calibrating_k}).
-With $k$ assumed to be 1
+With $k$ assumed to be 1,
 the \macroeffect{} leads to macroeconomic rebound
-($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%,
+($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\% 
+for the car example,
 due to economic expansion caused by 
 productivity enhancements arising from the more-efficient provision of the 
 energy service (transportation).
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Case 2: Purchase of a new electric lamp}
+\subsection{Example 2: Purchase of a new electric lamp}
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
@@ -1816,8 +1825,6 @@ with $k$ assumed to be 1,
 due to economic expansion caused by 
 productivity enhancements arising from the more-efficient provision of the 
 energy service (lighting).
-Univariate sensitivity studies for both examples (car and lamp)
-can be found in Appendix~\ref{sec:sensitivity_analyses}.
 
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
@@ -2095,8 +2102,8 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
   magrittr::extract2("Re_tot")
 @
 
-Few rebound studies have explored the macroeconomic level
-between microeconomic and total rebound.
+Few previous studies explored link 
+between microeconomic and macroeconomic rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
 the framework developed in Section~\ref{PartI-sec:framework} of Part~I
 links macroeconomic rebound to microeconomic rebound 
@@ -2468,7 +2475,7 @@ by
         
   \item calibrating the macro factor ($k \approx 3$),
 
-  \item documenting in detail new calculations of rebound for automobile and lighting  
+  \item documenting in detail new calculations of rebound for car and lighting  
         upgrades, and 
         
   \item providing information about new open source software tools

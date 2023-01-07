@@ -92,7 +92,7 @@ Each successive 5~mpg boost in fuel economy
 saves less energy than the previous 5~mpg boost in fuel economy.
 
 
-<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). $k$ is set to its calibrated value (3). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
 actual_cases <- rebound_data %>% 
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car (k = 3)", "Lamp (k = 3)")) %>% 
   # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
@@ -214,7 +214,7 @@ increases (decreases) proportionally,
 and the actual energy savings rate decreases (increases) accordingly.
 
 
-<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
 Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
@@ -275,7 +275,7 @@ with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 % $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
 % not independently.
 
-<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
                               Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
 
@@ -381,7 +381,7 @@ for the lamp example.
 % energy intensity of the economy ($I_E$), and
 % energy service consumption rate ($\rbempl{q}_s$).
 
-<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. $k$ is set to its calibrated value (3).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
 p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
                         Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
 
@@ -422,7 +422,7 @@ eqspsUC_lamp <- actual_cases %>%
   dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). $k$ is set to its calibrated value (3). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
