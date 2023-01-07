@@ -244,8 +244,8 @@ dynamic aspects of a macroeconomic rebound have
 been neglected by these approaches.
 
 In the absence of solid analytical foundations, 
-the wide variety of rebound calculation approaches yields
-a wide range of rebound values, 
+the wide variety of rebound calculation approaches 
+contributes to a wide range of rebound values, 
 giving the appearance of uncertainty and
 leading some energy and climate modelers to either 
 %
@@ -256,7 +256,12 @@ leading some energy and climate modelers to either
   \item ignore rebound altogether.
 
 \end{enumerate*}
-%
+Insufficient inclusion of rebound in energy and climate models
+can lead to overly optimistic projections 
+of the capability of energy efficiency
+to reduce carbon emissions and, consequently,
+de-emphasis of other mitigation strategies,
+such as renewables or sequestration.
 We suggest that 
 improving the conceptual foundations of rebound and
 solidifying the analytical frameworks
@@ -304,7 +309,12 @@ it is unsurprising that only modest progress has been made
 on analytical foundations.
 To fully understand rebound, 
 economists need to have an energy analyst's understanding of energy, and 
-energy analysts need to have an economist's understanding of finance and human behavior.
+energy analysts need to have an economist's understanding of finance and human behavior.%
+\footnote{
+  Indeed, this is why the authors for this paper
+  come from the energy analysis and economics disciplines.
+}
+%
 Developing the knowledge and skills required 
 to assess and calculate, 
 let alone mitigate, 
@@ -1604,8 +1614,9 @@ the ``Direct emplacement effect'' row contains \rating{100}
 in all columns.
 Three early papers \citep{Nassen:2009aa, Thomas:2013aa, Thomas:2013ab}
 estimate rebound quantitatively, 
-earning high marks (\rating{100}) in the ``Operationality'' row. 
-Both motivate their frameworks at least partially with microeconomic theory
+earning high marks (\rating{100}) in the ``Empirical application'' row. 
+Both \citeauthor{Nassen:2009aa} and \citeauthor{Thomas:2013aa} 
+motivate their frameworks at least partially with microeconomic theory
 (consumer preferences and substitution and income effects)
 but use simple linear demand functions in their empirical analyses.  
 Thus, the connection between economic theory and empirics is tenuous, 
@@ -1626,7 +1637,8 @@ such as
 multiple fuels,  
 energy services, and
 nested utility functions with intermediate inputs. 
-However, neither framework exhibits operationality,
+However, neither \citeauthor{Chan2015} nor \citeauthor{Wang2021} 
+provide empirical applications,
 earning \rating{0} in the last row of Table~\ref{tab:previous_frameworks}. 
 In the middle of the table (and between the other studies in time), 
 the framework by \citet{Borenstein:2015aa}
@@ -1634,7 +1646,8 @@ touches on nearly all important characteristics.
 However, the \citeauthor{Borenstein:2015aa} framework
 cannot separate substitution and income effects cleanly in empirical analysis, 
 reverting to partial analyses of both, 
-leading to a \rating{50} rating in the ``Detailed model of consumer preferences'' row.
+leading to a \rating{50} rating in the ``Detailed model of consumer preferences'' 
+and ``Empirical application'' rows.
 
 No previous framework engages fully with either the differential financial effects
 or the differential energetic effects
@@ -1658,7 +1671,7 @@ or financing costs into the framework for empirical analysis.
 \citeauthor{Borenstein:2015aa} is the only author to treat the financial side of 
 embodied energy or maintenance and disposal effects. 
 \citet{Borenstein:2015aa} postulates the macro effect, 
-but does not develop the idea into an operational theory, 
+but does not operationalize the link between micro and macro levels, 
 earning \rating{25} in the ``Macro effect'' row. 
 No other framework even discusses the link between macro and micro rebound effects, 
 leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
