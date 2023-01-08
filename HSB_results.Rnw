@@ -603,7 +603,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
    Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
    $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
  \midrule
-   Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hours/day  \\
+   Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hr/day  \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
    \midrule
@@ -613,13 +613,13 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
                                                     &           &          & Incandescent lamp: \\
                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
-                                                    &           &          & Lifetime output = 530 lm $\times$ 3 hours/day \\
+                                                    &           &          & Lifetime output = 530 lm $\times$ 3 hr/day \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
                                                     &           &          & LED lamp:  \\
                                                     &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
                                                     &           &          & for pack of 5 LED lamps. \\
-                                                    &           &          & Lifetime output = 450 lm $\times$ 3 hours/day  \\
+                                                    &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
  \midrule
