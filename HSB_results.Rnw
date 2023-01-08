@@ -648,7 +648,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Parameter [units] & & \\
   \midrule
   Lighting consumption prior to upgrade   & \Sexpr{q_dot_s_orig_lamp_char}  & Calculation: (530 lm) (3 hrs/day) (365 days/yr). \\
-  $\rbempl{q}_s$ [lm-hr/yr]                                 &               & \\
+  $\rbempl{q}_s$ [\lmhr/yr]                                 &               & \\
   \midrule
   Real median personal income U.S.\, in 2018                & 34,317        & Refer to Table~\ref{tab:car_economic_parameters}.\\
   {} [\$/yr]                                                &               & \\
@@ -668,7 +668,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   \midrule
   Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/yr (spend on energy service) / \\
   $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] = 0.00030, \\
-                                                            &               & where spend on energy service = 580,350 lm-hrs/yr /  \\
+                                                            &               & where spend on energy service = 580,350 \lmhr/yr /  \\
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/kW-hr = \$8.5/yr.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
