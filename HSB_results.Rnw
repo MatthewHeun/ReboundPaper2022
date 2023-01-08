@@ -613,7 +613,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
                                                     &           &          & Incandescent lamp: \\
                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
-                                                    &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
+                                                    &           &          & Lifetime output = 530 lm $\times$ 3 hours/day \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
                                                     &           &          & LED lamp:  \\
