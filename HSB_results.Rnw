@@ -568,13 +568,13 @@ initial capital investment rate
 when spread out over the lifetime of the lamp
 (less than the incumbent incandescent lamp, actually)
 and a long-term benefit of decreased direct energy expenditures
-at approximately the same energy service delivery rate (lm-hr/yr).
+at approximately the same energy service delivery rate (\lmhr/yr).
 
 Again, three sets of data are required. 
 First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
 Second, several general economic parameters, 
 mainly relating to the U.S.\ economy and 
-personal finances %of the average U.S.\ citizen are 
+personal finances 
 of a representative U.S.-based user are
 given in Table~\ref{tab:lamp_economic_parameters}.
 Third, we require the elasticity parameters, 
@@ -593,7 +593,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
     Parameters [units]                                &  &  & \\
   \midrule
   Lamp efficacy                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
-  $\bempl{\eta}$, $\amacro{\eta}$ [lm-hr/W-hr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
+  $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
    Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
