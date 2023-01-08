@@ -715,8 +715,8 @@ beneath each equation.%
 
 \begin{align} \label{eq:typ_qs_eta_Edot}
   \rate{q}_s &= \eta \rate{E}_s \\
-  \text{[pass-km/yr]} &= \text{[pass-km/MJ]} \text{[MJ/yr]} \nonumber \\
-  \text{[lm-hr/yr]} &= [\text{lm-hr/MJ}] \text{[MJ/yr]} \nonumber
+  \text{[\passkm/yr]} &= \text{[\passkm/MJ]} \text{[MJ/yr]} \nonumber \\
+  \text{[\lmhr/yr]} &= [\text{\lmhr/MJ}] \text{[MJ/yr]} \nonumber
 \end{align}
 %
 Second, the energy service price~($p_s$) is the ratio of energy price~($p_E$) 
@@ -724,8 +724,8 @@ to the final-to-service efficiency~($\eta$).
 
 \begin{align} \label{eq:ps_pE_eta}
   p_s &= \frac{p_E}{\eta} \\
-  \text{[\$/pass-km]} &= \frac{[\$/\text{MJ}]}{\text{[pass-km/MJ]}} \nonumber \\
-  \text{[\$/lm-hr]} &= \frac{[\$/\text{MJ}]}{\text{[lm-hr/MJ]}} \nonumber
+  \text{[\$/\passkm]} &= \frac{[\$/\text{MJ}]}{\text{[\passkm/MJ]}} \nonumber \\
+  \text{[\$/\lmhr]} &= \frac{[\$/\text{MJ}]}{\text{[\lmhr/MJ]}} \nonumber
 \end{align}
 %
 Third, energy service expenditure rates~($\rate{C}_s$) are the product 
