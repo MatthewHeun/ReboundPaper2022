@@ -514,8 +514,15 @@ With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
 \paragraph{Elasticity of substitution ($\sigma$)} 
 %..............................
 
+For the constant price elasticity (CPE) utility model, 
+there is no analytical expression for the elasticity of substitution ($\sigma$) and
+values are most likely taken from estimation, if they obtained at all. 
+As we show in Part~II, 
+not all rebounds are typically calculated, so not all elasticities are needed.
+
+For the constant elasticity of substitution (CES) utility model, 
 \citet{Gortz1977} shows that
-the elasticity of substitution 
+the elasticity of substitution
 prior to the EEU ($\orig{\sigma}$) can be computed by
 
 \begin{equation} \label{eq:sigma}
@@ -537,6 +544,9 @@ can be determined from two pieces of readily available information:
 In the CES utility model, $\orig{\sigma}$ is assumed invariant
 and given the undecorated symbol $\sigma$
 to indicate it applies across all rebound effects.
+
+For the rest of the pre-EEU elasticities ($\eqopsUCorig$, $\eqspsCorig$, and $\eqopsCorig$),
+there is no difference for the CPE utility model or the CES utility model.
 
 
 %..............................
@@ -642,6 +652,7 @@ Post-EEU, elasticities may be different from the original condition,
 because the consumption bundle has changed (due to a move along
 the indifference curve).
 This section derives expressions for elasticities at the $\wedge$ stage.
+Elasticities are different for the CPE utility model and the CES utility model.
 
 
 %..............................
@@ -662,10 +673,9 @@ Thus,
 \end{align}
 
 Under the CPE approximation, the post-EEU elasticity of substitution will
-be different from its original value ($\asub{\sigma} \ne \orig{\sigma}$) but
-we don't derive $\asub{\sigma}$ here
-as the CPE utility model is only an approximation
-for vanishingly small changes in energy efficiency.
+be different from its original value ($\asub{\sigma} \ne \orig{\sigma}$). 
+However, there is no analytical expression for $\sigma$ and 
+values are most likely taken from estimation, if they are found at all.
 
 
 %..............................
