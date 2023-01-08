@@ -376,11 +376,11 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  \midrule
    Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
                                                     &           &          & taken as 84 months in 2018 (7 years) for our example. \\
  \midrule
    Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
-   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
                                                     &           &          & \citet{SMMT:2020}. \\
  \midrule
    Embodied energy             & \Sexpr{E_emb_orig_car_char}    & \Sexpr{E_emb_star_car_char}   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
@@ -601,26 +601,26 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
   \midrule
    Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [years]     &           &          &  \\
+   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
  \midrule
    Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hours/day  \\
-   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [years] &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
+   $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
    \midrule
    Life cycle analysis (LCA) embodied energy  & \Sexpr{E_emb_orig_lamp_char}      & \Sexpr{E_emb_star_lamp_char}     & Base document: Table 4.5 Manufacturing Phase Primary  \\
-   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million lumen-hours), contained in \\
+   $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million \lmhr), contained in \\
                                                     &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
                                                     &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
                                                     &           &          & Incandescent lamp: \\
-                                                    &           &          & LCA energy = 42.2 MJ/20 million lumen-hours.  \\
+                                                    &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
                                                     &           &          & Lifetime output = 530 lumens $\times$ 3 hours/day \\
-                                                    &           &          & $\times$ 365 days/yr $\times$ 1.8 years = 1,044,630 lumen-hrs.\\
+                                                    &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
                                                     &           &          & LED lamp:  \\
-                                                    &           &          & LCA energy = 132 MJ/20 Million lumen-hours \\
+                                                    &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
                                                     &           &          & for pack of 5 LED lamps. \\
-                                                    &           &          & Lifetime output = 450 lumens $\times$ 3 hours/day  \\
-                                                    &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 lumen-hrs. \\
+                                                    &           &          & Lifetime output = 450 lm $\times$ 3 hours/day  \\
+                                                    &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
  \midrule
   Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
@@ -705,7 +705,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
   $\eqopsCorig$ [--]                                           &           &   \\ 
   \midrule   
-  Income elasticity of lighting demand                &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
+  Income elasticity of lighting demand                    &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
   $\eqsM$ [--]                                            &           &   \\ 
   \midrule   
   Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_lamp_char}     & Follows from CES utility function. \\
