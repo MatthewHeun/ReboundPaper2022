@@ -436,7 +436,7 @@ rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterizati
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::scale_x_reverse() +
   ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
-  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]^o),
+  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]^o*" [-]"),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
