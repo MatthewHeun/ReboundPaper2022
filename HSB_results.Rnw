@@ -1795,8 +1795,8 @@ due to the much higher LED lamp efficacy
 compared to the incandescent lamp
 ($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
 leading to increased demand for lighting
-(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~lm-hr/yr
-to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~lm-hr/yr)
+(from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~\lmhr/yr
+to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~\lmhr/yr)
 as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
 To maintain constant utility, 
 consumption of other goods is reduced
