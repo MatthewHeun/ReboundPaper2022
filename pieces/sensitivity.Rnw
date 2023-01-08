@@ -163,7 +163,7 @@ the LED lamp is already much more efficient than the incandescent lamp
 (\Sexpr{lamp_efficacy_ratio}$\times$),
 whereas the hybrid car is only 
 \Sexpr{car_efficiency_ratio}$\times$ more efficient than the conventional gasoline car. 
-Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ lm-hr/W-hr, 
+Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ \lmhr/\Whr, 
 the energy efficient LED
 is far closer to efficiency saturation than the hybrid vehicle 
 (at $\amacro{\eta} = \Sexpr{mpg_better}$ mpg).
