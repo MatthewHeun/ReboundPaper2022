@@ -350,7 +350,7 @@ In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
   the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
   price in 2018~\citep{finanzen}.
   For the lamp example,
-  the electricity price in Germany is taken as 0.3 \euro{}/kW-hr for the 2018 price of a household using 3.5~MWh/yr,
+  the electricity price in Germany is taken as 0.3 \euro{}/\kWhr for the 2018 price of a household using 3.5~MWh/yr,
   an average value for German households~\citep{bundesministerium}.
   Converting currency (at 1 \euro{} = \$1.21) and
   physical units gives 
@@ -359,7 +359,7 @@ In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
            magrittr::extract2("p_E_engr_units")}~\$/US~gallon and 
   \Sexpr{price_data %>% 
            dplyr::filter(Country == "DEU" & Case == "Lamp") %>% 
-           magrittr::extract2("p_E_engr_units")}~\$/kW-hr.}
+           magrittr::extract2("p_E_engr_units")}~\$/\kWhr.}
 %
 are shown as vertical lines,
 providing an indication of possible energy price variations.
@@ -395,7 +395,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
                       linewidth = 0.1) +
   ggplot2::scale_y_continuous(breaks = seq(-0.2, 2, by = 0.2)) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
-  ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/kW-hr (Lamp)]"),
+  ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/"*kW%.%hr*" (Lamp)]"),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
