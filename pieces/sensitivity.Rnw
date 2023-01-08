@@ -134,7 +134,7 @@ sensitivity_graphs(.parametric_data = eta_sens_data,
   ggplot2::scale_colour_manual(values = c(S_dot_dev = "black", takeback = "black"), guide = "none") + 
   ggplot2::scale_discrete_manual(aesthetics = "linewidth", values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
   ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or lm-hr/W-hr (Lamp)]"),
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
                 y = expression(""*dot(S)[dev]*" and takeback rate [MJ/yr]"),
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
