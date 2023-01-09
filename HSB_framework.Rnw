@@ -311,7 +311,7 @@ To fully understand rebound,
 economists need to have an energy analyst's understanding of energy, and 
 energy analysts need to have an economist's understanding of finance and human behavior.%
 \footnote{
-  Indeed, this is why the authors for this paper
+  Indeed, this is why the authors for these papers
   come from the energy analysis and economics disciplines.
 }
 %
