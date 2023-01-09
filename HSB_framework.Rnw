@@ -312,7 +312,7 @@ economists need to have an energy analyst's understanding of energy, and
 energy analysts need to have an economist's understanding of finance and human behavior.%
 \footnote{
   Indeed, this is why the authors for these papers
-  come from the energy analysis and economics disciplines.
+  come from the energy analysis (MKH, PEB) and economics (GS) disciplines.
 }
 %
 Developing the knowledge and skills required 
@@ -1596,7 +1596,7 @@ analysis of all rebound effects;
 analysis of energy, expenditure, and consumption aspects of rebound; 
 level of detail in the consumer preference model;
 allowance for non-marginal energy efficiency changes; and 
-operationality.
+empirical application.
 When all of the above characteristics are present, 
 a fuller picture of rebound can emerge.%
 \footnote{
@@ -1699,20 +1699,21 @@ A left-to-right reading of the table
 demonstrates that previous frameworks start from microeconomic
 consumer theory and move towards more rigorous theoretical treatment over time,
 with recent frameworks making important advanced theoretical contributions
-at the expense of operationality.
+at the expense of empirical applicability.
 In the end, no previous rebound analysis framework 
 combines all rebound effects
 across energy, expenditure, and consumption aspects with 
-a detailed model of consumer preferences and
-non-marginal energy service price changes
-in an operational manner
+a detailed model of consumer preferences, 
+non-marginal energy service price changes, and
+empirical applicability 
 for the simplest case (understandable across disciplines)
 of a single fuel and a single energy service.
 In particular, 
-treating capital cost,
-non-marginal price changes and the macro effect
-required conceptual development and operationalization
+assessing the rebound implications of differential capital costs,
+non-marginal price changes, and the macro effect
+required conceptual development
 as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
+(Development of empirical applications is left for Part~II.)
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
 hence we fill the ``This paper (2023)'' column 
 with mostly filled circles (\rating{100}).
