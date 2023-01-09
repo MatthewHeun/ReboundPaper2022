@@ -261,9 +261,6 @@ Insufficient inclusion of rebound in energy and climate models
 could lead to overly optimistic projections
 of the capability of energy efficiency 
 to reduce carbon emissions \citep{Brockway:2021ww}. 
-If energy efficiency fails to deliver its assumed benefits, 
-other mitigation strategies (besides efficiency)
-would be required to actually reduce emissions.
 We suggest that 
 improving the conceptual foundations of rebound and
 solidifying the analytical frameworks
