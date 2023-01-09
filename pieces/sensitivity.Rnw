@@ -668,8 +668,8 @@ more variation of price elasticities ($\asub{\varepsilon}$) with energy service 
 than the lamp example, 
 because the expenditure share ($\fCs$) for the lamp example is very small
 compared to the car example.
-Using the constant price elasticity (CPE) utility model may have acceptably
-small errors in the lamp example. 
+Using the constant price elasticity (CPE) utility model may be a
+good enough approximation in the lamp example. 
 However, for the car example, using the CES utility function will be necessary
 to eliminate errors that will be present in the CPE approximation.
 This result is an important finding that should encourage 

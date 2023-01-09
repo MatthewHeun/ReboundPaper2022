@@ -1651,6 +1651,12 @@ to achieve the same level of utility after increased driving.
 Indeed, across the substitution effect,
 less money is spent on other goods
 ($\Delta \rasub{C}_o = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/yr).
+In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
+displacement along an indifference curve alters the price elasticities,
+and in particular, that the uncompensated own price elasticity declines
+in magnitude. The decline slows the rate of additional consumption of
+energy intensive driving, and attenuates the micsoeconomic rebound
+relative to assuming constant price elasticities.
 
 The \inceffect{} also has two components:
 direct and indirect income effect rebound.
@@ -1668,12 +1674,6 @@ translates into positive direct and indirect income
 rebound at the microeconomic level. 
 Total microeconomic rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
-In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
-displacement along an indifference curve alters the price elasticities,
-and in particular, that the uncompensated own price elasticity declines
-in magnitude. The decline slows the rate of additional consumption of
-energy intensive driving, and attenuates the micoeconomic rebound
-relative to assuming constant price elasticities.
 
 Finally, we note that 
 the link between macroeconomic and microeconomic rebound 
