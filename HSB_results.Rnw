@@ -1668,7 +1668,7 @@ translates into positive direct and indirect income
 rebound at the microeconomic level. 
 Total microeconomic rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
-In \ref{sec:price_elasticities_sensitivity} we show how the
+In Appendix \ref{sec:price_elasticities_sensitivity} we show how the
 displacement along an indifference curve alters the price elasticities,
 and in particular, that the uncompensated own price elasticity declines
 in magnitude. The decline slows the rate of additional consumption of
