@@ -51,7 +51,8 @@ than small and marginal efficiency gains.
 Thus, any rebound analysis framework needs to accommodate 
 large, non-marginal efficiency changes.
 Since price elasticities are point-measures in analytical utility models,
-an operational version of such a model should account for the changing price
+a version of the framework amenable to empirical applications 
+should account for the changing price
 elasticity along an indifference curve.%
 \footnote{
   In principle,
