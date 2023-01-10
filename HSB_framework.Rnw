@@ -290,9 +290,9 @@ in the past led to vastly differing points of view.''%
   We prefer the term ``energy analysts'' over ``engineers,'' 
   because ``energy analysts'' better describes 
   the group of people engaged in ``energy analysis.’'
-  For this paper, we define ``energy analysis'' as
-  the study of energy transformations from stocks to flows
-  energy services and wastes 
+  For this paper, we define ``energy analysis'' to be 
+  the study of energy transformations 
+  from stocks to flows and wastes 
   along society's energy conversion chain 
   for the purpose of generating 
   energy services, 
@@ -332,7 +332,7 @@ A description of rebound that is
 
   \item consistent across energy, expenditure, and consumption aspects,
   
-  \item technically rigorous and
+  \item technically rigorous, and
   
   \item approachable from both sides
         (economics and energy analysis)
@@ -505,7 +505,7 @@ in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and
 in Section~\ref{PartII-sec:calibrating_k} of Part~II.
 
 Fig.~\ref{fig:flowchart} shows rebound effects
-arranged in left-to-right order of their discussion in this paper.
+arranged in the left-to-right order of their discussion in this paper.
 The left-to-right order does not necessarily represent 
 the progression of rebound effects through time.
 Rebound symbols are shown above each effect ($Re_{empl}$, etc.).
@@ -581,7 +581,7 @@ We define rebound at the final energy%
 %
 stage of the energy conversion chain,
 because the final energy stage is
-the point of energy purchase by the device user
+the point of energy purchase by the device user.
 To simplify derivations, 
 we choose not to apply final-to-primary energy multipliers
 to final energy rates in the numerators and denominators of rebound expressions
@@ -609,7 +609,7 @@ that consumes energy
 (say, gasoline) at a rate $\rbempl{E}$ (in MJ/yr).
 We use ``rate'' to indicate any quantity measured per unit time, 
 such as a flow of energy per year or a flow of income per year.
-None of the rates in this paper indicate \%/yr changes.
+None of the rates in this paper indicate exponential (\%/yr) changes.
 Symbolically, rates are identified by a single dot above the symbol,
 a convention adopted from the engineering literature where, e.g.,
 $\rate{x}$ often indicates a velocity in m/s (meters per second), 
@@ -861,7 +861,7 @@ maintenance and disposal activities (subscript $\md$).
 
 One of the unique features of this framework
 is that independent analyses of embodied energy and 
-capital costs of the EEU are expected.
+capital costs of the EEU are required.
 We note that the different terms 
 (embodied energy rate, $\rate{E}_{emb}$, and
 capital cost rate, $\rate{C}_{cap}$)
@@ -889,7 +889,7 @@ all the way back to resource extraction.%
 }
 Energy is embodied in the device within manufacturing and distribution supply chains
 prior to consumer acquisition of the device.
-No energy is embodied in the device while in service.
+We assume no energy is embodied in the device while in service.
 The EEU causes the embodied energy of the energy conversion device to change
 from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
 
@@ -905,8 +905,8 @@ In the aggregate, evenly spaced (in time) replacements
 work out to the same embodied energy in every period.
 
 Thus, we allocate embodied energy over the life of the original and upgraded devices
-without discounting
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+without discounting
 to obtain embodied energy rates, such that
 $\rbempl{E}_{emb} = \bempl{E}_{emb} / \bempl{t}_{\life}$
 and 
@@ -1034,7 +1034,7 @@ indirect substitution rebound ($Re_{isub}$).
 After emplacement of the more efficient device
 (but before the substitution effect), 
 the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
-After compensating variation that tightens the budget constraint,
+After compensating variation tightens the budget constraint,
 consumption at the new prices yields utility
 at the same level as prior to the EEU
 by consuming more of the now-lower-cost energy service
@@ -1050,7 +1050,6 @@ By definition, the CPE utility model assumes that
 compensated and uncompensated, own and cross price elasticities
 remain constant along an indifference curve. 
 (See Appendix~\ref{sec:utility_and_elasticities}.)
-Whether that is true or not depends on the utility function used.
 Typically,
 constant price elasticities (as in the CPE utility model)
 are approximations that are applicable only to marginal price changes. 
@@ -1374,7 +1373,7 @@ The most notable price change is the price of
 energy itself which could fall due to lower demand.
 The energy price or market effect is accordingly typically noted as an
 important macroeconomic rebound effect \citep{Gillingham2016}.
-In the long-run, i.e.\ when capital stock can be replaced in response
+In the long-run, i.e., when capital stock can be replaced in response
 to changes in relative costs and demand,
 rebound could change further. 
 These kinds of rebounds can be captured
@@ -1385,13 +1384,14 @@ and structural change.
 It is one of the basic tenets of economics
 that productivity gains have been the main long-run driver of economic growth
 in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957} and
-that such growth is accompanied by structural changes, i.e.\ a changing
+that such growth is accompanied by structural changes, i.e., a changing
 composition of economic activity \citep{Schumpeter1939, Kuznets1971}. 
 Structural changes pose complicated problems for rebound, as
 network effects can lead to path-dependencies in 
 using low- or high-energy intensity technologies \citep{Arthur1989, Fouquet2016}.
 Structural changes also interact with economic growth.
-We propose a simple rule for incorporating these dynamic effects into our framework.
+We propose a simple rule for incorporating 
+these dynamic effects into our framework below.
 
 Before establishing a formalism for $Re_{macro}$, we clarify the link between consumer theory
 and economic growth. \citet{Turner:2013aa} cautions that when households
@@ -1408,7 +1408,7 @@ GDP remains unchanged.\footnote{
   the household buys the energy service
   (transport) directly from a taxi company. 
   Here, the taxi company lowers the price but gains more customers, 
-  leading immediately to growth in inflation-adjusted, i.e.\ real, GDP,
+  leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
 }
@@ -1418,7 +1418,7 @@ the question over longer periods is whether the more productive
 household energy services do not also feed through into economic
 growth accounted for by GDP.
 People in affluent countries spend about as much time on
-unpaid (i.e.\ non-market) work as on paid work \citep{Folbre2021}.
+unpaid (i.e., non-market) work as on paid work \citep{Folbre2021}.
 Therefore productivity improvements in unpaid work can spill over
 into paid work, which enters GDP.
 One channel could be time-saving. 
@@ -1465,7 +1465,7 @@ to productivity-driven growth at the macro level is unexplored territory.
 Another novel contribution of this paper
 (in addition to the framework itself)
 is the first operationalization of the macro rebound multiplier idea.
-First we stress that such a multiplier stands for the cumulative
+We stress that such a multiplier stands for the cumulative
 productivity growth triggered by
 the initial productivity increase in the EEU.
 But to operationalize the macro rebound multiplier, 
@@ -1478,7 +1478,7 @@ Over time,
 and allowing for temporary contractions \citep{Basu2006},
 this leads to the infinite series of
 respending of net savings ($\raempl{N}$),
-a multiplier which we represent by a macro factor ($k$).
+a multiplier which we represent by a macro factor ($k$).%
 \footnote{
   The macro factor ($k$) appears unitless,
   but its units are actually \$ of economic expansion created 
@@ -1489,7 +1489,7 @@ a multiplier which we represent by a macro factor ($k$).
 
 The macro factor ($k$) represents respending in the broader economy 
 after the emplacement effect has occurred
-and is is not tied to any particular EEU or economic sector.
+and is not tied to any particular EEU or economic sector.
 $k \ge 0$ is expected.
 $k = 0$ means there is no dynamic effect
 resulting from the energy efficiency upgrade.
@@ -1505,10 +1505,11 @@ The relationship between $k$ and $\MPC$ is given by the multiplier relationship
 of Eq.~(\ref{eq:mpc_and_k_converged}).)
 
 A further advantage of using the macro factor approach is that there are
-many estimates of the magnitude of $\MPC$, though we stress again that
+many estimates of the magnitude of $\MPC$, 
+though we stress again that
 using consumption multipliers is a
 \emph{representation} of the effect, while the cause is not
-a demand-side fiscal expansion, but
+a demand-side fiscal expansion, but rather
 energy efficiency on the supply side.%
 \footnote{
   In particular,
@@ -1546,7 +1547,7 @@ we arrive at an expression for macro effect rebound:
 
 The sum of all rebound emerges from the four rebound effects
 (emplacement effect, substitution effect, income effect, and macro effect).
-Macro effect rebound~($Re_{\macro}$, Eq.~(\ref{eq:Re_macro}))
+Macro effect rebound~($Re_{\macro}$ in Eq.~(\ref{eq:Re_macro}))
 is expressed in terms of other rebound effects.
 (Derivation details can be found in Appendix~\ref{sec:total_rebound}.)
 After algebra and canceling of terms,
@@ -1671,14 +1672,15 @@ the embodied energy of the upgraded device
 and the embodied energy of other goods
 but does not integrate embodied energy
 or financing costs into the framework for empirical analysis. 
-\citeauthor{Borenstein:2015aa} is the only author to treat the financial side of 
+\citeauthor{Borenstein:2015aa} is, however, 
+the only author to treat the financial side of 
 embodied energy or maintenance and disposal effects. 
 \citet{Borenstein:2015aa} postulates the macro effect, 
 but does not operationalize the link between micro and macro levels, 
 earning \rating{25} in the ``Macro effect'' row. 
 No other framework even discusses the link between macro and micro rebound effects, 
 leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
-apart from \citet{Borenstein:2015aa}. 
+(apart from \citet{Borenstein:2015aa}). 
 Our framework operationalizes the link between micro and macro levels, 
 via the macro factor ($k$), 
 but more work can be done in this area.
@@ -1715,7 +1717,8 @@ as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
 (Development of empirical applications is left for Part~II.)
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
 hence we fill the ``This paper (2023)'' column 
-with mostly filled circles (\rating{100}).
+with filled circles (\rating{100})
+in nearly all rows.
 By so doing, we enhance clarity in the field of energy rebound.
 
 

@@ -555,7 +555,7 @@ and Appendix~\ref{PartI-sec:utility_and_elasticities}
 of Part~I.
 Note that the left side of each graph ($\amacro{p}_{s} = 0$)
 represents unattainable infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
-i.e.\ delivery of the energy service without energy consumption.
+i.e., delivery of the energy service without energy consumption.
 
 First, note the sign of the elasticities. As expected, both of the
 uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$,

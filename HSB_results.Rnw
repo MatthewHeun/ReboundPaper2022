@@ -775,7 +775,7 @@ detailed mathematical descriptions for constructing paths on the rebound planes.
 Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
 notional energy, expenditure, and consumption planes,
 respectively.
-The notional planes are not quantified, i.e.\ there are no scales on the axes.
+The notional planes are not quantified, i.e., there are no scales on the axes.
 Later (Section~\ref{sec:results}), 
 rebound planes with numerical scales illustrate the car and lamp examples.
 
@@ -970,7 +970,7 @@ in Fig.~\ref{fig:ExampleEnergyPathGraph}
 exhibits negative rebound, indicating hyperconservation.
 The region above and to the right of the $Re_{tot} = 100\%$ line 
 shows backfire, 
-i.e.\ greater total energy consumption after the EEU than before it. 
+i.e., greater total energy consumption after the EEU than before it. 
 
 In the notional energy plane (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
 emplacement rebound is negative ($Re_{empl} < 0$),
