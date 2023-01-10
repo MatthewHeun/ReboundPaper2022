@@ -81,13 +81,13 @@ empirical determination of the size of rebound.
 In Part~I, we developed a rigorous analytical framework
 that is approachable for both energy analysts and economists. 
 In this paper (Part~II),
-develop energy, expenditure, and consumption rebound planes, 
+we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
 Further, we perform the first calibration of the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
 Using the framework and rebound planes,
-we calculate and show total rebound for two case studies: 
+we calculate and show total rebound for two examples: 
 energy efficiency upgrades of
 a car (47\%) and
 an electric lamp (67\%).
@@ -240,9 +240,9 @@ rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 
 To demonstrate application of the rebound analysis framework
 developed in Part~I,
-we analyze two case studies:
+we analyze two examples:
 energy efficiency upgrades to a car and an electric lamp.
-The case studies are presented with much detail 
+The examples are presented with much detail 
 to support our goal of bringing clarity to the process
 of calculating the magnitude of rebound effects.
 Here, we collect parameter values
@@ -259,7 +259,7 @@ $Re_{\macro}$.
 Total rebound 
 ($Re_{tot}$)
 is given by the sum of the above components
-or equivalently by Eq.~\ref{PartI-eq:Re_tot} of Part~I.
+or equivalently by Eq.~(\ref{PartI-eq:Re_tot}) of Part~I.
 
 
 %------------------------------
@@ -986,17 +986,23 @@ compared to the original device.
 In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
 move in the negative $y$ direction,
 consistent with the description above.
-Segment \starc{} is negative by definition of the indirect substitution effect 
-and segment \chat{} is positive by the definition of the direct substitution effect. 
-%Both income effect segments (\hatd{} and \dbar{}) will always
+Segment \starc{} moves in the negative $y$ direction
+by definition of the indirect substitution effect,
+and segment \chat{} moves in the positive $x$ direction 
+by the definition of the direct substitution effect. 
 Both income effect segments (\hatd{} and \dbar{})
-lead to more energy consumption, because net savings are spent
-on goods and services that rely on at least some energy consumption.\footnote{
-We are excluding the case of an inferior good, whose consumption decreases
-as real income increases, but note the possibility of such behavior. This behavior would
-however require another than the CES utility function,
-which we use throughout this analysis.
+show more energy consumption, because net savings are spent
+on goods and services that rely on at least some energy consumption.%
+\footnote{
+  We exclude the case of an inferior good, whose consumption decreases
+  as real income increases, but 
+  we note here the possibility of such behavior. 
+  This behavior would
+  however require a different utility model 
+  besides the CES utility model,
+  which we use throughout this analysis.
 }
+%
 Segment \bartilde{} always moves in the positive $y$ direction,
 because macro effects lead to additional indirect energy consumption.
 
@@ -1085,7 +1091,7 @@ they could move in opposite directions,
 depending on the results of the independent analyses for 
 embodied energy and capital cost rates.
 The substitution effect along segments \starc{} and \chat{}
-will, by definition, lead to lower expenditure 
+will together, by definition, lead to lower expenditure 
 due to the energy service price decline and
 the budget reducing compensating variation (CV). 
 The income effect (segments \hatd{} and \dbar{}) must bring expenditure
@@ -1133,7 +1139,8 @@ The budget constraint,
 here in real terms, i.e.,
 the capacity to purchase either the energy service or other goods and services,
 is shown as isoquant \circcirc{}.
-The \circcirc{} line is tangent to the original indifference curve 
+The original budget constraint line (\circcirc{})
+is tangent to the original indifference curve 
 (\iicirc{}) at point $\circ$, the optimal consumption
 bundle prior to the EEU.
 The real budget line \starstar{}
