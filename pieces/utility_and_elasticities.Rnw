@@ -592,7 +592,7 @@ Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gi
 %..............................
 
 The cross price version of the Slutsky equation is the starting point
-for deriving the compensated cross price elasticity ($\eqopsCorig$):
+for deriving the pre-EEU compensated cross price elasticity ($\eqopsCorig$):
 
 \begin{equation} \label{eq:slutsky_cross}
   \eqopsUCorig = \eqopsCorig - \fCs \eqoM \; .
@@ -653,7 +653,8 @@ Post-EEU, elasticities may be different from the original condition,
 because the consumption bundle has changed (due to a move along
 the indifference curve).
 This section derives expressions for elasticities at the $\wedge$ stage.
-Elasticities are different for the CPE utility model and the CES utility model.
+Elasticities at the $\wedge$ stage are different 
+for the CPE utility model and the CES utility model.
 
 
 %..............................
@@ -685,6 +686,10 @@ values are most likely taken from estimation, if they are found at all.
 
 The CES utility model is rather different to the CPE model with respect to the 
 behavior of elasticities across the substitution effect.
+In the CES utility model, 
+price elasticities ($\varepsilon$) are different 
+after the substitution effect ($\wedge$) 
+compared to the original ($\circ$).
 
 
 %..............................
@@ -813,7 +818,7 @@ For $\sigma < 1$, $n$ is positive; for $\sigma>1$, $n$ is negative.
 Since we expect $\sigma < 1$ (otherwise we have backfire rebound conditions),
 the derivative is positive: 
 the compensated own price
-elasticity becomes less negative as $\amacro{p}_s$ increases.
+elasticity becomes less negative as $\amacro{p}_s$ increases.%
 \footnote{
   For $\sigma = 1$, $m_s = 0$ and the derivative
   is zero: the Cobb-Douglas special case.
