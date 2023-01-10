@@ -405,7 +405,7 @@ eqspsUC_lamp <- actual_cases %>%
   dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated energy service price elasticity of energy demand ($\\eqspsUC$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
@@ -546,16 +546,8 @@ dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph})
 are negative, regardless of the energy service price ($\amacro{p}_s$):
 a lower price means more consumption of both
 goods, all other things being equal.
-%The compensated own price elasticity ($\eqspsChat$) is negative
-%regardless of $\amacro{p}_s$,
-%such that as $\amacro{p}_s$ declines with increased device efficiency ($\amacro{\eta}_s$),
-%consumption of the energy service rises. 
-%The compensated cross price elasticity ($\eqopsChat$) is positive,
-%regardless of $\amacro{p}_s$
-%such that as $\amacro{p}_s$ declines with increased $\amacro{\eta}_s$,
-%consumption of other goods falls.
 The compensated own price elasticity ($\eqspsChat$) is negative
-and hte compensate cross price elasticity ($\eqopsChat$) is positive.
+and the compensated cross price elasticity ($\eqopsChat$) is positive.
 As $\amacro{p}_s$ declines, the consumers substitutes the energy
 service for other goods.
 
@@ -656,7 +648,7 @@ good enough approximation in the lamp example.
 However, for the car example, using the CES utility function will be necessary
 to eliminate errors that will be present in the CPE approximation.
 This result is an important finding that should encourage 
-analysts implementing an analytical rebound calculation
+analysts implementing analytical rebound calculations
 with substitution and income effects
 to prefer the CES utility model over the CPE approximation.
 
@@ -666,7 +658,6 @@ the absolute value of the uncompensated price elasticities
 ($\eqspsUChat$ and $\eqopsUChat$) decreases, 
 a change that exceeds the slightly increasing (in absolute value terms)
 compensated own price elasticity ($\eqspsChat$). 
-%Thus, substitution rebound ($Re_{sub}$) is attenuated as efficiency increases.
 Thus, direct rebound is attenuated as efficiency increases,
 relative to a constant price elasticity model.
 (See also the patterns of lines of Fig.~\ref{fig:all_Re_terms_eta_graph},
