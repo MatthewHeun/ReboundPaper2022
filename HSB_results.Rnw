@@ -592,7 +592,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
     Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
     Parameters [units]                                &  &  & \\
   \midrule
-  Lamp efficacy                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
+  Lamp efficiency                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
    Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
@@ -1800,7 +1800,7 @@ the incandescent lamp and the LED lamp.%
 
 Direct \subeffect{} rebound 
 ($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
-due to the much higher LED lamp efficacy
+due to the much higher LED lamp efficiency
 ($\amacro{\eta} = \Sexpr{eta_better}$~lm/W) 
 compared to the incandescent lamp
 ($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),

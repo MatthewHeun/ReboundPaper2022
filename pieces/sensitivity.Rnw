@@ -12,9 +12,9 @@ can show important trends, tendencies, and relationships
 between rebound parameters and rebound magnitudes.
 Key rebound parameters include 
 post-EEU efficiency ($\amacro{\eta}$),
-capital cost ($\amacro{C}_{cap}$),
+post-EEU capital cost ($\amacro{C}_{cap}$),
 energy price ($p_E$),
-uncompensated price elasticity of energy service demand ($\eqspsUC$), 
+pre-EEU uncompensated price elasticity of energy service demand ($\eqspsUCorig$), 
 the macro factor ($k$), and
 post-EEU energy service price ($\amacro{p}_s$).
 Univariate sensitivity analyses 
@@ -23,26 +23,9 @@ should be interpreted carefully,
 because some rebound parameters are not expected to be 
 independent from others.
 
-In each subsection below, a figure
-shows the effect of independently varying each of six key rebound parameters
-($\amacro{\eta}$, 
-  $\amacro{C}_{cap}$, 
-  $p_E$, 
-  $\eqspsUC$, 
-  $k$, and 
-  $\amacro{p}_s$)
-on total energy rebound ($Re_{tot}$) and its components
-($Re_{emb}$, $Re_{\md}$, $Re_{dsub}$, $Re_{isub}$,
-  $Re_{dinc}$, $Re_{iinc}$, and $Re_{\macro}$).
-In many of the graphs, 
-nominal values for rebound parameters are shown as points, 
-and sensitivity trends are shown as lines. 
-% A limitation of each sensitivity analysis 
-% is noted at the end of each subsection.
-
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of post-EEU efficiency ($\amacro{\eta}$)} 
+\subsection{Effect of post-EEU efficiency ($\amacro{\eta}$) on rebound terms} 
 \label{sec:effect_of_efficiency}
 %++++++++++++++++++++++++++++++
 
@@ -72,13 +55,13 @@ Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
 both the energy takeback rate and expected energy savings ($\Sdot$)
 increase with post-EEU efficiency ($\amacro{\eta}$), 
 but the relationship is asymptotic.
-Each unit increase of fuel economy or lighting efficacy is less effective than
-the previous unit increase of fuel economy or lighting efficacy
+Each unit increase of fuel economy or lighting efficiency is less effective than
+the previous unit increase of fuel economy or lighting efficiency
 for saving energy.
-At very high levels of fuel economy or lighting efficacy, 
+At very high levels of fuel economy or lighting efficiency, 
 a unit increase leads to almost no additional energy savings.
-Thus, we can say there are diminishing returns of fuel economy and lighting efficacy,
-leading to saturation of energy savings at very high levels of fuel economy and lighting efficacy.
+Thus, we can say there are diminishing returns of fuel economy and lighting efficiency,
+leading to saturation of energy savings at very high levels of fuel economy and lighting efficiency.
 A simple example illustrates.
 A $\bempl{\eta} = 25$ mpg car drives $\bempl{q}_s = 100$ miles 
 using $\bempl{E}_s = 4$ gallons of gasoline.
@@ -251,7 +234,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of capital cost ($\amacro{C}_{cap}$)} 
+\subsection{Effect of capital cost ($\amacro{C}_{cap}$) on rebound terms} 
 \label{sec:effect_of_capital_cost}
 %++++++++++++++++++++++++++++++
 
@@ -300,7 +283,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_se
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of energy price ($p_E$)} 
+\subsection{Effect of energy price ($p_E$) on rebound terms} 
 \label{sec:effect_of_energy_price}
 %++++++++++++++++++++++++++++++
 
@@ -409,7 +392,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
   
   
 %++++++++++++++++++++++++++++++
-\subsection{Effect of original uncompensated own prices elasticity ($\eqspsUC^\circ$)} 
+\subsection{Effect of original uncompensated own price elasticity ($\eqspsUC^\circ$) on rebound terms} 
 \label{sec:effect_of_elasticity}
 %++++++++++++++++++++++++++++++
 
@@ -502,7 +485,7 @@ because net savings increases substantially with $\eqspsUC^\circ$.
 
   
 %++++++++++++++++++++++++++++++
-\subsection{Effect of macro factor ($k$)} 
+\subsection{Effect of macro factor ($k$) on rebound terms} 
 \label{sec:effect_of_macro_factor}
 %++++++++++++++++++++++++++++++
 
