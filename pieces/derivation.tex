@@ -180,10 +180,10 @@ Both direct and indirect emplacement effects are discussed below.
 
 As shown in Table~\ref{tab:empleffect},
 the direct rebound from the emplacement effect is
-$Re_{dempl} = 0$.
+$Re_{dempl} \equiv 0$.
 This result is expected, 
-because we assume an upgraded device with equal performance 
-as the original device and, in the absence of behavior changes,
+because in the absence of
+embodied energy, maintenance and disposal cost, or behavioral changes,
 there is no takeback of energy savings
 at the upgraded device.
 
@@ -226,20 +226,13 @@ from $\rbempl{E}_{emb}$ to $\raempl{E}_{emb}$.
 
 Energy is embodied in the device within manufacturing and distribution supply chains
 prior to consumer acquisition of the device.
-No energy is embodied in the device while in service.
-However, for simplicity, we spread all embodied energy
+For simplicity, we spread all embodied energy
 over the lifetime of the device,
 an equal amount assigned to each period.
-We later take the same approach to capital costs and
-maintenance and disposal costs.
-A justification for spreading embodied energy purchase costs comes from considering
-staggered device replacements by many consumers across several years.
-In the aggregate, staggered replacements
-work out to about the same embodied energy in every period.
 
 Thus, we allocate embodied energy over the life of the original and upgraded devices
-without discounting
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+without discounting
 to obtain embodied energy rates, such that
 $\rbempl{E}_{emb} = \bempl{E}_{emb} / \bempl{t}_{\life}$
 and 
@@ -276,10 +269,6 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 In addition to embodied energy effects, 
 indirect emplacement rebound 
 can be associated with energy demanded by maintenance and disposal~($\md$) expenditures.
-Maintenance expenditures are typically modeled as a per-year expense, 
-a rate (e.g., $\rbempl{C}_m$).
-Disposal costs (e.g., $\bempl{C}_d$) are one-time expenses incurred 
-at the end of the useful life of the energy conversion device.
 Like embodied energy, we spread disposal expenditures across the lifetime 
 of the original and upgraded devices ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
 to form expenditure rates such that 
@@ -400,9 +389,9 @@ Canceling terms yields
                                                                \tag{\ref{eq:Re_dsub_prelim}}
 \end{equation}
 %
-Eq.~(\ref{eq:Re_dsub_prelim}) is the basis for
-developing both CPE and CES models of determining
-direct substitution rebound.
+Eq.~(\ref{eq:Re_dsub_prelim}) is the basis for developing 
+expressions for $Re_{dsub}$ 
+under both the CPE and the CES utility models.
 
 
 %..............................
@@ -439,8 +428,8 @@ Substituting Eq.~($\ref{eq:Sdot}$) for $\Sdot$ and rearranging gives
 \end{equation}
 %
 Eq.~(\ref{eq:Re_isub_prelim}) is the basis for
-developing both CPE and CES models of determining
-indirect substitution rebound.
+developing expressions for $Re_{isub}$ under both the 
+CPE and the CES utility models.
 
 Determining the post-substitution effect conditions
 requires reference to a consumer utility model.
@@ -469,17 +458,17 @@ We discuss the CPE utility model here for completeness only.
 
 In the CPE utility model, 
 the relationship between energy service price and energy service consumption rate
-is given by the compensated price elasticity of energy service demand~($\eqspsC$),
+is given by the compensated own price elasticity of energy service demand~($\eqspsC$),
 such that
 
 \begin{equation}
   \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right)^{\eqspsC} \; .
 \end{equation}
 %
-Note that the compensated price elasticity of energy service demand ($\eqspsC$)
+Note that the compensated own price elasticity of energy service demand ($\eqspsC$)
 is assumed constant along an indifference curve
 in the CPE utility model. 
-A negative value for the compensated price elasticity of energy service demand
+A negative value for the compensated own price elasticity of energy service demand
 is expected ($\eqspsC < 0$),
 such that when the energy service price decreases ($\amacro{p}_s < \bempl{p}_s$),
 the rate of energy service consumption increases ($\rasub{q}_s > \rbsub{q}_s$).
@@ -493,7 +482,7 @@ and noting that $\rbempl{q}_s = \raempl{q}_s$ gives
   \frac{\rasub{q}_s}{\rbempl{q}_s} = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} \; .
 \end{equation}
 %
-Again, note that the compensated price elasticity of energy service demand
+Again, note that the compensated own price elasticity of energy service demand
 is negative ($\eqspsC < 0$), so that
 as energy service efficiency increases ($\amacro{\eta} > \bempl{\eta}$),
 the energy service consumption rate increases ($\rasub{q}_s > \rbsub{q}_s = \rorig{q}_s$).
@@ -504,20 +493,15 @@ yields the CPE model's expression for direct substitution rebound.
 \begin{equation} \label{eq:Re_dsub_approx}
   Re_{dsub} = \Redsubeqn
 \end{equation}
-
-%The compensated price elasticity of energy service demand is
-%expected to be negative ($\eqspsC < 0$), % GS: this is too repetitive for my taste, it was already said two times in teh previous 2 paragraphs.
+%
 such that, e.g.\
 $\eqspsC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
 yields $Re_{dsub} = 0.15$.
 
-%With $\eqspsC \in (-1, 0)$ expected,
 As long as $\eqspsC \in (-1, 0)$,
 the CPE utility model indicates that
-%direct substitution rebound will never be larger than 1.
 direct substitution rebound will be below 1.
 I.e., the direct substitution effect alone
-%can never cause backfire. 
 will not cause backfire. 
 
 To quantify the substitution effect on other purchases in the CPE utility model,
@@ -529,8 +513,6 @@ such that
   \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right) ^ {\eqopsC} \; .
 \end{equation}
 %
-%Because the compensated cross price elasticity of other goods demand
-%is positive ($\eqopsC > 0$),
 For substitution to take place, the compensated cross price elasticity
 of other goods demand must be positive ($\eqopsC > 0$). Thus,
 an energy service price decrease ($\amacro{p}_s < \bempl{p}_s$)
@@ -585,24 +567,18 @@ reduce the energy takeback rate by direct substitution effects.
 %..............................
 
 The CPE utility model assumes that 
-the compensated price elasticity of energy service demand ($\eqspsC$) and
+the compensated own price elasticity of energy service demand ($\eqspsC$) and
 the compensated cross price elasticity of other goods demand ($\eqopsC$)
 are constant along an indifference curve.
-%These assumptions are approximations that hold only 
-%for infinitesimally small energy service price changes
-%($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$)
-%when an analytical utility model is used.
 These assumptions hold only 
 for infinitesimally small energy service price changes
-($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$)
-when an analytical utility model is used. They also 
-provide reasonable approximations for a one or two per cent change.
+($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$).
+They also provide reasonable approximations for a 1--2\% change.
 However, in the case of an energy efficiency upgrade (EEU), 
-%the energy service price change is not infinitesimal.
 the energy service price change is neither infinitesimal nor confined
-to single percent.
+to single-digit percentages.
 Rather, 
-$\Delta \aempl{p}_s$ is finite and may be large.
+$\Delta \aempl{p}_s$ is finite and may be very large in percentage terms.
 
 To determine the new consumption bundle after the substitution effect 
 ($\rasub{q}_s$ and $\rasub{C}_o$)
@@ -610,7 +586,7 @@ and,
 ultimately, to quantify the direct and indirect substitution rebound effects
 ($Re_{dsub}$ and $Re_{isub}$) exactly,
 we remove the restriction that energy service price elasticities ($\eqspsC$ and $\eqopsC$)
-must be constant along an indifference curve.
+must be constant along an indifference curve (as in the CPE utility model).
 Instead, we require constancy of only
 the elasticity of substitution ($\sigma$) between
 the consumption rate of the energy service ($\rate{q}_s$)
@@ -639,7 +615,7 @@ as discussed in Appendix~\ref{sec:utility_and_elasticities}.
                           \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1 - \rho)/\rho} \; .
 \end{align}
 %
-Second, the equation of the expenditure line 
+Second, the equation of the pre-substitution-effect expenditure line 
 (\starstar{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} 
 of Part~II) is
 
@@ -776,7 +752,7 @@ is re-spent across the income effect,
 such that $\rainc{N} = 0$.
 Appendix~\ref{sec:proof_income_elasticities} proves that
 the income preference equations (Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM})) 
-satsify the budget constraint (Eq.~\ref{eq:inc_budget_constraint}).
+satsify the budget constraint (Eq.~(\ref{eq:inc_budget_constraint})).
 
 The purpose of this section is derivation of expressions for 
 %

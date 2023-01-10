@@ -295,9 +295,9 @@ The result is
 
 The budget constraint is the starting point for finding 
 the slope of an expenditure line in the consumption plane.
-Example expenditure lines include
+(Example expenditure lines include
 the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
-in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
+in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.)
 The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
 (\ref{eq:M_acct_aemp}), 
 (\ref{eq:M_acct_asub}), and 
@@ -305,7 +305,7 @@ The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}),
 with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
 
 \begin{equation}
-  \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N} \; ,
+  \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N}
 \end{equation}
 %
 In a manner similar to derivations in
@@ -496,7 +496,7 @@ to substitute one good for another.
 In the context of rebound from an EEU,
 substitution is considered between
 consumption of the energy service ($\rate{q}_s$) and
-the basket of other goods ($\rate{q}_o$).
+comsumption of the basket of other goods ($\rate{q}_o$).
 
 
 %------------------------------
@@ -517,8 +517,8 @@ With $\eqspsUCorig$ in hand, calculation of all other elasticities is possible.
 
 For the constant price elasticity (CPE) utility model, 
 there is no analytical expression for the elasticity of substitution ($\sigma$) and
-values are most likely taken from estimation, if they obtained at all. 
-As we show in Part~II, 
+values are most likely taken from estimation, if they are obtained at all. 
+As we show in Tables~\ref{PartII-tab:rebound_car_comparisons} and~\ref{PartII-tab:rebound_lamp_comparisons} of Part~II, 
 not all rebounds are typically calculated, so not all elasticities are needed.
 
 For the constant elasticity of substitution (CES) utility model, 
@@ -544,7 +544,7 @@ can be determined from two pieces of readily available information:
 %
 In the CES utility model, $\orig{\sigma}$ is assumed invariant
 and given the undecorated symbol $\sigma$
-to indicate it applies across all rebound effects.
+to indicate that it applies across all rebound effects.
 
 For the rest of the pre-EEU elasticities ($\eqopsUCorig$, $\eqspsCorig$, and $\eqopsCorig$),
 there is no difference for the CPE utility model or the CES utility model.
@@ -567,7 +567,7 @@ can be expressed as
 \paragraph{Compensated own price elasticity ($\eqspsCorig$)} 
 %..............................
 
-An expression for the compensated own price elasticity ($\eqspsCorig$)
+An expression for the pre-EEU compensated own price elasticity ($\eqspsCorig$)
 can be derived using the Slutsky equation, 
 whereby the uncompensated own price elasticity 
 of the energy service ($\eqspsUCorig$) 

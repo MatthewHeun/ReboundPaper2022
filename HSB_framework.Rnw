@@ -1758,7 +1758,7 @@ Future work could be pursued in several areas.
   \item This framework could be extended to include some of the advanced topics
         in \citet{Chan2015} and \citet{Wang2021}, 
         such as multiple fuels or energy services,
-        more than one other consumption good and
+        more than one other consumption good, and
         nested utility functions with intermediate inputs.
         
   \item This framework could be extended to include fuel-switching EEUs,
@@ -1857,7 +1857,6 @@ Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
 Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
-Kenneth Gillingham (Yale University), 
 Harry Saunders (Carnegie Institution for Science), and
 David Stern (Australian National University).
 Finally, the authors thank the students of MKH's Fall 2019 
@@ -1894,7 +1893,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Derivation of the rebound analysis framework}
+\section{Derivation of the rigorous analytical framework}
 \label{sec:derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
