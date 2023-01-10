@@ -1299,9 +1299,12 @@ can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
 In addition, an Excel workbook that performs identical rebound calculations 
 using the framework of this paper
-can be found at the data repository for this paper at
-\url{https://doi.org/10.5518/1201}.
-(See \citet{Brockway:2022aa}.)
+**** will be stored at the
+Research Data Leeds Repository if this submission is accepted.  
+The spreadsheet file is included with the submission of this paper. ****
+% can be found at the data repository for this paper at
+% \url{https://doi.org/10.5518/1201}.
+(See \citet{Brockway:2023aa}.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1629,7 +1632,7 @@ the maintenance and disposal effect.
 Rebound from the direct emplacement effect 
 ($Re_{dempl}$) is \Sexpr{Re_dempl_car_char_perc}\% always, 
 because energy takeback (and, therefore, rebound)
-occurs after the EEU is emplaced.
+occurs after the upgraded device is emplaced.
 Indirect rebound due to the embodied energy effect
 ($Re_{emb}$) is \Sexpr{Re_emb_car_char_perc}\%,  
 due to the higher embodied energy rate
@@ -1682,7 +1685,7 @@ rebound at the microeconomic level.
 Total microeconomic rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
 
-Finally, we note that 
+Finally, in Part~I we noted that 
 the link between macroeconomic and microeconomic rebound 
 is largely unexplored, 
 so we assume a value of $k = 1$ for both examples, initially.
@@ -2118,7 +2121,7 @@ via the macro factor~($k$) that scales
 magnitudes in the microeconomic portion of the framework. 
 (See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.)
 
-For the results presented in Section~\ref{sec:results} of this paper, 
+For the results presented in Section~\ref{sec:results} above, 
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
@@ -2171,21 +2174,19 @@ we take $k \approx 3$,
 being between the values of $k$ 
 calculated from the car and lamp examples.
 Note that $k \approx 3$ implies that 
-every \$1 of net savings spent by the device user
-generates \$3 of economic 
+every \$1 of net savings spent by the device user ($\raempl{N}$)
+generates \$3 of additional economic 
 activity in the broader economy.
-%due to the income effect.
 We multiply $k \raempl{N}$ by the energy intensity of the economy ($I_E$) to 
 find the energy implications of macro-effect respending throughout the economy.
 
 There are three ways to interpret $k \approx 3$.
 First, $k \approx 3$ can be considered the average long-run 
-economic growth generated %by the device user's spending of net savings.
+economic growth generated
 by the productivity increase implied by the EEU and subsequent
 productivity increases benefitting from the EEU.
 Efficiency increases in equipment drive a significant part of 
 long-run productivity growth \citep{Greenwood1997}, therefore a large
-%long-run multiplier is plausible,
 long-run effect is plausible,
 even if the initial productivity
 change occurred in household production which is not accounted in GDP.
@@ -2361,7 +2362,7 @@ enable two types of observations, comparing
 First, we see that none of the comparison studies
 report all rebound effects, as we have done
 in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
-Also, no studies report either emplacement rebound 
+Also, no previous studies report either emplacement rebound 
 ($Re_{empl} = Re_{emb} + Re_{\md}$)
 or include all of direct and indirect, substitution and
 income microeconomic rebound effect combinations.
@@ -2611,9 +2612,9 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
 % Research Data Leeds Repository
 % (\url{https://doi.org/10.5518/1201}).
 
-Data and example calculations in spreadsheet format will be stored at the
+**** Data and example calculations in spreadsheet format will be stored at the
 Research Data Leeds Repository if this submission is accepted.  
-The spreadsheet file is included with the submission of this paper.
+The spreadsheet file is included with the submission of this paper. ****
 
 
 
