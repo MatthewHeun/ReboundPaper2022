@@ -99,6 +99,7 @@ visualizing rebound effects using the framework.
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
 
+JEL codes: O13, Q40, Q43
 
 
 <<setup, echo=FALSE, message=FALSE>>=

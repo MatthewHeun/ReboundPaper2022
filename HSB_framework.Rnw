@@ -109,6 +109,8 @@ rebound effects on microeconomic and macroeconomic levels.
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
 
+JEL codes: O13, Q40, Q43
+
 
 <<setup, echo=FALSE, message=FALSE>>=
 library(dplyr)
