@@ -2232,7 +2232,7 @@ the values of total rebound ($Re_{tot}$) should increase to
 \Sexpr{format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)}\%
 for the car and lamp examples,
 respectively.
-For the rest of this paper, 
+For the remainder of this paper, 
 we use the calibrated value of $k \approx 3$.
 
 
