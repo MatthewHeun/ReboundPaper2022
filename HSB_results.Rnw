@@ -2658,6 +2658,9 @@ using an early version of this framework.
 }
 
 
+\clearpage
+
+
 \appendix
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
