@@ -476,7 +476,7 @@ again according to a microeconomic behavioral model.
 We assume a \emph{partial equilibrium} response to the 
 energy efficiency upgrade (EEU)
 at the microeconomic level;
-other prices in the economy remain unchanged
+other prices in the economy ($p_o$) remain unchanged
 in response to the EEU.
 
 In contrast, 
