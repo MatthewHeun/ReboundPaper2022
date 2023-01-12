@@ -1,0 +1,148 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+% This file contains the derivation for emplacement effect rebound terms and net savings.
+
+\begin{landscape}
+
+\linespread{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Emplacement Effect %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\derivheader{\refstepcounter{table} Table~\thetable \label{tab:empleffect}. \bf{\EmplEffect}}
+
+\sectionsep{}
+
+%%%%%%%%%% Before Emplacement Effect %%%%%%%%%%
+\derivsection{before ($\circ$)}
+{
+% Original energy
+\begin{equation} \label{eq:E_acct_orig}
+  \Eacctorig{}
+\end{equation}
+}
+{
+% Original financial
+\begin{equation} \label{eq:M_acct_orig}
+  \Macctorig{}
+\end{equation}
+}
+
+\sectionsep{}
+
+%%%%%%%%%% After Emplacement Effect %%%%%%%%%%
+\derivsection{after ($*$)}
+{
+% After device energy
+\begin{equation} \label{eq:E_acct_aemp}
+  \Eacctaempl{}
+\end{equation}
+}
+{
+% After device financial
+\begin{equation} \label{eq:M_acct_aemp}
+  \Macctaempl{}
+\end{equation}
+}
+
+\sectionsep{}
+
+%%%%%%%%%% Derivations for Emplacement Effect %%%%%%%%%%
+\derivsection{}
+% Emplacement effect: energy differences
+{
+%%%%%%%%%% Energy Emplacement Effect %%%%%%%%%%
+~
+  
+Take differences to obtain the change in energy consumption, $\Delta \raempl{E} \equiv \raempl{E} - \rbempl{E}$.
+%
+\begin{equation}
+  \Delta \raempl{E} = \Delta \raempl{E}_s
+                      + \Delta \raempl{E}_{emb}
+                      + (\Delta \raempl{C}_{\md}
+                      + \cancelto{0}{\Delta \raempl{C}_o}) I_E
+\end{equation}
+%
+Thus, 
+%
+\begin{equation}
+\Delta \raempl{E} = \Delta \raempl{E}_s + \Delta \raempl{E}_{emb} + \Delta \raempl{C}_{\md} I_E \; .
+\end{equation}
+%
+Define
+%
+\begin{equation} \label{eq:Sdot_def}
+\Sdot \equiv -\Delta \raempl{E}_s
+\end{equation}
+%
+(Also see Eqs.~(\ref{eq:S_dot_def}) and~(\ref{eq:Sdot})). 
+Use Eq.~(\ref{eq:Re_def}) to obtain
+%
+\begin{equation}
+Re_{empl} = 1 - \frac{-\Delta \raempl{E}}{\Sdot} 
+          = 1 - \frac{-\Delta \raempl{E}_s}{\Sdot} 
+              - \frac{-\Delta \raempl{E}_{emb}}{\Sdot}
+              - \frac{-\Delta \raempl{C}_{\md} I_E}{\Sdot} \; .
+\end{equation}
+%
+Define $Re_{dempl} \equiv 1 - \frac{-\Delta \raempl{E}_s}{\Sdot} (= 0)$, 
+$Re_{iempl} \equiv Re_{emb} + Re_{\md}$, 
+$Re_{emb} \equiv \frac{\Delta \raempl{E}_{emb}}{\Sdot}$, and
+$Re_{\md} \equiv \frac{\Delta \raempl{C}_{\md} I_E}{\Sdot}$, 
+such that
+%
+\begin{equation} \label{eq:Re_empl_def}
+Re_{empl} = Re_{dempl} + Re_{iempl} \; .
+\end{equation}
+}
+{
+%%%%%%%%%% Financial Emplacement Effect %%%%%%%%%%
+~
+    
+Use the monetary constraint ($\rbempl{M} = \raempl{M}$)
+and constant spending on other items ($\rbempl{C}_o = \raempl{C}_o$) to cancel terms to obtain
+
+\begin{align}
+  p_E \rbempl{E}_s &+ \rbempl{C}_{cap} + \rbempl{C}_{\md} + \cancel{\rbempl{C}_o} + \cancelto{0}{\rbempl{N}} \nonumber \\
+                   &= p_E \raempl{E}_s + \raempl{C}_{cap} + \raempl{C}_{\md} + \cancel{\raempl{C}_o}  + \raempl{N} \; .
+\end{align}
+%
+Solving for $\Delta \raempl{N} \equiv \raempl{N} - \cancelto{0}{\rbempl{N}}$ gives 
+%
+\begin{equation}
+  \Delta \raempl{N} = p_E(\rbempl{E}_s - \raempl{E}_s) 
+                      + \rbempl{C}_{cap} - \raempl{C}_{cap}
+                      + \rbempl{C}_{\md} - \raempl{C}_{\md} \; .
+\end{equation}
+%
+Rewriting with $\Delta$ terms gives
+%
+\begin{equation}
+  \Delta \raempl{N} = - p_E \Delta \raempl{E}_s - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md} \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:Sdot_def}) gives
+%
+\begin{equation} \label{eq:N_dot_star_empl}
+  \Delta \raempl{N} = \raempl{N} = p_E \Sdot - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md} \; .
+\end{equation}
+%
+Freed cash ($\rate{G}$) resulting from the EEU, 
+before any energy takeback, is given by 
+%
+\begin{equation} \label{eq:G_dot}
+  \rate{G} = p_E \Sdot \; .
+\end{equation}
+
+Note that Eq.~(\ref{eq:M_acct_orig}) and $\rbempl{N} = 0$ can be used to calculate $\rbempl{C}_o$ as
+%
+\begin{equation} \label{eq:C_dot_o}
+  \rbempl{C}_o = \rbempl{M} - p_E \rbempl{E}_s - \rbempl{C}_{cap} - \rbempl{C}_{\md} \; .
+\end{equation}
+%
+
+}
+\end{landscape}

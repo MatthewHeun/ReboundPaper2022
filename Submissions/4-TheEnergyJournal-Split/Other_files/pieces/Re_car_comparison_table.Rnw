@@ -1,0 +1,83 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_results.Rnw
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Rebound magnitude comparisons for the car example. All numbers in \%.
+         Note that 
+         $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, 
+         $Re_{tot} = Re_{micro} + Re_{macro}$, and 
+         $Re_{tot} = Re_{dir} + Re_{indir}$.}
+\label{tab:rebound_car_comparisons}
+\begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
+\toprule
+  &               &          &                 & \multicolumn{3}{c}{$Re_{micro}$}      & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  & Rebound study & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ &              &            &              &            \\ 
+\midrule
+ & This paper & U.S., & Energy, expenditure, and  & $\Sexpr{f_car("Re_empl")}$
+                                                  & $\Sexpr{f_car("Re_sub")}$
+                                                  & $\Sexpr{f_car("Re_inc")}$
+                                                  & $\Sexpr{f_car("Re_macro")}$
+                                                  & $\Sexpr{f_car("Re_dir")}$
+                                                  & $\Sexpr{f_car("Re_indir")}$
+                                                  & $\Sexpr{f_car("Re_tot")}$  \\
+ & (2023)     & 2020  & consumption planes        & & & & & & &   \\
+\midrule
+1 & \citeauthor{Small:2007aa}  & U.S.,      & Elasticity of VMT w.r.t.\ & & & & & 4.5 (short run, &  &  \\
+  & \citeyearpar{Small:2007aa} & 1967--2001 & fuel cost per mile        & & & & & 1967--2001)     &  &  \\
+  &                            &            &                           & & & & & 22.2 (long run, &  &  \\
+  &                            &            &                           & & & & & 1967--2001)     &  &  \\
+  &                            &            &                           & & & & & 2.2 (short run, &  &  \\
+  &                            &            &                           & & & & & 1997--2001)     &  &  \\
+  &                            &            &                           & & & & & 10.7 (long run, &  &  \\
+  &                            &            &                           & & & & & 1997--2001)     &  &  \\
+\midrule
+2 & \citeauthor{Greene2012}  & U.S.,      & Elasticities of transport   & & & & &  4 (short run) & & \\
+  & \citeyearpar{Greene2012} & 1966--2007 & fuel w.r.t.\ price \&       & & & & & 16 (long run)  & & \\
+  &                          &            & efficiency                  & & & & &                & & \\
+\midrule
+3 & \citeauthor{Koesler:2013aa}  & Germany, & Static CGE model,        & & & & & $\le$ 64 & $\le$ 16 & 56  \\
+  & \citeyearpar{Koesler:2013aa} & 2009     & 10\% efficiency shock    & & & & &          &          &     \\
+\midrule
+4 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 6 &  \\
+  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of personal  & & & & &    &   &  \\
+  &                             &       & transport fuels, using    & & & & &    &   &  \\
+  &                             &       & household spending        & & & & &    &   &  \\
+  &                             &       & survey data               & & & & &    &   &  \\
+\midrule
+5 & \citeauthor{Borenstein:2015aa}  & U.S., & Microeconomic &  & 13      & 11 & & & &  \\
+  & \citeyearpar{Borenstein:2015aa} & 2012  & framework     &  & (6--28) &    & & & &  \\
+\midrule
+6 & \citeauthor{Chitnis:2015}  & UK,                       & Estimated own/cross price  & & 72 & 5 & & 55 & 23 & 86 \\
+  & \citeyearpar{Chitnis:2015} & 1964--2014                & elasticities of transport  & &    &   & &    &    &    \\
+  &                            &                           & fuels, uses household      & &    &   & &    &    &    \\
+  &                            &                           & spending survey data       & &    &   & &    &    &    \\
+\midrule
+7 & \citeauthor{Gillingham:2015aa}  & Pennsylvania, & Estimation of gasoline      & & & & & 10 (short run) & &  \\
+  & \citeyearpar{Gillingham:2015aa} & 2000--2010    & price elasticity of driving & & & & &                & &  \\
+  &                                 &               & demand, from dataset        & & & & &                & &  \\
+  &                                 &               & of 75 million vehicle       & & & & &                & &  \\
+  &                                 &               & inspection records,         & & & & &                & &  \\
+  &                                 &               & including odometer data     & & & & &                & &  \\
+\midrule
+8 & \citeauthor{Stapleton:2016}  & UK         & Elasticity of VMT w.r.t.\ & & & & & 9--36 & & \\
+  & \citeyearpar{Stapleton:2016} & 1970--2011 & fuel cost/prices          & & & & &       & & \\
+\midrule
+9 & \citeauthor{Moshiri2017}  & Canada,    & Price elasticity of transport & & & & & 82--88 & & \\
+  & \citeyearpar{Moshiri2017} & 1997--2009 & fuel, using household         & & & & &        & & \\
+  &                           &            & spending survey data          & & & & &        & & \\
+\midrule
+10 & \citeauthor{Duarte:2018aa}  & Spain,     & Dynamic CGE model, & & & & & & & 26          \\
+   & \citeyearpar{Duarte:2018aa} & 2010--2030 & efficiency shock   & & & & & & & (short run) \\
+   &                             &            &                    & & & & & & & 52          \\
+   &                             &            &                    & & & & & & & (long run)  \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}

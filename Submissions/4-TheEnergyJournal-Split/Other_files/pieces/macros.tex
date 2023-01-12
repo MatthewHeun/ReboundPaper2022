@@ -1,0 +1,455 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_framework.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_framework.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file contains macros for
+% Heun, Semieniuk, Brockway, 
+% Energy, expenditure, and consumption aspects of rebound,\\
+% Part I: A rigorous analytical framework
+% and
+% Energy, expenditure, and consumption aspects of rebound,\\
+% Part II: Applications of the framework
+% 
+% It is incorporated into the main file by the command
+% \input{macros.tex}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% Override Energy Economics macros
+\renewcommand{\emph}{\textit}
+
+
+%%%%% Units
+
+\newcommand{\kWhr}{kW$\cdot$hr}
+\newcommand{\lmhr}{lm$\cdot$hr}
+\newcommand{\passkm}{pass$\cdot$km}
+\newcommand{\Whr}{W$\cdot$hr}
+
+
+%%%%% Decorations for symbols
+
+\newcommand{\rate}[1]{\dot{#1}}                    % Rate of a quantity
+
+% Create "after" commands
+\newcommand{\orig}[1]{{}{#1}^{\scriptscriptstyle \circ}}
+\newcommand{\aempl}[1]{{#1}^*}
+\newcommand{\asub}[1]{\hat{#1}}
+\newcommand{\ainc}[1]{\bar{#1}}
+\newcommand{\amacro}[1]{\tilde{#1}}
+
+% Create the "before" commands
+\newcommand{\bempl}[1]{\orig{#1}}
+\newcommand{\bsub}[1]{\aempl{#1}}
+\newcommand{\binc}[1]{\asub{#1}}
+\newcommand{\bmacro}[1]{\ainc{#1}}
+
+% Decoration combinations
+% Rates after
+\newcommand{\rorig}[1]{\orig{\rate{#1}}}
+\newcommand{\raempl}[1]{\aempl{\rate{#1}}}
+\newcommand{\rasub}[1]{\asub{\rate{#1}}}
+\newcommand{\rainc}[1]{\ainc{\rate{#1}}}
+\newcommand{\ramacro}[1]{\amacro{\rate{#1}}}
+
+% Rates before
+\newcommand{\rbempl}[1]{\rorig{#1}}
+\newcommand{\rbsub}[1]{\raempl{#1}}
+\newcommand{\rbinc}[1]{\rasub{#1}}
+\newcommand{\rbmacro}[1]{\rainc{#1}}
+
+%%%%% Subscript kerning
+
+% \newcommand{\OM}{O\!M}
+% \newcommand{\md}{O\!M\!d}
+\newcommand{\md}{md}
+\newcommand{\macro}{macr\!o}
+\newcommand{\life}{li\!f\!e}
+
+%%%%% Expression kerning
+
+\newcommand{\MPC}{M\!PC}
+
+
+%%%%% Convenient symbols
+
+\newcommand{\Sdot}{\rate{S}_{dev}}
+\newcommand{\Mdothatprime}{\rbinc{M}^\prime}
+
+
+%%%%% Elasticities and income shares
+
+\newcommand{\eqspsUC}{\varepsilon_{\rate{q}_s\!,p_s}}
+\newcommand{\eqopsUC}{\varepsilon_{\rate{q}_o\!,p_s}}
+\newcommand{\eqspsC}{\varepsilon_{\rate{q}_s\!,p_s\!,c}}
+\newcommand{\eqopsC}{\varepsilon_{\rate{q}_o\!,p_s\!,c}}
+
+% originally
+\newcommand{\eqspsUCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s}}
+\newcommand{\eqopsUCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s}}
+\newcommand{\eqspsCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s\!,c}}
+\newcommand{\eqopsCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s\!,c}}
+% With hats
+\newcommand{\eqspsUChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s}}
+\newcommand{\eqopsUChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s}}
+\newcommand{\eqspsChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s\!,c}}
+\newcommand{\eqopsChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s\!,c}}
+
+\newcommand{\eqsM}{\varepsilon_{\rate{q}_s\!,\rate{M}}}
+\newcommand{\eqoM}{\varepsilon_{\rate{q}_o\!,\rate{M}}}
+
+\newcommand{\fCs}{\bempl{f}_{\rate{C}_s}}
+\newcommand{\fCshat}{\asub{f}_{\rate{C}_s}}
+
+
+%%%%% Colors
+
+% Original spectrum colours
+% \colorlet{emplcolor}{red!25!white}
+% \colorlet{subcolor}{orange!25!white}
+% \colorlet{inccolor}{green!25!white}
+% \colorlet{macrocolor}{blue!25!white}
+
+% New Viridis "plasma" colours
+\definecolor{emplcolor}{HTML}{150789}
+\definecolor{subcolor}{HTML}{99149F}
+\definecolor{inccolor}{HTML}{E76F5A}
+\definecolor{macrocolor}{HTML}{F7E225}
+
+
+
+%%%%% Coloration of text background
+
+%
+% Inline color box around text
+% Arguments:
+%   [#1]: background color for the box
+%   {#2}: text inside the box
+%
+\newtcbox{\inlinebox}[1][]{on line, 
+colback=#1,
+colframe=#1,
+before upper={\rule[-2pt]{0pt}{10pt}},
+boxrule=1pt,
+boxsep=0pt,
+left=3pt,
+right=3pt,
+top=2pt,
+bottom=2pt}
+
+
+%%%%% Colored phrases
+
+% Emplacement effect
+\newcommand{\empleffect}{\inlinebox[emplcolor]{\textcolor{white}{emplacement effect}}}
+\newcommand{\empleffectadj}{\inlinebox[emplcolor]{\textcolor{white}{emplacement-effect}}}
+\newcommand{\Empleffect}{\inlinebox[emplcolor]{\textcolor{white}{Emplacement effect}}}
+\newcommand{\EmplEffect}{\inlinebox[emplcolor]{\textcolor{white}{Emplacement Effect}}}
+
+% Substitution effect
+\newcommand{\subeffect}{\inlinebox[subcolor]{\textcolor{white}{substitution effect}}}
+\newcommand{\subeffectadj}{\inlinebox[subcolor]{\textcolor{white}{substitution-effect}}}
+\newcommand{\Subeffect}{\inlinebox[subcolor]{\textcolor{white}{Substitution effect}}}
+\newcommand{\SubEffect}{\inlinebox[subcolor]{\textcolor{white}{Substitution Effect}}}
+
+% Income effect
+\newcommand{\inceffect}{\inlinebox[inccolor]{\textcolor{black}{income effect}}}
+\newcommand{\inceffectadj}{\inlinebox[inccolor]{\textcolor{black}{income-effect}}}
+\newcommand{\Inceffect}{\inlinebox[inccolor]{\textcolor{black}{Income effect}}}
+\newcommand{\IncEffect}{\inlinebox[inccolor]{\textcolor{black}{Income Effect}}}
+
+% Macro effect
+\newcommand{\macroeffect}{\inlinebox[macrocolor]{\textcolor{black}{macro effect}}}
+\newcommand{\macroeffectadj}{\inlinebox[macrocolor]{\textcolor{black}{macro-effect}}}
+\newcommand{\Macroeffect}{\inlinebox[macrocolor]{\textcolor{black}{Macro effect}}}
+\newcommand{\MacroEffect}{\inlinebox[macrocolor]{\textcolor{black}{Macro Effect}}}
+
+
+%%%%% minipage for assumptions and constraints tables
+% Arguments:
+%   #1: Width (multiple of \linewidth
+%   #2: text inside the minipage
+%
+\newcommand{\mptable}[2]{\begin{minipage}{#1\linewidth} \useshortskip{} \begin{equation} #2 \end{equation} \end{minipage}}
+
+
+%%%%% Oft-used references
+
+\newcommand{\Ba}[1]{\citeauthor[#1]{Borenstein:2015aa}}
+\newcommand{\Bapp}[1]{\citeauthor[#1]{Borenstein:2015aa}'s \citeyearpar{Borenstein:2015aa}}
+\newcommand{\Bp}[1]{\citep[#1]{Borenstein:2015aa}}
+\newcommand{\Bt}[1]{\citet[#1]{Borenstein:2015aa}}
+
+\newcommand{\Ta}[1]{\citeauthor[#1]{Thomas:2013aa}}
+\newcommand{\Tapp}[1]{\citeauthor[#1]{Thomas:2013aa}'s \citeyearpar{Thomas:2013aa}}
+\newcommand{\Tp}[1]{\citep[#1]{Thomas:2013aa, Thomas:2013ab}}
+\newcommand{\Tpone}[1]{\citep[#1]{Thomas:2013aa}}
+\newcommand{\Tptwo}[1]{\citep[#1]{Thomas:2013ab}}
+\newcommand{\Tt}[1]{\citet[#1]{Thomas:2013aa, Thomas:2013ab}}
+\newcommand{\Ttone}[1]{\citet[#1]{Thomas:2013aa}}
+\newcommand{\Tttwo}[1]{\citet[#1]{Thomas:2013ab}}
+
+
+%%%%% Derivation pages
+
+% Column widths
+\newcommand{\derivtextsize}{\footnotesize}
+\newcommand{\derivpageleftcolwidth}{0.11\textwidth}
+\newcommand{\derivpageenergycolwidth}{0.6\textwidth}
+\newcommand{\derivpagefinancialcolwidth}{0.6\textwidth}
+
+% Horizontal rule between sections of derivations
+
+\newcommand{\sectionsep}{\noindent\rule{1.4\textwidth}{0.4pt}}
+
+
+%
+% Derivation section
+% Arguments:
+%   #1: accounting stage (original, prime, etc.)
+%   #2: energy column
+%   #3: financial column
+%
+\newcommand{\derivsection}[3]{%
+
+\derivtextsize{}
+
+\begin{minipage}[t]{\derivpageleftcolwidth}
+~\\#1
+\end{minipage}
+%
+%
+%
+\begin{minipage}[t]{\derivpageenergycolwidth}
+#2
+\end{minipage}
+%
+~
+%
+\begin{minipage}[t]{\derivpagefinancialcolwidth}
+#3
+\end{minipage}
+
+\normalsize{}
+
+}
+
+
+%
+% Derivation page header
+% Arguments:
+%   #1: Effect type header text (e.g., Emplacement Effect)
+%
+\newcommand{\derivheader}[1]{
+
+\begin{center}
+  #1
+\end{center}
+
+\derivsection{}
+{\begin{center}\emph{Energy analysis}\end{center}}
+{\begin{center}\emph{Financial analysis}\end{center}}
+
+}
+
+
+% Equations
+
+% Efficiency ratios
+\newcommand{\etaratioinline}{\amacro{\eta}/\bempl{\eta}}
+\newcommand{\etaratiostacked}{\frac{\amacro{\eta}}{\bempl{\eta}}}
+
+% Derivative with respect to efficiency ratio
+\newcommand{\dbydetaeta}{\frac{\mathrm{d}}{\mathrm{d}(\etaratioinline{})}}
+
+
+% Original
+\newcommand{\Eacctorig}{\rbempl{E} = \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E}
+\newcommand{\Macctorig}{\rbempl{M} = p_E \rbempl{E}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o + \rbempl{N}}
+
+% Before emplacement effect (same as original)
+\newcommand{\Eacctbempl}{\Eacctorig}      
+\newcommand{\Macctbempl}{\Macctorig}      
+
+% After emplacement effect
+\newcommand{\Eacctaempl}{\raempl{E} = \raempl{E}_s + \raempl{E}_{emb} + (\raempl{C}_{\md} + \raempl{C}_o) I_E}                  
+\newcommand{\Macctaempl}{\raempl{M} = p_E \raempl{E}_s + \raempl{C}_{cap} + \raempl{C}_{\md} + \raempl{C}_o + \raempl{N}}         
+
+% Before substitution effect (same as after emplacement effect)
+\newcommand{\Eacctbsub}{\Eacctaempl}
+\newcommand{\Macctbsub}{\Macctaempl}
+
+% After substitution effect
+\newcommand{\Eacctasub}{\rasub{E} = \rasub{E}_s + \rasub{E}_{emb} + (\rasub{C}_{\md} + \rasub{C}_o) I_E}
+\newcommand{\Macctasub}{\rasub{M} = p_E \rasub{E}_s + \rasub{C}_{cap} + \rasub{C}_{\md} + \rasub{C}_o + \rasub{N}}
+
+% Before income effect (same as after substitution effect)
+\newcommand{\Eacctbinc}{\Eacctasub}
+\newcommand{\Macctbinc}{\Macctasub}
+
+% After income effect
+\newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\md} + \rainc{C}_o) I_E}
+\newcommand{\Macctainc}{\rainc{M} = p_E \rainc{E}_s + \rainc{C}_{cap} + \rainc{C}_{\md} + \rainc{C}_o + \rainc{N}}
+
+% Embodied energy rebound
+\newcommand{\Reembeqn}{\frac{\left( \frac{\aempl{E}_{emb}}{\bempl{E}_{emb}}
+  \frac{\bempl{t}_{\life}}{\aempl{t}_{\life}} - 1 \right) \rbempl{E}_{emb}}{\Sdot}}
+  
+% Ops, Maintenance, and disposal energy rebound
+\newcommand{\ReOMdeqn}{\frac{\left( \frac{\raempl{C}_{\md}}{\rbempl{C}_{\md}} - 1 \right) \rbempl{C}_{\md} I_E}{\Sdot}}
+
+% Equation for S_dot_dev
+% \newcommand{\Sdoteqn}{\left( \etaratiostacked - 1 \right)\!\etaratiostacked \rbempl{E}_s}
+\newcommand{\Sdoteqn}{\left( \etaratiostacked - 1 \right)\! 
+                            \frac{\bempl{\eta}}{\amacro{\eta}} \rbempl{E}_s}
+
+% Equation for Re_dsub
+\newcommand{\Redsubeqn}{\frac{\left( \etaratiostacked \right)^{-\eqspsC} - 1}
+                        {\etaratiostacked - 1}}
+                        
+% Equation for Re_isub
+\newcommand{\Reisubeqn}{\frac{{\left( \etaratiostacked  \right)}
+                          ^{-\eqopsC} - 1}{\etaratiostacked - 1} \; 
+                          \etaratiostacked \; 
+                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+                          
+% CES utility equation
+\newcommand{\cesutility}{\left[ \fCs \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^\rho 
+        + (1-\fCs) \left( \frac{\rate{C}_o}{\rbempl{C}_o} \right)^\rho  \right]^{(1/\rho)}}
+        
+% Equation for q_s_hat/q_s_orig
+\newcommand{\qssolution}{\left\{ \fCs + (1-\fCs)
+      \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o}  \right]
+                                                  ^{\rho / (1 - \rho)} \right\} ^ {-1/\rho}}
+
+% Equation for C_o_hat/C_o_orig
+\newcommand{\Cosolution}{ \left( 1 + \fCs \left\{ \left[ \left( \frac{1-\fCs}{\fCs} \right)
+          \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
+
+% Equation for Re_dsub for the CES utility model
+\newcommand{\RedsubCES}{\frac{\qssolution{} - 1}{\etaratiostacked{} - 1}}
+
+% Equation for Re_isub for the CES utility model
+\newcommand{\ReisubCES}{\frac{\Cosolution{} - 1}{\etaratiostacked{} - 1}
+                         \etaratiostacked \; 
+                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+
+
+% Equation for Re_dinc, approximate method
+\newcommand{\Redinceqnapprox}{\frac{ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1}
+              { \etaratiostacked - 1 } \left( \etaratiostacked \right)^{-\eqspsC}}
+
+% Equation for Re_dinc, exact method
+\newcommand{\Redinceqnexact}{\frac{ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1}
+              { \etaratiostacked - 1 } \qssolution{} }
+
+% Equation for Re_cap
+\newcommand{\Recapeqn}{\frac{\Delta \raempl{C}_{cap} I_E}{\Sdot}}
+
+% Equation for Re_iinc, approximate method
+\newcommand{\Reiinceqnapprox}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
+              \left( \etaratiostacked \right)^{1 - \eqopsC}
+              \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+
+% Equation for Re_iinc, exact method
+% \newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
+%               \left( \etaratiostacked \right)
+%               \left( \frac{\rasub{C}_o}{\rorig{C}_o} \right) 
+%               \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+
+\newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
+              \left( \etaratiostacked \right)
+              \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}
+              \Cosolution{}}
+
+
+
+% Equation for Re_d (total direct rebound)
+\newcommand{\Redeqn}{\frac{ \left( \etaratiostacked \right)^{-\eqspsC}
+             \left( 1 + \frac{\rasub{N}}{\rbempl{M}} \right)^{\eqsM}   - 1}
+         {\etaratiostacked - 1}}
+
+% Equation for Re_macro
+% \newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md} - p_E I_E Re_{dsub} - Re_{isub})}
+\newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md})}
+
+% Equation for Re_tot
+% \newcommand{\Retoteqn}{&Re_{emb} - k Re_{cap} + (1-k) Re_{\md}         \nonumber \\
+%                        &+ (1 - k p_E I_E) Re_{dsub} + (1 - k) Re_{isub}   \nonumber \\
+%                        &+ Re_{dinc} + Re_{iinc} +  k p_E I_E}
+% \newcommand{\Retoteqn}{&Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\md}   \nonumber \\
+%                        &+ Re_{dsub} + Re_{isub}                              \nonumber \\
+%                        &+ Re_{dinc} + Re_{iinc}}
+\newcommand{\Retoteqn}{Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\md} + Re_{dsub} + Re_{isub} + Re_{dinc} + Re_{iinc}}
+                 
+
+%%%% Income preference equations
+
+% Equation for energy service income preferences
+\newcommand{\incprefseqn}{\frac{\rainc{q}_s}{\rbinc{q}_s} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqsM}}
+
+% Equation for other goods income preferences
+\newcommand{\incprefoeqn}{\frac{\rainc{q}_o}{\rbinc{q}_o} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM}}
+
+% Equation for effective income
+% \newcommand{\effinceqn}{\Mdothatprime \equiv \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
+%                         - \rate{G} + p_E \Delta \rbinc{E}_s + \Delta \rbinc{C}_o}
+\newcommand{\effinceqn}{\Mdothatprime \equiv \rorig{M} - \raempl{C}_{cap} - \raempl{C}_{\md} - \rasub{N}}
+                        
+
+
+
+% Segments and lines
+% Arguments:
+%   #1: left character
+%   #2: line color
+%   #3: line thickness (e.g., 0.1 mm)
+%   #4: right character
+% Note that \raisebox{0.9 mm} moves the line up from the baseline.
+% Also, \line(1,0){12} gives a horizontal line with length "12" (unknown units!)
+% (1, 0) is the slope (1 unit to right, 0 units up).
+\newcommand{\seg}[4]{#1\linethickness{#3}\raisebox{0.88 mm}{\textcolor{#2}{\line(1,0){12}}}#4}
+
+% Construction lines
+\newcommand{\iicirc}{\seg{$\bempl{\text{i}}$}{black}{0.3 mm}{$\,\bempl{\text{i}}$}}
+\newcommand{\iibar}{\seg{$\bmacro{\text{i}}$}{black}{0.3 mm}{$\,\bmacro{\text{i}}$}}
+\newcommand{\rr}{\seg{r}{black}{0.1 mm}{r}}
+\newcommand{\circcirc}{\seg{$\circ$}{black}{0.1 mm}{$\circ$}}
+\newcommand{\starstar}{\seg{$*$}{black}{0.1 mm}{$*$}}
+\newcommand{\hathat}{\seg{$\wedge$}{black}{0.1 mm}{$\wedge$}}
+\newcommand{\barbar}{\seg{$-\,$}{black}{0.1 mm}{$\, -$}}
+
+% Line segments
+\newcommand{\circa}{\seg{$\circ$}{emplcolor}{0.6 mm}{$a$}}
+% \newcommand{\ab}{\seg{a}{emplcolor}{0.6 mm}{b}}
+\newcommand{\ab}{$a$\tikz[baseline=-0.6ex]\draw [line width=0.6mm,dotted,emplcolor] (0,0) -- (0.45,0);$b$}
+\newcommand{\bstar}{\seg{$b\,$}{emplcolor}{0.6 mm}{$*$}}
+\newcommand{\starc}{\seg{$*$}{subcolor}{0.6 mm}{$\,c$}}
+\newcommand{\chat}{\seg{$c\,$}{subcolor}{0.6 mm}{$\wedge$}}
+\newcommand{\hatd}{\seg{$\wedge$}{inccolor}{0.6 mm}{$\,d$}}
+\newcommand{\dbar}{\seg{$d$}{inccolor}{0.6 mm}{$\,-$}}
+\newcommand{\hatbar}{\seg{$\wedge$}{inccolor}{0.6 mm}{$\,-$}}
+\newcommand{\bartilde}{\seg{$- \,$}{macrocolor}{0.6 mm}{$\, \sim$}}
+
+
+% Rotated text for tables
+% See
+% https://tex.stackexchange.com/questions/98388/how-to-make-table-with-rotated-table-headers-in-latex/98439#98439
+% for details.
+\newcommand{\rot}{\rotatebox{90}}
+
+
+% A "rating" command for filled circles with tikz.
+% See 
+% https://tex.stackexchange.com/questions/194955/get-partly-filled-circle-symbol-scale-linearly-with-parameter
+% for details.
+\newcommand{\rating}[2][0.75ex]{%
+  \pgfmathsetmacro\th{asin(#2/50-1)}% (theta angle of polar coordinates)
+    \tikz{%
+      \fill[black] (\th:#1) arc (\th:-180-\th:#1) -- cycle;
+      \draw[black, thin, radius=#1] (0,0) circle;
+    }%
+}

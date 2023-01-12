@@ -1,0 +1,1934 @@
+\documentclass[12pt]{article}    % For submission
+
+
+
+%% Package imports %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsfonts}           % For access to \checkmark.
+\usepackage{amsmath}            % For better symbol decorations
+\usepackage{authblk}            % For a nice author block
+\usepackage{booktabs}           % For nice table rules
+\usepackage[official]{eurosym}  % For the euro symbol
+\usepackage[figurename=Fig.]{caption} % For changing "Figure" to "Fig." in figure captions
+\usepackage{chngcntr}           % To get figure and table numbering correct in the appendices
+\usepackage[makeroom]{cancel}   % To show terms go to zero
+\usepackage[inline]{enumitem}   % For inline enumeration
+\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
+\usepackage[]{lineno}           % For line numbers
+% \modulolinenumbers[5]
+\usepackage{microtype}          % For beautiful typesetting
+\usepackage{multicol}           % For multi-column layout
+\usepackage{multirow}           % For multi-row layout
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
+\usepackage{nccmath}            % For the \useshortskip command above equations
+\usepackage{parcolumns}         % For multi-column layout
+\usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
+\usepackage{physics}            % For the \eval command.
+\usepackage{setspace}           % For double spacing
+\doublespacing
+\usepackage{soul}               % For text highlighting
+\usepackage[most]{tcolorbox}    % For color highlighting of text
+\usepackage{tikz}               % For diagrams
+\usetikzlibrary{arrows,positioning}
+\usepackage{ulem}               % For strikeout command (\sout)
+\usepackage{xcolor}             % For ... colors
+\usepackage{xr}                 % For external references to the results paper
+\externaldocument[PartII-]{HSB_results}
+
+\usepackage{hyperref}           % hyperref should be the last package loaded
+
+
+%% Macros defined by authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/macros.tex}
+
+
+%% Bibliography style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apa-good.bst}
+
+% Author info
+\title{Energy, expenditure, and consumption aspects of rebound,\\
+        Part I: A rigorous analytical framework}
+\author[1,*]{Matthew Kuperus Heun}
+\author[2]{Gregor Semieniuk}
+\author[3]{Paul E.\ Brockway}
+\affil[1]{Engineering Department, Calvin University, 3201 Burton St. SE, Grand Rapids, MI, 49546}
+\affil[2]{Political Economy Research Institute and 
+                            Department of Economics,
+                            UMass Amherst}
+\affil[3]{Sustainability Research Institute, 
+                             School of Earth and Environment,
+                             University of Leeds}
+\affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
+\renewcommand\Affilfont{\itshape\small}
+
+\date{} % Kill the date
+
+\begin{document}
+
+\maketitle
+
+
+%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+Widespread implementation of energy efficiency
+is a key greenhouse gas emissions mitigation measure, 
+but rebound can ``take back'' energy savings.
+However, the absence of solid analytical foundations hinders
+empirical determination of the size of rebound.
+A new clarity is needed, one that 
+involves both economics and energy analysis.
+In this paper (Part~I of a two-part paper), 
+we advance a rigorous analytical framework
+that starts at the microeconomic level
+and is approachable for both energy analysts and economists. 
+We develop the first (to our knowledge)
+rebound analysis framework that 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item clarifies the energy, expenditure, and consumption aspects of rebound,
+
+  \item combines 
+        embodied energy effects with
+        maintenance and disposal effects
+        (under a new ``emplacement effect'' term), and
+
+  \item allows exact analytical determination of
+        the effects of non-marginal energy efficiency
+        increases and non-marginal energy service price decreases.
+  
+\end{enumerate*}
+%
+Furthermore, we provide the first operationalized link between 
+rebound effects on microeconomic and macroeconomic levels.
+\end{abstract}
+
+Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
+
+JEL codes: O13, Q40, Q43
+
+
+<<setup, echo=FALSE, message=FALSE>>=
+library(dplyr)
+library(magrittr)
+library(MKHthemes)
+library(ReboundTools)
+library(tidyr)
+library(xtable)
+@
+
+\linenumbers
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Energy efficiency is often considered to be
+the most important means of reducing energy consumption
+and CO$_2$ emissions \citep[Fig.~3.15, p.~139]{International-Energy-Agency:2017b}.
+But energy rebound makes energy efficiency less effective
+at decreasing energy consumption 
+by taking back (or reversing, in the case of ``backfire'') 
+energy savings expected from energy efficiency improvements~\citep{Sorrell:2009cg}.
+As such, energy rebound is a threat to
+a low-carbon future~\citep{van-den-Bergh:2017aa, Brockway:2017a}.
+
+Recent evidence shows that rebound is both 
+larger than commonly assumed~\citep{Stern2020} and
+mostly missing from large energy and climate models~\citep{Brockway:2021ww}.
+Thus, rebound could be an important reason why
+energy consumption and carbon emissions 
+have never been absolutely decoupled 
+from economic growth~\citep{Haberl:2020tf, Brockway:2021ww}.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{A short history of rebound}
+\label{sec:short_history}
+%++++++++++++++++++++++++++++++
+
+Famously, the roots of energy rebound trace back to 
+\citeauthor{Jevons:1865} who said 
+``[\emph{i}]\emph{t is wholly a confusion of ideas to suppose that the economical 
+use of fuel is equivalent to a diminished consumption. 
+The very contrary is the truth}'' \citep[p.~103, emphasis in original]{Jevons:1865}.
+Less famously, the origins of rebound extend further backward 
+from \citeauthor{Jevons:1865}
+to \citet{Williams1840} and \citeauthor{Parkes1838} who wrote
+``[t]he economy of fuel is the secret of the economy of the steam-engine; 
+it is the fountain of its power, and the adopted measure of its effects. 
+Whatever, therefore, conduces to increase the efficiency of coal, 
+and to diminish the cost of its use, 
+directly tends to augment the value of the steam-engine, 
+and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
+For nearly 200 years, then, it has been understood 
+that efficiency gains may be taken back or, paradoxically even, 
+cause growth in energy consumption,
+as \citeauthor{Jevons:1865} suggested.
+
+The oil crises of the 1970s shone a light back onto energy efficiency, and 
+research into rebound appeared late in the decade~\citep{Madlener:2016to, Saunders:2021te}. 
+A modern debate over the magnitude of energy rebound commenced. 
+On one side, scholars including \citet{Brookes1979, Brookes1990} and \citet{Khazzoom1980} 
+suggested rebound could be large.
+Others, including \citet{Lovins1988} and \citet{Grubb1990, Grubb1992},
+claimed rebound was likely to be small.
+Debate over the size of energy rebound continues today.
+Advocates of small rebound (less than, say, 50\%),
+suggest ``the rebound effect is overplayed''~\citep[p.~475]{Gillingham:2013aa},
+while others claim
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item that the evidence for large rebound
+        (greater than 50\%) is growing 
+        \citep{Saunders2015, Berner:2022tb} and
+  
+  \item that rebound will reduce the effectiveness of energy efficiency
+        to decrease carbon emissions
+        \citep{van-den-Bergh:2017aa}.
+    
+\end{enumerate*}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Absence of solid analytical foundations}
+\label{sec:absence_of_foundations}
+%++++++++++++++++++++++++++++++
+
+\citeauthor{Turner:2013aa} contends that the lack of consensus 
+on the magnitude of energy rebound 
+in the modern empirical literature is caused by 
+``a rush to empirical estimation in the absence 
+of solid analytical foundations''~\citep[p.~25]{Turner:2013aa}.
+Progress has been made recently on how price changes 
+affect economy-wide rebound 
+in general equilibrium frameworks
+\citep{Lemoine:2020aa, Fullerton2020, blackburn2020energy}.
+Arguments from microeconomics (i.e., at sectoral and individual level) have
+been used from the outset of the modern debate 
+(e.g., \citet{Khazzoom1980} and \citet{Greening2000}),
+and \citet{Borenstein:2015aa} and \citet{Chan2015}
+recently made progress toward solidifying the microeconomic analytical foundations. 
+
+Yet more is needed to support empirical efforts.
+For instance, while the microeconomic categories of substitution and
+income effects provide analytical clarity about how behavior
+changes affect energy service consumption,
+it has been unclear how they could be used 
+for precise numerical rebound calculations. 
+Where previous numerical calculations were made, 
+they tended approximate the substitution effect
+from other goods to the cheaper energy service, 
+without maintaining constant utility for the device user.
+They also used constant price elasticities
+for non-marginal efficiency improvements,
+even though constant price elasticities typically
+provide only approximations of substitution and
+income effects for small efficiency changes.
+Further, previous analytical studies have stressed the importance of the
+cost of buying an upgraded device as well as the energy embodied in the device.
+Yet, there is no clearly formulated approach for how to incorporate these 
+cost and energy components into rebound calculations. 
+And rebound involves simultaneous changes in energy, expenditure,
+and consumption aspects, and keeping an overview of all
+aspects is hard, with no approach to our knowledge documenting all 
+changes in a straightforward and consistent manner.
+Finally, while recent general equilibrium rebound modeling has led to 
+important insights about the effects of changing prices,
+dynamic aspects of a macroeconomic rebound have
+been neglected by these approaches.
+
+In the absence of solid analytical foundations, 
+the wide variety of rebound calculation approaches 
+contributes to a wide range of rebound values, 
+giving the appearance of uncertainty and
+leading some energy and climate modelers to either 
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item use questionable rebound values or 
+  
+  \item ignore rebound altogether.
+
+\end{enumerate*}
+%
+Insufficient inclusion of rebound in energy and climate models
+could lead to overly optimistic projections
+of the capability of energy efficiency 
+to reduce carbon emissions \citep{Brockway:2021ww}. 
+We suggest that 
+improving the conceptual foundations of rebound and
+solidifying the analytical frameworks
+will
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item help generate more robust estimates of rebound,
+  
+  \item lead to better rebound calculations 
+        in energy and climate models, and 
+  
+  \item provide improved evidence 
+        for policymaking around energy efficiency. 
+
+\end{enumerate*}
+
+But why is there an ``absence of solid analytical foundations?''
+We propose that development of solid analytical frameworks for rebound
+is hampered by the fact that rebound is a decidedly interdisciplinary topic,
+involving both economics and energy analysis. 
+~\citet[p.~458]{Birol:2000wi} note that 
+``different implicit and explicit assumptions of different
+research communities (`economists', `engineers') \ldots{} have
+in the past led to vastly differing points of view.''%
+\footnote{
+  We prefer the term ``energy analysts'' over ``engineers,'' 
+  because ``energy analysts'' better describes 
+  the group of people engaged in ``energy analysis.’'
+  For this paper, we define ``energy analysis'' to be 
+  the study of energy transformations 
+  from stocks to flows and wastes 
+  along society's energy conversion chain 
+  for the purpose of generating 
+  energy services, 
+  economic activity, and
+  human well-being.
+}
+\citeauthor{Turner:2013aa} states that 
+``[d]ifferent definitions of energy efficiency will be appropriate in different circumstances. 
+However, \ldots{} it is often not clear what different authors 
+mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
+If authors from the two disciplines cannot even agree on the key terms, 
+it is unsurprising that only modest progress has been made 
+on analytical foundations.
+To fully understand rebound, 
+economists need to have an energy analyst's understanding of energy, and 
+energy analysts need to have an economist's understanding of finance and human behavior.%
+\footnote{
+  Indeed, this is why the authors for these papers
+  come from the energy analysis (MKH, PEB) and economics (GS) disciplines.
+}
+%
+Developing the knowledge and skills required 
+to assess and calculate, 
+let alone mitigate, 
+rebound effects is a tall order, indeed.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{New clarity is needed}
+\label{sec:clarity_needed}
+%++++++++++++++++++++++++++++++
+
+We contend that new clarity is needed.
+A description of rebound that is 
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item consistent across energy, expenditure, and consumption aspects,
+  
+  \item technically rigorous, and
+  
+  \item approachable from both sides
+        (economics and energy analysis)
+
+\end{enumerate*}
+%
+will be a good starting point toward that clarity.
+In other words, 
+the finance and human behavior aspects of rebound need to be presented 
+in ways energy analysts can understand. 
+And the energy aspects of rebound need to be presented
+in ways economists can understand.
+
+Summarizing,
+we surmise that reducing global carbon emissions has been hampered, in part, 
+by the fact that rebound is not sufficiently included in energy and climate models.
+We suspect that one reason rebound is not sufficiently included
+is the lack of consensus on rebound calculation methods and, hence, rebound magnitude.
+We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
+is a symptom of the absence of solid analytical foundations for rebound.
+We posit that developing solid analytical frameworks 
+is difficult because energy rebound is an inherently interdisciplinary topic.
+We believe that providing a detailed explication of a rigorous analytical framework
+for energy rebound,
+which is approachable by both energy analysts and economists alike,
+will go some way toward providing additional clarity in the field.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Objective, contributions, and structure}
+\label{sec:objective_contributions_structure}
+%++++++++++++++++++++++++++++++
+
+The \emph{objective} of this paper is to 
+improve clarity in the field of energy rebound by
+supporting the development of a rigorous analytical framework, 
+one that
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item starts at the microeconomics of rebound
+        (building especially upon \citet{Borenstein:2015aa}) and 
+        
+  \item is approachable for both energy analysts and economists.
+
+\end{enumerate*}
+%
+We strive to keep the framework as simple as possible and in this spirit limit our
+attention to a model of consumer demand for energy services, while noting that
+the approach is transferable to a producer model with few modifications.
+
+The key \emph{contributions} of this paper are 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+	\item a novel and clear explication of interrelated
+	      energy, expenditure, and consumption
+	      aspects of energy rebound,
+	
+  \item development of the first (to our knowledge)
+        rebound analysis framework that combines 
+        embodied energy effects, 
+        maintenance and disposal effects, 
+        non-marginal energy efficiency increases, and 
+        non-marginal energy service price decreases, and
+
+  \item the first operationalized link between 
+        rebound effects on microeconomic and macroeconomic levels.
+        
+\end{enumerate*}
+
+The remainder of this paper is \emph{structured} as follows.
+Section~\ref{sec:framework} describes the rebound analysis framework.
+Section~\ref{sec:discussion} discusses this framework relative to previous frameworks, and 
+Section~\ref{sec:conclusion} concludes.
+Results from the application of our framework
+to energy efficiency upgrades to a car and an electric lamp
+can be found in Part~II.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods: development of the framework}
+\label{sec:framework}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we develop 
+an energy rebound framework
+for an individual consumer who upgrades the energy efficiency 
+of a single device
+(concisely, ``the framework,'' ``this framework,'' or ``our framework'').
+We endeavor to bring clarity to the field of energy rebound by 
+providing sufficient detail to assist
+energy analysts to understand the economics and
+economists to understand the energy analysis.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound typology}
+\label{sec:rebound_typology}
+%++++++++++++++++++++++++++++++
+
+\input{pieces/typology_table.tex}
+
+Table~\ref{tab:rebound_typology} shows our typology of rebound effects.
+We follow others, including \citet{Jenkins2011} and \citet{Walnum2014}, 
+in identifying and including both direct and indirect rebound effects, 
+which occur at (direct) and beyond (indirect) 
+the level of the device and its user.
+Again following others, such as \citet{Gillingham2016}, 
+we distinguish between rebound effects 
+at the microeconomic and macroeconomic levels.
+
+Microeconomic rebound occurs at the level 
+of the single device and its user and
+in our framework comprises three effects: 
+an emplacement effect, 
+a substitution effect, and
+an income effect, each of which 
+partitions direct and indirect rebound effects.
+All combinations are possible.
+The direct rebound effect can be partitioned into 
+a direct emplacement effect, 
+a direct substitution effect, and
+a direct income effect. 
+At the level of the device, 
+all of the direct rebound effects change the consumption 
+of energy
+by the device whose efficiency has been upgraded,  
+according to a microeconomic behavioral model of the consumer who
+responds to the cheaper energy service.
+Similarly, the indirect rebound effect can be partitioned into
+an indirect emplacement effect, 
+an indirect substitution effect, and
+an indirect income effect. 
+All of the indirect effects
+change the induced energy consumption
+beyond the upgraded device, 
+again according to a microeconomic behavioral model.
+We assume a \emph{partial equilibrium} response to the 
+energy efficiency upgrade (EEU)
+at the microeconomic level;
+other prices in the economy ($p_o$) remain unchanged
+in response to the EEU.
+
+In contrast, 
+macroeconomic rebound is a broader, economy-wide response 
+to the single device upgrade. 
+Like other authors, we recognize many macroeconomic rebound effects, 
+even if we don't later distinguish among them.%
+\footnote{
+  For example, \citet{Sorrell:2009cg} 
+  sets out five macroeconomic rebound effects:
+  embodied energy effects, respending effects, output effects, 
+  energy market effects, and composition effects.
+  (We place the embodied energy effect at the microeconomic level.)
+  \citet{Santarius2016} and \citet{Lange2021} 
+  introduce 
+  meso (i.e., sectoral) level rebound
+  between the micro and macro levels.
+  \citet{VandenBergh2011} distinguishes 14 types of rebound, 
+  providing, perhaps, the greatest complexity.   
+}
+%
+At the macroeconomic level, \emph{general equilibrium} effects
+can occur as prices for all goods and services (even energy)
+may change in response to the EEU.
+Further treatment of macroeconomic rebound
+can be found 
+in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
+in Section~\ref{PartII-sec:calibrating_k} of Part~II.
+
+Fig.~\ref{fig:flowchart} shows rebound effects
+arranged in the left-to-right order of their discussion in this paper.
+The left-to-right order does not necessarily represent 
+the progression of rebound effects through time.
+Rebound symbols are shown above each effect ($Re_{empl}$, etc.).
+Nomenclature for partitions of direct and indirect rebound 
+is shown beneath each effect ($Re_{dempl}$, etc.).
+Decorations for each stage are shown between rebound effects
+($\circ$, $*$, etc.).
+Names for the decorations are given at the bottom of the figure
+(``orig,'' ``star,'' etc.).%
+\footnote{
+  Note that
+  the vocabulary and mathematical notation for rebound effects is important;
+  Fig.~\ref{fig:flowchart} and Appendix~\ref{sec:nomenclature} provide guides to 
+  notational elements used throughout this paper, including
+  symbols, Greek letters, abbreviations, decorations, and subscripts.
+  The notational elements 
+  can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
+  In several places, including Fig.~\ref{fig:flowchart},
+  we use colored backgrounds on rebound effects for visual convenience. 
+}
+
+\begin{figure}
+\centering
+  % The file is a Tikz picture.
+  \input{pieces/flowchart.tex}
+\caption{Flowchart of rebound effects and decorations.}
+\label{fig:flowchart}
+\end{figure}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound relationships}
+\label{sec:rebound_relationships}
+%++++++++++++++++++++++++++++++
+
+Energy rebound is defined as
+
+\begin{equation} \label{eq:Re_def}
+  Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
+\end{equation}
+%
+where both actual and expected final energy savings rates are in MJ/yr (megajoules per year)
+and expected positive.
+The final energy ``takeback'' rate is defined as the expected final energy savings rate less 
+the actual final energy savings rate.%
+\footnote{
+  Note that the takeback rate can be negative, 
+  indicating that the actual final energy savings rate
+  is greater than the expected final energy savings rate, 
+  a condition called hyperconservation.
+}
+%
+Rewriting Eq.~(\ref{eq:Re_def}) with the definition of takeback gives
+
+\begin{equation}
+  Re = 1 - \frac{\text{expected final energy savings rate} - \text{takeback rate}}{\text{expected final energy savings rate}} \; .
+\end{equation}
+%
+Simplifying gives
+
+\begin{equation} \label{eq:Re_takeback}
+  Re = \frac{\text{takeback rate}}{\text{expected final energy savings rate}} \; .
+\end{equation}
+
+We define rebound at the final energy%
+\footnote{
+  Conventionally, stages of the energy conversion chain are 
+  primary energy (e.g., coal, oil, natural gas, wind, and solar),
+  final energy (e.g., electricity and refined petroleum),  
+  useful energy (e.g., heat, light, and mechanical drive), and 
+  energy services (e.g., transport, illumination, and space heating).
+}
+%
+stage of the energy conversion chain,
+because the final energy stage is
+the point of energy purchase by the device user.
+To simplify derivations, 
+we choose not to apply final-to-primary energy multipliers
+to final energy rates in the numerators and denominators of rebound expressions
+derived from Eqs.~(\ref{eq:Re_def}) and~(\ref{eq:Re_takeback});
+they divide out anyway.%
+\footnote{
+  Primary energy may be important when the upgraded device consumes a different 
+  final energy carrier
+  compared to the original device, 
+  i.e., when fuel-switching occurs \citep{Chan2015}.
+}
+%
+Henceforth, we drop the adjective ``final'' 
+from the noun ``energy,''
+unless there is reason to indicate a specific stage of the energy conversion chain.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{The energy conversion device and energy efficiency upgrade (EEU)}
+\label{sec:ecd_and_eeu}
+%++++++++++++++++++++++++++++++
+
+We assume an energy conversion device (say, a car)
+that consumes energy
+(say, gasoline) at a rate $\rbempl{E}$ (in MJ/yr).
+We use ``rate'' to indicate any quantity measured per unit time, 
+such as a flow of energy per year or a flow of income per year.
+None of the rates in this paper indicate exponential (\%/yr) changes.
+Symbolically, rates are identified by a single dot above the symbol,
+a convention adopted from the engineering literature where, e.g.,
+$\rate{x}$ often indicates a velocity in m/s (meters per second), 
+$\rate{m}$ often indicates a mass flow rate in kg/s (kilograms per second), and
+$\rate{E}$ often indicates an energy flow rate in kW (kilowatts).
+The overdot is an important notational element in this paper, 
+as it provides clarity between stocks (without overdots)
+and flows (with overdots). 
+For example,  
+$E$ is a quantity of energy in, say, MJ, while
+$\rate{E}$ is a rate of energy in, say, MJ/yr.
+We later annualize capital costs ($C_{cap}$ in \$) and
+energy embodied in the device during
+its production ($E_{emb}$ in MJ) to create
+cost rates ($\rate{C}_{cap}$ in \$/yr) and
+embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
+
+Energy is available at price $p_E$ (in \$/MJ).
+The original energy conversion device provides a rate of energy service 
+$\rbempl{q}_s$ (in, say, vehicle-km/yr)
+with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
+An energy efficiency upgrade (EEU) increases
+final-to-service efficiency%
+\footnote{
+  Note that energy service efficiency ($\eta$) improves
+  between the original ($\circ$) and
+  post-emplacement ($*$)
+  stages of Fig.~\ref{fig:flowchart}, remaining constant thereafter.
+  Thus, $\orig{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
+  as shown in Table~\ref{tab:analysis_assumptions}.
+  We refer to all post-emplacement efficiencies 
+  ($\aempl{\eta}$, $\asub{\eta}$, $\ainc{\eta}$, and $\amacro{\eta}$)
+  as $\amacro{\eta}$
+  to match the nomenclature of \citet{Borenstein:2015aa}.
+  When convenient, the same approach to nomenclature is taken with other quantities such as 
+  the capital cost rate ($\rate{C}_{cap}$) and 
+  maintenance and disposal cost rate ($\rate{C}_{md}$).
+}
+such that
+$\bempl{\eta} < \amacro{\eta}$.
+The EEU is not costless, so
+the upgraded device may be more expensive to purchase
+than a like-for-like replacement of the original device.
+We call this increased ``capital cost'' 
+($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
+It may also 
+be more costly to maintain and dispose of the upgraded device
+($\rbempl{C}_{\md} < \ramacro{C}_{\md}$). 
+However, the opposite may hold, too.
+As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
+the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
+The energy price ($p_E$) is assumed exogenous
+at the microeconomic level
+($\bempl{p}_E = \bsub{p}_E = \binc{p}_E = \bmacro{p}_E  = \amacro{p}_E$),
+so the energy purchaser (the device user) is a price taker.%
+\footnote{
+  Relaxing the exogenous energy price assumption
+  would require a general equilibrium model that is beyond the scope of this paper.
+}
+%
+Initially, the device user spends income ($\rorig{M}$)
+on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
+annualized capital costs for the device ($\rorig{C}_{cap}$), 
+annualized costs for maintenance and disposal of the device ($\rorig{C}_{\md}$), and 
+other goods and services ($\rorig{C}_o$).
+The budget constraint
+for the device user is
+
+\begin{equation} \label{eq:budget_constraint}
+  \rorig{M} = \rorig{C}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
+\end{equation}
+%
+where 
+net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
+
+Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
+we walk through the four rebound effects
+(emplacement, substitution, income, and macro), 
+deriving rebound expressions for each, 
+but first 
+we show typical energy and cost relationships 
+(Section~\ref{sec:energy_and_cost_relationships}).
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Typical energy and cost relationships}
+\label{sec:energy_and_cost_relationships}
+%++++++++++++++++++++++++++++++
+
+With the rebound notation of Appendix~\ref{sec:nomenclature}, 
+four typical relationships emerge.
+First, the consumption rate of the energy service~($\rate{q}_s$)
+is the product of final-to-service efficiency~($\eta$) and
+the rate of energy consumption by the energy conversion device~($\rate{E}_s$).
+Typical units for automotive transport and illumination
+(the examples in Part~II) are shown
+beneath each equation.%
+\footnote{
+  Note that ``pass'' is short for ``passenger,'' and
+  ``lm'' is the SI notation for the lumen, a unit of lighting energy rate.
+}
+
+\begin{align} \label{eq:typ_qs_eta_Edot}
+  \rate{q}_s &= \eta \rate{E}_s \\
+  \text{[\passkm/yr]} &= \text{[\passkm/MJ]} \text{[MJ/yr]} \nonumber \\
+  \text{[\lmhr/yr]} &= [\text{\lmhr/MJ}] \text{[MJ/yr]} \nonumber
+\end{align}
+%
+Second, the energy service price~($p_s$) is the ratio of energy price~($p_E$) 
+to the final-to-service efficiency~($\eta$).
+
+\begin{align} \label{eq:ps_pE_eta}
+  p_s &= \frac{p_E}{\eta} \\
+  \text{[\$/\passkm]} &= \frac{[\$/\text{MJ}]}{\text{[\passkm/MJ]}} \nonumber \\
+  \text{[\$/\lmhr]} &= \frac{[\$/\text{MJ}]}{\text{[\lmhr/MJ]}} \nonumber
+\end{align}
+%
+Third, energy service expenditure rates~($\rate{C}_s$) are the product 
+of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
+
+\begin{align}
+  \rate{C}_s &= p_E \rate{E}_s \\
+  \text{[\$/yr]} &= \text{[\$/MJ]}\text{[MJ/yr]} \nonumber
+\end{align}
+
+Fourth, indirect energy rates for
+maintenance and disposal ($\rate{E}_{\md}$) and
+other goods expenditures ($\rate{E}_{o}$)
+are the product 
+of expenditures rates~($\rate{C}_{\md}$ and $\rate{C}_o$) and
+the energy intensity of the economy~($I_E$).
+
+\begin{align} \label{eq:indirect_energy_rates}
+  \rate{E}_{\md} &= \rate{C}_{\md} I_E \\
+  \rate{E}_o     &= \rate{C}_o I_E \\
+  \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
+\end{align}
+
+
+
+<<eeu_data, echo=FALSE>>=
+# Load our test cases and perform rebound analyses.
+rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
+rebound_results <- ReboundTools::rebound_analysis(rebound_data)
+@
+
+
+
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound effects}
+\label{sec:rebound_effects}
+%++++++++++++++++++++++++++++++
+
+The four rebound effects
+(emplacement, substitution, income, and macro)
+are discussed in subsections below.
+In each subsection, we
+define the effect and
+show mathematical expressions for rebound ($Re$) caused by the effect.
+Detailed derivations of all rebound expressions 
+can be found in Appendix~\ref{sec:derivation}.
+See, in particular, Tables~\ref{tab:empleffect}--\ref{tab:macroeffect},
+which provide a parallel structure for energy and financial accounting
+across all rebound effects.
+We begin with the emplacement effect.
+
+
+%------------------------------
+\subsubsection{\Empleffect}
+\label{sec:empl_effect_main_paper}
+%------------------------------
+
+The emplacement effect accounts for performance changes of the device
+due to the fact that a higher-efficiency device has been put in service 
+(and will need to be decommissioned at a later date);
+behavior changes are addressed later,
+in the substitution and income effects. 
+
+
+%..............................
+\paragraph{Direct emplacement effect ($Re_{dempl}$)} 
+%..............................
+
+The direct emplacement effects of the EEU include
+device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$).
+The indirect effects of EEU emplacement are
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item changes in the embodied energy rate ($\Delta \raempl{E}_{emb}$), 
+  
+  \item changes in the capital expenditure rate ($\Delta \raempl{C}_{cap}$), and 
+        
+  \item changes in the maintenance and disposal energy and expenditure rates 
+        ($\Delta \raempl{E}_{\md}$ and $\Delta \raempl{C}_{\md}$).
+    
+\end{enumerate*}
+%
+$\Sdot$ can be written conveniently as
+
+\begin{equation} \label{eq:Sdot}
+  \Sdot = \Sdoteqn \; .
+\end{equation}
+%
+(See Appendix~\ref{sec:Sdot} for the derivation.)
+
+Because the original and upgraded device are assumed to 
+have equal performance%
+\footnote{
+  Of course, it is often the case that the original and upgraded devices
+  have small performance differences. 
+  E.g., a high-efficiency LED lamp may have slightly greater or slightly lesser 
+  lumen output than the incandescent lamp it replaces. 
+  For the purpose of explicating this framework,
+  we assume that the performance of the upgraded device can be matched closely enough
+  to the performance of the original device 
+  such that the differences are immaterial to the user.
+}
+%
+and because
+behavior changes are not considered in the direct emplacement effect,
+actual and expected energy savings rates are identical, and
+there is no takeback.
+By definition, then, the direct emplacement effect causes no rebound.
+Thus, 
+
+\begin{equation} \label{eq:Re_dempl0}
+  Re_{dempl} = 0 \; .
+\end{equation}
+
+
+%..............................
+\paragraph{Indirect emplacement effects ($Re_{iempl}$)} 
+%..............................
+
+Although the direct emplacement effect does not cause rebound, 
+indirect emplacement effects may indeed cause rebound.
+Indirect emplacement effects 
+account for the life cycle of the energy conversion device,
+including energy embodied by manufacturing processes (subscript $emb$) and
+maintenance and disposal activities (subscript $\md$).
+
+
+%..............................
+\subparagraph{Embodied energy effect ($Re_{emb}$)} 
+%..............................
+
+One of the unique features of this framework
+is that independent analyses of embodied energy and 
+capital costs of the EEU are required.
+We note that the different terms 
+(embodied energy rate, $\rate{E}_{emb}$, and
+capital cost rate, $\rate{C}_{cap}$)
+might seem to imply different processes, 
+but they actually refer to the same emplacement effect.
+Purchasing an upgraded device
+(which likely leads to $\rbempl{C}_{cap} \neq \raempl{C}_{cap}$)
+will likely mean a changed embodied energy rate ($\rbempl{E}_{emb} \neq \raempl{E}_{emb}$) 
+to provide the same energy service.
+Our names for these aspects of rebound (embodied energy and capital cost)
+reflect common usage 
+in the energy and economics fields, respectively.
+
+Consistent with the energy analysis literature, 
+we define embodied energy 
+to be the sum of all energy
+consumed in the production of the energy conversion device, 
+all the way back to resource extraction.%
+\footnote{
+  We take an energy approach here,
+  consistent with the literature on energy rebound. 
+  One could use an alternative quantification of energy, 
+  such as exergy, the work potential of energy \citep{Sciubba:2007aa} or
+  emergy, the solar content of energy \citep{Brown:1996wy}.
+}
+Energy is embodied in the device within manufacturing and distribution supply chains
+prior to consumer acquisition of the device.
+We assume no energy is embodied in the device while in service.
+The EEU causes the embodied energy of the energy conversion device to change
+from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
+
+For simplicity, we spread all embodied energy
+over the lifetime of the device
+to provide a constant embodied energy rate ($\rate{E}_{emb}$).
+(We later take the same approach to capital costs ($\rate{C}_{cap}$) and
+maintenance and disposal costs ($\rate{C}_{\md}$).)
+A justification for spreading embodied energy and 
+purchase costs comes from considering
+device replacements by many consumers across several years.
+In the aggregate, evenly spaced (in time) replacements
+work out to the same embodied energy in every period.
+
+Thus, we allocate embodied energy over the life of the original and upgraded devices
+($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+without discounting
+to obtain embodied energy rates, such that
+$\rbempl{E}_{emb} = \bempl{E}_{emb} / \bempl{t}_{\life}$
+and 
+$\raempl{E}_{emb} = \aempl{E}_{emb} / \aempl{t}_{\life}$.
+The change in embodied final energy due to the EEU (expressed as a rate) is given by
+$\Delta \raempl{E}_{emb} = \raempl{E}_{emb} - \rbempl{E}_{emb}$.
+The expression for embodied energy rebound is
+
+\begin{equation} \label{eq:Re_emb}
+  Re_{emb} = \Reembeqn{} \; .
+\end{equation}
+%
+(See Appendix~\ref{sec:Re_emb} for details of the derivation.)
+
+Embodied energy rebound ($Re_{emb}$)
+can be either positive or negative, depending on 
+the sign of the term
+$(\aempl{E}_{emb}/\bempl{E}_{emb})(\bempl{t}_{\life}/\aempl{t}_{\life}) - 1$.
+Rising energy efficiency can be associated with increased device complexity,
+additional energy consumption in manufacturing, and
+more embodied energy,
+such that $\bempl{E}_{emb} < \aempl{E}_{emb}$ and $Re_{emb} > 0$,
+all other things being equal.
+However, if the upgraded device has longer life than the original device
+($\aempl{t}_{\life} > \bempl{t}_{\life}$),
+$\raempl{E}_{emb} - \rbempl{E}_{emb}$ could be negative,
+meaning that the upgraded device has a lower embodied energy rate than the original device.
+
+
+%..............................
+\subparagraph{Maintenance and disposal effect ($Re_{\md}$)} 
+%..............................
+
+In addition to embodied energy, 
+indirect emplacement effect rebound accounts for
+energy demanded by maintenance and disposal~($\md$) activities.
+Maintenance expenditures are typically modeled as a per-year expense, a rate (e.g., $\rbempl{C}_m$).
+Disposal costs (e.g., $\bempl{C}_d$) are one-time expenses incurred 
+at the end of the useful life of the energy conversion device.
+Like embodied energy, we spread disposal costs across the lifetime 
+of the original and upgraded devices ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+to form expenditure rates such that 
+$\rbempl{C}_{\md} = \rbempl{C}_m + \bempl{C}_d/\bempl{t}_{\life}$
+and
+$\raempl{C}_{\md} = \raempl{C}_m + \aempl{C}_d/\aempl{t}_{\life}$.
+
+For simplicity, we assume that maintenance and disposal
+expenditures imply energy consumption
+elsewhere in the economy at its overall energy intensity~($I_E$).
+Therefore, the change in energy consumption rate caused by a change 
+in maintenance and disposal expenditures
+is given by $\Delta \raempl{C}_{\md} I_E = (\raempl{C}_{\md} - \rbempl{C}_{\md}) I_E$.
+Rebound from maintenance and disposal activities 
+is given by 
+
+\begin{equation} \label{eq:Re_md}
+  Re_{\md} = \ReOMdeqn{} \; .
+\end{equation}
+%
+(See Appendix~\ref{sec:Re_OMd} for details of the derivation.)
+
+
+%------------------------------
+\subsubsection{\Subeffect}
+\label{sec:sub_effect_main_paper}
+%------------------------------
+
+Neoclassical consumer theory decomposes price-induced
+behavior change into
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item substituting energy service consumption for
+        other goods consumption due to the lower post-EEU price of the energy service 
+        (the substitution effect) and
+  
+  \item spending the higher real income (the income effect).%
+        \footnote{
+          For the original development of the decomposition
+          see \citet{Slutsky1915} and \citet{Allen1936}.
+          For a modern introduction see \citet{Nicholson2017}.
+        }
+    
+\end{enumerate*}
+%
+This section develops mathematical expressions 
+for substitution effect rebound ($Re_{sub}$),
+thereby accepting the standard neoclassical microeconomic assumptions
+about consumer behavior.%
+\footnote{
+  Alternative assumptions on behavior would arise from,
+  e.g., adopting a behavioral economic framework
+  \citep{Dutschke:2018aa, Dorner:2019aa} or
+  an informational entropy-constrained economic framework \citep{Foley:2020aa}.
+}
+%
+(The next section addresses income effect rebound, $Re_{inc}$.)
+The substitution effect determines compensated demand,
+which is the demand for
+the expenditure-minimizing consumption bundle that
+maintains utility at the pre-EEU level, given the new prices.
+Compensated demand is a technical term for a thought experiment from welfare economics: 
+the device user's budget is altered so that the user is ``compensated''
+for the change in price so as to maintain the same level of utility as before.
+In the case of an EEU, this implies the budget is reduced
+because the energy service price has fallen, so that it becomes
+cheaper to maintain a given level of utility.
+The change in the budget is called ``compensating variation'' (CV).
+The substitution effect involves
+%
+\begin{enumerate*}[label={(\roman*)}]
+
+  \item an increase in consumption of the energy service,
+        the direct substitution effect (subscript $dsub$) and
+
+  \item a decrease in consumption of other goods,
+        the indirect substitution effect (subscript $isub$).
+
+\end{enumerate*}
+%
+Thus, two terms comprise substitution effect rebound:
+direct substitution rebound ($Re_{dsub}$) and
+indirect substitution rebound ($Re_{isub}$).
+
+After emplacement of the more efficient device
+(but before the substitution effect), 
+the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
+After compensating variation tightens the budget constraint,
+consumption at the new prices yields utility
+at the same level as prior to the EEU
+by consuming more of the now-lower-cost energy service
+and less of the now-relatively-more-expensive other goods.
+
+A constant price elasticity (CPE) utility model
+is often used in the literature
+(e.g., see \citet[p.~17, footnote~43]{Borenstein:2015aa})
+for determining 
+post-substitution effect consumption 
+and therefore $Re_{dsub}$ and $Re_{isub}$.
+By definition, the CPE utility model assumes that 
+compensated and uncompensated, own and cross price elasticities
+remain constant along an indifference curve. 
+(See Appendix~\ref{sec:utility_and_elasticities}.)
+Typically,
+constant price elasticities (as in the CPE utility model)
+are approximations that are applicable only to marginal price changes. 
+Appendix~\ref{sec:Resub_approximate_method}
+contains details of the CPE utility model.
+
+Here, we present a
+constant elasticity of substitution (CES) utility model
+that allows all of
+the uncompensated own price elasticity ($\eqspsUC$),
+the uncompensated cross price elasticity ($\eqopsUC$),
+the compensated own price elasticity ($\eqspsC$), and
+the compensated cross price elasticity ($\eqopsC$)
+to vary along an indifference curve, 
+thereby enabling numerically precise analysis 
+of non-marginal energy service price changes 
+($\orig{p}_s >\!\!> \aempl{p}_s$). 
+The CES utility model allows the direct calculation
+of the utility-maximizing consumption bundle for any constraint,
+describing the device user's behavior as
+
+\begin{equation} \label{eq:ces_utility}
+  \frac{\rate{u}}{\rbempl{u}} = \cesutility{} \; .
+\end{equation}
+
+The device user's utility rate
+(relative to the original condition, $\rate{u}/\rorig{u}$)
+is determined by
+the consumption rate of the energy service ($\rate{q}_s$) and
+the consumption rate of other goods and services ($\rate{C}_o$).
+The share parameter ($\fCs$) 
+between $\rate{q}_s$ and $\rate{C}_o$
+is taken from the original (pre-EEU) consumption basket.
+The exponent $\rho$ is calculated from the (constant) 
+elasticity of substitution ($\sigma$) 
+as $\rho \equiv (\sigma - 1)/\sigma$.
+All quantities are normalized to pre-EEU values so that
+the cost share of other goods can be used straightforwardly 
+in empirical applications rather than having
+to construct quantity and price indices.
+The normalized specification is commonly used in empirical CES \emph{production}
+function applications \citep{Klump2012,Temple2012,Gechert2021}.
+See Appendix~\ref{sec:utility_and_elasticities}
+for further details of the CES utility model.
+
+Direct substitution effect rebound ($Re_{dsub}$) is
+
+\begin{equation} \label{eq:Re_dsub_def}
+  Re_{dsub} = \frac{\Delta \rasub{E}_s}{\Sdot} \; ,
+\end{equation}
+%
+which can be rearranged to
+
+\begin{equation} \label{eq:Re_dsub_prelim}
+  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\amacro{\eta}}{\bempl{\eta}} - 1} \; .
+\end{equation}
+
+Indirect substitution effect rebound ($Re_{isub}$) is given by
+
+\begin{equation} \label{eq:Re_isub_def}
+  Re_{isub} = \frac{\Delta \rasub{C}_o I_E}{\Sdot} \; ,
+\end{equation}
+%
+which can be rearranged to 
+
+\begin{equation} \label{eq:Re_isub_prelim}
+  Re_{isub} = \frac{\frac{\rasub{C}_o}{\rorig{C}_o} - 1}{\etaratiostacked - 1} \; 
+                          \etaratiostacked \; 
+                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s} \; .
+\end{equation}
+
+To find the post-substitution effect point ($\wedge$),
+we solve for the location on the indifference curve
+where its slope is equal to the slope of the
+expenditure line after the EEU, 
+assuming the CES utility model.%
+\footnote{
+  Other utility models could be used; however, 
+  the Cobb-Douglas utility model is inappropriate for this framework, 
+  because it assumes that the sum 
+  of substitution and income rebound is 100\% \emph{always}.
+  Regardless of the utility model, expressions for
+  $\rasub{q}_s/\rorig{q}_s$ and
+  $\rasub{C}_o/\rorig{C}_o$
+  must be determined
+  and substituted into Eqs.~(\ref{eq:Re_dsub_prelim}) and~(\ref{eq:Re_isub_prelim}), 
+  respectively.
+}
+%
+The results are
+
+\begin{equation} \label{eq:q_s_solution}
+  \frac{\rasub{q}_s}{\rbempl{q}_s} = \qssolution{}
+\end{equation}
+%
+and
+
+\begin{equation} \label{eq:C_o_solution}
+  \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; .
+\end{equation}
+
+Eq.~(\ref{eq:q_s_solution}) can be substituted directly
+into Eq.~(\ref{eq:Re_dsub_prelim})
+to obtain an expression for direct substitution rebound ($Re_{dsub}$)
+via the CES utility model.
+
+\begin{equation} \label{eq:Re_dsub_CES}
+  Re_{dsub} = \RedsubCES{}
+\end{equation}
+
+Eq.~(\ref{eq:C_o_solution}) can be substituted directly
+into Eq.~(\ref{eq:Re_isub_prelim})
+to obtain an expression for indirect substitution rebound ($Re_{isub}$)
+via the CES utility model.
+
+\begin{equation} \label{eq:Re_isub_CES}
+  Re_{isub} = \ReisubCES{}
+\end{equation}
+%
+(See Appendix~\ref{sec:Resub_exact_method} for details
+of the derivations of Eqs.~(\ref{eq:Re_dsub_prelim}), 
+(\ref{eq:Re_isub_prelim}), and 
+(\ref{eq:q_s_solution})--(\ref{eq:Re_isub_CES}).)
+
+
+%------------------------------
+\subsubsection{\Inceffect}
+\label{sec:inc_effect_main_paper}
+%------------------------------
+
+The monetary income rate of the device user ($\rbempl{M}$)
+remains unchanged across the rebound effects, 
+such that
+$\rbempl{M} = \raempl{M} = \rasub{M} = \rainc{M} = \ramacro{M}$.
+Thanks to the energy service price decline, real income rises, 
+and freed cash from the EEU is given by 
+as $\rate{G} = p_E \Sdot$.
+(See Eq.~(\ref{eq:G_dot}) in Appendix~\ref{sec:derivations}.)
+Emplacement effect adjustments and compensating variation
+modify freed cash to leave the device user with
+\emph{net} savings ($\rasub{N}$) from the EEU,
+as shown in Eq.~(\ref{eq:N_dot_after_sub}) in Appendix~\ref{sec:derivations}.
+(Derivations of expressions for freed cash from the 
+emplacement effect ($\rate{G}$)
+and net savings after the substitution effect ($\rasub{N}$)
+are presented in Tables~\ref{tab:empleffect} and~\ref{tab:subeffect}.)
+Rebound from the income effect quantifies the rate of additional energy demand 
+that arises when the energy conversion device user spends net
+savings from the EEU.
+
+Additional energy demand from the income effect
+is determined by several constraints.
+The income effect under utility maximization
+satisfies the budget constraint, so that
+net savings are zero after
+the income effect ($\rainc{N} = 0$).
+(See Appendix~\ref{sec:proof_income_elasticities}
+for a mathematical proof that the income preference equations below
+(Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM}))
+satisfy the budget constraint.)
+
+A second constraint is that net savings are spent completely on
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item additional consumption of the energy service ($\rbinc{q}_s < \rainc{q}_s$) and
+  
+  \item additional consumption of other goods ($\rbinc{q}_o < \rainc{q}_o$).
+    
+\end{enumerate*}
+%
+The proportions in which income-effect spending is allocated
+depends on the utility model, 
+which prescribes the income expansion path for consumption. 
+Given post-EEU prices, maximized CES utility 
+means spending in the same proportion on the energy service and other goods 
+across the income effect, 
+a property known as homotheticity.
+This constraint is satisfied by construction below, 
+particularly via an effective income term ($\Mdothatprime$).
+However, this framework could accommodate non-homothetic preferences
+for spending across the income effect (turning the income
+expansion path into a more general curve instead of a line).
+
+We next show expressions for 
+direct and indirect income effect rebound.
+
+
+%..............................
+\paragraph{Direct income effect ($Re_{dinc}$)} 
+\label{sec:direct_income_effect}
+%..............................
+
+The income elasticity of energy service demand ($\eqsM$)
+quantifies the amount of net savings spent 
+on more of the energy service ($\rbinc{q}_s < \rainc{q}_s$).
+(See Appendix~\ref{sec:utility_and_elasticities} 
+for additional information about elasticities.)
+Spending of net savings on additional energy service consumption
+leads to direct income effect rebound ($Re_{dinc}$).
+
+The ratio of rates of energy service consumed across the income effect is given by
+
+\begin{equation} \label{eq:qsrat_eqsM}
+  \incprefseqn \; .
+\end{equation}
+%
+Homotheticity means that $\eqsM = 1$. 
+
+Effective income ($\Mdothatprime$) is given by 
+
+\begin{equation} \label{eq:effective_income}
+  \effinceqn{} \; .
+\end{equation}
+%
+For the purposes of the income effect, 
+effective income (Eq.~(\ref{eq:effective_income})) 
+adjusts original income ($\rorig{M}$) to account for 
+sunk costs ($\raempl{C}_{cap}$ and $\raempl{C}_{\md}$) and
+net savings ($\rasub{N}$).
+
+Direct income rebound is defined as
+
+\begin{equation} \label{eq:Re_dinc_def}
+  Re_{dinc} \equiv \frac{\Delta \rainc{E}_s}{\Sdot} \; .
+\end{equation}
+%
+(See Table~\ref{tab:inceffect}.)
+After substitution, rearranging, and canceling of terms (Appendix~\ref{sec:Re_dinc}), 
+the expression for direct income rebound is
+
+\begin{equation} \label{eq:Re_dinc}
+  Re_{dinc} = \Redinceqnexact{} \; .
+\end{equation}
+%
+If there are no net savings after the substitution effect ($\rasub{N} = 0$), 
+direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
+\footnote{
+  Zero net savings ($\rasub{N} = 0$) could occur if 
+  increases in the capital cost rate ($\Delta \raempl{C}_{cap}$) and/or
+  the maintenance and disposal cost rate ($\Delta \raempl{C}_{\md}$)
+  consume all freed cash ($\rate{G}$) plus savings from the compensating variation.
+}
+
+
+%..............................
+\paragraph{Indirect income effect ($Re_{iinc}$)} 
+\label{sec:indirect_income_effect}
+%..............................
+
+Not all net savings ($\rbinc{N}$) are spent on more energy 
+for the energy conversion device.
+The income elasticity of other goods demand ($\eqoM$)
+quantifies the amount of net savings spent 
+on additional other goods ($\rbinc{q}_o < \rainc{q}_o$).
+Spending of net savings on additional other goods and services
+leads to indirect income effect rebound ($Re_{iinc}$).
+
+The ratio of rates of other goods consumed across the income effect is given by
+
+\begin{equation} \label{eq:qorat_eqoM}
+  \incprefoeqn \; .
+\end{equation}
+%
+Under the assumption that prices of other goods are exogenous
+(see Appendix~\ref{sec:other_goods_expenditures}), 
+the ratio of rates of other goods consumption ($\rainc{q}_o/\rbinc{q}_o$)
+is equal to the ratio of rates of other goods expenditures ($\rainc{C}_o/\rbinc{C}_o$)
+such that 
+
+\begin{equation} \label{eq:Corat_eqoM}
+  \frac{\rainc{C}_o}{\rbinc{C}_o} = \left( 1 + \frac{\rasub{N}}{\Mdothatprime} \right)^{\eqoM} \; .
+\end{equation}
+%
+Homotheticity means that $\eqoM = 1$.
+As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
+
+\begin{equation} \label{eq:Re_iinc_def}
+  Re_{iinc} \equiv \frac{\Delta \rainc{C}_o I_E}{\Sdot} \; .
+\end{equation}
+%
+After substitution, rearranging, and canceling of terms, 
+the expression for indirect income rebound is
+
+\begin{equation} \label{eq:Re_iinc}
+  Re_{iinc} = \Reiinceqnexact{} \; .
+\end{equation}
+%
+(See Appendix~\ref{sec:Re_inc} for details of the derivation
+of direct and indirect income effect rebound.)
+
+
+%------------------------------
+\subsubsection{\Macroeffect}
+\label{sec:macro_effect_main_paper}
+%------------------------------
+
+The previous rebound effects 
+(emplacement effect, substitution effect, and income effect)
+occur at the microeconomic level. 
+However, changes at the microeconomic level can 
+have important impacts at the macroeconomic or economy-wide level.
+In the short run, macroeconomic changes include price changes in
+goods other than the energy service. 
+For instance, other goods to
+which the energy service is an input could become cheaper, and
+changes in demand from cross price elasticities could alter
+other prices as quantities supplied adjust to the new demand schedule. 
+The most notable price change is the price of
+energy itself which could fall due to lower demand.
+The energy price or market effect is accordingly typically noted as an
+important macroeconomic rebound effect \citep{Gillingham2016}.
+In the long-run, i.e., when capital stock can be replaced in response
+to changes in relative costs and demand,
+rebound could change further. 
+These kinds of rebounds can be captured
+by a general equilibrium model \citep{Stern2020}.
+
+In addition, there are dynamic effects that arise from economic growth
+and structural change.
+It is one of the basic tenets of economics
+that productivity gains have been the main long-run driver of economic growth
+in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957} and
+that such growth is accompanied by structural changes, i.e., a changing
+composition of economic activity \citep{Schumpeter1939, Kuznets1971}. 
+Structural changes pose complicated problems for rebound, as
+network effects can lead to path-dependencies in 
+using low- or high-energy intensity technologies \citep{Arthur1989, Fouquet2016}.
+Structural changes also interact with economic growth.
+We propose a simple rule for incorporating 
+these dynamic effects into our framework below.
+
+Before establishing a formalism for $Re_{macro}$, we clarify the link between consumer theory
+and economic growth. \citet{Turner:2013aa} cautions that when households
+see the productivity of their non-market activities increase,
+GDP remains unchanged.\footnote{
+  To appreciate the difference between production for
+  the market and production for the household, 
+  consider the case
+  where increased mileage leads to the household saving
+  on energy per car trip. 
+  The household takes more trips
+  (direct rebound), without effect on GDP.
+  In the other case, 
+  the household buys the energy service
+  (transport) directly from a taxi company. 
+  Here, the taxi company lowers the price but gains more customers, 
+  leading immediately to growth in inflation-adjusted (i.e., real) GDP,
+  as more driving services are produced. 
+  Yet, the physical change of more car trips is the same in both cases.
+}
+%
+That may be true in the short run. But
+the question over longer periods is whether the more productive
+household energy services do not also feed through into economic
+growth accounted for by GDP.
+People in affluent countries spend about as much time on
+unpaid (i.e., non-market) work as on paid work \citep{Folbre2021}.
+Therefore productivity improvements in unpaid work can spill over
+into paid work, which enters GDP.
+One channel could be time-saving. 
+If the EEU saves time,
+then saved time could be spent on more paid work or
+on increasing human capital \citep{Sorrell2008,Gautham2022}.
+If the EEU saves money (but no time), 
+then the freed cash could be spent on more effective 
+(and more costly) human capital-increasing activities
+or even be used to start a venture. 
+In all cases, it would be rash to conclude that 
+just because some EEUs lead to productivity increases
+not captured directly by GDP,
+they do not eventually lead to additional economic growth.
+
+\citeauthor{Borenstein:2015aa} also addressed these macro effects 
+from consumer behavior
+noting that ``income effect rebound will be larger economy-wide than 
+would be inferred from evaluating only the direct income gain from 
+the end user's transaction'' \citep[p.~11]{Borenstein:2015aa} and 
+likening it to the Keynesian macroeconomic multiplier.
+However, the dynamic macro rebound effect 
+is not an autonomous expansion of expenditure,
+a demand-side shock,
+in an otherwise unchanged economy,
+like the Keynesian multiplier \citep{Kahn1931,Keynes1936}.
+Rather, macroeconomic rebound is caused by an energy productivity improvement,
+a supply-side shock.
+After the EEU, 
+it takes less energy (and therefore less energy cost)
+to generate the same economic activity, because 
+energy efficiency has improved.
+That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side 
+and demand-side effects both play a role as the consequences of the
+technology shock play themselves out.
+Furthermore, his approach has the advantage that it can be directly
+linked to the income effect
+(minus compensating variation) 
+and its consequence for macroeconomic rebound. 
+\citeauthor{Borenstein:2015aa} also notes that scaling from net 
+savings ($\raempl{N}$) at the device level
+to productivity-driven growth at the macro level is unexplored territory.
+
+Another novel contribution of this paper
+(in addition to the framework itself)
+is the first operationalization of the macro rebound multiplier idea.
+We stress that such a multiplier stands for the cumulative
+productivity growth triggered by
+the initial productivity increase in the EEU.
+But to operationalize the macro rebound multiplier, 
+we note that the net savings gained by the 
+device user at the microeconomic level ($\raempl{N}$)
+are spent on new goods that create new incomes and,
+according to the marginal propensity to consume (MPC),
+expenditures throughout the economy. 
+Over time, 
+and allowing for temporary contractions \citep{Basu2006},
+this leads to the infinite series of
+respending of net savings ($\raempl{N}$),
+a multiplier which we represent by a macro factor ($k$).%
+\footnote{
+  The macro factor ($k$) appears unitless,
+  but its units are actually \$ of economic expansion created 
+  per \$ of net savings gained
+  by the device user in the emplacement effect ($\raempl{N}$)
+  throughout the economy.
+}
+
+The macro factor ($k$) represents respending in the broader economy 
+after the emplacement effect has occurred
+and is not tied to any particular EEU or economic sector.
+$k \ge 0$ is expected.
+$k = 0$ means there is no dynamic effect
+resulting from the energy efficiency upgrade.
+$k > 0$ means that productivity-driven macroeconomic growth has occurred
+with consequent implications for additional energy consumption in the wider economy.
+The relationship between $k$ and $\MPC$ is given by the multiplier relationship
+
+\begin{equation} \label{eq:mpc_and_k_converged}
+  k = \frac{1}{\frac{1}{\MPC} - 1} \; .
+\end{equation}
+%
+(See Appendix~\ref{sec:income_macro_mpc} for the derivation 
+of Eq.~(\ref{eq:mpc_and_k_converged}).)
+
+A further advantage of using the macro factor approach is that there are
+many estimates of the magnitude of $\MPC$, 
+though we stress again that
+using consumption multipliers is a
+\emph{representation} of the effect, while the cause is not
+a demand-side fiscal expansion, but rather
+energy efficiency on the supply side.%
+\footnote{
+  In particular,
+  this approach avoids the problem of crowding out, since
+  productive capacity expands, not just expenditure \citep{Gillingham2016}.
+}
+%
+A recent review by \citet{Carroll2017} 
+reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
+with the full range of estimates spanning 0.0 to 0.9.
+
+We assume as a first approximation
+(following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
+implies energy consumption according to 
+the average energy intensity of the economy ($I_E$).
+Macro rebound is therefore given by
+
+\begin{equation} \label{eq:Re_macro_def}
+  Re_{\macro} = \frac{k \raempl{N} I_E}{\Sdot} \; .
+\end{equation}
+%
+(See Table~\ref{tab:macroeffect}.) 
+After some algebra (Appendix~\ref{sec:Re_macro}), 
+we arrive at an expression for macro effect rebound:
+
+\begin{equation} \label{eq:Re_macro}
+  Re_{\macro} = \Remacroeqn{} \; .
+\end{equation}
+%
+
+%++++++++++++++++++++++++++++++
+\subsection{Rebound sum}
+\label{sec:total_rebound_main_paper}
+%++++++++++++++++++++++++++++++
+
+The sum of all rebound emerges from the four rebound effects
+(emplacement effect, substitution effect, income effect, and macro effect).
+Macro effect rebound~($Re_{\macro}$ in Eq.~(\ref{eq:Re_macro}))
+is expressed in terms of other rebound effects.
+(Derivation details can be found in Appendix~\ref{sec:total_rebound}.)
+After algebra and canceling of terms,
+we find
+
+\begin{align} \label{eq:Re_tot}  
+  Re_{tot} = \; \Retoteqn{} \; .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+\label{sec:discussion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We developed above a rebound framework for consumers. 
+We note that many of its components are similar
+to those for a producer-sided framework
+due to the symmetry between
+neoclassical microeconomic producer and consumer theory.
+Ours is a partial equilibrium framework at the microeconomic level
+that provides a detailed assessment of individual EEUs with tractable,
+easy-to-understand mathematics.
+Partial equilibrium frameworks are easier to understand, in part, because
+they constrain price variation to the energy service only; 
+all other prices remain constant
+(at least at the microeconomic level).%
+\footnote{
+  General equilibrium frameworks provide detail and precision
+  on economy-wide price adjustments, but
+  they give up specificity about individual device upgrades, 
+  make assumptions during calibration, and 
+  lose simplicity of exposition.
+}
+%
+In our framework, 
+general equilibrium effects and other dynamic effects 
+at the macroeconomic level are captured by 
+a simplified, one-dimensional rebound effect
+discussed in Section~\ref{sec:macro_effect_main_paper}.
+
+We are not the first to develop a rebound analysis framework,
+so it is worthwhile to compare our framework to others
+for key features: 
+analysis of all rebound effects; 
+analysis of energy, expenditure, and consumption aspects of rebound; 
+level of detail in the consumer preference model;
+allowance for non-marginal energy efficiency changes; and 
+empirical application.
+When all of the above characteristics are present, 
+a fuller picture of rebound can emerge.%
+\footnote{
+  See Section~\ref{PartII-sec:path_graphs} of Part~II for literal pictures of rebound in 
+  energy, expenditure, and consumption planes.
+}
+%
+Table~\ref{tab:previous_frameworks} shows our assessment
+of selected previous partial equilibrium frameworks (in columns)
+relative to the characteristics discussed above (in rows).
+
+\renewcommand{\arraystretch}{0.6}
+
+\input{pieces/prev_frameworks_table.tex}
+
+Because all frameworks evaluate the expected decrease 
+in direct energy consumption from the EEU,
+the ``Direct emplacement effect'' row contains \rating{100} 
+in all columns.
+Three early papers \citep{Nassen:2009aa, Thomas:2013aa, Thomas:2013ab}
+estimate rebound quantitatively, 
+earning high marks (\rating{100}) in the ``Empirical application'' row. 
+Both \citeauthor{Nassen:2009aa} and \citeauthor{Thomas:2013aa} 
+motivate their frameworks at least partially with microeconomic theory
+(consumer preferences and substitution and income effects)
+but use simple linear demand functions in their empirical analyses.  
+Thus, the connection between economic theory and empirics is tenuous, 
+leading to intermediate ratings (\rating{50} or less) in the
+``substitution effects,''
+``income effects,''
+and
+``Detailed model of consumer preferences'' rows.
+More recently, \citet{Chan2015} and \citet{Wang2021}
+anchor the rebound effect firmly in consumer theory, 
+earning high ratings (\rating{100}) in the
+``substitution effects,''
+``income effects,'' and 
+``Detailed model of consumer preferences'' rows. 
+They extend their frameworks to advanced topics
+that our framework does not presently incorporate,
+such as
+multiple fuels,  
+energy services, and
+nested utility functions with intermediate inputs. 
+However, neither \citeauthor{Chan2015} nor \citeauthor{Wang2021} 
+provide empirical applications,
+earning \rating{0} in the last row of Table~\ref{tab:previous_frameworks}. 
+In the middle of the table (and between the other studies in time), 
+the framework by \citet{Borenstein:2015aa}
+touches on nearly all important characteristics.
+However, the \citeauthor{Borenstein:2015aa} framework
+cannot separate substitution and income effects cleanly in empirical analysis, 
+reverting to partial analyses of both, 
+leading to a \rating{50} rating in the ``Detailed model of consumer preferences'' 
+and ``Empirical application'' rows.
+
+No previous framework engages fully with either the differential financial effects
+or the differential energetic effects
+of the upfront purchase of the upgraded device, 
+leading to low ratings across all previous frameworks in the
+``Capital cost and embodied energy effect'' row.
+In fact, except for \citet{Nassen:2009aa},
+no framework engages with capital costs, 
+although all note its importance. 
+(\citeauthor{Nassen:2009aa} note that 
+capital costs and embodied energy can have very strong effects on rebound.)
+\citet{Thomas:2013aa,Thomas:2013ab} provide the only framework 
+that traces embodied energy effects
+of every consumer good using input-output methods, but
+they do not analyze embodied energy of the upgraded device.
+\citet{Borenstein:2015aa} notes
+the embodied energy of the upgraded device
+and the embodied energy of other goods
+but does not integrate embodied energy
+or financing costs into the framework for empirical analysis. 
+\citeauthor{Borenstein:2015aa} is, however, 
+the only author to treat the financial side of 
+embodied energy or maintenance and disposal effects. 
+\citet{Borenstein:2015aa} postulates the macro effect, 
+but does not operationalize the link between micro and macro levels, 
+earning \rating{25} in the ``Macro effect'' row. 
+No other framework even discusses the link between macro and micro rebound effects, 
+leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
+(apart from \citet{Borenstein:2015aa}). 
+Our framework operationalizes the link between micro and macro levels, 
+via the macro factor ($k$), 
+but more work can be done in this area.
+Thus, ``This paper (2023)'' earns \rating{50} in the ``Macro effect'' row.
+Finally, all previous frameworks assume constant price elasticities and
+implicitly marginal or small improvements in efficiency, 
+excluding the numerically precise analysis of important non-incremental upgrades
+where price elasticities are likely to vary. 
+Therefore, all previous frameworks earn \rating{0} in the 
+``Non-marginal energy service price changes'' row.
+
+Table~\ref{tab:previous_frameworks} shows that 
+previous frameworks contain many key pieces, 
+providing starting points from which to develop 
+our rebound analysis framework.
+A left-to-right reading of the table 
+demonstrates that previous frameworks start from microeconomic
+consumer theory and move towards more rigorous theoretical treatment over time,
+with recent frameworks making important advanced theoretical contributions
+at the expense of empirical applicability.
+In the end, no previous rebound analysis framework 
+combines all rebound effects
+across energy, expenditure, and consumption aspects with 
+a detailed model of consumer preferences, 
+non-marginal energy service price changes, and
+empirical applicability 
+for the simplest case (understandable across disciplines)
+of a single fuel and a single energy service.
+In particular, 
+assessing the rebound implications of differential capital costs,
+non-marginal price changes, and the macro effect
+required conceptual development
+as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
+(Development of empirical applications is left for Part~II.)
+This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
+hence we fill the ``This paper (2023)'' column 
+with filled circles (\rating{100})
+in nearly all rows.
+By so doing, we enhance clarity in the field of energy rebound.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this paper (Part~I),
+we developed a rigorous analytical framework that
+includes all rebound effects
+across energy, expenditure, and consumption aspects with 
+a detailed model of consumer preferences and
+non-marginal energy service price changes
+in an operational manner
+for the 
+simplest case of a single fuel and a single energy service.
+With
+careful explication of rebound effects and 
+clear derivation of rebound expressions,
+we advance the analytical foundations for empirical analyses and
+facilitate interdisciplinary understanding of rebound phenomena
+toward the goal of enhancing clarity in the field of energy rebound and
+enabling more robust rebound calculations
+for sound energy and climate policy.
+
+Future work could be pursued in several areas. 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item Other utility models
+        (besides the CES utility model, but not a Cobb-Douglas utility model) 
+        could be explored for the substitution effect.
+  
+  \item This framework could be extended to producer-sided energy rebound effects.
+  
+  \item This framework could be extended to include some of the advanced topics
+        in \citet{Chan2015} and \citet{Wang2021}, 
+        such as multiple fuels or energy services,
+        more than one other consumption good, and
+        nested utility functions with intermediate inputs.
+        
+  \item This framework could be extended to include fuel-switching EEUs,
+        wherein the upgraded device uses a different fuel from the original device.
+        
+  \item The greenhouse gas emissions implications of energy rebound
+        could be evaluated using this framework,
+        provided that the primary energy associated with final energy
+        purchases were available. 
+        \citet{Borenstein:2015aa} went some way to analyzing emissions
+        and could provide a starting point for such work.
+        The capability to analyze fuel-switching EEUs
+        will be important for analyzing the greenhouse gas emissions
+        implications of many EEUs that involve electrification, 
+        such as the transition to all-electric vehicles and 
+        the conversion of natural gas and oil furnaces to heat pumps 
+        for home heating.
+  
+\end{enumerate*}
+
+In Part~II of this paper,
+we attempt to bring further clarity to rebound analysis
+in three ways. 
+First, 
+we develop a way to visualize 
+the energy, expenditure, and consumption aspects
+of rebound effects.
+Second, we apply the framework to two EEUs:
+an upgraded car and an upgraded electric lamp.
+Finally, we provide results of rebound calculations for the two examples.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Competing interests}
+\label{sec:competing_interests}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Declarations of interest: none.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Author contributions}
+\label{sec:author_contributions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Author contributions for this paper (Part~I of the two-part paper) are shown in Table~\ref{tab:credit1}.
+
+\begin{table}[h]
+\begin{center}
+\caption{Author contributions.} 
+\begin{tabular}{r c c c}
+  \toprule
+                              & MKH          & GS           & PEB          \\
+  \midrule
+  Conceptualization           & \rating{100} & \rating{100} &              \\
+  Methodology                 & \rating{100} & \rating{100} & \rating{100} \\
+  Software                    &              &              &              \\
+  Validation                  & \rating{100} &              & \rating{100} \\
+  Formal analysis             &              &              &              \\
+  Investigation               & \rating{100} & \rating{100} &              \\
+  Resources                   & \rating{100} & \rating{100} & \rating{100} \\
+  Data curation               &              &              &              \\
+  Writing--original draft     & \rating{100} & \rating{100} &              \\
+  Writing--review \& editing  & \rating{100} & \rating{100} & \rating{100} \\
+  Visualization               &              &              &              \\
+  Supervision                 & \rating{100} &              &              \\
+  Project administration      & \rating{100} &              &              \\
+  Funding acquisition         &              &              & \rating{100} \\
+\bottomrule
+\end{tabular}
+\label{tab:credit1}
+\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%List funding sources in this standard way to facilitate compliance to funder's requirements: Funding: This work was supported by the National Institutes of Health [grant numbers xxxx, yyyy]; the Bill \& Melinda Gates Foundation, Seattle, WA [grant number zzzz]; and the United States Institutes of Peace [grant number aaaa].
+
+%It is not necessary to include detailed descriptions on the program or type of grants and awards. When funding is from a block grant or other resources available toa university, college, or other research institution, submit the name of the institute or organization that provided the funding.
+
+%If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
+
+Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
+Council, supported under EPSRC Fellowship award EP/R024254/1.
+The authors benefited from discussions with 
+Daniele Girardi (University of Massachusetts at Amherst) and 
+Christopher Blackburn (Bureau of Economic Analysis).
+The authors are grateful for comments from internal reviewers
+Becky Haney and Jeremy Van Antwerp (Calvin University); 
+Nathan Chan (University of Massachusetts at Amherst); and 
+Zeke Marshall (University of Leeds).
+The authors appreciate the many constructive comments 
+on a working paper version of this article from 
+Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
+Harry Saunders (Carnegie Institution for Science), and
+David Stern (Australian National University).
+Finally, the authors thank the students of MKH's Fall 2019 
+Thermal Systems Design course (ENGR333) at Calvin University
+who studied energy rebound for many energy conversion devices
+using an early version of this framework.
+
+% No need for this section label, because BibTeX already provides a "References" heading.
+% \section*{References}
+
+{
+\scriptsize
+\bibliography{HSB_refs}
+}
+
+
+\clearpage
+
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+% Gives a helpful "Appendices" label
+\section*{Appendices}
+
+% Labels each appendix as A, B, C, etc. instead of Appendix A, Appendix B, Appendix C, etc.
+\renewcommand{\thesection}{\Alph{section}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nomenclature}
+\label{sec:nomenclature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/nomenclature_framework.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivation of the rigorous analytical framework}
+\label{sec:derivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/derivation.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Utility models and elasticities}
+\label{sec:utility_and_elasticities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<UtilityAppendix, child="pieces/utility_and_elasticities.Rnw">>=
+@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proof: Income preference equations satisfy the budget constraint}
+\label{sec:proof_income_elasticities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/proof_income_elasticities.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Other goods expenditures and constant $p_o$}
+\label{sec:other_goods_expenditures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/other_goods_expenditures.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Respending and the
+marginal propensity to consume (MPC)}
+\label{sec:income_macro_mpc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<MPCAppendix, child="pieces/mpc.Rnw">>=
+@
+
+
+
+
+\end{document}

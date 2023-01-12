@@ -1,0 +1,125 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+% This file contains the derivation for substitution effect rebound and net savings.
+
+\begin{landscape}
+
+\linespread{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Substitution Effect %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\derivheader{\refstepcounter{table} Table~\thetable \label{tab:subeffect}. \bf{\SubEffect}}
+
+\sectionsep{}
+
+%%%%%%%%%% Before Substitution Effect %%%%%%%%%%
+\derivsection{before ($*$)}
+{
+% Before substitution energy
+\begin{equation}
+  \Eacctbsub{} \tag{\ref{eq:E_acct_aemp}}
+\end{equation}
+}
+{
+% Before substitution financial
+\begin{equation}
+  \Macctbsub{} \tag{\ref{eq:M_acct_aemp}}
+\end{equation}
+}
+
+\sectionsep{}
+
+
+%%%%%%%%%% After Substitution Effect %%%%%%%%%%
+\derivsection{after ($\wedge$)}
+{
+% After substitution energy
+\begin{equation} \label{eq:E_acct_asub}
+  \Eacctasub{}
+\end{equation}
+}
+{
+% After substitution financial
+\begin{equation} \label{eq:M_acct_asub}
+  \Macctasub{}
+\end{equation}
+}
+
+\sectionsep{}
+
+%%%%%%%%%% Derivations for Substitution Effect %%%%%%%%%%
+\derivsection{}
+% Substitution effect: energy differences
+{
+%%%%%%%%%% Energy Substitution Effect %%%%%%%%%%
+~
+  
+Take differences to obtain the change in energy consumption, $\Delta \rasub{E} \equiv \rasub{E} - \rbsub{E}$.
+%
+\begin{equation}
+  \Delta \rasub{E} = \Delta \rasub{E}_s 
+                      + \cancelto{0}{\Delta \rasub{E}_{emb}} 
+                      + (\cancelto{0}{\Delta \rasub{C}_{\md}} + \Delta \rasub{C}_o) I_E
+\end{equation}
+%
+Thus, 
+%
+\begin{equation}
+  \Delta \rasub{E} = \Delta \rasub{E}_s + \Delta \rasub{C}_o I_E \; .
+\end{equation}
+%
+All terms are energy takeback rates.
+Divide by $\Sdot$
+to create rebound terms.
+%
+\begin{equation}
+    \frac{\Delta \rasub{E}}{\Sdot} = \frac{\Delta \rasub{E}_s}{\Sdot} + \frac{\Delta \rasub{C}_o I_E}{\Sdot}
+\end{equation}
+%
+Define 
+$Re_{sub} \equiv \frac{\Delta \rasub{E}}{\Sdot}$, 
+$Re_{dsub} \equiv \frac{\Delta \rasub{E}_s}{\Sdot}$, and
+$Re_{isub} \equiv \frac{\Delta \rasub{C}_o I_E}{\Sdot}$,
+such that
+%
+\begin{equation} \label{eq:Re_sub_def}
+  Re_{sub} = Re_{dsub} + Re_{isub} \; .
+\end{equation}
+
+}
+{
+%%%%%%%%%% Financial Substitution Effect %%%%%%%%%%
+~
+  
+Use the monetary constraint ($\rbsub{M} = \rasub{M}$) to obtain
+
+\begin{align}
+  p_E \raempl{E}_s &+ \cancel{\raempl{C}_{cap}} + \cancel{\raempl{C}_{\md}} + \raempl{C}_o + \raempl{N} \nonumber \\
+                   &= p_E \rasub{E}_s + \cancel{\rasub{C}_{cap}} + \cancel{\rasub{C}_{\md}} + \rasub{C}_o + \rasub{N} \; .
+\end{align}
+%
+For the substitution effect, there is no change in capital or maintenance and disposal costs
+($\rasub{C}_{cap} = \rbsub{C}_{cap}$ and $\rasub{C}_{\md} = \rbsub{C}_{\md}$).
+Solving for $\Delta \rasub{N} \equiv \rasub{N} - \rbsub{N}$ gives
+%
+\begin{equation} \label{eq:N_dot_hat_eqn}
+  \Delta \rasub{N} = - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
+\end{equation}
+%
+The substitution effect adjusts net savings relative to $\rbsub{N}$
+by $\Delta \rasub{N}$.
+Thus, $\rasub{N} = \rbsub{N} + \Delta \rasub{N}$.
+Substituting Eqs.~(\ref{eq:N_dot_star_empl}), (\ref{eq:G_dot}), and~(\ref{eq:N_dot_hat_eqn})
+yields
+%
+\begin{equation} \label{eq:N_dot_after_sub}
+  \rasub{N} = \rate{G} - \Delta \rbsub{C}_{cap} - \Delta \rbsub{C}_{\md} - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
+\end{equation}
+%
+}
+
+\end{landscape}
