@@ -1222,25 +1222,25 @@ A second constraint is that net savings are spent completely on
     
 \end{enumerate*}
 
-The proportions in which income-effect spending is allocated depends on preferences, 
-which prescribe an income expansion path. 
-The CES utility function 
-allocates spending on the energy service and other goods 
-in the same proportion as post-substitution-effect 
-expenditures on the energy service and other goods,
-due to its homotheticity.%
-\footnote{
-  Homothetic consumer preferences are independent 
-  of the magnitude of the consumer's consumption. 
-  In this framework, homotheticity means that 
-  the proportions of expenditures on the energy service ($\rate{C}_s$)
-  and on other goods ($\rate{C}_o$) remain the same across the income effect. 
-  Because prices are exogenous in the microeconomic portion of the framework, 
-  the proportions of consumption rates of the energy service and other goods
-  ($\rate{q}_s$ and $\rate{q}_o$, respectively)
-  are also unchanged across the income effect.
-}
-%
+The proportions in which income-effect spending is allocated
+depends on the utility model, 
+which prescribes the income expansion path for consumption. 
+Given post-EEU prices, maximized CES utility 
+means spending in the same proportion on the energy service and other goods 
+across the income effect, 
+a property known as homotheticity.
+% \footnote{
+%   Homothetic consumer preferences are independent
+%   of the magnitude of the consumer's consumption.
+%   In this framework, homotheticity means that
+%   the proportions of expenditures on the energy service ($\rate{C}_s$)
+%   and on other goods ($\rate{C}_o$) remain the same across the income effect.
+%   Because prices of other goods are exogenous in the microeconomic portion of the framework,
+%   the proportions of consumption rates of the energy service and other goods
+%   ($\rate{q}_s$ and $\rate{q}_o$, respectively)
+%   are also unchanged across the income effect.
+% }
+% %
 This constraint is satisfied by construction below, 
 particularly via an effective income term ($\Mdothatprime$).
 However, this framework could accommodate non-homothetic preferences
