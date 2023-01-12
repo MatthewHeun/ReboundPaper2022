@@ -655,11 +655,11 @@ $\bempl{\eta} < \amacro{\eta}$.
 The EEU is not costless, so
 the upgraded device may be more expensive to purchase
 than a like-for-like replacement of the original device.
-We call this increased capital cost, 
-$\bempl{C}_{cap} < \amacro{C}_{cap}$. 
+We call this increased ``capital cost'' 
+($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
 It may also 
 be more costly to maintain and dispose of the upgraded device
-$\rbempl{C}_{\md} < \ramacro{C}_{\md}$. 
+($\rbempl{C}_{\md} < \ramacro{C}_{\md}$). 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
