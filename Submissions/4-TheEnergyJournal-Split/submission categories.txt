@@ -1,9 +1,0 @@
-Article metadata categories
-
-* Energy and the economy (broadly)
-* Energy and environment (don't select the broad category)
-	- Climate change and greenhouse gases
-	- Policy and regulation
-* Energy efficiency (don't select the broad category)
-	- Policy issues
-	- Other
