@@ -295,7 +295,7 @@ C_dot_md_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_v
 
 # Parameters for second table
 q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
-M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 0)
 p_E_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 2)
 f_Cs_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$f_Cs_orig, digits = 3)
 k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k, digits = 1)
@@ -521,7 +521,7 @@ C_dot_md_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star
 
 # Second table
 q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
-M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 2)
+M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 0)
 p_E_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 4)
 f_Cs_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$f_Cs_orig, digits = 7)
 k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$k, digits = 1)
