@@ -894,7 +894,7 @@ because macro effects lead to additional indirect energy consumption.
 \label{sec:expenditure_path_graphs}
 %------------------------------
 
-The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph}) shows 
+The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows 
 the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
 the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
@@ -928,7 +928,7 @@ in the device user's decision function.
 %------------------------------
 
 The consumption plane 
-(See Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} show
+(See Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
 the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
 the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) on the $y$-axis.
 Iso-expenditure loci of indexed energy service and other goods demand,
