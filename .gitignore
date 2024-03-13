@@ -74,3 +74,10 @@ ExecSumm_results.aux
 ExecSumm_results.log
 ExecSumm_results.pdf
 ExecSumm_results.synctex.gz
+HSB_framework_*.pdf
+HSB_results_*.pdf
+diff.aux
+diff.log
+diff.out
+diff.pdf
+diff.tex
