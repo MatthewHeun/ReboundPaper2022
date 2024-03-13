@@ -31,7 +31,6 @@
 \usepackage[most]{tcolorbox}    % For color highlighting of text
 \usepackage{tikz}               % For diagrams
 \usetikzlibrary{arrows,positioning}
-\usepackage{ulem}               % For strikeout command (\sout)
 \usepackage{xcolor}             % For ... colors
 \usepackage{xr}                 % For external references to the results paper
 \externaldocument[PartII-]{HSB_results}
