@@ -451,8 +451,8 @@ of the single device and its user and
 in our framework comprises three effects: 
 an emplacement effect, 
 a substitution effect, and
-an income effect, each of which 
-partitions direct and indirect rebound effects.
+an income effect, 
+with direct and indirect partitions for each.
 All combinations are possible.
 The direct rebound effect can be partitioned into 
 a direct emplacement effect, 
@@ -611,7 +611,7 @@ that consumes energy
 We use ``rate'' to indicate any quantity measured per unit time, 
 such as a flow of energy per year or a flow of income per year.
 None of the rates in this paper indicate exponential (\%/yr) changes.
-Symbolically, rates are identified by a single dot above the symbol,
+Rates are identified by a single dot above the symbol,
 a convention adopted from the engineering literature where, e.g.,
 $\rate{x}$ often indicates a velocity in m/s (meters per second), 
 $\rate{m}$ often indicates a mass flow rate in kg/s (kilograms per second), and
@@ -1036,7 +1036,7 @@ After emplacement of the more efficient device
 (but before the substitution effect), 
 the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
 After compensating variation tightens the budget constraint,
-consumption at the new prices yields utility
+consumption at the new energy service price yields utility
 at the same level as prior to the EEU
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
@@ -1674,7 +1674,7 @@ leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
 Our framework operationalizes the link between micro and macro levels, 
 via the macro factor ($k$), 
 but more work can be done in this area.
-Thus, ``This paper (2023)'' earns \rating{50} in the ``Macro effect'' row.
+Thus, ``This paper (2024)'' earns \rating{50} in the ``Macro effect'' row.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly marginal or small improvements in efficiency, 
 excluding the numerically precise analysis of important non-incremental upgrades
