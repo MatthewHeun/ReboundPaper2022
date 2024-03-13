@@ -735,7 +735,7 @@ aspects of rebound phenomena has not been
 done in a numerically precise manner 
 with a set of mutually consistent graphs.
 
-We introduce rebound planes
+We introduce \emph{rebound planes}
 to bring clarity to
 (direct and indirect) rebound and 
 adjustments (via emplacement, substitution, income, and macro effects)
@@ -1093,7 +1093,7 @@ embodied energy and capital cost rates.
 The substitution effect along segments \starc{} and \chat{}
 will together, by definition, lead to lower expenditure 
 due to the energy service price decline and
-the budget reducing compensating variation (CV). 
+the budget-reducing compensating variation (CV). 
 The income effect (segments \hatd{} and \dbar{}) must bring expenditure
 back to the original expenditure line 
 (equal to the budget constraint set by income in dollar or nominal terms) 
@@ -1324,7 +1324,7 @@ can be found in Appendix~\ref{sec:sensitivity_analyses}.
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
-Armed with the parameter values from 
+Armed with the data in 
 Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
 and the equations in Section~\ref{PartI-sec:framework} of Part~I,
 we calculate important values at each rebound stage,
@@ -1665,7 +1665,7 @@ In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
 displacement along an indifference curve alters the price elasticities,
 and in particular, that the uncompensated own price elasticity declines
 in magnitude. The decline slows the rate of additional consumption of
-energy intensive driving, and attenuates the microeconomic rebound
+energy-intensive driving, and attenuates the microeconomic rebound
 relative to assuming constant price elasticities.
 
 The \inceffect{} also has two components:
@@ -1705,7 +1705,7 @@ energy service (transportation).
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
-With the parameter values from 
+With the data in 
 Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
 and the equations in Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
@@ -2299,7 +2299,8 @@ because of the high embodied energy of the EV's battery
 relative to the internal combustion engine vehicle. 
 Although the LED lamp's embodied energy is larger than the 
 incandescent lamp's embodied energy, 
-the LED lamp's embodied energy rebound is negative ($\Sexpr{f_lmp("Re_emb")}$\%),
+the LED lamp's embodied energy rebound is 
+small but negative ($\Sexpr{f_lmp("Re_emb")}$\%),
 due to the longer life of the LED lamp compared to the incandescent lamp.
 Thus, each EEU should be analyzed independently for its embodied energy rebound.
 
@@ -2360,14 +2361,13 @@ enable two types of observations, comparing
 @
 
 First, we see that none of the comparison studies
-report all rebound effects, as we have done
-in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
+report all rebound effects considered in this paper. 
 Also, no previous studies report either emplacement rebound 
 ($Re_{empl} = Re_{emb} + Re_{\md}$)
 or include all of direct and indirect, substitution and
 income microeconomic rebound effect combinations.
 In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
-In fact, only 4 or 5 of the 10 studies
+In fact, only 4 and 5 of the 10 studies
 in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
 Therefore, by carefully including all rebound components 
 in the framework and 
@@ -2471,7 +2471,7 @@ and our bottom-up approach for calculating total rebound.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we advance clarity to the field of energy rebound
+In this paper (Part~II), we advance clarity in the field of energy rebound
 by 
 %
 \begin{enumerate*}[label={(\roman*)}]
