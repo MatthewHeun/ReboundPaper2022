@@ -680,8 +680,7 @@ on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$),
 annualized capital costs for the device ($\rorig{C}_{cap}$), 
 annualized costs for maintenance and disposal of the device ($\rorig{C}_{\md}$), and 
 other goods and services ($\rorig{C}_o$).
-The budget constraint
-for the device user is
+The budget constraint for the device user is
 
 \begin{equation} \label{eq:budget_constraint}
   \rorig{M} = \rorig{C}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
@@ -689,6 +688,14 @@ for the device user is
 %
 where 
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
+Substituting the original price and quantity of energy service consumption 
+and other goods consumption
+into Eq.~\ref{eq:budget_constraint} gives
+
+\begin{equation}
+  \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \orig{p}_o \rorig{q}_o \; .
+\end{equation}
+%
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through the four rebound effects

@@ -1,0 +1,284 @@
+
+
+% These graphs were removed from the paper at 
+% the suggestion of a reviewer.
+% 
+% ---MKH, 13 Mar 2024
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%
+% Notional energy plane
+%%%%%%%%%%%%%%%
+
+
+
+<<ExampleEnergyPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional energy plane. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+stage_size <- 10
+orig_size <- stage_size
+star_size <- stage_size
+hat_size <- stage_size - 3
+bar_size <- stage_size - 5
+tilde_size <- stage_size - 5
+
+stage_colour <- "black"
+abcd_size <- 4
+abcd_colour <- "darkgray"
+
+annotation_angle <- -45.6
+annotation_size <- 4
+annotation_colour <- "black"
+
+example_arrow_angle <- 19.0 * pi/180
+example_arrow_size <- 0.5 # width
+
+example_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                         1.01, 1.008, 'degree',
+                                           stage_colour, orig_size, 0,
+                                         0.11, 1.008, 'a',
+                                           abcd_colour, abcd_size, 0,
+                                         0.085, 0.973, 'b',
+                                           abcd_colour, abcd_size, 0,
+                                         0.085, 0.95, '"*"',
+                                           stage_colour, star_size, 0,
+                                         0.09, 0.935, 'c',
+                                           abcd_colour, abcd_size, 0,
+                                         0.2432, 0.923, '"^"',
+                                           stage_colour, hat_size, 0,
+                                         0.2727, 0.932, 'd',
+                                           abcd_colour, abcd_size, 0,
+                                         0.295, 1.033, 'bold("_")',
+                                           stage_colour, bar_size, 0,
+                                         0.29, 1.126, '"~"',
+                                           stage_colour, tilde_size, 0,
+                                         0.04, 0.923, 'Hyperconservation',
+                                           annotation_colour,
+                                           annotation_size-1,
+                                           annotation_angle,
+                                         0.02, 1.043, 'Re[tot] == 0*"%"',
+                                           annotation_colour,
+                                           annotation_size,
+                                           annotation_angle,
+                                         0.033, 1.004, 'Re[empl]',
+                                           annotation_colour,
+                                           annotation_size - 1,
+                                           annotation_angle + 90,
+                                         0.21, 0.90, 'Re[sub]',
+                                           annotation_colour,
+                                           annotation_size - 1,
+                                           annotation_angle + 90,
+                                         0.39, 0.936, 'Re[inc]',
+                                           annotation_colour,
+                                           annotation_size,
+                                           annotation_angle + 90,
+                                         0.68, 0.935, 'Re[macro]',
+                                           annotation_colour,
+                                           annotation_size,
+                                           annotation_angle + 90,
+                                         0.754, 1.1, 'Re[tot] == 100*"%"',
+                                           annotation_colour,
+                                           annotation_size,
+                                           annotation_angle,
+                                         0.95, 1.1, 'Backfire',
+                                           annotation_colour,
+                                           annotation_size,
+                                           annotation_angle)
+example_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
+                                     # Re_empl arrow
+                                     0.078, 1.01, example_arrow_angle,
+                                       -0.063, annotation_colour, example_arrow_size,
+                                     # Re_sub arrow
+                                     0.249, 0.904, example_arrow_angle,
+                                       0.042, annotation_colour, example_arrow_size,
+                                     # Re_inc arrow
+                                     0.329, 0.905, example_arrow_angle,
+                                       0.154, annotation_colour, example_arrow_size,
+                                     # Re_macro arrow
+                                     0.622, 0.904, example_arrow_angle,
+                                       0.14, annotation_colour, example_arrow_size)
+rebound_results %>%
+  ReboundTools::path_graphs(cases = "Example",
+                               graph_types = "Energy",
+                               indexed = TRUE) +
+  ggplot2::xlim(0, 1.1) +
+  ggplot2::ylim(0.9, 1.15) +
+  ggplot2::xlab(expression(dot(E)[dir] * " [MJ/yr]")) +
+  ggplot2::ylab(expression(dot(E)[indir] * " [MJ/yr]")) +
+  ggplot2::geom_spoke(data = example_Re_arrows,
+                        mapping = ggplot2::aes(x = x,
+                                               y = y,
+                                               angle = angle,
+                                               radius = radius,
+                                               colour = colour),
+                        arrow = ggplot2::arrow(length = ggplot2::unit(0.1,"cm"))) +
+  ggplot2::geom_text(data = example_energy_labels,
+                     mapping = ggplot2::aes(x = x,
+                                            y = y,
+                                            label = lab,
+                                            colour = colour,
+                                            size = size,
+                                            angle = angle),
+                     parse = TRUE) +
+  MKHthemes::xy_theme() +
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
+
+
+
+
+
+%%%%%%%%%%%%%%%
+% Notional expenditure plane
+%%%%%%%%%%%%%%%
+
+<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+cost_line_angle <- -14
+example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
+                                       1.01, 1.003, 'degree', 
+                                       stage_colour, orig_size, 0,
+                                       0.098, 1.003, 'a', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.09, 0.972, 'b', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.128, 0.955, '"*"', 
+                                       stage_colour, star_size, 0,
+                                       0.09, 0.936, 'c', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.24, 0.9385, '"^"', 
+                                       stage_colour, hat_size, 0,
+                                       0.283, 0.937, 'd', 
+                                       abcd_colour, abcd_size, 0,
+                                       0.285, 1.034, 'bold("_")',
+                                       stage_colour, bar_size, 0,
+                                       0.635, 1.019, 'Original~expenditure', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.43, 0.9445, 'After~emplacement', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.55, 0.9835, 'After~expected~savings', 
+                                       annotation_colour, annotation_size, cost_line_angle,
+                                       0.17, 0.9425, 'After~CV', 
+                                       annotation_colour, annotation_size-1, cost_line_angle)
+
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Example", 
+                               graph_types = "Expenditure", 
+                               indexed = TRUE) + 
+  # ggplot2::xlim(0, 1.1) +
+  # ggplot2::ylim(0.9995, 1.0005) +
+  ggplot2::xlab(expression(dot(C)[dir] * " [$/yr]")) +
+  ggplot2::ylab(expression(dot(C)[indir] * " [$/yr]")) +
+  
+  ggplot2::geom_text(data = example_cost_labels,
+                     mapping = ggplot2::aes(x = x,
+                                            y = y,
+                                            label = lab,
+                                            colour = colour,
+                                            size = size,
+                                            angle = angle),
+                     parse = TRUE) +
+  MKHthemes::xy_theme() + 
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
+
+
+
+
+%%%%%%%%%%%%%%%
+% Notional consumption plane
+%%%%%%%%%%%%%%%
+
+<<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption plane. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+orig_line_label_size <- orig_size - 3
+star_line_label_size <- star_size - 4
+hat_line_label_size <- hat_size - 3
+bar_line_label_size <- bar_size - 1
+r_line_label_size <- abcd_size
+i_line_label_size <- abcd_size
+line_label_colour <- "darkgray"
+  
+labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
+                          1.05, 1.005, 'degree', 
+                            annotation_colour, orig_size,
+                          1.09, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.14, 1.0052, 'a', 
+                            abcd_colour, abcd_size,
+                          1.18, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.22, 1.006, 'b', 
+                            abcd_colour, abcd_size,
+                          1.258, 1.0022, '","', 
+                            annotation_colour, orig_size-3,
+                          1.315, 1.001, '"*"', 
+                            annotation_colour, star_size,
+                          0.7, 1.01, 'degree', 
+                            line_label_colour, orig_line_label_size,
+                          1.56, 0.97, 'degree',
+                            line_label_colour, orig_line_label_size,
+                          0.7, 0.995, '"*"', 
+                            line_label_colour, star_line_label_size,
+                          3.5, 0.981, '"*"', 
+                            line_label_colour, star_line_label_size,
+                          0.96, 0.98, 'c', 
+                            abcd_colour, abcd_size,
+                          2.2, 0.9834, '"^"',  
+                            annotation_colour, hat_size,
+                          0.7, 0.989, '"^"',
+                            line_label_colour, hat_line_label_size,
+                          3.5, 0.975, '"^"', 
+                            line_label_colour, hat_line_label_size,
+                          2.52, 0.984, 'd', 
+                            abcd_colour, abcd_size,
+                          2.43, 1.085, 'bold("_")',  
+                            annotation_colour, bar_size,
+                          0.7, 1.0873, '"_"',
+                            line_label_colour, bar_line_label_size,
+                          3.5, 1.073, '"_"',
+                            line_label_colour, bar_line_label_size,
+                          2.18, 0.97, 'r',
+                            line_label_colour, r_line_label_size,
+                          2.6, 1.15, 'r',  
+                            line_label_colour, r_line_label_size,
+                          0.75, 1.027, 'i*degree', 
+                            line_label_colour, i_line_label_size,
+                          3.4, 0.981, 'i*degree', 
+                            line_label_colour, i_line_label_size,
+                          0.75, 1.143, 'bar(i)', 
+                            line_label_colour, i_line_label_size,
+                          3.4, 1.084, 'bar(i)', 
+                            line_label_colour, i_line_label_size,
+                          )
+rebound_results %>% 
+  ReboundTools::path_graphs(cases = "Example", 
+                               graph_types = "Consumption") + 
+  ggplot2::xlim(0.7, 3.5) +
+  ggplot2::ylim(0.97, 1.15) +
+  ggplot2::geom_text(data = labels, 
+                     mapping = ggplot2::aes(x = x, y = y, 
+                                            label = lab, 
+                                            colour = colour, 
+                                            size = size), 
+                     parse = TRUE) +
+  MKHthemes::xy_theme() + 
+  # remove axis labels and ticks
+  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
+                 axis.ticks.x = ggplot2::element_blank(),
+                 axis.text.y = ggplot2::element_blank(),
+                 axis.ticks.y = ggplot2::element_blank(),
+                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
+@
+

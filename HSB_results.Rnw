@@ -721,7 +721,6 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 \end{landscape}
 
 
-
 %++++++++++++++++++++++++++++++
 \subsection{Visualization}
 \label{sec:path_graphs}
@@ -746,6 +745,14 @@ adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
 Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
+The order of presentation below is 
+energy first, followed by expenditure, ending with consumption,
+because the EEU triggers rebound 
+(the topic of this article and visible in the energy plane), 
+but is caused by expenditures on the EEU and further monetary adjustments
+(visible in the expenditure plane), 
+which are calculated via details about substitution
+(visible in the consumption plane).
 
 Axes of the rebound planes
 represent direct and indirect effects, with 
@@ -773,15 +780,11 @@ Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
 Effects that include both direct and indirect rebound
 will show displacement along both axes and 
 create a path in the $x$-$y$ plane.
-(See Appendix~\ref{sec:graph_details} for 
-detailed mathematical descriptions for constructing paths on the rebound planes.)
+See Appendix~\ref{sec:graph_details} for 
+detailed mathematical descriptions for constructing paths on the rebound planes, and 
+see Section~\ref{sec:results} for rebound path graphs 
+for EEU examples of a car and an electric lamp.
 
-Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
-notional energy, expenditure, and consumption planes,
-respectively.
-The notional planes are not quantified, i.e., there are no scales on the axes.
-Later (Section~\ref{sec:results}), 
-rebound planes with numerical scales illustrate the car and lamp examples.
 
 \begin{table}
 \footnotesize
@@ -807,14 +810,20 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 \label{tab:path_graph_segments}
 \end{table}
 
+Each rebound plane is described in the subsections below. 
+Reference to the rebound planes in
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}
+below will be beneficial.
+
 
 %------------------------------
 \subsubsection{The energy plane}
 \label{sec:energy_path_graphs}
 %------------------------------
 
-Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy plane, with 
-the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
+The energy plane 
+(see Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph} below)
+shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
 and
 the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
 \footnote{
@@ -830,128 +839,11 @@ Lines with negative slope through points
 $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
 indicate energy consumption isoquants
 at key points.
-Table~\ref{tab:path_graph_segments} shows 
-segments and rebound effects for all rebound planes.
 Note that segment \bartilde{} appears only in the energy plane, 
 because the framework tracks energy consumption but not expenditures or consumption
 for the macro effect.
 
-<<ExampleEnergyPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional energy plane. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
-stage_size <- 10
-orig_size <- stage_size
-star_size <- stage_size
-hat_size <- stage_size - 3
-bar_size <- stage_size - 5
-tilde_size <- stage_size - 5
-
-stage_colour <- "black"
-abcd_size <- 4
-abcd_colour <- "darkgray"
-
-annotation_angle <- -45.6
-annotation_size <- 4
-annotation_colour <- "black"
-
-example_arrow_angle <- 19.0 * pi/180
-example_arrow_size <- 0.5 # width
-
-example_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
-                                         1.01, 1.008, 'degree', 
-                                           stage_colour, orig_size, 0,
-                                         0.11, 1.008, 'a', 
-                                           abcd_colour, abcd_size, 0,
-                                         0.085, 0.973, 'b', 
-                                           abcd_colour, abcd_size, 0,
-                                         0.085, 0.95, '"*"', 
-                                           stage_colour, star_size, 0,
-                                         0.09, 0.935, 'c', 
-                                           abcd_colour, abcd_size, 0,
-                                         0.2432, 0.923, '"^"', 
-                                           stage_colour, hat_size, 0,
-                                         0.2727, 0.932, 'd', 
-                                           abcd_colour, abcd_size, 0,
-                                         0.295, 1.033, 'bold("_")', 
-                                           stage_colour, bar_size, 0,
-                                         0.29, 1.126, '"~"', 
-                                           stage_colour, tilde_size, 0,
-                                         0.04, 0.923, 'Hyperconservation', 
-                                           annotation_colour, 
-                                           annotation_size-1,
-                                           annotation_angle,
-                                         0.02, 1.043, 'Re[tot] == 0*"%"', 
-                                           annotation_colour, 
-                                           annotation_size, 
-                                           annotation_angle,
-                                         0.033, 1.004, 'Re[empl]', 
-                                           annotation_colour,  
-                                           annotation_size - 1, 
-                                           annotation_angle + 90,
-                                         0.21, 0.90, 'Re[sub]', 
-                                           annotation_colour, 
-                                           annotation_size - 1,
-                                           annotation_angle + 90,
-                                         0.39, 0.936, 'Re[inc]', 
-                                           annotation_colour, 
-                                           annotation_size, 
-                                           annotation_angle + 90,
-                                         0.68, 0.935, 'Re[macro]', 
-                                           annotation_colour, 
-                                           annotation_size, 
-                                           annotation_angle + 90,
-                                         0.754, 1.1, 'Re[tot] == 100*"%"', 
-                                           annotation_colour, 
-                                           annotation_size, 
-                                           annotation_angle,
-                                         0.95, 1.1, 'Backfire', 
-                                           annotation_colour, 
-                                           annotation_size, 
-                                           annotation_angle)
-example_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
-                                     # Re_empl arrow
-                                     0.078, 1.01, example_arrow_angle, 
-                                       -0.063, annotation_colour, example_arrow_size,
-                                     # Re_sub arrow
-                                     0.249, 0.904, example_arrow_angle, 
-                                       0.042, annotation_colour, example_arrow_size,
-                                     # Re_inc arrow
-                                     0.329, 0.905, example_arrow_angle, 
-                                       0.154, annotation_colour, example_arrow_size,
-                                     # Re_macro arrow
-                                     0.622, 0.904, example_arrow_angle, 
-                                       0.14, annotation_colour, example_arrow_size) 
-rebound_results %>% 
-  ReboundTools::path_graphs(cases = "Example", 
-                               graph_types = "Energy", 
-                               indexed = TRUE) + 
-  ggplot2::xlim(0, 1.1) +
-  ggplot2::ylim(0.9, 1.15) +
-  ggplot2::xlab(expression(dot(E)[dir] * " [MJ/yr]")) +
-  ggplot2::ylab(expression(dot(E)[indir] * " [MJ/yr]")) +
-  ggplot2::geom_spoke(data = example_Re_arrows,
-                        mapping = ggplot2::aes(x = x,
-                                               y = y,
-                                               angle = angle,
-                                               radius = radius,
-                                               colour = colour),
-                        arrow = ggplot2::arrow(length = ggplot2::unit(0.1,"cm"))) +
-  ggplot2::geom_text(data = example_energy_labels,
-                     mapping = ggplot2::aes(x = x,
-                                            y = y,
-                                            label = lab,
-                                            colour = colour,
-                                            size = size,
-                                            angle = angle),
-                     parse = TRUE) +
-  MKHthemes::xy_theme() + 
-  # remove axis labels and ticks
-  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
-                 axis.ticks.x = ggplot2::element_blank(),
-                 axis.text.y = ggplot2::element_blank(),
-                 axis.ticks.y = ggplot2::element_blank(),
-                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
-@
-
-In the notional energy plane of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
+In the energy plane, 
 point $a$ lies on the $Re_{tot} = 0\%$ line
 indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
 is the point from which all rebound effects 
@@ -971,26 +863,11 @@ $Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
 with direct rebound in the $x$ direction and 
 indirect rebound in the $y$ direction.
 The region below and to the left of the $Re_{tot} = 0\%$ line
-in Fig.~\ref{fig:ExampleEnergyPathGraph}
 exhibits negative rebound, indicating hyperconservation.
 The region above and to the right of the $Re_{tot} = 100\%$ line 
 shows backfire, 
 i.e., greater total energy consumption after the EEU than before it. 
 
-In the notional energy plane (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
-emplacement rebound is negative ($Re_{empl} < 0$),
-because the upgraded device has a lesser
-embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$,
-as shown by point \emph{b} being below point \emph{a})
-and has a lesser energy consumption rate for maintenance and disposal 
-($\rbempl{E}_{\md} > \raempl{E}_{\md}$, 
-as shown by point $*$ being below point \emph{b})
-due to lower expenditure rates on these two categories
-compared to the original device.
-
-In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
-move in the negative $y$ direction,
-consistent with the description above.
 Segment \starc{} moves in the negative $y$ direction
 by definition of the indirect substitution effect,
 and segment \chat{} moves in the positive $x$ direction 
@@ -1017,8 +894,7 @@ because macro effects lead to additional indirect energy consumption.
 \label{sec:expenditure_path_graphs}
 %------------------------------
 
-A notional expenditure plane is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
-with 
+The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows 
 the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
 the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
@@ -1029,69 +905,9 @@ at the original prices.
 The line through the $*$ point is an isoquant for the
 cost of purchasing the original consumption bundle
 at the new prices.
-
-
-<<ExampleCostPathGraph, echo=FALSE, fig.cap="Notional expenditure plane. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
-cost_line_angle <- -14
-example_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
-                                       1.01, 1.003, 'degree', 
-                                       stage_colour, orig_size, 0,
-                                       0.098, 1.003, 'a', 
-                                       abcd_colour, abcd_size, 0,
-                                       0.09, 0.972, 'b', 
-                                       abcd_colour, abcd_size, 0,
-                                       0.128, 0.955, '"*"', 
-                                       stage_colour, star_size, 0,
-                                       0.09, 0.936, 'c', 
-                                       abcd_colour, abcd_size, 0,
-                                       0.24, 0.9385, '"^"', 
-                                       stage_colour, hat_size, 0,
-                                       0.283, 0.937, 'd', 
-                                       abcd_colour, abcd_size, 0,
-                                       0.285, 1.034, 'bold("_")',
-                                       stage_colour, bar_size, 0,
-                                       0.635, 1.019, 'Original~expenditure', 
-                                       annotation_colour, annotation_size, cost_line_angle,
-                                       0.43, 0.9445, 'After~emplacement', 
-                                       annotation_colour, annotation_size, cost_line_angle,
-                                       0.55, 0.9835, 'After~expected~savings', 
-                                       annotation_colour, annotation_size, cost_line_angle,
-                                       0.17, 0.9425, 'After~CV', 
-                                       annotation_colour, annotation_size-1, cost_line_angle)
-
-rebound_results %>% 
-  ReboundTools::path_graphs(cases = "Example", 
-                               graph_types = "Expenditure", 
-                               indexed = TRUE) + 
-  # ggplot2::xlim(0, 1.1) +
-  # ggplot2::ylim(0.9995, 1.0005) +
-  ggplot2::xlab(expression(dot(C)[dir] * " [$/yr]")) +
-  ggplot2::ylab(expression(dot(C)[indir] * " [$/yr]")) +
-  
-  ggplot2::geom_text(data = example_cost_labels,
-                     mapping = ggplot2::aes(x = x,
-                                            y = y,
-                                            label = lab,
-                                            colour = colour,
-                                            size = size,
-                                            angle = angle),
-                     parse = TRUE) +
-  MKHthemes::xy_theme() + 
-  # remove axis labels and ticks
-  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
-                 axis.ticks.x = ggplot2::element_blank(),
-                 axis.text.y = ggplot2::element_blank(),
-                 axis.ticks.y = ggplot2::element_blank(),
-                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
-@
-
-In the notional planes of
-Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
-embodied energy rates and capital cost rates
-(represented by segments \ab{} and \bstar{}) 
-move in the same direction (both in the negative $y$ direction).
-However, segments \ab{} and \bstar{} 
-could both move in the positive $y$ direction, or
+Segments \ab{} and \bstar{} 
+could both move in the positive $y$ direction, 
+they could both move in the negative $y$ direction, or
 they could move in opposite directions, 
 depending on the results of the independent analyses for 
 embodied energy and capital cost rates.
@@ -1111,11 +927,10 @@ in the device user's decision function.
 \label{sec:consumption_path_graphs}
 %------------------------------
 
-A notional consumption plane is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
-The indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
-the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
-%Iso-expenditure loci of indexed energy service and other goods demand,
-%are shown as lines with negative slope
+The consumption plane 
+(See Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
+the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
+the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) on the $y$-axis.
 Iso-expenditure loci of indexed energy service and other goods demand,
 i.e. budget constraints,
 are shown as lines with negative slope
@@ -1124,8 +939,6 @@ Note that budget constraints \circcirc{} and \barbar{}
 intersect at the $y$-axis,
 because the prices of other goods and services don't change
 as a result of the EEU.
-(The $x$-axis of Fig.~\ref{fig:ExampleConsPathGraph} does not extend to $0$ at the left, 
-so the intersection is not visible.)
 Emplacement (by itself) does not alter consumption patterns, so
 the rate of energy service consumption and 
 the rate of other goods consumption are
@@ -1163,107 +976,21 @@ The substitution effect is shown by segments
 \starc{} (the indirect component, which represents the decrease in other goods consumption) and
 \chat{} (the direct component, which represents the increase in energy service consumption).
 Although the substitution effect is calculated 
-on the consumption plane, 
+in the consumption plane, 
 its impact 
 can be seen in
-the energy and expenditures planes 
-(Figs.~\ref{fig:ExampleEnergyPathGraph}
-and~\ref{fig:ExampleCostPathGraph}, respectively).
+the energy and expenditure planes.
 
-The income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
+In the consumption plane, 
+the income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
 in the consumption plane.
-In the consumption plane, the pre- and post-income-effect 
+The pre- and post-income-effect 
 points ($\wedge$ and $-$, respectively)
 lie along the \rr{} ray, due to homotheticity.
 The increased consumption rate of the energy service is 
-represented by segment \hatd{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
-The increased consumption rate of other goods and services is 
-represented by segments \dbar{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
-
-
-<<ExampleConsPathGraph, echo=FALSE, warning=FALSE, fig.cap="Notional consumption plane. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
-orig_line_label_size <- orig_size - 3
-star_line_label_size <- star_size - 4
-hat_line_label_size <- hat_size - 3
-bar_line_label_size <- bar_size - 1
-r_line_label_size <- abcd_size
-i_line_label_size <- abcd_size
-line_label_colour <- "darkgray"
-  
-labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
-                          1.05, 1.005, 'degree', 
-                            annotation_colour, orig_size,
-                          1.09, 1.0022, '","', 
-                            annotation_colour, orig_size-3,
-                          1.14, 1.0052, 'a', 
-                            abcd_colour, abcd_size,
-                          1.18, 1.0022, '","', 
-                            annotation_colour, orig_size-3,
-                          1.22, 1.006, 'b', 
-                            abcd_colour, abcd_size,
-                          1.258, 1.0022, '","', 
-                            annotation_colour, orig_size-3,
-                          1.315, 1.001, '"*"', 
-                            annotation_colour, star_size,
-                          0.7, 1.01, 'degree', 
-                            line_label_colour, orig_line_label_size,
-                          1.56, 0.97, 'degree',
-                            line_label_colour, orig_line_label_size,
-                          0.7, 0.995, '"*"', 
-                            line_label_colour, star_line_label_size,
-                          3.5, 0.981, '"*"', 
-                            line_label_colour, star_line_label_size,
-                          0.96, 0.98, 'c', 
-                            abcd_colour, abcd_size,
-                          2.2, 0.9834, '"^"',  
-                            annotation_colour, hat_size,
-                          0.7, 0.989, '"^"',
-                            line_label_colour, hat_line_label_size,
-                          3.5, 0.975, '"^"', 
-                            line_label_colour, hat_line_label_size,
-                          2.52, 0.984, 'd', 
-                            abcd_colour, abcd_size,
-                          2.43, 1.085, 'bold("_")',  
-                            annotation_colour, bar_size,
-                          0.7, 1.0873, '"_"',
-                            line_label_colour, bar_line_label_size,
-                          3.5, 1.073, '"_"',
-                            line_label_colour, bar_line_label_size,
-                          2.18, 0.97, 'r',
-                            line_label_colour, r_line_label_size,
-                          2.6, 1.15, 'r',  
-                            line_label_colour, r_line_label_size,
-                          0.75, 1.027, 'i*degree', 
-                            line_label_colour, i_line_label_size,
-                          3.4, 0.981, 'i*degree', 
-                            line_label_colour, i_line_label_size,
-                          0.75, 1.143, 'bar(i)', 
-                            line_label_colour, i_line_label_size,
-                          3.4, 1.084, 'bar(i)', 
-                            line_label_colour, i_line_label_size,
-                          )
-rebound_results %>% 
-  ReboundTools::path_graphs(cases = "Example", 
-                               graph_types = "Consumption") + 
-  ggplot2::xlim(0.7, 3.5) +
-  ggplot2::ylim(0.97, 1.15) +
-  ggplot2::geom_text(data = labels, 
-                     mapping = ggplot2::aes(x = x, y = y, 
-                                            label = lab, 
-                                            colour = colour, 
-                                            size = size), 
-                     parse = TRUE) +
-  MKHthemes::xy_theme() + 
-  # remove axis labels and ticks
-  ggplot2::theme(axis.text.x = ggplot2::element_blank(),
-                 axis.ticks.x = ggplot2::element_blank(),
-                 axis.text.y = ggplot2::element_blank(),
-                 axis.ticks.y = ggplot2::element_blank(),
-                 axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = 6)))
-@
-
+represented by segment \hatd{}, and 
+the increased consumption rate of other goods and services is 
+represented by segments \dbar{}.
 
 
 %++++++++++++++++++++++++++++++
@@ -1340,6 +1067,11 @@ changes occur only in the macroeconomy.
 For the car user, no changes are recorded across the macro effect.
 Thus, the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:car_stages_table} are identical.
+Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+Figs~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
+show energy, expenditure, and consumption planes
+for the car example.
+
 
 <<car_stages_table, results="asis", echo=FALSE>>=
 digs_car <- matrix(c(rep(1, 7), # eta_engr_units
@@ -1374,12 +1106,27 @@ rebound_results %>%
 @
 
 
-Results are represented graphically on energy, expenditure, and consumption planes
-in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
-The energy plane (Fig.~\ref{fig:CarEnergyGraph})
-shows the size of each rebound effect
-for the car example.
-Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+<<car_rebound_results_table, results="asis", echo=FALSE>>=
+rebound_results %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
+                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
+                                      label = "tab:car_results", 
+                                      caption = "Car example: rebound results with macro factor ($k$) assumed to be 1.", 
+                                      digits = 1, 
+                                      align = "rrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","), 
+        math.style.negative = TRUE, 
+        size = "footnotesize")
+@
 
 
 <<CarGraphReResults, include=FALSE>>=
@@ -1390,6 +1137,41 @@ Re_micro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::reboun
 Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
 @
+
+
+<<GraphParameters, echo=FALSE>>=
+# For all planes
+stage_size <- 10
+orig_size <- stage_size
+star_size <- stage_size
+hat_size <- stage_size - 3
+bar_size <- stage_size - 5
+tilde_size <- stage_size - 5
+
+stage_colour <- "black"
+abcd_size <- 4
+abcd_colour <- "darkgray"
+
+annotation_angle <- -45.6
+annotation_size <- 4
+annotation_colour <- "black"
+
+example_arrow_angle <- 19.0 * pi/180
+example_arrow_size <- 0.5 # width
+
+# For the consumption plane
+
+orig_line_label_size <- orig_size - 3
+star_line_label_size <- star_size - 4
+hat_line_label_size <- hat_size - 3
+bar_line_label_size <- bar_size - 1
+r_line_label_size <- abcd_size
+i_line_label_size <- abcd_size
+line_label_colour <- "darkgray"
+
+@
+
+
 
 <<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_Re_label_angle <- -77
@@ -1608,30 +1390,6 @@ rebound_results %>%
 @
 
 
-
-<<car_rebound_results_table, results="asis", echo=FALSE>>=
-rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
-  dplyr::mutate(
-    Case = NULL
-  ) %>% 
-  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
-                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
-                                      label = "tab:car_results", 
-                                      caption = "Car example: rebound results with macro factor ($k$) assumed to be 1.", 
-                                      digits = 1, 
-                                      align = "rrr") %>% 
-  print(include.rownames = FALSE, 
-        booktabs = TRUE,
-        caption.placement = "top",
-        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
-        sanitize.text.function = function(x) {x},
-        format.args = list(big.mark = ","), 
-        math.style.negative = TRUE, 
-        size = "footnotesize")
-@
-
-
 The \empleffect{} has three components:
 the direct emplacement effect, 
 the embodied energy effect, and 
@@ -1722,6 +1480,11 @@ Table~\ref{tab:lamp_stages_table} applies to the lamp user,
 so no changes are recorded across the macro effect, and
 the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:lamp_stages_table} are identical.
+Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+Figs~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}
+show energy, expenditure, and consumption planes
+for the lamp example.
+
 
 <<lamp_stages_table, results="asis", echo=FALSE>>=
 digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
@@ -1756,6 +1519,29 @@ rebound_results %>%
 @
 
 
+<<lamp_rebound_results_table, results="asis", echo=FALSE>>=
+rebound_results %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::mutate(
+    Case = NULL
+  ) %>% 
+  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
+                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
+                                      label = "tab:lamp_results", 
+                                      caption = "Lamp example: rebound results with macro factor ($k$) assumed to be 1.", 
+                                      digits = 1, 
+                                      align = "rrr") %>% 
+  print(include.rownames = FALSE, 
+        booktabs = TRUE,
+        caption.placement = "top",
+        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
+        sanitize.text.function = function(x) {x},
+        format.args = list(big.mark = ","),
+        math.style.negative = TRUE, 
+        size = "footnotesize")
+@
+
+
 <<LampGraphReResults, include=FALSE>>=
 Re_empl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_empl, to_perc = TRUE)
 Re_sub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_sub, to_perc = TRUE)
@@ -1765,13 +1551,6 @@ Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebo
 Re_tot_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
 @
 
-
-Results are represented graphically on energy, expenditure, and consumption planes
-in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
-The energy plane (Fig.~\ref{fig:LampEnergyGraph})
-shows the size of each rebound effect
-for the lamp example.
-Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 The \empleffect{} rebound components start with
 the direct emplacement effect ($Re_{dempl}$),
@@ -2056,30 +1835,6 @@ rebound_results %>%
   ggplot2::ylim(0.99979, 1.0004) +
   MKHthemes::xy_theme()
 @
-
-
-<<lamp_rebound_results_table, results="asis", echo=FALSE>>=
-rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::mutate(
-    Case = NULL
-  ) %>% 
-  ReboundTools::rebound_results_table(include_subtotals = FALSE, 
-                                      rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
-                                      label = "tab:lamp_results", 
-                                      caption = "Lamp example: rebound results with macro factor ($k$) assumed to be 1.", 
-                                      digits = 1, 
-                                      align = "rrr") %>% 
-  print(include.rownames = FALSE, 
-        booktabs = TRUE,
-        caption.placement = "top",
-        hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
-        sanitize.text.function = function(x) {x},
-        format.args = list(big.mark = ","),
-        math.style.negative = TRUE, 
-        size = "footnotesize")
-@
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
