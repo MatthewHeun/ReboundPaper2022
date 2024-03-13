@@ -784,6 +784,7 @@ Later (Section~\ref{sec:results}),
 rebound planes with numerical scales illustrate the car and lamp examples.
 
 \begin{table}
+\footnotesize
 \centering % Centered table
 \caption{Segments in rebound planes.} 
 \begin{tabular}{r l l c}
@@ -1368,7 +1369,8 @@ rebound_results %>%
         caption.placement = "top",
         sanitize.text.function = function(x) {x},
         format.args = list(big.mark = ","),
-        math.style.negative = TRUE)
+        math.style.negative = TRUE, 
+        size = "footnotesize")
 @
 
 
@@ -1625,7 +1627,8 @@ rebound_results %>%
         hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
         sanitize.text.function = function(x) {x},
         format.args = list(big.mark = ","), 
-        math.style.negative = TRUE)
+        math.style.negative = TRUE, 
+        size = "footnotesize")
 @
 
 
@@ -1748,7 +1751,8 @@ rebound_results %>%
         caption.placement = "top",
         sanitize.text.function = function(x) {x},
         format.args = list(big.mark = ","),
-        math.style.negative = TRUE)
+        math.style.negative = TRUE, 
+        size = "footnotesize")
 @
 
 
@@ -2072,7 +2076,8 @@ rebound_results %>%
         hline.after = c(-1, 0, nrow(.)-1, nrow(.)),
         sanitize.text.function = function(x) {x},
         format.args = list(big.mark = ","),
-        math.style.negative = TRUE)
+        math.style.negative = TRUE, 
+        size = "footnotesize")
 @
 
 
@@ -2580,6 +2585,7 @@ Declarations of interest: none.
 Author contributions for this paper (Part~II of the two-part paper) are shown in Table~\ref{tab:credit2}.
 
 \begin{table}[h]
+\footnotesize
 \begin{center}
 \caption{Author contributions.} 
 \begin{tabular}{r c c c}

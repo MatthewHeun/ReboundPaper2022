@@ -1801,6 +1801,7 @@ Declarations of interest: none.
 Author contributions for this paper (Part~I of the two-part paper) are shown in Table~\ref{tab:credit1}.
 
 \begin{table}[h]
+\footnotesize
 \begin{center}
 \caption{Author contributions.} 
 \begin{tabular}{r c c c}
