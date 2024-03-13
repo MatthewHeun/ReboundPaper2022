@@ -50,16 +50,20 @@
 % Author info
 \title{Energy, expenditure, and consumption aspects of rebound,\\
         Part I: A rigorous analytical framework}
-\author[1,*]{Matthew Kuperus Heun}
-\author[2]{Gregor Semieniuk}
-\author[3]{Paul E.\ Brockway}
-\affil[1]{Engineering Department, Calvin University, 3201 Burton St. SE, Grand Rapids, MI, 49546}
-\affil[2]{Political Economy Research Institute and 
-                            Department of Economics,
-                            UMass Amherst}
-\affil[3]{Sustainability Research Institute, 
-                             School of Earth and Environment,
-                             University of Leeds}
+\author[1,2,3,*]{Matthew Kuperus Heun}
+\author[4]{Gregor Semieniuk}
+\author[2]{Paul E.\ Brockway}
+\affil[1]{Engineering Department, Calvin University, 
+          3201 Burton St. SE, Grand Rapids, MI, 49546}
+\affil[2]{Sustainability Research Institute, 
+          School of Earth and Environment, University of Leeds, 
+          Woodhouse, Leeds, LS2 9JT, UK}
+\affil[3]{School for Public Leadership, Faculty of Economic and Management Science,
+          Stellenbosch University,
+          Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
+\affil[4]{Political Economy Research Institute and Department of Economics,
+          UMass Amherst, 
+          Amherst, MA, 01003}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
 
