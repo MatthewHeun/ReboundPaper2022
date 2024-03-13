@@ -236,7 +236,7 @@ cost of buying an upgraded device as well as the energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
 And rebound involves simultaneous changes in energy, expenditure,
-and consumption aspects, and keeping an overview of all
+and consumption aspects---keeping an overview of all
 aspects is hard, with no approach to our knowledge documenting all 
 changes in a straightforward and consistent manner.
 Finally, while recent general equilibrium rebound modeling has led to 
