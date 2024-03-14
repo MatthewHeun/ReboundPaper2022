@@ -16,14 +16,14 @@ latexdiff "$source_file_base_framework-initial-submission.tex" "$source_file_bas
 latexdiff "$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff_$destination_file_base_results.tex"
 # Compile the difference file
 pdflatex "diff_$destination_file_base_framework.tex"
-bibtex "diff_$destination_file_base_framework"
-pdflatex "diff_$destination_file_base_framework.tex"
-pdflatex "diff_$destination_file_base_framework.tex"
+# bibtex "diff_$destination_file_base_framework"
+# pdflatex "diff_$destination_file_base_framework.tex"
+# pdflatex "diff_$destination_file_base_framework.tex"
 
 pdflatex "diff_$destination_file_base_results.tex"
-bibtex "diff_$destination_file_base_results"
-pdflatex "diff_$destination_file_base_results.tex"
-pdflatex "diff_$destination_file_base_results.tex"
+# bibtex "diff_$destination_file_base_results"
+# pdflatex "diff_$destination_file_base_results.tex"
+# pdflatex "diff_$destination_file_base_results.tex"
 
 open "$destination_file_base_framework.pdf"
 open "$destination_file_base_results.pdf"
