@@ -2240,7 +2240,7 @@ by
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item developing of the first (to our knowledge) 
+  \item developing the first (to our knowledge) 
         mutually consistent and numerically precise
         visualizations of rebound effects
         in energy, expenditure, and consumption planes, 
