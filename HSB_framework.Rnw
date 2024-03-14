@@ -1048,8 +1048,8 @@ After emplacement of the more efficient device
 (but before the substitution effect), 
 the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
 After compensating variation tightens the budget constraint,
-consumption at the new energy service price yields utility
-at the same level as prior to the EEU
+consumption at the new energy service price ($\aempl{p}_s$)
+yields utility at the same level as prior to the EEU
 by consuming more of the now-lower-cost energy service
 and less of the now-relatively-more-expensive other goods.
 
