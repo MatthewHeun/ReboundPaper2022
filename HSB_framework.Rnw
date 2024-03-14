@@ -690,10 +690,11 @@ where
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
 Substituting the original price and quantity of energy service consumption 
 and other goods consumption
-into Eq.~\ref{eq:budget_constraint} gives
+into Eq.~\ref{eq:budget_constraint} and rearranging gives
 
 \begin{equation}
-  \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \orig{p}_o \rorig{q}_o \; .
+  % \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \orig{p}_o \rorig{q}_o \; .
+  \rorig{M} - \rorig{C}_{cap} - \rorig{C}_{\md} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; .
 \end{equation}
 %
 
