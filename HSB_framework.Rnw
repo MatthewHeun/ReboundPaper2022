@@ -693,10 +693,12 @@ and other goods consumption
 into Eq.~\ref{eq:budget_constraint} and rearranging gives
 
 \begin{equation}
-  % \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \orig{p}_o \rorig{q}_o \; .
-  \rorig{M} - \rorig{C}_{cap} - \rorig{C}_{\md} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; .
+  \rorig{M} - \rorig{C}_{cap} - \rorig{C}_{\md} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
 \end{equation}
 %
+which is the usual budget constraint 
+for the microeconomic consumer
+after subtracting lump sums for capital cost and maintenance of the device.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through the four rebound effects
