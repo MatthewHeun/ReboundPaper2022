@@ -88,8 +88,7 @@ In this paper (Part~I of a two-part paper),
 we advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
-We develop the first (to our knowledge)
-rebound analysis framework that 
+We develop a rebound analysis framework that
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -371,8 +370,8 @@ will go some way toward providing additional clarity in the field.
 \label{sec:objective_contributions_structure}
 %++++++++++++++++++++++++++++++
 
-The \emph{objective} of this paper is to 
-improve clarity in the field of energy rebound by
+The \emph{objective} of this paper is to help advance
+clarity in the field of energy rebound by
 supporting the development of a rigorous analytical framework, 
 one that
 %
@@ -397,14 +396,14 @@ The key \emph{contributions} of this paper are
 	      energy, expenditure, and consumption
 	      aspects of energy rebound,
 	
-  \item development of the first (to our knowledge)
+  \item development of a
         rebound analysis framework that combines 
         embodied energy effects, 
         maintenance and disposal effects, 
         non-marginal energy efficiency increases, and 
         non-marginal energy service price decreases, and
 
-  \item the first operationalized link between 
+  \item an operationalized link between 
         rebound effects on microeconomic and macroeconomic levels.
         
 \end{enumerate*}
@@ -428,7 +427,7 @@ an energy rebound framework
 for an individual consumer who upgrades the energy efficiency 
 of a single device
 (concisely, ``the framework,'' ``this framework,'' or ``our framework'').
-We endeavor to bring clarity to the field of energy rebound by 
+We endeavor to help advance clarity in the field of energy rebound by 
 providing sufficient detail to assist
 energy analysts to understand the economics and
 economists to understand the energy analysis.
@@ -1466,9 +1465,9 @@ and its consequence for macroeconomic rebound.
 savings ($\raempl{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
 
-Another novel contribution of this paper
-(in addition to the framework itself)
-is the first operationalization of the macro rebound multiplier idea.
+Another contribution of this paper
+(in addition to the framework itself) 
+is operationalization of the macro rebound multiplier idea.
 We stress that such a multiplier stands for the cumulative
 productivity growth triggered by
 the initial productivity increase in the EEU.
@@ -1723,7 +1722,7 @@ This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
 hence we fill the ``This paper (2023)'' column 
 with filled circles (\rating{100})
 in nearly all rows.
-By so doing, we enhance clarity in the field of energy rebound.
+By so doing, we help advance clarity in the field of energy rebound.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1784,7 +1783,7 @@ Future work could be pursued in several areas.
 \end{enumerate*}
 
 In Part~II of this paper,
-we attempt to bring further clarity to rebound analysis
+we help advance clarity in rebound analysis
 in three ways. 
 First, 
 we develop a way to visualize 

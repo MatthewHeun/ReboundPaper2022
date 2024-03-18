@@ -87,7 +87,7 @@ In this paper (Part~II),
 we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
-Further, we perform the first calibration of the macro factor
+Further, we calibrate the macro factor
 for macroeconomic rebound, finding $k \approx 3$. 
 Using the framework and rebound planes,
 we calculate and show total rebound for two examples: 
@@ -148,7 +148,7 @@ We said that
   in ways economists can understand.
 \end{quote}
 
-To move improve clarity in the rebound field, 
+To help improve clarity in the rebound field, 
 we developed in Part~I a rigorous analytical framework 
 for energy rebound, 
 one that is tractable for both energy analysts and economists.
@@ -189,9 +189,8 @@ The key contributions of this paper are
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item development of the first (to our knowledge) 
-        mutually consistent and numerically precise
-        visualizations of rebound effects
+  \item development of mutually consistent and
+        numerically precise visualizations of rebound effects
         in energy, expenditure, and consumption planes,
         
   \item calibration of the macro factor ($k$) to link
@@ -247,7 +246,7 @@ developed in Part~I,
 we analyze two examples:
 energy efficiency upgrades to a car and an electric lamp.
 The examples are presented with much detail 
-to support our goal of bringing clarity to the process
+to support our goal of helping to advance clarity for the process
 of calculating the magnitude of rebound effects.
 Here, we collect parameter values
 for the equations to calculate
@@ -739,7 +738,7 @@ done in a numerically precise manner
 with a set of mutually consistent graphs.
 
 We introduce \emph{rebound planes}
-to bring clarity to
+to help advance clarity of
 (direct and indirect) rebound and 
 adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
@@ -2139,7 +2138,8 @@ elucidating all rebound components in Part~II, we are
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item adding conceptual clarity to the field of energy rebound, which
+  \item helping to advance conceptual clarity 
+        in the field of energy rebound, which
   
   \item may enable future studies to estimate a broader range of rebound components.
     
@@ -2235,7 +2235,7 @@ and our bottom-up approach for calculating total rebound.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we advance clarity in the field of energy rebound
+In this paper (Part~II), we help to advance clarity in the field of energy rebound
 by 
 %
 \begin{enumerate*}[label={(\roman*)}]
