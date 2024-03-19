@@ -1398,11 +1398,7 @@ of direct and indirect income effect rebound.)
 Under the extreme non-homothetic utility model,
 all income ($\rasub{N}$) is spent on other goods,
 and indirect rebound becomes simply
-
-\begin{equation} \label{eq:non_homothetic_Re_iinc}
-  Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot} \; .
-\end{equation}
-%
+$Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.
 
 
 %------------------------------
