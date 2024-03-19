@@ -927,7 +927,7 @@ in the device user's decision function.
 %------------------------------
 
 The consumption plane 
-(See Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
+(Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
 the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
 the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) on the $y$-axis.
 Iso-expenditure loci of indexed energy service and other goods demand,
@@ -948,7 +948,8 @@ only movements after the $*$ point are visible as a path in the consumption plan
 points $\circ$, \emph{a}, \emph{b}, and $*$ 
 collapse to the same location in the consumption plane.
 
-Indifference curves are denoted by \iicirc{} and \iibar{}
+Indifference curves for the CES untility model
+are denoted by \iicirc{} and \iibar{}
 and represent lines of constant utility through the $\circ$ and $-$ points. 
 Prior to the EEU, the consumption basket (of the energy service and other goods)
 is represented by the $\circ$ point. 
@@ -969,7 +970,7 @@ for the energy service,
 thanks to the EEU.
 
 The substitution effect leads to the cheaper, optimal
-utility-preserving
+CES-utility-preserving
 consumption bundle at the $\wedge$ point. 
 The substitution effect is shown by segments
 \starc{} (the indirect component, which represents the decrease in other goods consumption) and
@@ -981,7 +982,8 @@ can be seen in
 the energy and expenditure planes.
 
 In the consumption plane, 
-the income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
+the income expansion path under the CES utility model
+is a ray (\rr{}) from the origin through the $\wedge$ point
 in the consumption plane.
 The pre- and post-income-effect 
 points ($\wedge$ and $-$, respectively)
@@ -990,6 +992,16 @@ The increased consumption rate of the energy service is
 represented by segment \hatd{}, and 
 the increased consumption rate of other goods and services is 
 represented by segments \dbar{}.
+
+Under non-homothetic utility models, 
+the income expansion path will be closer to vertical 
+in the consumption plane, 
+as the device owner spends more net income ($\rasub{N}$)
+on other goods and less on the energy service.
+In the limit, consumption of the energy service
+is already satiated, so  
+net income is spent completely on other goods
+resulting in a vertical income expansion path.
 
 
 %++++++++++++++++++++++++++++++
@@ -1840,6 +1852,156 @@ rebound_results %>%
 \section{Discussion}
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Effect of non-homothetic utility models}
+\label{sec:non_homothetic_utility}
+%++++++++++++++++++++++++++++++
+
+<<SatiatedReboundCalcs, echo=FALSE>>=
+fmt_car <- "%.1f"
+fmt_lamp <- "%.3f"
+# Car
+## CES utility model
+Re_dinc_ces_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
+Re_iinc_ces_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
+Re_inc_ces_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_tot_ces_car <- rebound_results |> 
+  dplyr::filter(Case == "Car (k = 3)") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+## Satiated utility model
+Re_dinc_satiated_car <- 0
+N_dot_hat_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
+I_E_car <- rebound_results|> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
+S_dot_dev_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
+Re_iinc_satiated_car <- N_dot_hat_car * I_E_car / S_dot_dev_car
+Re_inc_satiated_car <- Re_dinc_satiated_car + Re_iinc_satiated_car
+Re_tot_satiated_car <- Re_tot_ces_car - Re_inc_ces_car + Re_inc_satiated_car
+
+Re_dinc_ces_car_char <- sprintf(fmt_car, Re_dinc_ces_car*100)
+Re_iinc_ces_car_char <- sprintf(fmt_car, Re_iinc_ces_car*100)
+Re_inc_ces_car_char <- sprintf(fmt_car, Re_inc_ces_car*100)
+Re_tot_ces_car_char <- sprintf(fmt_car, Re_tot_ces_car*100)
+Re_dinc_satiated_car_char <- sprintf(fmt_car, Re_dinc_satiated_car*100)
+Re_iinc_satiated_car_char <- sprintf(fmt_car, Re_iinc_satiated_car*100)
+Re_inc_satiated_car_char <- sprintf(fmt_car, Re_inc_satiated_car*100)
+Re_tot_satiated_car_char <- sprintf(fmt_car, Re_tot_satiated_car*100)
+
+# Lamp
+## CES utility model
+Re_dinc_ces_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
+Re_iinc_ces_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
+Re_inc_ces_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_tot_ces_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp (k = 3)") |> 
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+## Satiated utility model
+Re_dinc_satiated_lamp <- 0
+N_dot_hat_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
+I_E_lamp <- rebound_results|> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
+S_dot_dev_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp") |> 
+  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
+Re_iinc_satiated_lamp <- N_dot_hat_lamp * I_E_lamp / S_dot_dev_lamp
+Re_inc_satiated_lamp <- Re_dinc_satiated_lamp + Re_iinc_satiated_lamp
+Re_tot_satiated_lamp <- Re_tot_ces_lamp - Re_inc_ces_lamp + Re_inc_satiated_lamp
+
+Re_dinc_ces_lamp_char <- sprintf(fmt_lamp, Re_dinc_ces_lamp*100)
+Re_iinc_ces_lamp_char <- sprintf(fmt_lamp, Re_iinc_ces_lamp*100)
+Re_inc_ces_lamp_char <- sprintf(fmt_lamp, Re_inc_ces_lamp*100)
+Re_tot_ces_lamp_char <- sprintf(fmt_lamp, Re_tot_ces_lamp*100)
+Re_dinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_dinc_satiated_lamp*100)
+Re_iinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_iinc_satiated_lamp*100)
+Re_inc_satiated_lamp_char <- sprintf(fmt_lamp, Re_inc_satiated_lamp*100)
+Re_tot_satiated_lamp_char <- sprintf(fmt_lamp, Re_tot_satiated_lamp*100)
+@
+
+In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I, 
+we derived income-effect rebound expressions
+under the limiting condition of already-satiated 
+consumption of the energy service such that the 
+income expansion path is a vertical line 
+in the consumption plane of 
+Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph}.
+Here, we discuss the numerical impact
+of the utility model.
+
+Table~\ref{tab:utility_model_comparison}
+compares income-effect rebound under the CES utility model
+and the extreme condition of satiated consumption
+of the energy service.
+In the car example, income effect rebound ($Re_{inc}$) 
+reduces from \Sexpr{Re_inc_ces_car_char}\% to
+\Sexpr{Re_inc_satiated_car_char}\% when moving from the 
+CES utility model to the extreme condition of already-satiated 
+consumption of the energy service.
+Total rebound ($Re_{tot}$) goes from 
+\Sexpr{Re_tot_ces_car_char}\% to
+\Sexpr{Re_tot_satiated_car_char}\%.
+On the other hand, 
+
+\begin{table}
+\footnotesize
+\centering
+\caption[toc caption]{Comparison of income effect 
+                      ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
+                      total ($Re_{tot}$) rebound
+                      between
+                      the CES utility model and satiated
+                      consumption of the energy service for the
+                      car and lamp examples.}
+\label{tab:utility_model_comparison}
+\begin{tabular}{r r r r r}
+\toprule
+            & \multicolumn{2}{c}{Car example}
+                                      & \multicolumn{2}{c}{Lamp example} \\
+Rebound term     & CES & Satiated          & CES & Satiated           \\
+\midrule
+$Re_{dinc}$ [\%] & \Sexpr{Re_dinc_ces_car_char}
+                       & \Sexpr{Re_dinc_satiated_car_char}
+                                           & \Sexpr{Re_dinc_ces_lamp_char}
+                                                 & \Sexpr{Re_dinc_satiated_lamp_char} \\
+$Re_{iinc}$ [\%] & \Sexpr{Re_iinc_ces_car_char}
+                       & \Sexpr{Re_iinc_satiated_car_char}
+                                           & \Sexpr{Re_iinc_ces_lamp_char}
+                                                 & \Sexpr{Re_iinc_satiated_lamp_char} \\
+\midrule
+$Re_{inc}$ [\%] & \Sexpr{Re_inc_ces_car_char}
+                       & \Sexpr{Re_inc_satiated_car_char}
+                                           & \Sexpr{Re_inc_ces_lamp_char}
+                                                 & \Sexpr{Re_inc_satiated_lamp_char} \\
+\midrule
+$Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
+                       & \Sexpr{Re_tot_satiated_car_char}
+                                           & \Sexpr{Re_tot_ces_lamp_char}
+                                                 & \Sexpr{Re_tot_satiated_lamp_char} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 %++++++++++++++++++++++++++++++
 \subsection{A first attempt at calibrating $k$}
