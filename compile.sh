@@ -11,6 +11,19 @@ destination_file_base_results="HSB_results_$(date +'%Y-%m-%d')"
 # Copy the .pdf file to a different name with date appended
 cp "$source_file_base_framework.pdf" "$destination_file_base_framework.pdf"
 cp "$source_file_base_results.pdf" "$destination_file_base_results.pdf"
+
+# Compile the original files
+cd initial-submission-tex
+pdflatex "$source_file_base_framework-initial-submission.tex"
+bibtex "$source_file_base_framework-initial-submission"
+pdflatex "$source_file_base_framework-initial-submission.tex"
+pdflatex "$source_file_base_framework-initial-submission.tex"
+pdflatex "$source_file_base_results-initial-submission.tex"
+bibtex "$source_file_base_results-initial-submission"
+pdflatex "$source_file_base_results-initial-submission.tex"
+pdflatex "$source_file_base_results-initial-submission.tex"
+cd ..
+
 # Run the difference command
 # Part I - Framework
 latexdiff --flatten "initial-submission-tex/$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff-$source_file_base_framework.tex"
@@ -19,7 +32,7 @@ latexdiff --flatten "initial-submission-tex/$source_file_base_framework-initial-
 # sed -i.bak 's/derivation\.tex/diff-derivation\.tex/g' diff-HSB_framework.tex && rm diff-HSB_framework.tex.bak
 
 # Part II - Results
-latexdiff "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff-$source_file_base_results.tex"
+latexdiff --flatten "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff-$source_file_base_results.tex"
 
 # Compile the difference files
 pdflatex "diff-$source_file_base_framework.tex"
