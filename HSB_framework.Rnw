@@ -457,6 +457,35 @@ a substitution effect, and
 an income effect, 
 with direct and indirect partitions for each.
 All combinations are possible.
+
+ ``Emplacement'' is a new term we introduce 
+to collect non-operational effects of the devices, 
+including 
+%
+\begin{enumerate*}[label={(\alph*)}]
+	
+  \item embodied energy of their manufacture and
+  
+  \item maintenance and disposal activities.
+    
+\end{enumerate*}
+%
+Although neither
+embodied
+(see \citet[footnote~5, p.~3]{Borenstein:2015aa} and
+\citet{Saunders:2021te}) nor
+maintenance and disposal
+(see \citet{Sorrell:2009aa}, 
+\citet[footnote~37, p.~16]{Borenstein:2015aa}, and  
+**** Sorrell et al. 2020 ****) 
+effects are new,
+we separate them from substitution and income
+microeconomic effects 
+(see Table~\ref{tab:rebound_typology}) 
+to calculate rebound according to the steps in our 
+framework. 
+(See Section~\ref{sec:rebound_effects}.)
+
 The direct rebound effect can be partitioned into 
 a direct emplacement effect, 
 a direct substitution effect, and
@@ -467,6 +496,7 @@ of energy
 by the device whose efficiency has been upgraded,  
 according to a microeconomic behavioral model of the consumer who
 responds to the cheaper energy service.
+
 Similarly, the indirect rebound effect can be partitioned into
 an indirect emplacement effect, 
 an indirect substitution effect, and
@@ -763,15 +793,11 @@ the energy intensity of the economy~($I_E$).
 \end{align}
 
 
-
 <<eeu_data, echo=FALSE>>=
 # Load our test cases and perform rebound analyses.
 rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
 rebound_results <- ReboundTools::rebound_analysis(rebound_data)
 @
-
-
-
 
 
 %++++++++++++++++++++++++++++++
