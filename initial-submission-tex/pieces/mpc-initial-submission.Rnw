@@ -1,0 +1,72 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+\citet{Borenstein:2015aa} has postulated a demand-side argument that macro effects 
+can be represented by a multiplier, which we call the macro factor ($k$).
+\citeauthor{Borenstein:2015aa}'s formulation and our implementation 
+rely on the marginal propensity to consume (MPC).
+In this appendix, we show the relationship between the macro factor ($k$) and $\MPC$.
+
+The relationship between the macro factor ($k$) and $\MPC$ spans
+the substitution, income, and macro effects.
+In this framework, the device user's net savings 
+after the emplacement effect ($\raempl{N}$) is respent completely.
+One may assume that firms and other consumers who receive the net savings have a 
+marginal propensity to re-spend of $\MPC$.
+The total spending throughout the economy of each year's net savings ($\raempl{N}$)
+is given by the infinite series
+
+\begin{equation} \label{eq:infinite_series_spending}
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N} \; ,
+\end{equation}
+%
+where the first term ($1 \times \raempl{N}$) represents spending 
+of net savings after emplacement by the device user and
+the remaining terms 
+[$(\MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N}$]
+represent macro-effect spending in the broader economy.
+
+The macro effect portion of the spending can be represented by the macro factor ($k$).
+
+\begin{equation} \label{eq:mpc_and_k}
+  (1 + \MPC + \MPC^2 + \MPC^3 + \ldots) \raempl{N} = (1 + k) \raempl{N}
+\end{equation}
+
+Canceling $\raempl{N}$ and simplifying the infinite series to its converged fraction
+(assuming $\MPC < 1$) gives
+
+\begin{equation}
+  \frac{1}{1 - \MPC} = 1 + k \; .
+\end{equation}
+%
+Solving for $k$ yields
+
+\begin{equation}
+  k = \frac{1}{\frac{1}{\MPC} - 1} \; .  \tag{\ref{eq:mpc_and_k_converged}}
+\end{equation}
+
+With $k = 1$, as assumed early in Part~II, 
+$\MPC = 0.5$ is implied.
+If $k = 3$, as calibrated later in Part~II, 
+$\MPC = 0.75$ is implied.
+The relationship between $k$ and $\MPC$ is given in Fig.~\ref{fig:k_vs_mpc}.
+
+<<k_vs_mpc, echo=FALSE, fig.cap="The relationship between $\\MPC$ and $k$ in Eq.~(\\ref{eq:mpc_and_k_converged}).", fig.width=6, fig.height=4, fig.align = "center">>=
+tibble::tibble(MPC = seq(0.1, 0.9, by = 0.005), k = 1 / (1/MPC - 1)) %>% 
+  ggplot2::ggplot(mapping = ggplot2::aes(x = MPC, y = k)) + 
+  ggplot2::geom_vline(xintercept = 0.5, linewidth = 0.1) +
+  ggplot2::geom_vline(xintercept = 0.75, linewidth = 0.1) +
+  ggplot2::geom_hline(yintercept = 1, linewidth = 0.1) +
+  ggplot2::geom_hline(yintercept = 3, linewidth = 0.1) +
+  ggplot2::geom_line() + 
+  
+  ggplot2::scale_x_continuous(breaks = c(0, 0.2, 0.4, 0.5, 0.6, 0.75, 0.9, 1), limits = c(0, 1)) +
+  ggplot2::scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 6, 8, 10), limits = c(0, 10)) +
+  
+  ggplot2::xlab("MPC [-]") +
+  ggplot2::ylab("k [-]") +
+  
+  MKHthemes::xy_theme()
+@
