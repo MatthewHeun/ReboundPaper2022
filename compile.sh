@@ -12,9 +12,11 @@ destination_file_base_results="HSB_results_$(date +'%Y-%m-%d')"
 cp "$source_file_base_framework.pdf" "$destination_file_base_framework.pdf"
 cp "$source_file_base_results.pdf" "$destination_file_base_results.pdf"
 # Run the difference command
-latexdiff "$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff_$destination_file_base_framework.tex"
-latexdiff "$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff_$destination_file_base_results.tex"
-# Compile the difference file
+# Part I - Framework
+latexdiff "initial-submission-tex/$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff_$destination_file_base_framework.tex"
+# Part II - Results
+latexdiff "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff_$destination_file_base_results.tex"
+# Compile the difference files
 pdflatex "diff_$destination_file_base_framework.tex"
 bibtex "diff_$destination_file_base_framework"
 pdflatex "diff_$destination_file_base_framework.tex"
