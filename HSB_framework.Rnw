@@ -477,11 +477,11 @@ embodied
 maintenance and disposal
 (see \citet{Sorrell:2009aa}, 
 \citet[footnote~37, p.~16]{Borenstein:2015aa}, and  
-**** Sorrell et al. 2020 ****) 
+\citet{sorrell2020limits})
 effects are new,
 we separate them from substitution and income
 microeconomic effects 
-(see Table~\ref{tab:rebound_typology}) 
+(Table~\ref{tab:rebound_typology}) 
 to calculate rebound according to the steps in our 
 framework. 
 (See Section~\ref{sec:rebound_effects}.)
