@@ -253,12 +253,15 @@ is tangent to the indifference curve
 in the $\rate{C}_o/\rbempl{C}_o$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane
 (the ``consumption plane'' in Part~II)
 prior to the EEU.
-For example, the \circcirc{} line is tangent to constant-utility 
+For example, the \circcirc{} line is tangent 
+to the constant-utility 
 indifference curve \iicirc{} at point $\circ$
-in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.
+in Figs.~\ref{PartII-fig:CarConsGraph} 
+and~\ref{PartII-fig:LampConsGraph}of Part~II.
 
 To find the slope at any point on the indifference curve 
-(\iicirc{} in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II),
+(\iicirc{} in Figs.~\ref{PartII-fig:CarConsGraph} 
+and~\ref{PartII-fig:LampConsGraph} of Part~II),
 Eq.~(\ref{eq:ces_utility_with_a}) can be rearranged to give 
 the normalized consumption rate of other goods ($\rate{C}_o/\rbempl{C}_o$)
 as a function of the normalized consumption rate of the energy service
@@ -276,7 +279,8 @@ constant utility rate ($\rate{u}/\rbempl{u}$) indifference curves on a graph of
 $\rate{C}_o/\rbempl{C}_o$ vs.\ 
 $\rate{q}_s/\rbempl{q}_s$ 
 (the consumption plane of
-Fig.~\ref{PartII-fig:ExampleConsPathGraph} in Part~II).
+Figs.~\ref{PartII-fig:CarConsGraph} 
+and~\ref{PartII-fig:LampConsGraph} in Part~II).
 In the consumption plane, 
 the slope of an indifference curve is found by taking the first 
 partial derivative of $\rate{C}_o/\rbempl{C}_o$
@@ -297,7 +301,8 @@ The budget constraint is the starting point for finding
 the slope of an expenditure line in the consumption plane.
 (Example expenditure lines include
 the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
-in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II.)
+in Figs.~\ref{PartII-fig:CarConsGraph} 
+and~\ref{PartII-fig:LampConsGraph} of Part~II.)
 The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
 (\ref{eq:M_acct_aemp}), 
 (\ref{eq:M_acct_asub}), and 
@@ -355,7 +360,8 @@ equal to the slope of the indifference curve (Eq.~(\ref{eq:slope_indifference_cu
 For the equilibrium point 
 prior to emplacement
 (point $\circ$
-in Fig.~\ref{PartII-fig:ExampleConsPathGraph} of Part~II),
+in Figs.~\ref{PartII-fig:CarConsGraph} 
+and~\ref{PartII-fig:LampConsGraph} of Part~II),
 $\rate{q}_s/\rbempl{q}_s = 1$, $\rate{u}/\rbempl{u} = 1$, and
 $p_s = \bempl{p}_s$, which reduces Eq.~(\ref{eq:generic_expenditure_line}) to
 
