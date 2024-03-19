@@ -1273,6 +1273,12 @@ particularly via an effective income term ($\Mdothatprime$).
 However, this framework could accommodate non-homothetic preferences
 for spending across the income effect (turning the income
 expansion path into a more general curve instead of a line).
+In the extreme, 
+the consumer spends all income after the substitution effect
+on other goods and none of the energy service, 
+choices that typically serve to reduce rebound
+due to typically lower energy intensity of other goods compared 
+to the energy service.
 
 We next show expressions for 
 direct and indirect income effect rebound.
@@ -1291,13 +1297,14 @@ for additional information about elasticities.)
 Spending of net savings on additional energy service consumption
 leads to direct income effect rebound ($Re_{dinc}$).
 
-The ratio of rates of energy service consumed across the income effect is given by
+The ratio of rates of energy service consumed across the income effect 
+is given by
 
 \begin{equation} \label{eq:qsrat_eqsM}
   \incprefseqn \; .
 \end{equation}
 %
-Homotheticity means that $\eqsM = 1$. 
+Under the CES utility model, homotheticity means that $\eqsM = 1$. 
 
 Effective income ($\Mdothatprime$) is given by 
 
@@ -1319,7 +1326,7 @@ Direct income rebound is defined as
 %
 (See Table~\ref{tab:inceffect}.)
 After substitution, rearranging, and canceling of terms (Appendix~\ref{sec:Re_dinc}), 
-the expression for direct income rebound is
+the expression for direct income rebound under the CES utility model is
 
 \begin{equation} \label{eq:Re_dinc}
   Re_{dinc} = \Redinceqnexact{} \; .
@@ -1333,6 +1340,13 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
   the maintenance and disposal cost rate ($\Delta \raempl{C}_{\md}$)
   consume all freed cash ($\rate{G}$) plus savings from the compensating variation.
 }
+
+Under a non-homothetic utility model, 
+the extreme condition is that
+as the device owner becomes richer, 
+none of the income ($\rasub{N} = 0$)
+is spent on more of the energy service and thus
+$Re_{dinc} = 0$ would occur.
 
 
 %..............................
@@ -1372,7 +1386,7 @@ As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
 \end{equation}
 %
 After substitution, rearranging, and canceling of terms, 
-the expression for indirect income rebound is
+the expression for indirect income for the CES utility model rebound is
 
 \begin{equation} \label{eq:Re_iinc}
   Re_{iinc} = \Reiinceqnexact{} \; .
@@ -1380,6 +1394,15 @@ the expression for indirect income rebound is
 %
 (See Appendix~\ref{sec:Re_inc} for details of the derivation
 of direct and indirect income effect rebound.)
+
+Under the extreme non-homothetic utility model,
+all income ($\rasub{N}$) is spent on other goods,
+and indirect rebound becomes simply
+
+\begin{equation} \label{eq:non_homothetic_Re_iinc}
+  Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot} \; .
+\end{equation}
+%
 
 
 %------------------------------
