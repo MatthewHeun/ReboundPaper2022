@@ -793,15 +793,15 @@ for EEU examples of a car and an electric lamp.
   \toprule
   \multicolumn{1}{c}{Segment} & Rebound effect            & Symbol           \\
   \midrule
-  \circa{} \hspace{52.0mm}    & Direct emplacement        & $Re_{dempl}$     \\
-  \ab{}    \hspace{45.0mm}    & Embodied energy           & $Re_{emb}$       \\
-  \bstar{} \hspace{37.8mm}    & Maintenance and disposal  & $Re_{\md}$       \\
+  \circa{} \hspace{48.8mm}    & Direct emplacement        & $Re_{dempl}$     \\
+  \ab{}    \hspace{42.0mm}    & Embodied energy           & $Re_{emb}$       \\
+  \bstar{} \hspace{35.2mm}    & Maintenance and disposal  & $Re_{\md}$       \\
   \midrule
-  \starc{} \hspace{30.9mm}    & Indirect substitution     & $Re_{isub}$      \\ 
-  \chat{}  \hspace{23.2mm}    & Direct substitution       & $Re_{dsub}$      \\ 
+  \starc{} \hspace{28.8mm}    & Indirect substitution     & $Re_{isub}$      \\ 
+  \chat{}  \hspace{21.6mm}    & Direct substitution       & $Re_{dsub}$      \\ 
   \midrule
-  \hatd{}  \hspace{16.0mm}    & Direct income             & $Re_{dinc}$      \\ 
-  \dbar{}  \hspace{ 7.7mm}    & Indirect income           & $Re_{iinc}$      \\ 
+  \hatd{}  \hspace{14.8mm}    & Direct income             & $Re_{dinc}$      \\ 
+  \dbar{}  \hspace{ 7.1mm}    & Indirect income           & $Re_{iinc}$      \\ 
   \midrule
   \bartilde{}                 & Macro                     & $Re_{macro}$     \\
   \bottomrule
