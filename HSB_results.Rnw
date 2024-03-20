@@ -1940,7 +1940,7 @@ Re_tot_satiated_lamp_char <- sprintf(fmt_lamp, Re_tot_satiated_lamp*100)
 @
 
 In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I, 
-we derived income-effect rebound expressions
+we showed income-effect rebound expressions
 under the limiting condition of already-satiated 
 consumption of the energy service such that the 
 income expansion path is a vertical line 
