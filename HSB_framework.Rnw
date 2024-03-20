@@ -1396,6 +1396,7 @@ the expression for indirect income for the CES utility model rebound is
 of direct and indirect income effect rebound.)
 
 Under the extreme non-homothetic utility model,
+consumption of the energy service is already satiated,
 all income ($\rasub{N}$) is spent on other goods,
 and indirect rebound becomes simply
 $Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.

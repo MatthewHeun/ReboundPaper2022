@@ -1855,8 +1855,8 @@ rebound_results %>%
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of non-homothetic utility models}
-\label{sec:non_homothetic_utility}
+\subsection{Comparison of CES and satiated utility models}
+\label{sec:utility_comparison}
 %++++++++++++++++++++++++++++++
 
 <<SatiatedReboundCalcs, echo=FALSE>>=
@@ -1947,7 +1947,7 @@ income expansion path is a vertical line
 in the consumption plane of 
 Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph}.
 Here, we discuss the numerical impact
-of the utility model.
+of the different utility models.
 
 Table~\ref{tab:utility_model_comparison}
 compares income-effect rebound under the CES utility model
@@ -1962,6 +1962,29 @@ Total rebound ($Re_{tot}$) goes from
 \Sexpr{Re_tot_ces_car_char}\% to
 \Sexpr{Re_tot_satiated_car_char}\%.
 On the other hand, 
+the lamp example shows very little change 
+in total rebound ($Re_{tot}$), 
+moving 
+from \Sexpr{Re_tot_ces_lamp_char}\% 
+(CES utility model)
+to \Sexpr{Re_tot_satiated_lamp_char}\% 
+(already-satiated consumption of the energy service).
+
+The reason for the nearly unchanged value for total rebound
+in the lamp example is visible in the consumption plane:
+In the CES (homothetic) utility model 
+of Fig.~\ref{fig:LampConsGraph}, 
+there is almost no income-effect spending 
+on more of the energy service.  
+Almost all income-effect spending is on other goods.
+The path between the $\wedge$ and $-$ points 
+is nearly vertical.
+
+The results of Table~\ref{tab:utility_model_comparison}
+indicate that each rebound situation
+should be analyzed independently.  
+One should never assume that the rebound characteristics
+of one device will apply to another.
 
 \begin{table}
 \footnotesize
