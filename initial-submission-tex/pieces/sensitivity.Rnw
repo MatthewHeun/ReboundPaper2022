@@ -1,0 +1,664 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_results.Rnw
+
+  
+Sensitivity analyses show the effect of 
+independently varied parameters on total rebound and rebound components.
+In the context of this framework,
+sensitivity analyses
+can show important trends, tendencies, and relationships
+between rebound parameters and rebound magnitudes.
+Key rebound parameters include 
+post-EEU efficiency ($\amacro{\eta}$),
+post-EEU capital cost ($\amacro{C}_{cap}$),
+energy price ($p_E$),
+pre-EEU uncompensated price elasticity of energy service demand ($\eqspsUCorig$), 
+the macro factor ($k$), and
+post-EEU energy service price ($\amacro{p}_s$).
+Univariate sensitivity analyses 
+(the kind shown here)
+should be interpreted carefully,
+because some rebound parameters are not expected to be 
+independent from others.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Effect of post-EEU efficiency ($\amacro{\eta}$) on rebound terms} 
+\label{sec:effect_of_efficiency}
+%++++++++++++++++++++++++++++++
+
+<<efficiency_ratios, echo=FALSE>>=
+car_efficiency_ratio <- (rebound_results %>% 
+                           dplyr::filter(Case == "Car (k = 3)") %>% 
+                           dplyr::select("eta_engr_units_star") / 
+                           rebound_results %>% 
+                           dplyr::filter(Case == "Car (k = 3)") %>% 
+                           dplyr::select("eta_engr_units_orig")) %>% 
+  unlist() %>% 
+  round(digits = 2) %>% 
+  format(nsmall = 2)
+
+lamp_efficacy_ratio <- (rebound_results %>% 
+                          dplyr::filter(Case == "Lamp (k = 3)") %>%
+                          dplyr::select("eta_engr_units_star") / 
+                          rebound_results %>%
+                          dplyr::filter(Case == "Lamp (k = 3)") %>%
+                          dplyr::select("eta_engr_units_orig")) %>% 
+  unlist() %>% 
+  round(digits = 2) %>% 
+  format(nsmall = 2)
+@
+  
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
+both the energy takeback rate and expected energy savings ($\Sdot$)
+increase with post-EEU efficiency ($\amacro{\eta}$), 
+but the relationship is asymptotic.
+Each unit increase of fuel economy or lighting efficiency is less effective than
+the previous unit increase of fuel economy or lighting efficiency
+for saving energy.
+At very high levels of fuel economy or lighting efficiency, 
+a unit increase leads to almost no additional energy savings.
+Thus, we can say there are diminishing returns of fuel economy and lighting efficiency,
+leading to saturation of energy savings at very high levels of fuel economy and lighting efficiency.
+A simple example illustrates.
+A $\bempl{\eta} = 25$ mpg car drives $\bempl{q}_s = 100$ miles 
+using $\bempl{E}_s = 4$ gallons of gasoline.
+A more-efficient car ($\amacro{\eta} = 30$ mpg) is expected to use
+$\aempl{E}_s = 3.33$ gallons to drive the same distance,
+a savings of $\Sdot = 0.67$ gallons.
+Another 5 mpg boost in efficiency (to $\amacro{\eta} = 35$ mpg)
+will use $\aempl{E}_s = 2.86$ gal to drive 100 miles, 
+a further expected savings of only $\Sdot = 0.47$ gallons.
+Each successive 5~mpg boost in fuel economy 
+saves less energy than the previous 5~mpg boost in fuel economy.
+
+
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
+actual_cases <- rebound_data %>% 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car (k = 3)", "Lamp (k = 3)")) %>% 
+  # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
+  dplyr::mutate(
+    Case = c("Car", "Lamp")
+  )
+
+eta_sens_params = list(Car = list(eta_engr_units_star = seq(35, 50, by = 0.5)), 
+                       Lamp = list(eta_engr_units_star = seq(70000, 90000, by = 5000)))
+
+eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases,
+                                                   parameterization = eta_sens_params) %>%
+  dplyr::mutate(
+    takeback = .data[[ReboundTools::rebound_terms$Re_tot]] * .data[[ReboundTools::star_vars$S_dot_dev]]
+  )
+
+# This is a hacky formatter function 
+# that formats the x-axis numbers of the graphs.
+# The argument x_breaks is the breaks for an axis.
+# The function checks to see if the breaks are > 1000 and divides by 1000 in that case.
+# This approach works, because lm-hr/kW-hr values are > 1000 for the lamp example
+# but the car example has mpg (which are all less than 100).
+# So this function divides the Lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
+eta_tilde_formatter <- function(x_breaks) {
+  if (all(x_breaks > 1000)) {
+    # To convert Lm-hr/kW-hr to Lm-hr/W-hr.
+    return(x_breaks/1000)
+  }
+  # To leave mpg alone.
+  return(x_breaks)
+}
+
+sensitivity_graphs(.parametric_data = eta_sens_data,
+                   x_var = "eta_engr_units_star", 
+                   y_var = c(ReboundTools::star_vars$S_dot_dev, "takeback")) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free") +
+  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
+  ggplot2::scale_y_continuous(limits = c(0, NA)) +
+  ggplot2::scale_colour_manual(values = c(S_dot_dev = "black", takeback = "black"), guide = "none") + 
+  ggplot2::scale_discrete_manual(aesthetics = "linewidth", values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
+  ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
+                y = expression(""*dot(S)[dev]*" and takeback rate [MJ/yr]"),
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() + 
+  ggplot2::theme(        
+    # Move the facet labels out of the graphs slightly.
+    strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2))
+  )
+@
+  
+  
+Saturation can be seen mathematically, too.
+Taking the limit as $\amacro{\eta} \rightarrow \infty$ 
+in Eq.~(\ref{PartI-eq:Sdot}) of Part~I gives $\Sdot = \rbempl{E}_s$, 
+not $\infty$. 
+Thus, efficiency saturation must occur.
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}
+shows that this framework correctly replicates
+expected efficiency saturation trends.
+
+Saturation is especially noticeable in the lamp example
+compared to the car example,
+the difference being that 
+the LED lamp is already much more efficient than the incandescent lamp
+(\Sexpr{lamp_efficacy_ratio}$\times$),
+whereas the hybrid car is only 
+\Sexpr{car_efficiency_ratio}$\times$ more efficient than the conventional gasoline car. 
+Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ \lmhr/\Whr, 
+the energy efficient LED
+is far closer to efficiency saturation than the hybrid vehicle 
+(at $\amacro{\eta} = \Sexpr{mpg_better}$ mpg).
+As a result, further increases in the LED lamp's efficiency 
+are less effective than further increases in the hybrid car's efficiency.
+
+That said, actual savings is the difference between the expected energy savings line (solid line)
+and the takeback line (dashed line) in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}.
+Because the gap between the lines grows, 
+higher efficiency yields greater energy savings,
+even after accounting for rebound effects.
+But the actual savings are always less than expected savings, due to takeback.
+
+Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
+expected energy savings ($\Sdot$) increase faster than takeback 
+as $\amacro{\eta}$ increases.
+Thus, total rebound ($Re_{tot}$, the ratio of 
+takeback rate to expected energy savings rate in Eq.~(\ref{PartI-eq:Re_takeback}) of Part~I),
+decreases as efficiency grows.
+The lamp exhibits a relatively smaller rebound decline with efficiency,
+because the lamp example is closer to saturation than the car example.
+
+Fig.~\ref{fig:all_Re_terms_eta_graph} shows the variation of all rebound components
+with post-EEU efficiency ($\amacro{\eta}$).
+In the car and lamp examples, 
+direct substitution rebound ($Re_{dsub}$) is the 
+rebound component 
+most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
+
+% A limitation of the energy efficiency sensitivity analysis is that 
+% post-EEU efficiency ($\amacro{\eta}$)
+% is unlikely to be independent of other factors, 
+% such as capital cost ($\amacro{C}_{cap}$).
+
+Note that the sensitivity analysis on post-upgrade efficiency 
+($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
+is the only sensitivity analysis that requires careful explication
+of both the numerator and denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I,
+as in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}, 
+because both the numerator and denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I
+change when post-upgrade efficiency ($\amacro{\eta}$) changes.
+The denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I doesn't change for
+the sensitivity analyses of Figs.~\ref{fig:all_Re_terms_C_cap_graph}--\ref{fig:all_Re_terms_k_graph}.
+Thus, for the remaining sensitivity analyses, 
+when the rebound percentage increases (decreases), 
+the energy takeback rate in the numerator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I
+increases (decreases) proportionally,
+and the actual energy savings rate decreases (increases) accordingly.
+
+
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+Re_graph_params <- ReboundTools::sens_graph_params
+Re_graph_params[["include_x_axis"]] <- TRUE
+Re_graph_params[["use_latex_legend"]] <- TRUE
+
+Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
+                                                ReboundTools::rebound_terms$Re_macro,
+                                                ReboundTools::rebound_terms$Re_dinc,
+                                                ReboundTools::rebound_terms$Re_iinc,
+                                                ReboundTools::rebound_terms$Re_dsub,
+                                                ReboundTools::rebound_terms$Re_isub,
+                                                ReboundTools::rebound_terms$Re_dempl,
+                                                ReboundTools::rebound_terms$Re_emb,
+                                                ReboundTools::rebound_terms$Re_md)] %>% 
+  unlist()
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_params, 
+                    x_var = "eta_engr_units_tilde", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
+  ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
+  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linewidth = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 0.7, by = 0.1)) +
+  MKHthemes::xy_theme() + 
+  ggplot2::theme(legend.text.align = 0, 
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Effect of capital cost ($\amacro{C}_{cap}$) on rebound terms} 
+\label{sec:effect_of_capital_cost}
+%++++++++++++++++++++++++++++++
+
+The sensitivity of energy rebound
+to capital cost ($\amacro{C}_{cap}$) is shown
+in Fig.~\ref{fig:all_Re_terms_C_cap_graph}.
+All other things being equal,
+as capital cost of the EEU rises, 
+less net savings result from the emplacement effect,
+leading to smaller income, macro, and total rebound.
+The same effects would be observed
+with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
+
+% A limitation of the capital cost sensitivity analysis is that
+% capital cost ($\amacro{C}_{cap}$) is unlikely to be
+% independent of $\amacro{\eta}$.
+% Within a given energy efficiency technology
+% (e.g., hybrid cars or LED lamps),
+% greater capital cost ($\amacro{C}_{cap}$) may be associated with
+% greater service efficiency ($\amacro{\eta}$).
+% $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
+% not independently.
+
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
+                              Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_sens_params,
+                    x_var = "C_cap_star", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(30000, 36000, by = 2000))) + 
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::labs(x = expression(tilde(C)[cap]*" [$]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linewidth = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 0.7, by = 0.1)) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Effect of energy price ($p_E$) on rebound terms} 
+\label{sec:effect_of_energy_price}
+%++++++++++++++++++++++++++++++
+
+<<Germany_results, echo=FALSE>>=
+# In the calculations, we include same parameters for German energy prices.
+# Extract that information here for use in the paragraph below.
+Car_Germany_Re_tot <- rebound_results %>% 
+  dplyr::filter(Case == "Car - Germany") %>% 
+  dplyr::select("Re_tot")
+Lamp_Germany_Re_tot <- rebound_results %>% 
+  dplyr::filter(Case == "Lamp - Germany") %>% 
+  dplyr::select("Re_tot")
+@
+
+
+The effect of energy price on rebound is shown in Fig.~\ref{fig:all_Re_terms_p_E_graph}.
+Increasing energy prices lead to larger total rebound ($Re_{tot}$),
+because higher energy prices lead to more net savings ($\rasub{N}$)
+to be spent by the device user.
+All other things being equal, more net savings leads to 
+more spending on other goods and services that demand energy.
+
+Fig.~\ref{fig:all_Re_terms_p_E_graph} also 
+shows the effect of energy price ($p_E$)
+on all rebound components.
+Most rebound components increase with energy price, 
+with the car and lamp examples exhibiting different sensitivities. 
+Substitution effects ($Re_{dsub}$ and $Re_{isub}$)
+are the only rebound components that decrease with energy price ($p_E$).
+Substitution effects decrease with energy price, because 
+at high energy price, less behavior adjustment is needed to re-equilibrate 
+after emplacement of the efficient device.
+
+<<GermanPrices, echo=FALSE>>=
+price_data <- tibble::tribble(~Case, ~Country, ~p_E_engr_units,
+                              "Car", "DEU", rebound_data %>% 
+                                dplyr::filter(Case == "Car - Germany") %>% 
+                                magrittr::extract2("p_E_engr_units"),     # $/USgal
+                              "Lamp", "DEU", rebound_data %>% 
+                                dplyr::filter(Case == "Lamp - Germany") %>% 
+                                magrittr::extract2("p_E_engr_units"))     # $/W-hr
+@
+
+In Fig.~\ref{fig:all_Re_terms_p_E_graph}, German energy prices%
+\footnote{
+  For the car example,
+  the gasoline price in Germany is taken as 1.42 \euro{}/liter for the average ``super gasoline'' (95 octane) 
+  price in 2018~\citep{finanzen}.
+  For the lamp example,
+  the electricity price in Germany is taken as 0.3 \euro{}/\kWhr for the 2018 price of a household using 3.5~MWh/yr,
+  an average value for German households~\citep{bundesministerium}.
+  Converting currency (at 1 \euro{} = \$1.21) and
+  physical units gives 
+  \Sexpr{price_data %>% 
+           dplyr::filter(Country == "DEU" & Case == "Car") %>% 
+           magrittr::extract2("p_E_engr_units")}~\$/US~gallon and 
+  \Sexpr{price_data %>% 
+           dplyr::filter(Country == "DEU" & Case == "Lamp") %>% 
+           magrittr::extract2("p_E_engr_units")}~\$/\kWhr.}
+%
+are shown as vertical lines,
+providing an indication of possible energy price variations.
+All other things being equal, 
+if U.S.\ residents paid Germany's energy prices,
+total energy rebound ($Re_{tot}$) would be 
+$\Sexpr{format(round(unlist(Car_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
+for the car example and 
+$\Sexpr{format(round(unlist(Lamp_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
+for the lamp example.
+
+% A limitation of the energy price sensitivity analysis arises from the fact that
+% energy price is not independent of other parameters.
+% Indeed, other rebound parameters
+% would change along with energy price
+% (especially if moving from one country to another),
+% including capital cost ($\amacro{C}_{cap}$), 
+% maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
+% energy intensity of the economy ($I_E$), and
+% energy service consumption rate ($\rbempl{q}_s$).
+
+<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
+                        Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_params, 
+                    x_var = "p_E_engr_units", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::geom_vline(data = price_data, 
+                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
+                      mapping = ggplot2::aes(xintercept = p_E_engr_units), 
+                      linewidth = 0.1) +
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 2, by = 0.2)) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
+  ggplot2::labs(x = expression(p[E]*" [$/gal (Car) or $/"*kW%.%hr*" (Lamp)]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linewidth = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+  
+  
+%++++++++++++++++++++++++++++++
+\subsection{Effect of original uncompensated own price elasticity ($\eqspsUC^\circ$) on rebound terms} 
+\label{sec:effect_of_elasticity}
+%++++++++++++++++++++++++++++++
+
+<<ElasticityValuesForSens, echo=FALSE>>=
+eqspsUC_car <- actual_cases %>% 
+  dplyr::filter(Case == "Car") %>% 
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
+eqspsUC_lamp <- actual_cases %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
+@
+
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
+                        Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
+
+# We want to get the parameterized data so we can find a specific data point for the text.
+eps_graph_parametric_data <- ReboundTools::parametric_analysis(original_cases = actual_cases, parameterization = eps_sens_params)
+
+rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterization = eps_sens_params,
+                    x_var = ReboundTools::orig_vars$e_qs_ps_UC_orig, 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::scale_x_reverse() +
+  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
+  ggplot2::labs(x = expression(epsilon[dot(q)[s]*","*p[s]]^o*" [-]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linewidth = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+  
+  
+<<DataForText, echo=FALSE>>=
+# Get the base eps value for the lamp case.
+eps_lamp_base <- actual_cases %>% 
+  dplyr::filter(Case == "Lamp") %>% 
+  dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig) %>% 
+  unlist() %>% 
+  unname()
+# Now get the equivalent Re_tot for the Car case for this e_qs_ps_UC value
+Re_tot_car_with_lamp_e_ps_qs <- eps_graph_parametric_data %>% 
+  dplyr::filter(Case == "Car") %>%
+  dplyr::filter(abs(.data[[ReboundTools::orig_vars$e_qs_ps_UC_orig]] - eps_lamp_base) < 0.00001) %>% 
+  dplyr::select(Re_tot)
+Re_tot_car_with_lamp_e_ps_qs <- Re_tot_car_with_lamp_e_ps_qs %>% 
+  unlist()
+@
+
+Fig.~\ref{fig:all_Re_terms_eps_graph} shows the variation of total rebound ($Re_{tot}$)
+with the original uncompensated price elasticity of energy service demand ($\eqspsUCorig$).
+The effect is exponential, and
+total rebound increases with larger negative values of $\eqspsUCorig$, as expected.
+The lamp example also shows stronger exponential variation than the car example.
+The main reason that total rebound values 
+are different between the two examples
+is the larger absolute value of original uncompensated own price elasticity ($\eqspsUCorig$) 
+for the lamp ($\Sexpr{eqspsUC_lamp}$) compared to the car ($\Sexpr{eqspsUC_car}$).
+Were the car to have the same original uncompensated own price elasticity
+as the lamp (i.e., $\Sexpr{eqspsUC_lamp}$), 
+total rebound would be closer for both examples 
+($\Sexpr{format(round(Re_tot_car_with_lamp_e_ps_qs*100, 1), nsmall = 1)}$\% for the car and 
+$\Sexpr{format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)}$\% for the lamp).
+Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
+($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC^\circ$.
+For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
+substantially with $\eqspsUC^\circ$, 
+because net savings increases substantially with $\eqspsUC^\circ$. 
+
+% A limitation of the elasticity sensitivity study derives from limitations of the 
+% CES utility model itself, which constrains price elasticity variation
+% given an elasticity of substitution.
+% Uneconomic conditions should be avoided.
+% For example, negative direct substitution rebound ($Re_{dsub} < 0$)
+% is obtained when $\left| \eqspsUC \right| < \fCs$,
+% because the elasticity of substitution goes negative ($\sigma < 0$).
+% (See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
+% In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
+% would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
+% thereby avoiding the uneconomic condition.
+% However, a univariate sensitivity study cannot capture this effect and is
+% best used for smaller variations in $\eqspsUC$
+% about a nominal value.
+
+  
+%++++++++++++++++++++++++++++++
+\subsection{Effect of macro factor ($k$) on rebound terms} 
+\label{sec:effect_of_macro_factor}
+%++++++++++++++++++++++++++++++
+
+The sensitivity of energy rebound 
+to the macro factor ($k$) is shown 
+in Fig.~\ref{fig:all_Re_terms_k_graph}.
+The macro factor has a linear effect on total rebound ($Re_{tot}$)
+through the macro rebound component ($Re_{\macro}$).
+All other rebound components are constant when $k$ is varied independently.
+
+% A limitation of the macro factor sensitivity analysis is that
+% the macro factor ($k$) is unlikely to be 
+% independent of $I_E$, because 
+% different values of $k$ imply a different macroeconomy.
+
+<<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4, fig.align="center">>=
+k_sens_params <- list(Car = list(k = seq(0.5, 5, by = 0.5)),
+                      Lamp = list(k = seq(0.5, 5, by = 0.5)))
+
+rebound_terms_graph(rebound_data = actual_cases, parameterization = k_sens_params,
+                    x_var = "k", 
+                    Re_terms = Re_terms_order,
+                    graph_params = Re_graph_params) +
+  ggplot2::scale_y_continuous(breaks = seq(-0.2, 1, by = 0.1)) + 
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  ggplot2::labs(x = expression("k [-]"),
+                y = "Rebound terms [-]",
+                colour = ggplot2::element_blank(),
+                size = ggplot2::element_blank(),
+                linewidth = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+  
+
+%++++++++++++++++++++++++++++++
+\subsection{Effect of energy service price ($\amacro{p}_s$) on price elasticities ($\asub{\varepsilon}$)}
+\label{sec:price_elasticities_sensitivity}
+%++++++++++++++++++++++++++++++
+
+The sensitivity of post-substitution effect price elasticities ($\asub{\varepsilon}$)
+to post-upgrade energy service price ($\amacro{p}_s$)
+is shown in Fig.~\ref{fig:PriceElasticitySensGraph}
+for the CES utility model described 
+in Section~\ref{PartI-sec:sub_effect_main_paper} 
+and Appendix~\ref{PartI-sec:utility_and_elasticities}
+of Part~I.
+Note that the left side of each graph ($\amacro{p}_{s} = 0$)
+represents unattainable infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
+i.e., delivery of the energy service without energy consumption.
+
+First, note the sign of the elasticities. As expected, both of the
+uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$,
+dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph}) 
+are negative, regardless of the energy service price ($\amacro{p}_s$):
+a lower price means more consumption of both
+goods, all other things being equal.
+The compensated own price elasticity ($\eqspsChat$) is negative
+and the compensated cross price elasticity ($\eqopsChat$) is positive.
+As $\amacro{p}_s$ declines, the consumers substitutes the energy
+service for other goods.
+
+<<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\amacro{p}_s = \\ainc{p}_s = \\asub{p}_s = \\aempl{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
+# Run a new sensitivity study on the car and lamp examples
+eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
+                                 Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
+
+eta_sens_data_for_eps <- ReboundTools::parametric_analysis(original_cases = actual_cases,
+                                                           parameterization = eta_sens_params_for_eps) %>% 
+  dplyr::mutate(
+    p_s_orig = dplyr::case_when(
+      Case == "Car"  ~ p_s_orig * 100, # Convert to $/hundred miles or cents/mile
+      Case == "Lamp" ~ p_s_orig * 1e6  # Convert to micro$/lm-hr
+    ),
+    p_s_star = dplyr::case_when(
+      Case == "Car"  ~ p_s_star * 100,  # Convert to $/hundred miles
+      Case == "Lamp" ~ p_s_star * 1e6  # Convert to micro$/lm-hr
+    )
+  )
+
+eta_sens_data_for_eps_graph <- eta_sens_data_for_eps %>% 
+  dplyr::select(Case, eta_engr_units_star, p_s_star, e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat) %>% 
+  tidyr::pivot_longer(cols = c(e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat), 
+                      names_to = "elasticity_type", 
+                      values_to = "elasticity") %>% 
+  dplyr::mutate(
+    elasticity_type = factor(elasticity_type, levels = c("e_qo_ps_C_hat",
+                                                         "e_qo_ps_UC_hat",
+                                                         "e_qs_ps_C_hat",
+                                                         "e_qs_ps_UC_hat"))
+  )
+
+# Create a data frame of original and upgrade prices.
+orig_ps_df <- eta_sens_data_for_eps %>% 
+  dplyr::select(Case, eta_engr_units_orig, p_s_orig) %>% 
+  unique() 
+upgrade_ps_df <- rebound_results %>% 
+  dplyr::filter(Case %in% c("Car", "Lamp")) %>% 
+  dplyr::select(Case, p_s_star) %>% 
+  dplyr::mutate(
+    p_s_star = dplyr::case_when(
+      Case == "Car" ~ p_s_star * 100,  # Convert to $/hundred miles or cents/mile
+      Case == "Lamp" ~ p_s_star * 1e6  # Convert to micro$/lm-hr
+    )
+  )
+orig_and_upgrade_ps_df <- dplyr::full_join(orig_ps_df, upgrade_ps_df, by = "Case")
+
+ggplot2::ggplot() +
+  # Original energy service price
+  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_orig), linewidth = 0.1) +
+  # Upgraded energy service price
+  ggplot2::geom_vline(data = orig_and_upgrade_ps_df, mapping = ggplot2::aes(xintercept = p_s_star), linewidth = 0.1, linetype = "FA") +
+  ggplot2::geom_hline(yintercept = 0, linewidth = 0.2) +
+  ggplot2::geom_line(data = eta_sens_data_for_eps_graph, 
+                     mapping = ggplot2::aes(x = p_s_star, 
+                                            y = elasticity, 
+                                            color = elasticity_type,
+                                            linetype = elasticity_type), 
+                     linewidth = 0.5, 
+                     lineend = "round") +
+  ggplot2::labs(x = expression(tilde(p)[s]*" [¢/mile (Car) or "*mu*"$/"*lm%.%hr*" (Lamp)]"), 
+                y = expression("Price elasticity, "*hat(epsilon)*" [-]")) +
+  ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
+                                         e_qs_ps_UC_hat = "red", 
+                                         e_qo_ps_C_hat = "black", 
+                                         e_qo_ps_UC_hat = "black"), 
+                              labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[q[s]*","*p[s]*","*c]), 
+                                         e_qs_ps_UC_hat = expression(hat(epsilon)[q[s]*","*p[s]]), 
+                                         e_qo_ps_C_hat = expression(hat(epsilon)[q[o]*","*p[s]*","*c]), 
+                                         e_qo_ps_UC_hat = expression(hat(epsilon)[q[o]*","*p[s]]))) +
+  ggplot2::scale_linetype_manual(values = c(e_qs_ps_C_hat = "solid", 
+                                            e_qs_ps_UC_hat = "dashed", 
+                                            e_qo_ps_C_hat = "solid", 
+                                            e_qo_ps_UC_hat = "dashed"), 
+                                 labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[q[s]*","*p[s]*","*c]), 
+                                            e_qs_ps_UC_hat = expression(hat(epsilon)[q[s]*","*p[s]]), 
+                                            e_qo_ps_C_hat = expression(hat(epsilon)[q[o]*","*p[s]*","*c]), 
+                                            e_qo_ps_UC_hat = expression(hat(epsilon)[q[o]*","*p[s]]))) +
+  ggplot2::labs(colour = ggplot2::element_blank(),
+                linetype = ggplot2::element_blank()) +
+  ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
+  MKHthemes::xy_theme() +
+  ggplot2::theme(legend.text.align = 0,
+                 # Move the facet labels out of the graphs slightly.
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+@
+
+
+Second, the magnitude of price elasticities varies.
+Fig.~\ref{fig:PriceElasticitySensGraph} shows that the car example exhibits
+more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\amacro{p}_s$)
+than the lamp example, 
+because the expenditure share ($\fCs$) for the lamp example is very small
+compared to the car example.
+Using the constant price elasticity (CPE) utility model may be a
+good enough approximation in the lamp example. 
+However, for the car example, using the CES utility function will be necessary
+to eliminate errors that will be present in the CPE approximation.
+This result is an important finding that should encourage 
+analysts implementing analytical rebound calculations
+with substitution and income effects
+to prefer the CES utility model over the CPE approximation.
+
+Fig.~\ref{fig:PriceElasticitySensGraph} shows that
+as efficiency increases (and $\amacro{p}_s$ decreases), 
+the absolute value of the uncompensated price elasticities 
+($\eqspsUChat$ and $\eqopsUChat$) decreases, 
+a change that exceeds the slightly increasing (in absolute value terms)
+compensated own price elasticity ($\eqspsChat$). 
+Thus, direct rebound is attenuated as efficiency increases,
+relative to a constant price elasticity model.
+(See also the patterns of lines of Fig.~\ref{fig:all_Re_terms_eta_graph},
+which show a declining trend.)

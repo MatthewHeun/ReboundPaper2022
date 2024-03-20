@@ -11,23 +11,41 @@ destination_file_base_results="HSB_results_$(date +'%Y-%m-%d')"
 # Copy the .pdf file to a different name with date appended
 cp "$source_file_base_framework.pdf" "$destination_file_base_framework.pdf"
 cp "$source_file_base_results.pdf" "$destination_file_base_results.pdf"
+
+# Compile the original files
+cd initial-submission-tex
+pdflatex "$source_file_base_framework-initial-submission.tex"
+bibtex "$source_file_base_framework-initial-submission"
+pdflatex "$source_file_base_framework-initial-submission.tex"
+pdflatex "$source_file_base_framework-initial-submission.tex"
+pdflatex "$source_file_base_results-initial-submission.tex"
+bibtex "$source_file_base_results-initial-submission"
+pdflatex "$source_file_base_results-initial-submission.tex"
+pdflatex "$source_file_base_results-initial-submission.tex"
+cd ..
+
 # Run the difference command
 # Part I - Framework
-latexdiff "initial-submission-tex/$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff_$destination_file_base_framework.tex"
-# Part II - Results
-latexdiff "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff_$destination_file_base_results.tex"
-# Compile the difference files
-pdflatex "diff_$destination_file_base_framework.tex"
-bibtex "diff_$destination_file_base_framework"
-pdflatex "diff_$destination_file_base_framework.tex"
-pdflatex "diff_$destination_file_base_framework.tex"
+latexdiff --flatten "initial-submission-tex/$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff-$source_file_base_framework.tex"
+# The derivation appendix
+# latexdiff "initial-submission-tex/pieces/derivation-initial-submission.tex" "pieces/derivation.tex" > "pieces/diff-derivation.tex"
+# sed -i.bak 's/derivation\.tex/diff-derivation\.tex/g' diff-HSB_framework.tex && rm diff-HSB_framework.tex.bak
 
-pdflatex "diff_$destination_file_base_results.tex"
-bibtex "diff_$destination_file_base_results"
-pdflatex "diff_$destination_file_base_results.tex"
-pdflatex "diff_$destination_file_base_results.tex"
+# Part II - Results
+latexdiff --flatten "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff-$source_file_base_results.tex"
+
+# Compile the difference files
+pdflatex "diff-$source_file_base_framework.tex"
+bibtex "diff-$source_file_base_framework"
+pdflatex "diff-$source_file_base_framework.tex"
+pdflatex "diff-$source_file_base_framework.tex"
+
+pdflatex "diff-$source_file_base_results.tex"
+bibtex "diff-$source_file_base_results"
+pdflatex "diff-$source_file_base_results.tex"
+pdflatex "diff-$source_file_base_results.tex"
 
 open "$destination_file_base_framework.pdf"
 open "$destination_file_base_results.pdf"
-open "diff_$destination_file_base_framework.pdf"
-open "diff_$destination_file_base_results.pdf"
+open "diff-$source_file_base_framework.pdf"
+open "diff-$source_file_base_results.pdf"

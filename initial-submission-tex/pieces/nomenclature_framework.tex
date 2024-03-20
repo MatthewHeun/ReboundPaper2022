@@ -1,0 +1,190 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+Presentation of the rigorous analytical framework is aided by a 
+nomenclature that describes energy stages and rebound effects.
+Table~\ref{tab:symbols} shows symbols and abbreviations, their meanings, and example units.
+Table~\ref{tab:greek} shows Greek letters, their meanings, and example units.
+Table~\ref{tab:abbreviations} shows abbreviations and acronyms.
+Table~\ref{tab:decorations} shows symbol decorations and their meanings.
+Table~\ref{tab:subscripts} shows subscripts and their meanings.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\centering % Centered table
+\caption{Symbols and abbreviations.}
+\begin{tabular}{r l}
+  \toprule
+  Symbol & Meaning [example units] \\
+  \midrule
+  $a$                 & the share parameter in the CES utility model [--] \\
+  $C$                 & cost [\$] \\
+  $E$                 & final energy [MJ] \\
+  $f$                 & expenditure share [--] \\
+  $G$                 & freed cash [\$] \\
+  $g$                 & a constant in the derivation of $\eqspsC$ and $\eqopsC$ [--] \\
+  $h$                 & a constant in the derivation of $\eqspsC$ and $\eqopsC$ [--] \\
+  $I$                 & energy intensity of economic activity [MJ/\$] \\
+  $k$                 & macro factor [--] \\
+  $M$                 & income [\$] \\
+  \multirow{2}*{$m$}  & mass [kg] \\
+                      & an exponent in the derivation of $\eqspsC$ and $\eqopsC$ [--] \\
+  $N$                 & net savings [\$] \\
+  $n$                 & an exponent in the derivation of $\eqspsC$ and $\eqopsC$ [--] \\
+  $p$                 & price [\$] \\
+  $q$                 & quantity [--] \\
+  $Re$                & rebound [--] \\
+  $S$                 & energy cost savings [\$] \\
+  $t$                 & energy conversion device lifetime [yr] \\
+  $u$                 & utility [utils] \\
+  $x$                 & position [m] \\
+  $z$                 & a constant in the derivation of $\eqspsC$ and $\eqopsC$ [--] \\
+  \bottomrule
+\end{tabular}
+\label{tab:symbols}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Greek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\centering % Centered table
+\caption{Greek letters.}
+\begin{tabular}{r l}
+  \toprule
+  Greek letter & Meaning [example units] \\
+  \midrule
+  $\Delta$       & difference (later quantity less earlier quantity, see Fig.~\ref{fig:flowchart}) \\
+  $\varepsilon$  & price or income elasticity [--] \\
+  $\eqsM$        & income ($\dot{M}$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqoM$        & income ($\dot{M}$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eqspsUC$     & uncompensated energy service price ($p_s$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqopsUC$     & uncompensated energy service price ($p_s$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eqspsC$      & compensated energy service price ($p_s$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqopsC$      & compensated energy service price ($p_s$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eta$         & final-energy-to-service efficiency [vehicle-km/MJ] \\
+  $\rho$         & exponent in the CES utility function, $\rho \equiv (\sigma - 1) / \sigma$ [--] \\
+  $\sigma$       & elasticity of substitution between the energy service ($\rbempl{q}_s$) and other goods ($\rbempl{q}_o$) [--] \\
+  \bottomrule
+\end{tabular}
+\label{tab:greek}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\centering % Centered table
+\caption{Abbreviations.}
+\begin{tabular}{r l}
+  \toprule
+  Abbreviation & Meaning \\
+  \midrule
+  CES    & constant elasticity of substitution \\
+  CPE    & constant price elasticity \\
+  CV     & compensating variation \\
+  EEU    & energy efficiency upgrade \\
+  EPSRC  & engineering and physical sciences research council \\
+  GDP    & gross domestic product \\
+  MPC    & marginal propensity to consume \\
+  UK     & United Kingdom \\
+  UKRI   & UK research and innovation \\
+  U.S.\  & United States \\
+  \bottomrule
+\end{tabular}
+\label{tab:abbreviations}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Decorations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\centering % Centered table
+\caption{Decorations.}
+\begin{tabular}{r l}
+  \toprule
+  Decoration & Meaning [example units] \\
+  \midrule
+  $\orig{X}$ & $X$ originally (before the \empleffect{}) \\
+  $\aempl{X}$  & $X$ after the \empleffect{} (before the \subeffect{}) \\
+  $\asub{X}$ & $X$ after the \subeffect{} (before the \inceffect{}) \\
+  $\ainc{X}$ & $X$ after the \inceffect{} (before the \macroeffect{}) \\
+  $\amacro{X}$ & $X$ after the \macroeffect{} \\
+  $\rate{X}$ & rate of $X$ [units of X/yr] \\
+  $M^\prime$ & effective income [\$] \\
+  \bottomrule
+\end{tabular}
+\label{tab:decorations}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subscripts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\centering
+\caption{Subscripts.}
+\begin{tabular}{r l}
+  \toprule
+  Subscript & Meaning \\
+  \midrule
+  $c$      & compensated \\
+  $cap$    & capital costs \\
+  $dev$    & device \\
+  $dempl$  & direct emplacement effect \\
+  $d$      & disposal \\
+  $dinc$   & direct income effect \\
+  $dsub$   & direct substitution effect \\
+  $E$      & energy \\
+  $emb$    & embodied \\
+  $empl$   & emplacement effect \\
+  $iempl$  & indirect emplacement effects \\
+  $iinc$   & indirect income effect \\
+  $inc$    & income effect \\
+  $isub$   & indirect substitution effect \\
+  $\life$  & lifetime \\
+  $m$      & maintenance \\
+  $\macro$ & macro effect \\
+  $\md$    & maintenance and disposal \\
+  $o$      & other expenditures (besides energy) by the device user \\
+  $s$      & service stage of the energy conversion chain \\
+  $sub$    & substitution effect \\
+  $tot$    & sum of all rebound effects in the framework \\
+  \bottomrule
+\end{tabular}
+\label{tab:subscripts}
+\end{table}
+
+
+Differences are indicated by the Greek letter $\Delta$ and always
+signify subtraction of a quantity at an earlier stage of Fig.~\ref{fig:flowchart}
+from the same quantity at the next later stage of Fig.~\ref{fig:flowchart}.
+E.g.,
+$\Delta \ainc{X} \equiv \ainc{X} - \binc{X}$, and
+$\Delta \amacro{X} \equiv \amacro{X} - \bmacro{X}$.
+Lack of decoration on a difference term indicates a difference that spans all stages of Fig.~\ref{fig:flowchart}.
+E.g., $\Delta X \equiv \amacro{X} - \orig{X}$.
+$\Delta X$ is also the sum of differences across each stage in Fig.~\ref{fig:flowchart},
+as shown below.
+
+\begin{align}
+\Delta X &= \Delta \amacro{X} + \Delta \ainc{X} + \Delta \asub{X} + \Delta \aempl{X} \nonumber \\
+\Delta X &= (\amacro{X} - \bmacro{X}) + (\ainc{X} - \binc{X})
+            + (\asub{X} - \bsub{X}) + (\aempl{X} - \bempl{X}) \nonumber \\
+\Delta X &= (\amacro{X} - \cancel{\bmacro{X}}) + (\cancel{\ainc{X}} - \cancel{\binc{X}})
+            + (\cancel{\asub{X}} - \cancel{\bsub{X}}) + (\cancel{\aempl{X}} - \bempl{X}) \nonumber \\
+\Delta X &= \amacro{X} - \orig{X}
+\end{align}
