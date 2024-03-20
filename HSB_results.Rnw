@@ -1861,7 +1861,7 @@ rebound_results %>%
 
 <<SatiatedReboundCalcs, echo=FALSE>>=
 fmt_car <- "%.1f"
-fmt_lamp <- "%.3f"
+fmt_lamp <- "%.2f"
 # Car
 ## CES utility model
 Re_dinc_ces_car <- rebound_results |> 
@@ -1970,17 +1970,26 @@ from \Sexpr{Re_tot_ces_lamp_char}\%
 to \Sexpr{Re_tot_satiated_lamp_char}\% 
 (already-satiated consumption of the energy service).
 
-The reason for the nearly unchanged value for total rebound
-in the lamp example is visible in the consumption plane:
+The reason for the nearly unchanged value 
+for total rebound ($Re_{tot}$)
+in the lamp example is visible in the consumption plane.
 In the CES (homothetic) utility model 
 of Fig.~\ref{fig:LampConsGraph}, 
 there is almost no income-effect spending 
 on more of the energy service.  
-Almost all income-effect spending is on other goods.
+Almost all spending of net income ($\rasub{N}$) 
+is on other goods.
 The path between the $\wedge$ and $-$ points 
 is nearly vertical.
+In contrast, the path from $\wedge$ to $-$ in the car example 
+(Fig.~\ref{fig:CarConsGraph})
+is decidedly \emph{not} vertical and a reduction in
+income-effect rebound ($Re_{inc}$) is observed when 
+moving from the CES utility model to the extreme
+of already satiated energy service consumption.
+Reality is probably somewhere in between.
 
-The results of Table~\ref{tab:utility_model_comparison}
+The results shown in Table~\ref{tab:utility_model_comparison}
 indicate that each rebound situation
 should be analyzed independently.  
 One should never assume that the rebound characteristics
