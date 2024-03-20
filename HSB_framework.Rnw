@@ -1345,7 +1345,7 @@ Under a non-homothetic utility model,
 the extreme condition is that
 as the device owner becomes richer, 
 none of the income ($\rasub{N} = 0$)
-is spent on more of the energy service and thus
+is spent on more of the energy service, and thus
 $Re_{dinc} = 0$ would occur.
 
 
