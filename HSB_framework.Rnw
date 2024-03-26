@@ -1285,7 +1285,7 @@ the consumer spends all income after the substitution effect on other goods and 
 choices that serve to reduce rebound 
 due to typically lower energy intensity of other goods compared to the energy service.%
 \footnote{
-  In principle, energy services could also be an     
+  In principle, the energy service could be an     
   ``inferior good'' whose consumption declines as incomes rise. 
   However, energy service elasticities of income
   have been estimated 
