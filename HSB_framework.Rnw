@@ -1270,15 +1270,29 @@ across the income effect,
 a property known as homotheticity.
 This constraint is satisfied by construction below, 
 particularly via an effective income term ($\Mdothatprime$).
-However, this framework could accommodate non-homothetic preferences
-for spending across the income effect (turning the income
+
+However, this framework could accommodate 
+non-homothetic preferences
+for spending across the income effect
+(turning the income
 expansion path into a more general curve instead of a line).
-In the extreme, 
-the consumer spends all income after the substitution effect
-on other goods and none of the energy service, 
-choices that typically serve to reduce rebound
-due to typically lower energy intensity of other goods compared 
-to the energy service.
+Demand for certain energy services could satiate 
+as consumers become more affluent, 
+implying income elasticities 
+of the energy service of below one \citep{Greening2000}. 
+At the lower bound, 
+the consumer spends all income after the substitution effect on other goods and none on the energy service,
+choices that serve to reduce rebound 
+due to typically lower energy intensity of other goods compared to the energy service.%
+\footnote{
+  In principle, energy services could also be an     
+  ``inferior good'' whose consumption declines as incomes rise. 
+  However, energy service elasticities of income
+  have been estimated 
+  to be positive over the long run,
+  so we do not expect the inferior good case
+  to be relevant \citep{Fouquet2014}.
+}
 
 We next show expressions for 
 direct and indirect income effect rebound.
@@ -1342,9 +1356,9 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
 }
 
 Under a non-homothetic utility model, 
-the extreme condition is that
+the bounding condition is that
 as the device owner becomes richer, 
-none of the income ($\rasub{N} = 0$)
+none of the income ($\rasub{N}$)
 is spent on more of the energy service, and thus
 $Re_{dinc} = 0$ would occur.
 
@@ -1395,7 +1409,7 @@ the expression for indirect income for the CES utility model rebound is
 (See Appendix~\ref{sec:Re_inc} for details of the derivation
 of direct and indirect income effect rebound.)
 
-Under the extreme non-homothetic utility model,
+Under the bounding non-homothetic utility model,
 consumption of the energy service is already satiated,
 all income ($\rasub{N}$) is spent on other goods,
 and indirect rebound becomes simply

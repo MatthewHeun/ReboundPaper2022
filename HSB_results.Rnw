@@ -1951,12 +1951,12 @@ of the different utility models.
 
 Table~\ref{tab:utility_model_comparison}
 compares income-effect rebound under the CES utility model
-and the extreme condition of satiated consumption
+and the bounding condition of satiated consumption
 of the energy service.
 In the car example, income effect rebound ($Re_{inc}$) 
 reduces from \Sexpr{Re_inc_ces_car_char}\% to
 \Sexpr{Re_inc_satiated_car_char}\% when moving from the 
-CES utility model to the extreme condition of already-satiated 
+CES utility model to the bounding condition of already-satiated 
 consumption of the energy service.
 Total rebound ($Re_{tot}$) goes from 
 \Sexpr{Re_tot_ces_car_char}\% to
@@ -1985,7 +1985,7 @@ In contrast, the path from $\wedge$ to $-$ in the car example
 (Fig.~\ref{fig:CarConsGraph})
 is decidedly \emph{not} vertical and a reduction in
 income-effect rebound ($Re_{inc}$) is observed when 
-moving from the CES utility model to the extreme
+moving from the CES utility model to the bounding condition
 of already satiated energy service consumption.
 Reality is probably somewhere in between.
 
