@@ -1998,13 +1998,13 @@ of one device will apply to another.
 \begin{table}
 \footnotesize
 \centering
-\caption[toc caption]{Comparison of income effect 
-                      ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
-                      total ($Re_{tot}$) rebound
-                      between
-                      the CES utility model and satiated
-                      consumption of the energy service for the
-                      car and lamp examples.}
+\caption{Comparison of income effect 
+         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
+         total ($Re_{tot}$) rebound
+         between
+         the CES utility model and satiated
+         consumption of the energy service for the
+         car and lamp examples.}
 \label{tab:utility_model_comparison}
 \begin{tabular}{r r r r r}
 \toprule
