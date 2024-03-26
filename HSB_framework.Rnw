@@ -1779,7 +1779,7 @@ required conceptual development
 as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
 (Development of empirical applications is left for Part~II.)
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
-hence we fill the ``This paper (2023)'' column 
+hence we fill the ``This paper (2024)'' column 
 with filled circles (\rating{100})
 in nearly all rows.
 By so doing, we help advance clarity in the field of energy rebound.
