@@ -1626,6 +1626,12 @@ we find
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%++++++++++++++++++++++++++++++
+\subsection{Comparison to other rebound frameworks}
+\label{sec:comparison_to_other_rebound_frameworks}
+%++++++++++++++++++++++++++++++
+
 We developed above a rebound framework for consumers. 
 We note that many of its components are similar
 to those for a producer-sided framework
@@ -1783,6 +1789,32 @@ hence we fill the ``This paper (2024)'' column
 with filled circles (\rating{100})
 in nearly all rows.
 By so doing, we help advance clarity in the field of energy rebound.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Notes on income expansion and the energy price effect}
+\label{sec:notes_price_effect}
+%++++++++++++++++++++++++++++++
+
+The income effect (Section~\ref{sec:inc_effect_main_paper})
+captures the effects of expanding real income. 
+Our partial equilibrium framework described herein
+enables calculation of income effect rebound ($Re_{inc}$)
+without regard to changes in energy price ($p_E$), 
+because energy price is assumed to be exogeneous.
+That said, the framework can be extended to 
+obtain an initial estimate of the magnitude 
+of the energy price effect.
+Appendix~\ref{sec:price_effect} derives an expression for 
+rebound from the price effect as
+
+\begin{equation} \label{eq:price_effect}
+  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \ainc{p}_E \rainc{E}_s I_E}{\Sdot} \; .
+\end{equation}
+%
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
