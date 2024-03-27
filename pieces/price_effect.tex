@@ -26,22 +26,26 @@ The derivation begins with an estimate of the new economy-wide
 demand for energy ($\rainc{Q}_E$).
 
 \begin{equation}
-  \rainc{Q}_E = \rbempl{Q}_E - N_{dev} f_{EEU} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s} \right) \, ,
+  \rainc{Q}_E = \rbempl{Q}_E - N_{dev} f_{\EEU} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s} \right) \, ,
 \end{equation}
 %
 where
 $\rate{Q}_E$ is the rate of economy-wide demand for energy in MJ/year,
 $N_{dev}$ is the number of devices in service, 
-$f_{EEU}$ is the fraction of devices upgraded across the economy
+$f_{\EEU}$ is the fraction of devices upgraded across the economy
 (i.e., the penetration of the EEU), and
 $\rate{E}_s$ is the rate of energy consumption by a single device in MJ/year.
 The decorations $\circ$ and $-$ have the usual meanings
-provided in Fig.~\ref{fig:flowchart}.
-The ratio of new to original demand is given by
+provided in Fig.~\ref{fig:flowchart}, namely 
+$\circ$ indicates the original, pre-EEU device, and 
+$-$ indicates conditions after 
+emplacement, substitution, and income
+adjustments.
+The ratio of new to pre-EEU demand for energy is given by
 
 \begin{equation}
   \frac{\rainc{Q}_E}{\rbempl{Q}_E} =
-        \frac{\rbempl{Q}_E - N_{dev} f_{EEU} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right)}
+        \frac{\rbempl{Q}_E - N_{dev} f_{\EEU} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right)}
         {\rbempl{Q}_E}
 \end{equation}
 %
@@ -49,7 +53,7 @@ The ratio of new to original demand is given by
 
 % \frac{  \left( 1 - \frac{}{} \right)}{\rbempl{Q}_E}}
 
-due to widespread penetration ($f_{EEU}$) of the EEU,
+due to widespread penetration ($f_{\EEU}$) of the EEU,
 expressed as a ratio.
 
 
