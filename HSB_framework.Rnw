@@ -1854,7 +1854,7 @@ Appendix~\ref{sec:price_effect_appendix} derives an expression for
 rebound from the energy price effect as
 
 \begin{equation} \label{eq:price_effect}
-  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \ainc{p}_E \rainc{E}_s I_E}{\Sdot} \; .
+  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \ainc{p}_E \rainc{E}_s I_E}{\Sdot} \, .
 \end{equation}
 
 
