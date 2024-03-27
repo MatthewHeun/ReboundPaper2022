@@ -1792,7 +1792,7 @@ By so doing, we help advance clarity in the field of energy rebound.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Notes on income expansion and the energy price effect}
+\subsection{Notes on income expansion and an energy price effect}
 \label{sec:notes_price_effect}
 %++++++++++++++++++++++++++++++
 
@@ -1804,32 +1804,35 @@ enables calculation of income effect rebound ($Re_{inc}$)
 without regard to changes in energy price ($p_E$), 
 because energy price is assumed exogenous.
 
-But there is another effect at work, 
-one that extends beyond partial equilibrium
-effects at the device level, 
-namely the energy price effect.
+But there are other effects at work
+beyond the device level and outside the boundaries of a
+partial equilibrium analysis.
+One of those effects in an energy price effect.
+**** Should we mention an energy price effect in Table~\ref{tab:rebound_typology}? ****
 This section (and Appendix~\ref{sec:price_effect_appendix})
 shows that our framework can be extended to 
 obtain an initial estimate of the 
 rebound implications
-of the energy price effect
-($Re_{p_E}$).
+of an energy price effect
+($Re_{p_E}$)
+with an analysis 
+that remains short of full equilibrium.
 
 The energy price effect can lead to rebound when
-EEUs with significant penetration are applied to
+EEUs with significant market penetration are applied to
 energy conversion devices at economy-wide scale.
 Examples of conditions when the energy price effect 
-could be significant are 
+could be significant would include 
 replacing all cars in the economy by hybrids and 
 replacing all domestic electric lamps in the economy by LEDs, 
-the examples in Part~II.
+the examples of Part~II.
 With reduced reduced energy demand across the economy, 
 an energy price reduction can be expected
 ($\bempl{p}_E > \ainc{p}_E$)
 as energy suppliers react to new market conditions.
-With the now-lower energy price, 
+With the now-lower energy price ($\ainc{p}_E$), 
 the device owner has additional freed cash to spend,
-even after adjustments described by 
+in addition to the adjustments described by 
 the substitution and income effects.
 (See Sections~\ref{sec:sub_effect_main_paper}
 and~\ref{sec:inc_effect_main_paper}.)
@@ -1837,7 +1840,7 @@ and~\ref{sec:inc_effect_main_paper}.)
 A complete analysis of the price effect
 would amount to a full equilibrium model
 and involve solving a system of simultaneous equations for 
-new economy-wide energy demand,
+the new economy-wide energy demand,
 the new energy price, and
 a new consumption bundle. 
 But in this instance, 

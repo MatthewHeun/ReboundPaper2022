@@ -4,16 +4,10 @@
 %!TEX root = ../HSB_framework.Rnw
 
 
-**** Price effect derivation here. ****
-
-**** Serves as an example of the expandability 
-of the framework presented herein. ****
-
-
 The energy price effect is caused by a reduction 
 in energy price ($p_E$)
-that can occur when implementation of an
-energy efficiency upgrade (EEU)
+that can occur when widespread implementation 
+of an energy efficiency upgrade (EEU)
 leads to an economy-wide reduction in energy demand.
 Reduced demand leads to a lower energy price ($p_E$), 
 thus the device owner spends less on energy purchases
@@ -25,8 +19,9 @@ at the energy intensity of the economy ($I_E$).
 This appendix derives an expression for an
 energy price-effect rebound (Eq.~\ref{eq:Re_pE})
 shown in Section~\ref{sec:notes_price_effect}.
-This derivation and our assessment of the energy price effect
-illustrates the flexibility and extinsibility of the framework,
+This derivation and our assessment of the magnitude of the energy price effect
+in Part~II
+illustrates the flexibility and extinsibility of the framework.
 
 The derivation begins with an equation for the new economy-wide 
 demand for energy ($\rainc{Q}_E$) after the EEU:
@@ -35,22 +30,22 @@ demand for energy ($\rainc{Q}_E$) after the EEU:
   \rainc{Q}_E = \rbempl{Q}_E - f_{\EEU} N_{dev} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s} \right) \, ,
 \end{equation}
 %
-where 
+where
 $\rate{Q}_E$ is the rate of economy-wide demand for energy in MJ/year,
 $f_{\EEU}$ is the fraction of devices upgraded across the economy
-(i.e., the penetration of the EEU), 
+(i.e., the penetration of the EEU),
 $N_{dev}$ is the number of devices in service, and
 $\rate{E}_s$ is the rate of energy consumption by a single device in MJ/dev$\cdot$year.
 The decorations ``$\circ$'' and ``$-$'' have the usual meanings
 provided in Fig.~\ref{fig:flowchart}, namely that
-``$\circ$'' indicates the original, pre-EEU device, and 
-``$-$'' indicates conditions after 
+``$\circ$'' indicates the original, pre-EEU device, and
+``$-$'' indicates conditions for the device owner after
 emplacement, substitution, and income
 adjustments.
-The ratio between 
+The ratio between
 new ($\rainc{Q}_E$) and
-pre-EEU ($\rbempl{Q}_E$) 
-demand for energy is given by
+pre-EEU ($\rbempl{Q}_E$)
+energy demand is given by
 
 \begin{equation}
   \frac{\rainc{Q}_E}{\rbempl{Q}_E} =
@@ -70,46 +65,55 @@ is the original (pre-EEU) fraction of all energy production
 (of the kind used by the device)
 consumed by all such devices throughout the economy.
 
-The relationship between energy price ($p_E$) and 
-economy-wide energy demand ($\rate{Q}_E$) 
+The relationship between energy price ($p_E$) and
+economy-wide energy demand ($\rate{Q}_E$)
 can be given by an elasticity relationship
 
+% Note to self: Do not include spaces around the "^"
+% character in the next equation.
+% Those spaces are not parsed correctly by latexdiff.
 \begin{equation}
-  \frac{\rainc{Q}_E}{\rorig{Q}_E} =
-        \left( \frac{\ainc{p}_E}{\orig{p}_E} \right) ^ {\eQEpE} \, ,
+  \frac{\rainc{Q}_E}{\rorig{Q}_E} = 
+          \left( \frac{\ainc{p}_E}{\orig{p}_E} \right)^{\eQEpE} \, ,
 \end{equation}
 %
-where $\eQEpE$ is the energy price ($p_e$) elasticity 
+where $\eQEpE$ is the energy price ($p_e$) elasticity
 of economy-wide energy consumption ($\rate{Q}_E$).
 
-To assess the effect of demand reduction 
+To assess the effect of demand reduction
 ($\rbempl{Q}_E > \rainc{Q}_E$)
 on price
 ($\orig{p}_E > \ainc{p}_E$),
-we solve for $\frac{\ainc{p}_E}{\orig{p}_E}$ 
+we solve for $\frac{\ainc{p}_E}{\orig{p}_E}$
 to obtain
 
+% Note to self: Do not include spaces around the "^"
+% character in the next equation.
+% Those spaces are not parsed correctly by latexdiff.
 \begin{equation}
-  \frac{\ainc{p}_E}{\orig{p}_E} = 
-        \left( \frac{\rainc{Q}_E}{\rorig{Q}_E} \right)  ^ {\frac{1}{\eQEpE}} \, .
+  \frac{\ainc{p}_E}{\orig{p}_E} =
+        \left( \frac{\rainc{Q}_E}{\rorig{Q}_E} \right)^{\frac{1}{\eQEpE}} \, .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:QE_ratio}) gives
 
+% Note to self: Do not include spaces around the "^"
+% character in the next equation.
+% Those spaces are not parsed correctly by latexdiff.
 \begin{equation}
-  \frac{\ainc{p}_E}{\orig{p}_E} = 
-        \left[ 1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \right]  ^ {\frac{1}{\eQEpE}} \, .
+  \frac{\ainc{p}_E}{\orig{p}_E} =
+        \left[ 1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \right]^{\frac{1}{\eQEpE}} \, .
 \end{equation}
 
 The energy price reduction ($\orig{p}_E > \ainc{p}_E$)
-leads to additional freed cash for the device owner in the amount of
+leads to additional freed cash for the device owner at a rate of
 $\rainc{E}_s (\orig{p}_E - \ainc{p}_E)$.
 The energy implications of spending the additional freed cash
 on other goods and services is
-$\rainc{E}_s (\orig{p}_E - \ainc{p}_E) I_E$, 
+$\rainc{E}_s (\orig{p}_E - \ainc{p}_E) I_E$,
 another energy takeback rate.
-By Eq.~(\ref{eq:Re_takeback}), 
-rebound associated with this takeback 
+By Eq.~(\ref{eq:Re_takeback}),
+rebound associated with this energy takeback
 can be written as
 
 \begin{equation}
@@ -122,7 +126,7 @@ Rearranging gives
   Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \orig{p}_E \rainc{E}_s I_E}{\Sdot} \, ,  \tag{\ref{eq:Re_pE}}
 \end{equation}
 %
-as shown in Section~\ref{sec:notes_price_effect}, 
+as shown in Section~\ref{sec:notes_price_effect},
 thus completing the derivation.
 
 
