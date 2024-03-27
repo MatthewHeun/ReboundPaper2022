@@ -1797,24 +1797,65 @@ By so doing, we help advance clarity in the field of energy rebound.
 %++++++++++++++++++++++++++++++
 
 The income effect (Section~\ref{sec:inc_effect_main_paper})
-captures the effects of expanding real income. 
+captures the energy and rebound implications
+of expanding real income at the level of the upgraded device.
 Our partial equilibrium framework described herein
 enables calculation of income effect rebound ($Re_{inc}$)
 without regard to changes in energy price ($p_E$), 
-because energy price is assumed to be exogeneous.
-That said, the framework can be extended to 
-obtain an initial estimate of the magnitude 
-of the energy price effect.
-Appendix~\ref{sec:price_effect} derives an expression for 
-rebound from the price effect as
+because energy price is assumed exogenous.
+
+But there is another effect at work, 
+one that extends beyond partial equilibrium
+effects at the device level, 
+namely the energy price effect.
+This section (and Appendix~\ref{sec:price_effect_appendix})
+shows that our framework can be extended to 
+obtain an initial estimate of the 
+rebound implications
+of the energy price effect
+($Re_{p_E}$).
+
+The energy price effect can lead to rebound when
+EEUs with significant penetration are applied to
+energy conversion devices at economy-wide scale.
+Examples of conditions when the energy price effect 
+could be significant are 
+replacing all cars in the economy by hybrids and 
+replacing all domestic electric lamps in the economy by LEDs, 
+the examples in Part~II.
+With reduced reduced energy demand across the economy, 
+an energy price reduction can be expected
+($\bempl{p}_E > \ainc{p}_E$)
+as energy suppliers react to new market conditions.
+With the now-lower energy price, 
+the device owner has additional freed cash to spend,
+even after adjustments described by 
+the substitution and income effects.
+(See Sections~\ref{sec:sub_effect_main_paper}
+and~\ref{sec:inc_effect_main_paper}.)
+
+A complete analysis of the price effect
+would amount to a full equilibrium model
+and involve solving a system of simultaneous equations for 
+new economy-wide energy demand,
+the new energy price, and
+a new consumption bundle. 
+But in this instance, 
+as we desire a simple estimate
+of energy price effect rebound,
+we conservatively assume the device owner spends 
+the additional freed cash
+(the result of the lower energy price)
+exclusively on other goods,
+with energy implications 
+at the energy intensity of the economy ($I_E$).
+Under these assumptions,
+Appendix~\ref{sec:price_effect_appendix} derives an expression for 
+rebound from the energy price effect as
 
 \begin{equation} \label{eq:price_effect}
   Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \ainc{p}_E \rainc{E}_s I_E}{\Sdot} \; .
 \end{equation}
-%
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2034,6 +2075,12 @@ marginal propensity to consume (MPC)}
 @
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Price effect}
+\label{sec:price_effect_appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{pieces/price_effect.tex}
 
 
 \end{document}
