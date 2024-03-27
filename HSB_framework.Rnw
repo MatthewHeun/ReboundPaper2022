@@ -410,7 +410,9 @@ The key \emph{contributions} of this paper are
 
 The remainder of this paper is \emph{structured} as follows.
 Section~\ref{sec:framework} describes the rebound analysis framework.
-Section~\ref{sec:discussion} discusses this framework relative to previous frameworks, and 
+Section~\ref{sec:discussion} discusses this framework relative to previous frameworks and 
+provides an initial assessment 
+of an energy price effect.  
 Section~\ref{sec:conclusion} concludes.
 Results from the application of our framework
 to energy efficiency upgrades to a car and an electric lamp
