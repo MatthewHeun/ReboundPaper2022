@@ -1422,7 +1422,7 @@ $Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.
 \subsubsection{\Macroeffect}
 \label{sec:macro_effect_main_paper}
 %------------------------------
-
+This is a test %**** this row to be deleted *****************************************
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic level. 
