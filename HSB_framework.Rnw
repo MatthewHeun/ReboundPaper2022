@@ -1422,41 +1422,27 @@ $Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.
 \subsubsection{\Macroeffect}
 \label{sec:macro_effect_main_paper}
 %------------------------------
-This is a test %**** this row to be deleted *****************************************
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic level. 
 However, changes at the microeconomic level can 
 have important impacts at the macroeconomic or economy-wide level.
-In the short run, macroeconomic changes include price changes in
-goods other than the energy service. 
-For instance, other goods to
-which the energy service is an input could become cheaper, and
-changes in demand from cross price elasticities could alter
-other prices as quantities supplied adjust to the new demand schedule. 
-The most notable price change is the price of
-energy itself which could fall due to lower demand.
-The energy price or market effect is accordingly typically noted as an
-important macroeconomic rebound effect \citep{Gillingham2016}.
-In the long-run, i.e., when capital stock can be replaced in response
-to changes in relative costs and demand,
-rebound could change further. 
-These kinds of rebounds can be captured
-by a general equilibrium model \citep{Stern2020}.
 
-In addition, there are dynamic effects that arise from economic growth
-and structural change.
 It is one of the basic tenets of economics
 that productivity gains have been the main long-run driver of economic growth
-in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957} and
-that such growth is accompanied by structural changes, i.e., a changing
-composition of economic activity \citep{Schumpeter1939, Kuznets1971}. 
-Structural changes pose complicated problems for rebound, as
-network effects can lead to path-dependencies in 
-using low- or high-energy intensity technologies \citep{Arthur1989, Fouquet2016}.
-Structural changes also interact with economic growth.
-We propose a simple rule for incorporating 
-these dynamic effects into our framework below.
+in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957}.
+Interest in the impact of individual sectors on the whole economy reaches
+even further back \citep{Quesnay1759, Leontief1966}. Recent work revived the 
+interest in firm- and sector-specific shocks on aggregate output and demonstrates
+that due to the interlinkages between firms and sectors, productivity shocks in a
+firm or sector can have larger macroeconomic consequences than the original
+shock \citep{Gabaix2011,Acemoglu20212,Baqaee2019}. \citet{Foerster2022} estimate
+that $3/4$ of long-run US growth since 1950 can be attributed to sector-specific
+as opposed to aggregrate trend factors. Since the EEU represents a positive
+productivity shock, the same principles apply. These kinds of rebounds can be captured
+by a general equilibrium model \citep{Stern2020}. We propose a simple rule for
+incorporating this macroeconomic effect of productivity
+growth into our partial equilibrium framework below.
 
 Before establishing a formalism for $Re_{macro}$, we clarify the link between consumer theory
 and economic growth. \citet{Turner:2013aa} cautions that when households
@@ -1504,22 +1490,21 @@ from consumer behavior
 noting that ``income effect rebound will be larger economy-wide than 
 would be inferred from evaluating only the direct income gain from 
 the end user's transaction'' \citep[p.~11]{Borenstein:2015aa} and 
-likening it to the Keynesian macroeconomic multiplier.
-However, the dynamic macro rebound effect 
-is not an autonomous expansion of expenditure,
-a demand-side shock,
+likened it a macroeconomic multiplier.\footnote{It is important
+to distinguish this multiplier from an
+autonomous expansion of expenditure, a demand-side shock,
 in an otherwise unchanged economy,
-like the Keynesian multiplier \citep{Kahn1931,Keynes1936}.
-Rather, macroeconomic rebound is caused by an energy productivity improvement,
-a supply-side shock.
-After the EEU, 
+i.e. the Keynesian multiplier \citep{Kahn1931,Keynes1936}, that risks
+crowding out other economic activity \citep{Gillingham2016}. 
+The energy productivity improvement is a supply-side shock. After the EEU, 
 it takes less energy (and therefore less energy cost)
 to generate the same economic activity, because 
-energy efficiency has improved.
-That said, \citeauthor{Borenstein:2015aa} is right to highlight that supply-side 
-and demand-side effects both play a role as the consequences of the
-technology shock play themselves out.
-Furthermore, his approach has the advantage that it can be directly
+energy efficiency has improved, so the concept of crowding-out as used in
+macroeconomics does not apply.}
+The sectoral growth shock literature also uses multipliers to conceptualize
+the impacts of sectoral productivity shocks on aggregate output \citep{Foerster2022,
+Buera2024}.
+Using multipliers has the advantage that it can be directly
 linked to the income effect
 (minus compensating variation) 
 and its consequence for macroeconomic rebound. 
@@ -1527,22 +1512,29 @@ and its consequence for macroeconomic rebound.
 savings ($\raempl{N}$) at the device level
 to productivity-driven growth at the macro level is unexplored territory.
 
-Another contribution of this paper
-(in addition to the framework itself) 
-is operationalization of the macro rebound multiplier idea.
-We stress that such a multiplier stands for the cumulative
-productivity growth triggered by
-the initial productivity increase in the EEU.
-But to operationalize the macro rebound multiplier, 
-we note that the net savings gained by the 
-device user at the microeconomic level ($\raempl{N}$)
-are spent on new goods that create new incomes and,
-according to the marginal propensity to consume (MPC),
-expenditures throughout the economy. 
-Over time, 
-and allowing for temporary contractions \citep{Basu2006},
-this leads to the infinite series of
-respending of net savings ($\raempl{N}$),
+%Another contribution of this paper
+%(in addition to the framework itself) 
+We operationalize the macro rebound multiplier idea.
+%We stress that such a multiplier stands for the cumulative
+%productivity growth triggered by
+%the initial productivity increase in the EEU.
+%But to operationalize the macro rebound multiplier, 
+We note that higher productivity allows consumers to
+purchase a larger bundle of goods and services by making
+the device cheaper to purchase.
+If the overall expansion of the economy is a multiple
+of the direct increase in productivity to follow-on productivity
+gains in other sectors, then the macro effect can simply
+be represented as a multiple of the (indirect) income effect
+%the the net savings gained by the 
+%device user at the microeconomic level ($\raempl{N}$)
+%are spent on new goods that create new incomes and,
+%according to the marginal propensity to consume (MPC),
+%expenditures throughout the economy. 
+%Over time, 
+%and allowing for temporary contractions \citep{Basu2006},
+%this leads to the infinite series of
+%respending of net savings ($\raempl{N}$),
 a multiplier which we represent by a macro factor ($k$).%
 \footnote{
   The macro factor ($k$) appears unitless,
@@ -1556,35 +1548,35 @@ The macro factor ($k$) represents respending in the broader economy
 after the emplacement effect has occurred
 and is not tied to any particular EEU or economic sector.
 $k \ge 0$ is expected.
-$k = 0$ means there is no dynamic effect
+$k = 0$ means there is no macroeconomic effect
 resulting from the energy efficiency upgrade.
 $k > 0$ means that productivity-driven macroeconomic growth has occurred
 with consequent implications for additional energy consumption in the wider economy.
-The relationship between $k$ and $\MPC$ is given by the multiplier relationship
+%The relationship between $k$ and $\MPC$ is given by the multiplier relationship
 
-\begin{equation} \label{eq:mpc_and_k_converged}
-  k = \frac{1}{\frac{1}{\MPC} - 1} \; .
-\end{equation}
+%\begin{equation} \label{eq:mpc_and_k_converged}
+%  k = \frac{1}{\frac{1}{\MPC} - 1} \; .
+%\end{equation}
 %
-(See Appendix~\ref{sec:income_macro_mpc} for the derivation 
-of Eq.~(\ref{eq:mpc_and_k_converged}).)
+%(See Appendix~\ref{sec:income_macro_mpc} for the derivation 
+%of Eq.~(\ref{eq:mpc_and_k_converged}).)
 
-A further advantage of using the macro factor approach is that there are
-many estimates of the magnitude of $\MPC$, 
-though we stress again that
-using consumption multipliers is a
-\emph{representation} of the effect, while the cause is not
-a demand-side fiscal expansion, but rather
-energy efficiency on the supply side.%
-\footnote{
-  In particular,
-  this approach avoids the problem of crowding out, since
-  productive capacity expands, not just expenditure \citep{Gillingham2016}.
-}
+%A further advantage of using the macro factor approach is that there are
+%many estimates of the magnitude of $\MPC$, 
+%though we stress again that
+%using consumption multipliers is a
+%\emph{representation} of the effect, while the cause is not
+%a demand-side fiscal expansion, but rather
+%energy efficiency on the supply side.%
+%\footnote{
+%  In particular,
+%  this approach avoids the problem of crowding out, since
+%  productive capacity expands, not just expenditure \citep{Gillingham2016}.
+%}
 %
-A recent review by \citet{Carroll2017} 
-reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
-with the full range of estimates spanning 0.0 to 0.9.
+%A recent review by \citet{Carroll2017} 
+%reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
+%with the full range of estimates spanning 0.0 to 0.9.
 
 We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) that macro effect respending
@@ -1604,6 +1596,15 @@ we arrive at an expression for macro effect rebound:
   Re_{\macro} = \Remacroeqn{} \; .
 \end{equation}
 %
+
+Another macroeconomic rebound could arise from the energy price,
+which could fall due to lower demand \citep{Gillingham2016,Borenstein2015}.
+The size of this effect depends on how large the energy savings from the EEU are
+relative to the energy demand in the economy. Therefore it requires additional
+assumptions about how many households adopt the new device, which we see outside
+the scope of our core framework. However, we show how it could be incorporated
+by adding an assumption about EEU adoption shares and a model of the energy market and
+derive a rebound expression in appendix xx.
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound sum}
