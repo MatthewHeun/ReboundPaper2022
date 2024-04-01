@@ -1604,7 +1604,12 @@ relative to the energy demand in the economy. Therefore it requires additional
 assumptions about how many households adopt the new device, which we see outside
 the scope of our core framework. However, we show how it could be incorporated
 by adding an assumption about EEU adoption shares and a model of the energy market and
+<<<<<<< HEAD
 derive a rebound expression in appendix (((( to be coordinated with Matt )))).
+=======
+derive a rebound expression 
+in Appendix~\ref{sec:price_effect_appendix}.
+>>>>>>> 538a61fd4693b4c8bd15b94a356a59ac923177f7
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound sum}
