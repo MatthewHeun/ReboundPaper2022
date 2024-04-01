@@ -1431,12 +1431,12 @@ have important impacts at the macroeconomic or economy-wide level.
 It is one of the basic tenets of economics
 that productivity gains have been the main long-run driver of economic growth
 in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957}.
-Interest in the impact of individual sectors on the whole economy reaches
-even further back \citep{Quesnay1759, Leontief1966}. Recent work revived the 
+Interest in the impact of individual sectors on the whole economy reaches arguably
+even farther back \citep{Quesnay1759, Leontief1986}. Recent work revived the 
 interest in firm- and sector-specific shocks on aggregate output and demonstrates
 that due to the interlinkages between firms and sectors, productivity shocks in a
 firm or sector can have larger macroeconomic consequences than the original
-shock \citep{Gabaix2011,Acemoglu20212,Baqaee2019}. \citet{Foerster2022} estimate
+shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}. \citet{Foerster2022} estimate
 that $3/4$ of long-run US growth since 1950 can be attributed to sector-specific
 as opposed to aggregrate trend factors. Since the EEU represents a positive
 productivity shock, the same principles apply. These kinds of rebounds can be captured
@@ -1499,12 +1499,12 @@ crowding out other economic activity \citep{Gillingham2016}.
 The energy productivity improvement is a supply-side shock. After the EEU, 
 it takes less energy (and therefore less energy cost)
 to generate the same economic activity, because 
-energy efficiency has improved, so the concept of crowding-out as used in
+energy efficiency has improved, so the concept of crowding-out as defined by
 macroeconomics does not apply.}
 The sectoral growth shock literature also uses multipliers to conceptualize
 the impacts of sectoral productivity shocks on aggregate output \citep{Foerster2022,
 Buera2024}.
-Using multipliers has the advantage that it can be directly
+Using multipliers has the advantage that they can be directly
 linked to the income effect
 (minus compensating variation) 
 and its consequence for macroeconomic rebound. 
@@ -1598,13 +1598,13 @@ we arrive at an expression for macro effect rebound:
 %
 
 Another macroeconomic rebound could arise from the energy price,
-which could fall due to lower demand \citep{Gillingham2016,Borenstein2015}.
+which could fall due to lower demand \citep{Gillingham2016,Borenstein:2015aa}.
 The size of this effect depends on how large the energy savings from the EEU are
 relative to the energy demand in the economy. Therefore it requires additional
 assumptions about how many households adopt the new device, which we see outside
 the scope of our core framework. However, we show how it could be incorporated
 by adding an assumption about EEU adoption shares and a model of the energy market and
-derive a rebound expression in appendix xx.
+derive a rebound expression in appendix (((( to be coordinated with Matt )))).
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound sum}
