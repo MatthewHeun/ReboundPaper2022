@@ -1440,7 +1440,8 @@ productivity shocks in a firm or sector
 can have larger macroeconomic consequences than the original
 shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}. 
 \citet{Foerster2022} estimate
-that $3/4$ of long-run US growth since 1950 can be attributed to sector-specific
+that \textthreequarters{} of long-run US growth since 1950
+can be attributed to sector-specific
 (as opposed to aggregrate) trend factors. 
 Because the EEU represents a positive productivity shock,
 the same principles apply. 
