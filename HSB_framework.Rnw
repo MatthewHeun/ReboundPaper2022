@@ -1500,7 +1500,7 @@ from consumer behavior
 noting that ``income effect rebound will be larger economy-wide than 
 would be inferred from evaluating only the direct income gain from 
 the end user's transaction'' \citep[p.~11]{Borenstein:2015aa} and 
-likened it a macroeconomic multiplier.%
+likened it to a macroeconomic multiplier.%
 \footnote{
   It is important
   to distinguish this multiplier from an
