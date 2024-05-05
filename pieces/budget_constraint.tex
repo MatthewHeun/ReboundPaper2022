@@ -163,11 +163,83 @@ invested at real interest rate $r$.
 When $r > 0$, $0 < R_{\tlife,e} < 1$.
 When $r = 0$, $R_{\tlife,e} = 0$, as proved below.
 
+
 %------------------------------
 \subsubsection{Proof that $R_{\tlife,b} = 1$ when $r = 0$}
 %------------------------------
 
+Direct substitution of $r = 0$ into the expression
+for $R_{\tlife,b}$ gives $\frac{0}{0}$, 
+so we rather assess
+$\lim_{r \to 0^+} (R_{\tlife,b})$.
 
+Substituting for $R_{\tlife,b}$ gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{oneyr}} \frac{\tlife}{\oneyr} \right) \, .
+\end{equation}
+%
+Substituting for $\phi$ terms gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right) \, .
+\end{equation}
+%
+Removing double-fractions gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{(1 + r)^{\tlife}}{(1 + r)^{\oneyr}} \cdot
+  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
+  \frac{\tlife}{\oneyr}
+  \right) \, .
+\end{equation}
+%
+Multiplying terms in numerator and demoninator gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{
+  \frac{\left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr}}{(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}}
+  \right\} \, .
+\end{equation}
+
+Applying L'H\^{o}pital's rule gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{\frac{\partial}{\partial r} \left\{ \left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr} \right\}}
+  {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}\right]}
+  \right) \, .
+\end{equation}
+
+Applying the chain rule gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{\frac{\tlife}{\oneyr} 
+      \left\{ \frac{\partial}{\partial r} \left[  (1 + r)^{\tlife} (1 + r)^{\oneyr} \right]  - 
+              \frac{\partial}{\partial r} \left[  (1 + r)^{\tlife} \right] 
+      \right\}}
+  {\frac{\partial}{\partial r} \left[  term1denom \right]  - 
+              \frac{\partial}{\partial r} \left[  term2denom \right] }
+  \right) \, .
+\end{equation}
+%
+
+After applying the chain rule, 
+several intermediate results are helpful.
+
+\begin{equation}
+  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} \right] \right\} = \tlife
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right] \right\} = \oneyr
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] \right\} = \tlife (1 + r)^{\oneyr}  + \oneyr (1 + r)^{\tlife} 
+\end{equation}
 
 
 %------------------------------
