@@ -5,19 +5,46 @@
 
 We assume the device owner has four expense categories 
 related to the device:
-the capital cost of the device ($C_{cap}$), 
-the annual cost of the energy service ($C_s$), 
-
-one expense category for all other goods and services, 
-income, and net savings.
-
-
-Each cost category is analyzed in perpetuity, with
-capital and disposal costs applied at the beginning and end, 
-respectively, of the device lifetime ($t_{life}$), and
-energy service and operations and maintencance costs
+capital cost ($C_{cap}$), 
+energy service cost ($C_s$), 
+operations and maintenance cost ($C_{om}$), and
+end of life disposal cost ($C_d$).
+We count one expense category for all other
+goods and services ($C_o$),
+one category for annual income ($M$), and 
+a way to account net savings ($N$), 
+the difference between income and expenses.
+Capital ($cap$) and disposal ($d$) costs are applied
+at the beginning and end, respectively, 
+of the device lifetime ($t_{life}$).
+All other budget categories are 
 applied at the beginning of each year.
-Similarly, other costs, income, and net savings are 
-applied at the beginning of each year.
+A budget can be constructed for the device owner for each stage
+of Figure~\ref{fig:flowchart}, 
+leading to a different budget 
+before emplacement ($\circ$), 
+after emplacement ($*$), 
+after the substitution effect ($\wedge$), 
+after the income effect ($-$), and 
+after the macro effect ($\sim$).
+The different budgets are distinguished by symbol decorations.
+We allow the device owner to purchase the device 
+with a loan with real interest rate $r$.
+For device not purchased on credit,
+$r = 0$ can be assumed.
+
+Each budget category is analyzed in perpetuity
+to allow comparisons at different rebound stages 
+($\circ$, $*$, etc.).
+The present value ($P$) of each expense category is obtained
+with an infinite sum as follows.
+
+
+\begin{equation} \label{eq:present_values}
+  P_{C_{cap}} = C_{cap} + \frac{C_{cap}}{(1 + r)^{t_{life}}} + \frac{C_{cap}}{(1 + r)^{2 t_{life}}} + \ldots \\
+  P_{C_s} = C_s} + \frac{C_s}{(1 + r)^{\mathrm{1\,yr}}} + \frac{C_s}{(1 + r)^{2 t_{life}}} + \ldots 
+\end{equation}
+%
+
 
 
