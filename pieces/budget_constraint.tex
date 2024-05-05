@@ -37,13 +37,29 @@ Each budget category is analyzed in perpetuity
 to allow comparisons at different rebound stages 
 ($\circ$, $*$, etc.).
 The present value ($P$) of each expense category is obtained
-with an infinite sum as follows.
+with an infinite sum as follows
 
-
-\begin{equation} \label{eq:present_values}
-  P_{C_{cap}} = C_{cap} + \frac{C_{cap}}{(1 + r)^{t_{life}}} + \frac{C_{cap}}{(1 + r)^{2 t_{life}}} + \ldots \\
-  P_{C_s} = C_s} + \frac{C_s}{(1 + r)^{\mathrm{1\,yr}}} + \frac{C_s}{(1 + r)^{2 t_{life}}} + \ldots 
-\end{equation}
+\begin{align} \label{eq:present_values}
+  P_{cap} &= C_{cap} + \frac{C_{cap}}{(1 + r)^{t_{life}}} + \frac{C_{cap}}{(1 + r)^{2 t_{life}}} + \ldots 
+  = C_{cap} \sum_{k = 0}^{\infty} \frac{1}{(1 + r)^{k t_{life}}} 
+  = \phi_{t_{life}} C_{cap} \\
+%
+  P_s &= C_s + \frac{C_s}{(1 + r)^{\mathrm{1\,yr}}} + \frac{C_s}{(1 + r)^{2\,\mathrm{yr}}} + \ldots
+  = C_s \sum_{k = 0}^{\infty} \frac{1}{(1 + r)^{k\,\mathrm{yr}}}
+  = \phi_{1\,\mathrm{yr}} C_s \\
+%
+  P_{om} &= C_{om} + \frac{C_{om}}{(1 + r)^{\mathrm{1\,yr}}} +  \frac{C_{om}}{(1 + r)^{2\,\mathrm{yr}}} + \ldots
+  = C_{om} \sum_{k = 0}^{\infty} \frac{1}{(1 + r)^{k\,\mathrm{yr}}}
+  = \phi_{1\,\mathrm{yr}} C_{om} \\
+%
+  P_d &= \frac{C_d}{(1 + r)^{t_{life}}} + \frac{C_d}{(1 + r)^{2 t_{life}}} + \ldots 
+  = C_d \sum_{k = 1}^{\infty} \frac{1}{(1 + r)^{k t_{life}}} 
+  = \gamma_{t_{life}} C_d \\
+%
+  P_o &= C_o + \frac{C_o}{(1 + r)^{\mathrm{1\,yr}}} +  \frac{C_o}{(1 + r)^{2\,\mathrm{yr}}} + \ldots
+  = C_o \sum_{k = 0}^{\infty} \frac{1}{(1 + r)^{k\,\mathrm{yr}}}
+  = \phi_{1\,\mathrm{yr}} C_o
+\end{align}
 %
 
 
