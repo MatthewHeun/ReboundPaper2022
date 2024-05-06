@@ -8,14 +8,14 @@ related to the device:
 capital cost ($C_{cap}$), 
 energy service cost ($C_s$), 
 operations and maintenance cost ($C_{om}$), and
-end of life disposal cost ($C_d$).
+disposal cost ($C_d$).
 We count one expense category for all other
 goods and services ($C_o$),
 one category for annual income ($M$), and 
-a way to account net savings ($N$), 
+net savings ($N$), 
 the difference between income and expenses.
 Capital ($cap$) and disposal ($d$) costs are applied
-at the beginning and end, respectively, 
+at the beginning ($\alpha$) and end ($\omega$), respectively, 
 of the device lifetime ($t_{life}$).
 All other budget categories are 
 applied at the beginning of each year.
@@ -27,11 +27,13 @@ after emplacement ($*$),
 after the substitution effect ($\wedge$), 
 after the income effect ($-$), and 
 after the macro effect ($\sim$).
-The different budgets are distinguished by symbol decorations.
+When needed, 
+the different budgets can be distinguished by symbol decorations
+shown in Table~\ref{tab:decorations}.
 We allow the device owner to purchase the device 
 with a loan with real interest rate $r$.
-For device not purchased on credit,
-$r = 0$ can be assumed.
+For a device not purchased on credit,
+$r = 0$ applies.
 
 Each budget category is analyzed in perpetuity
 to allow comparisons at different rebound stages 
@@ -70,12 +72,12 @@ with an infinite sum as follows
 \end{align}
 %
 where $\phi_t \equiv \frac{(1 + r)^t}{(1 + r)^t - 1}$
-and $\gamma \equiv \frac{1}{(1 + r)^t - 1}$.
+and $\gamma_t \equiv \frac{1}{(1 + r)^t - 1}$.
 
 For simplicity, we desire annual values ($A$)
 with equivalent present value for each cost category. 
-Using the capital costs to illustrate, 
-we begin with the equivalence of the infinite series and 
+Using the capital cost to illustrate, 
+we begin with the present value equivalence of the infinite series and 
 annual costs.
 
 \begin{equation}
@@ -85,7 +87,7 @@ annual costs.
 Substituting expressions for present values ($P$) gives
 
 \begin{equation}
-  \phi_{t_{life}} C_{cap} = \phi_{1\,\mathrm{yr}} C_{cap} \, .
+  \phi_{t_{life}} C_{cap} = \phi_{1\,\mathrm{yr}} A_{cap} \, .
 \end{equation}
 %
 Rearranging gives
@@ -102,7 +104,7 @@ $\rate{C}_{cap} \equiv C_{cap}/\tlife$.
 Solving for $A_{cap}$ and $C_{cap}$ and substituting gives
 
 \begin{equation}
-  \rate{A} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \, .
+  \rate{A}_{cap} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \, .
 \end{equation}
 %
 Defining $R_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
@@ -113,7 +115,7 @@ device lifetime) gives
   \rate{A}_{cap} = R_\alpha \rate{C}_{cap} \, .
 \end{equation}
 
-Similar derivations can be employed for all budget categories.
+Similar derivations can be employed for all other budget categories.
 
 \begin{align}
   \rate{A}_s &= \rate{C}_s \\
@@ -157,16 +159,18 @@ the budget constraint used in this paper.
   \budgetconstraint
 \end{equation}
 
-The term $R_\alpha$ represents the additional cost of interest
+The term $R_\alpha$ represents the additional cost of annual interest
 payments when the device is purchased with a loan.
 When $r > 0$, $R_\alpha > 1$.
-When $r = 0$, $R_\alpha = 1$, as proved below.
+When $r = 0$, $R_\alpha = 1$, as proved below
+(Section~\ref{sec:proof_R_alpha}).
 
 The term $R_\omega$ represents the reduction of disposal costs 
 if the device owner pays for disposal costs with money
-invested at real interest rate $r$. 
+invested annually at real interest rate $r$. 
 When $r > 0$, $0 < R_\omega < 1$.
-When $r = 0$, $R_\omega = 0$, as proved below.
+When $r = 0$, $R_\omega = 0$, as proved below
+(Section~\ref{sec:proof_R_omega}).
 
 
 %------------------------------
@@ -248,13 +252,15 @@ Several intermediate results are helpful.
 Substituting the intermediate results gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \frac{\frac{\tlife}{\oneyr}
+  \lim_{r \to 0^+} \left\{
+                         \frac{\frac{\tlife}{\oneyr}
                          \left[ (1 + r)^{\oneyr} (\tlife) + 
                          (1 + r)^{\tlife} (\oneyr) - 
                          \tlife \right]}
                         {(1 + r)^{\oneyr} (\tlife) + 
                          (1 + r)^{\tlife} (\oneyr) - 
                          \oneyr}
+                    \right\}
 \end{equation}
 %
 Setting $r = 0$ in the remaining terms gives
@@ -306,8 +312,8 @@ Removing double-fractions gives
 
 \begin{equation}
   \lim_{r \to 0^+} \left(
-  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{1}{(1 + r)^{\oneyr}} \cdot
+  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{\tlife}{\oneyr}
   \right) \, .
 \end{equation}
@@ -326,13 +332,13 @@ Applying L'H\^{o}pital's rule gives
 
 \begin{equation}
   \lim_{r \to 0^+} 
-  \left(
+  \left\{
     \frac{\frac{\tlife}{\oneyr}
       \frac{\partial}{\partial r} 
         \left[ (1 + r)^{\oneyr} - 1 \right]}
     {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] - 
      \frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right]}
-  \right)
+  \right\}
 \end{equation}
 %
 Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
