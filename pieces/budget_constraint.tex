@@ -282,3 +282,41 @@ as expected.
 %------------------------------
 \subsubsection{Proof that $R_\omega = 1$ when $r = 0$}
 %------------------------------
+
+Direct substitution of $r = 0$ into the expression
+for $R_\omega$ gives $\frac{0}{0}$, 
+so we rather assess
+$\lim_{r \to 0^+} R_\omega$.
+
+Substituting for $R_\omega$ gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \, .
+\end{equation}
+%
+Substituting for $\gamma$ and $\phi$ terms gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right) \, .
+\end{equation}
+%
+Removing double-fractions gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
+  \frac{1}{(1 + r)^{\oneyr}} \cdot
+  \frac{\tlife}{\oneyr}
+  \right) \, .
+\end{equation}
+%
+Multiplying terms in numerator and demoninator gives
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left(
+    \frac{\left[ (1 + r)^{\oneyr} - 1 \right] \left( \frac{\tlife}{\oneyr} \right)}
+    {(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}} 
+  \right) \, .
+\end{equation}
+
