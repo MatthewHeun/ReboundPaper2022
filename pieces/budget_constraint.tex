@@ -192,17 +192,17 @@ Substituting for $R_\alpha$ gives
 Substituting for $\phi$ terms gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left( \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right) \, .
+  \lim_{r \to 0^+} \left[ \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \cdot \frac{\tlife}{\oneyr} \right] \, .
 \end{equation}
 %
-Removing double-fractions gives
+Distributing double-fractions gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left(
+  \lim_{r \to 0^+} \left[
   \frac{(1 + r)^{\tlife}}{(1 + r)^{\oneyr}} \cdot
   \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{\tlife}{\oneyr}
-  \right) \, .
+  \right] \, .
 \end{equation}
 %
 Multiplying terms in numerator and demoninator gives
@@ -212,7 +212,7 @@ Multiplying terms in numerator and demoninator gives
   \frac{\left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr}}{(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}}
   \right\} \, .
 \end{equation}
-
+%
 Applying L'H\^{o}pital's rule gives
 
 \begin{equation}
@@ -221,7 +221,7 @@ Applying L'H\^{o}pital's rule gives
   {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}\right]}
   \right) \, .
 \end{equation}
-
+%
 Applying the chain rule repeatedly gives
 
 \begin{equation}
@@ -260,7 +260,7 @@ Substituting the intermediate results gives
                         {(1 + r)^{\oneyr} (\tlife) + 
                          (1 + r)^{\tlife} (\oneyr) - 
                          \oneyr}
-                    \right\}
+                    \right\} \, .
 \end{equation}
 %
 Setting $r = 0$ in the remaining terms gives
@@ -273,7 +273,7 @@ Setting $r = 0$ in the remaining terms gives
               \right]}
        {(1) (\tlife) + 
         (1) (\oneyr) - 
-        \oneyr}
+        \oneyr} \, .
 \end{equation}
 %
 Simplifying gives
@@ -305,29 +305,29 @@ Substituting for $R_\omega$ gives
 Substituting for $\gamma$ and $\phi$ terms gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left( \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right) \, .
+  \lim_{r \to 0^+} \left[ \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right] \, .
 \end{equation}
 %
-Removing double-fractions gives
+Distributing double-fractions gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left(
+  \lim_{r \to 0^+} \left[
   \frac{1}{(1 + r)^{\oneyr}} \cdot
   \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{\tlife}{\oneyr}
-  \right) \, .
+  \right] \, .
 \end{equation}
 %
 Multiplying terms in numerator and demoninator gives
 
 \begin{equation}
   \lim_{r \to 0^+} 
-  \left(
+  \left\{
     \frac{\left[ (1 + r)^{\oneyr} - 1 \right] \left( \frac{\tlife}{\oneyr} \right)}
     {(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}} 
-  \right) \, .
+  \right\} \, .
 \end{equation}
-
+%
 Applying L'H\^{o}pital's rule gives
 
 \begin{equation}
@@ -338,7 +338,7 @@ Applying L'H\^{o}pital's rule gives
         \left[ (1 + r)^{\oneyr} - 1 \right]}
     {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] - 
      \frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right]}
-  \right\}
+  \right\} \, .
 \end{equation}
 %
 Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
@@ -350,21 +350,21 @@ Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
          {(1 + r)^{\oneyr} (\tlife) + 
           (1 + r)^{\tlife} (\oneyr) - 
           \oneyr}
-  \right]
+  \right] \, .
 \end{equation}
 %
 Setting $r = 0$ in the remaining terms gives
 
 \begin{equation}
   \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
-  {(1) (\tlife) + (1) \oneyr - \oneyr}
+  {(1) (\tlife) + (1) \oneyr - \oneyr} \, .
 \end{equation}
 %
 Simplifying the denominator gives
 
 \begin{equation}
   \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
-       {\tlife} = 1 \, 
+       {\tlife} = 1 \, ,
 \end{equation}
 %
 as expected.
