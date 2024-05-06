@@ -171,6 +171,7 @@ When $r = 0$, $R_\omega = 0$, as proved below.
 
 %------------------------------
 \subsubsection{Proof that $R_\alpha = 1$ when $r = 0$}
+\label{sec:proof_R_alpha}
 %------------------------------
 
 Direct substitution of $r = 0$ into the expression
@@ -281,6 +282,7 @@ as expected.
 
 %------------------------------
 \subsubsection{Proof that $R_\omega = 1$ when $r = 0$}
+\label{sec:proof_R_omega}
 %------------------------------
 
 Direct substitution of $r = 0$ into the expression
@@ -320,3 +322,43 @@ Multiplying terms in numerator and demoninator gives
   \right) \, .
 \end{equation}
 
+Applying L'H\^{o}pital's rule gives
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left(
+    \frac{\frac{\tlife}{\oneyr}
+      \frac{\partial}{\partial r} 
+        \left[ (1 + r)^{\oneyr} - 1 \right]}
+    {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] - 
+     \frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right]}
+  \right)
+\end{equation}
+%
+Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left[
+    \frac{\left(\frac{\tlife}{\oneyr}\right) (\oneyr)}
+         {(1 + r)^{\oneyr} (\tlife) + 
+          (1 + r)^{\tlife} (\oneyr) - 
+          \oneyr}
+  \right]
+\end{equation}
+%
+Setting $r = 0$ in the remaining terms gives
+
+\begin{equation}
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
+  {(1) (\tlife) + (1) \oneyr - \oneyr}
+\end{equation}
+%
+Simplifying the denominator gives
+
+\begin{equation}
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
+       {\tlife} = 1 \, 
+\end{equation}
+%
+as expected.
