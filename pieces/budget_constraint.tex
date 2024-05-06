@@ -95,18 +95,22 @@ Rearranging gives
 \end{equation}
 %
 Further, we desire annualized rates defined as
-$\rate{A} \equiv A/\oneyr$ and 
+$\rate{A} \equiv A/\oneyr$ such that
+$\rate{A}_{cap} = A_{cap}/\oneyr$
+and 
 $\rate{C}_{cap} \equiv C_{cap}/\tlife$.
-Solving for $A$ and $C_{cap}$ and substituting gives
+Solving for $A_{cap}$ and $C_{cap}$ and substituting gives
 
 \begin{equation}
   \rate{A} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \, .
 \end{equation}
 %
-Defining $R_{\tlife,b} \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ gives
+Defining $R_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
+(with subscript $\alpha$ indicating payments at the beginning of each 
+device lifetime) gives
 
 \begin{equation}
-  \rate{A}_{cap} = R_{\tlife,b} \rate{C}_{cap} \, .
+  \rate{A}_{cap} = R_\alpha \rate{C}_{cap} \, .
 \end{equation}
 
 Similar derivations can be employed for all budget categories.
@@ -114,13 +118,14 @@ Similar derivations can be employed for all budget categories.
 \begin{align}
   \rate{A}_s &= \rate{C}_s \\
   \rate{A}_{om} &= \rate{C}_{om} \\
-  \rate{A}_d &= R_{\tlife,e} \rate{C}_d \\
+  \rate{A}_d &= R_\omega \rate{C}_d \\
   \rate{A}_o &= \rate{C}_o \\
   \rate{A}_M &= \rate{M} \\
   \rate{A}_N &= \rate{N}
 \end{align}
 %
-where $R_{\tlife,e} \equiv \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$.
+where $R_\omega \equiv \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$
+(with subscript $\omega$ indicating paymets at the end of each device lifetime).
 
 The budget constraint with annualized terms is given as
 %
@@ -136,10 +141,10 @@ The budget constraint with annualized terms is given as
 Substituting cost terms gives
 
 \begin{equation}
-  \rate{M} = R_{\tlife,b} \rate{C}_{cap} + 
+  \rate{M} = R_\alpha \rate{C}_{cap} + 
              \rate{C}_s + 
              \rate{C}_{om} + 
-             R_{\tlife,e} \rate{C}_d + 
+             R_\omega \rate{C}_d + 
              \rate{C}_o + 
              \rate{N} \, .
 \end{equation}
@@ -152,31 +157,31 @@ the budget constraint used in this paper.
   \budgetconstraint
 \end{equation}
 
-The term $R_{\tlife,b}$ represents the additional cost of interest
+The term $R_\alpha$ represents the additional cost of interest
 payments when the device is purchased with a loan.
-When $r > 0$, $R_{\tlife,b} > 1$.
-When $r = 0$, $R_{\tlife,b} = 1$, as proved below.
+When $r > 0$, $R_\alpha > 1$.
+When $r = 0$, $R_\alpha = 1$, as proved below.
 
-The term $R_{\tlife,e}$ represents the reduction of disposal costs 
+The term $R_\omega$ represents the reduction of disposal costs 
 if the device owner pays for disposal costs with money
 invested at real interest rate $r$. 
-When $r > 0$, $0 < R_{\tlife,e} < 1$.
-When $r = 0$, $R_{\tlife,e} = 0$, as proved below.
+When $r > 0$, $0 < R_\omega < 1$.
+When $r = 0$, $R_\omega = 0$, as proved below.
 
 
 %------------------------------
-\subsubsection{Proof that $R_{\tlife,b} = 1$ when $r = 0$}
+\subsubsection{Proof that $R_\alpha = 1$ when $r = 0$}
 %------------------------------
 
 Direct substitution of $r = 0$ into the expression
-for $R_{\tlife,b}$ gives $\frac{0}{0}$, 
+for $R_\alpha$ gives $\frac{0}{0}$, 
 so we rather assess
-$\lim_{r \to 0^+} (R_{\tlife,b})$.
+$\lim_{r \to 0^+} R_\alpha$.
 
-Substituting for $R_{\tlife,b}$ gives
+Substituting for $R_\alpha$ gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{oneyr}} \frac{\tlife}{\oneyr} \right) \, .
+  \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \, .
 \end{equation}
 %
 Substituting for $\phi$ terms gives
@@ -212,7 +217,7 @@ Applying L'H\^{o}pital's rule gives
   \right) \, .
 \end{equation}
 
-Applying the chain rule gives
+Applying the chain rule repeatedly gives
 
 \begin{equation}
   \lim_{r \to 0^+} \left(
@@ -224,24 +229,56 @@ Applying the chain rule gives
               \frac{\partial}{\partial r} \left[  (1 + r)^{\oneyr} \right] }
   \right) \, .
 \end{equation}
+
+Several intermediate results are helpful.
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} \right] \right\} = \tlife
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right] \right\} = \oneyr
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] \right\} = \tlife (1 + r)^{\oneyr}  + \oneyr (1 + r)^{\tlife} 
+\end{equation}
+
+Substituting the intermediate results gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \frac{\frac{\tlife}{\oneyr}
+                         \left[ (1 + r)^{\oneyr} (\tlife) + 
+                         (1 + r)^{\tlife} (\oneyr) - 
+                         \tlife \right]}
+                        {(1 + r)^{\oneyr} (\tlife) + 
+                         (1 + r)^{\tlife} (\oneyr) - 
+                         \oneyr}
+\end{equation}
 %
-
-After applying the chain rule, 
-several intermediate results are helpful.
+Setting $r = 0$ in the remaining terms gives
 
 \begin{equation}
-  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} \right] \right\} = \tlife
+  \frac{\frac{\tlife}{\oneyr}
+              \left[ (1) (\tlife) + 
+                     (1) (\oneyr) - 
+                     \tlife
+              \right]}
+       {(1) (\tlife) + 
+        (1) (\oneyr) - 
+        \oneyr}
 \end{equation}
+%
+Simplifying gives
 
 \begin{equation}
-  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right] \right\} = \oneyr
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}{\tlife} = 1 \, ,
 \end{equation}
+%
+as expected.
 
-\begin{equation}
-  \lim_{r \to 0} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] \right\} = \tlife (1 + r)^{\oneyr}  + \oneyr (1 + r)^{\tlife} 
-\end{equation}
 
 
 %------------------------------
-\subsubsection{Proof that $R_{\tlife,e} = 1$ when $r = 0$}
+\subsubsection{Proof that $R_\omega = 1$ when $r = 0$}
 %------------------------------
