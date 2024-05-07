@@ -461,26 +461,30 @@ with direct and indirect partitions for each.
 All combinations are possible.
 
  ``Emplacement'' is a new term we introduce 
-to collect non-operational effects of the devices, 
+to collect indirect effects of the devices, 
 including 
 %
 \begin{enumerate*}[label={(\alph*)}]
 	
-  \item embodied energy of their manufacture and
+  \item embodied energy of their manufacture, 
   
-  \item maintenance and disposal activities.
+  \item operations and maintenance, and
+  
+  \item disposal activities.
     
 \end{enumerate*}
 %
-Although neither
+Although none of 
 embodied
-(see \citet[footnote~5, p.~3]{Borenstein:2015aa} and
-\citet{Saunders:2021te}) nor
-maintenance and disposal
-(see \citet{Sorrell:2009aa}, 
+(see ), 
+operations and maintenance, or
+disposal effects are new
+(see
+\citet[footnote~5, p.~3]{Borenstein:2015aa}, 
+\citet{Saunders:2021te}, 
+\citet{Sorrell:2009aa}, 
 \citet[footnote~37, p.~16]{Borenstein:2015aa}, and  
-\citet{sorrell2020limits})
-effects are new,
+\citet{sorrell2020limits}),
 we separate them from substitution and income
 microeconomic effects 
 (Table~\ref{tab:rebound_typology}) 
@@ -692,8 +696,9 @@ than a like-for-like replacement of the original device.
 We call this increased ``capital cost'' 
 ($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
 It may also 
-be more costly to maintain and dispose of the upgraded device
-($\rbempl{C}_{\md} < \ramacro{C}_{\md}$). 
+be more costly to operate and maintain (OM) and dispose (d) 
+of the upgraded device
+($\rbempl{C}_{\omd} < \ramacro{C}_{\omd}$). 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
@@ -708,28 +713,39 @@ so the energy purchaser (the device user) is a price taker.%
 %
 Initially, the device user spends income ($\rorig{M}$)
 on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
-annualized capital costs for the device ($\rorig{C}_{cap}$), 
-annualized costs for maintenance and disposal of the device ($\rorig{C}_{\md}$), and 
+annualized capital costs for the device ($\orig{R}_\alpha \rorig{C}_{cap}$), 
+annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
+disposal of the device ($\orig{R}_\omega \rorig{C}_d$), and 
 other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
-\begin{equation} \label{eq:budget_constraint}
-  \rorig{M} = \rorig{C}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
+\begin{equation} \label{eq:budget_constraint_prelim}
+  \rorig{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
 \end{equation}
 %
 where 
+$\orig{R}_\alpha$ and $\orig{R}_\omega$ account for discounting, 
+$\rorig{C}_{cap}$ and $\rorig{C}_{\om}$ are undiscounted
+cost rates given by 
+$\orig{C}_{cap} / \orig{t}_{life}$ 
+and
+$\orig{C}_d / \orig{t}_{life}$,
+and
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
-Substituting the original price and quantity of energy service consumption 
-and other goods consumption
-into Eq.~\ref{eq:budget_constraint} and rearranging gives
+See Appendix~\ref{sec:budget_constraint} for details.
+After substituting the original price and quantity of energy service consumption,
+after substituting the original price and quantity of other goods consumption,
+after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} - \orig{R}_\omega \rorig{C}_d$,
+and after some rearrangement, 
+Eq.~(\ref{eq:budget_constraint_prelim}) becomes
 
-\begin{equation}
-  \rorig{M} - \rorig{C}_{cap} - \rorig{C}_{\md} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
+\begin{equation} \label{eq:budget_constraint}
+  \rorig{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
 \end{equation}
 %
 which is the usual budget constraint 
 for the microeconomic consumer
-after subtracting lump sums for capital cost and maintenance of the device.
+after subtracting capital costs and operations, maintenance, and disposal costs.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through the four rebound effects
