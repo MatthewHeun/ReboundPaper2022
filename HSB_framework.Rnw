@@ -1351,7 +1351,7 @@ Effective income ($\Mdothatprime$) is given by
 For the purposes of the income effect, 
 effective income (Eq.~(\ref{eq:effective_income})) 
 adjusts original income ($\rorig{M}$) to account for 
-sunk costs ($\raempl{C}_{cap}$ and $\raempl{C}_{\md}$) and
+sunk costs ($\aempl{R}_\alpha \raempl{C}_{cap}$ and $\raempl{C}_{\omd}$) and
 net savings ($\rasub{N}$).
 
 Direct income rebound is defined as
