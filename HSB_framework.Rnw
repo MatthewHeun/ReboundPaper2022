@@ -2102,13 +2102,13 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Respending and the
-marginal propensity to consume (MPC)}
-\label{sec:income_macro_mpc}
+% \section{Respending and the
+% marginal propensity to consume (MPC)}
+% \label{sec:income_macro_mpc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
+% <<MPCAppendix, child="pieces/mpc.Rnw">>=
+% @
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
