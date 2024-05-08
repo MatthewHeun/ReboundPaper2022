@@ -276,40 +276,44 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\paragraph{Maintenance and disposal effect rebound expression ($Re_{\md}$)} 
+\paragraph{Operations, maintenance, and disposal effect rebound expression ($Re_{\omd}$)} 
 \label{sec:Re_OMd}
 %..............................
 
 In addition to embodied energy effects, 
 indirect emplacement rebound 
-can be associated with energy demanded by maintenance and disposal~($\md$) expenditures.
-Like embodied energy, we spread disposal expenditures across the lifetime 
-of the original and upgraded devices ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+can be associated with energy demanded by
+operations, maintenance, and disposal expenditures.
+We apply discounting to end-of-life disposal expenditures
 to form expenditure rates such that 
-$\rbempl{C}_{\md} = \rbempl{C}_m + \bempl{C}_d/\bempl{t}_{\life}$
+$\rbempl{C}_{\omd} = \rbempl{C}_{\om} + \bempl{R}_\omega \rbempl{C}_d$
 and
-$\raempl{C}_{\md} = \raempl{C}_m + \aempl{C}_d/\aempl{t}_{\life}$.
+$\raempl{C}_{\omd} = \raempl{C}_{\om} + \aempl{R}_\omega \raempl{C}_d$,
+with $\rate{C}_d \equiv C_d / t_{\life}$.
+(For details, see Appendix~\ref{sec:budget_constraint}.)
 
-We assume, for simplicity, that $\md$ expenditures indicate energy consumption
+We assume, for simplicity, that operations, maintenance, and disposal expenditures 
+indicate energy consumption
 elsewhere in the economy at its energy intensity~($I_E$).
-Therefore, the change in energy consumption rate caused by a change in $\md$ expenditures
-is given by $\Delta \raempl{C}_{\md} I_E$.
+Therefore, the change in energy consumption rate caused by a change in 
+operations, maintenance, and disposal expenditures
+is given by $\Delta \raempl{C}_{\omd} I_E$.
 This term is an energy takeback rate,
 so maintenance and disposal rebound is given by
 
 \begin{equation} \label{eq:Re_md_def}
-  Re_{\md} = \frac{\Delta \raempl{C}_{\md} I_E}{\Sdot} \; ,
+  Re_{\omd} = \frac{\Delta \raempl{C}_{\omd} I_E}{\Sdot} \; ,
 \end{equation}
 %
 as shown in Table~\ref{tab:empleffect}.
 Slight rearrangement gives
 
 \begin{equation}
-  Re_{\md} = \ReOMdeqn{} \; . \tag{\ref{eq:Re_md}}
+  Re_{\omd} = \ReOMdeqn{} \; . \tag{\ref{eq:Re_md}}
 \end{equation}
 
 Rebound from maintenance and disposal can be positive or negative,
-depending on the sign of the term $\raempl{C}_{\md}/\rbempl{C}_{\md} - 1$.
+depending on the sign of the term $\raempl{C}_{\omd}/\rbempl{C}_{\omd} - 1$.
 
 
 %------------------------------
