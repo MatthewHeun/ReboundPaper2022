@@ -287,15 +287,15 @@ bottom=2pt}
 
 % After substitution effect
 \newcommand{\Eacctasub}{\rasub{E} = \rasub{E}_s + \rasub{E}_{emb} + (\rasub{C}_{\omd} + \rasub{C}_o) I_E}
-\newcommand{\Macctasub}{\rasub{M} = p_E \rasub{E}_s + \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \rasub{N}}
+\newcommand{\Macctasub}{\rasub{M} = p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \rasub{N}}
 
 % Before income effect (same as after substitution effect)
 \newcommand{\Eacctbinc}{\Eacctasub}
 \newcommand{\Macctbinc}{\Macctasub}
 
 % After income effect
-\newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\md} + \rainc{C}_o) I_E}
-\newcommand{\Macctainc}{\rainc{M} = p_E \rainc{E}_s + \rainc{C}_{cap} + \rainc{C}_{\md} + \rainc{C}_o + \rainc{N}}
+\newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\omd} + \rainc{C}_o) I_E}
+\newcommand{\Macctainc}{\rainc{M} = p_E \rainc{E}_s + \ainc{R}_\alpha \rainc{C}_{cap} + \rainc{C}_{\omd} + \rainc{C}_o + \rainc{N}}
 
 % Embodied energy rebound
 \newcommand{\Reembeqn}{\frac{\left( \frac{\aempl{E}_{emb}}{\bempl{E}_{emb}}
