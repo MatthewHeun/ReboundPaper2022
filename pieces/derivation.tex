@@ -652,7 +652,7 @@ of Part~II) is
             {\rbempl{C}_o}
         \left(  \frac{\rate{q}_s}{\rbempl{q}_s} \right)
       + \frac{1}{\rbempl{C}_o} 
-        (\rate{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} - \rate{G}) \; .
+        (\rate{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} - \rate{G}) \; .
 \end{equation}
 
 To find the rate of energy service consumption after the substitution effect
@@ -995,18 +995,18 @@ Substituting Eq.~(\ref{eq:N_dot_star_empl}) for net savings~($\raempl{N}$) gives
   %                               - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot}
   %                               - \frac{k p_E I_E \Delta \rasub{E}_s}{\Sdot}
   %                               - \frac{k \Delta \rasub{C}_o I_E}{\Sdot} \; .
-  Re_{\macro} = \frac{k (p_E \Sdot - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md}) I_E}{\Sdot} \; .
+  Re_{\macro} = \frac{k (p_E \Sdot - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) I_E}{\Sdot} \; .
 \end{equation}
 %
 Separating terms gives
 
 \begin{equation}
   Re_{\macro} = \frac{k p_E \cancel{\Sdot} I_E}{\cancel{\Sdot}}
-                                - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
-                                - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot} \; .
+                                - \frac{k \Delta \aempl{(R_\alpha  \rate{C}_{cap})} I_E}{\Sdot}
+                                - \frac{k \Delta \raempl{C}_{\omd} I_E}{\Sdot} \; .
 \end{equation}
 %
-Canceling terms, substituting Eq.~(\ref{eq:Re_md_def}) to obtain $Re_{\md}$, and
+Canceling terms, substituting Eq.~(\ref{eq:Re_md_def}) to obtain $Re_{\omd}$, and
 defining $Re_{cap}$ as
 
 \begin{equation} \label{eq:Re_cap}
@@ -1034,7 +1034,7 @@ The sum of the four rebound effects is
 Substituting Eqs.~(\ref{eq:Re_empl_def}), (\ref{eq:Re_sub_def}), and~(\ref{eq:Re_inc_def}) gives
 
 \begin{align}
-  Re_{tot} = \; &Re_{emb} + Re_{\md}      & \mathrm{\empleffect} \nonumber \\
+  Re_{tot} = \; &Re_{emb} + Re_{\omd}      & \mathrm{\empleffect} \nonumber \\
                 &+ Re_{dsub} + Re_{isub}   & \mathrm{\subeffect}  \nonumber \\
                 &+ Re_{dinc} + Re_{iinc}   & \mathrm{\inceffect}  \nonumber \\
                 &+ Re_{\macro}      & \mathrm{\macroeffect}
@@ -1045,10 +1045,10 @@ can be expressed in terms of other rebound effects.
 Substituting Eq.~(\ref{eq:Re_macro}) gives
 
 \begin{align}
-  Re_{tot} = \; &Re_{emb} + Re_{\md}      & \mathrm{\empleffect}       \nonumber \\
+  Re_{tot} = \; &Re_{emb} + Re_{\omd}      & \mathrm{\empleffect}       \nonumber \\
                 &+ Re_{dsub} + Re_{isub}   & \mathrm{\subeffect}        \nonumber \\
                 &+ Re_{dinc} + Re_{iinc}   & \mathrm{\inceffect}        \nonumber \\
-                &+ k p_E I_E - k Re_{cap} - k Re_{\md} \; .  & \mathrm{\macroeffect}
+                &+ k p_E I_E - k Re_{cap} - k Re_{\omd} \; .  & \mathrm{\macroeffect}
 \end{align}
 %
 Rearranging distributes macro effect terms 
@@ -1067,7 +1067,7 @@ Eq.~(\ref{eq:Re_tot}) shows that determining seven rebound values,
 
   \item $Re_{cap}$ (Eq.~(\ref{eq:Re_cap})), 
   
-  \item $Re_{\md}$ (Eq.~(\ref{eq:Re_md})),
+  \item $Re_{\omd}$ (Eq.~(\ref{eq:Re_md})),
   
   \item $Re_{dsub}$ (Eq.~(\ref{eq:Re_dsub_CES})),
   
