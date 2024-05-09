@@ -1415,9 +1415,9 @@ due to the higher embodied energy rate
 ($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/yr)
 stemming from the electric battery in the hybrid EV car.
 Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is small and negative
+($Re_{\omd}$) is small and negative
 ($\Sexpr{Re_md_car_char_perc}$\%),
-because of the slightly lower maintenance and disposal costs
+because of the slightly lower operations, maintenance, and disposal costs
 for the hybrid EV car.
 
 The \subeffect{} has two components:
@@ -2160,8 +2160,8 @@ $k \approx 3$ could be interpreted as
 growth induced by the device user's spending of net savings with
 a marginal propensity to consume (MPC)
 of approximately $0.75$ that translates into a multiplier of 3. 
-(See Fig.~\ref{PartI-fig:k_vs_mpc} 
-in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
+% (See Fig.~\ref{PartI-fig:k_vs_mpc} 
+% in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
 $\MPC \approx 0.75$ is a reasonable value, 
 being in the upper half of recent estimates from \citet{Carroll2017}.
 Although the cause of the growth in economic activity and energy consumption from an EEU 
@@ -2269,19 +2269,6 @@ For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
 The efficiency gain for the lamp is far greater than the efficiency gain for the car,
 leading to much different rates of net income ($\raempl{N}$) and
 different macro rebound values.
-
-% I think there is really no claim in this.
-% Fifth,
-% in both examples the macro effect rebound ($Re_{macro}$) is much larger than
-% any single micro rebound component. 
-% However, the sum of micro rebound components 
-% ($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
-% is close in magnitude to the macro rebound ($Re_{macro}$).
-% These observations are likely to be the result of 
-% $Re_{macro}$ being the sum of several macroeconomic sub-effects,
-% among which we don't discriminate in this framework.
-% (See Table~\ref{PartI-tab:rebound_typology} in Part~I
-% for a list of macro rebound effects.)
 
 
 %++++++++++++++++++++++++++++++
