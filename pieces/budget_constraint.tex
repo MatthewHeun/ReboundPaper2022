@@ -7,7 +7,7 @@ We assume the device owner has four expense categories
 related to the device:
 capital cost ($C_{cap}$), 
 energy service cost ($C_s$), 
-operations and maintenance cost ($C_{om}$), and
+operations and maintenance cost ($C_{\om}$), and
 disposal cost ($C_d$).
 We count one expense category for all other
 goods and services ($C_o$),
@@ -34,10 +34,13 @@ We allow the device owner to purchase the device
 with a loan with real interest rate $r$.
 For a device not purchased on credit,
 $r = 0$ applies.
+The device owner may save (and earn real interest at rate $r$)
+to pay for future disposal costs.
 
 Each budget category is analyzed in perpetuity
 to allow comparisons at different rebound stages 
-($\circ$, $*$, etc.).
+($\circ$, $*$, etc.)
+where the device lifetime ($\tlife$) may be different.
 The present value ($P$) of each expense category is obtained
 with an infinite sum as follows
 
@@ -78,22 +81,22 @@ For simplicity, we desire annual values ($A$)
 with equivalent present value for each cost category. 
 Using the capital cost to illustrate, 
 we begin with the present value equivalence of the infinite series and 
-annual costs.
+annual costs:
 
 \begin{equation}
-  P_{cap} = P_{A_{cap}}
+  P_{cap} = P_{A_{cap}} \; .
 \end{equation}
 %
 Substituting expressions for present values ($P$) gives
 
 \begin{equation}
-  \phi_{t_{life}} C_{cap} = \phi_{1\,\mathrm{yr}} A_{cap} \, .
+  \phi_{t_{life}} C_{cap} = \phi_{1\,\mathrm{yr}} A_{cap} \; .
 \end{equation}
 %
 Rearranging gives
 
 \begin{equation}
-  A_{cap} = \frac{\phi_{\tlife}}{\phi_{\oneyr}} C_{cap} \, .
+  A_{cap} = \frac{\phi_{\tlife}}{\phi_{\oneyr}} C_{cap} \; .
 \end{equation}
 %
 Further, we desire annualized rates defined as
@@ -119,7 +122,7 @@ Similar derivations can be employed for all other budget categories.
 
 \begin{align}
   \rate{A}_s &= \rate{C}_s \\
-  \rate{A}_{om} &= \rate{C}_{om} \\
+  \rate{A}_{\om} &= \rate{C}_{\om} \\
   \rate{A}_d &= R_\omega \rate{C}_d \\
   \rate{A}_o &= \rate{C}_o \\
   \rate{A}_M &= \rate{M} \\
@@ -138,7 +141,7 @@ The budget constraint with annualized terms is given as
 \begin{equation}
   \rate{A}_M = \rate{A}_{cap} + 
                \rate{A}_s + 
-               \rate{A}_{om} + 
+               \rate{A}_{\om} + 
                \rate{A}_d + 
                \rate{A}_o + 
                \rate{A}_N \, .
@@ -149,14 +152,14 @@ Substituting cost terms gives
 \begin{equation}
   \rate{M} = R_\alpha \rate{C}_{cap} + 
              \rate{C}_s + 
-             \rate{C}_{om} + 
+             \rate{C}_{\om} + 
              R_\omega \rate{C}_d + 
              \rate{C}_o + 
              \rate{N} \, .
 \end{equation}
 %
-Substituting $\rate{C}_s = p_s \rate{q}_s$ and 
-$\rate{C}_o = p_o \rate{q}_o$ and rearranging gives
+Substituting $\rate{C}_s = p_s \rate{q}_s$,  
+$\rate{C}_o = p_o \rate{q}_o$, $\rate{C}_{\omd} \equiv \rate{C}_{\om} + R_\omega \rate{C}_d$, and rearranging gives
 the budget constraint used in this paper.
 
 \begin{equation}
@@ -286,10 +289,10 @@ Simplifying gives
 
 \begin{align}
   \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}{\tlife} &\questionequal 1 \\
-  1 &\stackrel{\checkmark}{=} 1
+  1 &\stackrel{\checkmark}{=} 1 \; ,
 \end{align}
 %
-as expected.
+thereby completing the proof with the expected result. 
 
 
 
@@ -373,7 +376,7 @@ Simplifying the denominator gives
 \begin{align}
   \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
        {\tlife} \questionequal 1 \\
-       1 \stackrel{\checkmark}{=} 1
+       1 \stackrel{\checkmark}{=} 1 \; ,
 \end{align}
 %
-as expected.
+thereby completing the proof with the expected result.
