@@ -107,7 +107,7 @@ $\rate{C}_{cap} \equiv C_{cap}/\tlife$.
 Solving for $A_{cap}$ and $C_{cap}$ and substituting gives
 
 \begin{equation}
-  \rate{A}_{cap} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \, .
+  \rate{A}_{cap} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \; .
 \end{equation}
 %
 Defining $R_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
@@ -115,7 +115,7 @@ Defining $R_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\one
 device lifetime) gives
 
 \begin{equation}
-  \rate{A}_{cap} = R_\alpha \rate{C}_{cap} \, .
+  \rate{A}_{cap} = R_\alpha \rate{C}_{cap} \; .
 \end{equation}
 
 Similar derivations can be employed for all other budget categories.
@@ -144,7 +144,7 @@ The budget constraint with annualized terms is given as
                \rate{A}_{\om} + 
                \rate{A}_d + 
                \rate{A}_o + 
-               \rate{A}_N \, .
+               \rate{A}_N \; .
 \end{equation}
 %
 Substituting cost terms gives
@@ -155,7 +155,7 @@ Substituting cost terms gives
              \rate{C}_{\om} + 
              R_\omega \rate{C}_d + 
              \rate{C}_o + 
-             \rate{N} \, .
+             \rate{N} \; .
 \end{equation}
 %
 Substituting $\rate{C}_s = p_s \rate{q}_s$,  
@@ -195,13 +195,13 @@ Substituting for $R_\alpha$ gives
 
 \begin{equation}
   \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) 
-  \questionequal 1\, .
+  \questionequal 1 \; .
 \end{equation}
 %
 Substituting for $\phi$ terms gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left[ \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \cdot \frac{\tlife}{\oneyr} \right] \questionequal 1 \, .
+  \lim_{r \to 0^+} \left[ \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \cdot \frac{\tlife}{\oneyr} \right] \questionequal 1 \; .
 \end{equation}
 %
 Distributing double-fractions gives
@@ -211,7 +211,7 @@ Distributing double-fractions gives
   \frac{(1 + r)^{\tlife}}{(1 + r)^{\oneyr}} \cdot
   \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{\tlife}{\oneyr}
-  \right] \questionequal 1 \, .
+  \right] \questionequal 1 \; .
 \end{equation}
 %
 Multiplying terms in numerator and demoninator gives
@@ -219,7 +219,7 @@ Multiplying terms in numerator and demoninator gives
 \begin{equation}
   \lim_{r \to 0^+} \left\{
   \frac{\left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr}}{(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}}
-  \right\} \questionequal 1 \, .
+  \right\} \questionequal 1 \; .
 \end{equation}
 %
 Applying L'H\^{o}pital's rule gives
@@ -228,7 +228,7 @@ Applying L'H\^{o}pital's rule gives
   \lim_{r \to 0^+} \left(
   \frac{\frac{\partial}{\partial r} \left\{ \left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr} \right\}}
   {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}\right]}
-  \right) \questionequal 1 \, .
+  \right) \questionequal 1 \; .
 \end{equation}
 %
 Applying the chain rule repeatedly gives
@@ -241,7 +241,7 @@ Applying the chain rule repeatedly gives
       \right\}}
   {\frac{\partial}{\partial r} \left[    (1 + r)^{\tlife} (1 + r)^{\oneyr} \right]  - 
               \frac{\partial}{\partial r} \left[  (1 + r)^{\oneyr} \right] }
-  \right) \questionequal 1 \, .
+  \right) \questionequal 1 \; .
 \end{equation}
 
 Several intermediate results are helpful.
@@ -269,7 +269,7 @@ Substituting the intermediate results gives
                         {(1 + r)^{\oneyr} (\tlife) + 
                          (1 + r)^{\tlife} (\oneyr) - 
                          \oneyr}
-                    \right\} \questionequal 1 \, .
+                    \right\} \questionequal 1 \; .
 \end{equation}
 %
 Setting $r = 0$ in the remaining terms gives
@@ -282,7 +282,7 @@ Setting $r = 0$ in the remaining terms gives
               \right]}
        {(1) (\tlife) + 
         (1) (\oneyr) - 
-        \oneyr} \questionequal 1 \, .
+        \oneyr} \questionequal 1 \; .
 \end{equation}
 %
 Simplifying gives
@@ -310,13 +310,13 @@ $\lim_{r \to 0^+} R_\omega \questionequal 1$.
 Substituting for $R_\omega$ gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left( \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \questionequal 1 \, .
+  \lim_{r \to 0^+} \left( \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \questionequal 1 \; .
 \end{equation}
 %
 Substituting for $\gamma$ and $\phi$ terms gives
 
 \begin{equation}
-  \lim_{r \to 0^+} \left[ \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right] \questionequal 1 \, .
+  \lim_{r \to 0^+} \left[ \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right] \questionequal 1 \; .
 \end{equation}
 %
 Distributing double-fractions gives
@@ -326,7 +326,7 @@ Distributing double-fractions gives
   \frac{1}{(1 + r)^{\oneyr}} \cdot
   \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
   \frac{\tlife}{\oneyr}
-  \right] \questionequal 1 \, .
+  \right] \questionequal 1 \; .
 \end{equation}
 %
 Multiplying terms in numerator and demoninator gives
@@ -336,7 +336,7 @@ Multiplying terms in numerator and demoninator gives
   \left\{
     \frac{\left[ (1 + r)^{\oneyr} - 1 \right] \left( \frac{\tlife}{\oneyr} \right)}
     {(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}} 
-  \right\} \questionequal 1 \, .
+  \right\} \questionequal 1 \; .
 \end{equation}
 %
 Applying L'H\^{o}pital's rule gives
@@ -349,7 +349,7 @@ Applying L'H\^{o}pital's rule gives
         \left[ (1 + r)^{\oneyr} - 1 \right]}
     {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] - 
      \frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right]}
-  \right\} \questionequal 1 \, .
+  \right\} \questionequal 1 \; .
 \end{equation}
 %
 Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
@@ -361,14 +361,14 @@ Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
          {(1 + r)^{\oneyr} (\tlife) + 
           (1 + r)^{\tlife} (\oneyr) - 
           \oneyr}
-  \right] \questionequal 1 \, .
+  \right] \questionequal 1 \; .
 \end{equation}
 %
 Setting $r = 0$ in the remaining terms gives
 
 \begin{equation}
   \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
-  {(1) (\tlife) + (1) \oneyr - \oneyr} \questionequal 1 \, .
+  {(1) (\tlife) + (1) \oneyr - \oneyr} \questionequal 1 \; .
 \end{equation}
 %
 Simplifying the denominator gives
