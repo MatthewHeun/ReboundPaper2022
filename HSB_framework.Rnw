@@ -1021,7 +1021,7 @@ Therefore, the change in energy consumption rate caused by a change
 in maintenance and disposal expenditures
 is given by $\Delta \raempl{C}_{\omd} I_E = 
                          (\raempl{C}_{\omd} - \rbempl{C}_{\omd}) I_E$.
-Rebound from maintenance and disposal activities 
+Rebound from operations, maintenance, and disposal activities 
 is given by 
 
 \begin{equation} \label{eq:Re_md}
