@@ -809,13 +809,13 @@ the energy intensity of the economy~($I_E$).
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
 
-
-<<eeu_data, echo=FALSE>>=
-# Load our test cases and perform rebound analyses.
-rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
-rebound_results <- ReboundTools::rebound_analysis(rebound_data)
-@
-
+% 
+% <<eeu_data, echo=FALSE>>=
+% # Load our test cases and perform rebound analyses.
+% rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
+% rebound_results <- ReboundTools::rebound_analysis(rebound_data)
+% @
+% 
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound effects}
