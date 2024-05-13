@@ -1283,8 +1283,8 @@ rebound_results %>%
                      parse = TRUE) +
   # Set the limits manually, because we plot beyond these limits
   # with shading.
-  ggplot2::xlim(34730, 63500) +
-  ggplot2::ylim(73150, 77255) +
+  # ggplot2::xlim(34730, 63500) +
+  # ggplot2::ylim(73150, 77255) +
   MKHthemes::xy_theme()
 @
 
