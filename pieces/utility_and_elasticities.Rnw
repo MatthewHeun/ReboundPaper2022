@@ -3,25 +3,27 @@
 % before building the paper.
 %!TEX root = ../HSB_framework.Rnw
 
+% 
+% <<efficiency_improvements, echo=FALSE>>=
+% eta_car_orig <- rebound_results %>% 
+%   dplyr::filter(Case == "Car") %>% 
+%   dplyr::select(eta_engr_units_orig) # In mpg
+% eta_car_tilde <- rebound_results %>% 
+%   dplyr::filter(Case == "Car") %>% 
+%   dplyr::select(eta_engr_units_tilde) # In mpg
+% eta_lamp_orig <- rebound_results %>% 
+%   dplyr::filter(Case == "Lamp") %>% 
+%   dplyr::select(eta_engr_units_orig) / 1000 # In lm-hr/W-hr
+% eta_lamp_tilde <- rebound_results %>% 
+%   dplyr::filter(Case == "Lamp") %>% 
+%   dplyr::select(eta_engr_units_tilde) / 1000 # In lm-hr/W-hr
+% 
+% eta_car_perc_improvement <- (eta_car_tilde - eta_car_orig) / eta_car_orig * 100 # In percent
+% 
+% eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 100 # In percent
+% @
+% 
 
-<<efficiency_improvements, echo=FALSE>>=
-eta_car_orig <- rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
-  dplyr::select(eta_engr_units_orig) # In mpg
-eta_car_tilde <- rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
-  dplyr::select(eta_engr_units_tilde) # In mpg
-eta_lamp_orig <- rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select(eta_engr_units_orig) / 1000 # In lm-hr/W-hr
-eta_lamp_tilde <- rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select(eta_engr_units_tilde) / 1000 # In lm-hr/W-hr
-
-eta_car_perc_improvement <- (eta_car_tilde - eta_car_orig) / eta_car_orig * 100 # In percent
-
-eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 100 # In percent
-@
 
 As discussed in Section~\ref{sec:sub_effect_main_paper}
 and Appendix~\ref{sec:Re_sub}, 
