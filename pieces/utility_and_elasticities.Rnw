@@ -629,14 +629,14 @@ in the constant price elasticity (CPE) utility model.
 Thus, 
 
 \begin{align} \label{eq:cpe_hat_elasticities}
-  \eqspsUChat &= \eqspsUCorig \; , \\
-  \eqopsUChat &= \eqopsUCorig \; , \\
-  \eqspsChat &= \eqspsCorig \; , \mathrm{and} \\
-  \eqopsChat &= \eqopsCorig \; .
+  \eqspsUCorig &= \eqspsUChat \; , \\
+  \eqopsUCorig &= \eqopsUChat \; , \\
+  \eqspsCorig &= \eqspsChat \; , \mathrm{and} \\
+  \eqopsCorig &= \eqopsChat \; .
 \end{align}
 
 Under the CPE approximation, the post-EEU elasticity of substitution will
-be different from its original value ($\asub{\sigma} \ne \orig{\sigma}$). 
+be different from its original value ($\orig{\sigma} \ne \asub{\sigma}$). 
 However, there is no analytical expression for $\sigma$ and 
 values are most likely taken from estimation, if they are found at all.
 
@@ -662,7 +662,7 @@ is constant across the substitution effect for the CES utility model.
 Thus,
 
 \begin{equation}
-  \asub{\sigma} = \orig{\sigma} \; .
+  \orig{\sigma} = \asub{\sigma} \; .
 \end{equation}
 %
 Because the elasticity of substitution is unchanged, 
@@ -682,7 +682,7 @@ across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
-($\rasub{u} = \rbsub{u}$).
+($\rbsub{u} = \rasub{u}$).
 In contrast to the CPE utility model above, 
 the compensated own price elasticity of energy service demand ($\eqspsChat$)
 is not constant in the CES utility model.
@@ -804,7 +804,7 @@ across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
-($\rasub{u} = \rbsub{u}$).
+($\rbsub{u} = \rasub{u}$).
 To find the compensated cross price elasticity of other goods consumption ($\eqopsChat$),
 we follow a similar procedure as for deriving the 
 own price elasticity of energy service consumption ($\eqspsChat$), 

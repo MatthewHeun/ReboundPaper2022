@@ -372,7 +372,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
   \midrule
-   Capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
+   Undiscounted capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
@@ -393,8 +393,8 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
  \midrule
-  Ops., Maint, and disposal expenditure rate  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
+  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
                                                     &           &          & (excluding financing, depreciation, fuel). \\
                                                     &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
@@ -599,7 +599,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Lamp efficiency                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
-   Capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
+   Undiscounted capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
                                                     &           &          & and \$1.21 for LED lamp from \\
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
@@ -627,8 +627,8 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
  \midrule
-  Ops., maint., and disposal expenditure rate  & \Sexpr{C_dot_omd_orig_lamp_char}      & \Sexpr{C_dot_omd_star_lamp_char}     & Assumed negligible. \\
-  $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & \\
+  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_lamp_char}      & \Sexpr{C_dot_omd_star_lamp_char}     & Assumed negligible. \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -759,8 +759,8 @@ which are calculated via details about substitution
 
 Axes of the rebound planes
 represent direct and indirect effects, with 
-direct effects shown on the $x$-axis, and 
-indirect effects shown on the $y$-axis.
+direct effects shown on the $x$-axes, and 
+indirect effects shown on the $y$-axes.
 Specifically, 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -768,7 +768,8 @@ Specifically,
   \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
         the $x$- and $y$-axes of the energy plane, respectively;
   
-  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$) are placed on 
+  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$, 
+        discounted when appropriate) are placed on 
         the $x$- and $y$-axes of the expenditure plane, respectively; and
   
   \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
@@ -899,7 +900,9 @@ because macro effects lead to additional indirect energy consumption.
 
 The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows 
 the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
-the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
+the indirect expenditure rate
+($\rate{C}_{indir}$, discounted when appropriate) 
+on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
 indicate expenditure isoquants.
 The line through the $\circ$ point is an isoquant for the
@@ -1997,7 +2000,7 @@ on more of the energy service.
 Almost all spending of net income ($\rasub{N}$) 
 is on other goods.
 The path between the $\wedge$ and $-$ points 
-is nearly vertical.
+is nearly vertical already.
 In contrast, the path from $\wedge$ to $-$ in the car example 
 (Fig.~\ref{fig:CarConsGraph})
 is decidedly \emph{not} vertical and a reduction in

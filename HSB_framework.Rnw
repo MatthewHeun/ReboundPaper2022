@@ -663,8 +663,10 @@ $\rate{E}$ is a rate of energy in, say, MJ/yr.
 We later annualize capital costs ($C_{cap}$ in \$) and
 energy embodied in the device during
 its production ($E_{emb}$ in MJ) to create
-cost rates ($\rate{C}_{cap}$ in \$/yr) and
+undiscounted cost rates ($\rate{C}_{cap}$ in \$/yr) and
 embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
+(Discounting is captured by the variables $R_\alpha$ and $R_\omega$. 
+See Appendix~\ref{sec:budget_constraint} for details.)
 
 Energy is available at price $p_E$ (in \$/MJ).
 The original energy conversion device provides a rate of energy service 
@@ -712,9 +714,13 @@ so the energy purchaser (the device user) is a price taker.%
 %
 Initially, the device user spends income ($\rorig{M}$)
 on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
-annualized capital costs for the device ($\orig{R}_\alpha \rorig{C}_{cap}$), 
+annualized capital costs for the device 
+(undiscounted: $\rorig{C}_{cap}$; 
+discounted: $\orig{R}_\alpha \rorig{C}_{cap}$), 
 annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
-disposal of the device ($\orig{R}_\omega \rorig{C}_d$), and 
+disposal of the device 
+(undiscounted: $\rorig{C}_d$; 
+discounted: $\orig{R}_\omega \rorig{C}_d$), and 
 other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
@@ -742,9 +748,9 @@ Eq.~(\ref{eq:budget_constraint_prelim}) becomes
   \rorig{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
 \end{equation}
 %
-which is the usual budget constraint 
+which is the usual discounted budget constraint 
 for the microeconomic consumer
-after subtracting capital costs and operations, maintenance, and disposal costs.
+after subtracting capital, operations and maintenance, and disposal costs.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through the four rebound effects
@@ -950,8 +956,6 @@ from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
 For simplicity, we spread all embodied energy
 over the lifetime of the device
 to provide a constant embodied energy rate ($\rate{E}_{emb}$).
-(We later take the same approach to capital costs ($\rate{C}_{cap}$) and
-maintenance and disposal costs ($\rate{C}_{\md}$).)
 A justification for spreading embodied energy and 
 purchase costs comes from considering
 device replacements by many consumers across several years.
