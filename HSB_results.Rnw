@@ -298,6 +298,7 @@ q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_va
 M_dot_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$M_dot_orig, digits = 0)
 p_E_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 2)
 f_Cs_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$f_Cs_orig, digits = 3)
+r_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$r, digits = 2)
 k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k, digits = 1)
 
 # Parameters for elasticity table
@@ -447,6 +448,9 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
+  Real discount rate                                        & \Sexpr{r_car_char}           & **** Info here from GS justifying the value. **** \\  
+  $r$ [1/yr]                                                &               &               \\
+  \midrule
   Macro factor                                              & \Sexpr{k_car_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
@@ -522,6 +526,7 @@ q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_
 M_dot_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$M_dot_orig, digits = 0)
 p_E_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$p_E_engr_units, digits = 4)
 f_Cs_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$f_Cs_orig, digits = 7)
+r_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$r, digits = 2)
 k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$k, digits = 1)
 
 # Third table
@@ -670,6 +675,9 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                             &               & where spend on energy service = 580,350 \lmhr/yr /  \\
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr = \$8.5/yr.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
+  \midrule
+  Real discount rate                                        & \Sexpr{r_lamp_char}           & **** Info here from GS justifying the value. **** \\  
+  $r$ [1/yr]                                                &               &               \\
   \midrule
   Macro factor                                              & \Sexpr{k_lamp_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
