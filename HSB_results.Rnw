@@ -286,14 +286,12 @@ mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_
 mpg_better <- val_to_string(case = "Car", val = ReboundTools::star_vars$eta_engr_units_star, digits = 0)
 C_dot_cap_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 0)
 C_dot_cap_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_cap_star, digits = 0)
-t_own_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_own_orig, digits = 0)
-t_own_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_own_star, digits = 0)
 t_life_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$t_life_orig, digits = 0)
 t_life_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_life_star, digits = 0)
 E_emb_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$E_emb_orig, digits = 0)
 E_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$E_emb_star, digits = 0)
-C_dot_md_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 0)
-C_dot_md_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_md_star, digits = 0)
+C_dot_omd_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_omd_orig, digits = 0)
+C_dot_omd_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_omd_star, digits = 0)
 
 # Parameters for second table
 q_dot_s_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
@@ -313,7 +311,7 @@ e_qo_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_para
 Re_dempl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
 Re_emb_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
 Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_E_dot_emb_star, digits = 0)
-Re_md_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE, digits = 1)
+Re_omd_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_omd, to_perc = TRUE, digits = 1)
 Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
 Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
@@ -377,10 +375,10 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
- \midrule
-   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
-                                                    &           &          & taken as 84 months in 2018 (7 years) for our example. \\
+ % \midrule
+ %   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
+ %   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
+ %                                                    &           &          & taken as 84 months in 2018 (7 years) for our example. \\
  \midrule
    Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
@@ -394,8 +392,8 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
  \midrule
-  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_car_char}  & \Sexpr{C_dot_md_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
+  Ops., Maint, and disposal expenditure rate  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
+  $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
                                                     &           &          & (excluding financing, depreciation, fuel). \\
                                                     &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
@@ -512,14 +510,12 @@ efficacy_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta
 efficacy_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # lm-hr/W-hr
 C_dot_cap_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_cap_orig, digits = 3)
 C_dot_cap_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_cap_star, digits = 3)
-t_own_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_own_orig, digits = 1)
-t_own_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_own_star, digits = 0)
 t_life_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$t_life_orig, digits = 1)
 t_life_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_life_star, digits = 0)
 E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
 E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
-C_dot_md_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_md_orig, digits = 2)
-C_dot_md_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_md_star, digits = 2)
+C_dot_omd_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_omd_orig, digits = 2)
+C_dot_omd_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_omd_star, digits = 2)
 
 # Second table
 q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
@@ -544,7 +540,7 @@ E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_va
 E_dot_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_dot_emb_orig, digits = 2)
 E_dot_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_dot_emb_star, digits = 2)
 Re_emb_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_emb, to_perc = TRUE)
-Re_md_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_md, to_perc = TRUE)
+Re_omd_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_omd, to_perc = TRUE)
 Re_dsub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 eta_better <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$eta_engr_units_star, scale = 0.001, digits = 1) # In lm/W
 eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr_units_orig, scale = 0.001, digits = 2) # In lm/W
@@ -602,9 +598,9 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
                                                     &           &          & and \$1.21 for LED lamp from \\
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
-  \midrule
-   Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
+  % \midrule
+  %  Ownership duration      & \Sexpr{t_own_orig_lamp_char}       & \Sexpr{t_own_star_lamp_char}       & Assumed same as lamp lifespan \\
+  %  $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
  \midrule
    Lifespan               & \Sexpr{t_life_orig_lamp_char}       & \Sexpr{t_life_star_lamp_char}       & Based on assumed 3 hr/day  \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
@@ -626,8 +622,8 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
  \midrule
-  Maintenance and disposal expenditure rate  & \Sexpr{C_dot_md_orig_lamp_char}      & \Sexpr{C_dot_md_star_lamp_char}     & Assumed negligible. \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & \\
+  Ops., maint., and disposal expenditure rate  & \Sexpr{C_dot_omd_orig_lamp_char}      & \Sexpr{C_dot_omd_star_lamp_char}     & Assumed negligible. \\
+  $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -1085,7 +1081,10 @@ for the car example.
 
 
 <<car_stages_table, results="asis", echo=FALSE>>=
-digs_car <- matrix(c(rep(1, 7), # eta_engr_units
+digs_car <- matrix(c(rep(0, 7), # t_life,
+                     rep(1, 7), # R_alpha
+                     rep(1, 7), # R_omega
+                     rep(1, 7), # eta_engr_units
                      rep(3, 7), # eta
                      rep(3, 7), # p_s
                      rep(0, 7), # q_dot_s
@@ -1093,20 +1092,23 @@ digs_car <- matrix(c(rep(1, 7), # eta_engr_units
                      rep(0, 7), # E_dot_emb
                      rep(0, 7), # C_dot_s
                      rep(0, 7), # C_dot_cap
-                     rep(0, 7), # C_dot_md
+                     rep(1, 7), # C_dot_om
+                     rep(0, 7), # C_d
+                     rep(0, 7), # C_dot_d
+                     rep(1, 7), # C_dot_omd
                      rep(0, 7), # C_dot_o
                      rep(0, 7), # N_dot
                      rep(0, 7)), # M_dot
-                   nrow = 12, ncol = 7, byrow = TRUE)
-rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
+                   nrow = 18, ncol = 7, byrow = TRUE)
+rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
   dplyr::mutate(
     Case = NULL
-  ) %>% 
+  ) |>
   ReboundTools::stages_table(label = "tab:car_stages_table", 
                              caption = "Results for car example with macro factor ($k$) assumed to be 1.", 
-                             digits = digs_car, 
-                             align = "lrrrrrr") %>% 
+                             # digits = digs_car, 
+                             align = "lrrrrrr") |> 
   print(include.rownames = FALSE, 
         booktabs = TRUE,
         caption.placement = "top",
@@ -1281,8 +1283,8 @@ rebound_results %>%
                      parse = TRUE) +
   # Set the limits manually, because we plot beyond these limits
   # with shading.
-  ggplot2::xlim(34730, 63500) +
-  ggplot2::ylim(73150, 77255) +
+  # ggplot2::xlim(34730, 63500) +
+  # ggplot2::ylim(73150, 77255) +
   MKHthemes::xy_theme()
 @
 
@@ -1415,9 +1417,9 @@ due to the higher embodied energy rate
 ($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/yr)
 stemming from the electric battery in the hybrid EV car.
 Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is small and negative
-($\Sexpr{Re_md_car_char_perc}$\%),
-because of the slightly lower maintenance and disposal costs
+($Re_{\omd}$) is small and negative
+($\Sexpr{Re_omd_car_char_perc}$\%),
+because of the slightly lower operations, maintenance, and disposal costs
 for the hybrid EV car.
 
 The \subeffect{} has two components:
@@ -1498,7 +1500,10 @@ for the lamp example.
 
 
 <<lamp_stages_table, results="asis", echo=FALSE>>=
-digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
+digs_lamp <- matrix(c(rep(0, 7), # t_life,
+                      rep(1, 7), # R_alpha
+                      rep(1, 7), # R_omega
+                      rep(0, 7), # eta_engr_units
                       rep(0, 7), # eta
                       rep(8, 7), # p_s
                       rep(0, 7), # q_dot_s
@@ -1506,11 +1511,15 @@ digs_lamp <- matrix(c(rep(0, 7), # eta_engr_units
                       rep(3, 7), # E_dot_emb
                       rep(2, 7), # C_dot_s
                       rep(2, 7), # C_dot_cap
-                      rep(2, 7), # C_dot_md
+                      rep(2, 7), # C_dot_om
+                      rep(2, 7), # C_d
+                      rep(2, 7), # C_dot_d
+                      rep(2, 7), # C_dot_omd
                       rep(0, 7), # C_dot_o
                       rep(2, 7), # N_dot
                       rep(0, 7)), # M_dot
-                    nrow = 12, ncol = 7, byrow = TRUE)
+                    nrow = 18, ncol = 7, byrow = TRUE)
+
 rebound_results %>% 
   dplyr::filter(Case == "Lamp") %>% 
   dplyr::mutate(
@@ -1582,7 +1591,7 @@ is $\Sexpr{Delta_E_dot_emb_star_lamp_char}$~MJ/yr,
 and embodied energy rebound is negative
 ($Re_{emb} = \Sexpr{Re_emb_lamp_char_perc}$\%).
 Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is \Sexpr{Re_md_lamp_char_perc}\%,
+($Re_{\md}$) is \Sexpr{Re_omd_lamp_char_perc}\%,
 because we assume no difference in maintenance and disposal costs between 
 the incandescent lamp and the LED lamp.%
 \footnote{
@@ -2160,8 +2169,8 @@ $k \approx 3$ could be interpreted as
 growth induced by the device user's spending of net savings with
 a marginal propensity to consume (MPC)
 of approximately $0.75$ that translates into a multiplier of 3. 
-(See Fig.~\ref{PartI-fig:k_vs_mpc} 
-in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
+% (See Fig.~\ref{PartI-fig:k_vs_mpc} 
+% in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
 $\MPC \approx 0.75$ is a reasonable value, 
 being in the upper half of recent estimates from \citet{Carroll2017}.
 Although the cause of the growth in economic activity and energy consumption from an EEU 
@@ -2269,19 +2278,6 @@ For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
 The efficiency gain for the lamp is far greater than the efficiency gain for the car,
 leading to much different rates of net income ($\raempl{N}$) and
 different macro rebound values.
-
-% I think there is really no claim in this.
-% Fifth,
-% in both examples the macro effect rebound ($Re_{macro}$) is much larger than
-% any single micro rebound component. 
-% However, the sum of micro rebound components 
-% ($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
-% is close in magnitude to the macro rebound ($Re_{macro}$).
-% These observations are likely to be the result of 
-% $Re_{macro}$ being the sum of several macroeconomic sub-effects,
-% among which we don't discriminate in this framework.
-% (See Table~\ref{PartI-tab:rebound_typology} in Part~I
-% for a list of macro rebound effects.)
 
 
 %++++++++++++++++++++++++++++++

@@ -461,26 +461,29 @@ with direct and indirect partitions for each.
 All combinations are possible.
 
  ``Emplacement'' is a new term we introduce 
-to collect non-operational effects of the devices, 
+to collect indirect effects of the devices, 
 including 
 %
-\begin{enumerate*}[label={(\alph*)}]
+\begin{enumerate*}[label={(\roman*)}]
 	
-  \item embodied energy of their manufacture and
+  \item embodied energy of their manufacture (emb), 
   
-  \item maintenance and disposal activities.
+  \item operations and maintenance (OM), and
+  
+  \item disposal (d) activities.
     
 \end{enumerate*}
 %
-Although neither
-embodied
-(see \citet[footnote~5, p.~3]{Borenstein:2015aa} and
-\citet{Saunders:2021te}) nor
-maintenance and disposal
-(see \citet{Sorrell:2009aa}, 
+Although none of the
+embodied,
+operations and maintenance, or
+disposal effects are new
+(see
+\citet[footnote~5, p.~3]{Borenstein:2015aa}, 
+\citet{Saunders:2021te}, 
+\citet{Sorrell:2009aa}, 
 \citet[footnote~37, p.~16]{Borenstein:2015aa}, and  
-\citet{sorrell2020limits})
-effects are new,
+\citet{sorrell2020limits}),
 we separate them from substitution and income
 microeconomic effects 
 (Table~\ref{tab:rebound_typology}) 
@@ -692,8 +695,9 @@ than a like-for-like replacement of the original device.
 We call this increased ``capital cost'' 
 ($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
 It may also 
-be more costly to maintain and dispose of the upgraded device
-($\rbempl{C}_{\md} < \ramacro{C}_{\md}$). 
+be more costly to operate and maintain (OM) and dispose (d) 
+of the upgraded device
+($\rbempl{C}_{\omd} < \ramacro{C}_{\omd}$). 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
@@ -708,28 +712,39 @@ so the energy purchaser (the device user) is a price taker.%
 %
 Initially, the device user spends income ($\rorig{M}$)
 on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
-annualized capital costs for the device ($\rorig{C}_{cap}$), 
-annualized costs for maintenance and disposal of the device ($\rorig{C}_{\md}$), and 
+annualized capital costs for the device ($\orig{R}_\alpha \rorig{C}_{cap}$), 
+annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
+disposal of the device ($\orig{R}_\omega \rorig{C}_d$), and 
 other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
-\begin{equation} \label{eq:budget_constraint}
-  \rorig{M} = \rorig{C}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
+\begin{equation} \label{eq:budget_constraint_prelim}
+  \rorig{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
 \end{equation}
 %
 where 
+$\orig{R}_\alpha$ and $\orig{R}_\omega$ account for discounting, 
+$\rorig{C}_{cap}$ and $\rorig{C}_{\om}$ are undiscounted
+cost rates given by 
+$\orig{C}_{cap} / \orig{t}_{life}$ 
+and
+$\orig{C}_d / \orig{t}_{life}$,
+and
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
-Substituting the original price and quantity of energy service consumption 
-and other goods consumption
-into Eq.~\ref{eq:budget_constraint} and rearranging gives
+See Appendix~\ref{sec:budget_constraint} for details.
+After substituting the original price and quantity of energy service consumption,
+after substituting the original price and quantity of other goods consumption,
+after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} - \orig{R}_\omega \rorig{C}_d$,
+and after some rearrangement, 
+Eq.~(\ref{eq:budget_constraint_prelim}) becomes
 
-\begin{equation}
-  \rorig{M} - \rorig{C}_{cap} - \rorig{C}_{\md} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
+\begin{equation} \label{eq:budget_constraint}
+  \rorig{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
 \end{equation}
 %
 which is the usual budget constraint 
 for the microeconomic consumer
-after subtracting lump sums for capital cost and maintenance of the device.
+after subtracting capital costs and operations, maintenance, and disposal costs.
 
 Later (Sections~\ref{sec:empl_effect_main_paper}--\ref{sec:macro_effect_main_paper}), 
 we walk through the four rebound effects
@@ -782,25 +797,25 @@ of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
 \end{align}
 
 Fourth, indirect energy rates for
-maintenance and disposal ($\rate{E}_{\md}$) and
+operations, maintenance, and disposal ($\rate{E}_{\omd}$) and
 other goods expenditures ($\rate{E}_{o}$)
 are the product 
-of expenditures rates~($\rate{C}_{\md}$ and $\rate{C}_o$) and
+of expenditures rates~($\rate{C}_{\omd}$ and $\rate{C}_o$) and
 the energy intensity of the economy~($I_E$).
 
 \begin{align} \label{eq:indirect_energy_rates}
-  \rate{E}_{\md} &= \rate{C}_{\md} I_E \\
+  \rate{E}_{\omd} &= \rate{C}_{\omd} I_E \\
   \rate{E}_o     &= \rate{C}_o I_E \\
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
 
-
-<<eeu_data, echo=FALSE>>=
-# Load our test cases and perform rebound analyses.
-rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
-rebound_results <- ReboundTools::rebound_analysis(rebound_data)
-@
-
+% 
+% <<eeu_data, echo=FALSE>>=
+% # Load our test cases and perform rebound analyses.
+% rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
+% rebound_results <- ReboundTools::rebound_analysis(rebound_data)
+% @
+% 
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound effects}
@@ -839,19 +854,6 @@ in the substitution and income effects.
 
 The direct emplacement effects of the EEU include
 device energy savings ($\Sdot$) and device energy cost savings ($\Delta \raempl{C}_s$).
-The indirect effects of EEU emplacement are
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item changes in the embodied energy rate ($\Delta \raempl{E}_{emb}$), 
-  
-  \item changes in the capital expenditure rate ($\Delta \raempl{C}_{cap}$), and 
-        
-  \item changes in the maintenance and disposal energy and expenditure rates 
-        ($\Delta \raempl{E}_{\md}$ and $\Delta \raempl{C}_{\md}$).
-    
-\end{enumerate*}
-%
 $\Sdot$ can be written conveniently as
 
 \begin{equation} \label{eq:Sdot}
@@ -892,9 +894,19 @@ Thus,
 Although the direct emplacement effect does not cause rebound, 
 indirect emplacement effects may indeed cause rebound.
 Indirect emplacement effects 
-account for the life cycle of the energy conversion device,
-including energy embodied by manufacturing processes (subscript $emb$) and
-maintenance and disposal activities (subscript $\md$).
+account for the life cycle of the energy conversion device, including 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item changes in the embodied energy rate ($\Delta \raempl{E}_{emb}$), 
+  
+  \item changes in the operations and maintenance energy and expenditure rates
+        ($\Delta \raempl{E}_{\om}$ and $\Delta \raempl{C}_{\om}$), and
+
+  \item changes in the disposal energy and expenditure rates
+        ($\Delta \raempl{E}_d$ and $\Delta \raempl{C}_d$).
+    
+\end{enumerate*}
 
 
 %..............................
@@ -979,33 +991,41 @@ meaning that the upgraded device has a lower embodied energy rate than the origi
 
 
 %..............................
-\subparagraph{Maintenance and disposal effect ($Re_{\md}$)} 
+\subparagraph{Operations, maintenance, and disposal effects ($Re_{\omd}$)} 
 %..............................
 
 In addition to embodied energy, 
 indirect emplacement effect rebound accounts for
-energy demanded by maintenance and disposal~($\md$) activities.
-Maintenance expenditures are typically modeled as a per-year expense, a rate (e.g., $\rbempl{C}_m$).
-Disposal costs (e.g., $\bempl{C}_d$) are one-time expenses incurred 
-at the end of the useful life of the energy conversion device.
-Like embodied energy, we spread disposal costs across the lifetime 
-of the original and upgraded devices ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
-to form expenditure rates such that 
-$\rbempl{C}_{\md} = \rbempl{C}_m + \bempl{C}_d/\bempl{t}_{\life}$
+energy demanded by operations and maintenance~(subscript $\om$) and
+disposal~(subscript $d$) activities.
+Operations and maintenance expenditures 
+are typically modeled as a per-year expense, a rate (e.g., $\rbempl{C}_{\om}$).
+On the other hand, 
+disposal costs (e.g., $\bempl{C}_d$) are incurred 
+at the end of the useful life of the energy conversion device
+(subscript $\omega$).
+We annualize disposal costs (with discounting) across the lifetime 
+of the original and upgraded devices
+($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
+to form discounted expenditure rates such that 
+$\rbempl{C}_{\omd} = \rbempl{C}_{\om} 
+                     + \bempl{R}_\omega \bempl{C}_d$
 and
-$\raempl{C}_{\md} = \raempl{C}_m + \aempl{C}_d/\aempl{t}_{\life}$.
+$\raempl{C}_{\omd} = \raempl{C}_m 
+                     + \aempl{R}_\omega \aempl{C}_d$.
 
-For simplicity, we assume that maintenance and disposal
+For simplicity, we assume that operations, maintenance, and disposal
 expenditures imply energy consumption
 elsewhere in the economy at its overall energy intensity~($I_E$).
 Therefore, the change in energy consumption rate caused by a change 
 in maintenance and disposal expenditures
-is given by $\Delta \raempl{C}_{\md} I_E = (\raempl{C}_{\md} - \rbempl{C}_{\md}) I_E$.
-Rebound from maintenance and disposal activities 
+is given by $\Delta \raempl{C}_{\omd} I_E = 
+                         (\raempl{C}_{\omd} - \rbempl{C}_{\omd}) I_E$.
+Rebound from operations, maintenance, and disposal activities 
 is given by 
 
 \begin{equation} \label{eq:Re_md}
-  Re_{\md} = \ReOMdeqn{} \; .
+  Re_{\omd} = \ReOMdeqn{} \; .
 \end{equation}
 %
 (See Appendix~\ref{sec:Re_OMd} for details of the derivation.)
@@ -1331,7 +1351,7 @@ Effective income ($\Mdothatprime$) is given by
 For the purposes of the income effect, 
 effective income (Eq.~(\ref{eq:effective_income})) 
 adjusts original income ($\rorig{M}$) to account for 
-sunk costs ($\raempl{C}_{cap}$ and $\raempl{C}_{\md}$) and
+sunk costs ($\aempl{R}_\alpha \raempl{C}_{cap}$ and $\raempl{C}_{\omd}$) and
 net savings ($\rasub{N}$).
 
 Direct income rebound is defined as
@@ -1870,7 +1890,7 @@ Appendix~\ref{sec:price_effect_appendix} derives an expression for
 rebound from the energy price effect as
 
 \begin{equation} \label{eq:Re_pE}
-  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \orig{p}_E \rainc{E}_s I_E}{\Sdot} \, .
+  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \orig{p}_E \rainc{E}_s I_E}{\Sdot} \; .
 \end{equation}
 
 
@@ -2082,13 +2102,13 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Respending and the
-marginal propensity to consume (MPC)}
-\label{sec:income_macro_mpc}
+% \section{Respending and the
+% marginal propensity to consume (MPC)}
+% \label{sec:income_macro_mpc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-<<MPCAppendix, child="pieces/mpc.Rnw">>=
-@
+% <<MPCAppendix, child="pieces/mpc.Rnw">>=
+% @
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

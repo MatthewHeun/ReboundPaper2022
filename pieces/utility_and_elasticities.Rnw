@@ -3,25 +3,27 @@
 % before building the paper.
 %!TEX root = ../HSB_framework.Rnw
 
+% 
+% <<efficiency_improvements, echo=FALSE>>=
+% eta_car_orig <- rebound_results %>% 
+%   dplyr::filter(Case == "Car") %>% 
+%   dplyr::select(eta_engr_units_orig) # In mpg
+% eta_car_tilde <- rebound_results %>% 
+%   dplyr::filter(Case == "Car") %>% 
+%   dplyr::select(eta_engr_units_tilde) # In mpg
+% eta_lamp_orig <- rebound_results %>% 
+%   dplyr::filter(Case == "Lamp") %>% 
+%   dplyr::select(eta_engr_units_orig) / 1000 # In lm-hr/W-hr
+% eta_lamp_tilde <- rebound_results %>% 
+%   dplyr::filter(Case == "Lamp") %>% 
+%   dplyr::select(eta_engr_units_tilde) / 1000 # In lm-hr/W-hr
+% 
+% eta_car_perc_improvement <- (eta_car_tilde - eta_car_orig) / eta_car_orig * 100 # In percent
+% 
+% eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 100 # In percent
+% @
+% 
 
-<<efficiency_improvements, echo=FALSE>>=
-eta_car_orig <- rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
-  dplyr::select(eta_engr_units_orig) # In mpg
-eta_car_tilde <- rebound_results %>% 
-  dplyr::filter(Case == "Car") %>% 
-  dplyr::select(eta_engr_units_tilde) # In mpg
-eta_lamp_orig <- rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select(eta_engr_units_orig) / 1000 # In lm-hr/W-hr
-eta_lamp_tilde <- rebound_results %>% 
-  dplyr::filter(Case == "Lamp") %>% 
-  dplyr::select(eta_engr_units_tilde) / 1000 # In lm-hr/W-hr
-
-eta_car_perc_improvement <- (eta_car_tilde - eta_car_orig) / eta_car_orig * 100 # In percent
-
-eta_lamp_perc_improvement <- (eta_lamp_tilde - eta_lamp_orig) / eta_lamp_orig * 100 # In percent
-@
 
 As discussed in Section~\ref{sec:sub_effect_main_paper}
 and Appendix~\ref{sec:Re_sub}, 
@@ -86,53 +88,6 @@ to describe consumer behavior.
 Elasticities for both the substitution effect and the income effect
 are discussed below, 
 after we lay out the CPE and CES utility models.
-
-
-% Commenting, because these data are only available
-% in Part II, but this appendix is included in Part I.
-% For the car example in Section~\ref{sec:car_example}, 
-% energy efficiency increases from 
-% $\orig{\eta} = \Sexpr{mpg_worse}$~mpg to
-% $\amacro{\eta} = \Sexpr{mpg_better}$~mpg, 
-% a \Sexpr{eta_car_perc_improvement}\% improvement.
-% For the lamp example in Section~\ref{sec:lamp_example},
-% energy efficiency increases by 
-% \Sexpr{formatC(unlist(eta_lamp_perc_improvement))}\%.
-
-% For completeness,
-% we briefly mention a third utility model with Cobb-Douglas form.
-% The Cobb-Douglas utility model is a commonly used special case
-% of the CES utility model
-% with elasticity of substitution ($\sigma$) equal to 1. 
-% The Cobb-Douglas utility model simplifies many derivations due to a number of strong assumptions on behavior.
-% However, the simplicity of Cobb-Douglas utility model has side effects:
-% especially that it always gives 100\% direct substitution rebound.
-% That characteristic disqualifies its use in a rebound analysis framework
-% that purports to estimate the magnitude of substitution effect rebound.  
-% So, we reject the special case Cobb-Douglas utility model
-% in favor of the generalized CES utility model.
-
-% Both the substitution effect and the income effect
-% use elasticities to model consumer preferences. 
-% In the substitution effect, all utility models
-% rely upon elasticities to estimate
-% consumption utility and
-% the comparative benefits of
-% consuming the energy service ($\Delta \rasub{q}_s$) and
-% consuming other goods and services ($\Delta \rasub{C}_o$).
-% Similarly,
-% the income effect also employs elasticities to determine changes to
-% the rate of energy service consumption ($\Delta \rainc{q}_s$) and
-% the rate of other goods consumption ($\Delta \rainc{C}_o$).
-% In the income effect,
-% elasticities describe the proportions of net savings ($\rasub{N}$)
-% spent on the energy service
-% and other goods and services.
-% In this appendix,
-% the approximate, CES, and Cobb-Douglas utility models are described.
-% the approximate and Cobb-Douglas utility models are described.
-% Then, elasticities for the substitution effect are 
-% discussed.
 
 Before proceeding with the utility models and elasticities,
 we note briefly that the rate of other goods consumption ($\rate{q}_o$)
@@ -310,7 +265,7 @@ The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}),
 with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
 
 \begin{equation}
-  \rate{M} = p_s \rate{q}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o  + \rate{N}
+  \rate{M} = p_s \rate{q}_s + R_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_o  + \rate{N}
 \end{equation}
 %
 In a manner similar to derivations in
@@ -321,7 +276,7 @@ and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
 
 \begin{equation}
   \frac{\rate{C}_o}{\rbempl{C}_o} \rbempl{C}_o = - p_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s
-                        + \rate{M} - \rate{C}_{cap} - \rate{C}_{\md}  - \rate{N} \; .
+                        + \rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd}  - \rate{N} \; .
 \end{equation}
 %
 Solving for $\rate{C}_o/\rbempl{C}_o$ and rearranging gives
@@ -330,7 +285,7 @@ Solving for $\rate{C}_o/\rbempl{C}_o$ and rearranging gives
   \frac{\rate{C}_o}{\rbempl{C}_o} = - \frac{p_s \rbempl{q}_s}{\rbempl{C}_o}  
                                         \left( \frac{\rate{q}_s}{\rbempl{q}_s}   \right)
                                     + \frac{1}{\rbempl{C}_o}
-                                          (\rate{M} - \rate{C}_{cap} - \rate{C}_{\md} - \rate{N}) \; ,
+                                          (\rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} - \rate{N}) \; ,
 \end{equation}
 %
 from which the slope of the indifference curve in the consumption plane 
@@ -813,7 +768,7 @@ of the energy service price after the EEU~($\amacro{p}_s$). It is negative,
 as it should be, because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
 
 Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
-the derivative of \ref{eq:eqspsC_exact_simple} and simplifying gives
+the derivative of Eq.~(\ref{eq:eqspsC_exact_simple}) and simplifying gives
 
 \begin{equation} \label{eq:eqspsC_exact_d}
  \pdv{\eqspsChat}{\amacro{p}_s} = \frac{m_s^2 n g (z \amacro{p}_s)^{m_s}}{\amacro{p}_s(f + g(z \amacro{p}_s)^{m_s})^2} \; .

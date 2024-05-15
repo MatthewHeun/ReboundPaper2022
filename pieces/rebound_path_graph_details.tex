@@ -5,8 +5,6 @@
 
 Rebound planes show the impact of direct and indirect rebound effects
 for energy, expenditure, and consumption aspects.
-Notional rebound planes can be found in 
-Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
 Rebound planes for the car example can be found in 
 Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
 Rebound planes for the lamp example can be found in
@@ -67,7 +65,7 @@ Direct energy consumption is energy consumed by the energy conversion device
 indirect energy consumption is the sum of embodied energy, 
 energy associated with maintenanace and disposal, and energy associated 
 with expenditures on other goods
-($\rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E$).
+($\rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_o) I_E$).
 
 For the energy plane, 
 direct energy consumption is placed on the $x$-axis and 
@@ -81,14 +79,14 @@ we first rearrange to put the $y$ coordinate on the left of the equation:
 %
 Next, we substitute $y$ for $\rate{E}_{indir}$,
 $x$ for $\rate{E}_{dir}$, and 
-$\rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E$ for $\rate{E}_{tot}$
+$\rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_o) I_E$ for $\rate{E}_{tot}$
 to obtain
 
 \begin{equation}
-  y = -x + \rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\md} + \rate{C}_o) I_E \; ,
+  y = -x + \rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_o) I_E \; ,
 \end{equation}
 %
-where all of $\rate{E}_s$, $\rate{E}_{emb}$, $\rate{C}_{\md}$, and $\rate{C}_o$
+where all of $\rate{E}_s$, $\rate{E}_{emb}$, $\rate{C}_{\omd}$, and $\rate{C}_o$
 apply at the same rebound stage.
 
 The constant total energy consumption line 
@@ -96,7 +94,7 @@ that passes through the original point ($\circ$)
 shows 100\% rebound:
 
 \begin{equation}
-  y = -x + \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E \; .
+  y = -x + \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_o) I_E \; .
 \end{equation}
 
 The 0\% rebound line is the constant total energy consumption line 
@@ -104,7 +102,7 @@ that accounts for expected energy savings ($\Sdot$) only:
 
 \begin{equation}
   y = -x + (\rbempl{E}_s - \Sdot)
-          + \rbempl{E}_{emb} + (\rbempl{C}_{\md} + \rbempl{C}_o) I_E \; .
+          + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_o) I_E \; .
 \end{equation}
 %
 The above line passes through the $a$ point in the energy plane.
@@ -134,10 +132,10 @@ indirect expenditures are placed on the $y$-axis
 and direct expenditures on energy for the energy conversion device are place on the $x$-axis.
 Direct expenditure is the cost of energy consumed by the energy conversion device
 ($\rate{C}_s = p_E \rate{E}_s$), and 
-indirect expenses are the sum of capital costs, 
-maintenanace and disposal costs, and 
+indirect expenses are the sum of capital costs,
+operations, maintenanace, and disposal costs, and 
 expenditures on other goods
-($\rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o$).
+($R_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_o$).
 Rearranging to put the $y$-axis variable on the left side of the equation gives
 
 \begin{equation}
@@ -146,14 +144,14 @@ Rearranging to put the $y$-axis variable on the left side of the equation gives
 
 Substituting $y$ for $\rate{C}_{indir}$, 
 $x$ for $\rate{C}_{dir}$, and 
-$\rate{C}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o$ for $\rate{C}_{tot}$
+$\rate{C}_s + R_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_o$ for $\rate{C}_{tot}$
 gives
 
 \begin{equation}
-  y = -x + \rate{C}_s + \rate{C}_{cap} + \rate{C}_{\md} + \rate{C}_o \; ,
+  y = -x + \rate{C}_s + R_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_o \; ,
 \end{equation}
 %
-where all of $\rate{C}_s$, $\rate{C}_{cap}$, $\rate{C}_{\md}$, and $\rate{C}_o$
+where all of $\rate{C}_s$, $R_\alpha$, $\rate{C}_{cap}$, $\rate{C}_{\omd}$, and $\rate{C}_o$
 apply at the same rebound stage.
 
 The constant total expenditure line 
@@ -161,7 +159,7 @@ that passes through the original point ($\circ$)
 shows the budget constraint for the device user:
 
 \begin{equation}
-  y = -x + \rbempl{C}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o \; ,
+  y = -x + \rbempl{C}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_o \; ,
 \end{equation}
 %
 into which Eq.~(\ref{PartI-eq:M_acct_orig}) of Part~I can be substituted with 
@@ -178,7 +176,7 @@ and freed cash ($\rate{G} = p_E \Sdot$) only
 is given by:
 
 \begin{equation}
-  y = -x + (\rbempl{C}_s - \rate{G}) + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rbempl{C}_o \; ,
+  y = -x + (\rbempl{C}_s - \rate{G}) + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_o \; ,
 \end{equation}
 %
 or
@@ -221,7 +219,7 @@ Derivations for each are shown in the following subsections.
 %------------------------------
 
 There are four constant expenditure lines in the consumption planes of
-Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}.
+Figs.~\ref{fig:CarConsGraph} and \ref{fig:LampConsGraph}.
 The constant expenditure lines pass through 
 the original point (line \circcirc{}), 
 the post-emplacement point (line \starstar{}), 
@@ -238,7 +236,7 @@ recognizing that there is no net savings before the EEU
 ($\rorig{N} = 0$) gives
 
 \begin{equation}
-  \rorig{M} = \orig{p}_s \rorig{q}_s + \rorig{C}_{cap} + \rorig{C}_{\md} + \rorig{C}_o \; .
+  \rorig{M} = \orig{p}_s \rorig{q}_s + \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_{\omd} + \rorig{C}_o \; .
 \end{equation}
 
 To create the line of constant expenditure in the consumption plane, 
@@ -249,10 +247,10 @@ we remove the notation that ties $\rorig{q}_s$ and $\rorig{C}_o$
 to the original point ($\circ$) to obtain
 
 \begin{equation}
-  \rbempl{M} = \bempl{p}_s \rate{q}_s + \rbempl{C}_{cap} + \rbempl{C}_{\md} + \rate{C}_o \; , 
+  \rbempl{M} = \bempl{p}_s \rate{q}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rate{C}_o \; , 
 \end{equation}
 %
-where all of $\rbempl{M}$, $\bempl{p}_s$, $\rbempl{C}_{cap}$, and $\rbempl{C}_{\md}$
+where all of $\rbempl{M}$, $\bempl{p}_s$, $\bempl{R}_\alpha \rbempl{C}_{cap}$, and $\rbempl{C}_{\omd}$
 apply at the same rebound stage, 
 namely the original point ($\circ$) in this instance.
 
@@ -263,7 +261,7 @@ in consumption planes),
 we solve for $\rate{C}_o$ to obtain
 
 \begin{equation}
-  \rate{C}_o = - \bempl{p}_s \rate{q}_s + \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} \; .
+  \rate{C}_o = - \bempl{p}_s \rate{q}_s + \rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} \; .
 \end{equation}
 %
 Multiplying judiciously by $\rbempl{C}_o/\rbempl{C}_o$ and $\rbempl{q}_s/\rbempl{q}_s$ gives
@@ -271,7 +269,7 @@ Multiplying judiciously by $\rbempl{C}_o/\rbempl{C}_o$ and $\rbempl{q}_s/\rbempl
 \begin{equation}
   \frac{\rate{C}_o}{\rbempl{C}_o} \rbempl{C}_o
        = - \bempl{p}_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s 
-         + \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} \; .
+         + \rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} \; .
 \end{equation}
 %
 Dividing both sides by $\rbempl{C}_o$ yields
@@ -279,7 +277,7 @@ Dividing both sides by $\rbempl{C}_o$ yields
 \begin{equation}
   \frac{\rate{C}_o}{\rbempl{C}_o}
        = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} \frac{\rate{q}_s}{\rbempl{q}_s}
-         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md}) \; .
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}) \; .
 \end{equation}
 %
 Noting that  
@@ -290,7 +288,7 @@ of the consumption plane gives
 
 \begin{equation} \label{eq:orig_line_prefs}
   y = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
-         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md}) \; .
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}) \; .
 \end{equation}
 
 A similar procedure can be employed to derive the equation of the
@@ -303,7 +301,7 @@ $\amacro{p}_s \rate{q}_s$ replacing $p_E \raempl{E}_s$, and
 $\rate{C}_o$ replacing $\raempl{C}_o$.
 
 \begin{equation}
-  \rbempl{M} = \amacro{p}_s \rate{q}_s + \raempl{C}_{cap} + \raempl{C}_{\md} + \rate{C}_o + \raempl{N}
+  \rbempl{M} = \amacro{p}_s \rate{q}_s + \aempl{R}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \rate{C}_o + \raempl{N}
 \end{equation}
 %
 Substituting Eq.~(\ref{PartI-eq:N_dot_star_empl}) of Part~I for $\raempl{N}$,
@@ -315,7 +313,7 @@ $\rate{C}_o/\rbempl{C}_o$ is the $y$-axis gives
 
 \begin{equation} \label{eq:star_line_prefs}
   y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
-         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} - \rate{G}) \; .
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} - \rate{G}) \; .
 \end{equation}
 %
 Note that the slope of Eq.~(\ref{eq:star_line_prefs}) is less negative
@@ -326,7 +324,7 @@ $y$-intercept of Eq.~(\ref{eq:orig_line_prefs}),
 reflecting freed cash.
 Both effects are seen in
 the consumption planes
-(Figs.~\ref{fig:ExampleConsPathGraph}, \ref{fig:CarConsGraph}, and \ref{fig:LampConsGraph}).
+(Figs.~\ref{fig:CarConsGraph} and \ref{fig:LampConsGraph}).
 The \circcirc{} and \starstar{} lines intersect at the coincident $\circ$ and $*$ points.
 
 A similar derivation process can be used to find the equation of 
@@ -337,7 +335,7 @@ the equation for the constant expenditure line is
 
 \begin{equation} \label{eq:hat_line_prefs}
   y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
-         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
+         + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} 
                                    - \rate{G} + \amacro{p}_s \Delta \rasub{q}_s + \Delta \rasub{C}_o) \; .
 \end{equation}
 
@@ -347,13 +345,22 @@ but a lower $y$-intercept.
 
 Finally, the corresponding derivation
 for the equation of the constant expenditure line through the 
-$-$ point (line \barbar{}) starts with Eq.~(\ref{PartI-eq:M_acct_ainc}) of Part~I and ends with 
+$-$ point (line \barbar{}) starts with Eq.~(\ref{PartI-eq:M_acct_ainc}) of Part~I 
+and comes to
+
+\begin{equation} 
+  y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
+        + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}
+                                   - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) \; .
+\end{equation}
+
+Simplification of $\Delta$ terms gives
 
 \begin{equation} \label{eq:bar_line_prefs}
   y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} x
-        + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
-                                   - \Delta \raempl{C}_{cap} - \Delta \raempl{C}_{\md}) \; .
+        + \frac{1}{\rbempl{C}_o} (\rbempl{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd}) \; .
 \end{equation}
+%
 
 
 %------------------------------

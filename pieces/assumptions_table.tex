@@ -13,78 +13,92 @@
 
 \begin{tabular}{r c c c c c}
 \toprule
-% Parameter & \DevEffect{} & \LcEffect & \SubEffect & \IncEffect & \MacroEffect \\
 Parameter & \EmplEffect{} & \SubEffect & \IncEffect & \MacroEffect \\
 \midrule
-Energy price                     & $\bempl{p}_E  = \aempl{p}_E$         
-                                 & $\bsub{p}_E   = \asub{p}_E$ 
-                                 & $\binc{p}_E   = \ainc{p}_E$ 
-                                 & $\bmacro{p}_E  = \amacro{p}_E$ \\
+Energy price                      & $\bempl{p}_E  = \aempl{p}_E$         
+                                  & $\bsub{p}_E   = \asub{p}_E$ 
+                                  & $\binc{p}_E   = \ainc{p}_E$ 
+                                  & $\bmacro{p}_E = \amacro{p}_E$ \\
 %
-Energy service efficiency        & $\bempl{\eta}  < \aempl{\eta}$         
-                                 & $\bsub{\eta}   = \asub{\eta}$ 
-                                 & $\binc{\eta}   = \ainc{\eta}$ 
-                                 & $\bmacro{\eta}  = \amacro{\eta}$ \\
+Energy service efficiency         & $\bempl{\eta}  < \aempl{\eta}$         
+                                  & $\bsub{\eta}   = \asub{\eta}$ 
+                                  & $\binc{\eta}   = \ainc{\eta}$ 
+                                  & $\bmacro{\eta} = \amacro{\eta}$ \\
 %
-Energy service price             & $\bempl{p}_s  > \aempl{p}_s$          
-                                 & $\bsub{p}_s   = \asub{p}_s$ 
-                                 & $\binc{p}_s   = \ainc{p}_s$  
-                                 & $\bmacro{p}_s  = \amacro{p}_s$ \\
+Energy service price              & $\bempl{p}_s  > \aempl{p}_s$          
+                                  & $\bsub{p}_s   = \asub{p}_s$ 
+                                  & $\binc{p}_s   = \ainc{p}_s$  
+                                  & $\bmacro{p}_s = \amacro{p}_s$ \\
 %
-Other goods price                & $\bempl{p}_o  = \aempl{p}_o$          
-                                 & $\bsub{p}_o   = \asub{p}_o$ 
-                                 & $\binc{p}_o   = \ainc{p}_o$  
-                                 & $\bmacro{p}_o  = \amacro{p}_o$ \\
+Other goods price                 & $\bempl{p}_o  = \aempl{p}_o$          
+                                  & $\bsub{p}_o   = \asub{p}_o$ 
+                                  & $\binc{p}_o   = \ainc{p}_o$  
+                                  & $\bmacro{p}_o = \amacro{p}_o$ \\
 %
-Energy service consumption rate  & $\rbempl{q}_s  = \raempl{q}_s$         
-                                 & $\rbsub{q}_s   < \rasub{q}_s$ 
-                                 & $\rbinc{q}_s   < \rainc{q}_s$ 
-                                 & $\rbmacro{q}_s  = \ramacro{q}_s$ \\
+Energy service consumption rate   & $\rbempl{q}_s  = \raempl{q}_s$         
+                                  & $\rbsub{q}_s   < \rasub{q}_s$ 
+                                  & $\rbinc{q}_s   < \rainc{q}_s$ 
+                                  & $\rbmacro{q}_s = \ramacro{q}_s$ \\
 %
-Other goods consumption rate     & $\rbempl{q}_o  = \raempl{q}_o$         
-                                 & $\rbsub{q}_o   > \rasub{q}_o$ 
-                                 & $\rbinc{q}_o   < \rainc{q}_o$ 
-                                 & $\rbmacro{q}_o  = \ramacro{q}_o$ \\
+Other goods consumption rate      & $\rbempl{q}_o  = \raempl{q}_o$         
+                                  & $\rbsub{q}_o   > \rasub{q}_o$ 
+                                  & $\rbinc{q}_o   < \rainc{q}_o$ 
+                                  & $\rbmacro{q}_o = \ramacro{q}_o$ \\
 %
-Device energy consumption rate   & $\rbempl{E}_s  > \raempl{E}_s$
-                                 & $\rbsub{E}_s   < \rasub{E}_s$ 
-                                 & $\rbinc{E}_s   < \rainc{E}_s$ 
-                                 & $\rbmacro{E}_s  = \ramacro{E}_s$ \\
+Device energy consumption rate    & $\rbempl{E}_s  > \raempl{E}_s$
+                                  & $\rbsub{E}_s   < \rasub{E}_s$ 
+                                  & $\rbinc{E}_s   < \rainc{E}_s$ 
+                                  & $\rbmacro{E}_s = \ramacro{E}_s$ \\
 %
-Embodied energy rate             & $\rbempl{E}_{emb}  < \raempl{E}_{emb}$ 
-                                 & $\rbsub{E}_{emb}   = \rasub{E}_{emb}$ 
-                                 & $\rbinc{E}_{emb}   = \rainc{E}_{emb}$ 
-                                 & $\rbmacro{E}_{emb}  = \ramacro{E}_{emb}$ \\
+Embodied energy rate              & $\rbempl{E}_{emb}  < \raempl{E}_{emb}$ 
+                                  & $\rbsub{E}_{emb}   = \rasub{E}_{emb}$ 
+                                  & $\rbinc{E}_{emb}   = \rainc{E}_{emb}$ 
+                                  & $\rbmacro{E}_{emb} = \ramacro{E}_{emb}$ \\
 %
-Capital expenditure rate         & $\rbempl{C}_{cap}  < \raempl{C}_{cap}$ 
-                                 & $\rbsub{C}_{cap}   = \rasub{C}_{cap}$ 
-                                 & $\rbinc{C}_{cap}   = \rainc{C}_{cap}$ 
-                                 & $\rbmacro{C}_{cap}  = \ramacro{C}_{cap}$ \\
+Device lifetime                   & $\bempl{t}_{\life}  < \aempl{t}_{\life}$ 
+                                  & $\bsub{t}_{\life}   = \asub{t}_{\life}$ 
+                                  & $\binc{t}_{\life}   = \ainc{t}_{\life}$ 
+                                  & $\bmacro{t}_{\life} = \amacro{t}_{\life}$ \\
 %
-Maint.\ and disp.\ expenditure rate & $\rbempl{C}_{\md}  < \raempl{C}_{\md}$ 
-                                 & $\rbsub{C}_{\md}      = \rasub{C}_{\md}$ 
-                                 & $\rbinc{C}_{\md}      = \rainc{C}_{\md}$ 
-                                 & $\rbmacro{C}_{\md}     = \ramacro{C}_{\md}$ \\
+Beginning-of-life discount factor & $\bempl{R}_\alpha  < \aempl{R}_\alpha$ 
+                                  & $\bsub{R}_\alpha   = \asub{R}_\alpha$ 
+                                  & $\binc{R}_\alpha   = \ainc{R}_\alpha$ 
+                                  & $\bmacro{R}_\alpha = \amacro{R}_\alpha$ \\
 %
-Energy service expenditure rate  & $\rbempl{C}_s  > \raempl{C}_s$
-                                 & $\rbsub{C}_s   < \rasub{C}_s$ 
-                                 & $\rbinc{C}_s   < \rainc{C}_s$ 
-                                 & $\rbmacro{C}_s  = \ramacro{C}_s$ \\
+End-of-life discount factor       & $\bempl{R}_\omega  > \aempl{R}_\omega$
+                                  & $\bsub{R}_\omega   = \asub{R}_\omega$
+                                  & $\binc{R}_\omega   = \ainc{R}_\omega$
+                                  & $\bmacro{R}_\omega = \amacro{R}_\omega$ \\
 %
-Other goods expenditure rate     & $\rbempl{C}_o  = \raempl{C}_o$         
-                                 & $\rbsub{C}_o   > \rasub{C}_o$ 
-                                 & $\rbinc{C}_o   < \rainc{C}_o$ 
-                                 & $\rbmacro{C}_o  = \ramacro{C}_o$ \\
+Capital expenditure rate          & $\rbempl{C}_{cap}  < \raempl{C}_{cap}$ 
+                                  & $\rbsub{C}_{cap}   = \rasub{C}_{cap}$ 
+                                  & $\rbinc{C}_{cap}   = \rainc{C}_{cap}$ 
+                                  & $\rbmacro{C}_{cap} = \ramacro{C}_{cap}$ \\
 %
-Income                           & $\rbempl{M} = \raempl{M}$         
-                                 & $\rbsub{M}  = \rasub{M}$ 
-                                 & $\rbinc{M}  = \rainc{M}$ 
-                                 & $\rbmacro{M} = \ramacro{M}$  \\
+Ops., maint., and disp.\ expenditure rate & $\rbempl{C}_{\omd} < \raempl{C}_{\omd}$ 
+                                  & $\rbsub{C}_{\omd}   = \rasub{C}_{\omd}$ 
+                                  & $\rbinc{C}_{\omd}   = \rainc{C}_{\omd}$ 
+                                  & $\rbmacro{C}_{\omd} = \ramacro{C}_{\omd}$ \\
 %
-Net savings                      & 0 = $\rbempl{N} <   \raempl{N}$         
-                                 & $\rbsub{N}      <   \rasub{N}$ 
-                                 & $\rbinc{N}      >   \rainc{N} = 0$ 
-                                 & $\rbmacro{N}    =   \ramacro{N} = 0$  \\
+Energy service expenditure rate   & $\rbempl{C}_s  > \raempl{C}_s$
+                                  & $\rbsub{C}_s   < \rasub{C}_s$ 
+                                  & $\rbinc{C}_s   < \rainc{C}_s$ 
+                                  & $\rbmacro{C}_s  = \ramacro{C}_s$ \\
+%
+Other goods expenditure rate      & $\rbempl{C}_o  = \raempl{C}_o$         
+                                  & $\rbsub{C}_o   > \rasub{C}_o$ 
+                                  & $\rbinc{C}_o   < \rainc{C}_o$ 
+                                  & $\rbmacro{C}_o  = \ramacro{C}_o$ \\
+%
+Income                            & $\rbempl{M} = \raempl{M}$         
+                                  & $\rbsub{M}  = \rasub{M}$ 
+                                  & $\rbinc{M}  = \rainc{M}$ 
+                                  & $\rbmacro{M} = \ramacro{M}$  \\
+%
+Net savings                       & 0 = $\rbempl{N} <   \raempl{N}$         
+                                  & $\rbsub{N}      <   \rasub{N}$ 
+                                  & $\rbinc{N}      >   \rainc{N} = 0$ 
+                                  & $\rbmacro{N}    =   \ramacro{N} = 0$  \\
 \bottomrule
 \end{tabular}
 
