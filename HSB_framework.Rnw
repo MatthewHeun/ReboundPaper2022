@@ -660,10 +660,11 @@ and flows (with overdots).
 For example,  
 $E$ is a quantity of energy in, say, MJ, while
 $\rate{E}$ is a rate of energy in, say, MJ/yr.
-We later annualize capital costs ($C_{cap}$ in \$) and
+We later annualize capital costs ($C_{cap}$ in \$), 
+disposal costs ($C_d$ in \$), and
 energy embodied in the device during
 its production ($E_{emb}$ in MJ) to create
-undiscounted cost rates ($\rate{C}_{cap}$ in \$/yr) and
+undiscounted cost rates ($\rate{C}_{cap}$ and $\rate{C}_d$ in \$/yr) and
 embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
 (Cost discounting is captured by the variables $R_\alpha$ and $R_\omega$. 
 See Appendix~\ref{sec:budget_constraint} for details.)
