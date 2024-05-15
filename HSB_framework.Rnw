@@ -665,7 +665,7 @@ energy embodied in the device during
 its production ($E_{emb}$ in MJ) to create
 undiscounted cost rates ($\rate{C}_{cap}$ in \$/yr) and
 embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
-(Discounting is captured by the variables $R_\alpha$ and $R_\omega$. 
+(Cost discounting is captured by the variables $R_\alpha$ and $R_\omega$. 
 See Appendix~\ref{sec:budget_constraint} for details.)
 
 Energy is available at price $p_E$ (in \$/MJ).
@@ -803,17 +803,20 @@ of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
 \end{align}
 
 Fourth, indirect energy rates for
-operations, maintenance, and disposal ($\rate{E}_{\omd}$) and
+operations and maintenance (e.g., $\rate{E}_{\om}$) and
 other goods expenditures ($\rate{E}_{o}$)
 are the product 
-of expenditures rates~($\rate{C}_{\omd}$ and $\rate{C}_o$) and
+of undiscounted expenditures rates~($\rate{C}_{\om}$ and $\rate{C}_o$) and
 the energy intensity of the economy~($I_E$).
 
 \begin{align} \label{eq:indirect_energy_rates}
-  \rate{E}_{\omd} &= \rate{C}_{\omd} I_E \\
+  \rate{E}_{\om} &= \rate{C}_{\om} I_E \\
   \rate{E}_o     &= \rate{C}_o I_E \\
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
+%
+Indirect energy rates for disposal costs include discounting.
+(See Appendix~\ref{sec:budget_constraint} for details on cost discounting.)
 
 % 
 % <<eeu_data, echo=FALSE>>=
