@@ -281,6 +281,7 @@ val_to_string <- function(case, val, to_perc = FALSE, scale = 1, digits = 1, for
   }
   format(round(val, digits), nsmall = digits, big.mark = big.mark)
 }
+
 # Parameters for first table
 mpg_worse <- val_to_string(case = "Car", val = ReboundTools::orig_vars$eta_engr_units_orig, digits = 0)
 mpg_better <- val_to_string(case = "Car", val = ReboundTools::star_vars$eta_engr_units_star, digits = 0)
