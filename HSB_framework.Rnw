@@ -1017,10 +1017,10 @@ of the original and upgraded devices
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
 to form discounted expenditure rates such that 
 $\rbempl{C}_{\omd} = \rbempl{C}_{\om} 
-                     + \bempl{R}_\omega \bempl{C}_d$
+                     + \bempl{R}_\omega \rbempl{C}_d$
 and
 $\raempl{C}_{\omd} = \raempl{C}_m 
-                     + \aempl{R}_\omega \aempl{C}_d$.
+                     + \aempl{R}_\omega \raempl{C}_d$.
 
 For simplicity, we assume that operations, maintenance, and disposal
 expenditures imply energy consumption
