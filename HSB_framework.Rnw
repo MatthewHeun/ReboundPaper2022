@@ -746,7 +746,7 @@ and after some rearrangement,
 Eq.~(\ref{eq:budget_constraint_prelim}) becomes
 
 \begin{equation} \label{eq:budget_constraint}
-  \rorig{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_s \rorig{q}_s + \orig{p}_o \rorig{q}_o \; ,
+ \budgetconstraint \; ,
 \end{equation}
 %
 which is the usual discounted budget constraint 
