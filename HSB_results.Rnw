@@ -291,6 +291,10 @@ t_life_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_var
 t_life_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$t_life_star, digits = 0)
 E_emb_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$E_emb_orig, digits = 0)
 E_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$E_emb_star, digits = 0)
+C_dot_om_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_om_orig, digits = 0)
+C_dot_om_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_om_star, digits = 0)
+C_d_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_d_orig, digits = 0)
+C_d_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_d_star, digits = 0)
 C_dot_omd_orig_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$C_dot_omd_orig, digits = 0)
 C_dot_omd_star_car_char <- val_to_string(case = "Car", val = ReboundTools::star_vars$C_dot_omd_star, digits = 0)
 
@@ -378,9 +382,6 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  % \midrule
- %   Ownership duration            & \Sexpr{t_own_orig_car_char}  & \Sexpr{t_own_star_car_char}  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
- %   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
- %                                                    &           &          & taken as 84 months in 2018 (7 years) for our example. \\
  \midrule
    Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
@@ -393,12 +394,18 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
+  \midrule
+  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & \\
+ \midrule
+  Disposal cost                                     & $\Sexpr{C_d_orig_car_char}$  & $\Sexpr{C_d_star_car_char}$        & Salvage value (negative cost) taken from \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
  \midrule
   Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
-                                                    &           &          & (excluding financing, depreciation, fuel). \\
-                                                    &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-                                                    &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    & maintenance, repairs, taxes, and fees \\
+                                                                &                  &                                    & (excluding financing, depreciation, fuel). \\
+                                                                &                  &                                    & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                                &                  &                                    & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
   \bottomrule
 \end{tabular}
 \end{center}
