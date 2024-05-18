@@ -381,7 +381,6 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
- % \midrule
  \midrule
    Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
@@ -396,9 +395,9 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
   \midrule
   Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & \\
-  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & \cite{djokic2015simulation} \\
  \midrule
-  Disposal cost                                     & $\Sexpr{C_d_orig_car_char}$  & $\Sexpr{C_d_star_car_char}$        & Salvage value (negative cost) taken from \\
+  Disposal cost                                     & $\Sexpr{C_d_orig_car_char}$  & $\Sexpr{C_d_star_car_char}$        & Salvage value (negative cost) taken from \cite{Junk-Car-Medics:aa} \\
   $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
  \midrule
   Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
