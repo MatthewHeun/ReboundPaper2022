@@ -525,8 +525,12 @@ t_life_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_v
 t_life_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$t_life_star, digits = 0)
 E_emb_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$E_emb_orig, digits = 2)
 E_emb_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$E_emb_star, digits = 2)
-C_dot_omd_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_omd_orig, digits = 2)
-C_dot_omd_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_omd_star, digits = 2)
+C_dot_om_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_om_orig, digits = 0)
+C_dot_om_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_om_star, digits = 0)
+C_d_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_d_orig, digits = 0)
+C_d_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_d_star, digits = 0)
+C_dot_omd_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$C_dot_omd_orig, digits = 0)
+C_dot_omd_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$C_dot_omd_star, digits = 0)
 
 # Second table
 q_dot_s_orig_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$q_dot_s_orig, digits = 0)
@@ -633,9 +637,18 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+  \midrule
+  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_lamp_char}  & \Sexpr{C_dot_om_star_lamp_char}   & \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    &  \\
  \midrule
-  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_lamp_char}      & \Sexpr{C_dot_omd_star_lamp_char}     & Assumed negligible. \\
-  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]  &           &          & \\
+  Disposal cost                                     & $\Sexpr{C_d_orig_lamp_char}$ & $\Sexpr{C_d_star_lamp_char}$      &  \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
+ \midrule
+  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_lamp_char} & \Sexpr{C_dot_omd_star_lamp_char}  &  \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    &  \\
+                                                                &                  &                                    &  \\
+                                                                &                  &                                    &  \\
+                                                                &                  &                                    &  \\
   \bottomrule
 \end{tabular}
 \end{center}
