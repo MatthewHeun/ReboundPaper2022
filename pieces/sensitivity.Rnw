@@ -515,9 +515,6 @@ rebound_terms_graph(rebound_data = actual_cases,
 @
   
   
-  
-  
-  
 %++++++++++++++++++++++++++++++
 \subsection{Effect of discount rate ($r$) on rebound terms} 
 \label{sec:effect_of_discount_rate}
