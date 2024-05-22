@@ -334,6 +334,55 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
 % Reduce spacing between table rows henceforth.
 \renewcommand{\arraystretch}{0.6}
 
+% \begin{landscape}
+% \begin{table}
+% \footnotesize
+% \begin{center}
+% \caption{Car example: Vehicle parameters.} 
+% \label{tab:car_parameters}
+% \begin{tabular}{ r c c l }
+%   \toprule
+%     Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
+%     Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
+%   \midrule
+%   Fuel economy                           & 25 & 42 & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
+%   $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
+%                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
+%                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
+%   \midrule
+%    Capital expenditure rate      & 4,778     & 4,720    & Seven year annual, averaged capital costs = purchase + finance costs  \\
+%    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
+%                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+%                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+%  \midrule
+%    Ownership duration            & 7  & 7  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
+%    $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
+%                                                     &           &          & taken as 84 months in 2018 (7 years) for our example. \\
+%  \midrule
+%    Lifespan                     & 14  & 14 & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
+%    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
+%                                                     &           &          & \citet{SMMT:2020}. \\
+%  \midrule
+%    Embodied energy             & 34,000    & 40,000   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
+%    $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
+%                                                     &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
+%                                                     &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
+%                                                     &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
+%                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
+%                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
+%  \midrule
+%   Maintenance and disposal expenditure rate  & 2,731  & 2,710    & Seven year annual, averaged maintenance costs = sum of insurance, \\
+%   $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
+%                                                     &           &          & (excluding financing, depreciation, fuel). \\
+%                                                     &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+%                                                     &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+%   \bottomrule
+% \end{tabular}
+% \end{center}
+% \end{table}
+% \end{landscape}
+
+
 \begin{landscape}
 \begin{table}
 \footnotesize
@@ -355,10 +404,6 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  \midrule
-   Ownership duration            & 7  & 7  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
-                                                    &           &          & taken as 84 months in 2018 (7 years) for our example. \\
- \midrule
    Lifespan                     & 14  & 14 & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
                                                     &           &          & \citet{SMMT:2020}. \\
@@ -370,19 +415,23 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
+  \midrule
+  Operations and maintenance expenditure rate   & 2,731   & 2,710     & \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & \cite{djokic2015simulation} \\
  \midrule
-  Maintenance and disposal expenditure rate  & 2,731  & 2,710    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
-                                                    &           &          & (excluding financing, depreciation, fuel). \\
-                                                    &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-                                                    &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+  Disposal cost                                     &   &         & Salvage value (negative cost) taken from \cite{Junk-Car-Medics:aa} \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
+ \midrule
+  Ops., maint., and disposal expenditure rate,  &   &     & Seven year annual, averaged maintenance costs = sum of insurance, \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    & maintenance, repairs, taxes, and fees \\
+                                                                &                  &                                    & (excluding financing, depreciation, fuel). \\
+                                                                &                  &                                    & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+                                                                &                  &                                    & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
   \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 \end{landscape}
-
-
 
 
 
@@ -510,6 +559,59 @@ Third, we require the elasticity parameters,
 as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 
 
+% \begin{landscape}
+% \begin{table}
+% \footnotesize
+% \begin{center}
+% \caption{Lamp example: Electric lamp parameters.} 
+% \label{tab:lamp_parameters}
+% \begin{tabular}{ r c c l }
+%   \toprule
+%     Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
+%     Parameters [units]                                &  &  & \\
+%   \midrule
+%   Lamp efficiency                   & 8.83      & 81.8     & Incandescent: 530 lm output / 60 W energy input. \\
+%   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
+%   \midrule
+%    Capital expenditure rate       & 1.044   & 0.121    & Purchase costs: \$1.88 for incandescent lamp from  \\
+%    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
+%                                                     &           &          & and \$1.21 for LED lamp from \\
+%                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
+%   \midrule
+%    Ownership duration      & 1.8       & 10       & Assumed same as lamp lifespan \\
+%    $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
+%  \midrule
+%    Lifespan               & 1.8       & 10       & Based on assumed 3 hr/day  \\
+%    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
+%                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
+%    \midrule
+%    Life cycle analysis (LCA) embodied energy  & 2.20      & 6.50     & Base document: Table 4.5 Manufacturing Phase Primary  \\
+%    $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million \lmhr), contained in \\
+%                                                     &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
+%                                                     &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
+%                                                     &           &          & Incandescent lamp: \\
+%                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
+%                                                     &           &          & Lifetime output = 530 lm $\times$ 3 hr/day \\
+%                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
+%                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
+%                                                     &           &          & LED lamp:  \\
+%                                                     &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
+%                                                     &           &          & for pack of 5 LED lamps. \\
+%                                                     &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
+%                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
+%                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+%  \midrule
+%   Maintenance and disposal expenditure rate  & 0.00      & 0.00     & Assumed negligible. \\
+%   $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & \\
+%   \bottomrule
+% \end{tabular}
+% \end{center}
+% \end{table}
+% \end{landscape}
+
+
+
+
 \begin{landscape}
 \begin{table}
 \footnotesize
@@ -521,17 +623,14 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
     Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
     Parameters [units]                                &  &  & \\
   \midrule
-  Lamp efficiency                   & 8.83      & 81.8     & Incandescent: 530 lm output / 60 W energy input. \\
+  Lamp efficiency                   & 8.83      & 81.8    & Incandescent: 530 lm output / 60 W energy input. \\
   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
    Capital expenditure rate       & 1.044   & 0.121    & Purchase costs: \$1.88 for incandescent lamp from  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
                                                     &           &          & and \$1.21 for LED lamp from \\
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
-  \midrule
-   Ownership duration      & 1.8       & 10       & Assumed same as lamp lifespan \\
-   $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
- \midrule
+   \midrule
    Lifespan               & 1.8       & 10       & Based on assumed 3 hr/day  \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
@@ -551,9 +650,18 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+  \midrule
+  Operations and maintenance expenditure rate   & 0.0  & 0.0   & \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    &  \\
  \midrule
-  Maintenance and disposal expenditure rate  & 0.00      & 0.00     & Assumed negligible. \\
-  $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & \\
+  Disposal cost                                     & 0.0 & 0.0      &  \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
+ \midrule
+  Ops., maint., and disposal expenditure rate,  & 0.0 & 0.0  &  \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    &  \\
+                                                                &                  &                                    &  \\
+                                                                &                  &                                    &  \\
+                                                                &                  &                                    &  \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -1135,6 +1243,7 @@ Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 \centering
 \caption{Car example: rebound results with macro factor ($k$) assumed to be 1.} 
 \label{tab:car_results}
+\begingroup\footnotesize
 \begin{tabular}{rr}
   \toprule
 Rebound term & Value [\%] \\ 
@@ -1151,6 +1260,7 @@ $Re_{dempl}$ & 0.0 \\
 $Re_{tot}$ & 31.7 \\ 
    \bottomrule
 \end{tabular}
+\endgroup
 \end{table}
 
 
