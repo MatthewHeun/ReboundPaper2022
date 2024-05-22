@@ -394,17 +394,18 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
   \midrule
-  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & \\
-  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & \cite{djokic2015simulation} \\
+  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & Lifetime (14 year) annual, averaged operation and maintenance \\
+                                                                &                  &                                    & (O+M) costs = sum of insurance, maintenance, repairs, taxes, and \\
+                                                                &                  &                                    & fees (excluding financing, depreciation, fuel). 5-year Ford Fusion \\
+                                                                &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_gasoline}. 5-year Ford Fusion Hybrid \\
+                                                                &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_hybrid}. Extrapolation of O\&M costs \\
+                                                                &                  &                                    & for years 6--14 based on \cite{djokic2015simulation}. \\
  \midrule
   Disposal cost                                     & $\Sexpr{C_d_orig_car_char}$  & $\Sexpr{C_d_star_car_char}$        & Salvage value (negative cost) taken from \cite{Junk-Car-Medics:aa} \\
   $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
  \midrule
-  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    & maintenance, repairs, taxes, and fees \\
-                                                                &                  &                                    & (excluding financing, depreciation, fuel). \\
-                                                                &                  &                                    & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-                                                                &                  &                                    & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
+  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_car_char}  & \Sexpr{C_dot_omd_star_car_char}    & Sum of annualized operations, maintenance, and disposal costs. \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    & \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -635,17 +636,15 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
   \midrule
-  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_lamp_char}  & \Sexpr{C_dot_om_star_lamp_char}   & \\
-  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    &  \\
+  Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_lamp_char}  & \Sexpr{C_dot_om_star_lamp_char}   & Lifetime annual, averaged operations and maintenance (O\&M) costs. \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                   & Once installed assumed 0. Note: O\&M costs exclude fuel \\
+                                                                &                  &                                   & (i.e., electricity) costs. \\
  \midrule
-  Disposal cost                                     & $\Sexpr{C_d_orig_lamp_char}$ & $\Sexpr{C_d_star_lamp_char}$      &  \\
-  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
+  Disposal cost                                     & $\Sexpr{C_d_orig_lamp_char}$ & $\Sexpr{C_d_star_lamp_char}$      &  Disposal cost assumed negligible \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                   & (local/doorstep recycling facility). \\
  \midrule
-  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_lamp_char} & \Sexpr{C_dot_omd_star_lamp_char}  &  \\
+  Ops., maint., and disposal expenditure rate,  & \Sexpr{C_dot_omd_orig_lamp_char} & \Sexpr{C_dot_omd_star_lamp_char}  &  Sum of annualized operations, maintenance, and disposal costs. \\
   discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    &  \\
-                                                                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
   \bottomrule
 \end{tabular}
 \end{center}
