@@ -819,13 +819,6 @@ the energy intensity of the economy~($I_E$).
 Indirect energy rates for disposal costs include discounting.
 (See Appendix~\ref{sec:budget_constraint} for details on cost discounting.)
 
-% 
-% <<eeu_data, echo=FALSE>>=
-% # Load our test cases and perform rebound analyses.
-% rebound_data <- ReboundTools::load_eeu_data("data/eeu_data.xlsx")
-% rebound_results <- ReboundTools::rebound_analysis(rebound_data)
-% @
-% 
 
 %++++++++++++++++++++++++++++++
 \subsection{Rebound effects}
