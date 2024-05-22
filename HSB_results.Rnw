@@ -1119,6 +1119,7 @@ digs_car <- matrix(c(rep(0, 7), # t_life,
                      rep(3, 7), # eta
                      rep(3, 7), # p_s
                      rep(0, 7), # q_dot_s
+                     rep(4, 7), # p_E
                      rep(0, 7), # E_dot_s
                      rep(0, 7), # E_dot_emb
                      rep(0, 7), # C_dot_s
@@ -1130,7 +1131,7 @@ digs_car <- matrix(c(rep(0, 7), # t_life,
                      rep(0, 7), # C_dot_o
                      rep(0, 7), # N_dot
                      rep(0, 7)), # M_dot
-                   nrow = 18, ncol = 7, byrow = TRUE)
+                   nrow = 19, ncol = 7, byrow = TRUE)
 rebound_results |> 
   dplyr::filter(Case == "Car") |> 
   dplyr::mutate(
@@ -1138,7 +1139,7 @@ rebound_results |>
   ) |>
   ReboundTools::stages_table(label = "tab:car_stages_table", 
                              caption = "Results for car example with macro factor ($k$) assumed to be 1.", 
-                             # digits = digs_car, 
+                             digits = digs_car,
                              align = "lrrrrrr") |> 
   print(include.rownames = FALSE, 
         booktabs = TRUE,
@@ -1538,6 +1539,7 @@ digs_lamp <- matrix(c(rep(0, 7), # t_life,
                       rep(0, 7), # eta
                       rep(8, 7), # p_s
                       rep(0, 7), # q_dot_s
+                      rep(4, 7), # p_E
                       rep(1, 7), # E_dot_s
                       rep(3, 7), # E_dot_emb
                       rep(2, 7), # C_dot_s
@@ -1549,7 +1551,7 @@ digs_lamp <- matrix(c(rep(0, 7), # t_life,
                       rep(0, 7), # C_dot_o
                       rep(2, 7), # N_dot
                       rep(0, 7)), # M_dot
-                    nrow = 18, ncol = 7, byrow = TRUE)
+                    nrow = 19, ncol = 7, byrow = TRUE)
 
 rebound_results %>% 
   dplyr::filter(Case == "Lamp") %>% 
