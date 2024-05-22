@@ -521,6 +521,13 @@ rebound_terms_graph(rebound_data = actual_cases,
 %++++++++++++++++++++++++++++++
 
 The effect of discount rate on rebound is shown in Fig.~\ref{fig:all_Re_terms_r_graph}.
+Discounting has little effect on rebound terms
+compared to other parameters such as
+upgraded efficiency ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph}), 
+capital cost ($\amacro{C}_{cap}$, Fig.~\ref{fig:all_Re_terms_C_cap_graph}), 
+energy price ($p_E$, Fig.~\ref{fig:all_Re_terms_p_E_graph}), and 
+own price elasticity of energy service demand 
+($\eqspsUCorig$, Fig.~\ref{fig:all_Re_terms_eps_graph}).
 
 <<all_Re_terms_r_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to discount rate ($r$).", fig.width=6, fig.height=4, fig.align="center">>=
 r_sens_params <- list(Car = list(r = seq(0, 0.1, by = 0.002)),
