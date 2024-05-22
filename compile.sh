@@ -27,10 +27,6 @@ cd ..
 # Run the difference command
 # Part I - Framework
 latexdiff --flatten "initial-submission-tex/$source_file_base_framework-initial-submission.tex" "$source_file_base_framework.tex" > "diff-$source_file_base_framework.tex"
-# The derivation appendix
-# latexdiff "initial-submission-tex/pieces/derivation-initial-submission.tex" "pieces/derivation.tex" > "pieces/diff-derivation.tex"
-# sed -i.bak 's/derivation\.tex/diff-derivation\.tex/g' diff-HSB_framework.tex && rm diff-HSB_framework.tex.bak
-
 # Part II - Results
 latexdiff --flatten "initial-submission-tex/$source_file_base_results-initial-submission.tex" "$source_file_base_results.tex" > "diff-$source_file_base_results.tex"
 
