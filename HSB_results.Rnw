@@ -2074,7 +2074,8 @@ $Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
 
 
 %++++++++++++++++++++++++++++++
-\subsection{A first attempt at calibrating $k$}
+%\subsection{A first attempt at calibrating $k$}
+\subsection{A first attempt at calculating a macro rebound}
 \label{sec:calibrating_k}
 %++++++++++++++++++++++++++++++
 
@@ -2107,7 +2108,7 @@ Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
   magrittr::extract2("Re_tot")
 @
 
-Few previous studies explored link 
+Few previous studies explored the link 
 between microeconomic and macroeconomic rebound.
 Inspired by \citet{Borenstein:2015aa} and others, 
 the framework developed in Section~\ref{PartI-sec:framework} of Part~I
@@ -2120,94 +2121,115 @@ For the results presented in Section~\ref{sec:results} above,
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
-the results obtained in Section~\ref{sec:results} of this paper, and
-recent calculations of total rebound in general equilibrium frameworks allow, 
-for the first time, 
-a discussion about calibrating $k$.
-After calibrating $k$, 
-macro rebound and total rebound can be calculated.
+There are no estimates of $k$, which ultimately traces the aggregate growth
+effects of a single, device-specific technical progress and is likely 
+to differ between EEUs. However, using recent empirical estimates of
+sectoral multipliers we can ascertain ourselves that $k$ should be different
+from 1 and pick a different value in line with those etimates.
+%the results obtained in Section~\ref{sec:results} of this paper,
+%In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
+%the results obtained in Section~\ref{sec:results} of this paper, and
+%recent calculations of total rebound in general equilibrium frameworks allow, 
+%for the first time, 
+%a discussion about calibrating $k$.
+%After calibrating $k$, 
+%macro rebound and total rebound can be calculated.
 
-To calibrate the macro factor ($k$),
-we treat macro rebound ($Re_{\macro}$) as a residual.
-The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
-such that $Re_{\macro}$
-is sufficient to achieve an expected value for total rebound ($Re_{tot}$).%
-\footnote{
-  This approach means that the calibrated value of $k$ incorporates all 
-  macroeconomic rebound sub-effects included in the studies
-  whose total rebound value we calibrate against.
-}
+Sectoral multipliers capture the impact of sectoral revenue increases
+into aggregate demand or GDP growth. While the idea of scale economies 
+from larger markets for particular products have a long 
+history in economic thought, recent advances in network theory 
+allowed to formalize the spill-overs from sectoral to aggregate growth. 
+First results report that for the U.S., aggregate output growth
+may have been up to 3 times as large as the growth in sector in which
+growth originated \citep{Foerster2022}. And industrial policy to
+encourage technology adoption in certain sectors was found to pay back 
+up to 5 times its cost in India, but with wide variation
+across sectors \citep{Buera2024}. Since our problem
+also concerns technology adoption -- one that features energy augmenting
+technical change -- we take the value from the \citeA{Buera2024} study.
+Their multipliers are clustered around 3 and so we adopt the value of
+3, fully cognizant of the fact that this can only be a first approximation.
+%To calibrate the macro factor ($k$),
+%we treat macro rebound ($Re_{\macro}$) as a residual.
+%The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
+%such that $Re_{\macro}$
+%is sufficient to achieve an expected value for total rebound ($Re_{tot}$).%
+%\footnote{
+%  This approach means that the calibrated value of $k$ incorporates all 
+%  macroeconomic rebound sub-effects included in the studies
+%  whose total rebound value we calibrate against.
+%}
 %
-We take the expected value for $Re_{tot}$ from 
-\citet{Brockway:2021ww}.
-Four of 33 studies reviewed by \citet{Brockway:2021ww}
-examined total rebound from only consumer EEUs in a computable general
-equilibrium (CGE) framework. 
-The average total rebound ($Re_{tot}$) 
-for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
-\footnote{
-  The average total rebound among all 33 studies stood at 63\%,
-  supporting the claim by \citet{Turner:2013aa} that consumer
-  and producer rebounds vary.
-}
+%We take the expected value for $Re_{tot}$ from 
+%\citet{Brockway:2021ww}.
+%Four of 33 studies reviewed by \citet{Brockway:2021ww}
+%examined total rebound from only consumer EEUs in a computable general
+%equilibrium (CGE) framework. 
+%The average total rebound ($Re_{tot}$) 
+%for the four consumer studies is \Sexpr{Re_tot_expected*100}\%.%
+%\footnote{
+%  The average total rebound among all 33 studies stood at 63\%,
+%  supporting the claim by \citet{Turner:2013aa} that consumer
+%  and producer rebounds vary.
+%}
 %
-The calibrated values of $k$ that give identical 
-$Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
-for both examples are
-$k = \Sexpr{format(round(calibrated_k[["Car"]], 1), nsmall = 1)}$
-for the car example and
-$k = \Sexpr{format(round(calibrated_k[["Lamp"]], 1), nsmall = 1)}$ 
-for the lamp example.
+%The calibrated values of $k$ that give identical 
+%$Re_{tot} = \Sexpr{Re_tot_expected*100}$\% 
+%for both examples are
+%$k = \Sexpr{format(round(calibrated_k[["Car"]], 1), nsmall = 1)}$
+%for the car example and
+%$k = \Sexpr{format(round(calibrated_k[["Lamp"]], 1), nsmall = 1)}$ 
+%for the lamp example.
 
-Qualitative differences in benefits from EEUs as well as the considerable 
-variance in $Re_{tot}$ in 33 surveyed studies~\citep{Brockway:2021ww}
-indicates that total rebound from one EEU is likely to be different from 
-total rebound from another EEU. 
-For a first approximation of a calibration for $k$,
-we take $k \approx 3$,
-being between the values of $k$ 
-calculated from the car and lamp examples.
-Note that $k \approx 3$ implies that 
-every \$1 of net savings spent by the device user ($\raempl{N}$)
-generates \$3 of additional economic 
-activity in the broader economy.
-We multiply $k \raempl{N}$ by the energy intensity of the economy ($I_E$) to 
-find the energy implications of macro-effect respending throughout the economy.
+%Qualitative differences in benefits from EEUs as well as the considerable 
+%variance in $Re_{tot}$ in 33 surveyed studies~\citep{Brockway:2021ww}
+%indicates that total rebound from one EEU is likely to be different from 
+%total rebound from another EEU. 
+%For a first approximation of a calibration for $k$,
+%we take $k \approx 3$,
+%being between the values of $k$ 
+%calculated from the car and lamp examples.
+%Note that $k \approx 3$ implies that 
+%every \$1 of net savings spent by the device user ($\raempl{N}$)
+%generates \$3 of additional economic 
+%activity in the broader economy.
+%We multiply $k \raempl{N}$ by the energy intensity of the economy ($I_E$) to 
+%find the energy implications of macro-effect respending throughout the economy.
 
-There are three ways to interpret $k \approx 3$.
-First, $k \approx 3$ can be considered the average long-run 
-economic growth generated
-by the productivity increase implied by the EEU and subsequent
-productivity increases benefitting from the EEU.
-Efficiency increases in equipment drive a significant part of 
-long-run productivity growth \citep{Greenwood1997}, therefore a large
-long-run effect is plausible,
-even if the initial productivity
-change occurred in household production which is not accounted in GDP.
-(See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I 
-for further discussion of this point.)
-Second, it could be that growth is less than 
-\$3 for every \$1 of respending,
-but that the macroeconomic ``energy price effect'' (a decline in 
-energy prices due to the fallen demand) induces consumption at a higher
-energy intensity than that of the pre-EEU economy. 
-Third, from the demand-side perspective
-entertained by \citet{Borenstein:2015aa}, 
-$k \approx 3$ could be interpreted as 
-growth induced by the device user's spending of net savings with
-a marginal propensity to consume (MPC)
-of approximately $0.75$ that translates into a multiplier of 3. 
-% (See Fig.~\ref{PartI-fig:k_vs_mpc} 
-% in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
-$\MPC \approx 0.75$ is a reasonable value, 
-being in the upper half of recent estimates from \citet{Carroll2017}.
-Although the cause of the growth in economic activity and energy consumption from an EEU 
-is a supply-side productivity shock,
-the subsequent demand-side effects may well be interpreted as a multiplier effect, 
-caused by higher real income instead of by higher monetary income.
+%There are three ways to interpret $k \approx 3$. 
+%First, $k \approx 3$ can be considered the average long-run 
+%economic growth generated
+%by the productivity increase implied by the EEU and subsequent
+%productivity increases benefitting from the EEU.
+%Efficiency increases in equipment drive a significant part of 
+%long-run productivity growth \citep{Greenwood1997}, therefore a large
+%long-run effect is plausible,
+%even if the initial productivity
+%change occurred in household production which is not accounted in GDP.
+%(See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I 
+%for further discussion of this point.)
+%Second, it could be that growth is less than 
+%\$3 for every \$1 of respending,
+%but that the macroeconomic ``energy price effect'' (a decline in 
+%energy prices due to the fallen demand) induces consumption at a higher
+%energy intensity than that of the pre-EEU economy. 
+%Third, from the demand-side perspective
+%entertained by \citet{Borenstein:2015aa}, 
+%$k \approx 3$ could be interpreted as 
+%growth induced by the device user's spending of net savings with
+%a marginal propensity to consume (MPC)
+%of approximately $0.75$ that translates into a multiplier of 3. 
+%% (See Fig.~\ref{PartI-fig:k_vs_mpc} 
+%% in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
+%$\MPC \approx 0.75$ is a reasonable value, 
+%being in the upper half of recent estimates from \citet{Carroll2017}.
+%Although the cause of the growth in economic activity and energy consumption from an EEU 
+%is a supply-side productivity shock,
+%the subsequent demand-side effects may well be interpreted as a multiplier effect, 
+%caused by higher real income instead of by higher monetary income.
 
-After calibrating $k \approx 3$, 
+After setting $k$ to 3, 
 we can recalculate all rebound components in our framework.
 Emplacement ($Re_{empl}$), substitution ($Re_{sub}$), and income ($Re_{inc}$) rebound
 magnitudes are unchanged after calibrating $k \approx 3$.
