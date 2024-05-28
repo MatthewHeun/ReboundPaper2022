@@ -1508,7 +1508,9 @@ If the EEU saves time,
 then saved time could be spent on more paid work or
 on increasing human capital \citep{Sorrell2008,Gautham2022}.
 If the EEU saves money (but no time), 
-then the freed cash could be spent on more effective 
+then the freed cash could be spent to create additional demand for products
+that translate into higher GDP and possibly faster productivity growth
+\citep{Magacho2018}. It could also be spent on more effective 
 (and more costly) human capital-increasing activities
 or even be used to start a venture. 
 In all cases, it would be rash to conclude that 
@@ -1911,8 +1913,7 @@ non-marginal energy service price changes
 in an operational manner
 for the 
 simplest case of a single fuel and a single energy service.
-With
-careful explication of rebound effects and 
+With careful explication of rebound effects and 
 clear derivation of rebound expressions,
 we advance the analytical foundations for empirical analyses and
 facilitate interdisciplinary understanding of rebound phenomena
