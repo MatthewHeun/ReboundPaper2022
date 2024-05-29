@@ -2147,7 +2147,7 @@ encourage technology adoption in certain sectors was found to pay back
 up to 5 times its cost in India, but with wide variation
 across sectors \citep{Buera2024}. Since our problem
 also concerns technology adoption -- one that features energy augmenting
-technical change -- we take the value from the \citeA{Buera2024} study.
+technical change -- we take the value from the \citet{Buera2024} study.
 Their multipliers are clustered around 3 and so we adopt the value of
 3, fully cognizant of the fact that this can only be a first approximation.
 %To calibrate the macro factor ($k$),
@@ -2536,11 +2536,12 @@ Further work could be pursued in several areas.
         to calculate the magnitude of different 
         rebound effects for a variety of real-life EEUs.
 
-  \item Deeper study of macro rebound is needed, including improved determination 
-        of the value of the macro factor ($k$) and its relation to the MPC.
+  \item Deeper study of macro rebound is needed,
+        including improved determination 
+        of the value of the macro factor ($k$).
         
-  \item The rebound implications of the distribution of $\MPC$ values 
-        across socioeconomic groups~\citep{Carroll2017}
+  \item The distribution of rebound values 
+        across socioeconomic and demographic groups~\citep{Carroll2017}
         could be explored.
         
   \item The rebound effects of fossil-energy taxes 
@@ -2551,11 +2552,16 @@ Further work could be pursued in several areas.
         
   \item Sensitivities of rebound components to model parameters
         could be investigated more fully 
-        than in Appendix~\ref{sec:sensitivity_analyses}, although
-        this will be challenging work because
+        than in Appendix~\ref{sec:sensitivity_analyses}, 
+        although this will be challenging work because
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
-        is unlikely to be independent of post-EEU capital cost ($\amacro{C}_{cap}$).
+        is unlikely to be independent of 
+        post-EEU capital cost ($\amacro{C}_{cap}$).
+        
+  \item The framework could be extended to encompass
+        fuel-switching EEUs, such as the move from 
+        a gasoline car to an all-electric car.
 
   \item This framework could be embedded 
         in energy-economy models to better include rebound effects 
