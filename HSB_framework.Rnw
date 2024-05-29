@@ -1893,11 +1893,8 @@ Under these assumptions,
 Appendix~\ref{sec:price_effect_appendix} derives an expression for 
 rebound from the energy price effect as
 
-\begin{equation} \label{eq:Re_pE}
-  Re_{p_E} = \frac{\left[ \frac{\orig{p}_E - \ainc{p}_E}{\orig{p}_E}
-         + \frac{\rorig{E}_s - \rainc{E}_s}{\rorig{E}_H} 
-              \left( \frac{\ainc{p}_E}{\orig{p}_E} \right) \right] 
-                             \orig{p}_E \rorig{E}_H I_E}{\Sdot} \, ,
+\begin{equation} \label{eq:Re_p_E}
+  Re_{p_E} = \frac{(\rorig{E}_H - \rainc{E}_s) \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E I_E}{\Sdot} \, ,
 \end{equation}
 %
 where $\rorig{E}_H$ is the pre-EEU rate of consuming 
