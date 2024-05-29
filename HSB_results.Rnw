@@ -2332,6 +2332,39 @@ different macro rebound values.
 
 
 %++++++++++++++++++++++++++++++
+\subsection{Price effect}
+\label{sec:price_effect_results}
+%++++++++++++++++++++++++++++++
+
+<<>>=
+# Electricity
+E_dot_H_orig_elec_kWhr <- 10,000 # kWhr/yr
+E_dot_H_orig_elec <- E_dot_H_orig_elec_kWhr * 3.6 # 3.6 MJ = 1 kWhr
+
+@
+
+Section~\ref{PartI-sec:notes_price_effect}, 
+Eq.~(\ref{PartI-eq:Re_pE}), and 
+Appendix~\ref{PartI-sec:price_effect_appendix} 
+of Part~I provide an extension to the framework
+for energy price effect rebound ($Re_{p_E}$).  
+This section quantifies price-effect rebound 
+for the car and lamp examples.  
+
+Before estimating price-effect rebound, 
+data for household energy consumption ($\rorig{E}_H$)
+must be obtained.
+$\rorig{E}_H$ can be found from household energy surveys
+by the U.S.\ Energy Information Agency \citep{U.S.-Energy-Information-Agency:2023aa}.
+In the U.S.,
+a the median household consumes about
+YYYY gallons of gasoline per year and 
+ kWhr of electricity per year.
+
+
+
+
+%++++++++++++++++++++++++++++++
 \subsection{Comparison to previous rebound estimates} 
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
