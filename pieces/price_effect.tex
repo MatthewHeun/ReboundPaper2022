@@ -99,13 +99,15 @@ Substituting Eq.~(\ref{eq:QE_ratio}) gives
 % Note to self: Do not include spaces around the "^"
 % character in the next equation.
 % Those spaces are not parsed correctly by latexdiff.
-\begin{equation}
+\begin{equation} \label{eq:price_effect_price_ratio}
   \frac{\ainc{p}_E}{\orig{p}_E} =
         \left[ 1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \right]^{\frac{1}{\eQEpE}} \; .
 \end{equation}
 
 The energy price reduction ($\orig{p}_E > \ainc{p}_E$)
-leads to additional freed cash for the device owner at a rate of
+and the reduction in energy consumed to provide the 
+energy service ($\rorig{E}_s > \rainc{E}_s$)
+lead to additional freed cash for the device owner at a rate of
 
 \begin{equation}
   \rorig{E}_H \orig{p}_E - [\rorig{E}_H - (\rorig{E}_s - \rainc{E}_s)] \ainc{p}_E \, ,
@@ -126,14 +128,33 @@ ZZZZ kWhr of electricity per year.
 Rearrangement of terms gives
 
 \begin{equation}
-  (\orig{p} - \ainc{p}_E) \rorig{E}_H + \ainc{p}_E (\rorig{E}_s - \rainc{E}_s) \, .
+  (\orig{p}_E - \ainc{p}_E) \rorig{E}_H + \ainc{p}_E (\rorig{E}_s - \rainc{E}_s) \, .
 \end{equation}
+
+Further regrouping gives
+
+\begin{equation}
+  \left[ \frac{\orig{p}_E - \ainc{p}_E}{\orig{p}_E}
+         + \frac{\rorig{E}_s - \rainc{E}_s}{\rorig{E}_H} 
+              \left( \frac{\ainc{p}_E}{\orig{p}_E} \right) \right] 
+                             \orig{p}_E \rorig{E}_H \, ,
+\end{equation}
+%
+where the first fraction in brackets is the fractional reduction 
+of energy price, 
+the second fraction in brackets is the fraction of
+EEU energy savings relative to
+the total household energy consumption, and 
+the price ratio is give by Eq.~(\ref{eq:price_effect_price_ratio}) above.
 
 The energy implications of spending the additional freed cash
 on other goods and services is
 
 \begin{equation}
-  \left[ (\orig{p} - \ainc{p}_E) \rorig{E}_H + \ainc{p}_E (\rorig{E}_s - \rainc{E}_s) \right] I_E \, ,
+  \left[ \frac{\orig{p}_E - \ainc{p}_E}{\orig{p}_E}
+         + \frac{\rorig{E}_s - \rainc{E}_s}{\rorig{E}_H} 
+              \left( \frac{\ainc{p}_E}{\orig{p}_E} \right) \right] 
+                             \orig{p}_E \rorig{E}_H I_E \, ,
 \end{equation}
 %
 another energy takeback rate.
@@ -142,13 +163,10 @@ rebound associated with this energy takeback
 can be written as
 
 \begin{equation}
-  Re_{p_E} = \frac{\left[ (\orig{p} - \ainc{p}_E) \rorig{E}_H + \ainc{p}_E (\rorig{E}_s - \rainc{E}_s) \right] I_E}{\Sdot} \; .
-\end{equation}
-%
-Rearranging gives
-
-\begin{equation}
-  Re_{p_E} = \frac{\left(1 - \frac{\ainc{p}_E}{\bempl{p}_E}\right) \orig{p}_E \rainc{E}_s I_E}{\Sdot} \, ,  \tag{\ref{eq:Re_pE}}
+  Re_{p_E} = \frac{\left[ \frac{\orig{p}_E - \ainc{p}_E}{\orig{p}_E}
+         + \frac{\rorig{E}_s - \rainc{E}_s}{\rorig{E}_H} 
+              \left( \frac{\ainc{p}_E}{\orig{p}_E} \right) \right] 
+                             \orig{p}_E \rorig{E}_H I_E}{\Sdot} \, , \tag{\ref{eq:Re_pE}}
 \end{equation}
 %
 as shown in Section~\ref{sec:notes_price_effect},
