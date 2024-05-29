@@ -2336,11 +2336,56 @@ different macro rebound values.
 \label{sec:price_effect_results}
 %++++++++++++++++++++++++++++++
 
-<<>>=
-# Electricity
-E_dot_H_orig_elec_kWhr <- 10,000 # kWhr/yr
-E_dot_H_orig_elec <- E_dot_H_orig_elec_kWhr * 3.6 # 3.6 MJ = 1 kWhr
+<<PriceEffectGraph>>=
+params <- expand.grid(Case = c("Car", "Lamp"), 
+                      f_EEU = seq(0, 1, by = 0.01), 
+                      eps_Q_dot_E_p_E = seq(0.2, 1, by = 0.2))
+E_dot_s_orig_car <- rebound_results |> 
+  dplyr::filter(Case == "Car") |> 
+  purrr::pluck("E_dot_s_bar")
 
+price_effect_calcs <- rebound_results |> 
+  dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
+  dplyr::filter(Case %in% c("Car", "Lamp")) |> 
+  dplyr::mutate(
+    Case = factor(Case, levels = c("Car", "Lamp"))
+  ) |> 
+  dplyr::arrange(Case) |> 
+  dplyr::mutate(
+    # f_cons = N_dev * E_dot_s_orig / Q_dot_E_orig
+    # f_cons represents the the original (pre-EEU) fraction of all energy production 
+    # (of the kind used by the device) consumed by all such devices throughout the economy.
+    f_cons = c(0.9, 0.1), # 0.9 for the car case, 0.1 for the Lamp case)
+    # E_dot_s_ratio is post-income effect energy consumption / original energy consumption 
+    # for the energy service.
+    E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
+    # E_dot_H_engr = c(E_dot_s_orig_car, 10000/2.5), # 478 gal/person-yr and (10,000 kWhr/household-yr) / 2.5 persons/household
+    E_dot_H_orig_engr = dplyr::case_when(
+      # Assume that the consumer's use of gasoline is exclusively for the car
+      # and equal to the original cosnumption rate.
+      Case == "Car" ~ E_dot_s_orig / `MJ/energy_engr_unit`,
+      # 10,000 kWhr/household-year from https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php
+      # 2.5 persons/household from https://www.statista.com/statistics/183648/average-size-of-households-in-the-us/
+      Case == "Lamp" ~ 10000/2.5 # kW-hr/person-year
+    ), 
+    # E_dot_H is in MJ/yr
+    E_dot_H_orig = E_dot_H_orig_engr * `MJ/energy_engr_unit`,
+  ) |> 
+  dplyr::full_join(params, by = "Case") |> 
+  dplyr::mutate(
+    # price_ratio is p_E_bar / p_E_orig
+    price_ratio = (1 - f_EEU*f_cons*(1 - E_dot_s_ratio))^(1/eps_Q_dot_E_p_E), 
+    # takeback is in MJ/yr
+    takeback = (E_dot_H - E_dot_s_orig) * (1 - price_ratio) * p_E_orig * I_E, 
+    Re_p_E = takeback / S_dot_dev, 
+    # Enable linetypes for each value of eps_Q_dot_E_p_E
+    eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E)
+  ) 
+
+price_effect_calcs |>
+  ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, colour = eps_Q_dot_E_p_E)) +
+  ggplot2::geom_line() + 
+  ggplot2::facet_wrap(facets = "Case")
 @
 
 Section~\ref{PartI-sec:notes_price_effect}, 
@@ -2360,8 +2405,6 @@ In the U.S.,
 a the median household consumes about
 YYYY gallons of gasoline per year and 
  kWhr of electricity per year.
-
-
 
 
 %++++++++++++++++++++++++++++++
