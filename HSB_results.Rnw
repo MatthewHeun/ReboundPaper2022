@@ -2337,7 +2337,7 @@ different macro rebound values.
 %++++++++++++++++++++++++++++++
 
 Section~\ref{PartI-sec:notes_price_effect}, 
-Eq.~(\ref{PartI-eq:Re_pE}), and 
+Eq.~(\ref{PartI-eq:Re_p_E}), and 
 Appendix~\ref{PartI-sec:price_effect_appendix} 
 of Part~I provide an extension to the framework
 for energy price effect rebound ($Re_{p_E}$).  
@@ -2352,7 +2352,7 @@ by the U.S.\ Energy Information Agency \citep{U.S.-Energy-Information-Agency:202
 In the U.S.,
 a the median household consumes about
 YYYY gallons of gasoline per year and 
- kWhr of electricity per year.
+ZZZZ kWhr of electricity per year.
 
 
 
