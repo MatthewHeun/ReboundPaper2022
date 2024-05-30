@@ -2332,121 +2332,6 @@ different macro rebound values.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Price effect}
-\label{sec:price_effect_results}
-%++++++++++++++++++++++++++++++
-
-Section~\ref{PartI-sec:notes_price_effect}, 
-Eq.~(\ref{PartI-eq:Re_p_E}), and 
-Appendix~\ref{PartI-sec:price_effect_appendix} 
-of Part~I provide an extension to the framework
-for energy price effect rebound ($Re_{p_E}$).  
-This section quantifies price-effect rebound 
-for the car and lamp examples.  
-
-Before estimating price-effect rebound, 
-we need data for
-total personal consumption ($\rorig{E}_H$)
-of the final energy type used by the device.
-For the car example, 
-there is typically little other gasoline consumption
-besides for the car, 
-so we assume $\rorig{E}_H$ equal to  
-$\rorig{E}_s$.
-For the lamp example, 
-a median U.S.\ household consumes about
-10,000 kW$\cdot$hr/yr of electricity
-\citep{U.S.-Energy-Information-Agency:2023aa}.
-Given that there are 2.5 persons per household
-\citep{Statista:2024aa}, 
-the consumer consumes electricity at a rate of 
-$\rorig{E}_H = 4000$~kW$\cdot$hr/yr.
-
-Parameterizing on the fraction of all devices in the economy
-that are upgraded ($f_{EEU}$) and 
-the energy price elasticity of economy-wide energy demand
-($\varepsilon_{\rate{Q}_E,p_E}$) yields
-Figure~\ref{fig:PriceEffectGraph}.
-
-<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
-params <- expand.grid(Case = c("Car", "Lamp"), 
-                      f_EEU = seq(0, 1, by = 0.01), 
-                      eps_Q_dot_E_p_E = seq(0.2, 1, by = 0.2))
-
-price_effect_calcs <- rebound_results |> 
-  dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
-  dplyr::filter(Case %in% c("Car", "Lamp")) |> 
-  dplyr::mutate(
-    Case = factor(Case, levels = c("Car", "Lamp"))
-  ) |> 
-  dplyr::arrange(Case) |> 
-  dplyr::mutate(
-    # f_cons = N_dev * E_dot_s_orig / Q_dot_E_orig
-    # f_cons represents the the original (pre-EEU) fraction of all energy production 
-    # (of the kind used by the device) consumed by all such devices throughout the economy.
-    f_cons = c(0.9, 0.1), # 0.9 for the car case, 0.1 for the Lamp case)
-    # E_dot_s_ratio is post-income effect energy consumption / original energy consumption 
-    # for the energy service.
-    E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
-    E_dot_H_orig_engr = dplyr::case_when(
-      # Assume that the consumer's use of gasoline is exclusively for the car
-      # and equal to the original consumption rate.
-      Case == "Car" ~ E_dot_s_orig / `MJ/energy_engr_unit`,
-      # 10,000 kWhr/household-year from https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php
-      # 2.5 persons/household from https://www.statista.com/statistics/183648/average-size-of-households-in-the-us/
-      Case == "Lamp" ~ 10000/2.5 # kW-hr/person-year
-    ), 
-    # E_dot_H is in MJ/yr
-    E_dot_H_orig = E_dot_H_orig_engr * `MJ/energy_engr_unit`,
-  ) |> 
-  dplyr::full_join(params, by = "Case") |> 
-  dplyr::mutate(
-    # price_ratio is p_E_bar / p_E_orig
-    price_ratio = (1 - f_EEU*f_cons*(1 - E_dot_s_ratio))^(1/eps_Q_dot_E_p_E), 
-    # takeback is in MJ/yr
-    takeback = (E_dot_H_orig - E_dot_s_bar) * (1 - price_ratio) * p_E_orig * I_E, 
-    Re_p_E = takeback / S_dot_dev, 
-    # Enable linetypes for each value of eps_Q_dot_E_p_E
-    eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E)
-  ) 
-
-price_effect_calcs |>
-  ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
-                                         colour = eps_Q_dot_E_p_E, 
-                                         linetype = eps_Q_dot_E_p_E)) +
-  ggplot2::geom_line() + 
-  ggplot2::facet_wrap(facets = "Case") +
-  ggplot2::scale_x_continuous(name = expression(f[EEU]*" [–]"), 
-                              breaks = seq(0, 1, by = 0.2)) +
-  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [–]"), 
-                              breaks = seq(0, 2.6, by = 0.5)) +
-  ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                  direction = -1, end = 0.8) +
-  ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                 values = c(1, 2, 1, 2, 1)) +
-  MKHthemes::xy_theme()
-  
-@
-
-In these examples, the car upgrade yields
-no additional freed cash beyond the
-(slightly) cheaper fuel for the car, 
-so there is limited spending on other goods and services
-and little additional indirect energy demand.
-In contrast, the upgrade of the electric lamp
-is much more likely to provide energy price effect rebound,
-because electricity for the upgraded lamp is
-a small fraction of total electricity consumption
-by the consumer.
-\emph{All} electricity purchased by the consumer becomes cheaper
-when the price of electricity falls due to 
-widespread lamp upgrades throughout the economy, 
-leading to freed cash spent on other goods and services
-which, themselves, demand energy at the energy intensity 
-of the economy.
-
-
-%++++++++++++++++++++++++++++++
 \subsection{Comparison to previous rebound estimates} 
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
@@ -2584,6 +2469,125 @@ lamp (43\% to 51\%) examples.
 Beyond that, comparisons (as noted earlier) are inhibited
 by methodological differences between previous studies (top-down methods)
 and our bottom-up approach for calculating total rebound.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Price effect}
+\label{sec:price_effect_results}
+%++++++++++++++++++++++++++++++
+
+Section~\ref{PartI-sec:notes_price_effect}, 
+Eq.~(\ref{PartI-eq:Re_p_E}), and 
+Appendix~\ref{PartI-sec:price_effect_appendix} 
+of Part~I provide an extension to the framework
+for energy price effect rebound ($Re_{p_E}$).  
+This section quantifies price-effect rebound 
+for the car and lamp examples.  
+
+Before estimating price-effect rebound, 
+we need data for
+total personal consumption ($\rorig{E}_H$)
+of the final energy type used by the device.
+For the car example, 
+there is typically little other gasoline consumption
+besides for the car, 
+so we assume $\rorig{E}_H$ equal to  
+$\rorig{E}_s$.
+For the lamp example, 
+a median U.S.\ household consumes about
+10,000 kW$\cdot$hr/yr of electricity
+\citep{U.S.-Energy-Information-Agency:2023aa}.
+Given that there are 2.5 persons per household
+\citep{Statista:2024aa}, 
+the consumer consumes electricity at a rate of 
+$\rorig{E}_H = 4000$~kW$\cdot$hr/yr.
+
+Parameterizing on the fraction of all devices in the economy
+that are upgraded ($f_{EEU}$) and 
+the energy price elasticity of economy-wide energy demand
+($\varepsilon_{\rate{Q}_E,p_E}$) yields
+Figure~\ref{fig:PriceEffectGraph}.
+
+<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
+params <- expand.grid(Case = c("Car", "Lamp"), 
+                      f_EEU = seq(0, 1, by = 0.01), 
+                      eps_Q_dot_E_p_E = seq(0.2, 1, by = 0.2))
+
+price_effect_calcs <- rebound_results |> 
+  dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
+  dplyr::filter(Case %in% c("Car", "Lamp")) |> 
+  dplyr::mutate(
+    Case = factor(Case, levels = c("Car", "Lamp"))
+  ) |> 
+  dplyr::arrange(Case) |> 
+  dplyr::mutate(
+    # f_cons = N_dev * E_dot_s_orig / Q_dot_E_orig
+    # f_cons represents the the original (pre-EEU) fraction of all energy production 
+    # (of the kind used by the device) consumed by all such devices throughout the economy.
+    f_cons = c(0.9, 0.1), # 0.9 for the car case, 0.1 for the Lamp case)
+    # E_dot_s_ratio is post-income effect energy consumption / original energy consumption 
+    # for the energy service.
+    E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
+    E_dot_H_orig_engr = dplyr::case_when(
+      # Assume that the consumer's use of gasoline is exclusively for the car
+      # and equal to the original consumption rate.
+      Case == "Car" ~ E_dot_s_orig / `MJ/energy_engr_unit`,
+      # 10,000 kWhr/household-year from https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php
+      # 2.5 persons/household from https://www.statista.com/statistics/183648/average-size-of-households-in-the-us/
+      Case == "Lamp" ~ 10000/2.5 # kW-hr/person-year
+    ), 
+    # E_dot_H is in MJ/yr
+    E_dot_H_orig = E_dot_H_orig_engr * `MJ/energy_engr_unit`,
+  ) |> 
+  dplyr::full_join(params, by = "Case") |> 
+  dplyr::mutate(
+    # price_ratio is p_E_bar / p_E_orig
+    price_ratio = (1 - f_EEU*f_cons*(1 - E_dot_s_ratio))^(1/eps_Q_dot_E_p_E), 
+    # takeback is in MJ/yr
+    takeback = (E_dot_H_orig - E_dot_s_bar) * (1 - price_ratio) * p_E_orig * I_E, 
+    Re_p_E = takeback / S_dot_dev, 
+    # Enable linetypes for each value of eps_Q_dot_E_p_E
+    eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E), 
+    eps_Q_dot_E_p_E = dplyr::case_when(
+      eps_Q_dot_E_p_E == "1" ~ "1.0", 
+      TRUE ~ eps_Q_dot_E_p_E
+    )
+  ) 
+
+price_effect_calcs |>
+  ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
+                                         colour = eps_Q_dot_E_p_E, 
+                                         linetype = eps_Q_dot_E_p_E)) +
+  ggplot2::geom_line() + 
+  ggplot2::facet_wrap(facets = "Case") +
+  ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
+                              breaks = seq(0, 1, by = 0.2)) +
+  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
+                              breaks = seq(0, 2.6, by = 0.5)) +
+  ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+                                  direction = -1, end = 0.8) +
+  ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+                                 values = c(1, 2, 1, 2, 1)) +
+  MKHthemes::xy_theme()
+  
+@
+
+In these examples, the car upgrade yields
+no additional freed cash beyond the
+(slightly) cheaper fuel for the car, 
+so there is limited spending on other goods and services
+and little additional indirect energy demand.
+In contrast, the upgrade of the electric lamp
+is much more likely to provide energy price effect rebound,
+because electricity for the upgraded lamp is
+a small fraction of total electricity consumption
+by the consumer.
+\emph{All} electricity purchased by the consumer becomes cheaper
+when the price of electricity falls due to 
+widespread lamp upgrades throughout the economy, 
+leading to freed cash spent on other goods and services
+which, themselves, demand energy at the energy intensity 
+of the economy.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
