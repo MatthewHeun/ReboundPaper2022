@@ -2524,7 +2524,7 @@ price_effect_calcs <- rebound_results |>
     # f_cons = N_dev * E_dot_s_orig / Q_dot_E_orig
     # f_cons represents the the original (pre-EEU) fraction of all energy production 
     # (of the kind used by the device) consumed by all such devices throughout the economy.
-    f_cons = c(0.9, 0.1), # 0.9 for the car case, 0.1 for the Lamp case)
+    f_cons = c(0.95, 0.035), # 0.95 for the car case, 0.035 for the Lamp case: )
     # E_dot_s_ratio is post-income effect energy consumption / original energy consumption 
     # for the energy service.
     E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
@@ -2544,7 +2544,8 @@ price_effect_calcs <- rebound_results |>
     # price_ratio is p_E_bar / p_E_orig
     price_ratio = (1 - f_EEU*f_cons*(1 - E_dot_s_ratio))^(1/eps_Q_dot_E_p_E), 
     # takeback is in MJ/yr
-    takeback = (E_dot_H_orig - E_dot_s_bar) * (1 - price_ratio) * p_E_orig * I_E, 
+    # takeback = (E_dot_H_orig - E_dot_s_bar) * (1 - price_ratio) * p_E_orig * I_E, 
+    takeback = E_dot_H_orig * (1 - price_ratio) * p_E_orig * I_E, 
     Re_p_E = takeback / S_dot_dev, 
     # Enable linetypes for each value of eps_Q_dot_E_p_E
     eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E), 
