@@ -96,17 +96,16 @@ We develop a rebound analysis framework that
 
   \item combines 
         embodied energy effects with
-        maintenance and disposal effects
+        operations, maintenance, and disposal effects
         (under a new ``emplacement effect'' term), and
 
-  \item allows exact analytical determination of
-        the effects of non-marginal energy efficiency
-        increases and non-marginal energy service price decreases.
-  
+  \item provides the first operationalized link between 
+        rebound effects on microeconomic and macroeconomic levels. 
 \end{enumerate*}
 %
-Furthermore, we provide the first operationalized link between 
-rebound effects on microeconomic and macroeconomic levels.
+Furthermore, our framework allows an exact analytical determination of
+the effects of non-marginal energy service price decreases as well
+as the effect of satiation of demand for the energy service.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -1531,7 +1530,7 @@ likened it to a macroeconomic multiplier.%
   in an otherwise unchanged economy,
   i.e.\ the Keynesian multiplier \citep{Kahn1931,Keynes1936}, 
   that risks crowding out other economic activity \citep{Gillingham2016}. 
-  The energy productivity improvement is a supply-side shock. 
+  This energy productivity improvement is a supply-side shock. 
   After the EEU, 
   it takes less energy (and therefore less energy cost)
   to generate the same economic activity, because 
