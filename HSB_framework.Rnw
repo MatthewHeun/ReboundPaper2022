@@ -1106,18 +1106,28 @@ and less of the now-relatively-more-expensive other goods.
 A constant price elasticity (CPE) utility model
 is often used in the literature
 (e.g., see \citet[p.~17, footnote~43]{Borenstein:2015aa})
-for determining 
-post-substitution effect consumption 
+for determining  post-substitution effect consumption 
 and therefore $Re_{dsub}$ and $Re_{isub}$.
-By definition, the CPE utility model assumes that 
-compensated and uncompensated, own and cross price elasticities
-remain constant along an indifference curve. 
-(See Appendix~\ref{sec:utility_and_elasticities}.)
-Typically,
-constant price elasticities (as in the CPE utility model)
+(See Appendix~\ref{sec:Resub_approximate_method}.)
+However, the CPE utility model can deliver 
+only an approximation of the substitution effect for two reasons. 
+First, because it is a reduced form model and 
+only uncompensated elasticities are observed, 
+the CPE utility model reports the sum of 
+direct substitution effect
+and direct income effect rebound
+($Re_{dsub} + Re_{dinc}$). 
+Second, price elasticities
+typically change as consumption bundles change, 
+whereas the CPE price elasticity remains constant by definition.
+Typically, constant price elasticities (as in the CPE utility model)
 are approximations that are applicable only to marginal price changes. 
-Appendix~\ref{sec:Resub_approximate_method}
-contains details of the CPE utility model.
+As we will see in Part~II, 
+these approximations can lead to small
+or large errors depending on the case.
+Appendix~\ref{sec:utility_and_elasticities} 
+derives changes in price elasticities
+for non-CPE models.
 
 Here, we present a
 constant elasticity of substitution (CES) utility model
