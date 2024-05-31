@@ -397,11 +397,12 @@ The key \emph{contributions} of this paper are
 	
   \item development of a
         rebound analysis framework that combines 
-        embodied energy effects, 
-        maintenance and disposal effects, 
-        non-marginal energy efficiency increases, and 
-        non-marginal energy service price decreases, and
-
+        embodied energy effects,
+        operations, maintenance, and disposal effects,
+        and exact expressions for substitution and income effects
+	      under non-marginal energy efficiency increases and 
+        (by implication) non-marginal energy service price decreases, and
+        
   \item an operationalized link between 
         rebound effects on microeconomic and macroeconomic levels.
         
