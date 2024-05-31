@@ -2125,7 +2125,7 @@ There are no estimates of $k$, which ultimately traces the aggregate growth
 effects of a single, device-specific technical progress and is likely 
 to differ between EEUs. However, using recent empirical estimates of
 sectoral multipliers we can ascertain ourselves that $k$ should be different
-from 1 and pick a different value in line with those etimates.
+from 1 and choose a different value in line with those etimates.
 %the results obtained in Section~\ref{sec:results} of this paper,
 %In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
 %the results obtained in Section~\ref{sec:results} of this paper, and
@@ -2139,17 +2139,20 @@ Sectoral multipliers capture the impact of sectoral revenue increases
 into aggregate demand or GDP growth. While the idea of scale economies 
 from larger markets for particular products have a long 
 history in economic thought, recent advances in network theory 
-allowed to formalize the spill-overs from sectoral to aggregate growth. 
-First results report that for the U.S., aggregate output growth
-may have been up to 3 times as large as the growth in sector in which
-growth originated \citep{Foerster2022}. And industrial policy to
+allowed formalization of the spill-overs from sectoral to aggregate growth. 
+First results show that U.S. aggregate output growth
+may have been up to 3 times as large as the growth of the sector in which
+growth originated \citep{Foerster2022}. 
+And industrial policy to
 encourage technology adoption in certain sectors was found to pay back 
 up to 5 times its cost in India, but with wide variation
-across sectors \citep{Buera2024}. Since our problem
-also concerns technology adoption -- one that features energy augmenting
-technical change -- we take the value from the \citet{Buera2024} study.
-Their multipliers are clustered around 3 and so we adopt the value of
-3, fully cognizant of the fact that this can only be a first approximation.
+across sectors \citep{Buera2024}.
+Since our problem also concerns technology adoption, 
+one that features energy augmenting technical change, 
+we take the value from the \citet{Buera2024} study, 
+whereing multipliers cluster around 3. 
+Thus, we adopt the value of $k = 3$,
+fully aware that this can only be a first approximation.
 %To calibrate the macro factor ($k$),
 %we treat macro rebound ($Re_{\macro}$) as a residual.
 %The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
@@ -2229,10 +2232,10 @@ Their multipliers are clustered around 3 and so we adopt the value of
 %the subsequent demand-side effects may well be interpreted as a multiplier effect, 
 %caused by higher real income instead of by higher monetary income.
 
-After setting $k$ to 3, 
+After setting $k = 3$, 
 we can recalculate all rebound components in our framework.
 Emplacement ($Re_{empl}$), substitution ($Re_{sub}$), and income ($Re_{inc}$) rebound
-magnitudes are unchanged after calibrating $k \approx 3$.
+magnitudes are unchanged after setting $k = 3$.
 However, we see that choosing a placeholder value of $k = 1$
 resulted in a low value for $Re_{\macro}$ and, therefore, $Re_{tot}$
 in Section~\ref{sec:results}.
@@ -2249,7 +2252,7 @@ the values of total rebound ($Re_{tot}$) should increase to
 for the car and lamp examples,
 respectively.
 For the remainder of this paper, 
-we use the calibrated value of $k \approx 3$.
+we use $k = 3$.
 
 
 %++++++++++++++++++++++++++++++
@@ -2286,7 +2289,7 @@ f_lmp <- function(Re_name, string_val = TRUE) {
 @
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
-and our calibration of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
+and selection of $k = 3$ in Section~\ref{sec:calibrating_k} 
 enable fuller comparisons between the car and lamp examples. 
 Several points can be made.
 
@@ -2337,7 +2340,7 @@ different macro rebound values.
 %++++++++++++++++++++++++++++++
 
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-compare car and lamp results (with $k \approx 3$) to 
+compare car and lamp results (with $k = 3$) to 
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
 The comparison studies are neither comprehensive nor
@@ -2367,7 +2370,7 @@ enable two types of observations, comparing
 First, we see that none of the comparison studies
 report all rebound effects considered in this paper. 
 Also, no previous studies report either emplacement rebound 
-($Re_{empl} = Re_{emb} + Re_{\md}$)
+($Re_{empl} = Re_{emb} + Re_{\omd}$)
 or include all of direct and indirect, substitution and
 income microeconomic rebound effect combinations.
 In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
