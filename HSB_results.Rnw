@@ -2138,7 +2138,8 @@ from 1 and choose a different value in line with those etimates.
 Sectoral multipliers capture the impact of sectoral revenue increases
 into aggregate demand or GDP growth. While the idea of scale economies 
 from larger markets for particular products have a long 
-history in economic thought, recent advances in network theory 
+history in economic thought dating back at least to \citet{Smith1776},
+data from input-output tables and recent advances in network theory 
 allowed formalization of the spill-overs from sectoral to aggregate growth. 
 First results show that U.S. aggregate output growth
 may have been up to 3 times as large as the growth of the sector in which
@@ -2150,7 +2151,7 @@ across sectors \citep{Buera2024}.
 Since our problem also concerns technology adoption, 
 one that features energy augmenting technical change, 
 we take the value from the \citet{Buera2024} study, 
-whereing multipliers cluster around 3. 
+where the majority of multipliers cluster around 3. 
 Thus, we adopt the value of $k = 3$,
 fully aware that this can only be a first approximation.
 %To calibrate the macro factor ($k$),
