@@ -1453,6 +1453,7 @@ $Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.
 \subsubsection{\Macroeffect}
 \label{sec:macro_effect_main_paper}
 %------------------------------
+
 The previous rebound effects 
 (emplacement effect, substitution effect, and income effect)
 occur at the microeconomic level. 
@@ -1570,14 +1571,14 @@ If the overall expansion of the economy is a multiple
 of the direct increase in productivity to follow-on productivity
 gains in other sectors, 
 then the macro effect can simply
-be represented as a multiple of the (indirect) income effect,
-a multiplier which we represent by a macro factor ($k$).%
+be represented as a multiple of the (indirect) emplacement effect
+at the ``$*$'' stage of Fig.~\ref{fig:flowchart},
+a multiplier that we represent by a macro factor ($k$).%
 \footnote{
   The macro factor ($k$) appears unitless,
-  but its units are actually \$ of economic expansion created 
+  but its units are actually \$ of economy-wide expansion created 
   per \$ of net savings gained
-  by the device user in the emplacement effect ($\raempl{N}$)
-  throughout the economy.
+  by the device user in the emplacement effect ($\raempl{N}$).
 }
 
 The macro factor ($k$) represents respending in the broader economy 
