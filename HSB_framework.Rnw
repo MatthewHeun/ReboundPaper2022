@@ -1856,7 +1856,7 @@ beyond the device level and outside the boundaries of a
 partial equilibrium analysis.
 One of those effects in an energy price effect.
 This section (and Appendix~\ref{sec:price_effect_appendix})
-shows that our framework can be extended to 
+shows that our partial equilibrium framework can be extended to 
 obtain an initial estimate of the 
 rebound implications
 of an energy price effect
@@ -1873,12 +1873,13 @@ could be significant would include
 replacing all cars in the economy by hybrids and 
 replacing all domestic electric lamps in the economy by LEDs, 
 the examples of Part~II.
-With reduced reduced energy demand across the economy, 
+With reduced energy demand throughout the economy, 
 an energy price reduction can be expected
 ($\bempl{p}_E > \ainc{p}_E$)
 as the lower price rebalances supply and demand.
 With the now-lower energy price ($\ainc{p}_E$), 
-the device owner has additional freed cash to spend,
+the device owner has additional freed cash ($\rate{G}_{p_E}$)
+to spend,
 in addition to the adjustments described by 
 the substitution and income effects.
 (See Sections~\ref{sec:sub_effect_main_paper}
@@ -1905,11 +1906,12 @@ Appendix~\ref{sec:price_effect_appendix} derives an expression for
 rebound from the energy price effect as
 
 \begin{equation} \label{eq:Re_p_E}
-  Re_{p_E} = \frac{(\rorig{E}_H - \rainc{E}_s) \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E I_E}{\Sdot} \, ,
+  Re_{p_E} = \frac{\rate{G}_{p_E} I_E}{\Sdot} \, ,
 \end{equation}
 %
-where $\rorig{E}_H$ is the pre-EEU rate of consuming 
-the final energy carrier consumed by the device.
+where $\rate{G}_{p_E}$ is the freed cash arising from 
+the reduction in energy price due to 
+widespread adopotion of the EEU throughout the economy.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

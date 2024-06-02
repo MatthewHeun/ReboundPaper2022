@@ -4,22 +4,25 @@
 %!TEX root = ../HSB_framework.Rnw
 
 
-The energy price effect is caused by a reduction 
+Energy price rebound ($Re_{E_p}$) is caused by a reduction 
 in energy price ($p_E$)
 that can occur when widespread implementation 
 of an energy efficiency upgrade (EEU)
 leads to an economy-wide reduction in energy demand.
-Reduced demand leads via demand-supply rebalancing to a lower energy price ($p_E$).
+Reduced demand leads via demand-supply rebalancing 
+to a lower energy price ($p_E$).
 Thus the device owner spends less on energy purchases
-to operate the device.
+to operate the upgraded device
+and all other devices that use the same final energy carrier.
 The device owner's additional freed cash
 is assumed to be spent on other goods and services
 with energy implications 
 at the energy intensity of the economy ($I_E$).
 This appendix derives an expression for an
-energy price-effect rebound (Eq.~\ref{eq:Re_p_E})
+energy price-effect rebound (Eq.~(\ref{eq:Re_p_E}))
 shown in Section~\ref{sec:notes_price_effect}.
-This derivation and our assessment of the magnitude of the energy price effect
+This derivation and our assessment 
+of the magnitude of energy price rebound
 in Part~II
 illustrate the flexibility and extinsibility of the framework.
 
@@ -50,14 +53,14 @@ energy demand is given by
 \begin{equation}
   \frac{\rainc{Q}_E}{\rbempl{Q}_E} =
         \frac{\rbempl{Q}_E - f_{\EEU} N_{dev} \rbempl{E}_s \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right)}
-        {\rbempl{Q}_E} \; .
+        {\rbempl{Q}_E} \, .
 \end{equation}
 %
 Simplifying gives
 
 \begin{equation} \label{eq:QE_ratio}
   \frac{\rainc{Q}_E}{\rbempl{Q}_E} =
-        1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \; .
+        1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \, .
 \end{equation}
 %
 Note that the group $\frac{N_{dev} \rorig{E}_s}{\rorig{Q}_E}$
@@ -91,7 +94,7 @@ to obtain
 % Those spaces are not parsed correctly by latexdiff.
 \begin{equation}
   \frac{\ainc{p}_E}{\orig{p}_E} =
-        \left( \frac{\rainc{Q}_E}{\rorig{Q}_E} \right)^{\frac{1}{\eQEpE}} \; .
+        \left( \frac{\rainc{Q}_E}{\rorig{Q}_E} \right)^{\frac{1}{\eQEpE}} \, .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:QE_ratio}) gives
@@ -101,42 +104,63 @@ Substituting Eq.~(\ref{eq:QE_ratio}) gives
 % Those spaces are not parsed correctly by latexdiff.
 \begin{equation} \label{eq:price_effect_price_ratio}
   \frac{\ainc{p}_E}{\orig{p}_E} =
-        \left[ 1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \right]^{\frac{1}{\eQEpE}} \; .
+        \left[ 1 - f_{\EEU} \frac{N_{dev} \rbempl{E}_s}{\rbempl{Q}_E} \left( 1 - \frac{\rainc{E}_s}{\rbempl{E}_s}  \right) \right]^{\frac{1}{\eQEpE}} \, .
 \end{equation}
 
 The energy price reduction ($\orig{p}_E > \ainc{p}_E$)
-leads to additional freed cash for the device owner at a rate of
+leads to additional freed cash ($G_{p_E}$) 
+for the device owner at a rate of
 
 \begin{equation}
-  (\rorig{E}_H - \rainc{E}_s) (\orig{p}_E - \ainc{p}_E) \, ,
+  \rate{G}_{p_E} = \left[ \rorig{E} - (\rorig{E}_s - \rainc{E}_s) \right] (\orig{p}_E - \ainc{p}_E) + (\rorig{C}_o - \rainc{C}_o) \, ,
 \end{equation}
 %
-where $\rorig{E}_H$ is the rate at which the consumer's household 
+where $\rorig{E}$ is the rate at which the consumer 
 consumes the final energy carrier that supplies
 the energy service
-(gasoline a car and
+(gasoline for a car and
 electricity for an electric lamp) 
-prior to the EEU.
+prior to the EEU
+in all devices (the upgraded devices and others), 
+($\rorig{E}_s - \rainc{E}_s$) reduces 
+$\rorig{E}$ by the energy savings after the income adjustment
+such that
+$\rorig{E} - (\rorig{E}_s - \rainc{E}_s)$
+is the total rate of energy consumption by all of the 
+consumer's devices
+after the income effect and the energy price adjustment,
+$(\orig{p}_E - \ainc{p}_E)$ is the energy price reduction
+caused by reduced demand for the energy across 
+the whole economy estimated by 
+Eq.~(\ref{eq:price_effect_price_ratio}), 
+and 
+$(\rorig{C}_o - \rainc{C}_o)$ is the 
+signed expense reduction for the consumer
+due to the substitution and income effects,
+usually a negative number
+so actually an increase in spending on other goods and services 
+and a reduction to price effect freed cash.
+
 Rearrangement of terms gives
 
 \begin{equation}
-    (\rorig{E}_H - \rainc{E}_s) \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E \, .
+  \rate{G}_{p_E} = \left[ \rorig{E} - (\rorig{E}_s - \rainc{E}_s) \right] \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E + (\rorig{C}_o - \rainc{C}_o) \, ,
 \end{equation}
 %
-The energy implications of spending the additional freed cash
-on other goods and services is
+into which Eq.~(\ref{eq:price_effect_price_ratio})
+can be substituted easily.
 
-\begin{equation}
-    (\rorig{E}_H - \rainc{E}_s) \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E I_E \, ,
-\end{equation}
-%
+The energy implications of spending the additional freed cash
+due to the energy price effect
+on other goods and services is
+$\rate{G}_{p_E} I_E$,
 another energy takeback rate.
 By Eq.~(\ref{eq:Re_takeback}),
 rebound associated with this energy takeback
 can be written as
 
 \begin{equation}
-  Re_{p_E} = \frac{(\rorig{E}_H - \rainc{E}_s) \left( 1 - \frac{\ainc{p}_E}{\orig{p}_E} \right) \orig{p}_E I_E}{\Sdot} \, , \tag{\ref{eq:Re_p_E}}
+  Re_{p_E} = \frac{\rate{G}_{p_E} I_E}{\Sdot} \, , \tag{\ref{eq:Re_p_E}}
 \end{equation}
 %
 as shown in Section~\ref{sec:notes_price_effect},
