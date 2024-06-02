@@ -2519,12 +2519,16 @@ the energy price elasticity of economy-wide energy demand
 Figure~\ref{fig:PriceEffectGraph}.
 
 <<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
-params <- expand.grid(Case = c("Car", "Lamp"), 
-                      f_EEU = seq(0, 1, by = 0.01), 
-                      eps_Q_dot_E_p_E = seq(0.2, 1, by = 0.2))
+price_effect_params <- dplyr::bind_rows(expand.grid(Case = "Car", 
+                                                    f_EEU = seq(0, 1, by = 0.01), 
+                                                    eps_Q_dot_E_p_E = seq(0.1, 0.3, by = 0.1)), 
+                                        expand.grid(Case = "Lamp", 
+                                                    f_EEU = seq(0, 1, by = 0.01), 
+                                                    eps_Q_dot_E_p_E = seq(0.4, 0.6, by = 0.1)))
 
 price_effect_calcs <- rebound_results |> 
-  dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
+  dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, 
+                C_dot_o_orig, C_dot_o_bar, S_dot_dev) |> 
   dplyr::filter(Case %in% c("Car", "Lamp")) |> 
   dplyr::mutate(
     Case = factor(Case, levels = c("Car", "Lamp"))
@@ -2534,28 +2538,33 @@ price_effect_calcs <- rebound_results |>
     # f_cons = N_dev * E_dot_s_orig / Q_dot_E_orig
     # f_cons represents the the original (pre-EEU) fraction of all energy production 
     # (of the kind used by the device) consumed by all such devices throughout the economy.
-    f_cons = c(0.95, 0.035), # 0.95 for the car case, 0.035 for the Lamp case: )
-    # E_dot_s_ratio is post-income effect energy consumption / original energy consumption 
-    # for the energy service.
-    E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
-    E_dot_H_orig_engr = dplyr::case_when(
-      # Assume that the consumer's use of gasoline is exclusively for the car
-      # and equal to the original consumption rate.
-      Case == "Car" ~ E_dot_s_orig / `MJ/energy_engr_unit`,
+    f_cons = c(0.95, 0.035), # 0.95 for the car case, 0.035 for the Lamp case)
+    # E_dot_orig_engr is the original total consumption by the device owner of the energy.
+    E_dot_orig_engr = dplyr::case_when(
+      # Assume that the consumer's use of gasoline is at the same rate of the 
+      # rest of the economy.  I.e., 95% of the consumer's consumption of gasoline
+      # is for cars.
+      Case == "Car" ~ E_dot_s_orig/0.95 / `MJ/energy_engr_unit`,
       # 10,000 kWhr/household-year from https://www.eia.gov/energyexplained/use-of-energy/electricity-use-in-homes.php
       # 2.5 persons/household from https://www.statista.com/statistics/183648/average-size-of-households-in-the-us/
       Case == "Lamp" ~ 10000/2.5 # kW-hr/person-year
     ), 
-    # E_dot_H is in MJ/yr
-    E_dot_H_orig = E_dot_H_orig_engr * `MJ/energy_engr_unit`,
+    # E_dot_orig is in MJ/yr
+    E_dot_orig = E_dot_orig_engr * `MJ/energy_engr_unit`,
   ) |> 
-  dplyr::full_join(params, by = "Case") |> 
+  dplyr::full_join(price_effect_params, by = "Case") |> 
   dplyr::mutate(
+    # E_dot_s_ratio is post-income effect energy consumption / original energy consumption  
+    # for the energy service.
+    E_dot_s_ratio = E_dot_s_bar / E_dot_s_orig, 
     # price_ratio is p_E_bar / p_E_orig
     price_ratio = (1 - f_EEU*f_cons*(1 - E_dot_s_ratio))^(1/eps_Q_dot_E_p_E), 
+    
     # takeback is in MJ/yr
-    # takeback = (E_dot_H_orig - E_dot_s_bar) * (1 - price_ratio) * p_E_orig * I_E, 
-    takeback = E_dot_H_orig * (1 - price_ratio) * p_E_orig * I_E, 
+    # takeback = (E_dot_orig - (E_dot_s_bar - E_dot_s_orig)) * (1 - price_ratio) * p_E_orig * I_E, 
+    # G_dot_p_E is in $ and represents price-effect freed cash.
+    G_dot_p_E = (E_dot_orig - (E_dot_s_bar - E_dot_s_orig)) * (1 - price_ratio) * p_E_orig,
+    takeback = G_dot_p_E * I_E, 
     Re_p_E = takeback / S_dot_dev, 
     # Enable linetypes for each value of eps_Q_dot_E_p_E
     eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E), 
@@ -2563,24 +2572,25 @@ price_effect_calcs <- rebound_results |>
       eps_Q_dot_E_p_E == "1" ~ "1.0", 
       TRUE ~ eps_Q_dot_E_p_E
     )
-  ) 
+  )
 
 price_effect_calcs |>
   ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
                                          colour = eps_Q_dot_E_p_E, 
                                          linetype = eps_Q_dot_E_p_E)) +
+  ggplot2::geom_hline(yintercept = 0, colour = "gray", linewidth = 0.1) +
   ggplot2::geom_line() + 
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
                               breaks = seq(0, 1, by = 0.2)) +
-  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
-                              breaks = seq(0, 2.6, by = 0.5)) +
-  ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                  direction = -1, end = 0.8) +
+  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]")) +
+  # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+  #                                 direction = -1, end = 0.8) +
+  ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+                               values = c("gray", "black", "gray", "gray", "black", "gray")) +
   ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                 values = c(1, 2, 1, 2, 1)) +
+                                 values = c(2, 1, 2, 2, 1, 2)) +
   MKHthemes::xy_theme()
-  
 @
 
 In these examples, the car upgrade yields
