@@ -2490,12 +2490,13 @@ for the car and lamp examples.
 
 Before estimating price-effect rebound, 
 we need data for
-total personal consumption ($\rorig{E}_H$)
-of the final energy type used by the device.
+total personal consumption ($\rorig{E}$)
+of the final energy type used by the device,
+including energy for the upgraded device and all other devices.
 For the car example, 
 there is typically little other gasoline consumption
-besides for the car, 
-so we assume $\rorig{E}_H$ equal to  
+besides for cars, 
+so we assume $\rorig{E}$ equal to  
 $\rorig{E}_s$.
 For the lamp example, 
 a median U.S.\ household consumes about
@@ -2504,7 +2505,12 @@ a median U.S.\ household consumes about
 Given that there are 2.5 persons per household
 \citep{Statista:2024aa}, 
 the consumer consumes electricity at a rate of 
-$\rorig{E}_H = 4000$~kW$\cdot$hr/yr.
+$\rate{E} = 4000$~kW$\cdot$hr/yr.
+
+**** More here about elasticity values. ****
+We also need data for the price elasticity 
+of energy consumption ($\varepsilon_{\rate{Q}_E,p_E}$)
+for each case.
 
 Parameterizing on the fraction of all devices in the economy
 that are upgraded ($f_{EEU}$) and 
