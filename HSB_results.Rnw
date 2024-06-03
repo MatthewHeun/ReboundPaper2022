@@ -2588,7 +2588,7 @@ price_effect_calcs |>
   # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
   #                                 direction = -1, end = 0.8) +
   ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                               values = c("gray", "black", "gray", "pink", "red", "pink")) +
+                               values = c("black", "black", "black", "red", "red", "red")) +
   ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
                                  values = c(3, 1, 2, 3, 1, 2)) +
   MKHthemes::xy_theme()
