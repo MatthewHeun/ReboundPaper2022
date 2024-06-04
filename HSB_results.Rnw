@@ -2519,16 +2519,42 @@ use a value of 0.33 which we adopt, too.
 <<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
 eps_Q_dot_E_p_E_car <- 0.29
 eps_Q_dot_E_p_E_lamp <- 0.33
+price_effect_eps_delta <- 0.1
 price_effect_params <- dplyr::bind_rows(expand.grid(Case = "Car", 
                                                     f_EEU = seq(0, 1, by = 0.01), 
-                                                    eps_Q_dot_E_p_E = c(eps_Q_dot_E_p_E_car - 0.1, 
-                                                                        eps_Q_dot_E_p_E_car, 
-                                                                        eps_Q_dot_E_p_E_car + 0.1)), 
+                                                    graph_aspect = c("low_eps", "line", "high_eps")), 
                                         expand.grid(Case = "Lamp", 
                                                     f_EEU = seq(0, 1, by = 0.01), 
-                                                    eps_Q_dot_E_p_E = c(eps_Q_dot_E_p_E_lamp - 0.1, 
-                                                                        eps_Q_dot_E_p_E_lamp, 
-                                                                        eps_Q_dot_E_p_E_lamp + 0.1)))
+                                                     graph_aspect = c("low_eps", "line", "high_eps"))) |> 
+  dplyr::mutate(
+    eps_Q_dot_E_p_E = dplyr::case_when(
+      Case == "Car" & graph_aspect == "line" ~ eps_Q_dot_E_p_E_car, 
+      Case == "Lamp" & graph_aspect == "line" ~ eps_Q_dot_E_p_E_lamp, 
+      Case == "Car" & graph_aspect == "low_eps" ~ eps_Q_dot_E_p_E_car - price_effect_eps_delta, 
+      Case == "Lamp" & graph_aspect == "low_eps" ~ eps_Q_dot_E_p_E_lamp - price_effect_eps_delta, 
+      Case == "Car" & graph_aspect == "high_eps" ~ eps_Q_dot_E_p_E_car + price_effect_eps_delta, 
+      Case == "Lamp" & graph_aspect == "high_eps" ~ eps_Q_dot_E_p_E_lamp + price_effect_eps_delta
+    )
+  )
+
+# price_effect_calcs |>
+#   ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
+#                                          colour = eps_Q_dot_E_p_E, 
+#                                          linetype = eps_Q_dot_E_p_E)) +
+#   ggplot2::geom_hline(yintercept = 0, colour = "gray", linewidth = 0.1) +
+#   ggplot2::geom_line() + 
+#   ggplot2::facet_wrap(facets = "Case") +
+#   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
+#                               breaks = seq(0, 1, by = 0.2)) +
+#   ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
+#                               breaks = c(0, 0.2, 0.4, 0.6, 0.8)) +
+#   # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+#   #                                 direction = -1, end = 0.8) +
+#   ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+#                                values = c("black", "red", "black", "red", "black", "red")) +
+#   ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+#                                  values = c(3, 3, 1, 1, 2, 2)) +
+#   MKHthemes::xy_theme()
 
 price_effect_calcs <- rebound_results |> 
   dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
@@ -2568,32 +2594,36 @@ price_effect_calcs <- rebound_results |>
     # G_dot_p_E is in $ and represents price-effect freed cash.
     G_dot_p_E = (E_dot_orig - (E_dot_s_bar - E_dot_s_orig)) * (1 - price_ratio) * p_E_orig,
     takeback = G_dot_p_E * I_E, 
-    Re_p_E = takeback / S_dot_dev, 
-    # Enable linetypes for each value of eps_Q_dot_E_p_E
-    eps_Q_dot_E_p_E = as.character(eps_Q_dot_E_p_E), 
-    eps_Q_dot_E_p_E = dplyr::case_when(
-      eps_Q_dot_E_p_E == "1" ~ "1.0", 
-      TRUE ~ eps_Q_dot_E_p_E
-    )
+    Re_p_E = takeback / S_dot_dev
   )
 
-price_effect_calcs |>
-  ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
-                                         colour = eps_Q_dot_E_p_E, 
-                                         linetype = eps_Q_dot_E_p_E)) +
-  ggplot2::geom_hline(yintercept = 0, colour = "gray", linewidth = 0.1) +
-  ggplot2::geom_line() + 
+price_effect_line_data <- price_effect_calcs |> 
+  dplyr::filter(graph_aspect == "line")
+price_effect_ribbon_data <- price_effect_calcs |> 
+  dplyr::filter(graph_aspect != "line") |> 
+  dplyr::select(Case, f_EEU, graph_aspect, Re_p_E) |> 
+  tidyr::pivot_wider(names_from = graph_aspect, values_from = Re_p_E)
+
+ggplot2::ggplot() + 
+  # ggplot2::geom_hline(yintercept = 0, 
+  #                     colour = "gray",
+  #                     linewidth = 0.1) +
+  ggplot2::geom_ribbon(data = price_effect_ribbon_data, 
+                       mapping = ggplot2::aes(x = f_EEU, 
+                                              ymin = high_eps, 
+                                              ymax = low_eps), 
+                       fill = "gray") +
+  ggplot2::geom_line(data = price_effect_line_data,
+                     mapping = ggplot2::aes(x = f_EEU, y = Re_p_E)) +
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
                               breaks = seq(0, 1, by = 0.2)) +
   ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
                               breaks = c(0, 0.2, 0.4, 0.6, 0.8)) +
-  # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-  #                                 direction = -1, end = 0.8) +
-  ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                               values = c("black", "red", "black", "red", "black", "red")) +
-  ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                 values = c(3, 3, 1, 1, 2, 2)) +
+  # ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+  #                              values = c("black", "red", "black", "red", "black", "red")) +
+  # ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
+  #                                values = c(3, 3, 1, 1, 2, 2)) +
   MKHthemes::xy_theme()
 @
 
