@@ -2484,14 +2484,14 @@ Section~\ref{PartI-sec:notes_price_effect},
 Eq.~(\ref{PartI-eq:Re_p_E}), and 
 Appendix~\ref{PartI-sec:price_effect_appendix} 
 of Part~I provide an extension to the framework
-for energy price effect rebound ($Re_{p_E}$).  
+involving energy price effect rebound ($Re_{p_E}$).  
 This section quantifies price-effect rebound 
 for the car and lamp examples.  
 
-Before estimating price-effect rebound, 
-we need data for
-total personal consumption ($\rorig{E}$)
-of the final energy type used by the device,
+To quantify price-effect rebound, 
+data are needed for
+personal consumption ($\rorig{E}$)
+of the type of energy used by the device,
 including energy for the upgraded device and all other devices.
 For the car example, 
 there is typically little other gasoline consumption
@@ -2508,25 +2508,27 @@ the consumer consumes electricity at a rate of
 $\rate{E} = 4000$~kW$\cdot$hr/yr.
 
 We also need data for the price elasticity 
-of energy supply ($\varepsilon_{\rate{Q}_E,p_E}$)
-for each case.
-**** 
-Add more here about elasticity values when GS supplies. 
-****
-
-Parameterizing on the fraction of all devices in the economy
-that are upgraded ($f_{EEU}$) and 
-the energy price elasticity of economy-wide energy demand
-($\varepsilon_{\rate{Q}_E,p_E}$) yields
-Figure~\ref{fig:PriceEffectGraph}.
+of energy supply ($\varepsilon_{\rate{Q}_E,p_E}$).
+For the car case,
+we take
+the price elasticity of gasoline supply to be 0.29
+from \citet{Coyle:2012aa}.
+For the lamp case, \citet[Table~3]{Ghoddusia:2017aa}
+use a value of 0.33 which we adopt, too.
 
 <<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
+eps_Q_dot_E_p_E_car <- 0.29
+eps_Q_dot_E_p_E_lamp <- 0.33
 price_effect_params <- dplyr::bind_rows(expand.grid(Case = "Car", 
                                                     f_EEU = seq(0, 1, by = 0.01), 
-                                                    eps_Q_dot_E_p_E = seq(0.1, 0.3, by = 0.1)), 
+                                                    eps_Q_dot_E_p_E = c(eps_Q_dot_E_p_E_car - 0.1, 
+                                                                        eps_Q_dot_E_p_E_car, 
+                                                                        eps_Q_dot_E_p_E_car + 0.1)), 
                                         expand.grid(Case = "Lamp", 
                                                     f_EEU = seq(0, 1, by = 0.01), 
-                                                    eps_Q_dot_E_p_E = seq(0.4, 0.6, by = 0.1)))
+                                                    eps_Q_dot_E_p_E = c(eps_Q_dot_E_p_E_lamp - 0.1, 
+                                                                        eps_Q_dot_E_p_E_lamp, 
+                                                                        eps_Q_dot_E_p_E_lamp + 0.1)))
 
 price_effect_calcs <- rebound_results |> 
   dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
@@ -2584,21 +2586,32 @@ price_effect_calcs |>
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
                               breaks = seq(0, 1, by = 0.2)) +
-  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]")) +
+  ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
+                              breaks = c(0, 0.2, 0.4, 0.6, 0.8)) +
   # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
   #                                 direction = -1, end = 0.8) +
   ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                               values = c("black", "black", "black", "red", "red", "red")) +
+                               values = c("black", "red", "black", "red", "black", "red")) +
   ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-                                 values = c(3, 1, 2, 3, 1, 2)) +
+                                 values = c(3, 3, 1, 1, 2, 2)) +
   MKHthemes::xy_theme()
 @
 
-****
-Revisit this paragraph after we finalize our elasticity values.
-****
+
+Parameterizing on the fraction of all devices in the economy
+that are upgraded ($f_{EEU}$) and 
+the energy price elasticity of energy supply
+($\varepsilon_{\rate{Q}_E,p_E}$) yields
+Figure~\ref{fig:PriceEffectGraph}.
+As expected, 
+price-effect rebound ($Re_{p_E}$)
+grows as more devices are upgraded, 
+i.e., as $f_{EEU}$ increases. 
+Furthermore, inelastic energy supply (smaller $\varepsilon_{\rate{Q}_{E,p_E}}$) 
+leads to higher price-effect rebound.
+
 In these examples, the car upgrade yields
-no additional freed cash beyond the
+little additional freed cash beyond the
 (slightly) cheaper fuel for the car, 
 so there is limited spending on other goods and services
 and little additional indirect energy demand.
@@ -2613,6 +2626,27 @@ widespread lamp upgrades throughout the economy,
 leading to freed cash spent on other goods and services
 which, themselves, demand energy at the energy intensity 
 of the economy.
+
+<<Lamp100, echo=FALSE>>=
+# Price-effect rebound for 100% f_EEU and the middle elasticity, 
+# used in the paragraph below.
+Re_p_E_lamp_100 <- price_effect_calcs |> 
+  dplyr::filter(Case == "Lamp", f_EEU == 1, eps_Q_dot_E_p_E == "0.33") |> 
+  dplyr::pull("Re_p_E")
+# Sum of consumer and supply-side rebound
+Re_cons_supply_lamp <- Re_tot_lamp_k_3 + Re_p_E_lamp_100
+@
+
+At 100\% penetration of LED lamps ($f_{EEU} = 1$) and
+at the nominal supply elasticity
+($\varepsilon_{\rate{Q}_{E},p_E} = \Sexpr{eps_Q_dot_E_p_E_lamp}$), 
+price effect rebound is $Re_{p_E} = 
+\Sexpr{sprintf(Re_p_E_lamp_100 * 100, fmt = "%.1f")}$\%.
+Combined with consumer sided rebound of 
+\Sexpr{sprintf(Re_tot_lamp_k_3*100, fmt = "%.1f")}\%, 
+the sum of consumer-sided and supply-side rebound is
+\Sexpr{sprintf(Re_cons_supply_lamp*100, fmt = "%.1f")}\%,
+meaning that backfire could occur under conditions of full penetration of the EEU.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
