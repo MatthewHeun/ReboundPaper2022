@@ -2516,7 +2516,7 @@ from \citet{Coyle:2012aa}.
 For the lamp case, \citet[Table~3]{Ghoddusia:2017aa}
 use a value of 0.33 which we adopt, too.
 
-<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$) and the energy price elasticity of energy production ($\\varepsilon_{\\rate{Q}_E,p_E}$).">>=
+<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\\varepsilon_{\\rate{Q}_E,p_E}$). Gray bands provide the range between $\\varepsilon_{\\rate{Q}_E,p_E} - 0.1$ (top of the range) and $\\varepsilon_{\\rate{Q}_E,p_E} + 0.1$ larger (bottom of the range)">>=
 eps_Q_dot_E_p_E_car <- 0.29
 eps_Q_dot_E_p_E_lamp <- 0.33
 price_effect_eps_delta <- 0.1
@@ -2586,8 +2586,8 @@ price_effect_ribbon_data <- price_effect_calcs |>
   tidyr::pivot_wider(names_from = graph_aspect, values_from = Re_p_E)
 
 p_E_annotation_df <- tibble::tribble(~Case, ~f_EEU, ~Re_p_E, ~lab, 
-                                     # "Car", 0.2, 0.8, eps_Q_dot_E_p_E_car)
-                                     "Car", 0.2, 0.8, "dot(Q)")
+                                     "Car", 0.8, 0.05, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_car),
+                                     "Lamp", 0.8, 0.05, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_lamp))
 
 ggplot2::ggplot() + 
   ggplot2::geom_ribbon(data = price_effect_ribbon_data, 
@@ -2599,7 +2599,9 @@ ggplot2::ggplot() +
                      mapping = ggplot2::aes(x = f_EEU, y = Re_p_E)) +
   ggplot2::geom_text(data = p_E_annotation_df, 
                      mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, label = lab), 
-                     parse = TRUE) +
+                     parse = TRUE, 
+                     colour = "gray", 
+                     size = 3) +
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
                               breaks = seq(0, 1, by = 0.2)) +
