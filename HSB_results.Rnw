@@ -2537,25 +2537,6 @@ price_effect_params <- dplyr::bind_rows(expand.grid(Case = "Car",
     )
   )
 
-# price_effect_calcs |>
-#   ggplot2::ggplot(mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, 
-#                                          colour = eps_Q_dot_E_p_E, 
-#                                          linetype = eps_Q_dot_E_p_E)) +
-#   ggplot2::geom_hline(yintercept = 0, colour = "gray", linewidth = 0.1) +
-#   ggplot2::geom_line() + 
-#   ggplot2::facet_wrap(facets = "Case") +
-#   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
-#                               breaks = seq(0, 1, by = 0.2)) +
-#   ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
-#                               breaks = c(0, 0.2, 0.4, 0.6, 0.8)) +
-#   # ggplot2::scale_colour_viridis_d(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-#   #                                 direction = -1, end = 0.8) +
-#   ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-#                                values = c("black", "red", "black", "red", "black", "red")) +
-#   ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-#                                  values = c(3, 3, 1, 1, 2, 2)) +
-#   MKHthemes::xy_theme()
-
 price_effect_calcs <- rebound_results |> 
   dplyr::select(Case, `MJ/energy_engr_unit`, I_E, p_E_orig, E_dot_s_orig, E_dot_s_bar, S_dot_dev) |> 
   dplyr::filter(Case %in% c("Car", "Lamp")) |> 
@@ -2604,10 +2585,11 @@ price_effect_ribbon_data <- price_effect_calcs |>
   dplyr::select(Case, f_EEU, graph_aspect, Re_p_E) |> 
   tidyr::pivot_wider(names_from = graph_aspect, values_from = Re_p_E)
 
+p_E_annotation_df <- tibble::tribble(~Case, ~f_EEU, ~Re_p_E, ~lab, 
+                                     # "Car", 0.2, 0.8, eps_Q_dot_E_p_E_car)
+                                     "Car", 0.2, 0.8, "dot(Q)")
+
 ggplot2::ggplot() + 
-  # ggplot2::geom_hline(yintercept = 0, 
-  #                     colour = "gray",
-  #                     linewidth = 0.1) +
   ggplot2::geom_ribbon(data = price_effect_ribbon_data, 
                        mapping = ggplot2::aes(x = f_EEU, 
                                               ymin = high_eps, 
@@ -2615,15 +2597,14 @@ ggplot2::ggplot() +
                        fill = "gray") +
   ggplot2::geom_line(data = price_effect_line_data,
                      mapping = ggplot2::aes(x = f_EEU, y = Re_p_E)) +
+  ggplot2::geom_text(data = p_E_annotation_df, 
+                     mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, label = lab), 
+                     parse = TRUE) +
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
                               breaks = seq(0, 1, by = 0.2)) +
   ggplot2::scale_y_continuous(name = expression(Re[p[E]]*" [-]"), 
                               breaks = c(0, 0.2, 0.4, 0.6, 0.8)) +
-  # ggplot2::scale_colour_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-  #                              values = c("black", "red", "black", "red", "black", "red")) +
-  # ggplot2::scale_linetype_manual(name = expression(epsilon[dot(Q)[E]*","*p[E]]), 
-  #                                values = c(3, 3, 1, 1, 2, 2)) +
   MKHthemes::xy_theme()
 @
 
