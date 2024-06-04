@@ -2516,7 +2516,7 @@ from \citet{Coyle:2012aa}.
 For the lamp case, \citet[Table~3]{Ghoddusia:2017aa}
 use a value of 0.33 which we adopt, too.
 
-<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\\varepsilon_{\\rate{Q}_E,p_E}$). Gray bands provide the range between $\\varepsilon_{\\rate{Q}_E,p_E} - 0.1$ (top of the range) and $\\varepsilon_{\\rate{Q}_E,p_E} + 0.1$ larger (bottom of the range)">>=
+<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\\varepsilon_{\\rate{Q}_E,p_E}$). Gray bands provide $\\pm 0.1$ range in $\\varepsilon_{\\rate{Q}_E,p_E}$.">>=
 eps_Q_dot_E_p_E_car <- 0.29
 eps_Q_dot_E_p_E_lamp <- 0.33
 price_effect_eps_delta <- 0.1
@@ -2585,9 +2585,15 @@ price_effect_ribbon_data <- price_effect_calcs |>
   dplyr::select(Case, f_EEU, graph_aspect, Re_p_E) |> 
   tidyr::pivot_wider(names_from = graph_aspect, values_from = Re_p_E)
 
-p_E_annotation_df <- tibble::tribble(~Case, ~f_EEU, ~Re_p_E, ~lab, 
-                                     "Car", 0.8, 0.05, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_car),
-                                     "Lamp", 0.8, 0.05, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_lamp))
+p_E_annotation_df <- tibble::tribble(
+  ~Case, ~f_EEU, ~Re_p_E, ~lab, ~rot, 
+  "Car", 0.15, 0.75, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_car), 0,
+  "Lamp", 0.15, 0.75, paste("epsilon[dot(Q)[E]*','*p[E]]*' = '*", eps_Q_dot_E_p_E_lamp), 0,
+  "Car", 0.45, 0.15, "epsilon[dot(Q)[E]*','*p[E]]*' - 0.1'", 10, 
+  "Car", 0.5, 0.06, "epsilon[dot(Q)[E]*','*p[E]]*' + 0.1'", 7, 
+  "Lamp", 0.5, 0.48, "epsilon[dot(Q)[E]*','*p[E]]*' - 0.1'", 47, 
+  "Lamp", 0.6, 0.25, "epsilon[dot(Q)[E]*','*p[E]]*' + 0.1'", 32, 
+  )
 
 ggplot2::ggplot() + 
   ggplot2::geom_ribbon(data = price_effect_ribbon_data, 
@@ -2598,9 +2604,9 @@ ggplot2::ggplot() +
   ggplot2::geom_line(data = price_effect_line_data,
                      mapping = ggplot2::aes(x = f_EEU, y = Re_p_E)) +
   ggplot2::geom_text(data = p_E_annotation_df, 
-                     mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, label = lab), 
+                     mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, label = lab, angle = rot), 
                      parse = TRUE, 
-                     colour = "gray", 
+                     colour = "gray",
                      size = 3) +
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
@@ -2651,7 +2657,7 @@ Re_cons_supply_lamp <- Re_tot_lamp_k_3 + Re_p_E_lamp_100
 @
 
 At 100\% penetration of LED lamps ($f_{EEU} = 1$) and
-at the nominal supply elasticity
+at the nominal energy price elasticity of supply
 ($\varepsilon_{\rate{Q}_{E},p_E} = \Sexpr{eps_Q_dot_E_p_E_lamp}$), 
 price effect rebound is $Re_{p_E} = 
 \Sexpr{sprintf(Re_p_E_lamp_100 * 100, fmt = "%.1f")}$\%.
