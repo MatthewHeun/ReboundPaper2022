@@ -84,7 +84,7 @@ However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
 A new clarity is needed, one that 
 involves both economics and energy analysis.
-In this paper (Part~I of a two-part paper), 
+In this paper (Part~I of two), 
 we advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
@@ -1121,14 +1121,6 @@ and direct income effect rebound
 Second, price elasticities
 typically change as consumption bundles change, 
 whereas the CPE price elasticity remains constant by definition.
-% Typically, constant price elasticities (as in the CPE utility model)
-% are approximations that are applicable only to marginal price changes. 
-% As we will see in Part~II, 
-% these approximations can lead to small
-% or large errors depending on the case.
-% Appendix~\ref{sec:utility_and_elasticities} 
-% derives changes in price elasticities
-% for non-CPE models.
 Typically, constant price elasticities (as in the CPE utility model) 
 are approximations that are applicable only to marginal price changes. 
 As we will see in Part~II, 

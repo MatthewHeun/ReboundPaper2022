@@ -83,7 +83,7 @@ However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
 In Part~I, we developed a rigorous analytical framework
 that is approachable for both energy analysts and economists. 
-In this paper (Part~II),
+In this paper (Part~II of two),
 we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
