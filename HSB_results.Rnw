@@ -2034,8 +2034,9 @@ of one device will apply to another.
 \begin{table}
 \footnotesize
 \centering
-\caption{Comparison of income effect 
-         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
+\caption{Comparison of income effects 
+         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$,
+         $Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
          total ($Re_{tot}$) rebound
          between
          the CES utility model and satiated
@@ -2048,6 +2049,11 @@ of one device will apply to another.
             & \multicolumn{2}{c}{Car example}
                                       & \multicolumn{2}{c}{Lamp example} \\
 Rebound term     & CES & Satiated          & CES & Satiated           \\
+\midrule
+$Re_{dsub}$ [\%] &     &                   &     &                    \\
+$Re_{isub}$ [\%] &     &                   &     &                    \\
+\midrule
+$Re_{sub}$ [\%]  &     &                   &     &                    \\
 \midrule
 $Re_{dinc}$ [\%] & \Sexpr{Re_dinc_ces_car_char}
                        & \Sexpr{Re_dinc_satiated_car_char}
