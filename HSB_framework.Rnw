@@ -1037,8 +1037,9 @@ is given by
 \label{sec:sub_effect_main_paper}
 %------------------------------
 
-Neoclassical consumer theory decomposes price-induced
-behavior change into
+Neoclassical consumer theory 
+determines consumer behavior through utility mazimization. 
+It decomposes price-induced behavior change into
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
