@@ -2043,7 +2043,8 @@ of one device will apply to another.
          between
          the CES utility model and satiated
          consumption of the energy service for the
-         car and lamp examples.}
+         car and lamp examples.
+         **** MKH to add rows and columns as suggested by GS. ****}
 \label{tab:utility_model_comparison}
 \begin{tabular}{r r r r r}
 \toprule
