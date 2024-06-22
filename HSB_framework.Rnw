@@ -100,12 +100,14 @@ We develop a rebound analysis framework that
         (under a new ``emplacement effect'' term), and
 
   \item provides the first operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels. 
+        rebound effects on microeconomic and macroeconomic levels.
+        
 \end{enumerate*}
 %
-Furthermore, our framework allows an exact analytical determination of
-the effects of non-marginal energy service price decreases as well
-as the effect of satiation of demand for the energy service.
+Furthermore, our framework enables exact analytical determination of
+the effect of non-marginal energy service price decrease,
+the effect of satiation of energy service demand for the energy service, and 
+the effect of reduced energy demand on energy price.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -169,8 +171,8 @@ and to diminish the cost of its use,
 directly tends to augment the value of the steam-engine, 
 and to enlarge the field of its operations''~\citep[p.~161]{Parkes1838}.
 For nearly 200 years, then, it has been understood 
-that efficiency gains may be taken back or, paradoxically even, 
-cause growth in energy consumption,
+that efficiency gains may be taken back or, paradoxically, 
+cause \emph{growth} in energy consumption,
 as \citeauthor{Jevons:1865} suggested.
 
 The oil crises of the 1970s shone a light back onto energy efficiency, and 
@@ -225,7 +227,7 @@ changes affect energy service consumption,
 it has been unclear how they could be used 
 for precise numerical rebound calculations. 
 Where previous numerical calculations were made, 
-they tended approximate the substitution effect
+they tended to approximate the substitution effect
 from other goods to the cheaper energy service, 
 without maintaining constant utility for the device user.
 They also used constant price elasticities
@@ -401,10 +403,13 @@ The key \emph{contributions} of this paper are
         operations, maintenance, and disposal effects,
         and exact expressions for substitution and income effects
 	      under non-marginal energy efficiency increases and 
-        (by implication) non-marginal energy service price decreases, and
+        (by implication) non-marginal energy service price decreases, 
         
   \item an operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels.
+        rebound effects on microeconomic and macroeconomic levels, and 
+        
+  \item an application of the framework to 
+        an energy price effect.
         
 \end{enumerate*}
 
