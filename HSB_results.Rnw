@@ -2083,6 +2083,10 @@ the deviation of rebound from an exact model.
 The lower part of Table 10 shows that
 the sum of deviation of direct and indirect substition effect 
 is only 0.3\% in the car example but 5.5\% in the lamp example. 
+****
+Change numbers in previous sentence to calculations.
+---MKH 
+****
 This is intuitive. 
 The lamp example has a larger increase
 in energy conversion efficiency, so 
