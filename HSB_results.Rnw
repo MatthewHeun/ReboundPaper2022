@@ -1893,7 +1893,8 @@ rebound_results %>%
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Comparison of CES and satiated utility models}
+\subsection{Comparison of CES with satiated and 
+            constant price elasticity utility models}
 \label{sec:utility_comparison}
 %++++++++++++++++++++++++++++++
 
@@ -2071,6 +2072,34 @@ $Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
 \bottomrule
 \end{tabular}
 \end{table}
+
+Calculation of substitution rebound 
+under the constant price elasticity utility model,
+which approximates the sum of substitution and income effects
+by holding the uncompensated price elasticities constant, 
+leads to a similar conclusion 
+that the concrete case determines 
+the deviation of rebound from an exact model.
+The lower part of Table 10 shows that
+the sum of deviation of direct and indirect substition effect 
+is only 0.3\% in the car example but 5.5\% in the lamp example. 
+This is intuitive. 
+The lamp example has a larger increase
+in energy conversion efficiency, so 
+the change in the energy service price
+is farther away from the ``marginal'' change
+for which holding the price elasticity constant 
+leads to the same rebound as the exact model.
+We note that whether the deviation 
+of the approximation results in lower or higher rebound 
+depends on the exact model comparison. 
+For instance, 
+in comparison with the satiated model,
+or a CES model with an elasticity of substition greater than one, 
+the CPE would overstate the substitution rebound. 
+Appendix~\ref{sec:price_elasticities_sensitivity}
+quantifies the change 
+in price elasticity for both case studies.
 
 
 %++++++++++++++++++++++++++++++
