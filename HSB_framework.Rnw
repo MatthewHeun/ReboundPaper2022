@@ -1121,14 +1121,30 @@ and direct income effect rebound
 Second, price elasticities
 typically change as consumption bundles change, 
 whereas the CPE price elasticity remains constant by definition.
-Typically, constant price elasticities (as in the CPE utility model)
+% Typically, constant price elasticities (as in the CPE utility model)
+% are approximations that are applicable only to marginal price changes. 
+% As we will see in Part~II, 
+% these approximations can lead to small
+% or large errors depending on the case.
+% Appendix~\ref{sec:utility_and_elasticities} 
+% derives changes in price elasticities
+% for non-CPE models.
+Typically, constant price elasticities (as in the CPE utility model) 
 are approximations that are applicable only to marginal price changes. 
 As we will see in Part~II, 
 these approximations can lead to small
-or large errors depending on the case.
-Appendix~\ref{sec:utility_and_elasticities} 
-derives changes in price elasticities
-for non-CPE models.
+or large errors depending on the case, 
+in our two case studies overstating 
+substitution rebound by 0.3\% and 5.5\%, 
+****
+Change previous numbers to calculations.
+---MKH
+****
+respectively 
+relative to the calculation of our exact model,
+which we introduce next.
+Appendix~\ref{sec:utility_and_elasticities}
+derives changes in price elasticities for non-CPE models.
 
 Here, we present a
 constant elasticity of substitution (CES) utility model
