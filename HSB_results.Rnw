@@ -87,13 +87,13 @@ In this paper (Part~II of two),
 we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
-Further, we calibrate the macro factor
-for macroeconomic rebound, finding $k \approx 3$. 
+Further, we operationalize the macro factor
+for macroeconomic rebound. 
 Using the framework and rebound planes,
 we calculate and show total rebound for two examples: 
 energy efficiency upgrades of
-a car (47\%) and
-an electric lamp (67\%).
+a car (56.2\%) and
+an electric lamp (67.0\%).
 Comparison of our rebound values to previous values is provided.
 Finally, we provide information about new open source software tools 
 for calculating magnitudes and
@@ -177,7 +177,7 @@ in four ways.
 First, we develop a new way to visualize 
 components and mechanisms of rebound
 (rebound planes).
-Second, we make a first attempt at calibrating the macro rebound effect 
+Second, we make a first attempt at calculating the macro rebound effect 
 via a macro factor ($k$). 
 Third, we apply the framework to two energy efficiency upgrades (EEUs) 
 (a car and an electric lamp)
@@ -193,11 +193,11 @@ The key contributions of this paper are
         numerically precise visualizations of rebound effects
         in energy, expenditure, and consumption planes,
         
-  \item calibration of the macro factor ($k$) to link
+  \item operationalization of the macro factor ($k$) to link
         microeconomic and macroeconomic rebound levels,
         
   \item presentation of new rebound values for car and electric lamp 
-        upgrades based on a calibrated version of our framework from Part~I, and 
+        upgrades based on the framework from Part~I, and 
         
   \item documentation of new open source software tools
         to calculate and visualize rebound 
@@ -211,7 +211,7 @@ our method of visualizing rebound, and
 open source software tools for calculating and visualizing rebound.
 Section~\ref{sec:results} provides results for two examples: 
 energy efficiency upgrades to a car and an electric lamp.
-Section~\ref{sec:discussion} calibrates the macro factor ($k$)
+Section~\ref{sec:discussion} operationalizes the macro factor ($k$)
 and discusses results, and 
 Section~\ref{sec:conclusion} concludes.
 
