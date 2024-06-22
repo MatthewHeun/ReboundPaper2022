@@ -2034,45 +2034,54 @@ of one device will apply to another.
 \begin{table}
 \footnotesize
 \centering
-\caption{Comparison of income effects 
-         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$,
-         $Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
+\caption{Comparison of substitution effects
+         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$),
+         income effects,
+         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
          total ($Re_{tot}$) rebound
          between
          the CES utility model and satiated
          consumption of the energy service for the
          car and lamp examples.
-         **** MKH to add rows and columns as suggested by GS. ****}
+         **** MKH to fill rows and columns as suggested by GS. ****}
 \label{tab:utility_model_comparison}
-\begin{tabular}{r r r r r}
+\begin{tabular}{r r r r r r r}
 \toprule
-            & \multicolumn{2}{c}{Car example}
-                                      & \multicolumn{2}{c}{Lamp example} \\
-Rebound term     & CES & Satiated          & CES & Satiated           \\
+                 & \multicolumn{3}{c}{Car example}
+                                                & \multicolumn{3}{c}{Lamp example} \\
+Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
 \midrule
-$Re_{dsub}$ [\%] &     &                   &     &                    \\
-$Re_{isub}$ [\%] &     &                   &     &                    \\
+$Re_{dsub}$ [\%] &     &          &             &     &          &                 \\
+$Re_{isub}$ [\%] &     &          &             &     &          &                 \\
 \midrule
-$Re_{sub}$ [\%]  &     &                   &     &                    \\
+$Re_{sub}$ [\%]  &     &          &             &     &          &                 \\
 \midrule
 $Re_{dinc}$ [\%] & \Sexpr{Re_dinc_ces_car_char}
                        & \Sexpr{Re_dinc_satiated_car_char}
-                                           & \Sexpr{Re_dinc_ces_lamp_char}
-                                                 & \Sexpr{Re_dinc_satiated_lamp_char} \\
+                                  &
+                                                & \Sexpr{Re_dinc_ces_lamp_char}
+                                                      & \Sexpr{Re_dinc_satiated_lamp_char}
+                                                                 &               \\
 $Re_{iinc}$ [\%] & \Sexpr{Re_iinc_ces_car_char}
                        & \Sexpr{Re_iinc_satiated_car_char}
-                                           & \Sexpr{Re_iinc_ces_lamp_char}
-                                                 & \Sexpr{Re_iinc_satiated_lamp_char} \\
+                                  &
+                                                & \Sexpr{Re_iinc_ces_lamp_char}
+                                                      & \Sexpr{Re_iinc_satiated_lamp_char}
+                                                                 &                \\
 \midrule
 $Re_{inc}$ [\%] & \Sexpr{Re_inc_ces_car_char}
                        & \Sexpr{Re_inc_satiated_car_char}
-                                           & \Sexpr{Re_inc_ces_lamp_char}
-                                                 & \Sexpr{Re_inc_satiated_lamp_char} \\
+                                  &
+                                                & \Sexpr{Re_inc_ces_lamp_char}
+                                                      & \Sexpr{Re_inc_satiated_lamp_char}
+                                                                 &                \\
 \midrule
 $Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
                        & \Sexpr{Re_tot_satiated_car_char}
-                                           & \Sexpr{Re_tot_ces_lamp_char}
-                                                 & \Sexpr{Re_tot_satiated_lamp_char} \\
+                                  &
+                                                & \Sexpr{Re_tot_ces_lamp_char}
+                                                      & \Sexpr{Re_tot_satiated_lamp_char}
+                                                                 &                \\
 \bottomrule
 \end{tabular}
 \end{table}
