@@ -547,6 +547,8 @@ Further treatment of macroeconomic rebound
 can be found 
 in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
 in Section~\ref{PartII-sec:calibrating_k} of Part~II.
+Discussion of an energy price effect 
+can be seen in Section~\ref{sec:notes_price_effect} below.
 
 Fig.~\ref{fig:flowchart} shows rebound effects
 arranged in the left-to-right order of their discussion in this paper.
@@ -569,6 +571,7 @@ Names for the decorations are given at the bottom of the figure
   can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
   In several places, including Fig.~\ref{fig:flowchart},
   we use colored backgrounds on rebound effects for visual convenience. 
+  The colors are carried through to figures in Part~II for consistency.
 }
 
 \begin{figure}
@@ -691,9 +694,12 @@ final-to-service efficiency%
   ($\aempl{\eta}$, $\asub{\eta}$, $\ainc{\eta}$, and $\amacro{\eta}$)
   as $\amacro{\eta}$
   to match the nomenclature of \citet{Borenstein:2015aa}.
-  When convenient, the same approach to nomenclature is taken with other quantities such as 
-  the capital cost rate ($\rate{C}_{cap}$) and 
-  maintenance and disposal cost rate ($\rate{C}_{md}$).
+  When convenient, the same approach to nomenclature 
+  is taken with other quantities such as 
+  the capital, 
+  operations and maintenance, and
+  disposal cost rates
+  ($\rate{C}_{cap}$, $\rate{C}_{\om}$, and $\rate{C}_d$, respectively).
 }
 such that
 $\bempl{\eta} < \amacro{\eta}$.
@@ -705,7 +711,8 @@ We call this increased ``capital cost''
 It may also 
 be more costly to operate and maintain (OM) and dispose (d) 
 of the upgraded device
-($\rbempl{C}_{\omd} < \ramacro{C}_{\omd}$). 
+($\rbempl{C}_{\om} < \ramacro{C}_{\om}$ and 
+$\rbempl{C}_d < \ramacro{C}_d$). 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
@@ -715,7 +722,11 @@ at the microeconomic level
 so the energy purchaser (the device user) is a price taker.%
 \footnote{
   Relaxing the exogenous energy price assumption
-  would require a general equilibrium model that is beyond the scope of this paper.
+  would require a general equilibrium model 
+  that is beyond the scope of this paper.
+  However, see Section~\ref{sec:notes_price_effect}
+  where we discuss an energy price effect
+  as an extension of the framework.
 }
 %
 Initially, the device user spends income ($\rorig{M}$)
@@ -809,14 +820,17 @@ of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
 \end{align}
 
 Fourth, indirect energy rates for
-operations and maintenance (e.g., $\rate{E}_{\om}$) and
+operations and maintenance ($\rate{E}_{\om}$), 
+disposal ($\rate{E}_d$), and
 other goods expenditures ($\rate{E}_{o}$)
 are the product 
-of undiscounted expenditures rates~($\rate{C}_{\om}$ and $\rate{C}_o$) and
+of undiscounted expenditures rates
+($\rate{C}_{\om}$, $\rate{C}_d$, and $\rate{C}_o$) and
 the energy intensity of the economy~($I_E$).
 
 \begin{align} \label{eq:indirect_energy_rates}
   \rate{E}_{\om} &= \rate{C}_{\om} I_E \\
+  \rate{E}_d     &= R_{\omega} \rate{C}_d I_E \\
   \rate{E}_o     &= \rate{C}_o I_E \\
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
