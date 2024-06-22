@@ -1142,17 +1142,16 @@ typically change as consumption bundles change,
 whereas the CPE price elasticity remains constant by definition.
 Typically, constant price elasticities (as in the CPE utility model) 
 are approximations that are applicable only to marginal price changes. 
-As we will see in Part~II, 
+As shown in Part~II, 
 these approximations can lead to small
 or large errors depending on the case, 
 in our two case studies overstating 
-substitution rebound by 0.3\% and 5.5\%, 
+substitution rebound by 0.3\% (car) and 5.5\% (lamp), 
 ****
 Change previous numbers to calculations.
 ---MKH
 ****
-respectively 
-relative to the calculation of our exact model,
+relative to our exact model,
 which we introduce next.
 Appendix~\ref{sec:utility_and_elasticities}
 derives changes in price elasticities for non-CPE models.
@@ -1340,7 +1339,7 @@ expansion path into a more general curve instead of a line).
 Demand for certain energy services could satiate 
 as consumers become more affluent, 
 implying income elasticities 
-of the energy service of below one \citep{Greening2000}. 
+of the energy service of less than one \citep{Greening2000}. 
 At the lower bound, 
 the consumer spends all income after the substitution effect on other goods and none on the energy service,
 choices that serve to reduce rebound 
@@ -1493,14 +1492,14 @@ that productivity gains have been the main long-run driver of economic growth
 in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957}.
 Interest in the impact of individual sectors on the whole economy reaches arguably
 even farther back \citep{Quesnay1759, Leontief1986}. 
-Recent work revived the 
+Recent work revived 
 interest in firm- and sector-specific shocks on aggregate output and
-demonstrates that due to the interlinkages between firms and sectors, 
+demonstrates that due to interlinkages between firms and sectors, 
 productivity shocks in a firm or sector 
 can have larger macroeconomic consequences than the original
 shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}. 
 \citet{Foerster2022} estimate
-that \textthreequarters{} of long-run US growth since 1950
+that 3/4 of long-run US growth since 1950
 can be attributed to sector-specific
 (as opposed to aggregrate) trend factors. 
 Because the EEU represents a positive productivity shock,
@@ -1509,7 +1508,7 @@ These kinds of rebounds can be captured
 by a general equilibrium model \citep{Stern2020}, but
 we propose a simple rule for
 incorporating this macroeconomic effect of productivity
-growth into our partial equilibrium framework below.
+growth into our partial equilibrium framework.
 
 Before establishing a formalism for $Re_{macro}$, 
 we clarify the link between consumer theory
@@ -1882,7 +1881,7 @@ because the energy price is assumed exogenous.
 But there are other effects at work
 beyond the device level and outside the boundaries of a
 partial equilibrium analysis.
-One of those effects in an energy price effect.
+One of those effects is an energy price effect.
 This section (and Appendix~\ref{sec:price_effect_appendix})
 shows that our partial equilibrium framework can be extended to 
 obtain an initial estimate of the 
@@ -1896,15 +1895,15 @@ The energy price effect can lead to rebound when
 EEUs are applied to energy conversion devices 
 at a scale that is substantial relative to the economy-wide
 use of energy.
-Examples of conditions when the energy price effect 
-could be significant would include 
+Examples of conditions under which the energy price effect 
+could be significant include 
 replacing all cars in the economy by hybrids and 
 replacing all domestic electric lamps in the economy by LEDs, 
-the examples of Part~II.
+to use the examples from Part~II.
 With reduced energy demand throughout the economy, 
 an energy price reduction can be expected
 ($\bempl{p}_E > \ainc{p}_E$)
-as the lower price rebalances supply and demand.
+as the lower energy price rebalances supply and demand.
 With the now-lower energy price ($\ainc{p}_E$), 
 the device owner has additional freed cash ($\rate{G}_{p_E}$)
 to spend,
@@ -1958,7 +1957,7 @@ for the
 simplest case of a single fuel and a single energy service.
 With careful explication of rebound effects and 
 clear derivation of rebound expressions,
-we advance the analytical foundations for empirical analyses and
+we help advance the analytical foundations for empirical analyses and
 facilitate interdisciplinary understanding of rebound phenomena
 toward the goal of enhancing clarity in the field of energy rebound and
 enabling more robust rebound calculations
@@ -1972,16 +1971,19 @@ Future work could be pursued in several areas.
         (besides the CES utility model, but not a Cobb-Douglas utility model) 
         could be explored for the substitution effect.
   
-  \item This framework could be extended to producer-sided energy rebound effects.
+  \item This framework could be extended to include fuller consideration
+        of producer-sided energy rebound effects.
   
-  \item This framework could be extended to include some of the advanced topics
+  \item This framework could be extended to include 
+        some of the advanced topics
         in \citet{Chan2015} and \citet{Wang2021}, 
         such as multiple fuels or energy services,
         more than one other consumption good, and
         nested utility functions with intermediate inputs.
         
   \item This framework could be extended to include fuel-switching EEUs,
-        wherein the upgraded device uses a different fuel from the original device.
+        wherein the upgraded device uses a different fuel 
+        from the original device.
         
   \item The greenhouse gas emissions implications of energy rebound
         could be evaluated using this framework,
@@ -1999,7 +2001,7 @@ Future work could be pursued in several areas.
 \end{enumerate*}
 
 In Part~II of this paper,
-we help advance clarity in rebound analysis
+we further help advance clarity in rebound analysis
 in three ways. 
 First, 
 we develop a way to visualize 
