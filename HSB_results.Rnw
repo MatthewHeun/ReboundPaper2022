@@ -1210,8 +1210,8 @@ line_label_colour <- "darkgray"
 
 
 <<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
-car_Re_label_angle <- -75
-car_Re_arrow_angle <- pi/180 * 4.5
+car_Re_label_angle <- -73
+car_Re_arrow_angle <- pi/180 * 5
 
 car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                      63300, 78900, 'degree', 
@@ -1236,23 +1236,23 @@ car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        annotation_colour, 
                                        annotation_size-1,
                                        car_Re_label_angle,
-                                     34800, 82000, 'Re[tot] == 0*"%"', 
+                                     36300, 80460, 'Re[tot] == 0*"%"', 
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle,
-                                     35000, 80000, paste0("Re[empl] == '", Re_empl_car_char_perc, "%'"),
+                                     35000, 80100, paste0("Re[empl] == '", Re_empl_car_char_perc, "%'"),
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle,
-                                     37000, 80150, 'Re[sub]', 
+                                     37600, 82130, 'Re[sub]', 
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle + 90,
-                                     36800, 80600, paste0("'", Re_sub_car_char_perc, "%'"), 
+                                     35150, 82050, paste0("'", Re_sub_car_char_perc, "%'"), 
                                        annotation_colour, 
                                        annotation_size - 1,
                                        car_Re_label_angle + 90,
-                                     39700, 80800, 'Re[inc]', 
+                                     39400, 81000, 'Re[inc]', 
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle + 90,
@@ -1282,8 +1282,8 @@ car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        car_Re_label_angle)
 
 car_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
-                                 36000, 80300, car_Re_arrow_angle, 2250, annotation_colour, 0.5, # Re_sub
-                                 38000, 81000, car_Re_arrow_angle, 2900, annotation_colour, 0.5, # Re_inc
+                                 33900, 81800, car_Re_arrow_angle, 2300, annotation_colour, 0.5, # Re_sub
+                                 37270, 81000, car_Re_arrow_angle, 3900, annotation_colour, 0.5, # Re_inc
                                  42650, 79600, car_Re_arrow_angle, 1800, annotation_colour, 0.5) # Re_macro
 
 rebound_results %>% 
