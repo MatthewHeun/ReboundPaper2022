@@ -49,7 +49,8 @@
 
 % Author info
 \title{Energy, expenditure, and consumption aspects of rebound,\\
-        Part I: A rigorous analytical framework}
+        Part I: Foundations of
+        a rigorous analytical framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
 \author[4]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
@@ -331,7 +332,7 @@ rebound effects is a tall order, indeed.
 %++++++++++++++++++++++++++++++
 
 We contend that new clarity is needed.
-A description of rebound that is 
+Specifically, a description of rebound that is 
 %
 \begin{enumerate*}[label={(\roman*)}]
 
@@ -356,7 +357,8 @@ we surmise that reducing global carbon emissions has been hampered, in part,
 by the fact that rebound is not sufficiently included in energy and climate models.
 We suspect that one reason rebound is not sufficiently included
 is the lack of consensus on rebound calculation methods and, hence, rebound magnitude.
-We agree with \citeauthor{Turner:2013aa} that lack of consensus on rebound magnitude
+Building upon \citet{Turner:2013aa}, 
+we contend that lack of consensus on rebound magnitude
 is a symptom of the absence of solid analytical foundations for rebound.
 We posit that developing solid analytical frameworks 
 is difficult because energy rebound is an inherently interdisciplinary topic.
@@ -400,16 +402,20 @@ The key \emph{contributions} of this paper are
   \item development of a
         rebound analysis framework that combines 
         embodied energy effects,
-        operations, maintenance, and disposal effects,
-        and exact expressions for substitution and income effects
+        operations, maintenance, and disposal
+        rebound effects,
+        and exact expressions for substitution 
+        and income rebound effects
 	      under non-marginal energy efficiency increases and 
-        (by implication) non-marginal energy service price decreases, 
+        (by implication) non-marginal energy service price
+        decreases,
         
   \item an operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels, and 
+        rebound effects on 
+        microeconomic and macroeconomic levels, and 
         
   \item an application of the framework to 
-        an energy price effect.
+        an energy price rebound effect.
         
 \end{enumerate*}
 
