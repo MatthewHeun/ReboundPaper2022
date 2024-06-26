@@ -1312,10 +1312,10 @@ rebound_results %>%
 @
 
 
-<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
-car_cost_line_angle <- -26
+<<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+car_cost_line_angle <- -25.5
 car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
-                                   1295, 26600, 'degree', 
+                                   1300, 26598, 'degree', 
                                    stage_colour, orig_size, 0,
                                    777, 26645, 'a', 
                                    abcd_colour, abcd_size, 0,
@@ -1325,11 +1325,11 @@ car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    stage_colour, star_size, 0,
                                    771, 26250, 'c', 
                                    abcd_colour, abcd_size, 0,
-                                   835, 26225, '"^"', 
+                                   835, 26223, '"^"', 
                                    stage_colour, hat_size, 0,
                                    877, 26255, 'd', 
                                    abcd_colour, abcd_size, 0,
-                                   845, 27070, 'bold("_")', 
+                                   855, 27063, 'bold("_")', 
                                    stage_colour, bar_size, 0,
                                    1075, 26885, 'Original~expenditure', 
                                    annotation_colour, annotation_size, car_cost_line_angle,
@@ -1356,7 +1356,7 @@ rebound_results %>%
 @
 
 
-<<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="The consumption plane for the car example. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="The consumption plane for the car example. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
                                     1.005, 1.0015, 'degree', 
                                       stage_colour, orig_size, 
@@ -1669,7 +1669,7 @@ productivity enhancements arising from the more-efficient provision of the
 energy service (lighting).
 
 
-<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_Re_label_angle <- -65
 lamp_Re_arrow_angle <- pi/180 * 13
 lamp_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
@@ -1767,7 +1767,7 @@ rebound_results %>%
 @
 
 
-<<LampCostGraph, echo = FALSE, fig.cap="Expenditure plane for the lamp example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampCostGraph, echo = FALSE, fig.cap="Expenditure plane for the lamp example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_cost_line_angle <- -23.6
 lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                     8.6, 27921.7, 'degree', 
@@ -1813,7 +1813,7 @@ rebound_results %>%
 @
 
 
-<<LampConsGraph, echo=FALSE, warning=FALSE, fig.cap="Consumption plane for the lamp example. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampConsGraph, echo=FALSE, warning=FALSE, fig.cap="Consumption plane for the lamp example. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
                                      1.05, 1.00002, 'degree', 
                                        stage_colour, orig_size,
