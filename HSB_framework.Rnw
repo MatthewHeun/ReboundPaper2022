@@ -1512,7 +1512,8 @@ It is one of the basic tenets of economics
 that productivity gains have been the main long-run driver of economic growth
 in the last couple of centuries \citep{Smith1776, Marx1867, Solow1957}.
 Interest in the impact of individual sectors on the whole economy reaches arguably
-even farther back \citep{Quesnay1759, Leontief1986}. 
+even farther back \citep{Quesnay1759}
+and continues to the present~\citep{Leontief1986}. 
 Recent work revived 
 interest in firm- and sector-specific shocks on aggregate output and
 demonstrates that due to interlinkages between firms and sectors, 
@@ -1637,31 +1638,6 @@ $k = 0$ means there is no macroeconomic effect
 resulting from the energy efficiency upgrade.
 $k > 0$ means that productivity-driven macroeconomic growth has occurred
 with consequent implications for additional energy consumption in the wider economy.
-%The relationship between $k$ and $\MPC$ is given by the multiplier relationship
-
-%\begin{equation} \label{eq:mpc_and_k_converged}
-%  k = \frac{1}{\frac{1}{\MPC} - 1} \; .
-%\end{equation}
-%
-%(See Appendix~\ref{sec:income_macro_mpc} for the derivation 
-%of Eq.~(\ref{eq:mpc_and_k_converged}).)
-
-%A further advantage of using the macro factor approach is that there are
-%many estimates of the magnitude of $\MPC$, 
-%though we stress again that
-%using consumption multipliers is a
-%\emph{representation} of the effect, while the cause is not
-%a demand-side fiscal expansion, but rather
-%energy efficiency on the supply side.%
-%\footnote{
-%  In particular,
-%  this approach avoids the problem of crowding out, since
-%  productive capacity expands, not just expenditure \citep{Gillingham2016}.
-%}
-%
-%A recent review by \citet{Carroll2017} 
-%reports that most empirical estimates show $\MPC$ between 0.2 and 0.6, 
-%with the full range of estimates spanning 0.0 to 0.9.
 
 We assume as a first approximation
 (following \citet{Antal:2014aa} and \citet{Borenstein:2015aa}) 
@@ -1887,7 +1863,7 @@ By so doing, we help advance clarity in the field of energy rebound.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Notes on income expansion and an energy price effect}
+\subsection{Notes on an energy price rebound effect}
 \label{sec:notes_price_effect}
 %++++++++++++++++++++++++++++++
 
@@ -1968,7 +1944,8 @@ widespread adopotion of the EEU throughout the economy.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this paper (Part~I),
-we developed a rigorous analytical framework that
+we developed foundations 
+of a rigorous analytical framework that
 includes all rebound effects
 across energy, expenditure, and consumption aspects with 
 a detailed model of consumer preferences and
@@ -1992,8 +1969,13 @@ Future work could be pursued in several areas.
         (besides the CES utility model, but not a Cobb-Douglas utility model) 
         could be explored for the substitution effect.
   
-  \item This framework could be extended to include fuller consideration
-        of producer-sided energy rebound effects.
+  \item Although this is a consumer-sided framework,
+        we demonstrated that it could be extended 
+        to producer-sided effects such as the 
+        energy price rebound effect. 
+        Further work could explore additional
+        extensions to other producer-sided 
+        energy rebound effects.
   
   \item This framework could be extended to include 
         some of the advanced topics
