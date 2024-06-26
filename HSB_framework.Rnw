@@ -693,6 +693,7 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
   (via heat or work) 
   in the physical world.
 }
+%
 is captured by the variables $R_\alpha$ and $R_\omega$.
 See Appendix~\ref{sec:budget_constraint} for details.)
 
@@ -744,7 +745,7 @@ so the energy purchaser (the device user) is a price taker.%
   would require a general equilibrium model 
   that is beyond the scope of this paper.
   However, see Section~\ref{sec:notes_price_effect}
-  where we discuss an energy price effect
+  where we discuss an energy price rebound effect
   as an extension of the framework.
 }
 %
@@ -854,7 +855,8 @@ the energy intensity of the economy~($I_E$).
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
 %
-Indirect energy rates for disposal costs include discounting.
+Note that indirect energy rates for disposal effects
+are obtained from disposal costs that include discounting.
 (See Appendix~\ref{sec:budget_constraint} for details on cost discounting.)
 
 
@@ -1075,8 +1077,8 @@ is given by
 \label{sec:sub_effect_main_paper}
 %------------------------------
 
-Neoclassical consumer theory 
-determines consumer behavior through utility mazimization. 
+Neoclassical economic theory 
+determines consumer behavior through utility maximization. 
 It decomposes price-induced behavior change into
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -1164,13 +1166,13 @@ are approximations that are applicable only to marginal price changes.
 As shown in Part~II, 
 these approximations can lead to small
 or large errors depending on the case, 
-in our two case studies overstating 
-substitution rebound by 0.3\% (car) and 5.5\% (lamp), 
-****
-Change previous numbers to calculations.
----MKH
-****
-relative to our exact model,
+% in our two case studies overstating 
+% substitution rebound by 0.3\% (car) and 5.5\% (lamp), 
+% ****
+% Change previous numbers to calculations.
+% ---MKH
+% ****
+relative to the exact model,
 which we introduce next.
 Appendix~\ref{sec:utility_and_elasticities}
 derives changes in price elasticities for non-CPE models.
