@@ -1313,21 +1313,21 @@ rebound_results %>%
 
 
 <<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
-car_cost_line_angle <- -33
+car_cost_line_angle <- -26
 car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    1295, 26600, 'degree', 
                                    stage_colour, orig_size, 0,
-                                   777, 26640, 'a', 
+                                   777, 26645, 'a', 
                                    abcd_colour, abcd_size, 0,
-                                   767, 26576, 'b', 
+                                   767, 26610, 'b', 
                                    abcd_colour, abcd_size, 0,
-                                   791, 26530, '"*"', 
+                                   791, 26330, '"*"', 
                                    stage_colour, star_size, 0,
-                                   766, 26475, 'c', 
+                                   771, 26250, 'c', 
                                    abcd_colour, abcd_size, 0,
-                                   835, 26435, '"^"', 
+                                   835, 26225, '"^"', 
                                    stage_colour, hat_size, 0,
-                                   873, 26480, 'd', 
+                                   877, 26255, 'd', 
                                    abcd_colour, abcd_size, 0,
                                    845, 27070, 'bold("_")', 
                                    stage_colour, bar_size, 0,
@@ -1335,9 +1335,9 @@ car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                    annotation_colour, annotation_size, car_cost_line_angle,
                                    930, 26495, 'After~exp.~sav.', 
                                    annotation_colour, annotation_size, car_cost_line_angle,
-                                   720, 26620, 'After~empl.', 
+                                   720, 26415, 'After~empl.', 
                                    annotation_colour, annotation_size-1, car_cost_line_angle,
-                                   705, 26580, 'After~CV', 
+                                   710, 26360, 'After~CV', 
                                    annotation_colour, annotation_size-1, car_cost_line_angle)
 
 rebound_results %>% 
