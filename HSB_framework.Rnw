@@ -414,7 +414,7 @@ The key \emph{contributions} of this paper are
         rebound effects on 
         microeconomic and macroeconomic levels, and 
         
-  \item an application of the framework to 
+  \item a discussion of extending the framework to 
         an energy price rebound effect.
         
 \end{enumerate*}
@@ -471,8 +471,9 @@ an income effect,
 with direct and indirect partitions for each.
 All combinations are possible.
 
- ``Emplacement'' is a new term we introduce 
-to collect indirect effects of the devices, 
+``Emplacement'' is a new term we introduce 
+to collect effects associated with installing 
+higher-efficiency devices, 
 including 
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -553,7 +554,7 @@ Further treatment of macroeconomic rebound
 can be found 
 in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
 in Section~\ref{PartII-sec:calibrating_k} of Part~II.
-Discussion of an energy price effect 
+Discussion of an energy price rebound effect 
 can be seen in Section~\ref{sec:notes_price_effect} below.
 
 Fig.~\ref{fig:flowchart} shows rebound effects
@@ -680,7 +681,19 @@ energy embodied in the device during
 its production ($E_{emb}$ in MJ) to create
 undiscounted cost rates ($\rate{C}_{cap}$ and $\rate{C}_d$ in \$/yr) and
 embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
-(Cost discounting is captured by the variables $R_\alpha$ and $R_\omega$. 
+(Cost discounting%
+\footnote{
+  We discount money because 
+  purchasing power changes with time. 
+  In contrast,
+  we do not discount energy, 
+  because there is no temporal variation
+  in the ability of energy
+  to effect changes 
+  (via heat or work) 
+  in the physical world.
+}
+is captured by the variables $R_\alpha$ and $R_\omega$.
 See Appendix~\ref{sec:budget_constraint} for details.)
 
 Energy is available at price $p_E$ (in \$/MJ).
