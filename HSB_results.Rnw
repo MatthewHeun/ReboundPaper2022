@@ -1209,8 +1209,8 @@ line_label_colour <- "darkgray"
 
 
 
-<<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments. **** MKH to fix label positions. ****", fig.width=6, fig.height=4, fig.align = "center">>=
-car_Re_label_angle <- -73
+<<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+car_Re_label_angle <- -74
 car_Re_arrow_angle <- pi/180 * 5
 
 car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
@@ -1248,27 +1248,27 @@ car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle + 90,
-                                     35150, 82050, paste0("'", Re_sub_car_char_perc, "%'"), 
+                                     35150, 82060, paste0("'", Re_sub_car_char_perc, "%'"), 
                                        annotation_colour, 
                                        annotation_size - 1,
                                        car_Re_label_angle + 90,
-                                     39400, 81000, 'Re[inc]', 
+                                     39200, 81330, 'Re[inc]', 
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle + 90,
-                                     39000, 81300, paste0("'", Re_inc_car_char_perc, "%'"), 
+                                     38700, 81600, paste0("'", Re_inc_car_char_perc, "%'"), 
                                        annotation_colour, 
                                        annotation_size - 1,
                                        car_Re_label_angle + 90,
-                                     44000, 79500, 'Re[macro]', 
-                                       annotation_colour, 
-                                       annotation_size - 2,
-                                       car_Re_label_angle + 90,
-                                     43890, 80000, paste0("'", Re_macro_car_char_perc, "%'"), 
+                                     44300, 79650, 'Re[macro]', 
                                        annotation_colour, 
                                        annotation_size - 1,
                                        car_Re_label_angle + 90,
-                                     43400, 82400, paste0("Re[tot] == '", Re_tot_car_char_perc, "%'"),
+                                     43900, 79950, paste0("'", Re_macro_car_char_perc, "%'"), 
+                                       annotation_colour, 
+                                       annotation_size - 1,
+                                       car_Re_label_angle + 90,
+                                     43500, 82400, paste0("Re[tot] == '", Re_tot_car_char_perc, "%'"),
                                        annotation_colour, 
                                        annotation_size,
                                        car_Re_label_angle,
@@ -1283,8 +1283,8 @@ car_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
 
 car_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
                                  33900, 81800, car_Re_arrow_angle, 2300, annotation_colour, 0.5, # Re_sub
-                                 37270, 81000, car_Re_arrow_angle, 3900, annotation_colour, 0.5, # Re_inc
-                                 42650, 79600, car_Re_arrow_angle, 1800, annotation_colour, 0.5) # Re_macro
+                                 36970, 81300, car_Re_arrow_angle, 3900, annotation_colour, 0.5, # Re_inc
+                                 42900, 79700, car_Re_arrow_angle, 2400, annotation_colour, 0.5) # Re_macro
 
 rebound_results %>% 
   ReboundTools::path_graphs(cases = "Car", 
