@@ -81,7 +81,8 @@ is a key greenhouse gas emissions mitigation measure,
 but rebound can ``take back'' energy savings.
 However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
-In Part~I, we developed a rigorous analytical framework
+In Part~I, we developed foundations of 
+a rigorous analytical framework
 that is approachable for both energy analysts and economists. 
 In this paper (Part~II of two),
 we develop energy, expenditure, and consumption planes, 
@@ -94,7 +95,8 @@ we calculate and show total rebound for two examples:
 energy efficiency upgrades of
 a car (56.2\%) and
 an electric lamp (67.0\%).
-Comparison of our rebound values to previous values is provided.
+We compare our rebound values to previous values
+in the literature.
 Finally, we provide information about new open source software tools 
 for calculating magnitudes and
 visualizing rebound effects using the framework.
@@ -149,7 +151,8 @@ We said that
 \end{quote}
 
 To help improve clarity in the rebound field, 
-we developed in Part~I a rigorous analytical framework 
+we developed in Part~I foundations for 
+a rigorous analytical framework 
 for energy rebound, 
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
@@ -173,37 +176,26 @@ See Appendix~\ref{sec:nomenclature} for nomenclature.)
 \end{figure}
 
 In this paper (Part~II), we make further progress toward the goal of clarity
-in four ways.
-First, we develop a new way to visualize 
+with five contributions.
+First, we develop a new way to communicate
 components and mechanisms of rebound
-(rebound planes).
-Second, we make a first attempt at calculating the macro rebound effect 
-via a macro factor ($k$). 
+via mutually consistent and numerically precise
+visualizations of rebound effects
+in energy, expenditure, and consumption planes.
+Second, we calculate the macro rebound effect 
+via a macro factor ($k$) selected to be 3. 
 Third, we apply the framework to two energy efficiency upgrades (EEUs) 
 (a car and an electric lamp)
-with detailed explication of the examples.
-Finally, we show 
-calculations of rebound magnitudes for both examples.
-
-The key contributions of this paper are 
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item development of mutually consistent and
-        numerically precise visualizations of rebound effects
-        in energy, expenditure, and consumption planes,
-        
-  \item operationalization of the macro factor ($k$) to link
-        microeconomic and macroeconomic rebound levels,
-        
-  \item presentation of new rebound values for car and electric lamp 
-        upgrades based on the framework from Part~I, and 
-        
-  \item documentation of new open source software tools
-        to calculate and visualize rebound 
-        for any EEU.
-  
-\end{enumerate*}
+with detailed explication 
+of numerical results for the examples.
+Fourth, we apply the framework to
+calculate numerical values 
+for the producer-sided price effect rebound
+extension to the framework.
+Finally, we provide information 
+about new open source software tools
+for calculating and visualizing rebound 
+for any energy efficiency upgrade.
 
 The remainder of this paper is structured as follows.
 Section~\ref{sec:methods} describes data for the examples, 
@@ -396,7 +388,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
   \midrule
   Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & Lifetime (14 year) annual, averaged operation and maintenance \\
-                                                                &                  &                                    & (O+M) costs = sum of insurance, maintenance, repairs, taxes, and \\
+                                                                &                  &                                    & (O\&M) costs = sum of insurance, maintenance, repairs, taxes, and \\
                                                                 &                  &                                    & fees (excluding financing, depreciation, fuel). 5-year Ford Fusion \\
                                                                 &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_gasoline}. 5-year Ford Fusion Hybrid \\
                                                                 &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_hybrid}. Extrapolation of O\&M costs \\

@@ -89,7 +89,7 @@ In this paper (Part~I of two),
 we advance a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
-We develop a rebound analysis framework that
+We develop foundations of rebound analysis framework that
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
