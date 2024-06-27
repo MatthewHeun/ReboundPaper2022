@@ -449,7 +449,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   Real discount rate                                        & \Sexpr{r_car_char}           & **** Info here from GS justifying the value. **** \\  
   $r$ [1/yr]                                                &               &               \\
   \midrule
-  Macro factor                                              & \Sexpr{k_car_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Macro factor                                              & \Sexpr{k_car_char}           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -682,7 +682,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Real discount rate                                        & \Sexpr{r_lamp_char}           & **** Info here from GS justifying the value. **** \\  
   $r$ [1/yr]                                                &               &               \\
   \midrule
-  Macro factor                                              & \Sexpr{k_lamp_char}           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Macro factor                                              & \Sexpr{k_lamp_char}           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\  
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -772,7 +772,7 @@ Specifically,
         the $x$- and $y$-axes of the energy plane, respectively;
   
   \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$, 
-        discounted when appropriate) are placed on 
+        discounted for beginning of life and end of life costs) are placed on 
         the $x$- and $y$-axes of the expenditure plane, respectively; and
   
   \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
@@ -1483,7 +1483,7 @@ the link between macroeconomic and microeconomic rebound
 is largely unexplored, 
 so we assume a value of $k = 1$ for both examples, initially.
 We return to the value for $k$
-in the Discussion (Section~\ref{sec:calibrating_k}).
+in the Discussion (Section~\ref{sec:calculating_k}).
 With $k$ assumed to be 1,
 the \macroeffect{} leads to macroeconomic rebound
 ($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\% 
@@ -1989,7 +1989,7 @@ Total rebound ($Re_{tot}$) goes from
 \Sexpr{Re_tot_ces_car_char}\% to
 \Sexpr{Re_tot_satiated_car_char}\%.
 On the other hand, 
-the lamp example shows very little change 
+the lamp example shows negligible change 
 in total rebound ($Re_{tot}$), 
 moving 
 from \Sexpr{Re_tot_ces_lamp_char}\% 
@@ -2112,8 +2112,8 @@ in price elasticity for both case studies.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{A first attempt at calculating a macro rebound}
-\label{sec:calibrating_k}
+\subsection{A first attempt at calculating macro rebound}
+\label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
 
 <<Calibrate_k, echo = FALSE>>=
@@ -2242,7 +2242,7 @@ f_lmp <- function(Re_name, string_val = TRUE) {
 @
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
-and selection of $k = 3$ in Section~\ref{sec:calibrating_k} 
+and selection of $k = 3$ in Section~\ref{sec:calculating_k} 
 enable fuller comparisons between the car and lamp examples. 
 Several points can be made.
 
@@ -2361,7 +2361,7 @@ giving an appearance of a ``black box'' calculation approach.%
 \footnote{
   That said, without the top-down approaches,
   we would not have the information needed to calibrate 
-  the macro factor ($k$) in Section~\ref{sec:calibrating_k}.
+  the macro factor ($k$) in Section~\ref{sec:calculating_k}.
 }
 
 Second, helpful insights can be gained
@@ -2429,7 +2429,7 @@ and our bottom-up approach for calculating total rebound.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Price effect}
+\subsection{Energy price effect rebound}
 \label{sec:price_effect_results}
 %++++++++++++++++++++++++++++++
 
@@ -2455,7 +2455,7 @@ For the lamp example,
 a median U.S.\ household consumes about
 10,000 kW$\cdot$hr/yr of electricity
 \citep{U.S.-Energy-Information-Agency:2023aa}.
-Given that there are 2.5 persons per household
+Given that there are 2.5 persons per U.S.\ household
 \citep{Statista:2024aa}, 
 the consumer consumes electricity at a rate of 
 $\rorig{E} = 4000$~kW$\cdot$hr/yr.
@@ -2559,7 +2559,7 @@ ggplot2::ggplot() +
   ggplot2::geom_text(data = p_E_annotation_df, 
                      mapping = ggplot2::aes(x = f_EEU, y = Re_p_E, label = lab, angle = rot), 
                      parse = TRUE, 
-                     colour = "gray",
+                     colour = "gray30",
                      size = 3) +
   ggplot2::facet_wrap(facets = "Case") +
   ggplot2::scale_x_continuous(name = expression(f[EEU]*" [-]"), 
@@ -2616,7 +2616,7 @@ price effect rebound is $Re_{p_E} =
 \Sexpr{sprintf(Re_p_E_lamp_100 * 100, fmt = "%.1f")}$\%.
 Combined with consumer sided rebound of 
 \Sexpr{sprintf(Re_tot_lamp_k_3*100, fmt = "%.1f")}\%
-from Section~\ref{sec:calibrating_k}, 
+from Section~\ref{sec:calculating_k}, 
 the sum of consumer-sided and supply-side rebound is
 \Sexpr{sprintf(Re_cons_supply_lamp*100, fmt = "%.1f")}\%,
 demonstrating that backfire could occur under conditions 
