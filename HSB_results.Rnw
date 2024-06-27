@@ -190,7 +190,7 @@ with detailed explication
 of numerical results for the examples.
 Fourth, we apply the framework to
 calculate numerical values 
-for the producer-sided price effect rebound
+for the producer-sided energy price effect rebound
 extension to the framework.
 Finally, we provide information 
 about new open source software tools
@@ -2612,7 +2612,7 @@ Re_cons_supply_lamp <- Re_tot_lamp_k_3 + Re_p_E_lamp_100
 At 100\% penetration of LED lamps ($f_{EEU} = 1$) and
 at the nominal energy price elasticity of supply
 ($\varepsilon_{\rate{Q}_{E},p_E} = \Sexpr{eps_Q_dot_E_p_E_lamp}$), 
-price effect rebound is $Re_{p_E} = 
+energy price effect rebound is $Re_{p_E} = 
 \Sexpr{sprintf(Re_p_E_lamp_100 * 100, fmt = "%.1f")}$\%.
 Combined with consumer sided rebound of 
 \Sexpr{sprintf(Re_tot_lamp_k_3*100, fmt = "%.1f")}\%
@@ -2637,14 +2637,14 @@ by
         visualizations of rebound effects
         in energy, expenditure, and consumption planes, 
         
-  \item operationalizing the macro factor and selecting $k = 3$,
+  \item operationalizing the macro factor,
 
   \item documenting in detail new calculations of rebound 
         for car and lighting  
         upgrades,
         
   \item showing the extensibility of our framework 
-        by applying it to estimate price effect rebound, and
+        by applying it to estimate energy price effect rebound, and
         
   \item providing information about new open source software tools
         for calculating and visualizing rebound 
