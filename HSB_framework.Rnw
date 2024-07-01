@@ -1166,12 +1166,6 @@ are approximations that are applicable only to marginal price changes.
 As shown in Part~II, 
 these approximations can lead to small
 or large errors depending on the case, 
-% in our two case studies overstating 
-% substitution rebound by 0.3\% (car) and 5.5\% (lamp), 
-% ****
-% Change previous numbers to calculations.
-% ---MKH
-% ****
 relative to the exact model,
 which we introduce next.
 Appendix~\ref{sec:utility_and_elasticities}
@@ -2164,7 +2158,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Energy price effect}
+\section{Energy price effect rebound}
 \label{sec:price_effect_appendix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
