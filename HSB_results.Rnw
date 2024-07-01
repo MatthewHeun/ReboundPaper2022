@@ -1978,6 +1978,226 @@ we use $k = 3$.
 
 
 %++++++++++++++++++++++++++++++
+\subsection{Comparison between the car and lamp case studies}
+\label{sec:case_study_comparison}
+%++++++++++++++++++++++++++++++
+
+<<Formatters, include=FALSE>>=
+# Functions to extract and format numbers for rebound calculations below.
+# The goal of these functions is to provide a short function call 
+# to fit into the table nicely.
+f_car <- function(Re_name, string_val = TRUE) {
+  out_val <- rebound_analysis_with_cal_k %>% 
+    dplyr::filter(.data[["Case"]] == "Car") %>% 
+    magrittr::extract2(Re_name) %>% 
+    magrittr::multiply_by(100)
+  if (string_val) {
+    return(format(round(out_val, 1), nsmall = 1))
+  } else {
+    return(out_val)
+  }
+}
+f_lmp <- function(Re_name, string_val = TRUE) {
+  out_val <- rebound_analysis_with_cal_k %>% 
+    dplyr::filter(.data[["Case"]] == "Lamp") %>% 
+    magrittr::extract2(Re_name) %>% 
+    magrittr::multiply_by(100)
+  if (string_val) {
+    return(format(round(out_val, 1), nsmall = 1))
+  } else {
+    return(out_val)
+  } 
+}
+@
+
+Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
+and selection of $k = 3$ in Section~\ref{sec:calculating_k} 
+enable fuller comparisons between the car and lamp examples. 
+Several points can be made.
+
+First, 
+the magnitude of every rebound effect is different between the two examples, 
+the exception being direct emplacement rebound ($Re_{dempl}$)
+which is always 0.0\% by definition.
+The implication is that every EEU needs to be analyzed separately. 
+Values for rebound effects  
+for one EEU should never be assumed to apply to a different EEU.
+
+Second, 
+one cannot know \emph{a-priori} which rebound effects
+will be large and which will be small
+for a given EEU.
+Furthermore, some rebound effects are dependent upon economic parameters,
+such as energy intensity ($I_E$).
+Thus, it is important to calculate the magnitude of all rebound effects 
+for each EEU in each economy.
+
+Third,
+the two examples illustrate the fact that 
+embodied energy rebound ($Re_{emb}$) can be positive or negative,
+as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
+The car's embodied energy rebound is positive ($\Sexpr{f_car("Re_emb")}$\%) 
+because of the high embodied energy of the hybrid's battery
+relative to the internal combustion engine vehicle. 
+Although the LED lamp's embodied energy is larger than the 
+incandescent lamp's embodied energy, 
+the LED lamp's embodied energy rebound is 
+small but negative ($\Sexpr{f_lmp("Re_emb")}$\%),
+due to the longer life of the LED lamp compared to the incandescent lamp.
+Thus, each EEU should be analyzed independently for its embodied energy rebound.
+
+Fourth,
+macro effect rebound is different between the two examples, 
+owing to differences in net income ($\raempl{N}$) relative to expected savings ($\Sdot$).
+(For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
+For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
+The efficiency gain for the lamp is far greater than the efficiency gain for the car,
+leading to much different rates of net income ($\raempl{N}$) and
+different macro rebound values.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Comparison to previous rebound estimates} 
+\label{sec:comparison_to_other_rebound_estimates}
+%++++++++++++++++++++++++++++++
+
+Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
+compare car and lamp results (with $k = 3$) to 
+results from previous studies.
+% For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
+The suite of comparison studies is neither comprehensive nor
+definitive of car and lamp EEUs; 
+rather, they are examples that show the sort of calculations and estimations
+carried out in the general literature using a variety of methods. 
+That said, many of the studies are highly cited,
+thereby carrying sufficient academic weight for our purposes.
+Tables~\ref{tab:rebound_car_comparisons} 
+and~\ref{tab:rebound_lamp_comparisons}
+and their associated references 
+enable two types of observations, comparing
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item coverage of rebound components and
+  
+  \item magnitudes and associated calculation or estimation methods.
+    
+\end{enumerate*}
+
+<<CarLiteratureComparisonTable, child="pieces/Re_car_comparison_table.Rnw">>=
+@
+
+<<LampLiteratureComparisonTable, child="pieces/Re_lamp_comparison_table.Rnw">>=
+@
+
+First, we see that none of the comparison studies
+report all rebound effects considered in this paper. 
+Also, no previous studies report either emplacement rebound 
+($Re_{empl} = Re_{emb} + Re_{\omd}$)
+or include all of direct and indirect, substitution and
+income microeconomic rebound effect combinations.
+In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
+In fact, only 4 and 5 of the 10 studies
+in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
+Therefore, by carefully including all rebound components 
+in the framework and 
+elucidating all rebound components in Part~II, we are 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item helping to advance conceptual clarity 
+        in the field of energy rebound, which
+  
+  \item may enable future studies to estimate a broader range of rebound components.
+    
+\end{enumerate*}
+
+We also observe that studies which provide total rebound 
+are based on a top-down calculation of overall, economy-wide rebound, 
+rather than the bottom-up ``sum-of-components'' approach 
+that we employ.
+That finding is instructive. 
+It supports the view that
+a rigorous analysis framework that sets out individual rebound components
+has been missing, which
+informed the objective for Part~I of this paper.
+Further, the finding means that 
+comparisons between top-down estimations or calculations 
+of total, economy-wide rebound 
+may also be of limited value,
+because the rebound effects included or excluded may not be clear, 
+giving an appearance of a ``black box'' calculation approach.%
+\footnote{
+  That said, without the top-down approaches,
+  we would not have the information needed to calibrate 
+  the macro factor ($k$) in Section~\ref{sec:calculating_k}.
+}
+
+Second, helpful insights can be gained
+from comparison of rebound magnitudes and calculation methods.
+Greatest alignment between our values and earlier values
+appears within the direct (microeconomic) rebound ($Re_{dir}$) column
+in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}.
+Our car ($\Sexpr{f_car("Re_dir")}$\%) and lamp ($\Sexpr{f_lmp("Re_dir")}$\%) values
+are in the lower half of the comparison studies
+for both cases (10\% to 49\% for the car and 10\% to 55\% for the lamp).
+This alignment may be due to the easier determination
+of direct rebound, from either empirical data
+(e.g., \citet{Small:2007aa}) or
+via own price elasticities (e.g., \citet{Chitnis:2015}).%
+\footnote{
+  Also worthy of note is that direct (microeconomic) rebound 
+  of personal transport may be the most-studied subfield 
+  in the rebound literature and likely the only topic with enough studies
+  to enable meta-reviews such as 
+  \citet{Sorrell:2009aa}, 
+  \citet{Dimitropoulos:2018aa}, and 
+  \citet{Gillingham:2020aa}.
+}
+
+<<calculate_without_macro, echo=FALSE>>=
+Re_indir_no_macro_car <- f_car("Re_indir", string_val = FALSE) - f_car("Re_macro", string_val = FALSE)
+Re_indir_no_macro_car_str <- format(round(Re_indir_no_macro_car, 1), nsmall = 1)
+Re_indir_no_macro_lamp <- f_lmp("Re_indir", string_val = FALSE) - f_lmp("Re_macro", string_val = FALSE)
+Re_indir_no_macro_lamp_str <- format(round(Re_indir_no_macro_lamp, 1), nsmall = 1)
+@
+For indirect rebound ($Re_{indir}$),
+there is little agreement on the magnitude of rebound effects.
+Our values for 
+car ($\Sexpr{f_car("Re_indir")}$\%) and 
+lamp ($\Sexpr{f_lmp("Re_indir")}$\%) indirect rebound magnitudes
+are higher than those found in the comparison studies
+for either the car (6\% to 23\%) or the lamp (8\% to 16\%) cases.
+The most likely cause of our larger indirect rebound values
+is that we include both micro and macro rebound levels,
+whereas the comparison studies 
+focus mainly on microeconomic rebound only
+(commonly via cross price elasticities).
+In other words, 
+comparisons of our indirect rebound values with the studies
+in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
+may be too simple and not very meaningful,
+as we (alone) include macro-level effects in indirect rebound. 
+If we exclude $Re_{macro}$ from $Re_{indir}$, 
+our indirect microeconomic rebound values become 
+\Sexpr{Re_indir_no_macro_car_str}\% (car) and
+\Sexpr{Re_indir_no_macro_lamp_str}\% (lamp),
+which fit within the ranges reported by the
+car ($6$\% to $23$\%) and lamp ($-41$\% to $16$\%)
+comparison studies.
+
+For total rebound ($Re_{tot}$),
+our values of
+$\Sexpr{f_car("Re_tot")}$\% (car) and
+$\Sexpr{f_lmp("Re_tot")}$\% (lamp)
+are very close to those in the comparison studies for both the car (49\% to 51\%) and
+lamp (43\% to 51\%) examples.
+Beyond that, comparisons (as noted earlier) are inhibited
+by methodological differences between previous studies (top-down methods)
+and our bottom-up approach for calculating total rebound.
+
+
+%++++++++++++++++++++++++++++++
 \subsection{Comparison of CES with satiated and 
             constant price elasticity (CPE) utility models}
 \label{sec:utility_comparison}
@@ -2290,226 +2510,6 @@ the CPE model would overstate the substitution rebound.
 Appendix~\ref{sec:price_elasticities_sensitivity}
 quantifies the change 
 in price elasticity for both case studies.
-
-
-%++++++++++++++++++++++++++++++
-\subsection{Comparison between the car and lamp case studies}
-\label{sec:case_study_comparison}
-%++++++++++++++++++++++++++++++
-
-<<Formatters, include=FALSE>>=
-# Functions to extract and format numbers for rebound calculations below.
-# The goal of these functions is to provide a short function call 
-# to fit into the table nicely.
-f_car <- function(Re_name, string_val = TRUE) {
-  out_val <- rebound_analysis_with_cal_k %>% 
-    dplyr::filter(.data[["Case"]] == "Car") %>% 
-    magrittr::extract2(Re_name) %>% 
-    magrittr::multiply_by(100)
-  if (string_val) {
-    return(format(round(out_val, 1), nsmall = 1))
-  } else {
-    return(out_val)
-  }
-}
-f_lmp <- function(Re_name, string_val = TRUE) {
-  out_val <- rebound_analysis_with_cal_k %>% 
-    dplyr::filter(.data[["Case"]] == "Lamp") %>% 
-    magrittr::extract2(Re_name) %>% 
-    magrittr::multiply_by(100)
-  if (string_val) {
-    return(format(round(out_val, 1), nsmall = 1))
-  } else {
-    return(out_val)
-  } 
-}
-@
-
-Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
-and selection of $k = 3$ in Section~\ref{sec:calculating_k} 
-enable fuller comparisons between the car and lamp examples. 
-Several points can be made.
-
-First, 
-the magnitude of every rebound effect is different between the two examples, 
-the exception being direct emplacement rebound ($Re_{dempl}$)
-which is always 0.0\% by definition.
-The implication is that every EEU needs to be analyzed separately. 
-Values for rebound effects  
-for one EEU should never be assumed to apply to a different EEU.
-
-Second, 
-one cannot know \emph{a-priori} which rebound effects
-will be large and which will be small
-for a given EEU.
-Furthermore, some rebound effects are dependent upon economic parameters,
-such as energy intensity ($I_E$).
-Thus, it is important to calculate the magnitude of all rebound effects 
-for each EEU in each economy.
-
-Third,
-the two examples illustrate the fact that 
-embodied energy rebound ($Re_{emb}$) can be positive or negative,
-as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
-The car's embodied energy rebound is positive ($\Sexpr{f_car("Re_emb")}$\%) 
-because of the high embodied energy of the hybrid's battery
-relative to the internal combustion engine vehicle. 
-Although the LED lamp's embodied energy is larger than the 
-incandescent lamp's embodied energy, 
-the LED lamp's embodied energy rebound is 
-small but negative ($\Sexpr{f_lmp("Re_emb")}$\%),
-due to the longer life of the LED lamp compared to the incandescent lamp.
-Thus, each EEU should be analyzed independently for its embodied energy rebound.
-
-Fourth,
-macro effect rebound is different between the two examples, 
-owing to differences in net income ($\raempl{N}$) relative to expected savings ($\Sdot$).
-(For the car, $Re_{macro}$ is $\Sexpr{f_car("Re_macro")}$\%.
-For the lamp, $Re_{macro}$ is $\Sexpr{f_lmp("Re_macro")}$\%.)
-The efficiency gain for the lamp is far greater than the efficiency gain for the car,
-leading to much different rates of net income ($\raempl{N}$) and
-different macro rebound values.
-
-
-%++++++++++++++++++++++++++++++
-\subsection{Comparison to previous rebound estimates} 
-\label{sec:comparison_to_other_rebound_estimates}
-%++++++++++++++++++++++++++++++
-
-Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-compare car and lamp results (with $k = 3$) to 
-results from previous studies.
-% For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
-The suite of comparison studies is neither comprehensive nor
-definitive of car and lamp EEUs; 
-rather, they are examples that show the sort of calculations and estimations
-carried out in the general literature using a variety of methods. 
-That said, many of the studies are highly cited,
-thereby carrying sufficient academic weight for our purposes.
-Tables~\ref{tab:rebound_car_comparisons} 
-and~\ref{tab:rebound_lamp_comparisons}
-and their associated references 
-enable two types of observations, comparing
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item coverage of rebound components and
-  
-  \item magnitudes and associated calculation or estimation methods.
-    
-\end{enumerate*}
-
-<<CarLiteratureComparisonTable, child="pieces/Re_car_comparison_table.Rnw">>=
-@
-
-<<LampLiteratureComparisonTable, child="pieces/Re_lamp_comparison_table.Rnw">>=
-@
-
-First, we see that none of the comparison studies
-report all rebound effects considered in this paper. 
-Also, no previous studies report either emplacement rebound 
-($Re_{empl} = Re_{emb} + Re_{\omd}$)
-or include all of direct and indirect, substitution and
-income microeconomic rebound effect combinations.
-In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
-In fact, only 4 and 5 of the 10 studies
-in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
-Therefore, by carefully including all rebound components 
-in the framework and 
-elucidating all rebound components in Part~II, we are 
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item helping to advance conceptual clarity 
-        in the field of energy rebound, which
-  
-  \item may enable future studies to estimate a broader range of rebound components.
-    
-\end{enumerate*}
-
-We also observe that studies which provide total rebound 
-are based on a top-down calculation of overall, economy-wide rebound, 
-rather than the bottom-up ``sum-of-components'' approach 
-that we employ.
-That finding is instructive. 
-It supports the view that
-a rigorous analysis framework that sets out individual rebound components
-has been missing, which
-informed the objective for Part~I of this paper.
-Further, the finding means that 
-comparisons between top-down estimations or calculations 
-of total, economy-wide rebound 
-may also be of limited value,
-because the rebound effects included or excluded may not be clear, 
-giving an appearance of a ``black box'' calculation approach.%
-\footnote{
-  That said, without the top-down approaches,
-  we would not have the information needed to calibrate 
-  the macro factor ($k$) in Section~\ref{sec:calculating_k}.
-}
-
-Second, helpful insights can be gained
-from comparison of rebound magnitudes and calculation methods.
-Greatest alignment between our values and earlier values
-appears within the direct (microeconomic) rebound ($Re_{dir}$) column
-in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}.
-Our car ($\Sexpr{f_car("Re_dir")}$\%) and lamp ($\Sexpr{f_lmp("Re_dir")}$\%) values
-are in the lower half of the comparison studies
-for both cases (10\% to 49\% for the car and 10\% to 55\% for the lamp).
-This alignment may be due to the easier determination
-of direct rebound, from either empirical data
-(e.g., \citet{Small:2007aa}) or
-via own price elasticities (e.g., \citet{Chitnis:2015}).%
-\footnote{
-  Also worthy of note is that direct (microeconomic) rebound 
-  of personal transport may be the most-studied subfield 
-  in the rebound literature and likely the only topic with enough studies
-  to enable meta-reviews such as 
-  \citet{Sorrell:2009aa}, 
-  \citet{Dimitropoulos:2018aa}, and 
-  \citet{Gillingham:2020aa}.
-}
-
-<<calculate_without_macro, echo=FALSE>>=
-Re_indir_no_macro_car <- f_car("Re_indir", string_val = FALSE) - f_car("Re_macro", string_val = FALSE)
-Re_indir_no_macro_car_str <- format(round(Re_indir_no_macro_car, 1), nsmall = 1)
-Re_indir_no_macro_lamp <- f_lmp("Re_indir", string_val = FALSE) - f_lmp("Re_macro", string_val = FALSE)
-Re_indir_no_macro_lamp_str <- format(round(Re_indir_no_macro_lamp, 1), nsmall = 1)
-@
-For indirect rebound ($Re_{indir}$),
-there is little agreement on the magnitude of rebound effects.
-Our values for 
-car ($\Sexpr{f_car("Re_indir")}$\%) and 
-lamp ($\Sexpr{f_lmp("Re_indir")}$\%) indirect rebound magnitudes
-are higher than those found in the comparison studies
-for either the car (6\% to 23\%) or the lamp (8\% to 16\%) cases.
-The most likely cause of our larger indirect rebound values
-is that we include both micro and macro rebound levels,
-whereas the comparison studies 
-focus mainly on microeconomic rebound only
-(commonly via cross price elasticities).
-In other words, 
-comparisons of our indirect rebound values with the studies
-in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-may be too simple and not very meaningful,
-as we (alone) include macro-level effects in indirect rebound. 
-If we exclude $Re_{macro}$ from $Re_{indir}$, 
-our indirect microeconomic rebound values become 
-\Sexpr{Re_indir_no_macro_car_str}\% (car) and
-\Sexpr{Re_indir_no_macro_lamp_str}\% (lamp),
-which fit within the ranges reported by the
-car ($6$\% to $23$\%) and lamp ($-41$\% to $16$\%)
-comparison studies.
-
-For total rebound ($Re_{tot}$),
-our values of
-$\Sexpr{f_car("Re_tot")}$\% (car) and
-$\Sexpr{f_lmp("Re_tot")}$\% (lamp)
-are very close to those in the comparison studies for both the car (49\% to 51\%) and
-lamp (43\% to 51\%) examples.
-Beyond that, comparisons (as noted earlier) are inhibited
-by methodological differences between previous studies (top-down methods)
-and our bottom-up approach for calculating total rebound.
 
 
 %++++++++++++++++++++++++++++++
