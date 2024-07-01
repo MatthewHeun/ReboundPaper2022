@@ -1881,253 +1881,6 @@ rebound_results %>%
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Comparison of CES with satiated and 
-            constant price elasticity (CPE) utility models}
-\label{sec:utility_comparison}
-%++++++++++++++++++++++++++++++
-
-<<SatiatedReboundCalcs, echo=FALSE>>=
-fmt_car <- "%.1f"
-fmt_lamp <- "%.2f"
-# Car
-## CES utility model
-Re_inc_ces_car <- rebound_results |>
-  dplyr::filter(Case == "Car") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
-Re_tot_ces_car <- rebound_results |>
-  dplyr::filter(Case == "Car (k = 3)") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
-## Satiated utility model
-Re_dinc_satiated_car <- 0
-N_dot_hat_car <- rebound_results |> 
-  dplyr::filter(Case == "Car") |> 
-  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
-I_E_car <- rebound_results|> 
-  dplyr::filter(Case == "Car") |> 
-  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
-S_dot_dev_car <- rebound_results |> 
-  dplyr::filter(Case == "Car") |> 
-  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
-Re_iinc_satiated_car <- N_dot_hat_car * I_E_car / S_dot_dev_car
-Re_inc_satiated_car <- Re_dinc_satiated_car + Re_iinc_satiated_car
-Re_tot_satiated_car <- Re_tot_ces_car - Re_inc_ces_car + Re_inc_satiated_car
-
-Re_dinc_satiated_car_char <- sprintf(fmt_car, Re_dinc_satiated_car*100)
-Re_iinc_satiated_car_char <- sprintf(fmt_car, Re_iinc_satiated_car*100)
-Re_inc_satiated_car_char <- sprintf(fmt_car, Re_inc_satiated_car*100)
-Re_tot_satiated_car_char <- sprintf(fmt_car, Re_tot_satiated_car*100)
-
-# Lamp
-Re_inc_ces_lamp <- rebound_results |>
-  dplyr::filter(Case == "Lamp") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
-Re_tot_ces_lamp <- rebound_results |>
-  dplyr::filter(Case == "Lamp (k = 3)") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
-## Satiated utility model
-Re_dinc_satiated_lamp <- 0
-N_dot_hat_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp") |> 
-  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
-I_E_lamp <- rebound_results|> 
-  dplyr::filter(Case == "Lamp") |> 
-  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
-S_dot_dev_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp") |> 
-  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
-Re_iinc_satiated_lamp <- N_dot_hat_lamp * I_E_lamp / S_dot_dev_lamp
-Re_inc_satiated_lamp <- Re_dinc_satiated_lamp + Re_iinc_satiated_lamp
-Re_tot_satiated_lamp <- Re_tot_ces_lamp - Re_inc_ces_lamp + Re_inc_satiated_lamp
-
-Re_dinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_dinc_satiated_lamp*100)
-Re_iinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_iinc_satiated_lamp*100)
-Re_inc_satiated_lamp_char <- sprintf(fmt_lamp, Re_inc_satiated_lamp*100)
-Re_tot_satiated_lamp_char <- sprintf(fmt_lamp, Re_tot_satiated_lamp*100)
-@
-
-
-<<CPEReboundCalcs>>=
-rebound_results_cpe <- ReboundTools::rebound_analysis(rebound_data, use_sub_approx = TRUE)
-# Car
-## CPE utility model
-Re_dsub_cpe_car <- rebound_results_cpe |>
-  dplyr::filter(Case == "Car (k = 3)") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_dsub)
-
-
-
-Re_dsub_cpe_car_char <- sprintf(fmt_car, Re_dsub_cpe_car*100)
-
-
-# Lamp
-## CPE utility model
-@
-
-
-In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I, 
-we showed income-effect rebound expressions
-under the limiting condition of already-satiated 
-consumption of the energy service such that the 
-income expansion path is a vertical line 
-in the consumption plane of 
-Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph}.
-Here, we discuss the numerical impact
-of the different utility models.
-
-Table~\ref{tab:utility_model_comparison}
-compares income-effect rebound under the CES utility model,
-the bounding condition of satiated consumption
-of the energy service, and 
-the constant price elasticity (CPE) utility model.
-In the car example, income effect rebound ($Re_{inc}$) 
-reduces from \Sexpr{Re_inc_car_char_perc}\% to
-\Sexpr{Re_inc_satiated_car_char}\% when moving from the 
-CES utility model to the bounding condition of already-satiated 
-consumption of the energy service.
-Total rebound ($Re_{tot}$) goes from 
-\Sexpr{Re_tot_car_char_perc}\% to
-\Sexpr{Re_tot_satiated_car_char}\%.
-On the other hand, 
-the lamp example shows negligible change 
-in total rebound ($Re_{tot}$), 
-moving 
-from \Sexpr{Re_tot_lamp_char_perc}\% 
-(CES utility model)
-to \Sexpr{Re_tot_satiated_lamp_char}\% 
-(already-satiated consumption of the energy service).
-
-The reason for the nearly unchanged value 
-for total rebound ($Re_{tot}$)
-in the lamp example is evident in the consumption plane
-of Fig.~\ref{fig:LampConsGraph}.
-In the CES (homothetic) utility model 
-shown in Fig.~\ref{fig:LampConsGraph}, 
-there is almost no income-effect spending 
-on more of the energy service.  
-Almost all spending of net income ($\rasub{N}$) 
-is on other goods.
-The path between the $\wedge$ and $-$ points 
-is nearly vertical already.
-In contrast, the path from $\wedge$ to $-$ in the car example 
-(Fig.~\ref{fig:CarConsGraph})
-is decidedly \emph{not} vertical and a reduction in
-income-effect rebound ($Re_{inc}$) is observed when 
-moving from the CES utility model to the bounding condition
-of already satiated energy service consumption.
-Reality is probably somewhere in between.
-
-The results shown in Table~\ref{tab:utility_model_comparison}
-indicate that each rebound situation
-should be analyzed independently.  
-One should never assume that the rebound characteristics
-of one device will apply to another.
-
-\begin{table}
-\footnotesize
-\centering
-\caption{Comparison of substitution effects
-         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$),
-         income effects,
-         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$), and
-         total ($Re_{tot}$) rebound
-         for
-         the CES utility model, satiated consumption
-         consumption of the energy service, and 
-         the CPE utility model
-         for the
-         car and lamp examples.
-         **** MKH to fill rows and columns as suggested by GS. ****}
-\label{tab:utility_model_comparison}
-\begin{tabular}{r r r r r r r}
-\toprule
-                 & \multicolumn{3}{c}{Car example}
-                                                & \multicolumn{3}{c}{Lamp example} \\
-Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
-\midrule
-$Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
-                       & \Sexpr{Re_dsub_car_char_perc}
-                                  & \Sexpr{Re_dsub_cpe_car_char}     
-                                                & \Sexpr{Re_dsub_lamp_char_perc}     
-                                                      & \Sexpr{Re_dsub_lamp_char_perc}
-                                                                 &                 \\
-$Re_{isub}$ [\%] & \Sexpr{Re_isub_car_char_perc}     
-                       & \Sexpr{Re_isub_car_char_perc}
-                                  &             
-                                                & \Sexpr{Re_isub_lamp_char_perc}
-                                                      & \Sexpr{Re_isub_lamp_char_perc}
-                                                                 &                 \\
-\midrule
-$Re_{sub}$ [\%]  & \Sexpr{Re_sub_car_char_perc}     
-                       & \Sexpr{Re_sub_car_char_perc}
-                                  &             
-                                                & \Sexpr{Re_sub_lamp_char_perc}
-                                                      & \Sexpr{Re_sub_lamp_char_perc}
-                                                                 &                 \\
-\midrule
-$Re_{dinc}$ [\%] & \Sexpr{Re_dinc_car_char_perc}
-                       & \Sexpr{Re_dinc_satiated_car_char}
-                                  &
-                                                & \Sexpr{Re_dinc_lamp_char_perc}
-                                                      & \Sexpr{Re_dinc_satiated_lamp_char}
-                                                                 &               \\
-$Re_{iinc}$ [\%] & \Sexpr{Re_iinc_car_char_perc}
-                       & \Sexpr{Re_iinc_satiated_car_char}
-                                  &
-                                                & \Sexpr{Re_iinc_lamp_char_perc}
-                                                      & \Sexpr{Re_iinc_satiated_lamp_char}
-                                                                 &                \\
-\midrule
-$Re_{inc}$ [\%] & \Sexpr{Re_inc_car_char_perc}
-                       & \Sexpr{Re_inc_satiated_car_char}
-                                  &
-                                                & \Sexpr{Re_inc_lamp_char_perc}
-                                                      & \Sexpr{Re_inc_satiated_lamp_char}
-                                                                 &                \\
-\midrule
-$Re_{tot}$ [\%] & \Sexpr{Re_tot_car_char_perc}
-                       & \Sexpr{Re_tot_satiated_car_char}
-                                  &
-                                                & \Sexpr{Re_tot_lamp_char_perc}
-                                                      & \Sexpr{Re_tot_satiated_lamp_char}
-                                                                 &                \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Calculation of substitution rebound 
-under the constant price elasticity utility model,
-which approximates the sum of substitution and income effects
-by holding the uncompensated price elasticities constant, 
-leads to a similar conclusion 
-that the specific case determines 
-the deviation of rebound from an exact model.
-The lower part of Table~\ref{tab:utility_model_comparison} shows that
-the sum of deviation of direct and indirect substition effect 
-is only 0.3\% in the car example but 5.5\% in the lamp example. 
-****
-Change numbers in previous sentence to calculations.
----MKH 
-****
-This is intuitive. 
-The lamp example has a larger increase
-in energy conversion efficiency, so 
-the change in the energy service price
-is farther away from the ``marginal'' change
-for which holding the price elasticity constant 
-leads to the same rebound as the exact model.
-We note that whether the deviation 
-of the approximation results in lower or higher rebound 
-depends on the exact model comparison. 
-For instance, 
-in comparison with the satiated model,
-or a CES model with an elasticity of substition greater than one, 
-the CPE model would overstate the substitution rebound. 
-Appendix~\ref{sec:price_elasticities_sensitivity}
-quantifies the change 
-in price elasticity for both case studies.
-
-
-%++++++++++++++++++++++++++++++
 \subsection{A first attempt at calculating macro rebound}
 \label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
@@ -2222,6 +1975,321 @@ for the car and lamp examples,
 respectively.
 For the remainder of this paper, 
 we use $k = 3$.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Comparison of CES with satiated and 
+            constant price elasticity (CPE) utility models}
+\label{sec:utility_comparison}
+%++++++++++++++++++++++++++++++
+
+<<SatiatedReboundCalcs, echo=FALSE>>=
+fmt_car <- "%.1f"
+fmt_lamp <- "%.2f"
+# Car
+## CES utility model
+Re_inc_ces_car <- rebound_results |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_sub_ces_car <- rebound_results |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_sub)
+Re_tot_ces_car <- rebound_results |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+## Satiated utility model
+Re_dinc_satiated_car <- 0
+N_dot_hat_car <- rebound_results |> 
+  dplyr::filter(Case == "Car (k = 3)") |> 
+  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
+I_E_car <- rebound_results|> 
+  dplyr::filter(Case == "Car (k = 3)") |> 
+  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
+S_dot_dev_car <- rebound_results |> 
+  dplyr::filter(Case == "Car (k = 3)") |> 
+  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
+Re_iinc_satiated_car <- N_dot_hat_car * I_E_car / S_dot_dev_car
+Re_inc_satiated_car <- Re_dinc_satiated_car + Re_iinc_satiated_car
+Re_tot_satiated_car <- Re_tot_ces_car - Re_inc_ces_car + Re_inc_satiated_car
+
+Re_tot_ces_car_char <- format(round(Re_tot_ces_car*100, 1), nsmall = 1)
+
+Re_dinc_satiated_car_char <- format(round(Re_dinc_satiated_car*100, 1), nsmall = 1)
+Re_iinc_satiated_car_char <- format(round(Re_iinc_satiated_car*100, 1), nsmall = 1)
+Re_inc_satiated_car_char <- format(round(Re_inc_satiated_car*100, 1), nsmall = 1)
+Re_tot_satiated_car_char <- format(round(Re_tot_satiated_car*100, 1), nsmall = 1)
+
+# Lamp
+Re_inc_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_sub_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_sub)
+Re_tot_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+## Satiated utility model
+Re_dinc_satiated_lamp <- 0
+N_dot_hat_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp (k = 3)") |> 
+  magrittr::extract2(ReboundTools::hat_vars$N_dot_hat)
+I_E_lamp <- rebound_results|> 
+  dplyr::filter(Case == "Lamp (k = 3)") |> 
+  magrittr::extract2(ReboundTools::eeu_base_params$I_E)
+S_dot_dev_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp (k = 3)") |> 
+  magrittr::extract2(ReboundTools::star_vars$S_dot_dev)
+Re_iinc_satiated_lamp <- N_dot_hat_lamp * I_E_lamp / S_dot_dev_lamp
+Re_inc_satiated_lamp <- Re_dinc_satiated_lamp + Re_iinc_satiated_lamp
+Re_tot_satiated_lamp <- Re_tot_ces_lamp - Re_inc_ces_lamp + Re_inc_satiated_lamp
+
+Re_tot_ces_lamp_char <- format(round(Re_tot_ces_lamp*100, 1), nsmall = 1)
+
+Re_dinc_satiated_lamp_char <- format(round(Re_dinc_satiated_lamp*100, 2), nsmall = 2)
+Re_iinc_satiated_lamp_char <- format(round(Re_iinc_satiated_lamp*100, 2), nsmall = 2)
+Re_inc_satiated_lamp_char <- format(round(Re_inc_satiated_lamp*100, 2), nsmall = 2)
+Re_tot_satiated_lamp_char <- format(round(Re_tot_satiated_lamp*100, 2), nsmall = 2)
+@
+
+
+<<CPEReboundCalcs, echo=FALSE>>=
+rebound_results_cpe <- ReboundTools::rebound_analysis(rebound_data, use_sub_approx = TRUE)
+# Car
+## CPE utility model
+Re_dsub_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dsub)
+Re_isub_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_isub)
+Re_sub_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_sub)
+Re_dinc_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
+Re_iinc_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
+Re_inc_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_tot_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+
+Re_sub_deviation_car <- Re_sub_cpe_car - Re_sub_ces_car
+
+Re_dsub_cpe_car_char <- format(round(Re_dsub_cpe_car*100, 1), nsmall = 1)
+Re_isub_cpe_car_char <- format(round(Re_isub_cpe_car*100, 1), nsmall = 1)
+Re_sub_cpe_car_char <- format(round(Re_sub_cpe_car*100, 1), nsmall = 1)
+Re_dinc_cpe_car_char <- format(round(Re_dinc_cpe_car*100, 1), nsmall = 1)
+Re_iinc_cpe_car_char <- format(round(Re_iinc_cpe_car*100, 1), nsmall = 1)
+Re_inc_cpe_car_char <- format(round(Re_inc_cpe_car*100, 1), nsmall = 1)
+Re_tot_cpe_car_char <- format(round(Re_tot_cpe_car*100, 1), nsmall = 1)
+
+Re_sub_deviation_car_char <- format(round(Re_sub_deviation_car*100, 1), nsmall = 1)
+
+
+# Lamp
+## CPE utility model
+Re_dsub_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dsub)
+Re_isub_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_isub)
+Re_sub_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_sub)
+Re_dinc_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
+Re_iinc_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
+Re_inc_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+Re_tot_cpe_lamp <- rebound_results_cpe |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
+
+Re_sub_deviation_lamp <- Re_sub_cpe_lamp - Re_sub_ces_lamp
+
+Re_dsub_cpe_lamp_char <- format(round(Re_dsub_cpe_lamp*100, 1), nsmall = 1)
+Re_isub_cpe_lamp_char <- format(round(Re_isub_cpe_lamp*100, 1), nsmall = 1)
+Re_sub_cpe_lamp_char <- format(round(Re_sub_cpe_lamp*100, 1), nsmall = 1)
+Re_dinc_cpe_lamp_char <- format(round(Re_dinc_cpe_lamp*100, 1), nsmall = 1)
+Re_iinc_cpe_lamp_char <- format(round(Re_iinc_cpe_lamp*100, 1), nsmall = 1)
+Re_inc_cpe_lamp_char <- format(round(Re_inc_cpe_lamp*100, 1), nsmall = 1)
+Re_tot_cpe_lamp_char <- format(round(Re_tot_cpe_lamp*100, 1), nsmall = 1)
+
+Re_sub_deviation_lamp_char <- format(round(Re_sub_deviation_lamp*100, 1), nsmall = 1)
+@
+
+
+In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I, 
+we showed income-effect rebound expressions
+under the limiting condition of already-satiated 
+consumption of the energy service such that the 
+income expansion path is a vertical line 
+in the consumption plane of 
+Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph}.
+Here, we discuss the numerical impact
+of the different utility models.
+
+Table~\ref{tab:utility_model_comparison}
+compares income-effect rebound under the CES utility model,
+the bounding condition of satiated consumption
+of the energy service, and 
+the constant price elasticity (CPE) utility model.
+In the car example, income effect rebound ($Re_{inc}$) 
+reduces from \Sexpr{Re_inc_car_char_perc}\% to
+\Sexpr{Re_inc_satiated_car_char}\% when moving from the 
+CES utility model to the bounding condition of already-satiated 
+consumption of the energy service.
+Total rebound ($Re_{tot}$) goes from 
+\Sexpr{Re_tot_car_char_perc}\% to
+\Sexpr{Re_tot_satiated_car_char}\%.
+On the other hand, 
+the lamp example shows negligible change 
+in total rebound ($Re_{tot}$), 
+moving 
+from \Sexpr{Re_tot_lamp_char_perc}\% 
+(CES utility model)
+to \Sexpr{Re_tot_satiated_lamp_char}\% 
+(already-satiated consumption of the energy service).
+
+The reason for the nearly unchanged value 
+for total rebound ($Re_{tot}$)
+in the lamp example is evident in the consumption plane
+of Fig.~\ref{fig:LampConsGraph}.
+In the CES (homothetic) utility model 
+shown in Fig.~\ref{fig:LampConsGraph}, 
+there is almost no income-effect spending 
+on more of the energy service.  
+Almost all spending of net income ($\rasub{N}$) 
+is on other goods.
+The path between the $\wedge$ and $-$ points 
+is nearly vertical already.
+In contrast, the path from $\wedge$ to $-$ in the car example 
+(Fig.~\ref{fig:CarConsGraph})
+is decidedly \emph{not} vertical and a reduction in
+income-effect rebound ($Re_{inc}$) is observed when 
+moving from the CES utility model to the bounding condition
+of already satiated energy service consumption.
+Reality is probably somewhere in between.
+
+The results shown in Table~\ref{tab:utility_model_comparison}
+indicate that each rebound situation
+should be analyzed independently.  
+One should never assume that the rebound characteristics
+of one device will apply to another.
+
+\begin{table}
+\footnotesize
+\centering
+\caption{Comparison of substitution effects
+         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$),
+         income effects,
+         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$), and
+         total ($Re_{tot}$) rebound
+         for
+         the CES utility model, 
+         satiated consumption of the energy service, and 
+         the CPE utility model
+         for both car and lamp examples.}
+\label{tab:utility_model_comparison}
+\begin{tabular}{r r r r r r r}
+\toprule
+                 & \multicolumn{3}{c}{Car example}
+                                                & \multicolumn{3}{c}{Lamp example} \\
+Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
+\midrule
+$Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
+                       & \Sexpr{Re_dsub_car_char_perc}
+                                  & \Sexpr{Re_dsub_cpe_car_char}     
+                                                & \Sexpr{Re_dsub_lamp_char_perc}     
+                                                      & \Sexpr{Re_dsub_lamp_char_perc}
+                                                                 & \Sexpr{Re_dsub_cpe_lamp_char} \\
+$Re_{isub}$ [\%] & $\Sexpr{Re_isub_car_char_perc}$
+                       & $\Sexpr{Re_isub_car_char_perc}$
+                                  & $\Sexpr{Re_isub_cpe_car_char}$
+                                                & $\Sexpr{Re_isub_lamp_char_perc}$
+                                                      & $\Sexpr{Re_isub_lamp_char_perc}$
+                                                                 & $\Sexpr{Re_isub_cpe_lamp_char}$ \\
+\midrule
+$Re_{sub}$ [\%]  & \Sexpr{Re_sub_car_char_perc}     
+                       & \Sexpr{Re_sub_car_char_perc}
+                                  & \Sexpr{Re_sub_cpe_car_char}       
+                                                & \Sexpr{Re_sub_lamp_char_perc}
+                                                      & \Sexpr{Re_sub_lamp_char_perc}
+                                                                 & \Sexpr{Re_sub_cpe_lamp_char} \\
+\midrule
+$Re_{dinc}$ [\%] & \Sexpr{Re_dinc_car_char_perc}
+                       & \Sexpr{Re_dinc_satiated_car_char}
+                                  & \Sexpr{Re_dinc_cpe_car_char}
+                                                & \Sexpr{Re_dinc_lamp_char_perc}
+                                                      & \Sexpr{Re_dinc_satiated_lamp_char}
+                                                                 & \Sexpr{Re_dinc_cpe_lamp_char} \\
+$Re_{iinc}$ [\%] & \Sexpr{Re_iinc_car_char_perc}
+                       & \Sexpr{Re_iinc_satiated_car_char}
+                                  & \Sexpr{Re_iinc_cpe_car_char}
+                                                & \Sexpr{Re_iinc_lamp_char_perc}
+                                                      & \Sexpr{Re_iinc_satiated_lamp_char}
+                                                                 & \Sexpr{Re_iinc_cpe_lamp_char} \\
+\midrule
+$Re_{inc}$ [\%] & \Sexpr{Re_inc_car_char_perc}
+                       & \Sexpr{Re_inc_satiated_car_char}
+                                  & \Sexpr{Re_inc_cpe_car_char}
+                                                & \Sexpr{Re_inc_lamp_char_perc}
+                                                      & \Sexpr{Re_inc_satiated_lamp_char}
+                                                                 & \Sexpr{Re_inc_cpe_lamp_char} \\
+\midrule
+$Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
+                       & \Sexpr{Re_tot_satiated_car_char}
+                                  & \Sexpr{Re_tot_cpe_car_char}
+                                                & \Sexpr{Re_tot_ces_lamp_char}
+                                                      & \Sexpr{Re_tot_satiated_lamp_char}
+                                                                 & \Sexpr{Re_tot_cpe_lamp_char} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Calculation of substitution rebound 
+under the constant price elasticity (CPE) utility model,
+which approximates the sum of substitution and income effects
+by holding the uncompensated price elasticities constant, 
+leads to a similar conclusion 
+that the specific case determines 
+the deviation of rebound from an exact model.
+Table~\ref{tab:utility_model_comparison} shows that
+the deviation of the substitution effect
+(CPE utility model relative to CES utility model)
+is only
+$\Sexpr{Re_sub_deviation_car_char}$\% in the car example 
+but 
+$\Sexpr{Re_sub_deviation_lamp_char}$\%
+in the lamp example. 
+This is intuitive. 
+The lamp example has a larger increase
+in energy conversion efficiency, so 
+the change in the energy service price
+is farther away from the ``marginal'' change
+for which holding the price elasticity constant 
+leads to the same rebound as the exact model.
+We note that whether the deviation 
+of the approximation results in lower or higher rebound 
+depends on the exact model comparison. 
+For instance, 
+in comparison with the satiated model,
+or a CES model with an elasticity of substition greater than one, 
+the CPE model would overstate the substitution rebound. 
+Appendix~\ref{sec:price_elasticities_sensitivity}
+quantifies the change 
+in price elasticity for both case studies.
 
 
 %++++++++++++++++++++++++++++++
