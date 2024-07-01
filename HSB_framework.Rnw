@@ -86,7 +86,7 @@ empirical determination of the size of rebound.
 A new clarity is needed, one that 
 involves both economics and energy analysis.
 In this paper (Part~I of two), 
-we advance a rigorous analytical framework
+we advance foundations of a rigorous analytical framework
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
 We develop foundations of rebound analysis framework that
