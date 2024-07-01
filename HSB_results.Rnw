@@ -1945,6 +1945,25 @@ Re_inc_satiated_lamp_char <- sprintf(fmt_lamp, Re_inc_satiated_lamp*100)
 Re_tot_satiated_lamp_char <- sprintf(fmt_lamp, Re_tot_satiated_lamp*100)
 @
 
+
+<<CPEReboundCalcs>>=
+rebound_results_cpe <- ReboundTools::rebound_analysis(rebound_data, use_sub_approx = TRUE)
+# Car
+## CPE utility model
+Re_dsub_cpe_car <- rebound_results_cpe |>
+  dplyr::filter(Case == "Car (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dsub)
+
+
+
+Re_dsub_cpe_car_char <- sprintf(fmt_car, Re_dsub_cpe_car*100)
+
+
+# Lamp
+## CPE utility model
+@
+
+
 In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I, 
 we showed income-effect rebound expressions
 under the limiting condition of already-satiated 
@@ -2027,7 +2046,7 @@ Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE          
 \midrule
 $Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
                        & \Sexpr{Re_dsub_car_char_perc}
-                                  &             
+                                  & \Sexpr{Re_dsub_cpe_car_char}     
                                                 & \Sexpr{Re_dsub_lamp_char_perc}     
                                                       & \Sexpr{Re_dsub_lamp_char_perc}
                                                                  &                 \\
