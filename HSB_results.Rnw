@@ -95,8 +95,9 @@ we calculate and show total rebound for two examples:
 energy efficiency upgrades of
 a car (56.2\%) and
 an electric lamp (67.0\%).
-We compare our rebound values to previous values
-in the literature.
+We calculate rebound for a producer-sided extension
+to the framework, 
+namely an energy price rebound effect.
 Finally, we provide information about new open source software tools 
 for calculating magnitudes and
 visualizing rebound effects using the framework.
