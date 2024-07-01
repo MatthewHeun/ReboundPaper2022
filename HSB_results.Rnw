@@ -1882,7 +1882,7 @@ rebound_results %>%
 
 %++++++++++++++++++++++++++++++
 \subsection{Comparison of CES with satiated and 
-            constant price elasticity utility models}
+            constant price elasticity (CPE) utility models}
 \label{sec:utility_comparison}
 %++++++++++++++++++++++++++++++
 
@@ -1891,17 +1891,11 @@ fmt_car <- "%.1f"
 fmt_lamp <- "%.2f"
 # Car
 ## CES utility model
-Re_dinc_ces_car <- rebound_results |> 
-  dplyr::filter(Case == "Car") |> 
-  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
-Re_iinc_ces_car <- rebound_results |> 
-  dplyr::filter(Case == "Car") |> 
-  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
-Re_inc_ces_car <- rebound_results |> 
-  dplyr::filter(Case == "Car") |> 
+Re_inc_ces_car <- rebound_results |>
+  dplyr::filter(Case == "Car") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
-Re_tot_ces_car <- rebound_results |> 
-  dplyr::filter(Case == "Car (k = 3)") |> 
+Re_tot_ces_car <- rebound_results |>
+  dplyr::filter(Case == "Car (k = 3)") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
 ## Satiated utility model
 Re_dinc_satiated_car <- 0
@@ -1918,28 +1912,17 @@ Re_iinc_satiated_car <- N_dot_hat_car * I_E_car / S_dot_dev_car
 Re_inc_satiated_car <- Re_dinc_satiated_car + Re_iinc_satiated_car
 Re_tot_satiated_car <- Re_tot_ces_car - Re_inc_ces_car + Re_inc_satiated_car
 
-Re_dinc_ces_car_char <- sprintf(fmt_car, Re_dinc_ces_car*100)
-Re_iinc_ces_car_char <- sprintf(fmt_car, Re_iinc_ces_car*100)
-Re_inc_ces_car_char <- sprintf(fmt_car, Re_inc_ces_car*100)
-Re_tot_ces_car_char <- sprintf(fmt_car, Re_tot_ces_car*100)
 Re_dinc_satiated_car_char <- sprintf(fmt_car, Re_dinc_satiated_car*100)
 Re_iinc_satiated_car_char <- sprintf(fmt_car, Re_iinc_satiated_car*100)
 Re_inc_satiated_car_char <- sprintf(fmt_car, Re_inc_satiated_car*100)
 Re_tot_satiated_car_char <- sprintf(fmt_car, Re_tot_satiated_car*100)
 
 # Lamp
-## CES utility model
-Re_dinc_ces_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp") |> 
-  magrittr::extract2(ReboundTools::rebound_terms$Re_dinc)
-Re_iinc_ces_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp") |> 
-  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
-Re_inc_ces_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp") |> 
+Re_inc_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
-Re_tot_ces_lamp <- rebound_results |> 
-  dplyr::filter(Case == "Lamp (k = 3)") |> 
+Re_tot_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
 ## Satiated utility model
 Re_dinc_satiated_lamp <- 0
@@ -1956,10 +1939,6 @@ Re_iinc_satiated_lamp <- N_dot_hat_lamp * I_E_lamp / S_dot_dev_lamp
 Re_inc_satiated_lamp <- Re_dinc_satiated_lamp + Re_iinc_satiated_lamp
 Re_tot_satiated_lamp <- Re_tot_ces_lamp - Re_inc_ces_lamp + Re_inc_satiated_lamp
 
-Re_dinc_ces_lamp_char <- sprintf(fmt_lamp, Re_dinc_ces_lamp*100)
-Re_iinc_ces_lamp_char <- sprintf(fmt_lamp, Re_iinc_ces_lamp*100)
-Re_inc_ces_lamp_char <- sprintf(fmt_lamp, Re_inc_ces_lamp*100)
-Re_tot_ces_lamp_char <- sprintf(fmt_lamp, Re_tot_ces_lamp*100)
 Re_dinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_dinc_satiated_lamp*100)
 Re_iinc_satiated_lamp_char <- sprintf(fmt_lamp, Re_iinc_satiated_lamp*100)
 Re_inc_satiated_lamp_char <- sprintf(fmt_lamp, Re_inc_satiated_lamp*100)
@@ -1977,22 +1956,23 @@ Here, we discuss the numerical impact
 of the different utility models.
 
 Table~\ref{tab:utility_model_comparison}
-compares income-effect rebound under the CES utility model
-and the bounding condition of satiated consumption
-of the energy service.
+compares income-effect rebound under the CES utility model,
+the bounding condition of satiated consumption
+of the energy service, and 
+the constant price elasticity (CPE) utility model.
 In the car example, income effect rebound ($Re_{inc}$) 
-reduces from \Sexpr{Re_inc_ces_car_char}\% to
+reduces from \Sexpr{Re_inc_car_char_perc}\% to
 \Sexpr{Re_inc_satiated_car_char}\% when moving from the 
 CES utility model to the bounding condition of already-satiated 
 consumption of the energy service.
 Total rebound ($Re_{tot}$) goes from 
-\Sexpr{Re_tot_ces_car_char}\% to
+\Sexpr{Re_tot_car_char_perc}\% to
 \Sexpr{Re_tot_satiated_car_char}\%.
 On the other hand, 
 the lamp example shows negligible change 
 in total rebound ($Re_{tot}$), 
 moving 
-from \Sexpr{Re_tot_ces_lamp_char}\% 
+from \Sexpr{Re_tot_lamp_char_perc}\% 
 (CES utility model)
 to \Sexpr{Re_tot_satiated_lamp_char}\% 
 (already-satiated consumption of the energy service).
@@ -2046,49 +2026,49 @@ of one device will apply to another.
 Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
 \midrule
 $Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
-                       &          
+                       & \Sexpr{Re_dsub_car_char_perc}
                                   &             
                                                 & \Sexpr{Re_dsub_lamp_char_perc}     
-                                                      &          
+                                                      & \Sexpr{Re_dsub_lamp_char_perc}
                                                                  &                 \\
 $Re_{isub}$ [\%] & \Sexpr{Re_isub_car_char_perc}     
-                       &          
+                       & \Sexpr{Re_isub_car_char_perc}
                                   &             
                                                 & \Sexpr{Re_isub_lamp_char_perc}
-                                                      &          
+                                                      & \Sexpr{Re_isub_lamp_char_perc}
                                                                  &                 \\
 \midrule
 $Re_{sub}$ [\%]  & \Sexpr{Re_sub_car_char_perc}     
-                       &          
+                       & \Sexpr{Re_sub_car_char_perc}
                                   &             
                                                 & \Sexpr{Re_sub_lamp_char_perc}
-                                                      &          
+                                                      & \Sexpr{Re_sub_lamp_char_perc}
                                                                  &                 \\
 \midrule
-$Re_{dinc}$ [\%] & \Sexpr{Re_dinc_ces_car_char}
+$Re_{dinc}$ [\%] & \Sexpr{Re_dinc_car_char_perc}
                        & \Sexpr{Re_dinc_satiated_car_char}
                                   &
-                                                & \Sexpr{Re_dinc_ces_lamp_char}
+                                                & \Sexpr{Re_dinc_lamp_char_perc}
                                                       & \Sexpr{Re_dinc_satiated_lamp_char}
                                                                  &               \\
-$Re_{iinc}$ [\%] & \Sexpr{Re_iinc_ces_car_char}
+$Re_{iinc}$ [\%] & \Sexpr{Re_iinc_car_char_perc}
                        & \Sexpr{Re_iinc_satiated_car_char}
                                   &
-                                                & \Sexpr{Re_iinc_ces_lamp_char}
+                                                & \Sexpr{Re_iinc_lamp_char_perc}
                                                       & \Sexpr{Re_iinc_satiated_lamp_char}
                                                                  &                \\
 \midrule
-$Re_{inc}$ [\%] & \Sexpr{Re_inc_ces_car_char}
+$Re_{inc}$ [\%] & \Sexpr{Re_inc_car_char_perc}
                        & \Sexpr{Re_inc_satiated_car_char}
                                   &
-                                                & \Sexpr{Re_inc_ces_lamp_char}
+                                                & \Sexpr{Re_inc_lamp_char_perc}
                                                       & \Sexpr{Re_inc_satiated_lamp_char}
                                                                  &                \\
 \midrule
-$Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
+$Re_{tot}$ [\%] & \Sexpr{Re_tot_car_char_perc}
                        & \Sexpr{Re_tot_satiated_car_char}
                                   &
-                                                & \Sexpr{Re_tot_ces_lamp_char}
+                                                & \Sexpr{Re_tot_lamp_char_perc}
                                                       & \Sexpr{Re_tot_satiated_lamp_char}
                                                                  &                \\
 \bottomrule
