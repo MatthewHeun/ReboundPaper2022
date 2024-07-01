@@ -2029,11 +2029,13 @@ of one device will apply to another.
 \caption{Comparison of substitution effects
          ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$),
          income effects,
-         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
+         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$), and
          total ($Re_{tot}$) rebound
-         between
-         the CES utility model and satiated
-         consumption of the energy service for the
+         for
+         the CES utility model, satiated consumption
+         consumption of the energy service, and 
+         the CPE utility model
+         for the
          car and lamp examples.
          **** MKH to fill rows and columns as suggested by GS. ****}
 \label{tab:utility_model_comparison}
@@ -2043,10 +2045,25 @@ of one device will apply to another.
                                                 & \multicolumn{3}{c}{Lamp example} \\
 Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
 \midrule
-$Re_{dsub}$ [\%] &     &          &             &     &          &                 \\
-$Re_{isub}$ [\%] &     &          &             &     &          &                 \\
+$Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
+                       &          
+                                  &             
+                                                & \Sexpr{Re_dsub_lamp_char_perc}     
+                                                      &          
+                                                                 &                 \\
+$Re_{isub}$ [\%] & \Sexpr{Re_isub_car_char_perc}     
+                       &          
+                                  &             
+                                                & \Sexpr{Re_isub_lamp_char_perc}
+                                                      &          
+                                                                 &                 \\
 \midrule
-$Re_{sub}$ [\%]  &     &          &             &     &          &                 \\
+$Re_{sub}$ [\%]  & \Sexpr{Re_sub_car_char_perc}     
+                       &          
+                                  &             
+                                                & \Sexpr{Re_sub_lamp_char_perc}
+                                                      &          
+                                                                 &                 \\
 \midrule
 $Re_{dinc}$ [\%] & \Sexpr{Re_dinc_ces_car_char}
                        & \Sexpr{Re_dinc_satiated_car_char}
