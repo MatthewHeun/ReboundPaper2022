@@ -1431,7 +1431,8 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
 }
 
 Under a non-homothetic utility model, 
-the bounding condition is that
+the bounding condition is
+satiated consumption of the energy service such that
 as the device owner becomes richer, 
 none of the income ($\rasub{N}$)
 is spent on more of the energy service, and thus
@@ -1484,8 +1485,7 @@ the expression for indirect income for the CES utility model rebound is
 (See Appendix~\ref{sec:Re_inc} for details of the derivation
 of direct and indirect income effect rebound.)
 
-Under the bounding non-homothetic utility model,
-consumption of the energy service is already satiated,
+Under the bounding satiated utility model,
 all income ($\rasub{N}$) is spent on other goods,
 and indirect rebound becomes simply
 $Re_{iinc} \equiv \frac{\rasub{N} I_E}{\Sdot}$.
