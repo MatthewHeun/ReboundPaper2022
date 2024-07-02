@@ -2772,7 +2772,7 @@ Our hope is that additional clarity will
 
 \end{enumerate*}
 
-From the development and application of the framework in Part~II,
+From the application of the framework in Part~II,
 we draw two important conclusions.
 First, the car and lamp examples (Section~\ref{sec:results}) show that
         the framework enables
