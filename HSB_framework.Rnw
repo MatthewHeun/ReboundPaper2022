@@ -414,7 +414,7 @@ The key \emph{contributions} of this paper are
         rebound effects on 
         microeconomic and macroeconomic levels, and 
         
-  \item a discussion of extending the framework to 
+  \item development of an extension of the framework to 
         an energy price rebound effect.
         
 \end{enumerate*}

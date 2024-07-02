@@ -389,7 +389,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
   \midrule
   Operations and maintenance expenditure rate   & \Sexpr{C_dot_om_orig_car_char}   & \Sexpr{C_dot_om_star_car_char}     & Lifetime (14 year) annual, averaged operation and maintenance \\
-                                                                &                  &                                    & (O\&M) costs = sum of insurance, maintenance, repairs, taxes, and \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & (O\&M) costs = sum of insurance, maintenance, repairs, taxes, and \\
                                                                 &                  &                                    & fees (excluding financing, depreciation, fuel). 5-year Ford Fusion \\
                                                                 &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_gasoline}. 5-year Ford Fusion Hybrid \\
                                                                 &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_hybrid}. Extrapolation of O\&M costs \\
@@ -2245,12 +2245,21 @@ Re_inc_satiated_car_char <- format(round(Re_inc_satiated_car*100, 1), nsmall = 1
 Re_tot_satiated_car_char <- format(round(Re_tot_satiated_car*100, 1), nsmall = 1)
 
 # Lamp
-Re_inc_ces_lamp <- rebound_results |>
+Re_dsub_ces_lamp <- rebound_results |> 
   dplyr::filter(Case == "Lamp (k = 3)") |>
-  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
+  magrittr::extract2(ReboundTools::rebound_terms$Re_dsub)
+Re_isub_ces_lamp <- rebound_results |> 
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_isub)
 Re_sub_ces_lamp <- rebound_results |>
   dplyr::filter(Case == "Lamp (k = 3)") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_sub)
+Re_iinc_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_iinc)
+Re_inc_ces_lamp <- rebound_results |>
+  dplyr::filter(Case == "Lamp (k = 3)") |>
+  magrittr::extract2(ReboundTools::rebound_terms$Re_inc)
 Re_tot_ces_lamp <- rebound_results |>
   dplyr::filter(Case == "Lamp (k = 3)") |>
   magrittr::extract2(ReboundTools::rebound_terms$Re_tot)
@@ -2269,7 +2278,12 @@ Re_iinc_satiated_lamp <- N_dot_hat_lamp * I_E_lamp / S_dot_dev_lamp
 Re_inc_satiated_lamp <- Re_dinc_satiated_lamp + Re_iinc_satiated_lamp
 Re_tot_satiated_lamp <- Re_tot_ces_lamp - Re_inc_ces_lamp + Re_inc_satiated_lamp
 
-Re_tot_ces_lamp_char <- format(round(Re_tot_ces_lamp*100, 1), nsmall = 1)
+Re_dsub_ces_lamp_char <- format(round(Re_dsub_ces_lamp*100, 2), nsmall = 2)
+Re_isub_ces_lamp_char <- format(round(Re_isub_ces_lamp*100, 2), nsmall = 2)
+Re_sub_ces_lamp_char <- format(round(Re_sub_ces_lamp*100, 2), nsmall = 2)
+Re_iinc_ces_lamp_char <- format(round(Re_iinc_ces_lamp*100, 2), nsmall = 2)
+Re_inc_ces_lamp_char <- format(round(Re_inc_ces_lamp*100, 2), nsmall = 2)
+Re_tot_ces_lamp_char <- format(round(Re_tot_ces_lamp*100, 2), nsmall = 2)
 
 Re_dinc_satiated_lamp_char <- format(round(Re_dinc_satiated_lamp*100, 2), nsmall = 2)
 Re_iinc_satiated_lamp_char <- format(round(Re_iinc_satiated_lamp*100, 2), nsmall = 2)
@@ -2343,15 +2357,15 @@ Re_tot_cpe_lamp <- rebound_results_cpe |>
 
 Re_sub_deviation_lamp <- Re_sub_cpe_lamp - Re_sub_ces_lamp
 
-Re_dsub_cpe_lamp_char <- format(round(Re_dsub_cpe_lamp*100, 1), nsmall = 1)
-Re_isub_cpe_lamp_char <- format(round(Re_isub_cpe_lamp*100, 1), nsmall = 1)
-Re_sub_cpe_lamp_char <- format(round(Re_sub_cpe_lamp*100, 1), nsmall = 1)
-Re_dinc_cpe_lamp_char <- format(round(Re_dinc_cpe_lamp*100, 1), nsmall = 1)
-Re_iinc_cpe_lamp_char <- format(round(Re_iinc_cpe_lamp*100, 1), nsmall = 1)
-Re_inc_cpe_lamp_char <- format(round(Re_inc_cpe_lamp*100, 1), nsmall = 1)
-Re_tot_cpe_lamp_char <- format(round(Re_tot_cpe_lamp*100, 1), nsmall = 1)
+Re_dsub_cpe_lamp_char <- format(round(Re_dsub_cpe_lamp*100, 2), nsmall = 2)
+Re_isub_cpe_lamp_char <- format(round(Re_isub_cpe_lamp*100, 2), nsmall = 2)
+Re_sub_cpe_lamp_char <- format(round(Re_sub_cpe_lamp*100, 2), nsmall = 2)
+Re_dinc_cpe_lamp_char <- format(round(Re_dinc_cpe_lamp*100, 2), nsmall = 2)
+Re_iinc_cpe_lamp_char <- format(round(Re_iinc_cpe_lamp*100, 2), nsmall = 2)
+Re_inc_cpe_lamp_char <- format(round(Re_inc_cpe_lamp*100, 2), nsmall = 2)
+Re_tot_cpe_lamp_char <- format(round(Re_tot_cpe_lamp*100, 2), nsmall = 2)
 
-Re_sub_deviation_lamp_char <- format(round(Re_sub_deviation_lamp*100, 1), nsmall = 1)
+Re_sub_deviation_lamp_char <- format(round(Re_sub_deviation_lamp*100, 2), nsmall = 2)
 @
 
 
@@ -2376,13 +2390,13 @@ reduces from \Sexpr{Re_inc_car_char_perc}\% to
 CES utility model to the bounding condition of already-satiated
 consumption of the energy service.
 Total rebound ($Re_{tot}$) goes from
-\Sexpr{Re_tot_car_char_perc}\% to
+\Sexpr{Re_tot_ces_car_char}\% to
 \Sexpr{Re_tot_satiated_car_char}\%.
 On the other hand,
 the lamp example shows negligible change
 in total rebound ($Re_{tot}$),
 moving
-from \Sexpr{Re_tot_lamp_char_perc}\%
+from \Sexpr{Re_tot_ces_lamp_char}\%
 (CES utility model)
 to \Sexpr{Re_tot_satiated_lamp_char}\%
 (already-satiated consumption of the energy service).
@@ -2436,21 +2450,21 @@ Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE          
 $Re_{dsub}$ [\%] & \Sexpr{Re_dsub_car_char_perc}
                        & \Sexpr{Re_dsub_car_char_perc}
                                   & \Sexpr{Re_dsub_cpe_car_char}
-                                                & \Sexpr{Re_dsub_lamp_char_perc}
-                                                      & \Sexpr{Re_dsub_lamp_char_perc}
+                                                & \Sexpr{Re_dsub_ces_lamp_char}
+                                                      & \Sexpr{Re_dsub_ces_lamp_char}
                                                                  & \Sexpr{Re_dsub_cpe_lamp_char} \\
 $Re_{isub}$ [\%] & $\Sexpr{Re_isub_car_char_perc}$
                        & $\Sexpr{Re_isub_car_char_perc}$
                                   & $\Sexpr{Re_isub_cpe_car_char}$
-                                                & $\Sexpr{Re_isub_lamp_char_perc}$
-                                                      & $\Sexpr{Re_isub_lamp_char_perc}$
+                                                & $\Sexpr{Re_isub_ces_lamp_char}$
+                                                      & $\Sexpr{Re_isub_ces_lamp_char}$
                                                                  & $\Sexpr{Re_isub_cpe_lamp_char}$ \\
 \midrule
 $Re_{sub}$ [\%]  & \Sexpr{Re_sub_car_char_perc}
                        & \Sexpr{Re_sub_car_char_perc}
                                   & \Sexpr{Re_sub_cpe_car_char}
-                                                & \Sexpr{Re_sub_lamp_char_perc}
-                                                      & \Sexpr{Re_sub_lamp_char_perc}
+                                                & \Sexpr{Re_sub_ces_lamp_char}
+                                                      & \Sexpr{Re_sub_ces_lamp_char}
                                                                  & \Sexpr{Re_sub_cpe_lamp_char} \\
 \midrule
 $Re_{dinc}$ [\%] & \Sexpr{Re_dinc_car_char_perc}
@@ -2462,14 +2476,14 @@ $Re_{dinc}$ [\%] & \Sexpr{Re_dinc_car_char_perc}
 $Re_{iinc}$ [\%] & \Sexpr{Re_iinc_car_char_perc}
                        & \Sexpr{Re_iinc_satiated_car_char}
                                   & \Sexpr{Re_iinc_cpe_car_char}
-                                                & \Sexpr{Re_iinc_lamp_char_perc}
+                                                & \Sexpr{Re_iinc_ces_lamp_char}
                                                       & \Sexpr{Re_iinc_satiated_lamp_char}
                                                                  & \Sexpr{Re_iinc_cpe_lamp_char} \\
 \midrule
 $Re_{inc}$ [\%] & \Sexpr{Re_inc_car_char_perc}
                        & \Sexpr{Re_inc_satiated_car_char}
                                   & \Sexpr{Re_inc_cpe_car_char}
-                                                & \Sexpr{Re_inc_lamp_char_perc}
+                                                & \Sexpr{Re_inc_ces_lamp_char}
                                                       & \Sexpr{Re_inc_satiated_lamp_char}
                                                                  & \Sexpr{Re_inc_cpe_lamp_char} \\
 \midrule
