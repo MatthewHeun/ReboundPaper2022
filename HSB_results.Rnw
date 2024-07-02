@@ -2421,12 +2421,6 @@ moving from the CES utility model to the bounding condition
 of already satiated energy service consumption.
 Reality is probably somewhere in between.
 
-The results shown in Table~\ref{tab:utility_model_comparison}
-indicate that each rebound situation
-should be analyzed independently.
-One should never assume that the rebound characteristics
-of one device will apply to another.
-
 \begin{table}
 \footnotesize
 \centering
@@ -2529,6 +2523,12 @@ the CPE model would overstate the substitution rebound.
 Appendix~\ref{sec:price_elasticities_sensitivity}
 quantifies the change
 in price elasticity for both case studies.
+
+The results shown in Table~\ref{tab:utility_model_comparison}
+indicate that each rebound situation
+should be analyzed independently.
+One should never assume that the rebound characteristics
+of one device will apply to another.
 
 
 %++++++++++++++++++++++++++++++
