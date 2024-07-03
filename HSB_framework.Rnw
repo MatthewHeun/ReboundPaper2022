@@ -310,8 +310,8 @@ in the past led to vastly differing points of view.''%
 However, \ldots{} it is often not clear what different authors 
 mean by energy efficiency''~\citep[p.~237--38]{Turner:2013aa}.
 If authors from the two disciplines cannot even agree on the key terms, 
-it is unsurprising that only modest progress has been made 
-on analytical foundations.
+it is unsurprising that
+analytical foundations have not yet been fully elucidated.
 To fully understand rebound, 
 economists need to have an energy analyst's understanding of energy, and 
 energy analysts need to have an economist's understanding of finance and human behavior.%
@@ -353,7 +353,8 @@ And the energy aspects of rebound need to be presented
 in ways economists can understand.
 
 Summarizing,
-we surmise that reducing global carbon emissions has been hampered, in part, 
+we surmise that development of 
+effective carbon reduction policies has been hampered, in part,
 by the fact that rebound is not sufficiently included in energy and climate models.
 We suspect that one reason rebound is not sufficiently included
 is the lack of consensus on rebound calculation methods and, hence, rebound magnitude.
