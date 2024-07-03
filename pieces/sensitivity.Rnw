@@ -176,11 +176,6 @@ direct substitution rebound ($Re_{dsub}$) is the
 rebound component 
 most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
 
-% A limitation of the energy efficiency sensitivity analysis is that 
-% post-EEU efficiency ($\amacro{\eta}$)
-% is unlikely to be independent of other factors, 
-% such as capital cost ($\amacro{C}_{cap}$).
-
 Note that the sensitivity analysis on post-upgrade efficiency 
 ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
 is the only sensitivity analysis that requires careful explication
@@ -248,18 +243,8 @@ leading to smaller income, macro, and total rebound.
 The same effects would be observed
 with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 
-% A limitation of the capital cost sensitivity analysis is that
-% capital cost ($\amacro{C}_{cap}$) is unlikely to be
-% independent of $\amacro{\eta}$.
-% Within a given energy efficiency technology
-% (e.g., hybrid cars or LED lamps),
-% greater capital cost ($\amacro{C}_{cap}$) may be associated with
-% greater service efficiency ($\amacro{\eta}$).
-% $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
-% not independently.
-
 <<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
-C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(30000, 36000, by = 1000)),
+C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(32000, 38000, by = 1000)),
                               Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
 
 rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_sens_params,

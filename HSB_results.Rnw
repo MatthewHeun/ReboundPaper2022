@@ -947,7 +947,7 @@ are shown as lines with negative slope
 (lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
 Note that budget constraints \circcirc{} and \barbar{}
 intersect at the $y$-axis,
-because the prices of other goods and services don't change
+because the prices of other goods and services do not change
 as a result of the EEU.
 Emplacement (by itself) does not alter consumption patterns, so
 the rate of energy service consumption and
@@ -2131,12 +2131,7 @@ comparisons between top-down estimations or calculations
 of total, economy-wide rebound
 may also be of limited value,
 because the rebound effects included or excluded may not be clear,
-giving an appearance of a ``black box'' calculation approach.%
-\footnote{
-  That said, without the top-down approaches,
-  we would not have the information needed to calibrate
-  the macro factor ($k$) in Section~\ref{sec:calculating_k}.
-}
+giving an appearance of a ``black box'' calculation approach.
 
 Second, helpful insights can be gained
 from comparison of rebound magnitudes and calculation methods.
@@ -2524,11 +2519,11 @@ Appendix~\ref{sec:price_elasticities_sensitivity}
 quantifies the change
 in price elasticity for both case studies.
 
-The results shown in Table~\ref{tab:utility_model_comparison}
-indicate that each rebound situation
-should be analyzed independently.
-One should never assume that the rebound characteristics
-of one device will apply to another.
+% The results shown in Table~\ref{tab:utility_model_comparison}
+% indicate that each rebound situation
+% should be analyzed independently.
+% One should never assume that the rebound characteristics
+% of one device will apply to another.
 
 
 %++++++++++++++++++++++++++++++
@@ -2550,7 +2545,7 @@ personal consumption ($\rorig{E}$)
 of the type of energy used by the device,
 including energy for the upgraded device and all other devices.
 For the car example,
-there is typically little other gasoline consumption
+there is typically little other household gasoline consumption
 besides for cars,
 so we assume $\rorig{E}$ equal to
 $\rorig{E}_s/0.95$.
