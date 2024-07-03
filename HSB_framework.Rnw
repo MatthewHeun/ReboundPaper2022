@@ -470,7 +470,6 @@ an emplacement effect,
 a substitution effect, and
 an income effect, 
 with direct and indirect partitions for each.
-All combinations are possible.
 
 ``Emplacement'' is a new term we introduce 
 to collect effects associated with installing 
@@ -632,6 +631,8 @@ We define rebound at the final energy%
   final energy (e.g., electricity and refined petroleum),  
   useful energy (e.g., heat, light, and mechanical drive), and 
   energy services (e.g., transport, illumination, and space heating).
+  See \citet{Sousa:2017} for an introduction
+  to societal energy and exergy accounting.
 }
 %
 stage of the energy conversion chain,
@@ -685,7 +686,8 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
 (Cost discounting%
 \footnote{
   We discount money because 
-  purchasing power changes with time. 
+  interest changes the available
+  amount of money over time.
   In contrast,
   we do not discount energy, 
   because there is no temporal variation
@@ -753,12 +755,10 @@ so the energy purchaser (the device user) is a price taker.%
 Initially, the device user spends income ($\rorig{M}$)
 on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
 annualized capital costs for the device 
-(undiscounted: $\rorig{C}_{cap}$; 
-discounted: $\orig{R}_\alpha \rorig{C}_{cap}$), 
+($\orig{R}_\alpha \rorig{C}_{cap}$), 
 annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
 disposal of the device 
-(undiscounted: $\rorig{C}_d$; 
-discounted: $\orig{R}_\omega \rorig{C}_d$), and 
+($\orig{R}_\omega \rorig{C}_d$), and 
 other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
@@ -775,10 +775,12 @@ and
 $\orig{C}_d / \orig{t}_{life}$,
 and
 net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
-See Appendix~\ref{sec:budget_constraint} for details.
+Note that $R_\alpha \ge 1$, and $R_\omega \le 1$;
+equalities apply when interest rate ($r$) is zero.
+(See Appendix~\ref{sec:budget_constraint} for details on discounting.)
 After substituting the original price and quantity of energy service consumption,
 after substituting the original price and quantity of other goods consumption,
-after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} - \orig{R}_\omega \rorig{C}_d$,
+after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
 and after some rearrangement, 
 Eq.~(\ref{eq:budget_constraint_prelim}) becomes
 
@@ -1519,7 +1521,8 @@ shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}.
 that 3/4 of long-run US growth since 1950
 can be attributed to sector-specific
 (as opposed to aggregrate) trend factors. 
-Because the EEU represents a positive productivity shock,
+Because the EEU represents a positive, sector-specific
+productivity shock,
 the same principles apply. 
 These kinds of rebounds can be captured
 by a general equilibrium model \citep{Stern2020}, but
@@ -1561,7 +1564,7 @@ into paid work, which enters GDP.
 One channel could be time-saving. 
 If the EEU saves time,
 then saved time could be spent on more paid work or
-on increasing human capital \citep{Sorrell2008,Gautham2022}.
+on increasing human capital \citep{Sorrell2008,Gautham2024}.
 If the EEU saves money (but no time), 
 then the freed cash could be spent to create additional demand for products
 that translate into higher GDP and possibly faster productivity growth
@@ -1586,7 +1589,7 @@ likened it to a macroeconomic multiplier.%
   in an otherwise unchanged economy,
   i.e.\ the Keynesian multiplier \citep{Kahn1931,Keynes1936}, 
   that risks crowding out other economic activity \citep{Gillingham2016}. 
-  This energy productivity improvement is a supply-side shock. 
+  Our energy productivity improvement is a supply-side shock. 
   After the EEU, 
   it takes less energy (and therefore less energy cost)
   to generate the same economic activity, because 
@@ -1612,7 +1615,7 @@ makes the device cheaper to operate (and possibly purchase),
 which allows consumers to
 purchase a larger bundle of goods and services.
 If the overall expansion of the economy is a multiple
-of the direct increase in productivity to follow-on productivity
+of the direct increase in productivity expressed as productivity
 gains in other sectors, 
 then the macro effect can simply
 be represented as a multiple of the (indirect) emplacement effect
@@ -1701,7 +1704,7 @@ we find
 We developed above a rebound framework for consumers. 
 We note that many of its components are similar
 to those for a producer-sided framework
-due to the symmetry between
+due to symmetries between
 neoclassical microeconomic producer and consumer theory.
 Ours is a partial equilibrium framework at the microeconomic level
 that provides a detailed assessment of individual EEUs with tractable,
