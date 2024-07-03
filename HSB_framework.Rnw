@@ -222,11 +222,10 @@ been used from the outset of the modern debate
 and \citet{Borenstein:2015aa} and \citet{Chan2015}
 recently made progress toward solidifying the microeconomic analytical foundations. 
 
-But rebound involves simultaneous changes in energy, expenditure,
+Rebound involves simultaneous changes in energy, expenditure,
 and consumption aspects---keeping an overview of all
 aspects is difficult, with no approach to our knowledge documenting all 
 changes in a straightforward and consistent manner.
-Indeed, new clarity is needed to support empirical efforts.
 For instance, while the microeconomic categories of substitution and
 income effects provide analytical clarity about how behavior
 changes affect energy service consumption,
@@ -245,10 +244,6 @@ Further, previous analytical studies have stressed the importance of the
 cost of buying an upgraded device as well as the energy embodied in the device.
 Yet, there is no clearly formulated approach for how to incorporate these 
 cost and energy components into rebound calculations. 
-% And rebound involves simultaneous changes in energy, expenditure,
-% and consumption aspects---keeping an overview of all
-% aspects is hard, with no approach to our knowledge documenting all 
-% changes in a straightforward and consistent manner.
 Finally, while recent general equilibrium rebound modeling has led to 
 important insights about the effects of changing prices,
 dynamic aspects of a macroeconomic rebound have
