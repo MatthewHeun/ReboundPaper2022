@@ -553,7 +553,7 @@ may change in response to the EEU.
 Further treatment of macroeconomic rebound
 can be found 
 in Section~\ref{sec:macro_effect_main_paper} of this paper (Part~I) and 
-in Section~\ref{PartII-sec:calibrating_k} of Part~II.
+in Section~\ref{PartII-sec:calculating_k} of Part~II.
 Discussion of an energy price rebound effect 
 can be seen in Section~\ref{sec:notes_price_effect} below.
 
@@ -1916,7 +1916,7 @@ the new energy price, and
 a new consumption bundle. 
 But in this instance, 
 as we desire a simple estimate
-of energy price effect rebound,
+of energy price rebound,
 we conservatively assume the device owner spends 
 the additional freed cash
 (the result of the lower energy price)
@@ -1955,7 +1955,7 @@ simplest case of a single fuel and a single energy service.
 Furthermore, we presented approaches
 for exploring consumer satiation of energy service demand and
 for analyzing the effect of reduced energy demand on energy price 
-to create an energy price effect rebound.
+to create energy price rebound.
 With careful explication of rebound effects and 
 clear derivation of rebound expressions,
 we help advance the analytical foundations for empirical analyses and
@@ -2167,7 +2167,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Energy price effect rebound}
+\section{Energy price rebound}
 \label{sec:price_effect_appendix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

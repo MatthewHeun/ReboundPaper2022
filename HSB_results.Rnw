@@ -191,7 +191,7 @@ with detailed explication
 of numerical results for the examples.
 Fourth, we apply the framework to
 calculate numerical values
-for the producer-sided energy price effect rebound
+for the producer-sided energy price rebound
 extension to the framework.
 Finally, we provide information
 about new open source software tools
@@ -371,9 +371,8 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
   \midrule
-   Undiscounted capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Seven year annual, averaged capital costs = purchase + finance costs  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
-                                                    &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+   Undiscounted capital expenditure rate      & \Sexpr{C_dot_cap_orig_car_char}     & \Sexpr{C_dot_cap_star_car_char}    & Fourteen year annual, averaged capital costs = purchase cost / $t_{\life}$.  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  \midrule
    Lifespan                     & \Sexpr{t_life_orig_car_char}  & \Sexpr{t_life_star_car_char} & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
@@ -475,11 +474,10 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   \midrule
   Uncompensated own price elasticity of car use demand  & $\Sexpr{e_qs_ps_UC_car_char}$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
   $\eqspsUCorig$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
-                                                           &           &   \citet{goetzke2018} who estimated values \\
-                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\
-                                                             &           &   who estimated values between $-0.1$ and $-0.3$. \\
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\
-                                                            &            &     based on \citet{Parry2005}. \\
+                                                           &           &   \citet{goetzke2018} who estimated values between $-0.05$ and \\
+                                                           &          &      $-0.23$, and \citet{Parry2005} who estimated values between \\
+                                                             &           &    $-0.1$ and $-0.3$. For comparison, \citet{Borenstein:2015aa} uses values \\
+                                                            &           &   of $-0.1$ to $-0.4$ based on \citet{Parry2005}.\\
   \midrule
   Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsCorig$ [--]                                           &                                &   \\
@@ -573,7 +571,7 @@ the key difference being the energy required to provide that service.
 The LED lamp has a low
 initial capital investment rate
 when spread out over the lifetime of the lamp
-(less than the incumbent incandescent lamp, actually)
+(less than the incumbent incandescent lamp)
 and a long-term benefit of decreased direct energy expenditures
 at approximately the same energy service delivery rate (\lmhr/yr).
 
@@ -619,7 +617,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
                                                     &           &          & Lifetime output = 530 lm $\times$ 3 hr/day \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
-                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
+                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.20 MJ. \\
                                                     &           &          & LED lamp:  \\
                                                     &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
                                                     &           &          & for pack of 5 LED lamps. \\
@@ -678,9 +676,9 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   $p_E$ [\$/\kWhr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
   \midrule
   Fractional spend on original energy service    & \Sexpr{f_Cs_orig_lamp_char}       & Calculation: \$8.5/yr (spend on energy service) / \\
-  $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] = 0.00030, \\
-                                                            &               & where spend on energy service = 580,350 \lmhr/yr /  \\
-                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr = \$8.5/yr.  \\
+  $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] =  \\
+                                                            &               & \Sexpr{f_Cs_orig_lamp_char}, where spend on energy service = 580,350 \lmhr/yr /  \\
+                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr{} = \$8.5/yr. \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
   Real discount rate                                        & \Sexpr{r_lamp_char}  & Taken from Federal Reserve St.\ Louis for 72 month car loan rate,  \\
@@ -952,7 +950,7 @@ i.e. budget constraints,
 are shown as lines with negative slope
 (lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
 Note that budget constraints \circcirc{} and \barbar{}
-intersect at the $y$-axis,
+intersect at the $y$-axis (i.e., where $x$ = 0),
 because the prices of other goods and services do not change
 as a result of the EEU.
 Emplacement (by itself) does not alter consumption patterns, so
@@ -2137,7 +2135,11 @@ comparisons between top-down estimations or calculations
 of total, economy-wide rebound
 may also be of limited value,
 because the rebound effects included or excluded may not be clear,
-giving an appearance of a ``black box'' calculation approach.
+giving an appearance of a ``black box'' calculation approach.%
+\footnote{
+  That said, without the top-down approaches, 
+  we would have few values to compare with our total rebound ($Re_{tot}$).
+}
 
 Second, helpful insights can be gained
 from comparison of rebound magnitudes and calculation methods.
@@ -2196,7 +2198,7 @@ For total rebound ($Re_{tot}$),
 our values of
 $\Sexpr{f_car("Re_tot")}$\% (car) and
 $\Sexpr{f_lmp("Re_tot")}$\% (lamp)
-are very close to those in the comparison studies for both the car (49\% to 51\%) and
+are close to those in the comparison studies for both the car (49\% to 51\%) and
 lamp (43\% to 51\%) examples.
 Beyond that, comparisons (as noted earlier) are inhibited
 by methodological differences between previous studies (top-down methods)
@@ -2398,9 +2400,7 @@ the lamp example shows negligible change
 in total rebound ($Re_{tot}$),
 moving
 from \Sexpr{Re_tot_ces_lamp_char}\%
-(CES utility model)
-to \Sexpr{Re_tot_satiated_lamp_char}\%
-(already-satiated consumption of the energy service).
+to \Sexpr{Re_tot_satiated_lamp_char}\%.
 
 The reason for the nearly unchanged value
 for total rebound ($Re_{tot}$)
@@ -2533,7 +2533,7 @@ in price elasticity for both case studies.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Energy price effect rebound}
+\subsection{Energy price rebound}
 \label{sec:price_effect_results}
 %++++++++++++++++++++++++++++++
 
@@ -2541,11 +2541,11 @@ Section~\ref{PartI-sec:notes_price_effect},
 Eq.~(\ref{PartI-eq:Re_p_E}), and
 Appendix~\ref{PartI-sec:price_effect_appendix}
 of Part~I provide an extension to the framework
-involving energy price effect rebound ($Re_{p_E}$).
-This section quantifies price-effect rebound
+involving energy price rebound ($Re_{p_E}$).
+This section quantifies energy price rebound
 for the car and lamp examples.
 
-To quantify price-effect rebound,
+To quantify energy price rebound,
 data are needed for
 personal consumption ($\rorig{E}$)
 of the type of energy used by the device,
@@ -2573,7 +2573,7 @@ from \citet{Coyle:2012aa}.
 For the lamp case, we adopt the value of
 0.33 from \citet[Table~3]{Ghoddusia:2017aa}.
 
-<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price effect rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\\varepsilon_{\\rate{Q}_E,p_E}$). Gray bands provide $\\pm 0.1$ range in $\\varepsilon_{\\rate{Q}_E,p_E}$.">>=
+<<PriceEffectGraph, echo=FALSE, fig.height=4, fig.cap="Energy price rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\\varepsilon_{\\rate{Q}_E,p_E}$). Gray bands provide $\\pm 0.1$ range in $\\varepsilon_{\\rate{Q}_E,p_E}$.">>=
 eps_Q_dot_E_p_E_car <- 0.29
 eps_Q_dot_E_p_E_lamp <- 0.33
 price_effect_eps_delta <- 0.1
@@ -2692,7 +2692,7 @@ little additional freed cash beyond the
 so there is limited spending on other goods and services
 and little additional indirect energy demand.
 In contrast, the upgrade of the electric lamp
-is much more likely to provide energy price effect rebound,
+is much more likely to provide energy price rebound,
 because electricity for the upgraded lamp is
 a small fraction of total electricity consumption
 by the consumer.
@@ -2716,7 +2716,7 @@ Re_cons_supply_lamp <- Re_tot_lamp_k_3 + Re_p_E_lamp_100
 At 100\% penetration of LED lamps ($f_{EEU} = 1$) and
 at the nominal energy price elasticity of supply
 ($\varepsilon_{\rate{Q}_{E},p_E} = \Sexpr{eps_Q_dot_E_p_E_lamp}$),
-energy price effect rebound is $Re_{p_E} =
+energy price rebound is $Re_{p_E} =
 \Sexpr{sprintf(Re_p_E_lamp_100 * 100, fmt = "%.1f")}$\%.
 Combined with consumer sided rebound of
 \Sexpr{sprintf(Re_tot_lamp_k_3*100, fmt = "%.1f")}\%
@@ -2748,7 +2748,7 @@ by
         upgrades,
 
   \item showing the extensibility of our framework
-        by applying it to estimate energy price effect rebound, and
+        by applying it to estimate energy price rebound, and
 
   \item providing information about new open source software tools
         for calculating and visualizing rebound
