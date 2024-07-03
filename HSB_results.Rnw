@@ -447,8 +447,11 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
-  Real discount rate                                        & \Sexpr{r_car_char}           & **** Info here from GS justifying the value. **** \\
-  $r$ [1/yr]                                                &               &               \\
+  Real discount rate                                        & \Sexpr{r_car_char}  & Taken from Federal Reserve St.\ Louis for 72 month car loan rate,  \\
+  $r$ [1/yr]                                                &                     & which averaged 5\% before the 2022 interest rate raises. \\
+                                                            &                     & Subtracting 2\% inflation gives 3\% real interest rate, \\
+                                                            &                     & by which we discount. \\
+                                                            &                     & \citep{FRED-US:2024aa} \\
   \midrule
   Macro factor                                              & \Sexpr{k_car_char}           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\
   $k$ [--]                                                  &               &               \\
@@ -680,8 +683,11 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                             &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr = \$8.5/yr.  \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
-  Real discount rate                                        & \Sexpr{r_lamp_char}           & **** Info here from GS justifying the value. **** \\
-  $r$ [1/yr]                                                &               &               \\
+  Real discount rate                                        & \Sexpr{r_lamp_char}  & Taken from Federal Reserve St.\ Louis for 72 month car loan rate,  \\
+  $r$ [1/yr]                                                &                      & which averaged 5\% before the 2022 interest rate raises. \\
+                                                            &                      & Subtracting 2\% inflation gives 3\% real interest rate, \\
+                                                            &                      & by which we discount. \\
+                                                            &                      & \citep{FRED-US:2024aa} \\
   \midrule
   Macro factor                                              & \Sexpr{k_lamp_char}           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\
   $k$ [--]                                                  &               &               \\
