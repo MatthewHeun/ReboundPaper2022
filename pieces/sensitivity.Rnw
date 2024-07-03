@@ -251,7 +251,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_se
                     x_var = "C_cap_star", 
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
-  ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(30000, 36000, by = 2000))) + 
+  ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(32000, 38000, by = 2000))) + 
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::labs(x = expression(tilde(C)[cap]*" [$]"),
                 y = "Rebound terms [-]",
