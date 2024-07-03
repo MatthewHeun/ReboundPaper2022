@@ -2537,10 +2537,11 @@ in price elasticity for both case studies.
 \label{sec:price_effect_results}
 %++++++++++++++++++++++++++++++
 
-Section~\ref{PartI-sec:notes_price_effect},
-Eq.~(\ref{PartI-eq:Re_p_E}), and
 Appendix~\ref{PartI-sec:price_effect_appendix}
-of Part~I provide an extension to the framework
+of Part~I, 
+Section~\ref{PartI-sec:notes_price_effect}, and
+Eq.~(\ref{PartI-eq:Re_p_E})
+provide an extension to the framework
 involving energy price rebound ($Re_{p_E}$).
 This section quantifies energy price rebound
 for the car and lamp examples.
@@ -2561,7 +2562,7 @@ a median U.S.\ household consumes about
 \citep{U.S.-Energy-Information-Agency:2023aa}.
 Given that there are 2.5 persons per U.S.\ household
 \citep{Statista:2024aa},
-the consumer consumes electricity at a rate of
+an individual consumes electricity at a rate of
 $\rorig{E} = 4000$~kW$\cdot$hr/yr.
 
 We also need data for the price elasticity
