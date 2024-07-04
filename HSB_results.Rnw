@@ -2386,28 +2386,6 @@ Re_sub_deviation_lamp_char <- format(round(Re_sub_deviation_lamp*100, 2), nsmall
 
 
 <<car_stages_table_cpe, results="asis", echo=FALSE>>=
-# digs_car <- matrix(c(rep(0, n_stages_table_cols), # t_life,
-#                      rep(3, n_stages_table_cols), # R_alpha
-#                      rep(3, n_stages_table_cols), # R_omega
-#                      rep(0, n_stages_table_cols), # eta_engr_units
-#                      rep(3, n_stages_table_cols), # eta
-#                      rep(3, n_stages_table_cols), # p_s
-#                      rep(0, n_stages_table_cols), # q_dot_s
-#                      rep(4, n_stages_table_cols), # p_E
-#                      rep(0, n_stages_table_cols), # E_dot_s
-#                      rep(0, n_stages_table_cols), # E_dot_emb
-#                      rep(0, n_stages_table_cols), # C_dot_s
-#                      rep(0, n_stages_table_cols), # C_dot_cap
-#                      rep(0, n_stages_table_cols), # R_alpha_C_dot_cap
-#                      rep(0, n_stages_table_cols), # C_dot_om
-#                      rep(0, n_stages_table_cols), # C_d
-#                      rep(0, n_stages_table_cols), # C_dot_d
-#                      rep(0, n_stages_table_cols), # R_omega_C_dot_d
-#                      rep(0, n_stages_table_cols), # C_dot_omd
-#                      rep(0, n_stages_table_cols), # C_dot_o
-#                      rep(0, n_stages_table_cols), # N_dot
-#                      rep(0, n_stages_table_cols)), # M_dot
-#                    nrow = 21, ncol = n_stages_table_cols, byrow = TRUE)
 rebound_results_cpe |>
   dplyr::filter(Case == "Car") |>
   dplyr::mutate(
