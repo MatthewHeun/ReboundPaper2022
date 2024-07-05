@@ -2333,6 +2333,11 @@ Re_inc_cpe_car_char <- format(round(Re_inc_cpe_car*100, 1), nsmall = 1)
 
 Re_sub_deviation_car_char <- format(round(Re_sub_deviation_car*100, 1), nsmall = 1)
 
+Re_subinc_deviation_car <- Re_sub_cpe_car + Re_inc_cpe_car - (Re_sub_ces_car + Re_inc_ces_car)
+
+# Include the negative sign here to get a positive number in the text.
+Re_subinc_deviation_car_char <- format(round(-Re_subinc_deviation_car*100, 1), nsmall = 1)
+
 
 # Lamp
 ## CPE utility model
@@ -2371,7 +2376,8 @@ the constant price elasticity (CPE) utility model.%
   The constant price elasticity (CPE) utility model 
   in Table~\ref{tab:utility_model_comparison}
   follows \citet{Borenstein:2015aa} who holds income constant, 
-  not utility.
+  not utility, 
+  when calculating the substitution effect.
   Furthermore, \citeauthor{Borenstein:2015aa}'s income effect
   assumes all post-emplacement freed cash ($\raempl{N}$)
   is spent at the energy intensity of the economy ($I_E$).
@@ -2482,39 +2488,33 @@ $Re_{tot}$ [\%] & \Sexpr{Re_tot_ces_car_char}
 \end{tabular}
 \end{table}
 
-Calculation of substitution rebound
-under the constant price elasticity (CPE) utility model,
-which approximates the sum of substitution and income effects
-by holding the uncompensated price elasticities ($\eqspsUC$) constant,
-leads to a similar conclusion
-that the specific case determines
-the deviation of rebound from an exact model.
-Table~\ref{tab:utility_model_comparison} shows that
-the deviation of the substitution effect
-(CPE utility model relative to CES utility model)
-is only
-$\Sexpr{Re_sub_deviation_car_char}$\% 
-in the car example
-but
-$\Sexpr{Re_sub_deviation_lamp_char}$\%
-in the lamp example.
-This is intuitive.
-The lamp example has a larger increase
-in energy conversion efficiency, so
-the change in the energy service price
-is farther away from the ``marginal'' change
-for which holding the price elasticity constant
-leads to the same rebound as the exact model.
-We note that whether the deviation
-of the approximation results in lower or higher rebound
-depends on the exact model comparison.
-For instance,
-in comparison with the satiated model,
-or a CES model with an elasticity of substition greater than one,
-the CPE model would overstate the substitution rebound.
-Appendix~\ref{sec:price_elasticities_sensitivity}
-quantifies the change
-in price elasticity for both case studies.
+Calculation of substitution rebound under the 
+constant price elasticity (CPE) utility model, 
+which approximates the substitution and income effects 
+using only the uncompensated own price elasticity 
+of energy service consumption ($\eqspsUC$),
+systematically overestimates substitution effect rebound
+and underestimates income effect rebound.
+That's by construction since income, 
+not utility, 
+is held constant when calculating substitution
+of the energy service for other goods consumption
+with the CPE model. 
+And the income effect, in the CPE utility model,
+allows spending on other goods only, 
+which leads to a lower income rebound 
+than in the satiated model,
+since the absence of compensating variation 
+leaves less income to spend.
+Once again, 
+the specific case determines 
+the deviation of the sum of substitution and income rebound
+from an exact (in our case, CES) model.
+Table~\ref{tab:utility_model_comparison}
+shows that while the sum of substitution and income effects 
+is \Sexpr{Re_subinc_deviation_car_char}\% smaller for the 
+CPE utility model relative to the CES utility model, 
+they are nearly the same in the lamp example.
 
 
 %++++++++++++++++++++++++++++++
