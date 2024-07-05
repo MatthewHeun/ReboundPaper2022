@@ -1906,32 +1906,18 @@ rebound_results %>%
 \label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
 
-<<Calibrate_k, echo = FALSE>>=
-Re_tot_expected <- 0.54
-calibrated_k <- rebound_results %>%
-  dplyr::filter(.data[["Case"]] %in% c("Car", "Lamp")) %>%
-  ReboundTools::calibrate_k(Re_tot_expected)
-
-# Land on k = 3 as a median value.
-# Do a sensitivity study with those k values to recalculate everything.
-k_cal_vals <- list(Car = list(k = 3),
-                   Lamp = list(k = 3))
-
-rebound_analysis_with_cal_k <- rebound_data %>%
-  dplyr::filter(.data[["Case"]] %in% c("Car", "Lamp")) %>%
-  ReboundTools::parametric_analysis(parameterization = k_cal_vals,
-                                    include_orig_point = FALSE)
-Re_macro_car_k_3 <- rebound_analysis_with_cal_k %>%
-  dplyr::filter(.data[["Case"]] == "Car") %>%
+<<Withk3, echo = FALSE>>=
+Re_macro_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
   magrittr::extract2("Re_macro")
-Re_macro_lamp_k_3 <- rebound_analysis_with_cal_k %>%
-  dplyr::filter(.data[["Case"]] == "Lamp") %>%
+Re_macro_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
   magrittr::extract2("Re_macro")
-Re_tot_car_k_3 <- rebound_analysis_with_cal_k %>%
-  dplyr::filter(.data[["Case"]] == "Car") %>%
+Re_tot_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
   magrittr::extract2("Re_tot")
-Re_tot_lamp_k_3 <- rebound_analysis_with_cal_k %>%
-  dplyr::filter(.data[["Case"]] == "Lamp") %>%
+Re_tot_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
   magrittr::extract2("Re_tot")
 @
 
@@ -2008,8 +1994,8 @@ we use $k = 3$.
 # The goal of these functions is to provide a short function call
 # to fit into the table nicely.
 f_car <- function(Re_name, string_val = TRUE) {
-  out_val <- rebound_analysis_with_cal_k %>%
-    dplyr::filter(.data[["Case"]] == "Car") %>%
+  out_val <- rebound_results %>%
+    dplyr::filter(Case == "Car (k = 3)") %>%
     magrittr::extract2(Re_name) %>%
     magrittr::multiply_by(100)
   if (string_val) {
@@ -2019,8 +2005,8 @@ f_car <- function(Re_name, string_val = TRUE) {
   }
 }
 f_lmp <- function(Re_name, string_val = TRUE) {
-  out_val <- rebound_analysis_with_cal_k %>%
-    dplyr::filter(.data[["Case"]] == "Lamp") %>%
+  out_val <- rebound_results %>%
+    dplyr::filter(Case == "Lamp (k = 3)") %>%
     magrittr::extract2(Re_name) %>%
     magrittr::multiply_by(100)
   if (string_val) {
