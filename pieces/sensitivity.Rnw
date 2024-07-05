@@ -98,10 +98,10 @@ eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases
 # The function checks to see if the breaks are > 1000 and divides by 1000 in that case.
 # This approach works, because lm-hr/kW-hr values are > 1000 for the lamp example
 # but the car example has mpg (which are all less than 100).
-# So this function divides the Lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
+# So this function divides the lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
 eta_tilde_formatter <- function(x_breaks) {
   if (all(x_breaks > 1000)) {
-    # To convert Lm-hr/kW-hr to Lm-hr/W-hr.
+    # To convert lm-hr/kW-hr to lm-hr/W-hr.
     return(x_breaks/1000)
   }
   # To leave mpg alone.
@@ -348,7 +348,6 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
   ggplot2::geom_vline(data = price_data, 
-                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
                       mapping = ggplot2::aes(xintercept = p_E_engr_units), 
                       linewidth = 0.1) +
   ggplot2::scale_y_continuous(breaks = seq(-0.2, 2, by = 0.2)) +
@@ -443,21 +442,6 @@ For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
 substantially with $\eqspsUC^\circ$, 
 because net savings increases substantially with $\eqspsUC^\circ$. 
 
-% A limitation of the elasticity sensitivity study derives from limitations of the 
-% CES utility model itself, which constrains price elasticity variation
-% given an elasticity of substitution.
-% Uneconomic conditions should be avoided.
-% For example, negative direct substitution rebound ($Re_{dsub} < 0$)
-% is obtained when $\left| \eqspsUC \right| < \fCs$,
-% because the elasticity of substitution goes negative ($\sigma < 0$).
-% (See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
-% In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
-% would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
-% thereby avoiding the uneconomic condition.
-% However, a univariate sensitivity study cannot capture this effect and is
-% best used for smaller variations in $\eqspsUC$
-% about a nominal value.
-
   
 %++++++++++++++++++++++++++++++
 \subsection{Effect of macro factor ($k$) on rebound terms} 
@@ -470,11 +454,6 @@ in Fig.~\ref{fig:all_Re_terms_k_graph}.
 The macro factor has a linear effect on total rebound ($Re_{tot}$)
 through the macro rebound component ($Re_{\macro}$).
 All other rebound components are constant when $k$ is varied independently.
-
-% A limitation of the macro factor sensitivity analysis is that
-% the macro factor ($k$) is unlikely to be 
-% independent of $I_E$, because 
-% different values of $k$ imply a different macroeconomy.
 
 <<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4, fig.align="center">>=
 k_sens_params <- list(Car = list(k = seq(0.5, 5, by = 0.5)),
