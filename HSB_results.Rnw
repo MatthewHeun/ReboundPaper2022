@@ -2325,8 +2325,8 @@ rebound_results_cpe <- rebound_results |>
     # Additional energy consumption due to extra driving
     Delta_E_dot_s_star = `MJ/energy_engr_unit` * (q_dot_s_star - q_dot_s_orig) / eta_engr_units_star, 
     # Energy saved from less consumption of other goods
-    Detla_E_dot_o_star = Delta_C_dot_s_star * I_E, 
-    takeback = Delta_E_dot_s_star - Detla_E_dot_o_star, 
+    Delta_E_dot_o_star = Delta_C_dot_s_star * I_E, 
+    takeback = Delta_E_dot_s_star - Delta_E_dot_o_star, 
     Re_sub = takeback / S_dot_dev, 
     Re_inc = N_dot_star * I_E / S_dot_dev
   )
