@@ -2507,7 +2507,8 @@ Table~\ref{tab:utility_model_comparison} shows that
 the deviation of the substitution effect
 (CPE utility model relative to CES utility model)
 is only
-$\Sexpr{Re_sub_deviation_car_char}$\% in the car example
+$\Sexpr{Re_sub_deviation_car_char}$\% 
+in the car example
 but
 $\Sexpr{Re_sub_deviation_lamp_char}$\%
 in the lamp example.
