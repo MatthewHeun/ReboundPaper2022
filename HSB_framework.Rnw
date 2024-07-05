@@ -63,7 +63,7 @@
           Stellenbosch University,
           Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
 \affil[4]{Political Economy Research Institute and Department of Economics,
-          UMass Amherst, 
+          University of Massachusetts Amherst, 
           Amherst, MA, 01003}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
