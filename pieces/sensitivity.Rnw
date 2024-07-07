@@ -75,7 +75,7 @@ Each successive 5~mpg boost in fuel economy
 saves less energy than the previous 5~mpg boost in fuel economy.
 
 
-<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$). (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor, $k = 3$. (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
 actual_cases <- rebound_data %>% 
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car (k = 3)", "Lamp (k = 3)")) %>% 
   # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
@@ -98,10 +98,10 @@ eta_sens_data <- ReboundTools::parametric_analysis(original_cases = actual_cases
 # The function checks to see if the breaks are > 1000 and divides by 1000 in that case.
 # This approach works, because lm-hr/kW-hr values are > 1000 for the lamp example
 # but the car example has mpg (which are all less than 100).
-# So this function divides the Lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
+# So this function divides the lm-hr/kW-hr values by 1000 while leaving the mpg values unchanged.
 eta_tilde_formatter <- function(x_breaks) {
   if (all(x_breaks > 1000)) {
-    # To convert Lm-hr/kW-hr to Lm-hr/W-hr.
+    # To convert lm-hr/kW-hr to lm-hr/W-hr.
     return(x_breaks/1000)
   }
   # To leave mpg alone.
@@ -192,7 +192,7 @@ increases (decreases) proportionally,
 and the actual energy savings rate decreases (increases) accordingly.
 
 
-<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
@@ -243,7 +243,7 @@ leading to smaller income, macro, and total rebound.
 The same effects would be observed
 with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 
-<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(32000, 38000, by = 1000)),
                               Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
 
@@ -339,7 +339,7 @@ for the car example and
 $\Sexpr{format(round(unlist(Lamp_Germany_Re_tot * 100, 1)), nsmall = 1)}$\%
 for the lamp example.
 
-<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor is set to its calibrated value ($k = 3$).", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_p_E_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 p_E_sens_params <- list(Car = list(p_E_engr_units = seq(1, 8, by = 0.5)),
                         Lamp = list(p_E_engr_units = seq(0.05, 0.4, by = 0.01)))
 
@@ -348,7 +348,6 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
                     Re_terms = Re_terms_order,
                     graph_params = Re_graph_params) +
   ggplot2::geom_vline(data = price_data, 
-                      # mapping = ggplot2::aes_string(xintercept = "p_E_engr_units"), 
                       mapping = ggplot2::aes(xintercept = p_E_engr_units), 
                       linewidth = 0.1) +
   ggplot2::scale_y_continuous(breaks = seq(-0.2, 2, by = 0.2)) +
@@ -380,7 +379,7 @@ eqspsUC_lamp <- actual_cases %>%
   dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor, $k = 3$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
@@ -443,21 +442,6 @@ For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
 substantially with $\eqspsUC^\circ$, 
 because net savings increases substantially with $\eqspsUC^\circ$. 
 
-% A limitation of the elasticity sensitivity study derives from limitations of the 
-% CES utility model itself, which constrains price elasticity variation
-% given an elasticity of substitution.
-% Uneconomic conditions should be avoided.
-% For example, negative direct substitution rebound ($Re_{dsub} < 0$)
-% is obtained when $\left| \eqspsUC \right| < \fCs$,
-% because the elasticity of substitution goes negative ($\sigma < 0$).
-% (See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
-% In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
-% would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
-% thereby avoiding the uneconomic condition.
-% However, a univariate sensitivity study cannot capture this effect and is
-% best used for smaller variations in $\eqspsUC$
-% about a nominal value.
-
   
 %++++++++++++++++++++++++++++++
 \subsection{Effect of macro factor ($k$) on rebound terms} 
@@ -470,11 +454,6 @@ in Fig.~\ref{fig:all_Re_terms_k_graph}.
 The macro factor has a linear effect on total rebound ($Re_{tot}$)
 through the macro rebound component ($Re_{\macro}$).
 All other rebound components are constant when $k$ is varied independently.
-
-% A limitation of the macro factor sensitivity analysis is that
-% the macro factor ($k$) is unlikely to be 
-% independent of $I_E$, because 
-% different values of $k$ imply a different macroeconomy.
 
 <<all_Re_terms_k_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to the macro factor ($k$).", fig.width=6, fig.height=4, fig.align="center">>=
 k_sens_params <- list(Car = list(k = seq(0.5, 5, by = 0.5)),
