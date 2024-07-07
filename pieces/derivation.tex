@@ -465,26 +465,29 @@ The CES model is used for all calculations and graphs in this paper.
 %..............................
 
 In the literature, a constant price elasticity (CPE) utility model
-is often used 
+has been used 
 \citep[p.~17, footnote~43]{Borenstein:2015aa}.
 However, the CPE model does not produce precisely
-utility-preserving preferences, thus we do not recommend its use.
+utility-preserving preferences, 
+thus it cannot calculate the actual substitution effect.
 We discuss the CPE utility model here for completeness only.
 
-In the CPE utility model, 
-the relationship between energy service price and energy service consumption rate
-is given by the compensated own price elasticity of energy service demand~($\eqspsC$),
-such that
+\citeauthor{Borenstein:2015aa}'s CPE utility model
+uses the reduced form relationship between 
+energy service price ($p_s$) and 
+energy service consumption rate ($\rate{q}_s$), 
+namely the observed, uncompensated own price elasticity of energy service demand~($\eqspsUC$) such that
 
 \begin{equation}
-  \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right)^{\eqspsC} \; .
+  \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right)^{\eqspsUC} \; .
 \end{equation}
 %
-Note that the compensated own price elasticity of energy service demand ($\eqspsC$)
-is assumed constant along an indifference curve
-in the CPE utility model. 
-A negative value for the compensated own price elasticity of energy service demand
-is expected ($\eqspsC < 0$),
+Note that the uncompensated own price elasticity
+of energy service demand ($\eqspsUC$)
+is assumed constant in the CPE utility model.  
+A negative value for the
+uncompensated own price elasticity of energy service demand
+is expected ($\eqspsUC < 0$),
 such that when the energy service price decreases 
 ($\bempl{p}_s > \amacro{p}_s $),
 the rate of energy service consumption increases 
@@ -496,11 +499,11 @@ $\amacro{p}_s = \bempl{p}_E/\amacro{\eta}$
 and noting that $\rbempl{q}_s = \raempl{q}_s$ gives
 
 \begin{equation} \label{eq:approx_qshat_over_qsorig}
-  \frac{\rasub{q}_s}{\rbempl{q}_s} = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} \; .
+  \frac{\rasub{q}_s}{\rbempl{q}_s} = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsUC} \; .
 \end{equation}
 %
 Again, note that the compensated own price elasticity of energy service demand
-is negative ($\eqspsC < 0$), so that
+is negative ($\eqspsUC < 0$), so that
 as energy service efficiency increases 
 ($\bempl{\eta} < \amacro{\eta}$),
 the energy service consumption rate increases 
@@ -514,14 +517,17 @@ yields the CPE model's expression for direct substitution rebound.
 \end{equation}
 %
 such that, e.g.,
-$\eqspsC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
+$\eqspsUC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
 yields $Re_{dsub} = 0.15$.
 
-As long as $\eqspsC \in (-1, 0)$,
-the CPE utility model indicates that
-direct substitution rebound will be below 1.
-I.e., the direct substitution effect alone
-will not cause backfire. 
+As long as $\eqspsUC \in (-1, 0)$,
+the CPE utility model indicates that 
+direct substitution rebound will be below 1. 
+At $\eqspsUC = 1$,
+the effect would be the same as the Cobb-Douglas utility model 
+(see footnote \ref{fn:other_utility_models}) and 
+the sum of substitution and income rebound effects 
+stand at 100\%.
 
 To quantify the substitution effect on other purchases in the CPE utility model,
 we use another elasticity,

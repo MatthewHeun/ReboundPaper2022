@@ -1253,8 +1253,10 @@ assuming the CES utility model.%
   $\rasub{q}_s/\rorig{q}_s$ and
   $\rasub{C}_o/\rorig{C}_o$
   must be determined
-  and substituted into Eqs.~(\ref{eq:Re_dsub_prelim}) and~(\ref{eq:Re_isub_prelim}), 
+  and substituted into 
+  Eqs.~(\ref{eq:Re_dsub_prelim}) and~(\ref{eq:Re_isub_prelim}), 
   respectively.
+  \label{fn:other_utility_models}
 }
 %
 The results are
