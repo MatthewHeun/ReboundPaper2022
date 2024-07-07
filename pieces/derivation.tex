@@ -456,7 +456,8 @@ requires reference to a consumer utility model.
 We first show the CPE utility model, often used in the literature. 
 Second, we use a constant elasticity of substitution (CES)
 utility model. 
-The CES model is used for all calculations and graphs in this paper.
+The CES utility model is used for nearly all calculations and graphs
+in this paper.
 
 
 %..............................
@@ -465,12 +466,14 @@ The CES model is used for all calculations and graphs in this paper.
 %..............................
 
 In the literature, a constant price elasticity (CPE) utility model
-has been used 
+has been used to determine 
+conditions after the substitution effect ($\wedge$)
 \citep[p.~17, footnote~43]{Borenstein:2015aa}.
 However, the CPE model does not produce precisely
 utility-preserving preferences, 
 thus it cannot calculate the actual substitution effect.
-We discuss the CPE utility model here for completeness only.
+We discuss the CPE utility model here for 
+comparison purposes only.
 
 \citeauthor{Borenstein:2015aa}'s CPE utility model
 uses the reduced form relationship between 
@@ -507,13 +510,14 @@ is negative ($\eqspsUC < 0$), so that
 as energy service efficiency increases 
 ($\bempl{\eta} < \amacro{\eta}$),
 the energy service consumption rate increases 
-($\rorig{q}_s = \rbsub{q}_s < \rasub{q}_s$).
+($\rorig{q}_s = \rbsub{q}_s < \rasub{q}_s$)
+as well.
 
 Substituting Eq.~(\ref{eq:approx_qshat_over_qsorig}) into Eq.~(\ref{eq:Re_dsub_prelim})
-yields the CPE model's expression for direct substitution rebound.
+yields the CPE model's expression for direct substitution rebound
 
 \begin{equation} \label{eq:Re_dsub_approx}
-  Re_{dsub} = \Redsubeqn
+  Re_{dsub} = \Redsubeqn \; ,
 \end{equation}
 %
 such that, e.g.,
@@ -531,7 +535,7 @@ would be exactly 100\%.
 
 To quantify the substitution effect on other purchases
 in the CPE utility model,
-expenditure on other goods is reduced by
+expenditure on other goods is reduced
 by the same dollar amount 
 as expenditure on the energy service increased
 due to the direct substitution effect: 
@@ -579,14 +583,17 @@ Rearranging and substituting Eq.~(\ref{eq:Re_dsub_approx}) gives
 the expression for indirect substitution rebound under the
 CPE utility model.
 
-\begin{equation}
+\begin{equation} \label{eq:Re_isub_cpe}
   Re_{isub} = - \frac{\rbsub{q}_s \rorig{C}_o p_E I_E}{\orig{\eta} \rbsub{C}_o \rorig{E}_s} Re_{dsub}
 \end{equation}
 
 Because the compensated cross price elasticity of other goods consumption is positive ($\eqopsC > 0$) and
 the energy service efficiency ratio is greater than 1
 ($\bempl{\eta} < \amacro{\eta}$),
-indirect substitution rebound will be negative always ($Re_{isub} < 0$),
+direct substitution rebound will be positive always
+($Re_{dsub} > 0$) and
+indirect substitution rebound will be negative always
+($Re_{isub} < 0$),
 as expected, under the CPE utility model.
 Negative rebound indicates that indirect substitution effects 
 reduce the energy takeback rate by direct substitution effects.
@@ -598,13 +605,13 @@ reduce the energy takeback rate by direct substitution effects.
 %..............................
 
 The CPE utility model assumes that 
-the compensated own price elasticity of energy service demand ($\eqspsC$) and
-the compensated cross price elasticity of other goods demand ($\eqopsC$)
-are constant along an indifference curve.
-These assumptions hold only 
+the compensated own price elasticity of energy service demand ($\eqspsC$) 
+is constant along an indifference curve, an
+assumption that holds only 
 for infinitesimally small energy service price changes
 ($\Delta \aempl{p}_s \equiv \aempl{p}_s - \bempl{p}_s \approx 0$).
-They also provide reasonable approximations for a 1--2\% change.
+The CPE utility model provides
+reasonable approximations for a 1--2\% change in energy efficiency.
 However, in the case of an energy efficiency upgrade (EEU), 
 the energy service price change is neither infinitesimal nor confined
 to single-digit percentages.
@@ -616,8 +623,10 @@ To determine the new consumption bundle after the substitution effect
 and,
 ultimately, to quantify the direct and indirect substitution rebound effects
 ($Re_{dsub}$ and $Re_{isub}$) exactly,
-we remove the restriction that energy service price elasticities ($\eqspsC$ and $\eqopsC$)
-must be constant along an indifference curve (as in the CPE utility model).
+we remove the restriction that energy service price elasticity
+($\eqspsUC$)
+must be constant along an indifference curve 
+(as in the CPE utility model).
 Instead, we require constancy of only
 the elasticity of substitution ($\sigma$) between
 the consumption rate of the energy service ($\rate{q}_s$)
@@ -996,9 +1005,9 @@ indirect income effect rebound is zero ($Re_{iinc} = 0$), as expected.
 %..............................
 
 Following \citet{Borenstein:2015aa}, 
-under CPE utility model, 
+under CPE utility model
 all freed cash is spent on other goods, 
-like in the fully satiated case discussed 
+as in the fully satiated case discussed 
 in Section~\ref{sec:inc_effect_main_paper}.
 However, because the substitution effect 
 under the CPE utility model

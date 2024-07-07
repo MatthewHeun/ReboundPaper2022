@@ -117,7 +117,7 @@ by the utility decrease of the smaller other goods consumption rate.
 
 The constant price elasticity (CPE) utility model is given
 by Eqs.~(\ref{eq:approx_qshat_over_qsorig})
-and~(\ref{eq:Cdot_o_ratio}).
+and~(\ref{eq:C_dot_o_ratio_CPE}).
 The equations for the approximate utility model are repeated here
 for convenience.
 
@@ -128,9 +128,8 @@ for convenience.
 \end{equation}
 
 \begin{equation}
-  \frac{\rasub{C}_o}{\rorig{C}_o}
-      = \frac{\rasub{q}_o}{\rorig{q}_o}
-      = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} \tag{\ref{eq:Cdot_o_ratio}}
+  \frac{\rasub{C}_o}{\rbsub{C}_o} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_o} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
+ \tag{\ref{eq:C_dot_o_ratio_CPE}}
 \end{equation}
 
 
@@ -601,23 +600,16 @@ for the CPE utility model and the CES utility model.
 \paragraph{CPE utility model} 
 %..............................
 
-By definition, all price elasticities are assumed unchanged 
+By definition, the uncompensated own-price
+elasticity is assumed unchanged 
 from their original values 
 across the substitution effect
 in the constant price elasticity (CPE) utility model. 
 Thus, 
 
-\begin{align} \label{eq:cpe_hat_elasticities}
-  \eqspsUCorig &= \eqspsUChat \; , \\
-  \eqopsUCorig &= \eqopsUChat \; , \\
-  \eqspsCorig &= \eqspsChat \; , \mathrm{and} \\
-  \eqopsCorig &= \eqopsChat \; .
-\end{align}
-
-Under the CPE approximation, the post-EEU elasticity of substitution will
-be different from its original value ($\orig{\sigma} \ne \asub{\sigma}$). 
-However, there is no analytical expression for $\sigma$ and 
-values are most likely taken from estimation, if they are found at all.
+\begin{equation} \label{eq:cpe_hat_elasticities}
+  \eqspsUCorig = \eqspsUChat \; .
+\end{equation}
 
 
 %..............................
