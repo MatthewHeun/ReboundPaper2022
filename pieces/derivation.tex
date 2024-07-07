@@ -476,7 +476,7 @@ We discuss the CPE utility model here for completeness only.
 uses the reduced form relationship between 
 energy service price ($p_s$) and 
 energy service consumption rate ($\rate{q}_s$), 
-namely the observed, uncompensated own price elasticity of energy service demand~($\eqspsUC$) such that
+namely the observed, uncompensated own price elasticity of energy service demand~($\eqspsUC$), such that
 
 \begin{equation}
   \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right)^{\eqspsUC} \; .
@@ -527,64 +527,129 @@ At $\eqspsUC = 1$,
 the effect would be the same as the Cobb-Douglas utility model 
 (see footnote \ref{fn:other_utility_models}) and 
 the sum of substitution and income rebound effects 
-stand at 100\%.
+would be exactly 100\%.
 
-To quantify the substitution effect on other purchases in the CPE utility model,
-we use another elasticity,
-the compensated cross price elasticity of other goods demand~($\eqopsC$), 
-such that
-
-\begin{equation}
-  \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right) ^ {\eqopsC} \; .
-\end{equation}
-%
-For substitution to take place, the compensated cross price elasticity
-of other goods demand must be positive ($\eqopsC > 0$). Thus,
-an energy service price decrease 
-($\bempl{p}_s > \amacro{p}_s$)
-implies a reduction in the rate of consumption of other goods
-($\rbsub{q}_o > \rasub{q}_o$).
-
-The energy service price is inversely proportional to 
-efficiency, yielding
-
-\begin{equation} \label{eq:qohat_qostar}
-  \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \etaratiostacked \right) ^ {-\eqopsC} .
-\end{equation}
-
-Assuming that the average price is unchanged across the substitution effect
-such that $\asub{p}_o = \raempl{p}_o = \orig{p}_o$
-(Appendix~\ref{sec:other_goods_expenditures}),
-and noting that $\rbsub{q}_s = \rorig{q}_s$ and $\rbsub{C}_o = \rorig{C}_o$,
-we can write
-
-\begin{equation} \label{eq:Cdot_o_ratio}
-  \frac{\rasub{C}_o}{\rorig{C}_o}
-      = \frac{\rasub{q}_o}{\rorig{q}_o}
-      = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} .
-\end{equation}
-%
-Note that Eq.~(\ref{eq:Cdot_o_ratio})
-can be used to determine the rate of expenditures
-on other goods in the economy~($\rasub{C}_o$) by
-
-\begin{equation} \label{eq:C_dot_hat_o_eqn}
-  \rasub{C}_o = \rbempl{C}_o \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} \; .
-\end{equation}
-
-Substituting Eq.~(\ref{eq:C_dot_hat_o_eqn}) into Eq.~(\ref{eq:Re_isub_prelim})
-gives the expression for 
-indirect substitution rebound for the CPE utility model.
+To quantify the substitution effect on other purchases
+in the CPE utility model,
+expenditure on other goods is reduced by
+by the same dollar amount 
+as expenditure on the energy service increased
+due to the direct substitution effect: 
+expenditure is held constant. 
+Thus,
 
 \begin{equation}
-  Re_{isub} = \Reisubeqn{}
+  \Delta \rasub{C}_o = - \Delta \rasub{C}_s \; .
 \end{equation}
+%
+The advantage of this approach is that 
+no cross price elasticity is needed. 
+The disadvantage is that it further moves away
+from the definition of the substitution effect, 
+which assumes that utility, not expenditure, is held constant. 
+
+Substituting an expression for
+the change in expenditure on the energy service ($\Delta \rasub{C}_s$), 
+
+\begin{equation}
+  \Delta \rasub{C}_s = \frac{p_E \left( \rasub{q}_s - \rbsub{q}_s \right)}{\amacro{\eta}} \; ,
+\end{equation}
+%
+solving for $\rasub{C}_o/\rbsub{C}_o$, and 
+substituting Eq.~(\ref{eq:approx_qshat_over_qsorig}) gives
+
+\begin{equation} \label{eq:C_dot_o_ratio_CPE}
+  \frac{\rasub{C}_o}{\rbsub{C}_o} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_o} \left[ \left( \etaratiostacked \right)^{-\eqspsUC}   -1 \right]
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:C_dot_o_ratio_CPE}) 
+into Eq.~(\ref{eq:Re_isub_prelim}) gives
+
+\begin{equation}
+  Re_{isub} = - \frac{\frac{p_E \rbsub{q}_s}{\amacro{\eta} \rbsub{C}_o}
+                   \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1   \right] }
+                {\etaratiostacked - 1} 
+                \etaratiostacked 
+                \frac{\rorig{C}_o I_E}{\rorig{E}_s} \; .
+\end{equation}
+%
+Rearranging and substituting Eq.~(\ref{eq:Re_dsub_approx}) gives
+the expression for indirect substitution rebound under the
+CPE utility model.
+
+\begin{equation}
+  Re_{isub} = - Re_{dsub} \frac{\rbsub{q}_s \rorig{C}_o p_E I_E}{\orig{\eta} \rbsub{C}_o \rorig{E}_s}
+\end{equation}
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% The change in expenditure under the CPE utility model 
+% can be expressed as
+% 
+% \begin{equation}
+%   \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right) ^ {\eqopsC} \; .
+% \end{equation}
+% %
+% 
+% For substitution to take place, the compensated cross price elasticity
+% of other goods demand must be positive ($\eqopsC > 0$). Thus,
+% an energy service price decrease 
+% ($\bempl{p}_s > \amacro{p}_s$)
+% implies a reduction in the rate of consumption of other goods
+% ($\rbsub{q}_o > \rasub{q}_o$).
+% 
+% The energy service price is inversely proportional to 
+% efficiency, yielding
+% 
+% \begin{equation} \label{eq:qohat_qostar}
+%   \frac{\rasub{q}_o}{\rbsub{q}_o} = \left( \etaratiostacked \right) ^ {-\eqopsC} .
+% \end{equation}
+% 
+% Assuming that the average price is unchanged across the substitution effect
+% such that $\asub{p}_o = \raempl{p}_o = \orig{p}_o$
+% (Appendix~\ref{sec:other_goods_expenditures}),
+% and noting that $\rbsub{q}_s = \rorig{q}_s$ and $\rbsub{C}_o = \rorig{C}_o$,
+% we can write
+% 
+% \begin{equation} \label{eq:Cdot_o_ratio}
+%   \frac{\rasub{C}_o}{\rorig{C}_o}
+%       = \frac{\rasub{q}_o}{\rorig{q}_o}
+%       = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} .
+% \end{equation}
+% %
+% Note that Eq.~(\ref{eq:Cdot_o_ratio})
+% can be used to determine the rate of expenditures
+% on other goods in the economy~($\rasub{C}_o$) by
+% 
+% \begin{equation} \label{eq:C_dot_hat_o_eqn}
+%   \rasub{C}_o = \rbempl{C}_o \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqopsC} \; .
+% \end{equation}
+% 
+% Substituting Eq.~(\ref{eq:C_dot_hat_o_eqn}) into Eq.~(\ref{eq:Re_isub_prelim})
+% gives the expression for 
+% indirect substitution rebound for the CPE utility model.
+% 
+% \begin{equation}
+%   Re_{isub} = \Reisubeqn{}
+% \end{equation}
 
 Because the compensated cross price elasticity of other goods consumption is positive ($\eqopsC > 0$) and
 the energy service efficiency ratio is greater than 1
 ($\bempl{\eta} < \amacro{\eta}$),
 indirect substitution rebound will be negative always ($Re_{isub} < 0$),
-as expected.
+as expected, under the CPE utility model.
 Negative rebound indicates that indirect substitution effects 
 reduce the energy takeback rate by direct substitution effects.
 

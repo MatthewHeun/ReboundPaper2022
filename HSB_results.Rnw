@@ -2298,21 +2298,22 @@ Re_tot_satiated_lamp_char <- format(round(Re_tot_satiated_lamp*100, 2), nsmall =
 rebound_results_cpe <- rebound_results |> 
   dplyr::filter(Case %in% c("Car", "Lamp")) |> 
   dplyr::select(Case, Original, Upgrade, I_E, 
-                eta_engr_units_orig, eta_engr_units_star, p_E, p_E_engr_units,
+                eta_engr_units_orig, eta_engr_units_star,
+                eta_engr_units_hat, p_E, p_E_engr_units,
                 service_unit, energy_engr_unit, `MJ/energy_engr_unit`,
-                e_qs_ps_UC_orig, q_dot_s_orig, S_dot_dev, N_dot_star) |> 
+                e_qs_ps_UC_orig, q_dot_s_orig, q_dot_s_star,
+                S_dot_dev, N_dot_star) |> 
   dplyr::mutate(
-    # Ratio of energy service consumption levels
-    q_dot_s_star_over_q_dot_s_orig = (eta_engr_units_star / eta_engr_units_orig) ^ (-e_qs_ps_UC_orig), 
+    q_dot_s_hat_over_q_dot_s_star = (eta_engr_units_hat / eta_engr_units_orig) ^ (-e_qs_ps_UC_orig), 
     # Additional energy service consumption
-    q_dot_s_star = q_dot_s_star_over_q_dot_s_orig * q_dot_s_orig, 
+    q_dot_s_hat = q_dot_s_hat_over_q_dot_s_star * q_dot_s_star, 
     # Additional cost due to energy purchases for extra driving
-    Delta_C_dot_s_star = p_E_engr_units * (q_dot_s_star - q_dot_s_orig) / eta_engr_units_star, 
+    Delta_C_dot_s_hat = p_E_engr_units * (q_dot_s_hat - q_dot_s_star) / eta_engr_units_star, 
     # Additional energy consumption due to extra driving
-    Delta_E_dot_s_star = `MJ/energy_engr_unit` * (q_dot_s_star - q_dot_s_orig) / eta_engr_units_star, 
+    Delta_E_dot_s_hat = `MJ/energy_engr_unit` * (q_dot_s_hat - q_dot_s_star) / eta_engr_units_star, 
     # Energy saved from less consumption of other goods
-    Delta_E_dot_o_star = Delta_C_dot_s_star * I_E, 
-    takeback = Delta_E_dot_s_star - Delta_E_dot_o_star, 
+    Delta_E_dot_o_hat = Delta_C_dot_s_hat * I_E, 
+    takeback = Delta_E_dot_s_hat - Delta_E_dot_o_hat, 
     Re_sub = takeback / S_dot_dev, 
     Re_inc = N_dot_star * I_E / S_dot_dev
   )
