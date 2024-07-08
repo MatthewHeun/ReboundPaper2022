@@ -90,7 +90,7 @@ we advance foundations of a rigorous analytical framework
 for consumer-sided rebound
 that starts at the microeconomic level
 and is approachable for both energy analysts and economists. 
-We develop foundations of rebound analysis framework that
+We develop foundations of a rebound analysis framework that
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
@@ -99,7 +99,7 @@ We develop foundations of rebound analysis framework that
   \item combines 
         embodied energy effects with
         operations, maintenance, and disposal effects
-        (under a new ``emplacement effect'' term), and
+        (under a new ``emplacement effect''), and
 
   \item provides the first operationalized link between 
         rebound effects on microeconomic and macroeconomic levels.
@@ -108,7 +108,7 @@ We develop foundations of rebound analysis framework that
 %
 Furthermore, our framework enables determination of
 the effect of non-marginal energy service price decrease,
-the effect of satiation of energy service demand for the energy service, and 
+the effect of satiation of demand for the energy service, and 
 the effect of reduced energy demand on energy price.
 \end{abstract}
 
@@ -388,8 +388,9 @@ one that
 
 \end{enumerate*}
 %
-We strive to keep the framework as simple as possible and in this spirit limit our
-attention to a model of consumer demand for energy services, while noting that
+We strive to keep the framework as simple as possible and limit our
+attention to a model of consumer demand for energy services, 
+while demonstrating that
 the approach is transferable to a producer model with few modifications.
 
 The key \emph{contributions} of this paper are 
@@ -578,7 +579,7 @@ Names for the decorations are given at the bottom of the figure
   can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
   In several places, including Fig.~\ref{fig:flowchart},
   we use colored backgrounds on rebound effects for visual convenience. 
-  The colors are carried through to figures in Part~II for consistency.
+  The colors are carried through to figures in Part~II.
 }
 
 \begin{figure}
@@ -707,7 +708,7 @@ with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
 final-to-service efficiency%
 \footnote{
-  Note that energy service efficiency ($\eta$) improves
+  Note that final-to-service efficiency ($\eta$) improves
   between the original ($\circ$) and
   post-emplacement ($*$)
   stages of Fig.~\ref{fig:flowchart}, remaining constant thereafter.
@@ -732,7 +733,8 @@ than a like-for-like replacement of the original device.
 We call this increased ``capital cost'' 
 ($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
 It may also 
-be more costly to operate and maintain (OM) and dispose (d) 
+be more costly to operate and maintain (subscript $OM$) and
+dispose (subscript $d$) 
 of the upgraded device
 ($\rbempl{C}_{\om} < \ramacro{C}_{\om}$ and 
 $\rbempl{C}_d < \ramacro{C}_d$). 
@@ -1194,7 +1196,7 @@ describing the device user's behavior as
 \end{equation}
 
 The device user's utility rate
-(relative to the original condition, $\rate{u}/\rorig{u}$)
+(relative to the original condition, $\rorig{u}$)
 is determined by
 the consumption rate of the energy service ($\rate{q}_s$) and
 the consumption rate of other goods and services ($\rate{C}_o$).
@@ -1305,7 +1307,7 @@ remains unchanged across the rebound effects,
 such that
 $\rbempl{M} = \raempl{M} = \rasub{M} = \rainc{M} = \ramacro{M}$.
 Thanks to the energy service price decline, real income rises, 
-and freed cash from the EEU is given by 
+and freed cash from the EEU is given 
 as $\rate{G} = p_E \Sdot$.
 (See Eq.~(\ref{eq:G_dot}) in Appendix~\ref{sec:derivations}.)
 Emplacement effect adjustments and compensating variation
@@ -1900,7 +1902,7 @@ to use the examples from Part~II.
 With reduced energy demand throughout the economy, 
 an energy price reduction can be expected
 ($\bempl{p}_E > \ainc{p}_E$)
-as the lower energy price rebalances supply and demand.
+as the lower energy price leads to rebalancing of supply and demand.
 With the now-lower energy price ($\ainc{p}_E$), 
 the device owner has additional freed cash ($\rate{G}_{p_E}$)
 to spend,
