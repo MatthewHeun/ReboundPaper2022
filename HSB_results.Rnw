@@ -153,8 +153,7 @@ We said that
 
 To help improve clarity in the rebound field,
 we developed in Part~I foundations for
-a rigorous analytical framework
-for energy rebound,
+a rigorous analytical framework,
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
 energy, expenditure, and consumption.
@@ -314,10 +313,10 @@ Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools:
 Re_omd_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_omd, to_perc = TRUE, digits = 1)
 Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 0)
 Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
 Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
-N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
+N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 0)
 Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 q_dot_s_orig_car <- rebound_results %>%
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Car") %>%
@@ -963,7 +962,7 @@ only movements after the $*$ point are visible as a path in the consumption plan
 points $\circ$, \emph{a}, \emph{b}, and $*$
 collapse to the same location in the consumption plane.
 
-Indifference curves for the CES untility model
+Indifference curves for the CES utility model
 are denoted by \iicirc{} and \iibar{}
 and represent lines of constant utility through the $\circ$ and $-$ points.
 Prior to the EEU, the consumption basket (of the energy service and other goods)
@@ -1094,7 +1093,7 @@ For the car user, no changes are recorded across the macro effect.
 Thus, the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:car_stages_table} are identical.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
-Figs~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
 show energy, expenditure, and consumption planes
 for the car example.
 
@@ -1935,7 +1934,7 @@ we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
 There are no estimates of $k$, which ultimately traces the aggregate growth
-effects of a single, device-specific technical progress and is likely
+effects of a single, device-specific technical enhancement and is likely
 to differ between EEUs. However, using recent empirical estimates of
 sectoral multipliers we can ascertain ourselves that $k$ should be different
 from 1 and choose a different value in line with those estimates.
@@ -2027,7 +2026,7 @@ the magnitude of every rebound effect is different between the two examples,
 the exception being direct emplacement rebound ($Re_{dempl}$)
 which is always 0.0\% by definition.
 The implication is that every EEU needs to be analyzed separately.
-Values for rebound effects
+The magnitudes of the rebound effects
 for one EEU should never be assumed to apply to a different EEU.
 
 Second,
