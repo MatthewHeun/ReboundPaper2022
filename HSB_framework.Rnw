@@ -999,12 +999,11 @@ from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
 
 For simplicity, we spread all embodied energy
 over the lifetime of the device
-to provide a constant embodied energy rate ($\rate{E}_{emb}$).
-A justification for spreading embodied energy and 
-purchase costs comes from considering
-device replacements by many consumers across several years.
-In the aggregate, evenly spaced (in time) replacements
-work out to the same embodied energy in every period.
+for a constant embodied energy rate ($\rate{E}_{emb}$).%
+\footnote{
+  In the aggregate, adoption of new technology usually follows
+  a logistic (or ``S'') curve.
+}
 
 Thus, we allocate embodied energy over the life of the original and upgraded devices
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
@@ -1495,7 +1494,7 @@ the expression for indirect income for the CES utility model rebound is
 of direct and indirect income effect rebound.)
 
 Under the bounding satiated utility model,
-all income ($\rasub{N}$) is spent on other goods,
+all net income ($\rasub{N}$) is spent on other goods,
 and indirect rebound becomes simply
 $Re_{iinc} = \frac{\rasub{N} I_E}{\Sdot}$.
 
