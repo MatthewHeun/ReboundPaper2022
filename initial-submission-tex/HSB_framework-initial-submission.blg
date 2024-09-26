@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: HSB_framework-initial-submission.aux
+The style file: apa-good.bst.bst
+Database file #1: HSB_refs.bib
+Warning--I didn't find a database entry for "sorrell2020limits"
+Warning--I didn't find a database entry for "Sousa:2017"
+Warning--I didn't find a database entry for "Quesnay1759"
+Warning--I didn't find a database entry for "Leontief1986"
+Warning--I didn't find a database entry for "Gabaix2011"
+Warning--I didn't find a database entry for "Acemoglu2012eme"
+Warning--I didn't find a database entry for "Foerster2022"
+Warning--I didn't find a database entry for "Gautham2024"
+Warning--I didn't find a database entry for "Magacho2018"
+Warning--I didn't find a database entry for "Buera2024"
+Warning--I didn't find a database entry for "Spiegel:1994aa"
+Warning--empty journal in Fouquet2014
+Warning--there's a number but no volume in Grubb1992
+Warning--missing publisher in International-Energy-Agency:2017b
+Warning--missing institution in Jenkins2011
+Warning--can't use both author and editor fields in Madlener:2016to
+You've used 66 entries,
+            2804 wiz_defined-function locations,
+            1073 strings with 16479 characters,
+and the built_in function-call counts, 37161 in all, are:
+= -- 2921
+> -- 1430
+< -- 53
++ -- 569
+- -- 474
+* -- 2802
+:= -- 5837
+add.period$ -- 199
+call.type$ -- 66
+change.case$ -- 481
+chr.to.int$ -- 65
+cite$ -- 71
+duplicate$ -- 2768
+empty$ -- 2871
+format.name$ -- 642
+if$ -- 7239
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 604
+newline$ -- 342
+num.names$ -- 264
+pop$ -- 1038
+preamble$ -- 1
+purify$ -- 422
+quote$ -- 0
+skip$ -- 983
+stack$ -- 0
+substring$ -- 1783
+swap$ -- 1533
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 567
+warning$ -- 5
+while$ -- 263
+width$ -- 0
+write$ -- 861
+(There were 16 warnings)

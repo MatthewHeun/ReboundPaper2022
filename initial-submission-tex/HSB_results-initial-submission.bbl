@@ -1,0 +1,305 @@
+\begin{thebibliography}{47}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{{Argonne National Laboratory, Energy Systems
+  Division}(2010)}]{Argonne_National_Laboratory:2010}
+{Argonne National Laboratory, Energy Systems Division} (2010).
+\newblock Energy-consumption and carbon-emission analysis of vehicle and
+  component manufacturing.
+\newblock Tech. Rep. ANL/ESD/10-6, Argonne National Laboratory, Oak Ridge, TN.
+\newline\urlprefix\url{https://greet.es.anl.gov/files/vehicle_and_components_manufacturing/}
+
+\bibitem[{Barkhordar(2019)}]{Barkhordar:2019aa}
+Barkhordar, Z.~A. (2019).
+\newblock Evaluating the economy-wide effects of energy efficient lighting in
+  the household sector of {I}ran.
+\newblock {\em Energy Policy\/}, {\em 127\/}, 125--133.
+
+\bibitem[{Berla.com(2016)}]{Berla:2016}
+Berla.com (2016).
+\newblock Average lifespan for {U.S.} vehicles.
+\newline\urlprefix\url{https://berla.co/average-us-vehicle-lifespan/}
+
+\bibitem[{Borenstein(2015)}]{Borenstein:2015aa}
+Borenstein, S. (2015).
+\newblock A microeconomic framework for evaluating energy efficiency rebound
+  and some implications.
+\newblock {\em The Energy Journal\/}, {\em 36\/}(1), 1--21.
+
+\bibitem[{Brockway et~al.(2023)Brockway, Heun, \& Semieniuk}]{Brockway:2023aa}
+Brockway, P.~E., Heun, M.~K., \& Semieniuk, G. (2023).
+\newblock Calculation data sheets for the rebound case study examples used in
+  the journal working paper ``{A}dvancing the necessary foundations for
+  empirical energy rebound estimates: A partial equilibrium analysis
+  framework''.
+\newblock \url{https://doi.org/10.5518/1201}.
+
+\bibitem[{{Bundesministerium f\"{u}r Wirtschaft und
+  Energie}(2018)}]{bundesministerium}
+{Bundesministerium f\"{u}r Wirtschaft und Energie} (2018).
+\newblock {Alle Tarife mengengewichteter Elektrizit\"{a}tspreis f\"{u}r
+  Haushaltskunden}.
+\newline\urlprefix\url{https://www.bmwi.de/Redaktion/DE/Infografiken/Energie/strompreisbestandteile.html}
+
+\bibitem[{Carinsurance.com(2019)}]{Car_Insurance:2019}
+Carinsurance.com (2019).
+\newblock Average miles driven per year by state.
+\newline\urlprefix\url{https://www.carinsurance.com/Articles/average-miles-driven-per-year-by-state.aspx}
+
+\bibitem[{Carroll et~al.(2017)Carroll, Slacalek, Tokuoka, \&
+  White}]{Carroll2017}
+Carroll, C., Slacalek, J., Tokuoka, K., \& White, M.~N. (2017).
+\newblock {The distribution of wealth and the marginal propensity to consume}.
+\newblock {\em Quantitative Economics\/}, {\em 8\/}(3), 977--1020.
+
+\bibitem[{Chitnis et~al.(2020)Chitnis, Fouquet, \& Sorrell}]{Chitnis:2020aa}
+Chitnis, M., Fouquet, R., \& Sorrell, S. (2020).
+\newblock Rebound effects for household energy services in the {UK}.
+\newblock {\em The Energy Journal\/}, {\em 41\/}(4).
+
+\bibitem[{Chitnis \& Sorrell(2015)}]{Chitnis:2015}
+Chitnis, M., \& Sorrell, S. (2015).
+\newblock Living up to expectations: Estimating direct and indirect rebound
+  effects for {UK} households.
+\newblock {\em Energy Economics\/}, {\em 52\/}, S100--S116.
+
+\bibitem[{Dimitropoulos et~al.(2018)Dimitropoulos, Oueslati, \&
+  Sintek}]{Dimitropoulos:2018aa}
+Dimitropoulos, A., Oueslati, W., \& Sintek, C. (2018).
+\newblock The rebound effect in road transport: A meta-analysis of empirical
+  studies.
+\newblock {\em Energy Economics\/}, {\em 75\/}, 163--179.
+
+\bibitem[{Duarte et~al.(2018)Duarte, S\'{a}nchez-Ch\'{o}liza, \&
+  Sarasa}]{Duarte:2018aa}
+Duarte, R., S\'{a}nchez-Ch\'{o}liza, J., \& Sarasa, C. (2018).
+\newblock Consumer-side actions in a low-carbon economy: A dynamic {CGE}
+  analysis for {S}pain.
+\newblock {\em Energy Policy\/}, {\em 118\/}, 199--210.
+
+\bibitem[{Edmunds.com(2020{\natexlab{a}})}]{Edmunds:2020_fusion_gasoline}
+Edmunds.com (2020{\natexlab{a}}).
+\newblock 2020 {Ford} {F}usion cost to own.
+\newline\urlprefix\url{https://www.edmunds.com/ford/fusion/2020/cost-to-own/#style=401757616/}
+
+\bibitem[{Edmunds.com(2020{\natexlab{b}})}]{Edmunds:2020_fusion_hybrid}
+Edmunds.com (2020{\natexlab{b}}).
+\newblock 2020 {F}ord {F}usion {H}ybrid cost to own.
+\newline\urlprefix\url{https://www.edmunds.com/ford/fusion-hybrid/2020/cost-to-own/}
+
+\bibitem[{Exadaktylos \& {van den Bergh}(2021)}]{Exadaktylos:2021aa}
+Exadaktylos, F., \& {van den Bergh}, J. (2021).
+\newblock Energy-related behaviour and rebound when rationality, self-interest
+  and willpower are limited.
+\newblock {\em Nature Energy\/}, {\em 6\/}(12), 1104--1113.
+
+\bibitem[{{Federal Reserve Bank of St Louis}(2019)}]{St_Louis_Fed:2019}
+{Federal Reserve Bank of St Louis} (2019).
+\newblock Real median personal income in the united states.
+\newblock Tech. rep., One Federal Reserve Bank Plaza, St. Louis, MO 63102, USA.
+\newline\urlprefix\url{https://fred.stlouisfed.org/series/MEPAINUSA672N/}
+
+\bibitem[{{finanzen.net}(2021)}]{finanzen}
+{finanzen.net} (2021).
+\newblock Super {B}enzin.
+\newblock https://www.finanzen.net/rohstoffe/super-benzinpreis/historisch.
+\newblock Accessed 15 March 2021.
+
+\bibitem[{Fouquet(2014)}]{Fouquet2014}
+Fouquet, R. (2014).
+\newblock Long-run demand for energy services: Income and price elasticities
+  over two hundred years.
+\newblock {\em 8\/}(2), 186--207.
+
+\bibitem[{Fouquet \& Pearson(2011)}]{Fouquet2011}
+Fouquet, R., \& Pearson, P. J.~G. (2011).
+\newblock The long run demand for lighting: Elasticities and rebound effects in
+  different phases of economic development.
+\newblock BC3 Working paper series 2011-06.
+
+\bibitem[{Freire-Gonz{\'{a}}lez(2011)}]{Freire-Gonzalez:2011aa}
+Freire-Gonz{\'{a}}lez, J. (2011).
+\newblock Methods to empirically estimate direct and indirect rebound effect of
+  energy-saving technological changes in households.
+\newblock {\em Ecological Modelling\/}, {\em 223\/}(1), 32--40.
+
+\bibitem[{Gillingham et~al.(2015)Gillingham, Jenn, \&
+  Azevedo}]{Gillingham:2015aa}
+Gillingham, K., Jenn, A., \& Azevedo, I.~M. (2015).
+\newblock Heterogeneity in the response to gasoline prices: Evidence from
+  {P}ennsylvania and implications for the rebound effect.
+\newblock {\em Energy Economics\/}, {\em 52\/}, S41--S52.
+
+\bibitem[{Gillingham(2020)}]{Gillingham:2020aa}
+Gillingham, K.~T. (2020).
+\newblock The rebound effect and the proposed rollback of {U.S.} fuel economy
+  standards.
+\newblock {\em Review of Environmental Economics and Policy\/}, {\em 14\/}(1),
+  136--142.
+
+\bibitem[{Goetzke \& Vance(2018)}]{goetzke2018}
+Goetzke, F., \& Vance, C. (2018).
+\newblock {\em Is gasoline price elasticity in the United States increasing?
+  Evidence from the 2009 and 2017 national household travel surveys\/}.
+\newblock 765. Ruhr Economic Papers.
+\newline\urlprefix\url{http://www.rwi-essen.de/media/content/pages/publikationen/ruhr-economic-papers/rep_18_765.pdf}
+
+\bibitem[{Greene(2012)}]{Greene2012}
+Greene, D.~L. (2012).
+\newblock Rebound 2007: Analysis of {U.S.} light-duty vehicle travel
+  statistics.
+\newblock {\em Energy Policy\/}, {\em 41\/}, 14--28.
+
+\bibitem[{Guertin et~al.(2003)Guertin, Kumbhakar, \&
+  Duraiappah}]{Guertin:2003aa}
+Guertin, C., Kumbhakar, S.~C., \& Duraiappah, A.~K. (2003).
+\newblock {\em Determining demand for energy services: investigating
+  income-driven behaviours\/}.
+\newblock Winnipeg, Manitoba, Canada: International Institute for Sustainable
+  Development.
+
+\bibitem[{Heun(2023)}]{Heun:2023aa}
+Heun, M.~K. (2023).
+\newblock {ReboundTools}: An \texttt{R} package that provides functions to
+  analyze energy rebound.
+\newblock V0.1.36.
+\newline\urlprefix\url{https://doi.org/10.5281/zenodo.7514249}
+
+\bibitem[{HomeDepot.com(2020{\natexlab{a}})}]{Home_Depot:2020_LED_bulb}
+HomeDepot.com (2020{\natexlab{a}}).
+\newblock 40-watt equivalent {A19} non-dimmable {LED} light bulb soft white
+  8-pack.
+\newline\urlprefix\url{https://www.homedepot.com/p/EcoSmart-40-Watt-Equivalent-A19-Non-Dimmable-LED-Light-Bulb-Soft-White-8-Pack-1001015802/303714669?modalType=drawer/}
+
+\bibitem[{HomeDepot.com(2020{\natexlab{b}})}]{Home_Depot:2020_Inc_bulb}
+HomeDepot.com (2020{\natexlab{b}}).
+\newblock 60-watt double life {A15} incandescent light bulb 2-pack.
+\newline\urlprefix\url{https://www.homedepot.com/p/Sylvania-60-Watt-Double-Life-A15-Incandescent-Light-Bulb-2-Pack-11969/303762187?modalType=drawer/}
+
+\bibitem[{Koesler(2013)}]{Koesler:2013aa}
+Koesler, S. (2013).
+\newblock Catching the rebound: Economy-wide implications of an efficiency
+  shock in the provision of transport services by households.
+\newblock Discussion Paper 13-082, Leibniz Centre for European Economic
+  Research, Mannheim, Germany.
+
+\bibitem[{Moshiri \& Aliyev(2017)}]{Moshiri2017}
+Moshiri, S., \& Aliyev, K. (2017).
+\newblock {Rebound effect of efficiency improvement in passenger cars on
+  gasoline consumption in Canada}.
+\newblock {\em Ecological Economics\/}, {\em 131\/}, 330--341.
+
+\bibitem[{Nordel{\"o}f et~al.(2014)Nordel{\"o}f, Messagie, Tillman,
+  S{\"o}derman, \& Van~Mierlo}]{nordelof2014environmental}
+Nordel{\"o}f, A., Messagie, M., Tillman, A.-M., S{\"o}derman, M.~L., \&
+  Van~Mierlo, J. (2014).
+\newblock Environmental impacts of hybrid, plug-in hybrid, and battery electric
+  vehicles---what can we learn from life cycle assessment?
+\newblock {\em The International Journal of Life Cycle Assessment\/}, {\em
+  19\/}(11), 1866--1890.
+
+\bibitem[{Onat et~al.(2015)Onat, Kucukvar, \& Tatari}]{onat2015conventional}
+Onat, N.~C., Kucukvar, M., \& Tatari, O. (2015).
+\newblock Conventional, hybrid, plug-in hybrid or electric vehicles?
+  {S}tate-based comparative carbon and energy footprint analysis in the
+  {U}nited {S}tates.
+\newblock {\em Applied Energy\/}, {\em 150\/}, 36--49.
+
+\bibitem[{Parry \& Small(2005)}]{Parry2005}
+Parry, I. W.~H., \& Small, K.~A. (2005).
+\newblock Does {B}ritain or the {U}nited {S}tates have the right gasoline tax?
+\newblock {\em American Economic Review\/}, {\em 95\/}(4), 1276--1289.
+
+\bibitem[{Schleich et~al.(2014)Schleich, Mills, \&
+  D{\"{u}}tschke}]{Schleich2014}
+Schleich, J., Mills, B., \& D{\"{u}}tschke, E. (2014).
+\newblock {A brighter future? Quantifying the rebound effect in energy
+  efficient lighting}.
+\newblock {\em Energy Policy\/}, {\em 72\/}, 35--42.
+
+\bibitem[{Shojaeddini \& Gilbert(2022)}]{Shojaeddini:2022aa}
+Shojaeddini, E., \& Gilbert, B. (2022).
+\newblock Heterogeneity in the rebound effect: Evidence from efficient lighting
+  subsidies.
+\newblock {\em Environmental and Resource Economics\/}.
+
+\bibitem[{Small \& {Van Dender}(2007)}]{Small:2007aa}
+Small, K.~A., \& {Van Dender}, K. (2007).
+\newblock Fuel efficiency and motor vehicle travel: The declining rebound
+  effect.
+\newblock {\em Energy Journal\/}, {\em 28\/}(1), 25--51.
+
+\bibitem[{Smith(1776)}]{Smith1776}
+Smith, A. (1776).
+\newblock {\em An Inquiry into the Wealth of Nations\/}.
+\newblock London: Strahan.
+
+\bibitem[{{Society of Motor Manufacturers and Traders}(2020)}]{SMMT:2020}
+{Society of Motor Manufacturers and Traders} (2020).
+\newblock 2020 automotive sustainability report---average vehicle age.
+\newline\urlprefix\url{https://www.smmt.co.uk/industry-topics/sustainability/average-vehicle-age/}
+
+\bibitem[{Sorrell et~al.(2009)Sorrell, Dimitropoulos, \&
+  Sommerville}]{Sorrell:2009aa}
+Sorrell, S., Dimitropoulos, J., \& Sommerville, M. (2009).
+\newblock Empirical estimates of the direct rebound effect: A review.
+\newblock {\em Energy Policy\/}, {\em 37\/}(4), 1356--1371.
+
+\bibitem[{Stapleton et~al.(2016)Stapleton, Sorrell, \&
+  Schwanen}]{Stapleton:2016}
+Stapleton, L., Sorrell, S., \& Schwanen, T. (2016).
+\newblock Estimating direct rebound effects for personal automotive travel in
+  {G}reat {B}ritain.
+\newblock {\em Energy Economics\/}, {\em 54\/}, 313--325.
+
+\bibitem[{Thecarconnection.com(2020)}]{Car_Connection:2020}
+Thecarconnection.com (2020).
+\newblock 2020 {F}ord {F}usion {S}pecifications.
+\newline\urlprefix\url{https://www.thecarconnection.com/specifications/ford_fusion_2020/}
+
+\bibitem[{Thomas \& Azevedo(2013)}]{Thomas:2013ab}
+Thomas, B.~A., \& Azevedo, I.~L. (2013).
+\newblock Estimating direct and indirect rebound effects for {U.S.} households
+  with input--output analysis. {P}art 2: Simulation.
+\newblock {\em Ecological Economics\/}, {\em 86\/}, 188--198.
+
+\bibitem[{{US Bureau of Economic Analysis}(2020)}]{US_BEA:2020}
+{US Bureau of Economic Analysis} (2020).
+\newblock National and products accounts ({NIPA}) {T}able 2.1: Personal income
+  and its disposition.
+\newblock Tech. rep., 4600 Silver Hill Road, Suitland, MD 20746, USA.
+\newline\urlprefix\url{https://apps.bea.gov/iTable/index_nipa.cfm/}
+
+\bibitem[{{US Department of Energy}(2012)}]{US_DoE:2012}
+{US Department of Energy} (2012).
+\newblock Life-cycle assessment of energy and environmental impacts of {LED}
+  lighting products: Part {I}: Review of the life-cycle energy consumption of
+  incandescent, compact fluorescent, and {LED} lamps.
+\newblock Tech. rep., Forrestal Building, 1000 Independence Avenue, SW,
+  Washington, DC 20585, USA.
+\newline\urlprefix\url{https://www1.eere.energy.gov/buildings/publications/pdfs/ssl/2012_LED_Lifecycle_Report.pdf}
+
+\bibitem[{{US Department of Transportation}(2018)}]{US_DoT:2018}
+{US Department of Transportation} (2018).
+\newblock Average annual miles per driver by age group.
+\newblock Tech. rep.
+\newline\urlprefix\url{https://www.fhwa.dot.gov/ohim/onh00/bar8.htm/}
+
+\bibitem[{{US Energy Information
+  Administration}(2020{\natexlab{a}})}]{US_EIA:2020_electricity}
+{US Energy Information Administration} (2020{\natexlab{a}}).
+\newblock Average price (cents/kilowatthour) by state by provider, 1990-2019.
+\newblock Tech. rep., 1000 Independence Avenue, SW, Washington, DC 20585, USA.
+\newline\urlprefix\url{https://www.eia.gov/electricity/data/state/avgprice_annual.xlsx}
+
+\bibitem[{{US Energy Information
+  Administration}(2020{\natexlab{b}})}]{US_EIA:2020_gasoline}
+{US Energy Information Administration} (2020{\natexlab{b}}).
+\newblock {U.S.} regular gasoline prices.
+\newblock Tech. rep., 1000 Independence Avenue, SW, Washington, DC 20585, USA.
+\newline\urlprefix\url{https://www.eia.gov/petroleum/gasdiesel/}
+
+\end{thebibliography}

@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -80,7 +80,6 @@
 \usepackage[most]{tcolorbox}    % For color highlighting of text
 \usepackage{tikz}               % For diagrams
 \usetikzlibrary{arrows,positioning}
-\usepackage{ulem}               % For strikeout command (\sout)
 \usepackage{xcolor}             % For ... colors
 \usepackage{xr}                 % For external references to the framework paper
 \externaldocument[PartI-]{HSB_framework}
@@ -100,16 +99,20 @@
 % Author info
 \title{Energy, expenditure, and consumption aspects of rebound,\\
           Part II: Applications of the framework}
-\author[1,*]{Matthew Kuperus Heun}
-\author[2]{Gregor Semieniuk}
-\author[3]{Paul E.\ Brockway}
-\affil[1]{Engineering Department, Calvin University, 3201 Burton St. SE, Grand Rapids, MI, 49546}
-\affil[2]{Political Economy Research Institute and 
-                            Department of Economics,
-                            UMass Amherst}
-\affil[3]{Sustainability Research Institute, 
-                             School of Earth and Environment,
-                             University of Leeds}
+\author[1,2,3,*]{Matthew Kuperus Heun}
+\author[4]{Gregor Semieniuk}
+\author[2]{Paul E.\ Brockway}
+\affil[1]{Engineering Department, Calvin University, 
+          3201 Burton St. SE, Grand Rapids, MI, 49546}
+\affil[2]{Sustainability Research Institute, 
+          School of Earth and Environment, University of Leeds, 
+          Woodhouse, Leeds, LS2 9JT, UK}
+\affil[3]{School for Public Leadership, Faculty of Economic and Management Science,
+          Stellenbosch University,
+          Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
+\affil[4]{Political Economy Research Institute and Department of Economics,
+          University of Massachusetts Amherst, 
+          Amherst, MA, 01003}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
 
@@ -128,20 +131,23 @@ is a key greenhouse gas emissions mitigation measure,
 but rebound can ``take back'' energy savings.
 However, the absence of solid analytical foundations hinders
 empirical determination of the size of rebound.
-In Part~I, we developed a rigorous analytical framework
+In Part~I, we developed foundations of 
+a rigorous analytical framework
 that is approachable for both energy analysts and economists. 
-In this paper (Part~II),
+In this paper (Part~II of two),
 we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise
 way to visualize and illustrate rebound.
-Further, we perform the first calibration of the macro factor
-for macroeconomic rebound, finding $k \approx 3$. 
+Further, we operationalize the macro factor
+for macroeconomic rebound. 
 Using the framework and rebound planes,
 we calculate and show total rebound for two examples: 
 energy efficiency upgrades of
-a car (47\%) and
-an electric lamp (67\%).
-Comparison of our rebound values to previous values is provided.
+a car (56.2\%) and
+an electric lamp (67.0\%).
+We calculate rebound for a producer-sided extension
+to the framework, 
+namely an energy price rebound effect.
 Finally, we provide information about new open source software tools 
 for calculating magnitudes and
 visualizing rebound effects using the framework.
@@ -163,40 +169,40 @@ JEL codes: O13, Q40, Q43
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In Part I of this two-part paper, we argued that improved clarity is needed
-about energy rebound. 
+about energy rebound.
 We said that
 %
 \begin{quote}
-  [a] description of rebound [is needed] that is 
+  [a] description of rebound [is needed] that is
   %
   \begin{enumerate*}[label={(\roman*)}]
 
     \item consistent across energy, expenditure, and consumption aspects,
-  
+
     \item technically rigorous and
-  
+
     \item approachable from both sides
           (economics and energy analysis). \ldots
 
   \end{enumerate*}
   %
-  In other words, 
-  the finance and human behavior aspects of rebound need to be presented 
-  in ways energy analysts can understand. 
+  In other words,
+  the finance and human behavior aspects of rebound need to be presented
+  in ways energy analysts can understand.
   And the energy aspects of rebound need to be presented
   in ways economists can understand.
 \end{quote}
 
-To move improve clarity in the rebound field, 
-we developed in Part~I a rigorous analytical framework 
-for energy rebound, 
+To help improve clarity in the rebound field,
+we developed in Part~I foundations for
+a rigorous analytical framework,
 one that is tractable for both energy analysts and economists.
 Three aspects of rebound are analyzed in the framework:
 energy, expenditure, and consumption.
 The framework contains both
-direct and indirect rebound and 
+direct and indirect rebound and
 four rebound effects
-(emplacement, substitution, income, and macro) 
+(emplacement, substitution, income, and macro)
 between five stages ($\circ$, $*$, $\wedge$, $-$, and $\sim$).
 Rebound terms and symbol decorations are
 shown in Fig.~\ref{fig:flowchart}.
@@ -212,47 +218,35 @@ See Appendix~\ref{sec:nomenclature} for nomenclature.)
 \end{figure}
 
 In this paper (Part~II), we make further progress toward the goal of clarity
-in four ways.
-First, we develop a new way to visualize 
+with five contributions.
+First, we develop a new way to communicate
 components and mechanisms of rebound
-(rebound planes).
-Second, we make a first attempt at calibrating the macro rebound effect 
-via a macro factor ($k$). 
-Third, we apply the framework to two energy efficiency upgrades (EEUs) 
+via mutually consistent and numerically precise
+visualizations of rebound effects
+in energy, expenditure, and consumption planes.
+Second, we calculate the macro rebound effect
+via a macro factor ($k$) selected to be 3.
+Third, we apply the framework to two energy efficiency upgrades (EEUs)
 (a car and an electric lamp)
-with detailed explication of the examples.
-Finally, we show 
-calculations of rebound magnitudes for both examples.
-
-The key contributions of this paper are 
-%
-\begin{enumerate*}[label={(\roman*)}]
-	
-  \item development of the first (to our knowledge) 
-        mutually consistent and numerically precise
-        visualizations of rebound effects
-        in energy, expenditure, and consumption planes,
-        
-  \item calibration of the macro factor ($k$) to link
-        microeconomic and macroeconomic rebound levels,
-        
-  \item presentation of new rebound values for car and electric lamp 
-        upgrades based on a calibrated version of our framework from Part~I, and 
-        
-  \item documentation of new open source software tools
-        to calculate and visualize rebound 
-        for any EEU.
-  
-\end{enumerate*}
+with detailed explication
+of numerical results for the examples.
+Fourth, we apply the framework to
+calculate numerical values
+for the producer-sided energy price rebound
+extension to the framework.
+Finally, we provide information
+about new open source software tools
+for calculating and visualizing rebound
+for any energy efficiency upgrade.
 
 The remainder of this paper is structured as follows.
-Section~\ref{sec:methods} describes data for the examples, 
-our method of visualizing rebound, and 
+Section~\ref{sec:methods} describes data for the examples,
+our method of visualizing rebound, and
 open source software tools for calculating and visualizing rebound.
-Section~\ref{sec:results} provides results for two examples: 
+Section~\ref{sec:results} provides results for two examples:
 energy efficiency upgrades to a car and an electric lamp.
-Section~\ref{sec:discussion} calibrates the macro factor ($k$)
-and discusses results, and 
+Section~\ref{sec:discussion} operationalizes the macro factor ($k$)
+and discusses results, and
 Section~\ref{sec:conclusion} concludes.
 
 
@@ -262,7 +256,7 @@ Section~\ref{sec:conclusion} concludes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This section contains data for the examples
-(Section~\ref{sec:data}), 
+(Section~\ref{sec:data}),
 an explication of our new method for visualizing rebound effects and magnitudes
 (Section~\ref{sec:path_graphs}), and
 a description of new open source software tools
@@ -281,52 +275,53 @@ To demonstrate application of the rebound analysis framework
 developed in Part~I,
 we analyze two examples:
 energy efficiency upgrades to a car and an electric lamp.
-The examples are presented with much detail 
-to support our goal of bringing clarity to the process
+The examples are presented with much detail
+to support our goal of helping to advance clarity for the process
 of calculating the magnitude of rebound effects.
 Here, we collect parameter values
 for the equations to calculate
-eight rebound components:
+nine rebound components:
 $Re_{dempl}$,
 $Re_{emb}$,
-$Re_{\md}$,
+$Re_{\om}$,
+$Re_d$,
 $Re_{dsub}$,
 $Re_{isub}$,
 $Re_{dinc}$,
 $Re_{iinc}$, and
 $Re_{\macro}$.
-Total rebound 
+Total rebound
 ($Re_{tot}$)
 is given by the sum of the above components
 or equivalently by Eq.~(\ref{PartI-eq:Re_tot}) of Part~I.
 
 
 %------------------------------
-\subsubsection{Data for car example} 
+\subsubsection{Data for car example}
 \label{sec:data_car_example}
 %------------------------------
 
 
 
-For the first example, 
-we consider the purchase of a more fuel efficient car, 
+For the first example,
+we consider the purchase of a more fuel efficient car,
 namely a gasoline-electric Ford Fusion Hybrid car,
-to replace a conventional gasoline Ford Fusion car. 
-The cars are matched as closely as possible, 
-except for the inclusion of an electric battery 
-in the hybrid car.  
+to replace a conventional gasoline Ford Fusion car.
+The cars are matched as closely as possible,
+except for the inclusion of an electric battery
+in the hybrid car.
 The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
-for the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$). 
+for the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$).
 
-We require three sets of data. 
-First, basic car parameters are summarized 
+We require three sets of data.
+First, basic car parameters are summarized
 in Table~\ref{tab:car_parameters}.
-Second, we require several general economic parameters, 
-mainly relating to the U.S.\ economy and personal finances 
-%of the average U.S.\ citizen, 
+Second, we require several general economic parameters,
+mainly relating to the U.S.\ economy and personal finances
+%of the average U.S.\ citizen,
 of a representative U.S.-based user
 shown in Table~\ref{tab:car_economic_parameters}.
-Third, we require elasticity parameters, 
+Third, we require elasticity parameters,
 as given in Table~\ref{tab:car_elasticity_parameters}.
 
 
@@ -334,64 +329,15 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
 % Reduce spacing between table rows henceforth.
 \renewcommand{\arraystretch}{0.6}
 
-% \begin{landscape}
-% \begin{table}
-% \footnotesize
-% \begin{center}
-% \caption{Car example: Vehicle parameters.} 
-% \label{tab:car_parameters}
-% \begin{tabular}{ r c c l }
-%   \toprule
-%     Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
-%     Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
-%   \midrule
-%   Fuel economy                           & 25 & 42 & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
-%   $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
-%                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
-%                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
-%   \midrule
-%    Capital expenditure rate      & 4,778     & 4,720    & Seven year annual, averaged capital costs = purchase + finance costs  \\
-%    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
-%                                                     &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-%                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
-%  \midrule
-%    Ownership duration            & 7  & 7  & U.S.\ car ownership (from new) duration from \citet{BusinessWire:2015}, \\
-%    $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          & and has risen from 52 months (2005) to 79 months (2015), so  \\
-%                                                     &           &          & taken as 84 months in 2018 (7 years) for our example. \\
-%  \midrule
-%    Lifespan                     & 14  & 14 & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
-%    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Berla:2016} and 14 years for UK cars from \\
-%                                                     &           &          & \citet{SMMT:2020}. \\
-%  \midrule
-%    Embodied energy             & 34,000    & 40,000   & 34,000 MJ for conventional Ford Fusion gasoline car taken from \\
-%    $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & \citet{Argonne_National_Laboratory:2010}. \\
-%                                                     &           &          & We assume an additional 6,000 MJ added for Ford Fusion \\
-%                                                     &           &          & Hybrid Electric Vehicle (HEV) battery, as HEV typically adds 10--25\% \\
-%                                                     &           &          & to total LCA energy of vehicle manufacture \citep{onat2015conventional}. \\
-%                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
-%                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
-%  \midrule
-%   Maintenance and disposal expenditure rate  & 2,731  & 2,710    & Seven year annual, averaged maintenance costs = sum of insurance, \\
-%   $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & maintenance, repairs, taxes, and fees \\
-%                                                     &           &          & (excluding financing, depreciation, fuel). \\
-%                                                     &           &          & Ford Fusion maintenance costs from \citet{Edmunds:2020_fusion_gasoline}. \\
-%                                                     &           &          & Ford Fusion Hybrid maintenance costs from \citet{Edmunds:2020_fusion_hybrid}. \\
-%   \bottomrule
-% \end{tabular}
-% \end{center}
-% \end{table}
-% \end{landscape}
-
-
 \begin{landscape}
 \begin{table}
 \footnotesize
 \begin{center}
-\caption{Car example: Vehicle parameters.} 
+\caption{Car example: Vehicle parameters.}
 \label{tab:car_parameters}
 \begin{tabular}{ r c c l }
   \toprule
-    Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\ 
+    Description                  & Ford Fusion & Ford Fusion & Data sources and notes\\
     Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
   \midrule
   Fuel economy                           & 25 & 42 & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
@@ -399,9 +345,8 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
   \midrule
-   Capital expenditure rate      & 4,778     & 4,720    & Seven year annual, averaged capital costs = purchase + finance costs  \\
-   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr] &           &          & -- resale value (purchase -- depreciation).  \\
-                                                    &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
+   Undiscounted capital expenditure rate      & 2,533     & 2,518    & Fourteen year annual, averaged capital costs = purchase cost / $t_{\life}$.  \\
+   $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & Ford Fusion gasoline costs from \citet{Edmunds:2020_fusion_gasoline}. \\
                                                     &           &          & Ford Fusion Hybrid car costs from \citet{Edmunds:2020_fusion_hybrid}. \\
  \midrule
    Lifespan                     & 14  & 14 & Lifetime taken as 14 years, based on 13--17 years for U.S.\ cars \\
@@ -416,26 +361,25 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
                                                     &           &          & Battery lifetime assumed same as car lifetime, based on \\
                                                     &           &          & \citet{nordelof2014environmental} and \citet{onat2015conventional}. \\
   \midrule
-  Operations and maintenance expenditure rate   & 2,731   & 2,710     & \\
-  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
+  Operations and maintenance expenditure rate   & 5,050   & 4,779     & Lifetime (14 year) annual, averaged operation and maintenance \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    & (O\&M) costs = sum of insurance, maintenance, repairs, taxes, and \\
+                                                                &                  &                                    & fees (excluding financing, depreciation, fuel). 5-year Ford Fusion \\
+                                                                &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_gasoline}. 5-year Ford Fusion Hybrid \\
+                                                                &                  &                                    & O\&M costs from \citet{Edmunds:2020_fusion_hybrid}. Extrapolation of O\&M costs \\
+                                                                &                  &                                    & for years 6--14 based on \cite{djokic2015simulation}. \\
  \midrule
-  Disposal cost                                                 &                  &                                    &   \\
-  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                             &                  &                                    &   \\
+  Disposal cost                                     & $-300$  & $-300$        & Salvage value (negative cost) taken from \cite{Junk-Car-Medics:aa} \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
  \midrule
-  Ops., maint., and disposal expenditure rate,  &   &     &  \\
-  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    &  \\
- \bottomrule
+  Ops., maint., and disposal expenditure rate,  & 5,033  & 4,762    & Sum of annualized operations, maintenance, and disposal costs. \\
+  discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    & \\
+  \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 \end{landscape}
 
-
-
+ 
 \begin{landscape}
 \begin{table}
 \footnotesize
@@ -444,7 +388,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
 \label{tab:car_economic_parameters}
 \begin{tabular}{ r c l }
   \toprule
-  Description & Value & Data sources and notes \\ 
+  Description & Value & Data sources and notes \\
   Parameter [units] & & \\
   \midrule
   Distance driven prior to upgrade   & 12,416        & Average U.S.\ vehicle miles/yr, calculated from \citet{Car_Insurance:2019}.  \\
@@ -458,34 +402,37 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   U.S.\ 2018 disposable income /                            & 0.88319       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
   real income (minus current taxes)                         &               & National and Products Accounts (NIPA) \\
   {} [--]                                                   &               & Table 2.1.\ Personal Income and Its Disposition \\
-                                                            &               & \citep{US_BEA:2020}. \\ 
+                                                            &               & \citep{US_BEA:2020}. \\
   \midrule
   Share of savings from 2018 disposable income              & 0.07848       & Taken from U.S.\ Bureau of Economic Analysis (BEA) \\
-  {} [--]                                                   &               & National and Products Accounts (NIPA) \\ 
+  {} [--]                                                   &               & National and Products Accounts (NIPA) \\
                                                             &               & Table 2.1.\ Personal Income and Its Disposition \\
                                                             &               & \citep{US_BEA:2020}. \\
   \midrule
-  Personal consumption in 2018                  & 27,929.83      & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$ \\
+  Personal consumption in 2018                  & 27,930      & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$ \\
   $\rate{M}$ [\$/yr]                                        &               &                                              \\
   \midrule
   Price of gasoline                       & 2.63       & Source: \citet{US_EIA:2020_gasoline} \\
   $p_E$ [\$/gallon]                                         &               &  \\
-  \midrule  
-  Fractional spend on original energy service      & 0.064      & Calculation: \$1,306 (spend on energy service) \\
+  \midrule
+  Fractional spend on original energy service      & 0.066      & Calculation: \$1,306 (spend on energy service) \\
   $\fCs$ [--]                                               &               & / [\$19,115 (other goods) + \$1,306 (energy service)] = 0.064, \\
                                                             &               & where spend on energy service = 12,416 miles / 25 mpg \\
                                                             &               & $\times$ \$2.63/gallon = \$1,306. \\
   \midrule
-  Macro factor                                              & 1.0           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Real discount rate                                        & 0.03  & Taken from Federal Reserve St.\ Louis for 72 month car loan rate,  \\
+  $r$ [1/yr]                                                &                     & which averaged 5\% before the 2022 interest rate raises. \\
+                                                            &                     & Subtracting 2\% inflation gives 3\% real interest rate, \\
+                                                            &                     & by which we discount. \\
+                                                            &                     & \citep{FRED-US:2024aa} \\
+  \midrule
+  Macro factor                                              & 1.0           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 \end{landscape}
-
-
-
 
 
 \begin{landscape}
@@ -501,21 +448,20 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   \midrule
   Uncompensated own price elasticity of car use demand  & $-0.2$  & We adopt $-0.2$ as our baseline value, based on U.S.\ studies including \\
   $\eqspsUCorig$ [--]                                           &           &  \citet{Gillingham:2020aa} who estimated a value of $-0.1$, \\
-                                                           &           &   \citet{goetzke2018} who estimated values \\
-                                                           &          &     between $-0.05$ and $-0.23$, and \citet{Parry2005} \\  
-                                                             &           &   who estimated values between $-0.1$ and $-0.3$. \\  
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses values of $-0.1$ to $-0.4$ \\   
-                                                            &            &     based on \citet{Parry2005}. \\
+                                                           &           &   \citet{goetzke2018} who estimated values between $-0.05$ and \\
+                                                           &          &      $-0.23$, and \citet{Parry2005} who estimated values between \\
+                                                             &           &    $-0.1$ and $-0.3$. For comparison, \citet{Borenstein:2015aa} uses values \\
+                                                            &           &   of $-0.1$ to $-0.4$ based on \citet{Parry2005}.\\
   \midrule
-  Compensated price elasticity of car use demand                   &   $-0.136$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsCorig$ [--]                                           &                                &   \\    
-  \midrule   
+  Compensated price elasticity of car use demand                   &   $-0.134$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
+  $\eqspsCorig$ [--]                                           &                                &   \\
+  \midrule
   Compensated cross price elasticity of demand for other goods        &   0.009     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsCorig$ [--]                                           &                                &   \\ 
-  \midrule   
+  $\eqopsCorig$ [--]                                           &                                &   \\
+  \midrule
   Income elasticity of demand for car use                 &   1.0      & Follows from CES utility function. \\
-  $\eqsM$ [--]                                            &                                &   \\ 
-  \midrule   
+  $\eqsM$ [--]                                            &                                &   \\
+  \midrule
   Income elasticity of demand for other goods             &   1.0      & Follows from CES utility function. \\
   $\eqoM$ [--]                                            &                                &   \\
   \bottomrule
@@ -529,109 +475,56 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
 
 
 %------------------------------
-\subsubsection{Data for lamp example} 
+\subsubsection{Data for lamp example}
 \label{sec:data_lamp_example}
 %------------------------------
 
 
 
 
-For the second example, 
+For the second example,
 we consider purchasing a Light Emitting Diode (LED) electric lamp
-to replace a baseline incandescent electric lamp. 
-Both lamps are matched as closely as possible 
-in terms of energy service delivery (measured in lumen output per lamp), 
-the key difference being the energy required to provide that service. 
-The LED lamp has a low 
+to replace a baseline incandescent electric lamp.
+Both lamps are matched as closely as possible
+in terms of energy service delivery (measured in lumen output per lamp),
+the key difference being the energy required to provide that service.
+The LED lamp has a low
 initial capital investment rate
 when spread out over the lifetime of the lamp
-(less than the incumbent incandescent lamp, actually)
+(less than the incumbent incandescent lamp)
 and a long-term benefit of decreased direct energy expenditures
 at approximately the same energy service delivery rate (\lmhr/yr).
 
-Again, three sets of data are required. 
-First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}. 
-Second, several general economic parameters, 
-mainly relating to the U.S.\ economy and 
-personal finances 
+Again, three sets of data are required.
+First, basic lamp parameters are summarized in Table~\ref{tab:lamp_parameters}.
+Second, several general economic parameters,
+mainly relating to the U.S.\ economy and
+personal finances
 of a representative U.S.-based user are
 given in Table~\ref{tab:lamp_economic_parameters}.
-Third, we require the elasticity parameters, 
+Third, we require the elasticity parameters,
 as shown in Table~\ref{tab:lamp_elasticity_parameters}.
-
-
-% \begin{landscape}
-% \begin{table}
-% \footnotesize
-% \begin{center}
-% \caption{Lamp example: Electric lamp parameters.} 
-% \label{tab:lamp_parameters}
-% \begin{tabular}{ r c c l }
-%   \toprule
-%     Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
-%     Parameters [units]                                &  &  & \\
-%   \midrule
-%   Lamp efficiency                   & 8.83      & 81.8     & Incandescent: 530 lm output / 60 W energy input. \\
-%   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
-%   \midrule
-%    Capital expenditure rate       & 1.044   & 0.121    & Purchase costs: \$1.88 for incandescent lamp from  \\
-%    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
-%                                                     &           &          & and \$1.21 for LED lamp from \\
-%                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
-%   \midrule
-%    Ownership duration      & 1.8       & 10       & Assumed same as lamp lifespan \\
-%    $\bempl{t}_{own}$, $\aempl{t}_{own}$ [yr]        &           &          &  \\
-%  \midrule
-%    Lifespan               & 1.8       & 10       & Based on assumed 3 hr/day  \\
-%    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
-%                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
-%    \midrule
-%    Life cycle analysis (LCA) embodied energy  & 2.20      & 6.50     & Base document: Table 4.5 Manufacturing Phase Primary  \\
-%    $\bempl{E}_{emb}$, $\aempl{E}_{emb}$ [MJ]        &           &          & Energy (MJ/20 million \lmhr), contained in \\
-%                                                     &           &          & U.S.\ DoE Life-cycle assessment of energy and environmental \\
-%                                                     &           &          & impacts of LED lighting products \citep{US_DoE:2012}.\\
-%                                                     &           &          & Incandescent lamp: \\
-%                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
-%                                                     &           &          & Lifetime output = 530 lm $\times$ 3 hr/day \\
-%                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
-%                                                     &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
-%                                                     &           &          & LED lamp:  \\
-%                                                     &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
-%                                                     &           &          & for pack of 5 LED lamps. \\
-%                                                     &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
-%                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
-%                                                     &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
-%  \midrule
-%   Maintenance and disposal expenditure rate  & 0.00      & 0.00     & Assumed negligible. \\
-%   $\rbempl{C}_{\md}$, $\raempl{C}_{\md}$ [\$/yr]  &           &          & \\
-%   \bottomrule
-% \end{tabular}
-% \end{center}
-% \end{table}
-% \end{landscape}
-
-
 
 
 \begin{landscape}
 \begin{table}
 \footnotesize
 \begin{center}
-\caption{Lamp example: Electric lamp parameters.} 
+\caption{Lamp example: Electric lamp parameters.}
 \label{tab:lamp_parameters}
 \begin{tabular}{ r c c l }
   \toprule
-    Description                  & Incandescent lamp & LED lamp & Data sources and notes\\ 
+    Description                  & Incandescent lamp & LED lamp & Data sources and notes\\
     Parameters [units]                                &  &  & \\
   \midrule
-  Lamp efficiency                   & 8.83      & 81.8    & Incandescent: 530 lm output / 60 W energy input. \\
+  Lamp efficiency                   & 8.83      & 81.8     & Incandescent: 530 lm output / 60 W energy input. \\
   $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
-   Capital expenditure rate       & 1.044   & 0.121    & Purchase costs: \$1.88 for incandescent lamp from  \\
+   Undiscounted capital expenditure rate       & 1.044   & 0.121    & Purchase costs: \$1.88 for incandescent lamp from  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
                                                     &           &          & and \$1.21 for LED lamp from \\
                                                     &           &          & \citet{Home_Depot:2020_LED_bulb}. \\
-   \midrule
+ \midrule
    Lifespan               & 1.8       & 10       & Based on assumed 3 hr/day  \\
    $\bempl{t}_{\life}$, $\aempl{t}_{\life}$ [yr]    &           &          & from \citet{Home_Depot:2020_Inc_bulb} \\
                                                     &           &          & and  \citet{Home_Depot:2020_LED_bulb}. \\
@@ -644,24 +537,24 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
                                                     &           &          & LCA energy = 42.2 MJ/20 million \lmhr.  \\
                                                     &           &          & Lifetime output = 530 lm $\times$ 3 hr/day \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 1.8 yr = 1,044,630 \lmhr.\\
-                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.21 MJ. \\
+                                                    &           &          & Thus LCA energy / lamp =  42.2 $\times$ 1.0446/20 = 2.20 MJ. \\
                                                     &           &          & LED lamp:  \\
                                                     &           &          & LCA energy = 132 MJ/20 Million \lmhr \\
                                                     &           &          & for pack of 5 LED lamps. \\
                                                     &           &          & Lifetime output = 450 lm $\times$ 3 hr/day  \\
                                                     &           &          & $\times$ 365 days/yr $\times$ 10 yr = 4,926,405 \lmhr. \\
-                                                    &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\ 
+                                                    &           &          & Thus LCA energy / lamp =  132 MJ/5 $\times$ 4.9264/20 = 6.5 MJ. \\
   \midrule
-  Operations and maintenance expenditure rate   & 0  & 0   & \\
-  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                    &  \\
-                                                                &                  &                                    &  \\
+  Operations and maintenance expenditure rate   & 0  & 0   & Lifetime annual, averaged operations and maintenance (O\&M) costs. \\
+  $\rbempl{C}_{\om}$, $\raempl{C}_{\om}$ [\$/yr]                &                  &                                   & Once installed assumed 0. Note: O\&M costs exclude fuel \\
+                                                                &                  &                                   & (i.e., electricity) costs. \\
  \midrule
-  Disposal cost                                     & 0 & 0      &  \\
-  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                    &   \\
+  Disposal cost                                     & $0$ & $0$      &  Disposal cost assumed negligible \\
+  $\bempl{C}_d$, $\aempl{C}_d$ [\$]                 &                              &                                   & (local/doorstep recycling facility). \\
  \midrule
-  Ops., maint., and disposal expenditure rate,  & 0 & 0  &  \\
+  Ops., maint., and disposal expenditure rate,  & 0 & 0  &  Sum of annualized operations, maintenance, and disposal costs. \\
   discounted $\rbempl{C}_{\omd}$, $\raempl{C}_{\omd}$ [\$/yr]   &                  &                                    &  \\
- \bottomrule
+  \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
@@ -680,7 +573,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 \label{tab:lamp_economic_parameters}
 \begin{tabular}{ r c l }
   \toprule
-  Description  & Value & Data sources and notes \\ 
+  Description  & Value & Data sources and notes \\
   Parameter [units] & & \\
   \midrule
   Lighting consumption prior to upgrade   & 580,350  & Calculation: (530 lm) (3 hrs/day) (365 days/yr). \\
@@ -694,21 +587,27 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   {} [--]                                                   &               &  \\
   \midrule
   Share of savings from 2018 disposable income              & 0.07848       & Refer to Table~\ref{tab:car_economic_parameters}. \\
-  {} [--]                                                   &               &  \\ 
+  {} [--]                                                   &               &  \\
   \midrule
-  Personal consumption in 2018                   & 27,929.83     & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$. \\
+  Personal consumption in 2018                   & 27,930     & Calculation: $(\$34,317\mathrm{/yr}) (0.88319) (1 - 0.07848)$. \\
   $\rate{M}$ [\$/yr]                                      &               &                                              \\
   \midrule
   Price of electricity                  & 0.1287        & U.S.\ 2018 average U.S.\ household electricity price \\
   $p_E$ [\$/\kWhr]                                          &               & \citep{US_EIA:2020_electricity}.  \\
   \midrule
   Fractional spend on original energy service    & 0.0003028       & Calculation: \$8.5/yr (spend on energy service) / \\
-  $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] = 0.00030, \\
-                                                            &               & where spend on energy service = 580,350 \lmhr/yr /  \\
-                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr = \$8.5/yr.  \\
+  $\fCs$ [--]                                               &               & [\$27,920/yr (other goods) + \$8.5/yr (energy service)] =  \\
+                                                            &               & 0.0003028, where spend on energy service = 580,350 \lmhr/yr /  \\
+                                                            &               & 8.83 lm/W / 1000 W/kW $\times$ \$0.1287/\kWhr{} = \$8.5/yr. \\
                                                             &               & Note: this is energy service from a single lamp. \\
   \midrule
-  Macro factor                                              & 1.0           & An initial value. See Section~\ref{sec:calibrating_k} for additional details. \\  
+  Real discount rate                                        & 0.03  & Taken from Federal Reserve St.\ Louis for 72 month car loan rate,  \\
+  $r$ [1/yr]                                                &                      & which averaged 5\% before the 2022 interest rate raises. \\
+                                                            &                      & Subtracting 2\% inflation gives 3\% real interest rate, \\
+                                                            &                      & by which we discount. \\
+                                                            &                      & \citep{FRED-US:2024aa} \\
+  \midrule
+  Macro factor                                              & 1.0           & An initial value. See Section~\ref{sec:calculating_k} for additional details. \\
   $k$ [--]                                                  &               &               \\
   \bottomrule
 \end{tabular}
@@ -731,19 +630,19 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Parameter [units] & & \\
   \midrule
   Uncompensated own price elasticity of lighting demand  &   $-0.4$  & We adopt $-0.4$ as our baseline value, as the average of last 50 years \\
-  $\eqspsUCorig$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\  
-                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\   
+  $\eqspsUCorig$ [--]                                                             &           &   from \citet[Fig.~4]{Fouquet2014}. \\
+                                                            &           &  For comparison, \citet{Borenstein:2015aa} uses a range of $-0.4$ to $-0.8$, \\
                                                             &            &     based on \citet{Fouquet2011}. \\
   \midrule
   Compensated own price elasticity of lighting demand                 &  $-0.3997$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
-  $\eqspsCorig$ [--]                                           &           &   \\    
-  \midrule   
+  $\eqspsCorig$ [--]                                           &           &   \\
+  \midrule
   Compensated cross price elasticity of demand for other goods        &   0.00012     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsCorig$ [--]                                           &           &   \\ 
-  \midrule   
+  $\eqopsCorig$ [--]                                           &           &   \\
+  \midrule
   Income elasticity of lighting demand                    &   1.0     & Follows from CES utility function. \\
-  $\eqsM$ [--]                                            &           &   \\ 
-  \midrule   
+  $\eqsM$ [--]                                            &           &   \\
+  \midrule
   Income elasticity of demand for other goods             &   1.0     & Follows from CES utility function. \\
   $\eqoM$ [--]                                            &           &   \\
   \bottomrule
@@ -753,7 +652,6 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 \end{landscape}
 
 
-
 %++++++++++++++++++++++++++++++
 \subsection{Visualization}
 \label{sec:path_graphs}
@@ -761,82 +659,93 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
 
 A rigorous rebound analysis should track
 energy, expenditure, and consumption
-aspects of rebound 
+aspects of rebound
 at the device (direct rebound) and elsewhere in the economy (indirect rebound)
 across adjustments for all rebound effects
-(emplacement, substitution, income, and macro). 
+(emplacement, substitution, income, and macro).
 Doing so involves many terms and much complexity.
-To date, visualizing the energy, expenditure, and consumption 
-aspects of rebound phenomena has not been 
-done in a numerically precise manner 
-with a set of mutually consistent graphs.
 
-We introduce rebound planes
-to bring clarity to
-(direct and indirect) rebound and 
+To date, visualizing the energy, expenditure, and consumption
+aspects of rebound phenomena has not been
+done in a numerically precise manner
+with a set of mutually consistent graphs.
+So we introduce \emph{rebound planes}
+to help advance clarity of
+(direct and indirect) rebound and
 adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
 Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
+The order of presentation below is
+energy first, followed by expenditure, ending with consumption,
+because the EEU triggers rebound
+(the topic of this article and visible in the energy plane),
+but is caused by expenditures on the EEU and further monetary adjustments
+(visible in the expenditure plane),
+which are calculated via details about substitution
+(visible in the consumption plane).
 
 Axes of the rebound planes
-represent direct and indirect effects, with 
-direct effects shown on the $x$-axis, and 
-indirect effects shown on the $y$-axis.
-Specifically, 
+represent direct and indirect effects, with
+direct effects shown on the $x$-axes, and
+indirect effects shown on the $y$-axes.
+Specifically,
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
+
   \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
         the $x$- and $y$-axes of the energy plane, respectively;
-  
-  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$) are placed on 
+
+  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$,
+        discounted for beginning of life and end of life costs) are placed on
         the $x$- and $y$-axes of the expenditure plane, respectively; and
-  
+
   \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
         the indexed expenditure rate of other consumption goods ($\rate{C}_o$) are placed on
         the $x$- and $y$-axes of the consumption plane, respectively.
-    
+
 \end{enumerate*}
 %
 Paths through energy, expenditure, and consumption planes
 consist of segments that represent changes due to the various rebound effects.
 Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
 Effects that include both direct and indirect rebound
-will show displacement along both axes and 
+will show displacement along both axes and
 create a path in the $x$-$y$ plane.
-(See Appendix~\ref{sec:graph_details} for 
-detailed mathematical descriptions for constructing paths on the rebound planes.)
+See Appendix~\ref{sec:graph_details} for
+detailed mathematical descriptions for constructing paths on the rebound planes, and
+see Section~\ref{sec:results} for rebound path graphs
+for EEU examples of a car and an electric lamp.
 
-Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph} show
-notional energy, expenditure, and consumption planes,
-respectively.
-The notional planes are not quantified, i.e., there are no scales on the axes.
-Later (Section~\ref{sec:results}), 
-rebound planes with numerical scales illustrate the car and lamp examples.
 
 \begin{table}
+\footnotesize
 \centering % Centered table
-\caption{Segments in rebound planes.} 
+\caption{Segments in rebound planes.}
 \begin{tabular}{r l l c}
   \toprule
-  \multicolumn{1}{c}{Segment} & Rebound effect            & Symbol           \\
+  \multicolumn{1}{c}{Segment} & Rebound effect             & Symbol           \\
   \midrule
-  \circa{} \hspace{52.0mm}    & Direct emplacement        & $Re_{dempl}$     \\
-  \ab{}    \hspace{45.0mm}    & Embodied energy           & $Re_{emb}$       \\
-  \bstar{} \hspace{37.8mm}    & Maintenance and disposal  & $Re_{\md}$       \\
+  \circa{} \hspace{48.8mm}    & Direct emplacement         & $Re_{dempl}$     \\
+  \ab{}    \hspace{42.0mm}    & Embodied energy            & $Re_{emb}$       \\
+  \bstar{} \hspace{35.2mm}    & Ops.\, maint.\, and disp.\ & $Re_{\omd}$       \\
   \midrule
-  \starc{} \hspace{30.9mm}    & Indirect substitution     & $Re_{isub}$      \\ 
-  \chat{}  \hspace{23.2mm}    & Direct substitution       & $Re_{dsub}$      \\ 
+  \starc{} \hspace{28.8mm}    & Indirect substitution      & $Re_{isub}$      \\
+  \chat{}  \hspace{21.6mm}    & Direct substitution        & $Re_{dsub}$      \\
   \midrule
-  \hatd{}  \hspace{16.0mm}    & Direct income             & $Re_{dinc}$      \\ 
-  \dbar{}  \hspace{ 7.7mm}    & Indirect income           & $Re_{iinc}$      \\ 
+  \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
+  \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
   \midrule
-  \bartilde{}                 & Macro                     & $Re_{macro}$     \\
+  \bartilde{}                 & Macro                      & $Re_{macro}$     \\
   \bottomrule
 \end{tabular}
 \label{tab:path_graph_segments}
 \end{table}
+
+Each rebound plane is described in the subsections below.
+Reference to the rebound planes in
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}
+below will be beneficial.
 
 
 %------------------------------
@@ -844,94 +753,66 @@ rebound planes with numerical scales illustrate the car and lamp examples.
 \label{sec:energy_path_graphs}
 %------------------------------
 
-Fig.~\ref{fig:ExampleEnergyPathGraph} shows a notional energy plane, with 
-the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
+The energy plane
+(see Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph} below)
+shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
 and
 the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
 \footnote{
-  A related, notional-only (not quantified as in Section~\ref{sec:results}), 
-  one-dimensional visualization of direct and indirect energy rebound 
+  A related, notional-only (not quantified as in Section~\ref{sec:results}),
+  one-dimensional visualization of direct and indirect energy rebound
   (but not on expenditure or consumption planes)
   can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
 %
-Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent the rebound stages
-between the rebound effects.
+Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent stages
+between the rebound effects of Fig.~\ref{fig:flowchart}.
 Points $a$, $b$, $c$, and $d$ represent intermediate stages.
-Lines with negative slope through points 
+Lines with negative slope through points
 $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
 indicate energy consumption isoquants
 at key points.
-Table~\ref{tab:path_graph_segments} shows 
-segments and rebound effects for all rebound planes.
-Note that segment \bartilde{} appears only in the energy plane, 
+Note that segment \bartilde{} appears only in the energy plane,
 because the framework tracks energy consumption but not expenditures or consumption
 for the macro effect.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-
-{\centering \includegraphics[width=\maxwidth]{figure/ExampleEnergyPathGraph-1} 
-
-}
-
-\caption{Notional energy plane. See Table~\ref{tab:path_graph_segments} for meanings of path segments.}\label{fig:ExampleEnergyPathGraph}
-\end{figure}
-
-\end{knitrout}
-
-In the notional energy plane of Fig.~\ref{fig:ExampleEnergyPathGraph}, 
+In the energy plane,
 point $a$ lies on the $Re_{tot} = 0\%$ line
 indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
-is the point from which all rebound effects 
+is the point from which all rebound effects
 ($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
 are measured.
-If rebound effects cause 
-total energy demand to return to the original energy consumption level 
-(negative sloping line through the $\circ$ point), 
-all expected energy savings are taken back by rebound effects. 
+If rebound effects cause
+total energy demand to return to the original energy consumption level
+(negative sloping line through the $\circ$ point),
+all expected energy savings are taken back by rebound effects.
 Thus, the line of constant energy consumption through the $\circ$ point is labeled
 $Re_{tot} = 100\%$.
-The contribution of each rebound effect to total rebound 
+The contribution of each rebound effect to total rebound
 is represented by the distance that each component's segment
-moves across the rebound isoquants.  
+moves across the rebound isoquants.
 Total rebound ($Re_{tot}$) is measured linearly between and beyond the
-$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines, 
-with direct rebound in the $x$ direction and 
+$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
+with direct rebound in the $x$ direction and
 indirect rebound in the $y$ direction.
 The region below and to the left of the $Re_{tot} = 0\%$ line
-in Fig.~\ref{fig:ExampleEnergyPathGraph}
 exhibits negative rebound, indicating hyperconservation.
-The region above and to the right of the $Re_{tot} = 100\%$ line 
-shows backfire, 
-i.e., greater total energy consumption after the EEU than before it. 
+The region above and to the right of the $Re_{tot} = 100\%$ line
+shows backfire,
+i.e., greater total energy consumption after the EEU than before it.
 
-In the notional energy plane (Fig.~\ref{fig:ExampleEnergyPathGraph}), 
-emplacement rebound is negative ($Re_{empl} < 0$),
-because the upgraded device has a lesser
-embodied energy rate ($\rbempl{E}_{emb} > \raempl{E}_{emb}$,
-as shown by point \emph{b} being below point \emph{a})
-and has a lesser energy consumption rate for maintenance and disposal 
-($\rbempl{E}_{\md} > \raempl{E}_{\md}$, 
-as shown by point $*$ being below point \emph{b})
-due to lower expenditure rates on these two categories
-compared to the original device.
-
-In Fig.~\ref{fig:ExampleCostPathGraph} segments \ab{} and \bstar{}
-move in the negative $y$ direction,
-consistent with the description above.
 Segment \starc{} moves in the negative $y$ direction
 by definition of the indirect substitution effect,
-and segment \chat{} moves in the positive $x$ direction 
-by the definition of the direct substitution effect. 
+and segment \chat{} moves in the positive $x$ direction
+by the definition of the direct substitution effect.
 Both income effect segments (\hatd{} and \dbar{})
 show more energy consumption, because net savings are spent
 on goods and services that rely on at least some energy consumption.%
 \footnote{
   We exclude the case of an inferior good, whose consumption decreases
-  as real income increases, but 
-  we note here the possibility of such behavior. 
+  as real income increases, but
+  we note here the possibility of such behavior.
   This behavior would
-  however require a different utility model 
+  however require a different utility model
   besides the CES utility model,
   which we use throughout this analysis.
 }
@@ -945,10 +826,11 @@ because macro effects lead to additional indirect energy consumption.
 \label{sec:expenditure_path_graphs}
 %------------------------------
 
-A notional expenditure plane is shown in Fig.~\ref{fig:ExampleCostPathGraph}, 
-with 
-the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and 
-the indirect expenditure rate ($\rate{C}_{indir}$) on the $y$-axis.
+The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows
+the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and
+the indirect expenditure rate
+($\rate{C}_{indir}$, discounted when appropriate)
+on the $y$-axis.
 Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
 indicate expenditure isoquants.
 The line through the $\circ$ point is an isoquant for the
@@ -957,38 +839,20 @@ at the original prices.
 The line through the $*$ point is an isoquant for the
 cost of purchasing the original consumption bundle
 at the new prices.
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-
-{\centering \includegraphics[width=\maxwidth]{figure/ExampleCostPathGraph-1} 
-
-}
-
-\caption{Notional expenditure plane. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\ref{tab:path_graph_segments} for meanings of path segments.}\label{fig:ExampleCostPathGraph}
-\end{figure}
-
-\end{knitrout}
-
-In the notional planes of
-Figs.~\ref{fig:ExampleEnergyPathGraph} and~\ref{fig:ExampleCostPathGraph}, 
-embodied energy rates and capital cost rates
-(represented by segments \ab{} and \bstar{}) 
-move in the same direction (both in the negative $y$ direction).
-However, segments \ab{} and \bstar{} 
-could both move in the positive $y$ direction, or
-they could move in opposite directions, 
-depending on the results of the independent analyses for 
+Segments \ab{} and \bstar{}
+could both move in the positive $y$ direction,
+they could both move in the negative $y$ direction, or
+they could move in opposite directions,
+depending on the results of the independent analyses for
 embodied energy and capital cost rates.
 The substitution effect along segments \starc{} and \chat{}
-will together, by definition, lead to lower expenditure 
+will together, by definition, lead to lower expenditure
 due to the energy service price decline and
-the budget reducing compensating variation (CV). 
+the budget-reducing compensating variation (CV).
 The income effect (segments \hatd{} and \dbar{}) must bring expenditure
-back to the original expenditure line 
-(equal to the budget constraint set by income in dollar or nominal terms) 
-by assumptions about non-satiation and utility maximization 
+back to the original expenditure line
+(equal to the budget constraint set by income in dollar or nominal terms)
+by assumptions about non-satiation and utility maximization
 in the device user's decision function.
 
 
@@ -997,45 +861,43 @@ in the device user's decision function.
 \label{sec:consumption_path_graphs}
 %------------------------------
 
-A notional consumption plane is shown in Fig.~\ref{fig:ExampleConsPathGraph}.
-The indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) is shown on the $x$-axis, and
-the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) is shown on the $y$-axis.
-%Iso-expenditure loci of indexed energy service and other goods demand,
-%are shown as lines with negative slope
+The consumption plane
+(Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
+the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
+the indexed rate of other goods consumption ($\rate{C}_o/\rbempl{C}_o$) on the $y$-axis.
 Iso-expenditure loci of indexed energy service and other goods demand,
 i.e. budget constraints,
 are shown as lines with negative slope
-(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}). 
-Note that budget constraints \circcirc{} and \barbar{} 
-intersect at the $y$-axis,
-because the prices of other goods and services don't change
+(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
+Note that budget constraints \circcirc{} and \barbar{}
+intersect at the $y$-axis (i.e., where $x$ = 0),
+because the prices of other goods and services do not change
 as a result of the EEU.
-(The $x$-axis of Fig.~\ref{fig:ExampleConsPathGraph} does not extend to $0$ at the left, 
-so the intersection is not visible.)
 Emplacement (by itself) does not alter consumption patterns, so
-the rate of energy service consumption and 
+the rate of energy service consumption and
 the rate of other goods consumption are
 unchanged across the emplacement effect
 ($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_o = \raempl{C}_o$, respectively).
-Thus, 
+Thus,
 only movements after the $*$ point are visible as a path in the consumption plane, and
-points $\circ$, \emph{a}, \emph{b}, and $*$ 
+points $\circ$, \emph{a}, \emph{b}, and $*$
 collapse to the same location in the consumption plane.
 
-Indifference curves are denoted by \iicirc{} and \iibar{}
-and represent lines of constant utility through the $\circ$ and $-$ points. 
+Indifference curves for the CES utility model
+are denoted by \iicirc{} and \iibar{}
+and represent lines of constant utility through the $\circ$ and $-$ points.
 Prior to the EEU, the consumption basket (of the energy service and other goods)
-is represented by the $\circ$ point. 
+is represented by the $\circ$ point.
 The budget constraint,
 here in real terms, i.e.,
 the capacity to purchase either the energy service or other goods and services,
 is shown as isoquant \circcirc{}.
 The original budget constraint line (\circcirc{})
-is tangent to the original indifference curve 
+is tangent to the original indifference curve
 (\iicirc{}) at point $\circ$, the optimal consumption
 bundle prior to the EEU.
 The real budget line \starstar{}
-indicates the (higher) capacity to purchase 
+indicates the (higher) capacity to purchase
 combinations of energy services and other goods and services
 using the same money needed to purchase
 the old consumption bundle but at the new, lower price
@@ -1043,44 +905,38 @@ for the energy service,
 thanks to the EEU.
 
 The substitution effect leads to the cheaper, optimal
-utility-preserving
-consumption bundle at the $\wedge$ point. 
+CES-utility-preserving
+consumption bundle at the $\wedge$ point.
 The substitution effect is shown by segments
 \starc{} (the indirect component, which represents the decrease in other goods consumption) and
 \chat{} (the direct component, which represents the increase in energy service consumption).
-Although the substitution effect is calculated 
-on the consumption plane, 
-its impact 
+Although the substitution effect is calculated
+in the consumption plane,
+its impact
 can be seen in
-the energy and expenditures planes 
-(Figs.~\ref{fig:ExampleEnergyPathGraph}
-and~\ref{fig:ExampleCostPathGraph}, respectively).
+the energy and expenditure planes.
 
-The income expansion path is a ray (\rr{}) from the origin through the $\wedge$ point
+In the consumption plane,
+the income expansion path under the CES utility model
+is a ray (\rr{}) from the origin through the $\wedge$ point
 in the consumption plane.
-In the consumption plane, the pre- and post-income-effect 
+The pre- and post-income-effect
 points ($\wedge$ and $-$, respectively)
 lie along the \rr{} ray, due to homotheticity.
-The increased consumption rate of the energy service is 
-represented by segment \hatd{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
-The increased consumption rate of other goods and services is 
-represented by segments \dbar{} 
-in Figs.~\ref{fig:ExampleEnergyPathGraph}--\ref{fig:ExampleConsPathGraph}.
+The increased consumption rate of the energy service is
+represented by segment \hatd{}, and
+the increased consumption rate of other goods and services is
+represented by segments \dbar{}.
 
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
-
-{\centering \includegraphics[width=\maxwidth]{figure/ExampleConsPathGraph-1} 
-
-}
-
-\caption{Notional consumption plane. See Table~\ref{tab:path_graph_segments} for meanings of path segments.}\label{fig:ExampleConsPathGraph}
-\end{figure}
-
-\end{knitrout}
-
+Under non-homothetic utility models,
+the income expansion path will be closer to vertical
+in the consumption plane,
+as the device owner spends more net income ($\rasub{N}$)
+on other goods and less on the energy service.
+In the limit, consumption of the energy service
+is already satiated, so
+net income is spent completely on other goods,
+resulting in a vertical income expansion path.
 
 
 %++++++++++++++++++++++++++++++
@@ -1092,37 +948,37 @@ We developed an open source \texttt{R} package called \texttt{ReboundTools}
 to standardize and distribute the methods for calculating rebound magnitudes in our framework.
 \texttt{ReboundTools} can be found at \url{https://github.com/MatthewHeun/ReboundTools}.
 (See \citet{Heun:2023aa}.)
-\texttt{ReboundTools} provides functions for 
+\texttt{ReboundTools} provides functions for
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
+
   \item reading input data from a spreadsheet,
 
-  \item performing rebound calculations, and 
-  
+  \item performing rebound calculations, and
+
   \item generating rebound tables and rebound planes.
-    
+
 \end{enumerate*}
 %
-\texttt{ReboundTools} was used for 
+\texttt{ReboundTools} was used for
 all calculations and all rebound planes in this paper.
 
-To find the path in storage to an example spreadsheet bundled with the package, 
+To find the path to an example spreadsheet bundled with the package,
 users of \texttt{ReboundTools}
 can call the function \texttt{ReboundTools::sample\_eeu\_data\_path()}.
-After filling the example spreadsheet with parameters for an EEU, 
+After filling the example spreadsheet with parameters for an EEU,
 users can call two functions
 (\texttt{ReboundTools::load\_eeu\_data()} and \texttt{ReboundTools::rebound\_analysis()})
 to perform all rebound calculations described in this paper.
-The function \texttt{ReboundTools::path\_graphs()} creates 
+The function \texttt{ReboundTools::path\_graphs()} creates
 rebound paths in the energy, expenditure, and consumption planes.
 Extensive documentation for \texttt{ReboundTools}
 can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
-In addition, an Excel workbook that performs identical rebound calculations 
+In addition, an Excel workbook that performs identical rebound calculations
 using the framework of this paper
 **** will be stored at the
-Research Data Leeds Repository if this submission is accepted.  
+Research Data Leeds Repository if this submission is accepted.
 The spreadsheet file is included with the submission of this paper. ****
 % can be found at the data repository for this paper at
 % \url{https://doi.org/10.5518/1201}.
@@ -1134,10 +990,10 @@ The spreadsheet file is included with the submission of this paper. ****
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this section we present rebound calculation results for two examples: 
-energy efficiency upgrades of a car (Section~\ref{sec:car_example}) and 
-an electric lamp (Section~\ref{sec:lamp_example}). 
-Univariate sensitivity studies for both examples (car and lamp) 
+In this section we present rebound calculation results for two examples:
+energy efficiency upgrades of a car (Section~\ref{sec:car_example}) and
+an electric lamp (Section~\ref{sec:lamp_example}).
+Univariate sensitivity studies for both examples (car and lamp)
 can be found in Appendix~\ref{sec:sensitivity_analyses}.
 
 
@@ -1146,77 +1002,93 @@ can be found in Appendix~\ref{sec:sensitivity_analyses}.
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
-Armed with the parameter values from 
-Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters}, 
+Armed with the data in
+Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters},
 and the equations in Section~\ref{PartI-sec:framework} of Part~I,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car user.
-Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}), 
+Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}),
 changes occur only in the macroeconomy.
 For the car user, no changes are recorded across the macro effect.
 Thus, the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:car_stages_table} are identical.
+Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
+show energy, expenditure, and consumption planes
+for the car example.
 
-% % latex table generated in R 4.3.2 by xtable 1.8-4 package
-% % Wed Mar 13 08:36:10 2024
-% \begin{table}[ht]
-% \centering
-% \caption{Results for car example with macro factor ($k$) assumed to be 1.} 
-% \label{tab:car_stages_table}
-% \begin{tabular}{rrrrrr}
-%   \toprule
-%   & $\circ$ (orig) & $*$ (star) & $\wedge$ (hat) & $-$ (bar) & $\sim$ (tilde) \\ 
-%   \midrule
-% $\eta$ [mile/gal] & 25.0 & 42.0 & 42.0 & 42.0 & 42.0 \\ 
-%   $\eta$ [mile/MJ] & 0.197 & 0.332 & 0.332 & 0.332 & 0.332 \\ 
-%   $p_s$ [\$/mile] & 0.105 & 0.063 & 0.063 & 0.063 & 0.063 \\ 
-%   $\dot{q}_s$ [mile/yr] & 12,416 & 12,416 & 13,336 & 13,756 & 13,756 \\ 
-%   $\dot{E}_s$ [MJ/yr] & 62,885 & 37,432 & 40,204 & 41,470 & 41,470 \\ 
-%   $\dot{E}_{emb}$ [MJ/yr] & 2,429 & 2,857 & 2,857 & 2,857 & 2,857 \\ 
-%   $\dot{C}_s$ [\$/yr] & 1,306 & 777 & 835 & 861 & 861 \\ 
-%   $\dot{C}_{cap}$ [\$/yr] & 4,778 & 4,720 & 4,720 & 4,720 & 4,720 \\ 
-%   $\dot{C}_{md}$ [\$/yr] & 2,731 & 2,710 & 2,710 & 2,710 & 2,710 \\ 
-%   $\dot{C}_o$ [\$/yr] & 19,115 & 19,115 & 19,040 & 19,639 & 19,639 \\ 
-%   $\dot{N}$ [\$/yr] & 0 & 608 & 626 & 0 & 0 \\ 
-%   $\dot{M}$ [\$/yr] & 27,930 & 27,930 & 27,930 & 27,930 & 27,930 \\ 
-%    \bottomrule
-% \end{tabular}
-% \end{table}
 
-% latex table generated in R 4.3.2 by xtable 1.8-4 package
-% Wed Mar 13 08:36:10 2024
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Wed Sep 25 14:57:46 2024
 \begin{table}[ht]
 \centering
-\caption{Results for car example with macro factor ($k$) assumed to be 1.} 
+\caption{Results for car example with macro factor ($k$) assumed to be 1. There is no change for the consumer across across the macro effect, so the last stage ($\sim$) is not shown.} 
 \label{tab:car_stages_table}
+\begingroup\footnotesize
 \begin{tabular}{rrrrr}
   \toprule
-  & $\circ$ (orig) & $*$ (star) & $\wedge$ (hat) & $-$ (bar) \\ 
+  & Original ($\circ$) & After empl ($*$) & After sub ($\wedge$) & After inc ($-$) \\ 
   \midrule
-$\eta$ [mile/gal] & 25.0 & 42.0 & 42.0 & 42.0 \\ 
+$t_{li\!f\!e}$ [yr] & 14 & 14 & 14 & 14 \\ 
+  $R_\alpha$ [--] & 1.203 & 1.203 & 1.203 & 1.203 \\ 
+  $R_\omega$ [--] & 0.796 & 0.796 & 0.796 & 0.796 \\ 
+  $\eta$ [mile/gal] & 25 & 42 & 42 & 42 \\ 
   $\eta$ [mile/MJ] & 0.197 & 0.332 & 0.332 & 0.332 \\ 
-  $p_s$ [\$/mile] & 0.105 & 0.063 & 0.063 & 0.063  \\ 
-  $\dot{q}_s$ [mile/yr] & 12,416 & 12,416 & 13,336 & 13,756 \\ 
-  $\dot{E}_s$ [MJ/yr] & 62,885 & 37,432 & 40,204 & 41,470 \\ 
+  $p_s$ [\$/mile] & 0.105 & 0.063 & 0.063 & 0.063 \\ 
+  $\dot{q}_s$ [mile/yr] & 12,416 & 12,416 & 13,323 & 13,899 \\ 
+  $p_E$ [\$/MJ] & 0.0208 & 0.0208 & 0.0208 & 0.0208 \\ 
+  $\dot{E}_s$ [MJ/yr] & 62,885 & 37,432 & 40,167 & 41,903 \\ 
   $\dot{E}_{emb}$ [MJ/yr] & 2,429 & 2,857 & 2,857 & 2,857 \\ 
-  $\dot{C}_s$ [\$/yr] & 1,306 & 777 & 835 & 861 \\ 
-  $\dot{C}_{cap}$ [\$/yr] & 4,778 & 4,720 & 4,720 & 4,720 \\ 
-  $\dot{C}_{md}$ [\$/yr] & 2,731 & 2,710 & 2,710 & 2,710 \\ 
-  $\dot{C}_o$ [\$/yr] & 19,115 & 19,115 & 19,040 & 19,639 \\ 
-  $\dot{N}$ [\$/yr] & 0 & 608 & 626 & 0 \\ 
+  $\dot{C}_s$ [\$/yr] & 1,306 & 777 & 834 & 870 \\ 
+  $\dot{C}_{cap}$ [\$/yr] & 2,533 & 2,518 & 2,518 & 2,518 \\ 
+  $R_{\alpha}\dot{C}_{cap}$ [\$/yr] & 3,048 & 3,030 & 3,030 & 3,030 \\ 
+  $\dot{C}_{O\!M}$ [\$/yr] & 5,050 & 4,779 & 4,779 & 4,779 \\ 
+  $C_d$ [\$] & $-$300 & $-$300 & $-$300 & $-$300 \\ 
+  $\dot{C}_d$ [\$/yr] & $-$21 & $-$21 & $-$21 & $-$21 \\ 
+  $R_{\omega}\dot{C}_d$ [\$/yr] & $-$17 & $-$17 & $-$17 & $-$17 \\ 
+  $\dot{C}_{O\!M\!d}$ [\$/yr] & 5,033 & 4,762 & 4,762 & 4,762 \\ 
+  $\dot{C}_o$ [\$/yr] & 18,543 & 18,543 & 18,469 & 19,267 \\ 
+  $\dot{N}$ [\$/yr] & 0 & 817 & 835 & 0 \\ 
   $\dot{M}$ [\$/yr] & 27,930 & 27,930 & 27,930 & 27,930 \\ 
    \bottomrule
 \end{tabular}
+\endgroup
 \end{table}
 
 
-Results are represented graphically on energy, expenditure, and consumption planes
-in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
-The energy plane (Fig.~\ref{fig:CarEnergyGraph})
-shows the size of each rebound effect
-for the car example.
-Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Wed Sep 25 14:57:46 2024
+\begin{table}[ht]
+\centering
+\caption{Car example: rebound results with macro factor ($k$) assumed to be 1.} 
+\label{tab:car_results}
+\begingroup\footnotesize
+\begin{tabular}{rr}
+  \toprule
+Rebound term & Value [\%] \\ 
+  \midrule
+$Re_{dempl}$ & 0.0 \\ 
+  $Re_{emb}$ & 1.7 \\ 
+  $Re_{O\!M\!d}$ & $-$3.4 \\ 
+  $Re_{dsub}$ & 10.7 \\ 
+  $Re_{isub}$ & $-$0.9 \\ 
+  $Re_{dinc}$ & 6.8 \\ 
+  $Re_{iinc}$ & 10.2 \\ 
+  $Re_{macro}$ & 10.4 \\ 
+   \midrule
+$Re_{tot}$ & 35.4 \\ 
+   \bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+
+
+
+
+
+
 
 
 
@@ -1260,107 +1132,78 @@ Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 \end{knitrout}
 
 
-
-% latex table generated in R 4.3.2 by xtable 1.8-4 package
-% Wed Mar 13 08:36:11 2024
-\begin{table}[ht]
-\centering
-\caption{Car example: rebound results with macro factor ($k$) assumed to be 1.} 
-\label{tab:car_results}
-\begingroup\footnotesize
-\begin{tabular}{rr}
-  \toprule
-Rebound term & Value [\%] \\ 
-  \midrule
-$Re_{dempl}$ & 0.0 \\ 
-  $Re_{emb}$ & 1.7 \\ 
-  $Re_{md}$ & $-$0.3 \\ 
-  $Re_{dsub}$ & 10.9 \\ 
-  $Re_{isub}$ & $-$1.0 \\ 
-  $Re_{dinc}$ & 5.0 \\ 
-  $Re_{iinc}$ & 7.6 \\ 
-  $Re_{macro}$ & 7.7 \\ 
-   \midrule
-$Re_{tot}$ & 31.7 \\ 
-   \bottomrule
-\end{tabular}
-\endgroup
-\end{table}
-
-
-
 The \empleffect{} has three components:
-the direct emplacement effect, 
-the embodied energy effect, and 
-the maintenance and disposal effect.
-Rebound from the direct emplacement effect 
-($Re_{dempl}$) is 0.0\% always, 
+the direct emplacement effect,
+the embodied energy effect, and
+the combined operations, maintenance, and disposal effects.
+Rebound from the direct emplacement effect
+($Re_{dempl}$) is 0.0\% always,
 because energy takeback (and, therefore, rebound)
 occurs after the upgraded device is emplaced.
 Indirect rebound due to the embodied energy effect
-($Re_{emb}$) is 1.7\%,  
+($Re_{emb}$) is 1.7\%,
 due to the higher embodied energy rate
 ($\Delta \raempl{E}_{emb} = 429$~MJ/yr)
 stemming from the electric battery in the hybrid EV car.
-Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is small and negative
-($-0.3$\%),
-because of the slightly lower maintenance and disposal costs
+Rebound due to the operations, maintenance, and disposal effects
+($Re_{\omd}$) is small and negative
+($-3.4$\%),
+because of the slightly lower operations, maintenance, and disposal costs
 for the hybrid EV car.
 
 The \subeffect{} has two components:
 direct and indirect substitution effect rebound.
-Rebound from direct substitution ($Re_{dsub}$) is 
-positive, as expected (10.9\%). 
-The car user will, on average, prefer more driving purely 
+Rebound from direct substitution ($Re_{dsub}$) is
+positive, as expected (10.7\%).
+The car user will, on average, prefer more driving purely
 from the change in relative prices because of the fuel economy enhancements
 (42~mpg $>$ 25~mpg).
-In other words, 
+In other words,
 due the relative price change,
-the more fuel-efficient car is driven 7.4\% further
-each year. 
+the more fuel-efficient car is driven 7.3\% further
+each year.
 Conversely, the indirect substitution effect ($Re_{isub}$)
-is slightly negative ($-1.0$\%)
-to achieve the same level of utility after increased driving. 
+is slightly negative ($-0.9$\%)
+to achieve the same level of utility after increased driving.
 Indeed, across the substitution effect,
 less money is spent on other goods
-($\Delta \rasub{C}_o = -75.18$~\$/yr).
+($\Delta \rasub{C}_o = -74$~\$/yr).
 In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
 displacement along an indifference curve alters the price elasticities,
 and in particular, that the uncompensated own price elasticity declines
 in magnitude. The decline slows the rate of additional consumption of
-energy intensive driving, and attenuates the microeconomic rebound
+energy-intensive driving, and attenuates the microeconomic rebound
 relative to assuming constant price elasticities.
 
 The \inceffect{} also has two components:
 direct and indirect income effect rebound.
 The direct income effect
 ($Re_{dinc}$) is positive
-(5.0\%), 
+(6.8\%),
 because the car user allocates some
-net savings to additional driving. 
-Rebound from the indirect income effect 
-($Re_{iinc}$) is positive (7.6\%)
-due to higher spending on other goods. 
+net savings to additional driving.
+Rebound from the indirect income effect
+($Re_{iinc}$) is positive (10.2\%)
+due to higher spending on other goods.
 Thus, the net savings after the substitution effect
-($\rasub{N} = 625.79$~\$/yr) 
+($\rasub{N} = 835$~\$/yr)
 translates into positive direct and indirect income
-rebound at the microeconomic level. 
+rebound at the microeconomic level.
 Total microeconomic rebound (emplacement, substitution, and income effects)
-sums to $Re_{micro} = 24.0$\%.
+sums to $Re_{micro} = 25.0$\%.
 
-Finally, in Part~I we noted that 
-the link between macroeconomic and microeconomic rebound 
-is largely unexplored, 
+Finally, in Part~I we noted that
+the link between macroeconomic and microeconomic rebound
+is largely unexplored,
 so we assume a value of $k = 1$ for both examples, initially.
-We return to the matter of calibrating $k$
-in the Discussion (Section~\ref{sec:calibrating_k}).
+We return to the value for $k$
+in the Discussion (Section~\ref{sec:calculating_k}).
 With $k$ assumed to be 1,
 the \macroeffect{} leads to macroeconomic rebound
-($Re_{\macro}$) of 7.7\% 
+($Re_{\macro}$) of 10.4\%
 for the car example,
-due to economic expansion caused by 
-productivity enhancements arising from the more-efficient provision of the 
+due to economic expansion caused by
+productivity enhancements arising from the more-efficient provision of the
 energy service (transportation).
 
 
@@ -1369,41 +1212,85 @@ energy service (transportation).
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
 
-With the parameter values from 
-Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters} 
+With the data in
+Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters}
 and the equations in Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
-Similar to Table~\ref{tab:car_stages_table}, 
-Table~\ref{tab:lamp_stages_table} applies to the lamp user, 
+Similar to Table~\ref{tab:car_stages_table},
+Table~\ref{tab:lamp_stages_table} applies to the lamp user,
 so no changes are recorded across the macro effect, and
 the $-$ (bar) and $\sim$ (tilde) columns
 of Table~\ref{tab:lamp_stages_table} are identical.
+Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
+Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}
+show energy, expenditure, and consumption planes
+for the lamp example.
 
-% latex table generated in R 4.3.2 by xtable 1.8-4 package
-% Wed Mar 13 08:36:11 2024
+
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Wed Sep 25 14:57:48 2024
 \begin{table}[ht]
 \centering
-\caption{Results for lamp example with macro factor ($k$) assumed to be 1.} 
+\caption{Results for lamp example with macro factor ($k$) assumed to be 1. There is no change for the consumer across across the macro effect, so the last stage ($\sim$) is not shown.} 
 \label{tab:lamp_stages_table}
+\begingroup\footnotesize
 \begin{tabular}{rrrrr}
   \toprule
-  & $\circ$ (orig) & $*$ (star) & $\wedge$ (hat) & $-$ (bar) \\ 
+  & Original ($\circ$) & After empl ($*$) & After sub ($\wedge$) & After inc ($-$) \\ 
   \midrule
-$\eta$ [\lmhr/\kWhr] & 8,833 & 81,800 & 81,800 & 81,800 \\ 
+$t_{li\!f\!e}$ [yr] & 2 & 10 & 10 & 10 \\ 
+  $R_\alpha$ [--] & 1.012 & 1.138 & 1.138 & 1.138 \\ 
+  $R_\omega$ [--] & 0.959 & 0.847 & 0.847 & 0.847 \\ 
+  $\eta$ [\lmhr/\kWhr] & 8,833 & 81,800 & 81,800 & 81,800 \\ 
   $\eta$ [\lmhr/MJ] & 2,454 & 22,722 & 22,722 & 22,722 \\ 
   $p_s$ [\$/\lmhr] & 0.00001457 & 0.00000157 & 0.00000157 & 0.00000157 \\ 
   $\dot{q}_s$ [\lmhr/yr] & 580,350 & 580,350 & 1,412,867 & 1,413,439 \\ 
+  $p_E$ [\$/MJ] & 0.0358 & 0.0358 & 0.0358 & 0.0358 \\ 
   $\dot{E}_s$ [MJ/yr] & 236.5 & 25.5 & 62.2 & 62.2 \\ 
   $\dot{E}_{emb}$ [MJ/yr] & 1.222 & 0.650 & 0.650 & 0.650 \\ 
   $\dot{C}_s$ [\$/yr] & 8.46 & 0.91 & 2.22 & 2.22 \\ 
   $\dot{C}_{cap}$ [\$/yr] & 1.04 & 0.12 & 0.12 & 0.12 \\ 
-  $\dot{C}_{md}$ [\$/yr] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  $R_{\alpha}\dot{C}_{cap}$ [\$/yr] & 1.06 & 0.14 & 0.14 & 0.14 \\ 
+  $\dot{C}_{O\!M}$ [\$/yr] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  $C_d$ [\$] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  $\dot{C}_d$ [\$/yr] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  $R_{\omega}\dot{C}_d$ [\$/yr] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  $\dot{C}_{O\!M\!d}$ [\$/yr] & 0.00 & 0.00 & 0.00 & 0.00 \\ 
   $\dot{C}_o$ [\$/yr] & 27,920 & 27,920 & 27,916 & 27,927 \\ 
-  $\dot{N}$ [\$/yr] & 0.00 & 8.47 & 11.31 & 0.00 \\ 
+  $\dot{N}$ [\$/yr] & 0.00 & 8.46 & 11.30 & 0.00 \\ 
   $\dot{M}$ [\$/yr] & 27,930 & 27,930 & 27,930 & 27,930 \\ 
    \bottomrule
 \end{tabular}
+\endgroup
+\end{table}
+
+
+
+% latex table generated in R 4.4.1 by xtable 1.8-4 package
+% Wed Sep 25 14:57:48 2024
+\begin{table}[ht]
+\centering
+\caption{Lamp example: rebound results with macro factor ($k$) assumed to be 1.} 
+\label{tab:lamp_results}
+\begingroup\footnotesize
+\begin{tabular}{rr}
+  \toprule
+Rebound term & Value [\%] \\ 
+  \midrule
+$Re_{dempl}$ & 0.0 \\ 
+  $Re_{emb}$ & $-$0.3 \\ 
+  $Re_{O\!M\!d}$ & 0.0 \\ 
+  $Re_{dsub}$ & 17.4 \\ 
+  $Re_{isub}$ & $-$6.4 \\ 
+  $Re_{dinc}$ & 0.0 \\ 
+  $Re_{iinc}$ & 17.3 \\ 
+  $Re_{macro}$ & 13.0 \\ 
+   \midrule
+$Re_{tot}$ & 41.1 \\ 
+   \bottomrule
+\end{tabular}
+\endgroup
 \end{table}
 
 
@@ -1411,21 +1298,14 @@ $\eta$ [\lmhr/\kWhr] & 8,833 & 81,800 & 81,800 & 81,800 \\
 
 
 
-Results are represented graphically on energy, expenditure, and consumption planes
-in Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
-The energy plane (Fig.~\ref{fig:LampEnergyGraph})
-shows the size of each rebound effect
-for the lamp example.
-Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
-
 The \empleffect{} rebound components start with
 the direct emplacement effect ($Re_{dempl}$),
 which is always $0.0$\%.
 Indirect rebound due to the embodied energy effect
 ($Re_{emb}$) is $-0.3$\%.
-Although the LED lamp has higher embodied energy 
+Although the LED lamp has higher embodied energy
 ($\aempl{E}_{emb} = 6.50$~MJ)
-than the incandescent lamp 
+than the incandescent lamp
 ($\bempl{E}_{emb} = 2.20$~MJ),
 the LED lamp has a much longer lifetime,
 meaning that the LED embodied energy \emph{rate}
@@ -1433,51 +1313,52 @@ meaning that the LED embodied energy \emph{rate}
 is less than the incandescent embodied energy rate
 ($\rbempl{E}_{emb} = 1.22$~MJ/yr).
 Thus, the change in embodied energy rate ($\Delta \raempl{E}_{emb}$)
-is $-0.57$~MJ/yr, 
+is $-0.57$~MJ/yr,
 and embodied energy rebound is negative
 ($Re_{emb} = -0.3$\%).
-Rebound due to the maintenance and disposal effect
-($Re_{\md}$) is 0.0\%,
-because we assume no difference in maintenance and disposal costs between 
+Rebound due to the combined operations, maintenance, and disposal effects
+($Re_{\omd}$) is 0.0\%,
+because we assume no difference in operations, maintenance, or
+disposal costs between
 the incandescent lamp and the LED lamp.%
 \footnote{
-  Maintenance cost rates for both incandescent and LED lamps are likely to be equal 
+  Maintenance cost rates for both incandescent and LED lamps are likely to be equal
   and negligible;
   lamps are usually installed and forgotten.
   Real-world disposal cost differences between the incandescent and LED technologies
-  are also likely to be negligible. 
-  However, if ``disposal'' includes recycling processes, 
+  are also likely to be negligible.
+  However, if ``disposal'' includes recycling processes,
   cost rates may be different between the two technologies
   due to the wide variety of materials in LED lamps compared to incandescent lamps.
 }
 
-Direct \subeffect{} rebound 
+Direct \subeffect{} rebound
 ($Re_{dsub}$) is 17.4\%
 due to the much higher LED lamp efficiency
-($\amacro{\eta} = 81.8$~lm/W) 
+($\amacro{\eta} = 81.8$~lm/W)
 compared to the incandescent lamp
 ($\bempl{\eta} = 8.83$~lm/W),
 leading to increased demand for lighting
 (from $\rbsub{q}_s = 580,350$~\lmhr/yr
 to $\rasub{q}_s = 1,412,867$~\lmhr/yr)
 as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
-To maintain constant utility, 
+To maintain constant utility,
 consumption of other goods is reduced
-($\Delta \rasub{C}_o = -4.15$~\$/yr), 
+($\Delta \rasub{C}_o = -4.15$~\$/yr),
 as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
 yielding indirect substitution effect rebound
 ($Re_{isub}$) of $-6.4$\%.
 
 \Inceffect{} rebound arises from spending net energy cost savings
 associated with converting from the incandescent lamp to the LED lamp
-($\rbinc{N} = 11.31$~\$/yr).
-Direct income effect rebound 
+($\rbinc{N} = 11.30$~\$/yr).
+Direct income effect rebound
 ($Re_{dinc}$) is 0.01\%,
-positive but small, 
+positive but small,
 as the lamp user allocates
 some of the net savings to additional demand for lighting.
 The indirect income effect rebound is large
-($Re_{iinc} = 17.4$\%),
+($Re_{iinc} = 17.3$\%),
 due to the energy implications of increased spending on other goods.
 Total microeconomic level rebound (emplacement, substitution, and income effects)
 sums to $Re_{micro} = 28.1$\%.
@@ -1485,8 +1366,8 @@ sums to $Re_{micro} = 28.1$\%.
 Finally, \macroeffect{} rebound
 ($Re_{\macro}$) is 13.0\%
 with $k$ assumed to be 1,
-due to economic expansion caused by 
-productivity enhancements arising from the more-efficient provision of the 
+due to economic expansion caused by
+productivity enhancements arising from the more-efficient provision of the
 energy service (lighting).
 
 
@@ -1529,205 +1410,63 @@ energy service (lighting).
 \end{knitrout}
 
 
-% latex table generated in R 4.3.2 by xtable 1.8-4 package
-% Wed Mar 13 08:36:13 2024
-\begin{table}[ht]
-\centering
-\caption{Lamp example: rebound results with macro factor ($k$) assumed to be 1.} 
-\label{tab:lamp_results}
-\begin{tabular}{rr}
-  \toprule
-Rebound term & Value [\%] \\ 
-  \midrule
-$Re_{dempl}$ & 0.0 \\ 
-  $Re_{emb}$ & $-$0.3 \\ 
-  $Re_{md}$ & 0.0 \\ 
-  $Re_{dsub}$ & 17.4 \\ 
-  $Re_{isub}$ & $-$6.4 \\ 
-  $Re_{dinc}$ & 0.0 \\ 
-  $Re_{iinc}$ & 17.4 \\ 
-  $Re_{macro}$ & 13.0 \\ 
-   \midrule
-$Re_{tot}$ & 41.1 \\ 
-   \bottomrule
-\end{tabular}
-\end{table}
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-\begin{table}
-\footnotesize
-\centering
-\caption{Comparison of substitution
-         income effects
-         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$) and
-         total ($Re_{tot}$) rebound
-         between
-         the CES utility model and satiated
-         consumption of the energy service for the
-         car and lamp examples.}
-\label{tab:utility_model_comparison}
-\begin{tabular}{r r r r r r r}
-\toprule
-                 & \multicolumn{3}{c}{Car example}
-                                                & \multicolumn{3}{c}{Lamp example} \\
-Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
-\midrule
-$Re_{dsub}$ [\%] &     &          &             &     &          &                 \\
-$Re_{isub}$ [\%] &     &          &             &     &          &                 \\
-\midrule
-$Re_{sub}$ [\%]  &     &          &             &     &          &                 \\
-\midrule
-$Re_{dinc}$ [\%] & 
-                       & 
-                                  &
-                                                & 
-                                                      & 
-                                                                 &               \\
-$Re_{iinc}$ [\%] & 
-                       & 
-                                  &
-                                                & 
-                                                      & 
-                                                                 &                \\
-\midrule
-$Re_{inc}$ [\%] & 
-                       & 
-                                  &
-                                                & 
-                                                      & 
-                                                                 &                \\
-\midrule
-$Re_{tot}$ [\%] & 
-                       & 
-                                  &
-                                                & 
-                                                      & 
-                                                                 &                \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-
-
 %++++++++++++++++++++++++++++++
-\subsection{A first attempt at calibrating $k$}
-\label{sec:calibrating_k}
+\subsection{A first attempt at calculating macro rebound}
+\label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
 
 
 
-Few previous studies explored link 
+Few previous studies explored the link
 between microeconomic and macroeconomic rebound.
-Inspired by \citet{Borenstein:2015aa} and others, 
+Inspired by \citet{Borenstein:2015aa} and others,
 the framework developed in Section~\ref{PartI-sec:framework} of Part~I
-links macroeconomic rebound to microeconomic rebound 
+links macroeconomic rebound to microeconomic rebound
 via the macro factor~($k$) that scales
-magnitudes in the microeconomic portion of the framework. 
+magnitudes in the microeconomic portion of the framework.
 (See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I.)
 
-For the results presented in Section~\ref{sec:results} above, 
+For the results presented in Section~\ref{sec:results} above,
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-In combination, the framework presented in Section~\ref{PartI-sec:framework} of Part~I, 
-the results obtained in Section~\ref{sec:results} of this paper, and
-recent calculations of total rebound in general equilibrium frameworks allow, 
-for the first time, 
-a discussion about calibrating $k$.
-After calibrating $k$, 
-macro rebound and total rebound can be calculated.
+There are no estimates of $k$, which ultimately traces the aggregate growth
+effects of a single, device-specific technical enhancement and is likely
+to differ between EEUs. However, using recent empirical estimates of
+sectoral multipliers we can ascertain ourselves that $k$ should be different
+from 1 and choose a different value in line with those estimates.
 
-To calibrate the macro factor ($k$),
-we treat macro rebound ($Re_{\macro}$) as a residual.
-The macro factor ($k$) becomes an unknown parameter whose value is to be chosen
-such that $Re_{\macro}$
-is sufficient to achieve an expected value for total rebound ($Re_{tot}$).%
-\footnote{
-  This approach means that the calibrated value of $k$ incorporates all 
-  macroeconomic rebound sub-effects included in the studies
-  whose total rebound value we calibrate against.
-}
-%
-We take the expected value for $Re_{tot}$ from 
-\citet{Brockway:2021ww}.
-Four of 33 studies reviewed by \citet{Brockway:2021ww}
-examined total rebound from only consumer EEUs in a computable general
-equilibrium (CGE) framework. 
-The average total rebound ($Re_{tot}$) 
-for the four consumer studies is 54\%.%
-\footnote{
-  The average total rebound among all 33 studies stood at 63\%,
-  supporting the claim by \citet{Turner:2013aa} that consumer
-  and producer rebounds vary.
-}
-%
-The calibrated values of $k$ that give identical 
-$Re_{tot} = 54$\% 
-for both examples are
-$k = 3.9$
-for the car example and
-$k = 2.0$ 
-for the lamp example.
+Sectoral multipliers capture the impact of sectoral revenue increases
+into aggregate demand or GDP growth.
+While the idea of scale economies
+from larger markets for particular products have a long
+history in economic thought dating back at least to \citet{Smith1776},
+data from input-output tables and recent advances in network theory
+allowed formalization of the spill-overs from sectoral to aggregate growth.
+First results show that U.S. aggregate output growth
+may have been up to 3 times as large as the growth of the sector in which
+growth originated \citep{Foerster2022}.
+And industrial policy to
+encourage technology adoption in certain sectors was found to pay back
+up to 5 times its cost in India, but with wide variation
+across sectors \citep{Buera2024}.
+Since our problem also concerns technology adoption,
+one that features energy augmenting technical change,
+we take the value from the \citet{Buera2024} study,
+where the majority of multipliers cluster around 3.
+Thus, we adopt the value of $k = 3$,
+fully aware that this can only be a first approximation.
 
-Qualitative differences in benefits from EEUs as well as the considerable 
-variance in $Re_{tot}$ in 33 surveyed studies~\citep{Brockway:2021ww}
-indicates that total rebound from one EEU is likely to be different from 
-total rebound from another EEU. 
-For a first approximation of a calibration for $k$,
-we take $k \approx 3$,
-being between the values of $k$ 
-calculated from the car and lamp examples.
-Note that $k \approx 3$ implies that 
-every \$1 of net savings spent by the device user ($\raempl{N}$)
-generates \$3 of additional economic 
-activity in the broader economy.
-We multiply $k \raempl{N}$ by the energy intensity of the economy ($I_E$) to 
-find the energy implications of macro-effect respending throughout the economy.
-
-There are three ways to interpret $k \approx 3$.
-First, $k \approx 3$ can be considered the average long-run 
-economic growth generated
-by the productivity increase implied by the EEU and subsequent
-productivity increases benefitting from the EEU.
-Efficiency increases in equipment drive a significant part of 
-long-run productivity growth \citep{Greenwood1997}, therefore a large
-long-run effect is plausible,
-even if the initial productivity
-change occurred in household production which is not accounted in GDP.
-(See Section~\ref{PartI-sec:macro_effect_main_paper} of Part~I 
-for further discussion of this point.)
-Second, it could be that growth is less than 
-\$3 for every \$1 of respending,
-but that the macroeconomic ``energy price effect'' (a decline in 
-energy prices due to the fallen demand) induces consumption at a higher
-energy intensity than that of the pre-EEU economy. 
-Third, from the demand-side perspective
-entertained by \citet{Borenstein:2015aa}, 
-$k \approx 3$ could be interpreted as 
-growth induced by the device user's spending of net savings with
-a marginal propensity to consume (MPC)
-of approximately $0.75$ that translates into a multiplier of 3. 
-(See Fig.~\ref{PartI-fig:k_vs_mpc} 
-in Appendix~\ref{PartI-sec:income_macro_mpc} of Part~I.)
-$\MPC \approx 0.75$ is a reasonable value, 
-being in the upper half of recent estimates from \citet{Carroll2017}.
-Although the cause of the growth in economic activity and energy consumption from an EEU 
-is a supply-side productivity shock,
-the subsequent demand-side effects may well be interpreted as a multiplier effect, 
-caused by higher real income instead of by higher monetary income.
-
-After calibrating $k \approx 3$, 
+After setting $k = 3$,
 we can recalculate all rebound components in our framework.
 Emplacement ($Re_{empl}$), substitution ($Re_{sub}$), and income ($Re_{inc}$) rebound
-magnitudes are unchanged after calibrating $k \approx 3$.
+magnitudes are unchanged after setting $k = 3$.
 However, we see that choosing a placeholder value of $k = 1$
 resulted in a low value for $Re_{\macro}$ and, therefore, $Re_{tot}$
 in Section~\ref{sec:results}.
@@ -1736,15 +1475,15 @@ the macro effect segments (\bartilde{})
 should be three times longer than they appear.
 In Tables~\ref{tab:car_results} and~\ref{tab:lamp_results},
 the values of macro rebound ($Re_{\macro}$) should triple to
-23.2\% and
+31.2\% and
 39.0\%, and
-the values of total rebound ($Re_{tot}$) should increase to 
-47.2\% and
-67.1\%
+the values of total rebound ($Re_{tot}$) should increase to
+56.2\% and
+67.0\%
 for the car and lamp examples,
 respectively.
-For the remainder of this paper, 
-we use the calibrated value of $k \approx 3$.
+For the remainder of this paper,
+we use $k = 3$.
 
 
 %++++++++++++++++++++++++++++++
@@ -1755,88 +1494,77 @@ we use the calibrated value of $k \approx 3$.
 
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
-and our calibration of $k \approx 3$ in Section~\ref{sec:calibrating_k} 
-enable fuller comparisons between the car and lamp examples. 
+and selection of $k = 3$ in Section~\ref{sec:calculating_k}
+enable fuller comparisons between the car and lamp examples.
 Several points can be made.
 
-First, 
-the magnitude of every rebound effect is different between the two examples, 
+First,
+the magnitude of every rebound effect is different between the two examples,
 the exception being direct emplacement rebound ($Re_{dempl}$)
-which is always 0.0 by definition.
-The implication is that every EEU needs to be analyzed separately. 
-Values for rebound effects  
+which is always 0.0\% by definition.
+The implication is that every EEU needs to be analyzed separately.
+The magnitudes of the rebound effects
 for one EEU should never be assumed to apply to a different EEU.
 
-Second, 
+Second,
 one cannot know \emph{a-priori} which rebound effects
 will be large and which will be small
 for a given EEU.
 Furthermore, some rebound effects are dependent upon economic parameters,
 such as energy intensity ($I_E$).
-Thus, it is important to calculate the magnitude of all rebound effects 
+Thus, it is important to calculate the magnitude of all rebound effects
 for each EEU in each economy.
 
 Third,
-the two examples illustrate the fact that 
+the two examples illustrate the fact that
 embodied energy rebound ($Re_{emb}$) can be positive or negative,
 as discussed in Section~\ref{PartI-sec:empl_effect_main_paper} of Part~I.
-The car's embodied energy rebound is positive ($1.7$\%) 
-because of the high embodied energy of the EV's battery
-relative to the internal combustion engine vehicle. 
-Although the LED lamp's embodied energy is larger than the 
-incandescent lamp's embodied energy, 
-the LED lamp's embodied energy rebound is negative ($-0.3$\%),
+The car's embodied energy rebound is positive ($1.7$\%)
+because of the high embodied energy of the hybrid's battery
+relative to the internal combustion engine vehicle.
+Although the LED lamp's embodied energy is larger than the
+incandescent lamp's embodied energy,
+the LED lamp's embodied energy rebound is
+small but negative ($-0.3$\%),
 due to the longer life of the LED lamp compared to the incandescent lamp.
 Thus, each EEU should be analyzed independently for its embodied energy rebound.
 
 Fourth,
-macro effect rebound is different between the two examples, 
+macro effect rebound is different between the two examples,
 owing to differences in net income ($\raempl{N}$) relative to expected savings ($\Sdot$).
-(For the car, $Re_{macro}$ is $23.2$\%.
+(For the car, $Re_{macro}$ is $31.2$\%.
 For the lamp, $Re_{macro}$ is $39.0$\%.)
 The efficiency gain for the lamp is far greater than the efficiency gain for the car,
 leading to much different rates of net income ($\raempl{N}$) and
 different macro rebound values.
 
-% I think there is really no claim in this.
-% Fifth,
-% in both examples the macro effect rebound ($Re_{macro}$) is much larger than
-% any single micro rebound component. 
-% However, the sum of micro rebound components 
-% ($Re_{micro} = Re_{empl} + Re_{sub} + Re_{inc}$) 
-% is close in magnitude to the macro rebound ($Re_{macro}$).
-% These observations are likely to be the result of 
-% $Re_{macro}$ being the sum of several macroeconomic sub-effects,
-% among which we don't discriminate in this framework.
-% (See Table~\ref{PartI-tab:rebound_typology} in Part~I
-% for a list of macro rebound effects.)
-
 
 %++++++++++++++++++++++++++++++
-\subsection{Comparison to previous rebound estimates} 
+\subsection{Comparison to previous rebound estimates}
 \label{sec:comparison_to_other_rebound_estimates}
 %++++++++++++++++++++++++++++++
 
 Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-compare car and lamp results (with $k \approx 3$) to 
+compare car and lamp results (with $k = 3$) to
 results from previous studies.
 % For punctuation of "rather" here, see https://linguaholic.com/linguablog/comma-before-rather/.
-The comparison studies are neither comprehensive nor
-definitive of car and lamp EEUs; 
+The suite of comparison studies is neither comprehensive nor
+definitive of car and lamp EEUs;
 rather, they are examples that show the sort of calculations and estimations
-carried out in the general literature using a variety of methods. 
+carried out in the general literature using a variety of methods.
 That said, many of the studies are highly cited,
 thereby carrying sufficient academic weight for our purposes.
-Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
-and their associated references 
+Tables~\ref{tab:rebound_car_comparisons}
+and~\ref{tab:rebound_lamp_comparisons}
+and their associated references
 enable two types of observations, comparing
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
+
   \item coverage of rebound components and
-  
+
   \item magnitudes and associated calculation or estimation methods.
-    
+
 \end{enumerate*}
 
 
@@ -1861,14 +1589,14 @@ enable two types of observations, comparing
   &               &          &                 & \multicolumn{3}{c}{$Re_{micro}$}      & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
   & Rebound study & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ &              &            &              &            \\ 
 \midrule
- & This paper & U.S., & Energy, expenditure, and  & $1.4$
-                                                  & $9.9$
-                                                  & $12.6$
-                                                  & $23.2$
-                                                  & $15.9$
-                                                  & $31.3$
-                                                  & $47.2$  \\
- & (2023)     & 2020  & consumption planes        & & & & & & &   \\
+ & This paper & U.S., & Energy, expenditure, and  & $-1.8$
+                                                  & $9.8$
+                                                  & $17.0$
+                                                  & $31.2$
+                                                  & $17.6$
+                                                  & $38.6$
+                                                  & $56.2$  \\
+ & (2024)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
 1 & \citeauthor{Small:2007aa}  & U.S.,      & Elasticity of VMT w.r.t.\ & & & & & 4.5 (short run, &  &  \\
   & \citeyearpar{Small:2007aa} & 1967--2001 & fuel cost per mile        & & & & & 1967--2001)     &  &  \\
@@ -1952,8 +1680,8 @@ enable two types of observations, comparing
                                                   & $39.0$
                                                   & $17.4$
                                                   & $49.7$
-                                                  & $67.1$  \\
- & (2023)     & 2020  & consumption planes        & & & & & & &   \\
+                                                  & $67.0$  \\
+ & (2024)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
 1 & \citeauthor{Guertin:2003aa}  & Canada, & Econometric residential  & & & & & 32--49 & &  \\
   & \citeyearpar{Guertin:2003aa} & 1993    & energy demand model      & & & & &        & &  \\
@@ -2008,46 +1736,45 @@ enable two types of observations, comparing
 \end{landscape}
 
 First, we see that none of the comparison studies
-report all rebound effects, as we have done
-in Sections~\ref{sec:car_example}, \ref{sec:lamp_example}, and~\ref{sec:calibrating_k}. 
-Also, no previous studies report either emplacement rebound 
-($Re_{empl} = Re_{emb} + Re_{\md}$)
+report all rebound effects considered in this paper.
+Also, no previous studies report either emplacement rebound
+($Re_{empl} = Re_{emb} + Re_{\omd}$)
 or include all of direct and indirect, substitution and
 income microeconomic rebound effect combinations.
 In addition, none of the other studies report macro rebound ($Re_{macro}$) by itself.
-In fact, only 4 or 5 of the 10 studies
+In fact, only 4 and 5 of the 10 studies
 in each category (car and lamp, respectively) report total rebound ($Re_{tot}$).
-Therefore, by carefully including all rebound components 
-in the framework and 
-elucidating all rebound components in Part~II, we are 
+Therefore, by carefully including all rebound components
+in the framework and
+elucidating all rebound components in Part~II, we are
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
-  \item adding conceptual clarity to the field of energy rebound, which
-  
+
+  \item helping to advance conceptual clarity
+        in the field of energy rebound, which
+
   \item may enable future studies to estimate a broader range of rebound components.
-    
+
 \end{enumerate*}
 
-We also observe that studies which provide total rebound 
-are based on a top-down calculation of overall, economy-wide rebound, 
-rather than the bottom-up ``sum-of-components'' approach 
+We also observe that studies which provide total rebound
+are based on a top-down calculation of overall, economy-wide rebound,
+rather than the bottom-up ``sum-of-components'' approach
 that we employ.
-That finding is instructive. 
+That finding is instructive.
 It supports the view that
 a rigorous analysis framework that sets out individual rebound components
 has been missing, which
 informed the objective for Part~I of this paper.
-Further, the finding means that 
-comparisons between top-down estimations or calculations 
-of total, economy-wide rebound 
+Further, the finding means that
+comparisons between top-down estimations or calculations
+of total, economy-wide rebound
 may also be of limited value,
-because the rebound effects included or excluded may not be clear, 
+because the rebound effects included or excluded may not be clear,
 giving an appearance of a ``black box'' calculation approach.%
 \footnote{
-  That said, without the top-down approaches,
-  we would not have the information needed to calibrate 
-  the macro factor ($k$) in Section~\ref{sec:calibrating_k}.
+  That said, without the top-down approaches, 
+  we would have few values to compare with our total rebound ($Re_{tot}$).
 }
 
 Second, helpful insights can be gained
@@ -2055,7 +1782,7 @@ from comparison of rebound magnitudes and calculation methods.
 Greatest alignment between our values and earlier values
 appears within the direct (microeconomic) rebound ($Re_{dir}$) column
 in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}.
-Our car ($15.9$\%) and lamp ($17.4$\%) values
+Our car ($17.6$\%) and lamp ($17.4$\%) values
 are in the lower half of the comparison studies
 for both cases (10\% to 49\% for the car and 10\% to 55\% for the lamp).
 This alignment may be due to the easier determination
@@ -2063,36 +1790,36 @@ of direct rebound, from either empirical data
 (e.g., \citet{Small:2007aa}) or
 via own price elasticities (e.g., \citet{Chitnis:2015}).%
 \footnote{
-  Also worthy of note is that direct (microeconomic) rebound 
-  of personal transport may be the most-studied subfield 
+  Also worthy of note is that direct (microeconomic) rebound
+  of personal transport may be the most-studied subfield
   in the rebound literature and likely the only topic with enough studies
-  to enable meta-reviews such as 
-  \citet{Sorrell:2009aa}, 
-  \citet{Dimitropoulos:2018aa}, and 
+  to enable meta-reviews such as
+  \citet{Sorrell:2009aa},
+  \citet{Dimitropoulos:2018aa}, and
   \citet{Gillingham:2020aa}.
 }
 
 
 For indirect rebound ($Re_{indir}$),
 there is little agreement on the magnitude of rebound effects.
-Our values for 
-car ($31.3$\%) and 
+Our values for
+car ($38.6$\%) and
 lamp ($49.7$\%) indirect rebound magnitudes
 are higher than those found in the comparison studies
 for either the car (6\% to 23\%) or the lamp (8\% to 16\%) cases.
 The most likely cause of our larger indirect rebound values
 is that we include both micro and macro rebound levels,
-whereas the comparison studies 
+whereas the comparison studies
 focus mainly on microeconomic rebound only
 (commonly via cross price elasticities).
-In other words, 
+In other words,
 comparisons of our indirect rebound values with the studies
 in Tables~\ref{tab:rebound_car_comparisons} and~\ref{tab:rebound_lamp_comparisons}
 may be too simple and not very meaningful,
-as we (alone) include macro-level effects in indirect rebound. 
-If we exclude $Re_{macro}$ from $Re_{indir}$, 
-our indirect microeconomic rebound values become 
-8.1\% (car) and
+as we (alone) include macro-level effects in indirect rebound.
+If we exclude $Re_{macro}$ from $Re_{indir}$,
+our indirect microeconomic rebound values become
+7.5\% (car) and
 10.7\% (lamp),
 which fit within the ranges reported by the
 car ($6$\% to $23$\%) and lamp ($-41$\% to $16$\%)
@@ -2100,13 +1827,280 @@ comparison studies.
 
 For total rebound ($Re_{tot}$),
 our values of
-$47.2$\% (car) and
-$67.1$\% (lamp)
-are very close to those in the comparison studies for both the car (49\% to 51\%) and
+$56.2$\% (car) and
+$67.0$\% (lamp)
+are close to those in the comparison studies for both the car (49\% to 51\%) and
 lamp (43\% to 51\%) examples.
 Beyond that, comparisons (as noted earlier) are inhibited
 by methodological differences between previous studies (top-down methods)
 and our bottom-up approach for calculating total rebound.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Comparison of CES with satiated and
+            constant price elasticity (CPE) utility models}
+\label{sec:utility_comparison}
+%++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+In Section~\ref{PartI-sec:inc_effect_main_paper} of Part~I,
+we showed income-effect rebound expressions
+under the limiting condition of already-satiated
+consumption of the energy service such that the
+income expansion path is a vertical line
+in the consumption plane of
+Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph}.
+Here, we discuss the numerical impact
+of the different utility models.
+
+Table~\ref{tab:utility_model_comparison}
+compares income-effect rebound under the CES utility model,
+the bounding condition of satiated consumption
+of the energy service, and
+the constant price elasticity (CPE) utility model.%
+\footnote{
+  The constant price elasticity (CPE) utility model 
+  in Table~\ref{tab:utility_model_comparison}
+  follows \citet{Borenstein:2015aa} who holds income constant, 
+  not utility, 
+  when calculating the substitution effect.
+  Furthermore, \citeauthor{Borenstein:2015aa}'s income effect
+  assumes all post-emplacement freed cash ($\raempl{N}$)
+  is spent at the energy intensity of the economy ($I_E$).
+}
+
+In the car example, income effect rebound ($Re_{inc}$)
+reduces from 17.0\% to
+10.6\% when moving from the
+CES utility model to the bounding condition of already-satiated
+consumption of the energy service.
+Total rebound ($Re_{tot}$) goes from
+56.2\% to
+49.8\%.
+On the other hand,
+the lamp example shows negligible change
+in total rebound ($Re_{tot}$),
+moving
+from 67.04\%
+to 67.03\%.
+
+The reason for the nearly unchanged value
+for total rebound ($Re_{tot}$)
+in the lamp example is evident in the consumption plane
+of Fig.~\ref{fig:LampConsGraph}.
+In the CES (homothetic) utility model
+shown in Fig.~\ref{fig:LampConsGraph},
+there is almost no income-effect spending
+on more of the energy service.
+Almost all spending of net income ($\rasub{N}$)
+is on other goods.
+The path between the $\wedge$ and $-$ points
+is nearly vertical already.
+In contrast, the path from $\wedge$ to $-$ in the car example
+(Fig.~\ref{fig:CarConsGraph})
+is decidedly \emph{not} vertical and a reduction in
+income-effect rebound ($Re_{inc}$) is observed when
+moving from the CES utility model to the bounding condition
+of already satiated energy service consumption.
+Reality is probably somewhere in between.
+
+\begin{table}
+\footnotesize
+\centering
+\caption{Comparison of substitution effects
+         ($Re_{dsub}$, $Re_{isub}$, $Re_{sub}$),
+         income effects,
+         ($Re_{dinc}$, $Re_{iinc}$, and $Re_{inc}$), and
+         total ($Re_{tot}$) rebound
+         for
+         the CES utility model,
+         satiated consumption of the energy service, and
+         the CPE utility model
+         for both car and lamp examples.}
+\label{tab:utility_model_comparison}
+\begin{tabular}{r r r r r r r}
+\toprule
+                 & \multicolumn{3}{c}{Car example}
+                                                & \multicolumn{3}{c}{Lamp example} \\
+Rebound term     & CES & Satiated & CPE         & CES & Satiated & CPE             \\
+\midrule
+$Re_{dsub}$ [\%] & 10.7
+                       & 10.7
+                                  & 
+                                                & 17.37
+                                                      & 17.37
+                                                                 &  \\
+$Re_{isub}$ [\%] & $-0.9$
+                       & $-0.9$
+                                  & 
+                                                & $-6.37$
+                                                      & $-6.37$
+                                                                 &  \\
+\midrule
+$Re_{sub}$ [\%]  & 9.8
+                       & 9.8
+                                  & 15.0
+                                                & 11.00
+                                                      & 11.00
+                                                                 & 15.37 \\
+\midrule
+$Re_{dinc}$ [\%] & 6.8
+                       & 0.0
+                                  & 
+                                                & 0.01
+                                                      & 0.00
+                                                                 &  \\
+$Re_{iinc}$ [\%] & 10.2
+                       & 10.6
+                                  & 
+                                                & 17.35
+                                                      & 17.35
+                                                                 &  \\
+\midrule
+$Re_{inc}$ [\%] & 17.0
+                       & 10.6
+                                  & 10.4
+                                                & 17.36
+                                                      & 17.35
+                                                                 & 12.99 \\
+\midrule
+$Re_{tot}$ [\%] & 56.2
+                       & 49.8
+                                  & 
+                                                & 67.04
+                                                      & 67.03
+                                                                 &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Calculation of substitution rebound under the 
+constant price elasticity (CPE) utility model, 
+which approximates the substitution and income effects 
+using only the uncompensated own price elasticity 
+of energy service consumption ($\eqspsUC$),
+systematically overestimates substitution effect rebound
+and underestimates income effect rebound.
+That's by construction since income, 
+not utility, 
+is held constant when calculating substitution
+of the energy service for other goods consumption
+with the CPE model. 
+And the income effect, in the CPE utility model,
+allows spending on other goods only, 
+which leads to a lower income rebound 
+than in the satiated model,
+since the absence of compensating variation 
+leaves less income to spend.
+Once again, 
+the specific case determines 
+the deviation of the sum of substitution and income rebound
+from an exact (in our case, CES) model.
+Table~\ref{tab:utility_model_comparison}
+shows that while the sum of substitution and income effects 
+is 1.4\% smaller for the 
+CPE utility model relative to the CES utility model, 
+they are nearly the same in the lamp example.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Energy price rebound}
+\label{sec:price_effect_results}
+%++++++++++++++++++++++++++++++
+
+Appendix~\ref{PartI-sec:price_effect_appendix}
+of Part~I, 
+Section~\ref{PartI-sec:notes_price_effect}, and
+Eq.~(\ref{PartI-eq:Re_p_E})
+provide an extension to the framework
+involving energy price rebound ($Re_{p_E}$).
+This section quantifies energy price rebound
+for the car and lamp examples.
+
+To quantify energy price rebound,
+data are needed for
+personal consumption ($\rorig{E}$)
+of the type of energy used by the device,
+including energy for the upgraded device and all other devices.
+For the car example,
+there is typically little other household gasoline consumption
+besides for cars,
+so we assume $\rorig{E}$ equal to
+$\rorig{E}_s/0.95$.
+For the lamp example,
+a median U.S.\ household consumes about
+10,000 kW$\cdot$hr/yr of electricity
+\citep{U.S.-Energy-Information-Agency:2023aa}.
+Given that there are 2.5 persons per U.S.\ household
+\citep{Statista:2024aa},
+an individual consumes electricity at a rate of
+$\rorig{E} = 4000$~kW$\cdot$hr/yr.
+
+We also need data for the price elasticity
+of energy supply ($\varepsilon_{\rate{Q}_E,p_E}$).
+For the car case,
+we take
+the price elasticity of gasoline supply to be 0.29
+from \citet{Coyle:2012aa}.
+For the lamp case, we adopt the value of
+0.33 from \citet[Table~3]{Ghoddusia:2017aa}.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/PriceEffectGraph-1} \caption{Energy price rebound ($Re_{p_{E}}$) as a function of the fraction of all devices replaced by higher-efficiency versions ($f_{EEU}$). Black lines represent the nominal energy price elasticity of energy supply ($\varepsilon_{\rate{Q}_E,p_E}$). Gray bands provide $\pm 0.1$ range in $\varepsilon_{\rate{Q}_E,p_E}$.}\label{fig:PriceEffectGraph}
+\end{figure}
+
+\end{knitrout}
+
+
+Parameterizing on the fraction of all devices in the economy
+that are upgraded ($f_{EEU}$) and
+the energy price elasticity of energy supply
+($\varepsilon_{\rate{Q}_E,p_E}$) yields
+Figure~\ref{fig:PriceEffectGraph}.
+As expected,
+price-effect rebound ($Re_{p_E}$)
+grows as more devices are upgraded,
+i.e., as $f_{EEU}$ increases.
+Furthermore, inelastic energy supply (smaller $\varepsilon_{\rate{Q}_{E,p_E}}$)
+leads to higher price-effect rebound.
+
+In these examples, the car upgrade yields
+little additional freed cash beyond the
+(slightly) cheaper fuel for the car,
+so there is limited spending on other goods and services
+and little additional indirect energy demand.
+In contrast, the upgrade of the electric lamp
+is much more likely to provide energy price rebound,
+because electricity for the upgraded lamp is
+a small fraction of total electricity consumption
+by the consumer.
+\emph{All} electricity purchased by the consumer becomes cheaper
+when the price of electricity falls due to
+widespread lamp upgrades throughout the economy,
+leading to freed cash spent on other goods and services
+which, themselves, demand energy at the energy intensity
+of the economy.
+
+
+
+At 100\% penetration of LED lamps ($f_{EEU} = 1$) and
+at the nominal energy price elasticity of supply
+($\varepsilon_{\rate{Q}_{E},p_E} = 0.33$),
+energy price rebound is $Re_{p_E} =
+60.9$\%.
+Combined with consumer sided rebound of
+67.0\%
+from Section~\ref{sec:calculating_k},
+the sum of consumer-sided and supply-side rebound is
+127.9\%,
+demonstrating that backfire could occur under conditions
+of full penetration of the lamp EEU.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2114,92 +2108,103 @@ and our bottom-up approach for calculating total rebound.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we advance clarity to the field of energy rebound
-by 
+In this paper (Part~II), we help to advance clarity in the field of energy rebound
+by
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
-  \item developing of the first (to our knowledge) 
-        mutually consistent and numerically precise
-        visualizations of rebound effects
-        in energy, expenditure, and consumption planes, 
-        
-  \item calibrating the macro factor ($k \approx 3$),
 
-  \item documenting in detail new calculations of rebound for car and lighting  
-        upgrades, and 
-        
+  \item developing mutually consistent and numerically precise
+        visualizations of rebound effects
+        in energy, expenditure, and consumption planes,
+
+  \item operationalizing the macro factor,
+
+  \item documenting in detail new calculations of rebound
+        for car and lighting
+        upgrades,
+
+  \item showing the extensibility of our framework
+        by applying it to estimate energy price rebound, and
+
   \item providing information about new open source software tools
-        for calculating and visualizing rebound 
+        for calculating and visualizing rebound
         for any energy efficiency upgrade.
-  
+
 \end{enumerate*}
 %
 We encourage energy analysts and economists to use visualizations
 like the energy, expenditure, and consumption planes
 to document rebound calculations going forward.
-Our hope is that additional clarity will 
+Our hope is that additional clarity will
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
+
   \item narrow the gap between economists and energy analysts,
-  
-  \item lead to deeper interdisciplinary understanding of rebound phenomena, and
-  
+
+  \item lead to deeper interdisciplinary understanding
+        of rebound phenomena, and
+
   \item enable energy and climate policy
         that takes full account of rebound.
 
 \end{enumerate*}
 
-From the development and application of the framework in Part~II, 
+From the application of the framework in Part~II,
 we draw two important conclusions.
 First, the car and lamp examples (Section~\ref{sec:results}) show that
         the framework enables
-        quantification of rebound magnitudes at microeconomic and macroeconomic levels, including 
-        energy, expenditure, and consumption aspects of 
-        direct and indirect rebound 
+        quantification of rebound magnitudes
+        at microeconomic and macroeconomic levels, including
+        energy, expenditure, and consumption aspects of
+        direct and indirect rebound
         for emplacement, substitution, income, and macro effects.
 Second, the examples show that magnitudes of all rebound effects
         vary with the type of EEU performed.
-Thus, values for rebound effects  
+Thus, values for rebound effects
 for one EEU should never be assumed to apply to a different EEU, and
-it is important to calculate the magnitude of all rebound effects 
+it is important to calculate the magnitude of all rebound effects
 for each EEU in each economy.
 
-Further work could be pursued in several areas. 
+Further work could be pursued in several areas.
 %
 \begin{enumerate*}[label={(\roman*)}]
-	
+
   \item Additional empirical studies could be performed
-        to calculate the magnitude of different 
+        to calculate the magnitude of different
         rebound effects for a variety of real-life EEUs.
 
-  \item Deeper study of macro rebound is needed, including improved determination 
-        of the value of the macro factor ($k$) and its relation to the MPC.
-        
-  \item The rebound implications of the distribution of $\MPC$ values 
-        across socioeconomic groups~\citep{Carroll2017}
-        could be explored.
-        
-  \item The rebound effects of fossil-energy taxes 
+  \item Deeper study of macro rebound is needed,
+        including improved determination
+        of the value of the macro factor ($k$).
+
+  \item The framework could be used to study the
+        distribution of rebound values
+        across socioeconomic and demographic groups~\citep{Carroll2017}.
+
+  \item The rebound effects of fossil-energy taxes
         could be studied,
         especially for the web of interconnected dynamic effects
         among rebound components that are functions
         of the energy intensity of the economy ($I_E$).
-        
+
   \item Sensitivities of rebound components to model parameters
-        could be investigated more fully 
-        than in Appendix~\ref{sec:sensitivity_analyses}, although
-        this will be challenging work because
+        could be investigated more fully
+        than in Appendix~\ref{sec:sensitivity_analyses},
+        although this will be challenging work because
         many rebound parameters are covariant.
         For example, post-EEU efficiency ($\amacro{\eta}$)
-        is unlikely to be independent of post-EEU capital cost ($\amacro{C}_{cap}$).
+        is unlikely to be independent of
+        post-EEU capital cost ($\amacro{C}_{cap}$).
 
-  \item This framework could be embedded 
-        in energy-economy models to better include rebound effects 
-        in discussions of macro energy modeling, energy policy, and 
+  \item The framework could be extended to encompass
+        fuel-switching EEUs, such as the move from
+        a gasoline car to an all-electric car.
+
+  \item This framework could be embedded
+        in energy-economy models to better include rebound effects
+        in discussions of macro energy modeling, energy policy, and
         CO$_2$ emissions mitigation.
-        
+
 \end{enumerate*}
 
 
@@ -2219,8 +2224,9 @@ Declarations of interest: none.
 Author contributions for this paper (Part~II of the two-part paper) are shown in Table~\ref{tab:credit2}.
 
 \begin{table}[h]
+\footnotesize
 \begin{center}
-\caption{Author contributions.} 
+\caption{Author contributions.}
 \begin{tabular}{r c c c}
   \toprule
                               & MKH          & GS           & PEB          \\
@@ -2256,7 +2262,7 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
 % (\url{https://doi.org/10.5518/1201}).
 
 **** Data and example calculations in spreadsheet format will be stored at the
-Research Data Leeds Repository if this submission is accepted.  
+Research Data Leeds Repository if this submission is accepted.
 The spreadsheet file is included with the submission of this paper. ****
 
 
@@ -2273,28 +2279,28 @@ The spreadsheet file is included with the submission of this paper. ****
 
 %If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
 
-Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
+Paul Brockway’s time was funded by the UK Research and Innovation (UKRI)
 Council, supported under EPSRC Fellowship award EP/R024254/1.
-The authors benefited from discussions with 
-Daniele Girardi (University of Massachusetts at Amherst) and 
+The authors benefited from discussions with
+Daniele Girardi (University of Massachusetts at Amherst) and
 Christopher Blackburn (Bureau of Economic Analysis).
 The authors are grateful for comments from internal reviewers
-Becky Haney and Jeremy Van Antwerp (Calvin University); 
-Nathan Chan (University of Massachusetts at Amherst); and 
+Becky Haney and Jeremy Van Antwerp (Calvin University);
+Nathan Chan (University of Massachusetts at Amherst); and
 Zeke Marshall (University of Leeds).
-The authors appreciate the many constructive comments 
-on a working paper version of this article from 
+The authors appreciate the many constructive comments
+on a working paper version of this article from
 Jeroen C.J.M.\ van den Bergh (Vrije Universiteit Amsterdam),
 Harry Saunders (Carnegie Institution for Science), and
 David Stern (Australian National University).
-Finally, the authors thank the students of MKH's Fall 2019 
+Finally, the authors thank the students of MKH's Fall 2019
 Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
 
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}
-
+%
 {
 \scriptsize
 \bibliography{HSB_refs}
@@ -2401,7 +2407,7 @@ saves less energy than the previous 5~mpg boost in fuel economy.
 
 }
 
-\caption[Expected energy savings rate ($\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\amacro{\eta}$)]{Expected energy savings rate ($\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\amacro{\eta}$). The macro factor is set to its calibrated value ($k = 3$). (Note different $x$- and $y$-axis scales.)}\label{fig:eta_tilde_takeback_Sdot_sens_graph}
+\caption[Expected energy savings rate ($\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\amacro{\eta}$)]{Expected energy savings rate ($\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\amacro{\eta}$). The macro factor, $k = 3$. (Note different $x$- and $y$-axis scales.)}\label{fig:eta_tilde_takeback_Sdot_sens_graph}
 \end{figure}
 
 \end{knitrout}
@@ -2453,11 +2459,6 @@ direct substitution rebound ($Re_{dsub}$) is the
 rebound component 
 most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
 
-% A limitation of the energy efficiency sensitivity analysis is that 
-% post-EEU efficiency ($\amacro{\eta}$)
-% is unlikely to be independent of other factors, 
-% such as capital cost ($\amacro{C}_{cap}$).
-
 Note that the sensitivity analysis on post-upgrade efficiency 
 ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
 is the only sensitivity analysis that requires careful explication
@@ -2475,16 +2476,13 @@ and the actual energy savings rate decreases (increases) accordingly.
 
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: The `legend.text.align` argument of `theme()` is deprecated as of ggplot2\\\#\# 3.5.0.\\\#\# i Please use theme(legend.text = element\_text(hjust)) instead.\\\#\# This warning is displayed once every 8 hours.\\\#\# Call `lifecycle::last\_lifecycle\_warnings()` to see where this warning was\\\#\# generated.}}\end{kframe}\begin{figure}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
 {\centering \includegraphics[width=\maxwidth]{figure/all_Re_terms_eta_graph-1} 
 
 }
 
-\caption[Sensitivity of rebound components to post-EEU efficiency ($\amacro{\eta}$)]{Sensitivity of rebound components to post-EEU efficiency ($\amacro{\eta}$). The macro factor is set to its calibrated value ($k = 3$).}\label{fig:all_Re_terms_eta_graph}
+\caption[Sensitivity of rebound components to post-EEU efficiency ($\amacro{\eta}$)]{Sensitivity of rebound components to post-EEU efficiency ($\amacro{\eta}$). The macro factor, $k = 3$.}\label{fig:all_Re_terms_eta_graph}
 \end{figure}
 
 \end{knitrout}
@@ -2505,16 +2503,6 @@ leading to smaller income, macro, and total rebound.
 The same effects would be observed
 with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 
-% A limitation of the capital cost sensitivity analysis is that
-% capital cost ($\amacro{C}_{cap}$) is unlikely to be
-% independent of $\amacro{\eta}$.
-% Within a given energy efficiency technology
-% (e.g., hybrid cars or LED lamps),
-% greater capital cost ($\amacro{C}_{cap}$) may be associated with
-% greater service efficiency ($\amacro{\eta}$).
-% $\amacro{C}_{cap}$ and $\amacro{\eta}$ should probably be varied jointly,
-% not independently.
-
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
@@ -2522,7 +2510,7 @@ with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
 
 }
 
-\caption[Sensitivity of rebound components to capital cost ($\amacro{C}_{cap}$)]{Sensitivity of rebound components to capital cost ($\amacro{C}_{cap}$). The macro factor is set to its calibrated value ($k = 3$).}\label{fig:all_Re_terms_C_cap_graph}
+\caption[Sensitivity of rebound components to capital cost ($\amacro{C}_{cap}$)]{Sensitivity of rebound components to capital cost ($\amacro{C}_{cap}$). The macro factor, $k = 3$.}\label{fig:all_Re_terms_C_cap_graph}
 \end{figure}
 
 \end{knitrout}
@@ -2574,20 +2562,10 @@ providing an indication of possible energy price variations.
 All other things being equal, 
 if U.S.\ residents paid Germany's energy prices,
 total energy rebound ($Re_{tot}$) would be 
-$84.0$\%
+$93.0$\%
 for the car example and 
 $148.0$\%
 for the lamp example.
-
-% A limitation of the energy price sensitivity analysis arises from the fact that
-% energy price is not independent of other parameters.
-% Indeed, other rebound parameters
-% would change along with energy price
-% (especially if moving from one country to another),
-% including capital cost ($\amacro{C}_{cap}$), 
-% maintenance and disposal expenditure rate ($\ramacro{C}_{\md}$),
-% energy intensity of the economy ($I_E$), and
-% energy service consumption rate ($\rbempl{q}_s$).
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
@@ -2596,7 +2574,7 @@ for the lamp example.
 
 }
 
-\caption[Sensitivity of rebound components to energy price ($p_E$)]{Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor is set to its calibrated value ($k = 3$).}\label{fig:all_Re_terms_p_E_graph}
+\caption[Sensitivity of rebound components to energy price ($p_E$)]{Sensitivity of rebound components to energy price ($p_E$). German energy prices denoted by vertical lines. The macro factor, $k = 3$.}\label{fig:all_Re_terms_p_E_graph}
 \end{figure}
 
 \end{knitrout}
@@ -2616,7 +2594,7 @@ for the lamp example.
 
 }
 
-\caption[Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\eqspsUCorig$)]{Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\eqspsUCorig$). The macro factor is set to its calibrated value ($k = 3$). (Note reversed $x$-axis scale.)}\label{fig:all_Re_terms_eps_graph}
+\caption[Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\eqspsUCorig$)]{Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\eqspsUCorig$). The macro factor, $k = 3$. (Note reversed $x$-axis scale.)}\label{fig:all_Re_terms_eps_graph}
 \end{figure}
 
 \end{knitrout}
@@ -2636,28 +2614,13 @@ for the lamp ($-0.4$) compared to the car ($-0.2$).
 Were the car to have the same original uncompensated own price elasticity
 as the lamp (i.e., $-0.4$), 
 total rebound would be closer for both examples 
-($64.1$\% for the car and 
-$67.1$\% for the lamp).
+($73.4$\% for the car and 
+$67.0$\% for the lamp).
 Fig.~\ref{fig:all_Re_terms_eps_graph} shows that direct substitution rebound 
 ($Re_{dsub}$) is the most sensitive rebound component to changes in $\eqspsUC^\circ$.
 For the lamp example, indirect income rebound ($Re_{iinc}$) also increases
 substantially with $\eqspsUC^\circ$, 
 because net savings increases substantially with $\eqspsUC^\circ$. 
-
-% A limitation of the elasticity sensitivity study derives from limitations of the 
-% CES utility model itself, which constrains price elasticity variation
-% given an elasticity of substitution.
-% Uneconomic conditions should be avoided.
-% For example, negative direct substitution rebound ($Re_{dsub} < 0$)
-% is obtained when $\left| \eqspsUC \right| < \fCs$,
-% because the elasticity of substitution goes negative ($\sigma < 0$).
-% (See Eq.~(\ref{PartI-eq:sigma}) in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
-% In reality, smaller negative (closer to 0) price elasticity ($\eqspsUC$)
-% would correlate with a smaller fraction of expenses spent on the energy service ($\fCs$), 
-% thereby avoiding the uneconomic condition.
-% However, a univariate sensitivity study cannot capture this effect and is
-% best used for smaller variations in $\eqspsUC$
-% about a nominal value.
 
   
 %++++++++++++++++++++++++++++++
@@ -2672,11 +2635,6 @@ The macro factor has a linear effect on total rebound ($Re_{tot}$)
 through the macro rebound component ($Re_{\macro}$).
 All other rebound components are constant when $k$ is varied independently.
 
-% A limitation of the macro factor sensitivity analysis is that
-% the macro factor ($k$) is unlikely to be 
-% independent of $I_E$, because 
-% different values of $k$ imply a different macroeconomy.
-
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
@@ -2689,6 +2647,33 @@ All other rebound components are constant when $k$ is varied independently.
 
 \end{knitrout}
   
+  
+%++++++++++++++++++++++++++++++
+\subsection{Effect of discount rate ($r$) on rebound terms} 
+\label{sec:effect_of_discount_rate}
+%++++++++++++++++++++++++++++++
+
+The effect of discount rate on rebound is shown in Fig.~\ref{fig:all_Re_terms_r_graph}.
+Discounting has little effect on rebound terms
+compared to other parameters such as
+upgraded efficiency ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph}), 
+capital cost ($\amacro{C}_{cap}$, Fig.~\ref{fig:all_Re_terms_C_cap_graph}), 
+energy price ($p_E$, Fig.~\ref{fig:all_Re_terms_p_E_graph}), and 
+own price elasticity of energy service demand 
+($\eqspsUCorig$, Fig.~\ref{fig:all_Re_terms_eps_graph}).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+
+{\centering \includegraphics[width=\maxwidth]{figure/all_Re_terms_r_graph-1} 
+
+}
+
+\caption[Sensitivity of rebound components to discount rate ($r$)]{Sensitivity of rebound components to discount rate ($r$).}\label{fig:all_Re_terms_r_graph}
+\end{figure}
+
+\end{knitrout}
+
 
 %++++++++++++++++++++++++++++++
 \subsection{Effect of energy service price ($\amacro{p}_s$) on price elasticities ($\asub{\varepsilon}$)}
@@ -2724,7 +2709,7 @@ service for other goods.
 
 }
 
-\caption{Sensitivity of post substitution effect price elasticities ($\asub{\varepsilon}$) to post-EEU energy service price ($\amacro{p}_{s}$) for the CES utility model. The solid vertical line indicates the original energy service price ($\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\amacro{p}_s = \ainc{p}_s = \asub{p}_s = \aempl{p}_s$) for the two examples. See Tables~\ref{tab:car_stages_table} and \ref{tab:lamp_stages_table} for $p_s$ in different units.}\label{fig:PriceElasticitySensGraph}
+\caption{Sensitivity of post substitution effect price elasticities ($\asub{\varepsilon}$) to post-EEU energy service price ($\amacro{p}_{s}$) for the CES utility model. This graph is a visualization of Eqs.~\ref{PartI-eq:eqopsC_exact}, \ref{PartI-eq:eqopsUC_exact}, \ref{PartI-eq:eqspsC_exact}, and \ref{PartI-eq:eqspsUC_exact} of Part~I. The solid vertical line indicates the original energy service price ($\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\aempl{p}_s = \asub{p}_s = \ainc{p}_s = \amacro{p}_s$) for the two examples. See Tables~\ref{tab:car_stages_table} and \ref{tab:lamp_stages_table} for $p_s$ in different units.}\label{fig:PriceElasticitySensGraph}
 \end{figure}
 
 \end{knitrout}

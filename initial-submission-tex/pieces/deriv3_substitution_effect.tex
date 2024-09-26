@@ -58,12 +58,13 @@
 %%%%%%%%%% Energy Substitution Effect %%%%%%%%%%
 ~
   
-Take differences to obtain the change in energy consumption, $\Delta \rasub{E} \equiv \rasub{E} - \rbsub{E}$.
+Take differences to obtain the change in energy consumption, \\
+$\Delta \rasub{E} \equiv \rasub{E} - \rbsub{E}$.
 %
 \begin{equation}
   \Delta \rasub{E} = \Delta \rasub{E}_s 
                       + \cancelto{0}{\Delta \rasub{E}_{emb}} 
-                      + (\cancelto{0}{\Delta \rasub{C}_{\md}} + \Delta \rasub{C}_o) I_E
+                      + (\cancelto{0}{\Delta \rasub{C}_{\omd}} + \Delta \rasub{C}_o) I_E
 \end{equation}
 %
 Thus, 
@@ -98,12 +99,13 @@ such that
 Use the monetary constraint ($\rbsub{M} = \rasub{M}$) to obtain
 
 \begin{align}
-  p_E \raempl{E}_s &+ \cancel{\raempl{C}_{cap}} + \cancel{\raempl{C}_{\md}} + \raempl{C}_o + \raempl{N} \nonumber \\
-                   &= p_E \rasub{E}_s + \cancel{\rasub{C}_{cap}} + \cancel{\rasub{C}_{\md}} + \rasub{C}_o + \rasub{N} \; .
+  p_E \raempl{E}_s &+ \cancel{\aempl{R}_\alpha \raempl{C}_{cap}} + \cancel{\raempl{C}_{\omd}} + \raempl{C}_o + \raempl{N} \nonumber \\
+                   &= p_E \rasub{E}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_o + \rasub{N} \; .
 \end{align}
 %
-For the substitution effect, there is no change in capital or maintenance and disposal costs
-($\rasub{C}_{cap} = \rbsub{C}_{cap}$ and $\rasub{C}_{\md} = \rbsub{C}_{\md}$).
+For the substitution effect, there is no change in capital or operations, maintenance, and disposal costs
+($\bsub{R}_\alpha \rbsub{C}_{cap} = \asub{R}_\alpha \rasub{C}_{cap}$ and 
+$\rbsub{C}_{\omd} = \rasub{C}_{\omd}$).
 Solving for $\Delta \rasub{N} \equiv \rasub{N} - \rbsub{N}$ gives
 %
 \begin{equation} \label{eq:N_dot_hat_eqn}
@@ -117,7 +119,7 @@ Substituting Eqs.~(\ref{eq:N_dot_star_empl}), (\ref{eq:G_dot}), and~(\ref{eq:N_d
 yields
 %
 \begin{equation} \label{eq:N_dot_after_sub}
-  \rasub{N} = \rate{G} - \Delta \rbsub{C}_{cap} - \Delta \rbsub{C}_{\md} - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
+  \rasub{N} = \rate{G} - \Delta \bsub{(R_\alpha \rate{C}_{cap})} - \Delta \rbsub{C}_{\omd} - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
 \end{equation}
 %
 }

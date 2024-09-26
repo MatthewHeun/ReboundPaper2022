@@ -765,23 +765,25 @@ other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
 \begin{equation} \label{eq:budget_constraint_prelim}
-  \rorig{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} + \cancelto{0}{\rorig{N}} \; ,
+  \rorig{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} \; ,
 \end{equation}
 %
 where 
-$\orig{R}_\alpha$ and $\orig{R}_\omega$ account for discounting, 
-$\rorig{C}_{cap}$ and $\rorig{C}_{\om}$ are undiscounted
+$\orig{R}_\alpha$ and $\orig{R}_\omega$ account for discounting, and
+$\rorig{C}_{cap}$ and $\rorig{C}_{d}$ are undiscounted
 cost rates given by 
 $\orig{C}_{cap} / \orig{t}_{life}$ 
 and
-$\orig{C}_d / \orig{t}_{life}$,
-and
-net savings prior to the EEU ($\rorig{N}$) is zero, by definition.
+$\orig{C}_d / \orig{t}_{life}$.
 Note that $R_\alpha \ge 1$, and $R_\omega \le 1$;
 equalities apply when interest rate ($r$) is zero.
 (See Appendix~\ref{sec:budget_constraint} for details on discounting.)
-After substituting the original price and quantity of energy service consumption,
-after substituting the original price and quantity of other goods consumption,
+After substituting the product of energy price ($p_E$) and
+the rate of energy consumption
+(given by the ratio of the rate of energy service consumption
+and efficiency, $\rate{q}_s / \eta$),
+after substituting the product of price ($p_o$) and
+the rate ($\rate{q}_o$) of other goods consumption,
 after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
 and after some rearrangement, 
 Eq.~(\ref{eq:budget_constraint_prelim}) becomes

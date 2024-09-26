@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: HSB_results-initial-submission.aux
+The style file: apa-good.bst.bst
+Database file #1: HSB_refs.bib
+Warning--I didn't find a database entry for "djokic2015simulation"
+Warning--I didn't find a database entry for "Junk-Car-Medics:aa"
+Warning--I didn't find a database entry for "FRED-US:2024aa"
+Warning--I didn't find a database entry for "Foerster2022"
+Warning--I didn't find a database entry for "Buera2024"
+Warning--I didn't find a database entry for "U.S.-Energy-Information-Agency:2023aa"
+Warning--I didn't find a database entry for "Statista:2024aa"
+Warning--I didn't find a database entry for "Coyle:2012aa"
+Warning--I didn't find a database entry for "Ghoddusia:2017aa"
+Warning--missing institution in St_Louis_Fed:2019
+Warning--empty journal in Fouquet2014
+Warning--missing institution in Fouquet2011
+Warning--missing institution in US_BEA:2020
+Warning--missing institution in US_DoE:2012
+Warning--missing institution in US_DoT:2018
+Warning--missing institution in US_EIA:2020_electricity
+Warning--missing institution in US_EIA:2020_gasoline
+You've used 47 entries,
+            2804 wiz_defined-function locations,
+            906 strings with 14435 characters,
+and the built_in function-call counts, 22617 in all, are:
+= -- 1863
+> -- 779
+< -- 38
++ -- 309
+- -- 249
+* -- 1590
+:= -- 3714
+add.period$ -- 134
+call.type$ -- 47
+change.case$ -- 323
+chr.to.int$ -- 44
+cite$ -- 55
+duplicate$ -- 1684
+empty$ -- 1694
+format.name$ -- 356
+if$ -- 4345
+int.to.chr$ -- 4
+int.to.str$ -- 1
+missing$ -- 352
+newline$ -- 252
+num.names$ -- 188
+pop$ -- 671
+preamble$ -- 1
+purify$ -- 271
+quote$ -- 0
+skip$ -- 627
+stack$ -- 0
+substring$ -- 982
+swap$ -- 850
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 414
+warning$ -- 8
+while$ -- 166
+width$ -- 0
+write$ -- 603
+(There were 17 warnings)

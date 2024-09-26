@@ -1,0 +1,409 @@
+\begin{thebibliography}{66}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Allen(1936)}]{Allen1936}
+Allen, R. G.~D. (1936).
+\newblock Professor {S}lutsky's theory of consumers' choice.
+\newblock {\em Review of Economic Studies\/}, {\em 3\/}(2), 120--129.
+
+\bibitem[{Allen \& Lerner(1934)}]{Allen1934}
+Allen, R. G.~D., \& Lerner, A.~P. (1934).
+\newblock {The concept of arc elasticity of demand}.
+\newblock {\em Review of Economic Studies\/}, {\em 1\/}(3), 226--230.
+
+\bibitem[{Antal \& {van den Bergh}(2014)}]{Antal:2014aa}
+Antal, M., \& {van den Bergh}, J.~C. (2014).
+\newblock Re-spending rebound: A macro-level assessment for {OECD} countries
+  and emerging economies.
+\newblock {\em Energy Policy\/}, {\em 68\/}, 585--590.
+
+\bibitem[{Baqaee \& Farhi(2019)}]{Baqaee2019}
+Baqaee, D.~R., \& Farhi, E. (2019).
+\newblock {The Macroeconomic Impact of Microeconomic Shocks: Beyond Hulten's
+  Theorem}.
+\newblock {\em Econometrica\/}, {\em 87\/}(4), 1155--1203.
+
+\bibitem[{Berner et~al.(2022)Berner, Bruns, Moneta, \& Stern}]{Berner:2022tb}
+Berner, A., Bruns, S., Moneta, A., \& Stern, D.~I. (2022).
+\newblock Do energy efficiency improvements reduce energy use? {E}mpirical
+  evidence on the economy-wide rebound effect in {E}urope and the {U}nited
+  {S}tates.
+\newblock {\em Energy Economics\/}, {\em 110\/}(105939), 1--9.
+
+\bibitem[{Birol \& Keppler(2000)}]{Birol:2000wi}
+Birol, F., \& Keppler, J.~H. (2000).
+\newblock Prices, technology development, and the rebound e!ect.
+\newblock {\em Energy Policy\/}, {\em 28\/}, 457--469.
+
+\bibitem[{Blackburn \& Moreno-Cruz(2020)}]{blackburn2020energy}
+Blackburn, C.~J., \& Moreno-Cruz, J. (2020).
+\newblock Energy efficiency in general equilibrium with input-output linkages.
+\newblock BEA Working Paper Series WP2020-1, {Bureau of Economic Analysis}.
+\newline\urlprefix\url{https://www.bea.gov/index.php/system/files/papers/WP2020-1.pdf}
+
+\bibitem[{Borenstein(2015)}]{Borenstein:2015aa}
+Borenstein, S. (2015).
+\newblock A microeconomic framework for evaluating energy efficiency rebound
+  and some implications.
+\newblock {\em The Energy Journal\/}, {\em 36\/}(1), 1--21.
+
+\bibitem[{Brockway et~al.(2017)Brockway, Saunders, Heun, Foxon, Steinberger,
+  Barrett, \& Sorrell}]{Brockway:2017a}
+Brockway, P.~E., Saunders, H., Heun, M.~K., Foxon, T.~J., Steinberger, J.~K.,
+  Barrett, J.~R., \& Sorrell, S. (2017).
+\newblock Energy rebound as a potential threat to a low-carbon future: Findings
+  from a new exergy-based national-level rebound approach.
+\newblock {\em Energies\/}, {\em 10\/}(51), 1--24.
+
+\bibitem[{Brockway et~al.(2021)Brockway, Sorrell, Semieniuk, Heun, \&
+  Court}]{Brockway:2021ww}
+Brockway, P.~E., Sorrell, S., Semieniuk, G., Heun, M.~K., \& Court, V. (2021).
+\newblock Energy efficiency and economy-wide rebound effects: A review of the
+  evidence and its implications.
+\newblock {\em Renewable and Sustainable Energy Reviews\/}, {\em
+  141\/}(110781), 1--20.
+
+\bibitem[{Brookes(1979)}]{Brookes1979}
+Brookes, L. (1979).
+\newblock A low energy strategy for the {UK}.
+\newblock {\em Atom\/}, {\em 269\/}(73-78).
+
+\bibitem[{Brookes(1990)}]{Brookes1990}
+Brookes, L. (1990).
+\newblock {The greenhouse effect: the fallacies in the energy efficiency
+  solution}.
+\newblock {\em Energy Policy\/}, {\em 18\/}(2), 199--201.
+
+\bibitem[{Brown \& Herendeen(1996)}]{Brown:1996wy}
+Brown, M., \& Herendeen, R. (1996).
+\newblock {Embodied Energy Analysis and EMERGY Analysis: a Comparative View}.
+\newblock {\em Ecological Economics\/}, {\em 19\/}, 219--235.
+
+\bibitem[{Chan \& Gillingham(2015)}]{Chan2015}
+Chan, N.~W., \& Gillingham, K. (2015).
+\newblock {The microeconomic theory of the rebound effect and its welfare
+  implications}.
+\newblock {\em Journal of the Association of Environmental and Resource
+  Economists\/}, {\em 2\/}(1), 133--159.
+
+\bibitem[{Dorner(2019)}]{Dorner:2019aa}
+Dorner, Z. (2019).
+\newblock A behavioral rebound effect.
+\newblock {\em Journal of Environmental Economics and Management\/}, {\em
+  98\/}(102257), 1--28.
+
+\bibitem[{D\"{u}tschke et~al.(2018)D\"{u}tschke, Frondel, Schleich, \&
+  Vance}]{Dutschke:2018aa}
+D\"{u}tschke, E., Frondel, M., Schleich, J., \& Vance, C. (2018).
+\newblock Moral licensing--{A}nother source of rebound?
+\newblock {\em Frontiers in Energy Research\/}, {\em 6\/}.
+
+\bibitem[{Feenstra et~al.(2018)Feenstra, Luck, Obstfeld, \&
+  Russ}]{Feenstra2018}
+Feenstra, R.~C., Luck, P., Obstfeld, M., \& Russ, K.~N. (2018).
+\newblock In search of the {A}rmington elasticity.
+\newblock {\em The Review of Economics and Statistics\/}, {\em 100\/}(1),
+  135--150.
+
+\bibitem[{Folbre(2021)}]{Folbre2021}
+Folbre, N. (2021).
+\newblock {\em {The Rise and Decline of Patriarchal Systems: An Intersectional
+  Political Economy}\/}.
+\newblock London and Brooklyn: Verso.
+
+\bibitem[{Foley(2020)}]{Foley:2020aa}
+Foley, D.~K. (2020).
+\newblock Information theory and behavior.
+\newblock {\em The European Physical Journal Special Topics\/}, {\em 229\/}(9),
+  1591--1602.
+
+\bibitem[{Fouquet(2014)}]{Fouquet2014}
+Fouquet, R. (2014).
+\newblock Long-run demand for energy services: Income and price elasticities
+  over two hundred years.
+\newblock {\em 8\/}(2), 186--207.
+
+\bibitem[{Fullerton \& Ta(2020)}]{Fullerton2020}
+Fullerton, D., \& Ta, C.~L. (2020).
+\newblock {Costs of energy efficiency mandates can reverse the sign of
+  rebound}.
+\newblock {\em Journal of Public Economics\/}, {\em 188\/}, 104225.
+
+\bibitem[{Gechert et~al.(2021)Gechert, Havranek, Irsova, \&
+  Kolcunova}]{Gechert2021}
+Gechert, S., Havranek, T., Irsova, Z., \& Kolcunova, D. (2021).
+\newblock {Measuring capital-labor substitution: The importance of method
+  choices and publication bias}.
+\newblock {\em Review of Economic Dynamics\/}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S1094202521000387}
+
+\bibitem[{Gillingham et~al.(2013)Gillingham, Kotchen, Rapson, \&
+  Wagner}]{Gillingham:2013aa}
+Gillingham, K., Kotchen, M.~J., Rapson, D.~S., \& Wagner, G. (2013).
+\newblock The rebound effect is overplayed.
+\newblock {\em Nature\/}, {\em 493\/}.
+
+\bibitem[{Gillingham et~al.(2016)Gillingham, Rapson, \&
+  Wagner}]{Gillingham2016}
+Gillingham, K., Rapson, D., \& Wagner, G. (2016).
+\newblock The rebound effect and energy efficiency policy.
+\newblock {\em Review of Environmental Economics and Policy\/}, {\em 10\/}(1),
+  68--88.
+
+\bibitem[{G{\o}rtz(1977)}]{Gortz1977}
+G{\o}rtz, E. (1977).
+\newblock An identity between price elasticities and the elasticity of
+  substitution of the utility function.
+\newblock {\em The Scandinavian Journal of Economics\/}, {\em 79\/}(4),
+  497--499.
+
+\bibitem[{Greening et~al.(2000)Greening, Greene, \& Difiglio}]{Greening2000}
+Greening, L.~A., Greene, D.~L., \& Difiglio, C. (2000).
+\newblock Energy efficiency and consumption---the rebound effect---a survey.
+\newblock {\em Energy policy\/}, {\em 28\/}(6-7), 389--401.
+
+\bibitem[{Grubb(1990)}]{Grubb1990}
+Grubb, M. (1990).
+\newblock Energy efficiency and economic fallacies.
+\newblock {\em Energy Policy\/}, {\em 18\/}(8), 783--785.
+
+\bibitem[{Grubb(1992)}]{Grubb1992}
+Grubb, M. (1992).
+\newblock Reply to {B}rookes.
+\newblock {\em Energy Policy\/}, (May), 392--393.
+
+\bibitem[{Haberl et~al.(2020)Haberl, Wiedenhofer, Vir\'{a}g, Kalt, Plank,
+  Brockway, Fishman, Hausknost, Krausmann, Leon-Gruchalski, Mayer, Pichler,
+  Schaffartzik, Sousa, Streeck, \& Creutzig}]{Haberl:2020tf}
+Haberl, H., Wiedenhofer, D., Vir\'{a}g, D., Kalt, G., Plank, B., Brockway, P.,
+  Fishman, T., Hausknost, D., Krausmann, F., Leon-Gruchalski, B., Mayer, A.,
+  Pichler, M., Schaffartzik, A., Sousa, T., Streeck, J., \& Creutzig, F.
+  (2020).
+\newblock A systematic review of the evidence on decoupling of {GDP}, resource
+  use and {GHG} emissions, {P}art {II}: synthesizing the insights.
+\newblock {\em Environmental Research Letters\/}, {\em 15\/}(065003), 1--42.
+
+\bibitem[{Hicks \& Allen(1934)}]{Hicks1934}
+Hicks, J.~R., \& Allen, R. G.~D. (1934).
+\newblock A reconsideration of the theory of value. {P}art {II}. {A}
+  mathematical theory of individual demand functions.
+\newblock {\em Economica\/}, {\em 1\/}(2), 196--219.
+
+\bibitem[{{International Energy
+  Agency}(2017)}]{International-Energy-Agency:2017b}
+{International Energy Agency} (2017).
+\newblock {\em World Energy Outlook 2017\/}.
+\newblock Paris.
+\newline\urlprefix\url{https://www.iea.org/weo2017/}
+
+\bibitem[{Jenkins et~al.(2011)Jenkins, Nordhaus, \&
+  Shellenberger}]{Jenkins2011}
+Jenkins, J., Nordhaus, T., \& Shellenberger, M. (2011).
+\newblock Energy emergence: Rebound and backfire as emergent phenomena.
+\newblock Tech. rep., Breakthrough Institute, Oakland, California, USA.
+\newline\urlprefix\url{https://s3.us-east-2.amazonaws.com/uploads.thebreakthrough.org/legacy/blog/Energy{\_}Emergence.pdf}
+
+\bibitem[{Jevons(1865)}]{Jevons:1865}
+Jevons, W.~S. (1865).
+\newblock {\em The Coal Question: An Inquiry Concerning the Progress of the
+  Nation and the Probable Exhaustion of our Coal Mines\/}.
+\newblock London: Macmillan.
+
+\bibitem[{Kahn(1931)}]{Kahn1931}
+Kahn, R.~F. (1931).
+\newblock {The Relation of Home Investment to Unemployment}.
+\newblock {\em The Economic Journal\/}, {\em 41\/}(162), 173--198.
+
+\bibitem[{Keynes(1936)}]{Keynes1936}
+Keynes, J.~M. (1936).
+\newblock {\em {The General Theory of Employment, Interest and Money}\/}.
+\newblock London: Macmillan.
+
+\bibitem[{Khazzoom(1980)}]{Khazzoom1980}
+Khazzoom, J.~D. (1980).
+\newblock Economic implications of mandated efficiency in standards for
+  household appliances.
+\newblock {\em The Energy Journal\/}, {\em 1\/}(4).
+
+\bibitem[{Klump et~al.(2012)Klump, Mcadam, \& Willman}]{Klump2012}
+Klump, R., Mcadam, P., \& Willman, A. (2012).
+\newblock The normalized {CES} production function: Theory and empirics.
+\newblock {\em Journal of Economic Surveys\/}, {\em 26\/}(5), 769--799.
+
+\bibitem[{Lange et~al.(2021)Lange, Kern, Peuckert, \& Santarius}]{Lange2021}
+Lange, S., Kern, F., Peuckert, J., \& Santarius, T. (2021).
+\newblock {The Jevons paradox unravelled: A multi-level typology of rebound
+  effects and mechanisms}.
+\newblock {\em Energy Research and Social Science\/}, {\em 74\/}, 101982.
+
+\bibitem[{Lemoine(2020)}]{Lemoine:2020aa}
+Lemoine, D. (2020).
+\newblock General equilibrium rebound from energy efficiency innovation.
+\newblock {\em European Economic Review\/}, {\em 125\/}, 1--20.
+
+\bibitem[{Lovins(1988)}]{Lovins1988}
+Lovins, A.~B. (1988).
+\newblock Energy saving resulting from the adoption of more efficient
+  appliances: Another view.
+\newblock {\em The Energy Journal\/}, (pp. 155--162).
+
+\bibitem[{Madlener \& Turner(2016)}]{Madlener:2016to}
+Madlener, R., \& Turner, K. (2016).
+\newblock {\em After 35 Years of Rebound Research in Economics: Where Do We
+  Stand?\/}, chap.~1, (pp. 17--36).
+\newblock Rethinking Climate and Energy Policies New Perspectives on the
+  Rebound Phenomenon. Cham, Switzerland: Springer.
+
+\bibitem[{Marx(1867)}]{Marx1867}
+Marx, K. (1867).
+\newblock {\em {Das Kapital: Erster Band}\/}.
+\newblock Hamburg: Otto Meissner.
+
+\bibitem[{N\"{a}ss\'{e}n \& Holmberg(2009)}]{Nassen:2009aa}
+N\"{a}ss\'{e}n, J., \& Holmberg, J. (2009).
+\newblock Quantifying the rebound effects of energy efficiency improvements and
+  energy conserving behaviour in {S}weden.
+\newblock {\em Energy Efficiency\/}, {\em 2\/}(3), 221--231.
+
+\bibitem[{Nicholson \& Snyder(2017)}]{Nicholson2017}
+Nicholson, W., \& Snyder, C. (2017).
+\newblock {\em Microeconomic Theory: Basic Principles \& Extensions\/}.
+\newblock Boston: Cengage Learning.
+
+\bibitem[{Paoli \& Cullen(2020)}]{Paoli:2020aa}
+Paoli, L., \& Cullen, J. (2020).
+\newblock Technical limits for energy conversion efficiency.
+\newblock {\em Energy\/}, {\em 192\/}, 1--12.
+
+\bibitem[{Parkes(1838)}]{Parkes1838}
+Parkes, J. (1838).
+\newblock On the evaporation of water from steam boilers.
+\newblock {\em Transactions of the Institution of Civil Engineers\/}, {\em
+  2\/}(1), 161--179.
+
+\bibitem[{Santarius(2016)}]{Santarius2016}
+Santarius, T. (2016).
+\newblock Investigating meso-economic rebound effects: Production-side effects
+  and feedback loops between the micro and macro level.
+\newblock {\em Journal of Cleaner Production\/}, {\em 134\/}, 406--413.
+
+\bibitem[{Saunders(2015)}]{Saunders2015}
+Saunders, H.~D. (2015).
+\newblock Recent evidence for large rebound: Elucidating the drivers and their
+  implications for climate change models.
+\newblock {\em The Energy Journal\/}, {\em 36\/}(1), 23--48.
+
+\bibitem[{Saunders et~al.(2021)Saunders, Roy, Azevedo, Chakravart, Dasgupta,
+  de~la Rue~du Can, Druckman, Fouquet, Grubb, Lin, Lowe, Madlener, McCoy,
+  Mundaca, Oreszczyn, Sorrell, Stern, Tanaka, \& Wei}]{Saunders:2021te}
+Saunders, H.~D., Roy, J., Azevedo, I.~M., Chakravart, D., Dasgupta, S., de~la
+  Rue~du Can, S., Druckman, A., Fouquet, R., Grubb, M., Lin, B., Lowe, R.,
+  Madlener, R., McCoy, D.~M., Mundaca, L., Oreszczyn, T., Sorrell, S., Stern,
+  D., Tanaka, K., \& Wei, T. (2021).
+\newblock Energy efficiency: What has research delivered in the last 40 years?
+\newblock {\em Annual Review of Environment and Resources\/}, {\em 46\/},
+  135--165.
+
+\bibitem[{Sciubba \& Wall(2007)}]{Sciubba:2007aa}
+Sciubba, E., \& Wall, G. (2007).
+\newblock A brief commented history of exergy from the beginnings to 2004.
+\newblock {\em International Journal of Thermodynamics\/}, {\em 10\/}(1),
+  1--26.
+
+\bibitem[{Slutsky(1915)}]{Slutsky1915}
+Slutsky, E. (1915).
+\newblock {Sulla teoria del bilancio del consumatore}.
+\newblock {\em Giornale degli Economisti e Rivista di Statistica\/}, {\em
+  53\/}(1), 1--26.
+
+\bibitem[{Smith(1776)}]{Smith1776}
+Smith, A. (1776).
+\newblock {\em An Inquiry into the Wealth of Nations\/}.
+\newblock London: Strahan.
+
+\bibitem[{Solow(1957)}]{Solow1957}
+Solow, R.~M. (1957).
+\newblock Technical change and the aggregate production function.
+\newblock {\em The Review of Economics and Statistics\/}, {\em 39\/}(3),
+  312--320.
+
+\bibitem[{Sorrell(2009)}]{Sorrell:2009cg}
+Sorrell, S. (2009).
+\newblock Jevons' paradox revisited: The evidence for backfire from improved
+  energy efficiency.
+\newblock {\em Energy Policy\/}, {\em 37\/}(4), 1456--1469.
+
+\bibitem[{Sorrell \& Dimitropoulos(2008)}]{Sorrell2008}
+Sorrell, S., \& Dimitropoulos, J. (2008).
+\newblock The rebound effect: Microeconomic definitions, limitations and
+  extensions.
+\newblock {\em Ecological Economics\/}, {\em 65\/}(3), 636--649.
+
+\bibitem[{Sorrell et~al.(2009)Sorrell, Dimitropoulos, \&
+  Sommerville}]{Sorrell:2009aa}
+Sorrell, S., Dimitropoulos, J., \& Sommerville, M. (2009).
+\newblock Empirical estimates of the direct rebound effect: A review.
+\newblock {\em Energy Policy\/}, {\em 37\/}(4), 1356--1371.
+
+\bibitem[{Stern(2020)}]{Stern2020}
+Stern, D.~I. (2020).
+\newblock How large is the economy-wide rebound effect?
+\newblock {\em Energy Policy\/}, {\em 147\/}, 111870.
+
+\bibitem[{Temple(2012)}]{Temple2012}
+Temple, J. (2012).
+\newblock {The calibration of CES production functions}.
+\newblock {\em Journal of Macroeconomics\/}, {\em 34\/}, 294--303.
+
+\bibitem[{Thomas \& Azevedo(2013{\natexlab{a}})}]{Thomas:2013aa}
+Thomas, B.~A., \& Azevedo, I.~L. (2013{\natexlab{a}}).
+\newblock Estimating direct and indirect rebound effects for {U.S.} households
+  with input--output analysis. {P}art 1: Theoretical framework.
+\newblock {\em Ecological Economics\/}, {\em 86\/}, 199--210.
+
+\bibitem[{Thomas \& Azevedo(2013{\natexlab{b}})}]{Thomas:2013ab}
+Thomas, B.~A., \& Azevedo, I.~L. (2013{\natexlab{b}}).
+\newblock Estimating direct and indirect rebound effects for {U.S.} households
+  with input--output analysis. {P}art 2: Simulation.
+\newblock {\em Ecological Economics\/}, {\em 86\/}, 188--198.
+
+\bibitem[{Turner(2013)}]{Turner:2013aa}
+Turner, K. (2013).
+\newblock ``{R}ebound'' effects from increased energy efficiency: A time to
+  pause and reflect.
+\newblock {\em The Energy Journal\/}, {\em 34\/}(4), 25--42.
+\newline\urlprefix\url{https://www.jstor.org/stable/41969250}
+
+\bibitem[{{van den Bergh}(2017)}]{van-den-Bergh:2017aa}
+{van den Bergh}, J.~C. (2017).
+\newblock Rebound policy in the {P}aris agreement: Instrument comparison and
+  climate-club revenue offsets.
+\newblock {\em Climate Policy\/}, {\em 17\/}(6), 801--813.
+
+\bibitem[{van~den Bergh(2011)}]{VandenBergh2011}
+van~den Bergh, J. C. J.~M. (2011).
+\newblock Energy conservation more effective with rebound policy.
+\newblock {\em Environmental and Resource Economics\/}, {\em 48\/}(1), 43--58.
+
+\bibitem[{Walnum et~al.(2014)Walnum, Aall, \& L{\o}kke}]{Walnum2014}
+Walnum, H.~J., Aall, C., \& L{\o}kke, S. (2014).
+\newblock {Can rebound effects explain why sustainable mobility has not been
+  achieved?}
+\newblock {\em Sustainability\/}, {\em 6\/}(12), 9510--9537.
+
+\bibitem[{Wang et~al.(2021)Wang, Yu, \& Liu}]{Wang2021}
+Wang, J., Yu, S., \& Liu, T. (2021).
+\newblock {A theoretical analysis of the direct rebound effect caused by energy
+  efficiency improvement of private consumers}.
+\newblock {\em Economic Analysis and Policy\/}, {\em 69\/}(145), 171--181.
+
+\bibitem[{Williams(1840)}]{Williams1840}
+Williams, C.~W. (1840).
+\newblock {\em The combustion of coal and the prevention of smoke: Chemically
+  and practically considered\/}.
+\newblock London: J. Weale, 1st ed.
+
+\end{thebibliography}
