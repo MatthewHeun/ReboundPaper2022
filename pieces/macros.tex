@@ -271,7 +271,7 @@ bottom=2pt}
 
 % Original
 \newcommand{\Eacctorig}{\rbempl{E} = \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_o) I_E}
-\newcommand{\Macctorig}{\rbempl{M} = p_E \rbempl{E}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_o + \rbempl{N}}
+\newcommand{\Macctorig}{\rate{M} = p_E \rbempl{E}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_o + \rbempl{N}}
 
 % Before emplacement effect (same as original)
 \newcommand{\Eacctbempl}{\Eacctorig}      
@@ -279,7 +279,7 @@ bottom=2pt}
 
 % After emplacement effect
 \newcommand{\Eacctaempl}{\raempl{E} = \raempl{E}_s + \raempl{E}_{emb} + (\raempl{C}_{\omd} + \raempl{C}_o) I_E}                  
-\newcommand{\Macctaempl}{\raempl{M} = p_E \raempl{E}_s + \aempl{R}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \raempl{C}_o + \raempl{N}}         
+\newcommand{\Macctaempl}{\rate{M} = p_E \raempl{E}_s + \aempl{R}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \raempl{C}_o + \raempl{N}}         
 
 % Before substitution effect (same as after emplacement effect)
 \newcommand{\Eacctbsub}{\Eacctaempl}
@@ -287,7 +287,7 @@ bottom=2pt}
 
 % After substitution effect
 \newcommand{\Eacctasub}{\rasub{E} = \rasub{E}_s + \rasub{E}_{emb} + (\rasub{C}_{\omd} + \rasub{C}_o) I_E}
-\newcommand{\Macctasub}{\rasub{M} = p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \rasub{N}}
+\newcommand{\Macctasub}{\rate{M} = p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \rasub{N}}
 
 % Before income effect (same as after substitution effect)
 \newcommand{\Eacctbinc}{\Eacctasub}
@@ -295,7 +295,7 @@ bottom=2pt}
 
 % After income effect
 \newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\omd} + \rainc{C}_o) I_E}
-\newcommand{\Macctainc}{\rainc{M} = p_E \rainc{E}_s + \ainc{R}_\alpha \rainc{C}_{cap} + \rainc{C}_{\omd} + \rainc{C}_o + \rainc{N}}
+\newcommand{\Macctainc}{\rate{M} = p_E \rainc{E}_s + \ainc{R}_\alpha \rainc{C}_{cap} + \rainc{C}_{\omd} + \rainc{C}_o + \rainc{N}}
 
 % Embodied energy rebound
 \newcommand{\Reembeqn}{\frac{\left( \frac{\aempl{E}_{emb}}{\bempl{E}_{emb}}
@@ -400,7 +400,7 @@ bottom=2pt}
 % Equation for effective income
 % \newcommand{\effinceqn}{\Mdothatprime \equiv \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
 %                         - \rate{G} + p_E \Delta \rbinc{E}_s + \Delta \rbinc{C}_o}
-\newcommand{\effinceqn}{\Mdothatprime \equiv \rorig{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N}}
+\newcommand{\effinceqn}{\Mdothatprime \equiv \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N}}
 
 
 %%%% Budget constraint symbols and equation
@@ -411,7 +411,7 @@ bottom=2pt}
 \newcommand{\itlife}{i\,t_{li\!f\!e}}
 \newcommand{\iyr}{i\,\mathrm{yr}}
 
-\newcommand{\budgetconstraint}{\rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_o \rate{q}_o}
+\newcommand{\budgetconstraint}{\rate{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_E \frac{\rorig{q}_s}{\orig{\eta}} + p_o \rorig{q}_o}
 
 
 %%%% Proof characters

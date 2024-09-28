@@ -754,7 +754,7 @@ so the energy purchaser (the device user) is a price taker.%
   as an extension of the framework.
 }
 %
-Initially, the device user spends income ($\rorig{M}$)
+Initially, the device user spends income ($\rate{M}$)
 on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
 annualized capital costs for the device 
 ($\orig{R}_\alpha \rorig{C}_{cap}$), 
@@ -765,7 +765,7 @@ other goods and services ($\rorig{C}_o$).
 The budget constraint for the device user is
 
 \begin{equation} \label{eq:budget_constraint_prelim}
-  \rorig{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} \; ,
+  \rate{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} \; ,
 \end{equation}
 %
 where 
@@ -1303,10 +1303,8 @@ of the derivations of Eqs.~(\ref{eq:Re_dsub_prelim}),
 \label{sec:inc_effect_main_paper}
 %------------------------------
 
-The monetary income rate of the device user ($\rbempl{M}$)
-remains unchanged across the rebound effects, 
-such that
-$\rbempl{M} = \raempl{M} = \rasub{M} = \rainc{M} = \ramacro{M}$.
+The monetary income rate of the device user ($\rate{M}$)
+remains unchanged across the rebound effects.
 Thanks to the energy service price decline, real income rises, 
 and freed cash from the EEU is given 
 as $\rate{G} = p_E \Sdot$.
@@ -1442,7 +1440,7 @@ Under a non-homothetic utility model,
 the bounding condition is
 satiated consumption of the energy service such that
 as the device owner becomes richer, 
-none of the income ($\rasub{N}$)
+none of the net income ($\rasub{N}$)
 is spent on more of the energy service, and thus
 $Re_{dinc} = 0$ would occur.
 
