@@ -63,13 +63,13 @@ $\Delta \rainc{E} \equiv \rainc{E} - \rbinc{E}$.
 \begin{equation}
   \Delta \rainc{E} = \Delta \rainc{E}_s 
                      + \cancelto{0}{\Delta \rainc{E}_{emb}}
-                     + (\cancelto{0}{\Delta \rainc{C}_{\omd}} + \Delta \rainc{C}_o) I_E
+                     + (\cancelto{0}{\Delta \rainc{C}_{\omd}} + \Delta \rainc{C}_g) I_E
 \end{equation}
 %
 Thus, 
 %
 \begin{equation}
-  \Delta \rainc{E} = \Delta \rainc{E}_s + \Delta \rainc{C}_o I_E
+  \Delta \rainc{E} = \Delta \rainc{E}_s + \Delta \rainc{C}_g I_E
 \end{equation}
 %
 All terms are energy takeback rates.
@@ -77,13 +77,13 @@ Divide by $\Sdot$
 to create rebound terms.
 %
 \begin{equation}
-  \frac{\Delta \rainc{E}}{\Sdot} = \frac{\Delta \rainc{E}_s}{\Sdot} + \frac{\Delta \rainc{C}_o I_E}{\Sdot}
+  \frac{\Delta \rainc{E}}{\Sdot} = \frac{\Delta \rainc{E}_s}{\Sdot} + \frac{\Delta \rainc{C}_g I_E}{\Sdot}
 \end{equation}
 %
 Define 
 $Re_{inc} \equiv \frac{\Delta \rainc{E}}{\Sdot}$, 
 $Re_{dinc} \equiv \frac{\Delta \rainc{E}_s}{\Sdot}$, and 
-$Re_{iinc} \equiv \frac{\Delta \rainc{C}_o I_E}{\Sdot}$,
+$Re_{iinc} \equiv \frac{\Delta \rainc{C}_g I_E}{\Sdot}$,
 such that
 %
 \begin{equation} \label{eq:Re_inc_def}
@@ -98,8 +98,8 @@ such that
 Use the monetary constraint ($\rate{M}$) to obtain
 
 \begin{align}
-  p_E \rasub{E}_s &+ \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_o + \rasub{N} \nonumber \\
-                  &= p_E \rainc{E}_s + \cancel{\ainc{R}_\alpha \rainc{C}_{cap}} + \cancel{\rainc{C}_{\omd}} + \rainc{C}_o + \cancelto{0}{\rainc{N}} \; .
+  p_E \rasub{E}_s &+ \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_g + \rasub{N} \nonumber \\
+                  &= p_E \rainc{E}_s + \cancel{\ainc{R}_\alpha \rainc{C}_{cap}} + \cancel{\rainc{C}_{\omd}} + \rainc{C}_g + \cancelto{0}{\rainc{N}} \; .
 \end{align}
 %
 For the income effect, there is no change in capital or maintainance, opoerations, and disposal costs
@@ -110,11 +110,11 @@ because it is assumed that all net monetary savings
 after the substitution effect ($\rasub{N}$) are spent on
 more energy service ($\rbinc{E}_s < \rainc{E}_s$)
 and
-additional purchases in the economy ($\rbinc{C}_o < \rainc{C}_o$).
+additional purchases in the economy ($\rbinc{C}_g < \rainc{C}_g$).
 Solving for $\rbinc{N}$ gives 
 %
 \begin{equation} \label{eq:inc_budget_constraint}
-  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_o \; ,
+  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_g \; ,
 \end{equation}
 %
 the budget constraint for the income effect.
@@ -126,7 +126,7 @@ spending of net savings~($\rbinc{N}$) on
 	
   \item additional energy services~($\Delta \rainc{E}_s$) and
   
-  \item additional purchases of other goods in the economy~($\Delta \rainc{C}_o$) only.
+  \item additional purchases of other goods in the economy~($\Delta \rainc{C}_g$) only.
     
 \end{enumerate*}
 }

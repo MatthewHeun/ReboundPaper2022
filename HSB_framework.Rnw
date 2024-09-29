@@ -526,7 +526,7 @@ again according to a microeconomic behavioral model.
 We assume a \emph{partial equilibrium} response to the 
 energy efficiency upgrade (EEU)
 at the microeconomic level;
-other prices in the economy ($p_o$) remain unchanged
+other prices in the economy ($p_g$) remain unchanged
 in response to the EEU.
 
 In contrast, 
@@ -761,11 +761,11 @@ annualized capital costs for the device
 annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
 disposal of the device 
 ($\orig{R}_\omega \rorig{C}_d$), and 
-other goods and services ($\rorig{C}_o$).
+other goods and services ($\rorig{C}_g$).
 The budget constraint for the device user is
 
 \begin{equation} \label{eq:budget_constraint_prelim}
-  \rate{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_{o} \; ,
+  \rate{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_g \; ,
 \end{equation}
 %
 where 
@@ -782,8 +782,8 @@ After substituting the product of energy price ($p_E$) and
 the rate of energy consumption
 (given by the ratio of the rate of energy service consumption
 and efficiency, $\rate{q}_s / \eta$),
-after substituting the product of price ($p_o$) and
-the rate ($\rate{q}_o$) of other goods consumption,
+after substituting the product of price ($p_g$) and
+the rate ($\rate{q}_g$) of other goods consumption,
 after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
 and after some rearrangement, 
 Eq.~(\ref{eq:budget_constraint_prelim}) becomes
@@ -1200,9 +1200,9 @@ The device user's utility rate
 (relative to the original condition, $\rorig{u}$)
 is determined by
 the consumption rate of the energy service ($\rate{q}_s$) and
-the consumption rate of other goods and services ($\rate{C}_o$).
+the consumption rate of other goods and services ($\rate{C}_g$).
 The share parameter ($\fCs$) 
-between $\rate{q}_s$ and $\rate{C}_o$
+between $\rate{q}_s$ and $\rate{C}_g$
 is taken from the original (pre-EEU) consumption basket.
 The exponent $\rho$ is calculated from the (constant) 
 elasticity of substitution ($\sigma$) 
@@ -1231,15 +1231,15 @@ which can be rearranged to
 Indirect substitution effect rebound ($Re_{isub}$) is given by
 
 \begin{equation} \label{eq:Re_isub_def}
-  Re_{isub} = \frac{\Delta \rasub{C}_o I_E}{\Sdot} \; ,
+  Re_{isub} = \frac{\Delta \rasub{C}_g I_E}{\Sdot} \; ,
 \end{equation}
 %
 which can be rearranged to 
 
 \begin{equation} \label{eq:Re_isub_prelim}
-  Re_{isub} = \frac{\frac{\rasub{C}_o}{\rorig{C}_o} - 1}{\etaratiostacked - 1} \; 
+  Re_{isub} = \frac{\frac{\rasub{C}_g}{\rorig{C}_g} - 1}{\etaratiostacked - 1} \; 
                           \etaratiostacked \; 
-                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s} \; .
+                          \frac{\rbempl{C}_g I_E}{\rbempl{E}_s} \; .
 \end{equation}
 
 To find the post-substitution effect point ($\wedge$),
@@ -1454,7 +1454,7 @@ Not all net savings ($\rbinc{N}$) are spent on more energy
 for the energy conversion device.
 The income elasticity of other goods demand ($\eqoM$)
 quantifies the amount of net savings spent 
-on additional other goods ($\rbinc{q}_o < \rainc{q}_o$).
+on additional other goods ($\rbinc{q}_g < \rainc{q}_g$).
 Spending of net savings on additional other goods and services
 leads to indirect income effect rebound ($Re_{iinc}$).
 
@@ -1466,19 +1466,19 @@ The ratio of rates of other goods consumed across the income effect is given by
 %
 Under the assumption that prices of other goods are exogenous
 (see Appendix~\ref{sec:other_goods_expenditures}), 
-the ratio of rates of other goods consumption ($\rainc{q}_o/\rbinc{q}_o$)
-is equal to the ratio of rates of other goods expenditures ($\rainc{C}_o/\rbinc{C}_o$)
+the ratio of rates of other goods consumption ($\rainc{q}_g/\rbinc{q}_g$)
+is equal to the ratio of rates of other goods expenditures ($\rainc{C}_g/\rbinc{C}_g$)
 such that 
 
 \begin{equation} \label{eq:Corat_eqoM}
-  \frac{\rainc{C}_o}{\rbinc{C}_o} = \left( 1 + \frac{\rasub{N}}{\Mdothatprime} \right)^{\eqoM} \; .
+  \frac{\rainc{C}_g}{\rbinc{C}_g} = \left( 1 + \frac{\rasub{N}}{\Mdothatprime} \right)^{\eqoM} \; .
 \end{equation}
 %
 Homotheticity means that $\eqoM = 1$.
 As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
 
 \begin{equation} \label{eq:Re_iinc_def}
-  Re_{iinc} \equiv \frac{\Delta \rainc{C}_o I_E}{\Sdot} \; .
+  Re_{iinc} \equiv \frac{\Delta \rainc{C}_g I_E}{\Sdot} \; .
 \end{equation}
 %
 After substitution, rearranging, and canceling of terms, 
@@ -2152,7 +2152,7 @@ using an early version of this framework.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Other goods expenditures and constant $p_o$}
+\section{Other goods expenditures and constant $p_g$}
 \label{sec:other_goods_expenditures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

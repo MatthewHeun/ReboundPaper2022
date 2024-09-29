@@ -10,7 +10,7 @@ energy service cost ($C_s$),
 operations and maintenance cost ($C_{\om}$), and
 disposal cost ($C_d$).
 We count one expense category for all other
-goods and services ($C_o$),
+goods and services ($C_g$),
 one category for annual income ($M$), and 
 net savings ($N$), 
 the difference between income and expenses.
@@ -66,10 +66,10 @@ with an infinite sum as follows
        = C_d \sum_{i = 1}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
       &= \gamma_{\tlife} C_d \\
 %
-  P_o &= C_o + \frac{C_o}{(1 + r)^{\oneyr}} + \frac{C_o}{(1 + r)^{\twoyr}} + 
-         \ldots + \frac{C_o}{(1 + r)^{\iyr}} + \ldots 
-       = C_o \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-      &= \phi_{\oneyr} C_o \\
+  P_g &= C_g + \frac{C_g}{(1 + r)^{\oneyr}} + \frac{C_g}{(1 + r)^{\twoyr}} + 
+         \ldots + \frac{C_g}{(1 + r)^{\iyr}} + \ldots 
+       = C_g \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+      &= \phi_{\oneyr} C_g \\
 %
   P_M &= M + \frac{M}{(1 + r)^{\oneyr}} + \frac{M}{(1 + r)^{\twoyr}} + 
          \ldots + \frac{M}{(1 + r)^{\iyr}} + \ldots
@@ -132,7 +132,7 @@ Similar derivations can be employed for all other budget categories.
   \rate{A}_s &= \rate{C}_s \\
   \rate{A}_{\om} &= \rate{C}_{\om} \\
   \rate{A}_d &= R_\omega \rate{C}_d \\
-  \rate{A}_o &= \rate{C}_o \\
+  \rate{A}_g &= \rate{C}_g \\
   \rate{A}_N &= \rate{N} \\
   \rate{A}_M &= \rate{M}
 \end{align}
@@ -151,7 +151,7 @@ The budget constraint expressed in annualized present-value equivalent terms is
                \rate{A}_s + 
                \rate{A}_{\om} + 
                \rate{A}_d + 
-               \rate{A}_o + 
+               \rate{A}_g + 
                \rate{A}_N \; .
 \end{equation}
 %
@@ -162,7 +162,7 @@ Substituting cost rates gives
              \rate{C}_s + 
              \rate{C}_{\om} + 
              R_\omega \rate{C}_d + 
-             \rate{C}_o + 
+             \rate{C}_g + 
              \rate{N} \; .
 \end{equation}
 %
@@ -170,14 +170,14 @@ Substituting the product of energy price ($p_E$) and
 the rate of energy consumption
 (given by the ratio of the rate of energy service consumption
 and efficiency, $\rate{q}_s / \eta$),
-the product of price ($p_o$) and
-the rate ($\rate{q}_o$) of other goods consumption,
+the product of price ($p_g$) and
+the rate ($\rate{q}_g$) of other goods consumption,
 $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
 and after some rearranging gives the budget constraint
 used in Eq.~(\ref{eq:budget_constraint}):
 
 \begin{equation}
-  \rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_o \rate{q}_o + \rate{N} \; .
+  \rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_g \rate{q}_g + \rate{N} \; .
 \end{equation}
 
 The term $R_\alpha$ represents the additional cost of annual interest

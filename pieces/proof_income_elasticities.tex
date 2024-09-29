@@ -8,14 +8,14 @@ After the substitution effect,
 a rate of net savings is available ($\rasub{N}$), 
 all of which is spent on
 additional energy service ($\Delta \rainc{q}_s$, $\Delta \rainc{C}_s = p_E \Delta \rainc{E}_s$) or 
-additional other goods ($\Delta \rainc{q}_o$, $\Delta \rainc{C}_o$).
+additional other goods ($\Delta \rainc{q}_g$, $\Delta \rainc{C}_g$).
 The income effect must satisfy the budget constraint
 such that net savings is zero afterward ($\rainc{N} = 0$).
 The budget constraint across the income effect 
 is represented by Eq.~(\ref{eq:inc_budget_constraint}): 
 
 \begin{equation}
-  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_o \; . \tag{\ref{eq:inc_budget_constraint}}
+  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_g \; . \tag{\ref{eq:inc_budget_constraint}}
 \end{equation}
 
 The additional spending due to the income effect is given by income preference equations
@@ -28,7 +28,7 @@ The additional spending due to the income effect is given by income preference e
 and
 
 \begin{equation}
-  \frac{\rainc{q}_o}{\rbinc{q}_o} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM} \; ,
+  \frac{\rainc{q}_g}{\rbinc{q}_g} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM} \; ,
                                                                 \tag{\ref{eq:qorat_eqoM}}
 \end{equation}
 %
@@ -44,14 +44,14 @@ satisfy the budget constraint (Eq.~(\ref{eq:inc_budget_constraint})).
 
 The first step in the proof is to convert 
 the income preference equations
-to $\rbempl{C}_s$ and $\rbempl{C}_o$ ratios.
+to $\rbempl{C}_s$ and $\rbempl{C}_g$ ratios.
 For the energy service income preference equation (Eq.~(\ref{eq:qsrat_eqsM})), 
 multiply numerator and denominator of the left-hand side by $\amacro{p}_s = p_E / \amacro{\eta}$
 (Eq.~(\ref{eq:ps_pE_eta}))
 to obtain $\rainc{C}_s / \rbinc{C}_s$.
 For the other goods income preference equation (Eq.~(\ref{eq:qorat_eqoM})), 
-multiply numerator and denominator of the left-hand side by $p_o$
-to obtain $\rainc{C}_o / \rbinc{C}_o$.
+multiply numerator and denominator of the left-hand side by $p_g$
+to obtain $\rainc{C}_g / \rbinc{C}_g$.
 Then, invoke homotheticity to set $\eqsM = 1$ and $\eqoM = 1$ to obtain
 
 \begin{equation}
@@ -61,15 +61,15 @@ Then, invoke homotheticity to set $\eqsM = 1$ and $\eqoM = 1$ to obtain
 and
 
 \begin{equation}
-  \frac{\rainc{C}_o}{\rbinc{C}_o} = 1 + \frac{\rbinc{N}}{\Mdothatprime} \; .
+  \frac{\rainc{C}_g}{\rbinc{C}_g} = 1 + \frac{\rbinc{N}}{\Mdothatprime} \; .
 \end{equation}
 %
 
 The second step in the proof is to obtain expressions 
-for $\Delta \rainc{C}_s$ and $\Delta \rainc{C}_o$.
+for $\Delta \rainc{C}_s$ and $\Delta \rainc{C}_g$.
 Multiply the income preference equations above
-by $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_o$, respectively.
-Then, subtract $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_o$, respectively, 
+by $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_g$, respectively.
+Then, subtract $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_g$, respectively, 
 to obtain
 
 \begin{equation}
@@ -79,7 +79,7 @@ to obtain
 and
 
 \begin{equation}
-  \Delta \rainc{C}_o = \frac{\rbinc{C}_o}{\Mdothatprime} \rbinc{N} \; .
+  \Delta \rainc{C}_g = \frac{\rbinc{C}_g}{\Mdothatprime} \rbinc{N} \; .
 \end{equation}
 
 The above versions of the income preference equations 
@@ -88,7 +88,7 @@ can be substituted into the budget constraint
 
 \begin{equation} \label{eq:inc_elasticity_proof_setup}
   \rbinc{N} \questionequal \frac{\rbinc{C}_s}{\Mdothatprime} \rbinc{N} 
-                            + \frac{\rbinc{C}_o}{\Mdothatprime}  \rbinc{N} \; .
+                            + \frac{\rbinc{C}_g}{\Mdothatprime}  \rbinc{N} \; .
 \end{equation}
 %
 If equality is demonstrated, 
@@ -99,19 +99,19 @@ of Eq.~(\ref{eq:inc_elasticity_proof_setup}).
 Dividing by $\rbinc{N}$ and multiplying by $\Mdothatprime$ gives
 
 \begin{equation}
-  \rbinc{C}_s + \rbinc{C}_o \questionequal \Mdothatprime \; .
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \Mdothatprime \; .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:effective_income}) for $\Mdothatprime$ gives
 
 \begin{equation}
-  \rbinc{C}_s + \rbinc{C}_o \questionequal \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N} \; .
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N} \; .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:M_acct_asub}) for $\rate{M}$ gives
 
 \begin{equation}
-  \rbinc{C}_s + \rbinc{C}_o \questionequal p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \cancel{\rasub{N}}
+  \rbinc{C}_s + \rbinc{C}_g \questionequal p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_g + \cancel{\rasub{N}}
     - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \cancel{\rasub{N}} \; .
 \end{equation}
 %
@@ -119,14 +119,14 @@ Cancelling terms and recognizing that $\aempl{R}_\alpha \raempl{C}_{cap} = \asub
 $\rasub{C}_s = p_E \rasub{E}_s$ gives
 
 \begin{equation}
-  \rbinc{C}_s + \rbinc{C}_o \questionequal \rasub{C}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_o
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \rasub{C}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_g
         - \cancel{\asub{R}_\alpha \rasub{C}_{cap}} - \cancel{\rasub{C}_{\omd}} \; .
 \end{equation}
 %
 Cancelling terms gives
 
 \begin{equation}
-  \rbinc{C}_s + \rbinc{C}_o \stackrel{\checkmark}{=} \rbinc{C}_s + \rbinc{C}_o \; ,
+  \rbinc{C}_s + \rbinc{C}_g \stackrel{\checkmark}{=} \rbinc{C}_s + \rbinc{C}_g \; ,
 \end{equation}
 %
 thereby completing the proof that the income preference equations

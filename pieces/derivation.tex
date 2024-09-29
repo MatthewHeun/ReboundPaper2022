@@ -72,7 +72,7 @@ Energy and financial analyses are shown side by side, because
 each informs the other.
 
 Several terms in Tables~\ref{tab:empleffect}--\ref{tab:macroeffect}
-are zeroed, e.g.\ $\cancelto{0}{\Delta \raempl{C}_o}$. 
+are zeroed, e.g.\ $\cancelto{0}{\Delta \raempl{C}_g}$. 
 These zeroes can be traced back to Table~\ref{tab:analysis_assumptions}.
 Table~\ref{tab:zeroed_terms} highlights the equations
 in Table~\ref{tab:analysis_assumptions}
@@ -86,7 +86,7 @@ that justify zeroing each term.
   \toprule
   Zeroed term & Justification (from Table~\ref{tab:analysis_assumptions}). \\
   \midrule
-  $\cancelto{0}{\Delta \raempl{C}_o}$    & $\rorig{C}_o = \raempl{C}_o$ ($\rate{C}_o$ unchanged across emplacement effect.) \\
+  $\cancelto{0}{\Delta \raempl{C}_g}$    & $\rorig{C}_g = \raempl{C}_g$ ($\rate{C}_g$ unchanged across emplacement effect.) \\
   $\cancelto{0}{\rorig{N}}$              & $0 = \rorig{N}$ (Net savings are zero prior to the EEU.) \\
   $\cancelto{0}{\Delta \rasub{E}_{emb}}$ & $\rbsub{E}_{emb} = \rasub{E}_{emb}$ ($\rate{E}_{emb}$ unchanged across substitution effect.) \\
   $\cancelto{0}{\Delta \rasub{C}_{\omd}}$ & $\rbsub{C}_{\omd} = \rasub{C}_{\omd}$ ($\rate{C}_{\omd}$ unchanged across substitution effect.) \\
@@ -328,7 +328,7 @@ indirect substitution rebound ($Re_{isub}$).
 Assuming that conditions after the emplacement effect ($*$) are known, 
 both the 
 rate of energy service consumption ($\rasub{q}_s$) and
-the rate of other goods consumption ($\rasub{C}_o$) 
+the rate of other goods consumption ($\rasub{C}_g$) 
 must be determined as a result of the substitution effect
 (the $\wedge$ point).
 
@@ -341,7 +341,7 @@ the device user, in response,
 increases the consumption rate of the energy service 
 ($\rbsub{q}_s < \rasub{q}_s$) 
 and decreases the consumption rate of other goods 
-($\rbsub{q}_o > \rasub{q}_o$).
+($\rbsub{q}_g > \rasub{q}_g$).
 
 The increase in consumption of the energy service 
 substitutes for consumption of other goods in the economy,
@@ -355,7 +355,7 @@ Thereafter, we develop
 a constant price elasticity (CPE) utility model and
 a constant elasticity of substitution (CES) utility model
 for determining the 
-post-substitution point ($\rasub{q}_s$ and $\rasub{C}_o$).
+post-substitution point ($\rasub{q}_s$ and $\rasub{C}_g$).
 
 
 %..............................
@@ -422,28 +422,28 @@ under both the CPE and the CES utility models.
 Indirect substitution effect rebound ($Re_{isub}$) is given by
 
 \begin{equation}
-  Re_{isub} = \frac{\Delta \rasub{C}_o I_E}{\Sdot} = \frac{(\rasub{C}_o - \rbsub{C}_{o}) I_E}{\Sdot} \; . \tag{\ref{eq:Re_isub_def}}
+  Re_{isub} = \frac{\Delta \rasub{C}_g I_E}{\Sdot} = \frac{(\rasub{C}_g - \rbsub{C}_{o}) I_E}{\Sdot} \; . \tag{\ref{eq:Re_isub_def}}
 \end{equation}
 %
 Rearranging gives
 
 \begin{equation}
-  Re_{isub} = \frac{\left(\frac{\rasub{C}_o}{\rbempl{C}_o} - \frac{\rbsub{C}_o}{\rbempl{C}_o}  \right) \rbempl{C}_o I_E }{\Sdot} \; .
+  Re_{isub} = \frac{\left(\frac{\rasub{C}_g}{\rbempl{C}_g} - \frac{\rbsub{C}_g}{\rbempl{C}_g}  \right) \rbempl{C}_g I_E }{\Sdot} \; .
 \end{equation}
 %
 Recognizing that expenditures on other goods are constant across the emplacement effect gives
-$\raempl{C}_o/\rbempl{C}_o = 1$ and
+$\raempl{C}_g/\rbempl{C}_g = 1$ and
 
 \begin{equation}
-  Re_{isub} = \left(\frac{\rasub{C}_o}{\rbempl{C}_o} - 1  \right) \frac{\rbempl{C}_o I_E }{\Sdot} \; .
+  Re_{isub} = \left(\frac{\rasub{C}_g}{\rbempl{C}_g} - 1  \right) \frac{\rbempl{C}_g I_E }{\Sdot} \; .
 \end{equation}
 %
 Substituting Eq.~($\ref{eq:Sdot}$) for $\Sdot$ and rearranging gives
 
 \begin{equation}
-  Re_{isub} = \frac{\frac{\rasub{C}_o}{\rorig{C}_o} - 1}{\etaratiostacked - 1} \; 
+  Re_{isub} = \frac{\frac{\rasub{C}_g}{\rorig{C}_g} - 1}{\etaratiostacked - 1} \; 
                           \etaratiostacked \; 
-                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s} \; .
+                          \frac{\rbempl{C}_g I_E}{\rbempl{E}_s} \; .
                               \tag{\ref{eq:Re_isub_prelim}}
 \end{equation}
 %
@@ -543,7 +543,7 @@ expenditure is held constant.
 Thus,
 
 \begin{equation}
-  \Delta \rasub{C}_o = - \Delta \rasub{C}_s \; .
+  \Delta \rasub{C}_g = - \Delta \rasub{C}_s \; .
 \end{equation}
 %
 The advantage of this approach is that 
@@ -552,7 +552,7 @@ The disadvantage is that it does not adhere
 to the definition of the substitution effect, 
 which assumes that utility, not expenditure, is held constant. 
 
-Solving for $\rasub{C}_o/\rbsub{C}_o$,
+Solving for $\rasub{C}_g/\rbsub{C}_g$,
 substituting an expression for
 the change in expenditure on the energy service ($\Delta \rasub{C}_s$), 
 namely 
@@ -565,18 +565,18 @@ and
 substituting Eq.~(\ref{eq:approx_qshat_over_qsorig}) gives
 
 \begin{equation} \label{eq:C_dot_o_ratio_CPE}
-  \frac{\rasub{C}_o}{\rbsub{C}_o} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_o} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
+  \frac{\rasub{C}_g}{\rbsub{C}_g} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_g} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:C_dot_o_ratio_CPE}) 
 into Eq.~(\ref{eq:Re_isub_prelim}) gives
 
 \begin{equation}
-  Re_{isub} = - \frac{\frac{p_E \rbsub{q}_s}{\amacro{\eta} \rbsub{C}_o}
+  Re_{isub} = - \frac{\frac{p_E \rbsub{q}_s}{\amacro{\eta} \rbsub{C}_g}
                    \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1   \right] }
                 {\etaratiostacked - 1} 
                 \etaratiostacked 
-                \frac{\rorig{C}_o I_E}{\rorig{E}_s} \; .
+                \frac{\rorig{C}_g I_E}{\rorig{E}_s} \; .
 \end{equation}
 %
 Rearranging and substituting Eq.~(\ref{eq:Re_dsub_approx}) gives
@@ -584,7 +584,7 @@ the expression for indirect substitution rebound under the
 CPE utility model.
 
 \begin{equation} \label{eq:Re_isub_cpe}
-  Re_{isub} = - \frac{\rbsub{q}_s \rorig{C}_o p_E I_E}{\orig{\eta} \rbsub{C}_o \rorig{E}_s} Re_{dsub}
+  Re_{isub} = - \frac{\rbsub{q}_s \rorig{C}_g p_E I_E}{\orig{\eta} \rbsub{C}_g \rorig{E}_s} Re_{dsub}
 \end{equation}
 
 Because %
@@ -631,7 +631,7 @@ Rather,
 $\Delta \aempl{p}_s$ is finite and may be very large in percentage terms.
 
 To determine the new consumption bundle after the substitution effect 
-($\rasub{q}_s$ and $\rasub{C}_o$)
+($\rasub{q}_s$ and $\rasub{C}_g$)
 and,
 ultimately, to quantify the direct and indirect substitution rebound effects
 ($Re_{dsub}$ and $Re_{isub}$) exactly,
@@ -642,7 +642,7 @@ must be constant along an indifference curve
 Instead, we require constancy of only
 the elasticity of substitution ($\sigma$) between
 the consumption rate of the energy service ($\rate{q}_s$)
-and the expenditure rate for other goods ($\rate{C}_o$)
+and the expenditure rate for other goods ($\rate{C}_g$)
 across the substitution effect.
 Thus, we employ a CES utility model in our framework.
 Figs.~\ref{PartII-fig:CarConsGraph} 
@@ -663,7 +663,7 @@ the share parameter ($a$) replaced by $\fCs$,
 as discussed in Appendix~\ref{sec:utility_and_elasticities}.
 
 \begin{align} \label{eq:slope_indifference_curve_u1}
-  \frac{\partial (\rate{C}_o/\rbempl{C}_o)}{\partial (\rate{q}_s/\rbempl{q}_s)} =&
+  \frac{\partial (\rate{C}_g/\rbempl{C}_g)}{\partial (\rate{q}_s/\rbempl{q}_s)} =&
         -\frac{\fCs}{1 - \fCs} \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^{(\rho -1)} \nonumber  \\
         &\times \left[ \left( \frac{1}{1 - \fCs} \right) 
                 - \left( \frac{\fCs}{1 - \fCs} \right) 
@@ -677,11 +677,11 @@ and~\ref{PartII-fig:LampConsGraph}
 of Part~II) is
 
 \begin{equation} \label{eq:starstar_line}
-  \frac{\rate{C}_o}{\rbempl{C}_o} = 
+  \frac{\rate{C}_g}{\rbempl{C}_g} = 
       -\frac{\amacro{p}_s \rbempl{q}_s}
-            {\rbempl{C}_o}
+            {\rbempl{C}_g}
         \left(  \frac{\rate{q}_s}{\rbempl{q}_s} \right)
-      + \frac{1}{\rbempl{C}_o} 
+      + \frac{1}{\rbempl{C}_g} 
         (\rate{M} - \bempl{R}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} - \rate{G}) \; .
 \end{equation}
 
@@ -700,7 +700,7 @@ at the original utility rate of $\rate{u}/\rbempl{u} = 1$ (Eq.~(\ref{eq:slope_in
 
 \begin{equation}
   -\frac{\amacro{p}_s \rbempl{q}_s}
-        {\rbempl{C}_o} = 
+        {\rbempl{C}_g} = 
     -\frac{\fCs}{1 - \fCs} \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^{(\rho -1)} % \nonumber  \\
         \left[ \left( \frac{1}{1 - \fCs} \right) 
                 - \left( \frac{\fCs}{1 - \fCs} \right) 
@@ -722,24 +722,24 @@ via the CES utility model.
   Re_{dsub} = \RedsubCES{} \tag{\ref{eq:Re_dsub_CES}}
 \end{equation}
 
-The rate of other goods consumption after the substitution effect ($\rasub{C}_o$) 
+The rate of other goods consumption after the substitution effect ($\rasub{C}_g$) 
 can be found by substituting Eq.~(\ref{eq:q_s_solution}) and 
 $\rate{u}/\rbempl{u} = 1$ 
 into the functional form of the CES utility model (Eq.~(\ref{eq:utility_Co_form}))
 to obtain
 
 \begin{equation}
-  \frac{\rasub{C}_o}{\rbempl{C}_o} = \left( \left( \frac{1}{1-\fCs} \right) 
+  \frac{\rasub{C}_g}{\rbempl{C}_g} = \left( \left( \frac{1}{1-\fCs} \right) 
                                      - \left( \frac{\fCs}{1-\fCs} \right)   
               \left\{ \fCs + (1-\fCs)
-                  \left[ \left( \frac{1-\fCs}{\fCs} \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o}   \right] 
+                  \left[ \left( \frac{1-\fCs}{\fCs} \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_g}   \right] 
                       ^{\frac{\rho}{1-\rho}} \right\} ^{-1} \right) ^{1/\rho} \; .
 \end{equation}
 
 Simplifying gives
 
 \begin{equation}
-  \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
+  \frac{\rasub{C}_g}{\rbempl{C}_g} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
 \end{equation}
 
 Eq.~(\ref{eq:C_o_solution}) can be substituted into Eq.~(\ref{eq:Re_isub_prelim})
@@ -780,7 +780,7 @@ In this framework, all net savings ($\rasub{N}$) are spent on either
         ($\rbinc{q}_s < \rainc{q}_s$) or
   
   \item additional other goods
-        ($\rbinc{q}_o < \rainc{q}_o$).
+        ($\rbinc{q}_g < \rainc{q}_g$).
     
 \end{enumerate*}
 %
@@ -825,7 +825,7 @@ The purpose of this section is derivation of expressions for
   
   \item indirect income rebound~($Re_{iinc}$) 
         arising from increased consumption of other goods 
-        ($\rbinc{q}_o < \rainc{q}_o$).
+        ($\rbinc{q}_g < \rainc{q}_g$).
     
 \end{enumerate*}
 
@@ -954,49 +954,49 @@ using the income preference for other goods consumption.
 As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
 
 \begin{equation}
-  Re_{iinc} \equiv \frac{\Delta \rainc{C}_o I_E}{\Sdot} \; . \tag{\ref{eq:Re_iinc_def}}
+  Re_{iinc} \equiv \frac{\Delta \rainc{C}_g I_E}{\Sdot} \; . \tag{\ref{eq:Re_iinc_def}}
 \end{equation}
 %
 Expanding the difference and rearranging gives
 
 \begin{equation}
-  Re_{iinc} = \frac{(\rainc{C}_o - \rbinc{C}_o) I_E}{\Sdot} \; , 
+  Re_{iinc} = \frac{(\rainc{C}_g - \rbinc{C}_g) I_E}{\Sdot} \; , 
 \end{equation}
 %
 and
 
 \begin{equation}
-  Re_{iinc} = \frac{\left( \frac{\rainc{C}_o}{\rbinc{C}_o} - 1  \right) \rbinc{C}_o I_E}{\Sdot} \; .
+  Re_{iinc} = \frac{\left( \frac{\rainc{C}_g}{\rbinc{C}_g} - 1  \right) \rbinc{C}_g I_E}{\Sdot} \; .
 \end{equation}
 %
-Substituting $\rainc{C}_o = p_o \rainc{q}_o$ and $\rbinc{C}_o = p_o \rbinc{q}_o$ and
+Substituting $\rainc{C}_g = p_g \rainc{q}_g$ and $\rbinc{C}_g = p_g \rbinc{q}_g$ and
 cancelling terms gives
 
 \begin{equation}
-  Re_{iinc} = \frac{\left( \frac{\rainc{q}_o}{\rbinc{q}_o} - 1  \right) \rbinc{C}_o I_E}{\Sdot} \; .
+  Re_{iinc} = \frac{\left( \frac{\rainc{q}_g}{\rbinc{q}_g} - 1  \right) \rbinc{C}_g I_E}{\Sdot} \; .
 \end{equation}
 %
 Substituting the income preference equation for other goods consumption (Eq.~(\ref{eq:qorat_eqoM}) 
-for $\rainc{q}_o / \rbinc{q}_o$
+for $\rainc{q}_g / \rbinc{q}_g$
 and Eq.~(\ref{eq:Sdot}) for $\rate{S}_{dev}$ yields
 
 \begin{equation}
   Re_{iinc} = \frac{\left[ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1  \right] 
-              \rbinc{C}_o I_E}{\Sdoteqn} \; .
+              \rbinc{C}_g I_E}{\Sdoteqn} \; .
 \end{equation}
 %
-Sutstituting $(\rasub{C}_o/\rorig{C}_o) \rorig{C}_o$ for $\rasub{C}_o$,  
-recognizing that $\rbsub{C}_o = \rbempl{C}_o$, and simplifying gives 
+Sutstituting $(\rasub{C}_g/\rorig{C}_g) \rorig{C}_g$ for $\rasub{C}_g$,  
+recognizing that $\rbsub{C}_g = \rbempl{C}_g$, and simplifying gives 
 
 \begin{equation}
   Re_{iinc} = \frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
               \left( \etaratiostacked \right)
-              \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}
-              \left( \frac{\rasub{C}_o}{\rorig{C}_o} \right) \; .
+              \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}
+              \left( \frac{\rasub{C}_g}{\rorig{C}_g} \right) \; .
 \end{equation}
 
 Substituting Eq.~(\ref{eq:C_o_solution}) 
-for $\rasub{C}_o / \rorig{C}_o$, 
+for $\rasub{C}_g / \rorig{C}_g$, 
 thereby assuming the CES utility model,
 gives the final form 
 of the indirect income rebound expression:
@@ -1042,7 +1042,7 @@ Substituting Eq.~(\ref{eq:N_dot_star_empl}) for net savings~($\raempl{N}$) gives
   %                               - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
   %                               - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot}
   %                               - \frac{k p_E I_E \Delta \rasub{E}_s}{\Sdot}
-  %                               - \frac{k \Delta \rasub{C}_o I_E}{\Sdot} \; .
+  %                               - \frac{k \Delta \rasub{C}_g I_E}{\Sdot} \; .
   Re_{\macro} = \frac{k (p_E \Sdot - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) I_E}{\Sdot} \; .
 \end{equation}
 %

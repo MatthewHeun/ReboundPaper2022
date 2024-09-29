@@ -84,23 +84,23 @@
 %%%%% Elasticities and income shares
 
 \newcommand{\eqspsUC}{\varepsilon_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUC}{\varepsilon_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsUC}{\varepsilon_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsC}{\varepsilon_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsC}{\varepsilon_{\rate{q}_o\!,p_s\!,c}}
+\newcommand{\eqopsC}{\varepsilon_{\rate{q}_g\!,p_s\!,c}}
 
 % originally
 \newcommand{\eqspsUCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsUCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s\!,c}}
+\newcommand{\eqopsCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s\!,c}}
 % With hats
 \newcommand{\eqspsUChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsUChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s\!,c}}
+\newcommand{\eqopsChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s\!,c}}
 
 \newcommand{\eqsM}{\varepsilon_{\rate{q}_s\!,\rate{M}}}
-\newcommand{\eqoM}{\varepsilon_{\rate{q}_o\!,\rate{M}}}
+\newcommand{\eqoM}{\varepsilon_{\rate{q}_g\!,\rate{M}}}
 
 \newcommand{\fCs}{\bempl{f}_{\rate{C}_s}}
 \newcommand{\fCshat}{\asub{f}_{\rate{C}_s}}
@@ -270,32 +270,32 @@ bottom=2pt}
 
 
 % Original
-\newcommand{\Eacctorig}{\rbempl{E} = \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_o) I_E}
-\newcommand{\Macctorig}{\rate{M} = p_E \rbempl{E}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_o + \rbempl{N}}
+\newcommand{\Eacctorig}{\rbempl{E} = \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_g) I_E}
+\newcommand{\Macctorig}{\rate{M} = p_E \rbempl{E}_s + \bempl{R}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_g + \rbempl{N}}
 
 % Before emplacement effect (same as original)
 \newcommand{\Eacctbempl}{\Eacctorig}      
 \newcommand{\Macctbempl}{\Macctorig}      
 
 % After emplacement effect
-\newcommand{\Eacctaempl}{\raempl{E} = \raempl{E}_s + \raempl{E}_{emb} + (\raempl{C}_{\omd} + \raempl{C}_o) I_E}                  
-\newcommand{\Macctaempl}{\rate{M} = p_E \raempl{E}_s + \aempl{R}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \raempl{C}_o + \raempl{N}}         
+\newcommand{\Eacctaempl}{\raempl{E} = \raempl{E}_s + \raempl{E}_{emb} + (\raempl{C}_{\omd} + \raempl{C}_g) I_E}                  
+\newcommand{\Macctaempl}{\rate{M} = p_E \raempl{E}_s + \aempl{R}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \raempl{C}_g + \raempl{N}}         
 
 % Before substitution effect (same as after emplacement effect)
 \newcommand{\Eacctbsub}{\Eacctaempl}
 \newcommand{\Macctbsub}{\Macctaempl}
 
 % After substitution effect
-\newcommand{\Eacctasub}{\rasub{E} = \rasub{E}_s + \rasub{E}_{emb} + (\rasub{C}_{\omd} + \rasub{C}_o) I_E}
-\newcommand{\Macctasub}{\rate{M} = p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_o + \rasub{N}}
+\newcommand{\Eacctasub}{\rasub{E} = \rasub{E}_s + \rasub{E}_{emb} + (\rasub{C}_{\omd} + \rasub{C}_g) I_E}
+\newcommand{\Macctasub}{\rate{M} = p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_g + \rasub{N}}
 
 % Before income effect (same as after substitution effect)
 \newcommand{\Eacctbinc}{\Eacctasub}
 \newcommand{\Macctbinc}{\Macctasub}
 
 % After income effect
-\newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\omd} + \rainc{C}_o) I_E}
-\newcommand{\Macctainc}{\rate{M} = p_E \rainc{E}_s + \ainc{R}_\alpha \rainc{C}_{cap} + \rainc{C}_{\omd} + \rainc{C}_o + \rainc{N}}
+\newcommand{\Eacctainc}{\rainc{E} = \rainc{E}_s + \rainc{E}_{emb} + (\rainc{C}_{\omd} + \rainc{C}_g) I_E}
+\newcommand{\Macctainc}{\rate{M} = p_E \rainc{E}_s + \ainc{R}_\alpha \rainc{C}_{cap} + \rainc{C}_{\omd} + \rainc{C}_g + \rainc{N}}
 
 % Embodied energy rebound
 \newcommand{\Reembeqn}{\frac{\left( \frac{\aempl{E}_{emb}}{\bempl{E}_{emb}}
@@ -317,20 +317,20 @@ bottom=2pt}
 \newcommand{\Reisubeqn}{\frac{{\left( \etaratiostacked  \right)}
                           ^{-\eqopsC} - 1}{\etaratiostacked - 1} \; 
                           \etaratiostacked \; 
-                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+                          \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
                           
 % CES utility equation
 \newcommand{\cesutility}{\left[ \fCs \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^\rho 
-        + (1-\fCs) \left( \frac{\rate{C}_o}{\rbempl{C}_o} \right)^\rho  \right]^{(1/\rho)}}
+        + (1-\fCs) \left( \frac{\rate{C}_g}{\rbempl{C}_g} \right)^\rho  \right]^{(1/\rho)}}
         
 % Equation for q_s_hat/q_s_orig
 \newcommand{\qssolution}{\left\{ \fCs + (1-\fCs)
-      \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o}  \right]
+      \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_g}  \right]
                                                   ^{\rho / (1 - \rho)} \right\} ^ {-1/\rho}}
 
-% Equation for C_o_hat/C_o_orig
+% Equation for C_g_hat/C_g_orig
 \newcommand{\Cosolution}{ \left( 1 + \fCs \left\{ \left[ \left( \frac{1-\fCs}{\fCs} \right)
-          \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_o} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
+          \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_g} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
 
 % Equation for Re_dsub for the CES utility model
 \newcommand{\RedsubCES}{\frac{\qssolution{} - 1}{\etaratiostacked{} - 1}}
@@ -338,7 +338,7 @@ bottom=2pt}
 % Equation for Re_isub for the CES utility model
 \newcommand{\ReisubCES}{\frac{\Cosolution{} - 1}{\etaratiostacked{} - 1}
                          \etaratiostacked \; 
-                          \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+                          \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
 
 
 % Equation for Re_dinc, approximate method
@@ -355,17 +355,12 @@ bottom=2pt}
 % Equation for Re_iinc, approximate method
 \newcommand{\Reiinceqnapprox}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
               \left( \etaratiostacked \right)^{1 - \eqopsC}
-              \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
+              \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
 
 % Equation for Re_iinc, exact method
-% \newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
-%               \left( \etaratiostacked \right)
-%               \left( \frac{\rasub{C}_o}{\rorig{C}_o} \right) 
-%               \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}}
-
 \newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
               \left( \etaratiostacked \right)
-              \frac{\rbempl{C}_o I_E}{\rbempl{E}_s}
+              \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}
               \Cosolution{}}
 
 
@@ -395,11 +390,9 @@ bottom=2pt}
 \newcommand{\incprefseqn}{\frac{\rainc{q}_s}{\rbinc{q}_s} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqsM}}
 
 % Equation for other goods income preferences
-\newcommand{\incprefoeqn}{\frac{\rainc{q}_o}{\rbinc{q}_o} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM}}
+\newcommand{\incprefoeqn}{\frac{\rainc{q}_g}{\rbinc{q}_g} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM}}
 
 % Equation for effective income
-% \newcommand{\effinceqn}{\Mdothatprime \equiv \rbempl{M} - \rbempl{C}_{cap} - \rbempl{C}_{\md} 
-%                         - \rate{G} + p_E \Delta \rbinc{E}_s + \Delta \rbinc{C}_o}
 \newcommand{\effinceqn}{\Mdothatprime \equiv \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N}}
 
 
@@ -411,7 +404,7 @@ bottom=2pt}
 \newcommand{\itlife}{i\,t_{li\!f\!e}}
 \newcommand{\iyr}{i\,\mathrm{yr}}
 
-\newcommand{\budgetconstraint}{\rate{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_E \frac{\rorig{q}_s}{\orig{\eta}} + p_o \rorig{q}_o}
+\newcommand{\budgetconstraint}{\rate{M} - \orig{R}_\alpha \rorig{C}_{cap} - \rorig{C}_{\omd} = \orig{p}_E \frac{\rorig{q}_s}{\orig{\eta}} + p_g \rorig{q}_g}
 
 
 %%%% Proof characters

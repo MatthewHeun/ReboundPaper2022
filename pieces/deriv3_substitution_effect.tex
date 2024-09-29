@@ -64,13 +64,13 @@ $\Delta \rasub{E} \equiv \rasub{E} - \rbsub{E}$.
 \begin{equation}
   \Delta \rasub{E} = \Delta \rasub{E}_s 
                       + \cancelto{0}{\Delta \rasub{E}_{emb}} 
-                      + (\cancelto{0}{\Delta \rasub{C}_{\omd}} + \Delta \rasub{C}_o) I_E
+                      + (\cancelto{0}{\Delta \rasub{C}_{\omd}} + \Delta \rasub{C}_g) I_E
 \end{equation}
 %
 Thus, 
 %
 \begin{equation}
-  \Delta \rasub{E} = \Delta \rasub{E}_s + \Delta \rasub{C}_o I_E \; .
+  \Delta \rasub{E} = \Delta \rasub{E}_s + \Delta \rasub{C}_g I_E \; .
 \end{equation}
 %
 All terms are energy takeback rates.
@@ -78,13 +78,13 @@ Divide by $\Sdot$
 to create rebound terms.
 %
 \begin{equation}
-    \frac{\Delta \rasub{E}}{\Sdot} = \frac{\Delta \rasub{E}_s}{\Sdot} + \frac{\Delta \rasub{C}_o I_E}{\Sdot}
+    \frac{\Delta \rasub{E}}{\Sdot} = \frac{\Delta \rasub{E}_s}{\Sdot} + \frac{\Delta \rasub{C}_g I_E}{\Sdot}
 \end{equation}
 %
 Define 
 $Re_{sub} \equiv \frac{\Delta \rasub{E}}{\Sdot}$, 
 $Re_{dsub} \equiv \frac{\Delta \rasub{E}_s}{\Sdot}$, and
-$Re_{isub} \equiv \frac{\Delta \rasub{C}_o I_E}{\Sdot}$,
+$Re_{isub} \equiv \frac{\Delta \rasub{C}_g I_E}{\Sdot}$,
 such that
 %
 \begin{equation} \label{eq:Re_sub_def}
@@ -99,8 +99,8 @@ such that
 Use the monetary constraint ($\rate{M}$) to obtain
 
 \begin{align}
-  p_E \raempl{E}_s &+ \cancel{\aempl{R}_\alpha \raempl{C}_{cap}} + \cancel{\raempl{C}_{\omd}} + \raempl{C}_o + \raempl{N} \nonumber \\
-                   &= p_E \rasub{E}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_o + \rasub{N} \; .
+  p_E \raempl{E}_s &+ \cancel{\aempl{R}_\alpha \raempl{C}_{cap}} + \cancel{\raempl{C}_{\omd}} + \raempl{C}_g + \raempl{N} \nonumber \\
+                   &= p_E \rasub{E}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_g + \rasub{N} \; .
 \end{align}
 %
 For the substitution effect, there is no change in capital or operations, maintenance, and disposal costs
@@ -109,7 +109,7 @@ $\rbsub{C}_{\omd} = \rasub{C}_{\omd}$).
 Solving for $\Delta \rasub{N} \equiv \rasub{N} - \rbsub{N}$ gives
 %
 \begin{equation} \label{eq:N_dot_hat_eqn}
-  \Delta \rasub{N} = - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
+  \Delta \rasub{N} = - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_g \; .
 \end{equation}
 %
 The substitution effect adjusts net savings relative to $\rbsub{N}$
@@ -119,7 +119,7 @@ Substituting Eqs.~(\ref{eq:N_dot_star_empl}), (\ref{eq:G_dot}), and~(\ref{eq:N_d
 yields
 %
 \begin{equation} \label{eq:N_dot_after_sub}
-  \rasub{N} = \rate{G} - \Delta \bsub{(R_\alpha \rate{C}_{cap})} - \Delta \rbsub{C}_{\omd} - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_o \; .
+  \rasub{N} = \rate{G} - \Delta \bsub{(R_\alpha \rate{C}_{cap})} - \Delta \rbsub{C}_{\omd} - p_E \Delta \rasub{E}_s - \Delta \rasub{C}_g \; .
 \end{equation}
 %
 }
