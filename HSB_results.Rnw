@@ -313,7 +313,7 @@ Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools:
 Re_omd_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_omd, to_perc = TRUE, digits = 1)
 Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 0)
+Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_g_hat, digits = 0)
 Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
 Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
 N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 0)
@@ -552,11 +552,11 @@ eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr
 q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/yr
 q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/yr
 Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_hat, digits = 2)
 Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
 Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
 N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
-Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_bar, digits = 2)
+Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_bar, digits = 2)
 Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 @
 
