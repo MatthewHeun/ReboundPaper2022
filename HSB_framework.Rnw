@@ -1181,9 +1181,9 @@ Here, we present a
 constant elasticity of substitution (CES) utility model
 that allows all of
 the uncompensated own price elasticity ($\eqspsUC$),
-the uncompensated cross price elasticity ($\eqopsUC$),
+the uncompensated cross price elasticity ($\eqgpsUC$),
 the compensated own price elasticity ($\eqspsC$), and
-the compensated cross price elasticity ($\eqopsC$)
+the compensated cross price elasticity ($\eqgpsC$)
 to vary along an indifference curve, 
 thereby enabling numerically precise analysis 
 of non-marginal energy service price changes 
@@ -1254,7 +1254,7 @@ assuming the CES utility model.%
   of substitution and income rebound is 100\% \emph{always}.
   Regardless of the utility model, expressions for
   $\rasub{q}_s/\rorig{q}_s$ and
-  $\rasub{C}_o/\rorig{C}_o$
+  $\rasub{C}_g/\rorig{C}_g$
   must be determined
   and substituted into 
   Eqs.~(\ref{eq:Re_dsub_prelim}) and~(\ref{eq:Re_isub_prelim}), 
@@ -1270,8 +1270,8 @@ The results are
 %
 and
 
-\begin{equation} \label{eq:C_o_solution}
-  \frac{\rasub{C}_o}{\rbempl{C}_o} = \Cosolution{} \; .
+\begin{equation} \label{eq:C_g_solution}
+  \frac{\rasub{C}_g}{\rbempl{C}_g} = \Cgsolution{} \; .
 \end{equation}
 
 Eq.~(\ref{eq:q_s_solution}) can be substituted directly
@@ -1283,7 +1283,7 @@ via the CES utility model.
   Re_{dsub} = \RedsubCES{}
 \end{equation}
 
-Eq.~(\ref{eq:C_o_solution}) can be substituted directly
+Eq.~(\ref{eq:C_g_solution}) can be substituted directly
 into Eq.~(\ref{eq:Re_isub_prelim})
 to obtain an expression for indirect substitution rebound ($Re_{isub}$)
 via the CES utility model.
@@ -1329,7 +1329,7 @@ net savings are zero after
 the income effect ($\rainc{N} = 0$).
 (See Appendix~\ref{sec:proof_income_elasticities}
 for a mathematical proof that the income preference equations below
-(Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qorat_eqoM}))
+(Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qgrat_eqgM}))
 satisfy the budget constraint.)
 
 A second constraint is that net savings are spent completely on
@@ -1338,7 +1338,7 @@ A second constraint is that net savings are spent completely on
 	
   \item additional consumption of the energy service ($\rbinc{q}_s < \rainc{q}_s$) and
   
-  \item additional consumption of other goods ($\rbinc{q}_o < \rainc{q}_o$).
+  \item additional consumption of other goods ($\rbinc{q}_g < \rainc{q}_g$).
     
 \end{enumerate*}
 %
@@ -1452,7 +1452,7 @@ $Re_{dinc} = 0$ would occur.
 
 Not all net savings ($\rbinc{N}$) are spent on more energy 
 for the energy conversion device.
-The income elasticity of other goods demand ($\eqoM$)
+The income elasticity of other goods demand ($\eqgM$)
 quantifies the amount of net savings spent 
 on additional other goods ($\rbinc{q}_g < \rainc{q}_g$).
 Spending of net savings on additional other goods and services
@@ -1460,7 +1460,7 @@ leads to indirect income effect rebound ($Re_{iinc}$).
 
 The ratio of rates of other goods consumed across the income effect is given by
 
-\begin{equation} \label{eq:qorat_eqoM}
+\begin{equation} \label{eq:qorat_eqgM}
   \incprefoeqn \; .
 \end{equation}
 %
@@ -1470,11 +1470,11 @@ the ratio of rates of other goods consumption ($\rainc{q}_g/\rbinc{q}_g$)
 is equal to the ratio of rates of other goods expenditures ($\rainc{C}_g/\rbinc{C}_g$)
 such that 
 
-\begin{equation} \label{eq:Corat_eqoM}
-  \frac{\rainc{C}_g}{\rbinc{C}_g} = \left( 1 + \frac{\rasub{N}}{\Mdothatprime} \right)^{\eqoM} \; .
+\begin{equation} \label{eq:Cgrat_eqgM}
+  \frac{\rainc{C}_g}{\rbinc{C}_g} = \left( 1 + \frac{\rasub{N}}{\Mdothatprime} \right)^{\eqgM} \; .
 \end{equation}
 %
-Homotheticity means that $\eqoM = 1$.
+Homotheticity means that $\eqgM = 1$.
 As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
 
 \begin{equation} \label{eq:Re_iinc_def}
@@ -2158,15 +2158,6 @@ using an early version of this framework.
 
 \input{pieces/other_goods_expenditures.tex}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Respending and the
-% marginal propensity to consume (MPC)}
-% \label{sec:income_macro_mpc}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% <<MPCAppendix, child="pieces/mpc.Rnw">>=
-% @
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

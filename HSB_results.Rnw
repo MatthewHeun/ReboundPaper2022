@@ -302,9 +302,9 @@ k_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$k,
 # Parameters for elasticity table
 e_qs_ps_UC_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
 e_qs_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 3)
-e_qo_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 3)
+e_qg_ps_C_car_char <- val_to_string(case = "Car", val = ReboundTools::orig_vars$e_qg_ps_C, digits = 3)
 e_qs_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
-e_qo_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+e_qg_M_car_char <- val_to_string(case = "Car", val = ReboundTools::eeu_base_params$e_qg_M, digits = 1)
 
 # Parameters for discussion
 Re_dempl_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
@@ -313,7 +313,7 @@ Delta_E_dot_emb_star_car_char <- val_to_string(case = "Car", val = ReboundTools:
 Re_omd_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_omd, to_perc = TRUE, digits = 1)
 Re_dsub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dsub, to_perc = TRUE)
 Re_isub_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 0)
+Delta_C_dot_o_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::Delta_vars$Delta_C_dot_g_hat, digits = 0)
 Re_dinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE)
 Re_iinc_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
 N_dot_hat_car_char <- val_to_string(case = "Car", val = ReboundTools::hat_vars$N_dot_hat, digits = 0)
@@ -481,14 +481,14 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
   Compensated price elasticity of car use demand                   &   $\Sexpr{e_qs_ps_C_car_char}$   & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsCorig$ [--]                                           &                                &   \\
   \midrule
-  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsCorig$ [--]                                           &                                &   \\
+  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qg_ps_C_car_char}     & Calculated via Eq.~(\ref{PartI-eq:eqgps}) in Part~I.  \\
+  $\eqgpsCorig$ [--]                                           &                                &   \\
   \midrule
   Income elasticity of demand for car use                 &   \Sexpr{e_qs_M_car_char}      & Follows from CES utility function. \\
   $\eqsM$ [--]                                            &                                &   \\
   \midrule
-  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_car_char}      & Follows from CES utility function. \\
-  $\eqoM$ [--]                                            &                                &   \\
+  Income elasticity of demand for other goods             &   \Sexpr{e_qg_M_car_char}      & Follows from CES utility function. \\
+  $\eqgM$ [--]                                            &                                &   \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -532,9 +532,9 @@ k_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$
 # Third table
 e_qs_ps_UC_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_ps_UC, digits = 1)
 e_qs_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qs_ps_C, digits = 4)
-e_qo_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qo_ps_C, digits = 5)
+e_qg_ps_lamp_C_char <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$e_qg_ps_C, digits = 5)
 e_qs_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qs_M, digits = 1)
-e_qo_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qo_M, digits = 1)
+e_qg_M_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::eeu_base_params$e_qg_M, digits = 1)
 
 # Results discussion
 Re_dempl_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dempl, to_perc = TRUE, digits = 1)
@@ -552,11 +552,11 @@ eta_worse <- val_to_string(case = "Lamp", val = ReboundTools::orig_vars$eta_engr
 q_dot_s_star_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::star_vars$q_dot_s_star, digits = 0) # In lm-hr/yr
 q_dot_s_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$q_dot_s_hat, digits = 0) # In lm-hr/yr
 Re_isub_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_isub, to_perc = TRUE)
-Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_hat, digits = 2)
+Delta_C_dot_o_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_hat, digits = 2)
 Re_dinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_dinc, to_perc = TRUE, digits = 2)
 Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_iinc, to_perc = TRUE)
 N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
-Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_o_bar, digits = 2)
+Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_bar, digits = 2)
 Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 @
 
@@ -716,14 +716,14 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
   Compensated own price elasticity of lighting demand                 &  $\Sexpr{e_qs_ps_lamp_C_char}$      & Calculated via the Slutsky Equation (Eq.~(\ref{PartI-eq:slutsky}) in Part~I).  \\
   $\eqspsCorig$ [--]                                           &           &   \\
   \midrule
-  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qo_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqops}) in Part~I.  \\
-  $\eqopsCorig$ [--]                                           &           &   \\
+  Compensated cross price elasticity of demand for other goods        &   \Sexpr{e_qg_ps_lamp_C_char}     & Calculated via Eq.~(\ref{PartI-eq:eqgps}) in Part~I.  \\
+  $\eqgpsCorig$ [--]                                           &           &   \\
   \midrule
   Income elasticity of lighting demand                    &   \Sexpr{e_qs_M_lamp_char}     & Follows from CES utility function. \\
   $\eqsM$ [--]                                            &           &   \\
   \midrule
-  Income elasticity of demand for other goods             &   \Sexpr{e_qo_M_lamp_char}     & Follows from CES utility function. \\
-  $\eqoM$ [--]                                            &           &   \\
+  Income elasticity of demand for other goods             &   \Sexpr{e_qg_M_lamp_char}     & Follows from CES utility function. \\
+  $\eqgM$ [--]                                            &           &   \\
   \bottomrule
 \end{tabular}
 \end{center}
