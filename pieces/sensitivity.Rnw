@@ -536,17 +536,17 @@ represents unattainable infinite efficiency ($\amacro{\eta}_s \rightarrow \infty
 i.e., delivery of the energy service without energy consumption.
 
 First, note the sign of the elasticities. As expected, both of the
-uncompensated price elasticities ($\eqspsUChat$ and $\eqopsUChat$,
+uncompensated price elasticities ($\eqspsUChat$ and $\eqgpsUChat$,
 dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph}) 
 are negative, regardless of the energy service price ($\amacro{p}_s$):
 a lower price means more consumption of both
 goods, all other things being equal.
 The compensated own price elasticity ($\eqspsChat$) is negative
-and the compensated cross price elasticity ($\eqopsChat$) is positive.
+and the compensated cross price elasticity ($\eqgpsChat$) is positive.
 As $\amacro{p}_s$ declines, the consumers substitutes the energy
 service for other goods.
 
-<<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. This graph is a visualization of Eqs.~\\ref{PartI-eq:eqopsC_exact}, \\ref{PartI-eq:eqopsUC_exact}, \\ref{PartI-eq:eqspsC_exact}, and \\ref{PartI-eq:eqspsUC_exact} of Part~I. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\aempl{p}_s = \\asub{p}_s = \\ainc{p}_s = \\amacro{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
+<<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. This graph is a visualization of Eqs.~\\ref{PartI-eq:eqgpsC_exact}, \\ref{PartI-eq:eqgpsUC_exact}, \\ref{PartI-eq:eqspsC_exact}, and \\ref{PartI-eq:eqspsUC_exact} of Part~I. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\aempl{p}_s = \\asub{p}_s = \\ainc{p}_s = \\amacro{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
 # Run a new sensitivity study on the car and lamp examples
 eta_sens_params_for_eps <-  list(Car = list(eta_engr_units_star = seq(14, 1000, by = 2)), 
                                  Lamp = list(eta_engr_units_star = seq(5000, 9000000, by = 5000)))
@@ -565,13 +565,13 @@ eta_sens_data_for_eps <- ReboundTools::parametric_analysis(original_cases = actu
   )
 
 eta_sens_data_for_eps_graph <- eta_sens_data_for_eps %>% 
-  dplyr::select(Case, eta_engr_units_star, p_s_star, e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat) %>% 
-  tidyr::pivot_longer(cols = c(e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat), 
+  dplyr::select(Case, eta_engr_units_star, p_s_star, e_qs_ps_C_hat, e_qo_ps_C_hat, e_qs_ps_UC_hat, e_qg_ps_UC_hat) %>% 
+  tidyr::pivot_longer(cols = c(e_qs_ps_C_hat, e_qg_ps_C_hat, e_qs_ps_UC_hat, e_qo_ps_UC_hat), 
                       names_to = "elasticity_type", 
                       values_to = "elasticity") %>% 
   dplyr::mutate(
-    elasticity_type = factor(elasticity_type, levels = c("e_qo_ps_C_hat",
-                                                         "e_qo_ps_UC_hat",
+    elasticity_type = factor(elasticity_type, levels = c("e_qg_ps_C_hat",
+                                                         "e_qg_ps_UC_hat",
                                                          "e_qs_ps_C_hat",
                                                          "e_qs_ps_UC_hat"))
   )
@@ -608,20 +608,20 @@ ggplot2::ggplot() +
                 y = expression("Price elasticity, "*hat(epsilon)*" [-]")) +
   ggplot2::scale_color_manual(values = c(e_qs_ps_C_hat = "red", 
                                          e_qs_ps_UC_hat = "red", 
-                                         e_qo_ps_C_hat = "black", 
-                                         e_qo_ps_UC_hat = "black"), 
+                                         e_qg_ps_C_hat = "black", 
+                                         e_qg_ps_UC_hat = "black"), 
                               labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[dot(q)[s]*","*p[s]*","*c]), 
                                          e_qs_ps_UC_hat = expression(hat(epsilon)[dot(q)[s]*","*p[s]]), 
-                                         e_qo_ps_C_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]*","*c]), 
-                                         e_qo_ps_UC_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]]))) +
+                                         e_qg_ps_C_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]*","*c]), 
+                                         e_qg_ps_UC_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]]))) +
   ggplot2::scale_linetype_manual(values = c(e_qs_ps_C_hat = "solid", 
                                             e_qs_ps_UC_hat = "dashed", 
-                                            e_qo_ps_C_hat = "solid", 
-                                            e_qo_ps_UC_hat = "dashed"), 
+                                            e_qg_ps_C_hat = "solid", 
+                                            e_qg_ps_UC_hat = "dashed"), 
                                  labels = c(e_qs_ps_C_hat = expression(hat(epsilon)[dot(q)[s]*","*p[s]*","*c]), 
                                             e_qs_ps_UC_hat = expression(hat(epsilon)[dot(q)[s]*","*p[s]]), 
-                                            e_qo_ps_C_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]*","*c]), 
-                                            e_qo_ps_UC_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]]))) +
+                                            e_qg_ps_C_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]*","*c]), 
+                                            e_qg_ps_UC_hat = expression(hat(epsilon)[dot(q)[o]*","*p[s]]))) +
   ggplot2::labs(colour = ggplot2::element_blank(),
                 linetype = ggplot2::element_blank()) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
@@ -650,7 +650,7 @@ to prefer the CES utility model over the CPE approximation.
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that
 as efficiency increases (and $\amacro{p}_s$ decreases), 
 the absolute value of the uncompensated price elasticities 
-($\eqspsUChat$ and $\eqopsUChat$) decreases, 
+($\eqspsUChat$ and $\eqgpsUChat$) decreases, 
 a change that exceeds the slightly increasing (in absolute value terms)
 compensated own price elasticity ($\eqspsChat$). 
 Thus, direct rebound is attenuated as efficiency increases,

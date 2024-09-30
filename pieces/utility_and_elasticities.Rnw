@@ -421,11 +421,11 @@ Thus, there are four price elasticities:
 	
   \item the uncompensated own price elasticity of energy service consumption ($\eqspsUC$),
   
-  \item the uncompensated cross price elasticity of other goods consumption ($\eqopsUC$),
+  \item the uncompensated cross price elasticity of other goods consumption ($\eqgpsUC$),
     
   \item the compensated own price elasticity of energy service consumption ($\eqspsC$), and 
   
-  \item the compensated cross price elasticity of other goods consumption ($\eqopsC$).
+  \item the compensated cross price elasticity of other goods consumption ($\eqgpsC$).
 
 \end{enumerate*}
 
@@ -485,20 +485,20 @@ In the CES utility model, $\orig{\sigma}$ is assumed invariant
 and given the undecorated symbol $\sigma$
 to indicate that it applies across all rebound effects.
 
-For the rest of the pre-EEU elasticities ($\eqopsUCorig$, $\eqspsCorig$, and $\eqopsCorig$),
+For the rest of the pre-EEU elasticities ($\eqgpsUCorig$, $\eqspsCorig$, and $\eqgpsCorig$),
 there is no difference for the CPE utility model or the CES utility model.
 
 
 %..............................
-\paragraph{Uncompensated cross price elasticity ($\eqopsUCorig$)} 
+\paragraph{Uncompensated cross price elasticity ($\eqgpsUCorig$)} 
 %..............................
 
 From \citet{Hicks1934}, 
-we note that the pre-EEU uncompensated cross price elasticity ($\eqopsUCorig$)
+we note that the pre-EEU uncompensated cross price elasticity ($\eqgpsUCorig$)
 can be expressed as
 
 \begin{equation} \label{eq:Allen}
-  \eqopsUCorig = \fCs (\sigma - \eqoM) \; .
+  \eqpsUCorig = \fCs (\sigma - \eqgM) \; .
 \end{equation}
 
 
@@ -527,22 +527,22 @@ Solving for the compensated price elasticity prior to the EEU ($\eqspsCorig$) gi
 
 
 %..............................
-\paragraph{Compensated cross price elasticity ($\eqopsCorig$)} 
+\paragraph{Compensated cross price elasticity ($\eqgpsCorig$)} 
 %..............................
 
 The cross price version of the Slutsky equation is the starting point
-for deriving the pre-EEU compensated cross price elasticity ($\eqopsCorig$):
+for deriving the pre-EEU compensated cross price elasticity ($\eqgpsCorig$):
 
 \begin{equation} \label{eq:slutsky_cross}
-  \eqopsUCorig = \eqopsCorig - \fCs \eqoM \; .
+  \eqgpsUCorig = \eqgpsCorig - \fCs \eqgM \; .
 \end{equation}
 %
-The income elasticity of other goods consumption ($\eqoM$) 
+The income elasticity of other goods consumption ($\eqgM$) 
 is given in Section~\ref{sec:income_elasticities}.
-Solving for $\eqopsCorig$ gives
+Solving for $\eqgpsCorig$ gives
 
 \begin{equation} \label{eq:slutsky_cross_modified}
-  \eqopsCorig = \eqopsUCorig + \fCs \eqoM \; .
+  \eqgpsCorig = \eqgpsUCorig + \fCs \eqgM \; .
 \end{equation}
 
 An alternative formulation can be derived by setting 
@@ -551,30 +551,30 @@ Eq.~(\ref{eq:slutsky_cross})
 to obtain
 
 \begin{equation}
-  \fCs (\sigma - \eqoM) = \eqopsCorig - \fCs \eqoM \; .
+  \fCs (\sigma - \eqgM) = \eqgpsCorig - \fCs \eqgM \; .
 \end{equation}
 %
-Solving for $\eqopsCorig$ gives
+Solving for $\eqgpsCorig$ gives
 
-\begin{equation} \label{eq:eqops_general}
-  \eqopsCorig = \fCs \sigma \; .
+\begin{equation} \label{eq:eqgps_general}
+  \eqgpsCorig = \fCs \sigma \; .
 \end{equation}
 %
 Substituting $\sigma$ from Eq.~(\ref{eq:sigma}) gives
 
-\begin{equation} \label{eq:eqops}
-  \eqopsCorig = \frac{\fCs (\fCs + \eqspsUCorig)}{\fCs - 1} \; .
+\begin{equation} \label{eq:eqgps}
+  \eqgpsCorig = \frac{\fCs (\fCs + \eqspsUCorig)}{\fCs - 1} \; .
 \end{equation}
 
 Assuming a known value for the original uncompensated own price elasticity ($\eqspsUCorig$), 
 all other pre-EEU elasticities can be calculated from 
 Eqs.~(\ref{eq:sigma}), (\ref{eq:Allen}), (\ref{eq:eqsps}), and
-(\ref{eq:slutsky_cross_modified}) or (\ref{eq:eqops}).
+(\ref{eq:slutsky_cross_modified}) or (\ref{eq:eqgps}).
 
 Note that the rebound framework in this paper uses the CES utility model and
 needs only the uncompensated own price elasticity ($\eqspsUCorig$)
 and the derived elasticity of substitution ($\sigma$) to calculate rebound values.
-The other price elasticities ($\eqspsUCorig$, $\eqspsCorig$, and $\eqopsCorig$)
+The other price elasticities ($\eqspsUCorig$, $\eqspsCorig$, and $\eqgpsCorig$)
 are not necessary for the model. 
 However, they are helpful for elucidating results derived from the framework,
 a task left for Part~II.
@@ -767,18 +767,18 @@ to energy service price ($\amacro{p}_s$) for concrete examples.
 
 
 %..............................
-\subparagraph{Compensated cross price elasticity ($\eqopsChat$)} 
-\label{sec:eqopsC_CES}
+\subparagraph{Compensated cross price elasticity ($\eqgpsChat$)} 
+\label{sec:eqgpsC_CES}
 %..............................
 
-The compensated cross price elasticity of other goods demand ($\eqopsChat$)
+The compensated cross price elasticity of other goods demand ($\eqgpsChat$)
 gives the percentage change of the consumption rate of other goods ($\rate{q}_g$)
 across the substitution effect
 due to a unit percentage change in the energy service price ($\amacro{p}_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
 ($\rbsub{u} = \rasub{u}$).
-To find the compensated cross price elasticity of other goods consumption ($\eqopsChat$),
+To find the compensated cross price elasticity of other goods consumption ($\eqgpsChat$),
 we follow a similar procedure as for deriving the 
 own price elasticity of energy service consumption ($\eqspsChat$), 
 with two differences being 
@@ -793,10 +793,10 @@ with two differences being
 
 The first difference is 
 the definition of the compensated cross price elasticity
-of other goods consumption($\eqopsChat$).
+of other goods consumption($\eqgpsChat$).
 
-\begin{equation} \label{eq:eqopsC_def}
-  \eqopsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
+\begin{equation} \label{eq:eqgpsC_def}
+  \eqgpsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
 \end{equation}
 
 Again, we need to find the partial
@@ -841,10 +841,10 @@ via repeated application of the chain rule, gives
                 \left\{ 1 + \left[ f \left( z \amacro{p}_s \right)^{m_g} - 1 \right] \right\}^{n-1} \; .
 \end{equation}
 
-Forming the elasticity via its definition (Eq.~(\ref{eq:eqopsC_def})) gives
+Forming the elasticity via its definition (Eq.~(\ref{eq:eqgpsC_def})) gives
 
 \begin{align}
-  \eqopsChat &\equiv \frac{\amacro{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
+  \eqgpsChat &\equiv \frac{\amacro{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
          &= \frac{\amacro{p}_s}{\cancel{\rorig{q}_g} \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_g} - 1 \right] \right\}^n } \;
            \cancel{\rorig{q}_g} m_g n f z^{m_g} \amacro{p}_s^{m_g - 1} 
                 \left\{ 1 + f \left[ \left( z \amacro{p}_s \right)^{m_g} - 1 \right] \right\} ^{n-1}  \; .
@@ -854,28 +854,28 @@ Cancelling terms and
 combining $\amacro{p}_s$ and $\left\{ 1 + f  \left[ \left( z \amacro{p}_s \right)^{m_g} - 1 \right] \right\}$ 
 terms with different exponents gives
 
-\begin{equation} \label{eq:eqopsC_exact_simple}
-  \eqopsChat = \frac{m_g n f (z \amacro{p}_s)^{m_g}}{1 + f \left[ (z \amacro{p}_s)^{m_g} - 1 \right]} \; .
+\begin{equation} \label{eq:eqgpsC_exact_simple}
+  \eqgpsChat = \frac{m_g n f (z \amacro{p}_s)^{m_g}}{1 + f \left[ (z \amacro{p}_s)^{m_g} - 1 \right]} \; .
 \end{equation}
 %
 Back-substituting the constants and simplifying where possible yields
 
-\begin{equation} \label{eq:eqopsC_exact}
-  \eqopsChat = - \frac{\frac{1}{\rho - 1} \fCs \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right) ^ {\rho / (\rho - 1)} }{1 + \fCs \left[ \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right)^{\rho/(\rho - 1)} - 1 \right]} \; .
+\begin{equation} \label{eq:eqgpsC_exact}
+  \eqgpsChat = - \frac{\frac{1}{\rho - 1} \fCs \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right) ^ {\rho / (\rho - 1)} }{1 + \fCs \left[ \left( \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right)^{\rho/(\rho - 1)} - 1 \right]} \; .
 \end{equation}
 
-Eq.~(\ref{eq:eqopsC_exact}) shows that the compensated 
-energy service price elasticity of other goods consumption ($\eqopsChat$)
+Eq.~(\ref{eq:eqgpsC_exact}) shows that the compensated 
+energy service price elasticity of other goods consumption ($\eqgpsChat$)
 under the CES utility model is a function 
 of the energy service price after the EEU~($\amacro{p}_s$).
 It is positive, because all terms except $\frac{1}{\rho - 1}$ are positive,
 with $\rho$ and $\fCs$ being bounded above by 1.
 
 Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
-the derivative of \ref{eq:eqopsC_exact_simple} and simplifying gives
+the derivative of \ref{eq:eqgpsC_exact_simple} and simplifying gives
 
 \begin{equation}
- \pdv{\eqopsChat}{\amacro{p}_s} = \frac{m_g^2 n f (z \amacro{p}_s)^{m_g}}{\amacro{p}_s (1 + f \left[ (z \amacro{p}_s)^{m_g} - 1 \right])^2} \; .
+ \pdv{\eqgpsChat}{\amacro{p}_s} = \frac{m_g^2 n f (z \amacro{p}_s)^{m_g}}{\amacro{p}_s (1 + f \left[ (z \amacro{p}_s)^{m_g} - 1 \right])^2} \; .
 \end{equation}
 
 All terms taken to their power are positive with the exception of $n$,
@@ -904,27 +904,27 @@ after the substitution effect for the CES utility model.
 
 
 %..............................
-\subparagraph{Uncompensated cross price elasticity ($\eqopsUChat$)} 
+\subparagraph{Uncompensated cross price elasticity ($\eqgpsUChat$)} 
 %..............................
 
 The result from \citet{Hicks1934} can be used to 
-calculate the uncompensated cross price elasticity ($\eqopsUChat$)
+calculate the uncompensated cross price elasticity ($\eqgpsUChat$)
 for the CES utility model.
 
-\begin{equation} \label{eq:eqopsUC_exact}
-  \eqopsUChat = \fCshat (\sigma - \eqoM) \; .
+\begin{equation} \label{eq:eqgpsUC_exact}
+  \eqgpsUChat = \fCshat (\sigma - \eqgM) \; .
 \end{equation}
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Elasticities for the income effect ($\eqsM$ and $\eqoM$)}
+\subsection{Elasticities for the income effect ($\eqsM$ and $\eqgM$)}
 \label{sec:income_elasticities}
 %++++++++++++++++++++++++++++++
 
 The income effect requires two elasticities to 
 estimate the spending of net savings:
 the income elasticity of energy service consumption ($\eqsM$) and
-the income elasticity of other goods consumption ($\eqoM$).
+the income elasticity of other goods consumption ($\eqgM$).
 Due to the homotheticity assumption,
 both income elasticities are unitary. 
 Thus, 
@@ -935,8 +935,8 @@ Thus,
 %
 and
 
-\begin{equation} \label{eq:eqoM}
-  \eqoM = 1 \; .
+\begin{equation} \label{eq:eqgM}
+  \eqgM = 1 \; .
 \end{equation}
 
 

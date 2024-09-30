@@ -84,23 +84,23 @@
 %%%%% Elasticities and income shares
 
 \newcommand{\eqspsUC}{\varepsilon_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUC}{\varepsilon_{\rate{q}_g\!,p_s}}
+\newcommand{\eqgpsUC}{\varepsilon_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsC}{\varepsilon_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsC}{\varepsilon_{\rate{q}_g\!,p_s\!,c}}
+\newcommand{\eqgpsC}{\varepsilon_{\rate{q}_g\!,p_s\!,c}}
 
 % originally
 \newcommand{\eqspsUCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s}}
+\newcommand{\eqgpsUCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsCorig}{\varepsilon^\circ_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s\!,c}}
+\newcommand{\eqgpsCorig}{\varepsilon^\circ_{\rate{q}_g\!,p_s\!,c}}
 % With hats
 \newcommand{\eqspsUChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s}}
-\newcommand{\eqopsUChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s}}
+\newcommand{\eqgpsUChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s}}
 \newcommand{\eqspsChat}{\hat{\varepsilon}_{\rate{q}_s\!,p_s\!,c}}
-\newcommand{\eqopsChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s\!,c}}
+\newcommand{\eqgpsChat}{\hat{\varepsilon}_{\rate{q}_g\!,p_s\!,c}}
 
 \newcommand{\eqsM}{\varepsilon_{\rate{q}_s\!,\rate{M}}}
-\newcommand{\eqoM}{\varepsilon_{\rate{q}_g\!,\rate{M}}}
+\newcommand{\eqgM}{\varepsilon_{\rate{q}_g\!,\rate{M}}}
 
 \newcommand{\fCs}{\bempl{f}_{\rate{C}_s}}
 \newcommand{\fCshat}{\asub{f}_{\rate{C}_s}}
@@ -315,7 +315,7 @@ bottom=2pt}
                         
 % Equation for Re_isub
 \newcommand{\Reisubeqn}{\frac{{\left( \etaratiostacked  \right)}
-                          ^{-\eqopsC} - 1}{\etaratiostacked - 1} \; 
+                          ^{-\eqgpsC} - 1}{\etaratiostacked - 1} \; 
                           \etaratiostacked \; 
                           \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
                           
@@ -353,12 +353,12 @@ bottom=2pt}
 \newcommand{\Recapeqn}{\frac{\Delta \aempl{(R_\alpha \rate{C}_{cap})} I_E}{\Sdot}}
 
 % Equation for Re_iinc, approximate method
-\newcommand{\Reiinceqnapprox}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
-              \left( \etaratiostacked \right)^{1 - \eqopsC}
+\newcommand{\Reiinceqnapprox}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqgM} - 1}{\etaratiostacked - 1} 
+              \left( \etaratiostacked \right)^{1 - \eqgpsC}
               \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
 
 % Equation for Re_iinc, exact method
-\newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqoM} - 1}{\etaratiostacked - 1} 
+\newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqgM} - 1}{\etaratiostacked - 1} 
               \left( \etaratiostacked \right)
               \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}
               \Cosolution{}}
@@ -390,7 +390,7 @@ bottom=2pt}
 \newcommand{\incprefseqn}{\frac{\rainc{q}_s}{\rbinc{q}_s} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqsM}}
 
 % Equation for other goods income preferences
-\newcommand{\incprefoeqn}{\frac{\rainc{q}_g}{\rbinc{q}_g} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqoM}}
+\newcommand{\incprefoeqn}{\frac{\rainc{q}_g}{\rbinc{q}_g} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqgM}}
 
 % Equation for effective income
 \newcommand{\effinceqn}{\Mdothatprime \equiv \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N}}
