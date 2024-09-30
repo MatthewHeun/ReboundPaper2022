@@ -77,7 +77,7 @@ across rebound effects
 the ratio of other goods consumption is equal to 
 the ratio of other goods spending, such that
 
-\begin{equation} \label{eq:exogenous_p_o}
+\begin{equation} \label{eq:exogenous_p_g}
   \frac{\rate{q}_g}{\rbempl{q}_g} 
       = \frac{\rate{C}_g/\cancel{p_g}}{\rbempl{C}_g/\cancel{p_g}} 
       = \frac{\rate{C}_g}{\rbempl{C}_g}
@@ -117,7 +117,7 @@ by the utility decrease of the smaller other goods consumption rate.
 
 The constant price elasticity (CPE) utility model is given
 by Eqs.~(\ref{eq:approx_qshat_over_qsorig})
-and~(\ref{eq:C_dot_o_ratio_CPE}).
+and~(\ref{eq:C_dot_g_ratio_CPE}).
 The equations for the approximate utility model are repeated here
 for convenience.
 
@@ -129,7 +129,7 @@ for convenience.
 
 \begin{equation}
   \frac{\rasub{C}_g}{\rbsub{C}_g} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_g} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
- \tag{\ref{eq:C_dot_o_ratio_CPE}}
+ \tag{\ref{eq:C_dot__ratio_CPE}}
 \end{equation}
 
 
@@ -168,7 +168,7 @@ By definition, $\sigma$ is assumed constant such that
 $\orig{\sigma} = \aempl{\sigma} = \asub{\sigma} = \ainc{\sigma} = \amacro{\sigma} = \sigma$.
 
 With the assumption of exogenous other goods prices 
-in Eq.~(\ref{eq:exogenous_p_o}), 
+in Eq.~(\ref{eq:exogenous_p_g}), 
 we find
 
 \begin{equation} \label{eq:ces_utility_with_a}
@@ -806,14 +806,14 @@ at constant utility ($\rbsub{u} = \rasub{u}$)
 across the substitution effect.
 The second difference is 
 the starting point for this derivation, 
-Eq.~(\ref{eq:C_o_solution}) 
+Eq.~(\ref{eq:C_g_solution}) 
 (instead of Eq.~(\ref{eq:q_s_solution})).
 
 \begin{equation}
-  \frac{\rasub{C}_g}{\rbempl{C}_g} = \Cosolution{} \; . \tag{\ref{eq:C_o_solution}}
+  \frac{\rasub{C}_g}{\rbempl{C}_g} = \Cgsolution{} \; . \tag{\ref{eq:C_g_solution}}
 \end{equation}
 
-In Eq.~(\ref{eq:C_o_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
+In Eq.~(\ref{eq:C_g_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
 for the purposes of the partial derivative. 
 So finding the derivative amounts to applying the chain rule repeatedly.
 To simplify the derivation, 
