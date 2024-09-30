@@ -849,16 +849,16 @@ of energy price~($p_E$) and device energy consumption rates~($\rate{E}_s$).
 Fourth, indirect energy rates for
 operations and maintenance ($\rate{E}_{\om}$), 
 disposal ($\rate{E}_d$), and
-other goods expenditures ($\rate{E}_{o}$)
+other goods expenditures ($\rate{E}_{g}$)
 are the product 
 of expenditures rates
-($\rate{C}_{\om}$, $R_{\omega}\rate{C}_d$, and $\rate{C}_o$) and
+($\rate{C}_{\om}$, $R_{\omega}\rate{C}_d$, and $\rate{C}_g$) and
 the energy intensity of the economy~($I_E$).
 
 \begin{align} \label{eq:indirect_energy_rates}
   \rate{E}_{\om} &= \rate{C}_{\om} I_E \\
   \rate{E}_d     &= R_{\omega} \rate{C}_d I_E \\
-  \rate{E}_o     &= \rate{C}_o I_E \\
+  \rate{E}_g     &= \rate{C}_g I_E \\
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
 %
