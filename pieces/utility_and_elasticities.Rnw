@@ -498,7 +498,7 @@ we note that the pre-EEU uncompensated cross price elasticity ($\eqgpsUCorig$)
 can be expressed as
 
 \begin{equation} \label{eq:Allen}
-  \eqpsUCorig = \fCs (\sigma - \eqgM) \; .
+  \eqgpsUCorig = \fCs (\sigma - \eqgM) \; .
 \end{equation}
 
 

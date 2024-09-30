@@ -2138,8 +2138,8 @@ using an early version of this framework.
 \label{sec:utility_and_elasticities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% <<UtilityAppendix, child="pieces/utility_and_elasticities.Rnw">>=
-% @
+<<UtilityAppendix, child="pieces/utility_and_elasticities.Rnw">>=
+@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
