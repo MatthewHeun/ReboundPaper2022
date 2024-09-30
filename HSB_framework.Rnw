@@ -2147,7 +2147,7 @@ using an early version of this framework.
 \label{sec:proof_income_elasticities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{pieces/proof_income_elasticities.tex}
+\input{pieces/proof_income_elasticities.tex}
 
 
 
@@ -2156,7 +2156,7 @@ using an early version of this framework.
 \label{sec:other_goods_expenditures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{pieces/other_goods_expenditures.tex}
+\input{pieces/other_goods_expenditures.tex}
 
 
 
@@ -2165,7 +2165,7 @@ using an early version of this framework.
 \label{sec:price_effect_appendix}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \input{pieces/price_effect.tex}
+\input{pieces/price_effect.tex}
 
 
 \end{document}
