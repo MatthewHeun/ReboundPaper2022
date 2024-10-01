@@ -726,7 +726,7 @@ final-to-service efficiency
 %   ($\rate{C}_{cap}$, $\rate{C}_{\om}$, and $\rate{C}_d$, respectively).
 % }
 such that
-$\bempl{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$
+$\bempl{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
 as shown in Table~\ref{tab:analysis_assumptions}.
 The EEU is not costless, so
 the upgraded device may be more expensive to purchase
@@ -756,7 +756,7 @@ so the energy purchaser (the device user) is a price taker.%
 }
 %
 Initially, the device user spends income ($\rate{M}$)
-on energy for the device ($\rorig{C}_s = p_E \rorig{E}_s$), 
+on energy for the device ($\rorig{C}_s = \orig{p}_E \rorig{E}_s$), 
 annualized capital costs for the device 
 ($\orig{R}_\alpha \rorig{C}_{cap}$), 
 annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
@@ -1226,7 +1226,7 @@ Direct substitution effect rebound ($Re_{dsub}$) is
 which can be rearranged to
 
 \begin{equation} \label{eq:Re_dsub_prelim}
-  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\amacro{\eta}}{\bempl{\eta}} - 1} \; .
+  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\asub{\eta}}{\bempl{\eta}} - 1} \; .
 \end{equation}
 
 Indirect substitution effect rebound ($Re_{isub}$) is given by
@@ -1238,8 +1238,8 @@ Indirect substitution effect rebound ($Re_{isub}$) is given by
 which can be rearranged to 
 
 \begin{equation} \label{eq:Re_isub_prelim}
-  Re_{isub} = \frac{\frac{\rasub{C}_g}{\rorig{C}_g} - 1}{\etaratiostacked - 1} \; 
-                          \etaratiostacked \; 
+  Re_{isub} = \frac{\frac{\rasub{C}_g}{\rorig{C}_g} - 1}{\etaratiostackedhat - 1} \; 
+                          \etaratiostackedhat \; 
                           \frac{\rbempl{C}_g I_E}{\rbempl{E}_s} \; .
 \end{equation}
 
@@ -1461,7 +1461,7 @@ leads to indirect income effect rebound ($Re_{iinc}$).
 
 The ratio of rates of other goods consumed across the income effect is given by
 
-\begin{equation} \label{eq:qorat_eqgM}
+\begin{equation} \label{eq:qgrat_eqgM}
   \incprefoeqn \; .
 \end{equation}
 %

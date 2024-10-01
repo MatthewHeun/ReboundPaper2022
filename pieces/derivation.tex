@@ -147,21 +147,21 @@ $\raempl{E}_s = \raempl{q}_s/\aempl{\eta}$.
 \end{equation}
 %
 With reference to Table~\ref{tab:analysis_assumptions},
-we use $\raempl{q}_s = \rbempl{q}_s$ and $\aempl{\eta} = \amacro{\eta}$ to obtain
+we use $\raempl{q}_s = \rbempl{q}_s$ to obtain
 
 \begin{equation}
-  \Sdot = \frac{\rbempl{q}_s}{\bempl{\eta}} - \frac{\rbempl{q}_s}{\amacro{\eta}} \; .
+  \Sdot = \frac{\rbempl{q}_s}{\bempl{\eta}} - \frac{\rbempl{q}_s}{\aempl{\eta}} \; .
 \end{equation}
 %
 When the EEU increases efficiency such that
-$\bempl{\eta} < \amacro{\eta}$,
+$\bempl{\eta} < \aempl{\eta}$,
 expected energy savings grows ($\Sdot > 0$)
 as the rate of final energy consumption declines,
 as expected.
-As $\amacro{\eta} \rightarrow \infty$,
+As $\aempl{\eta} \rightarrow \infty$,
 all final energy consumption is eliminated ($\raempl{E}_s \rightarrow 0$), and
 $\Sdot = \rbempl{q}_s/\bempl{\eta} = \rbempl{E}_s$.
-(Of course, $\amacro{\eta} \rightarrow \infty$ is impossible.
+(Of course, $\aempl{\eta} \rightarrow \infty$ is impossible.
 See \citet{Paoli:2020aa} for a recent discussion of upper limits to device efficiencies.)
 
 After rearrangement and using $\rbempl{E}_s = \rbempl{q}_s/\bempl{\eta}$,
@@ -373,39 +373,39 @@ Substituting the typical relationship of Eq.~(\ref{eq:typ_qs_eta_Edot})
 in the form $\rate{E}_s = \rate{q}_s/\eta$ gives
 
 \begin{equation}
-  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\amacro{\eta}} - \frac{\rbsub{q}_s}{\amacro{\eta}}}{\Sdot} \; .
+  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\asub{\eta}} - \frac{\rbsub{q}_s}{\bsub{\eta}}}{\Sdot} \; .
 \end{equation}
 %
-Rearranging produces
+Realizing that $\bsub{\eta} = \asub{\eta}$ and rearranging produces
 
 \begin{equation}
   Re_{dsub} = \frac{ \left( \frac{\rasub{q}_s}{\rbempl{q}_s}
-                    - \frac{\rbsub{q}_s}{\rbempl{q}_s}  \right) \frac{\rbempl{q}_s}{\amacro{\eta}} }{\Sdot} \; .
+                    - \frac{\rbsub{q}_s}{\rbempl{q}_s}  \right) \frac{\rbempl{q}_s}{\aempl{\eta}} }{\Sdot} \; .
 \end{equation}
 %
 Recognizing that the rate of energy service consumption ($\rate{q}_s$)
 is unchanged across the emplacement effect leads to $\rbsub{q}_s/\rbempl{q}_s = 1$.
-Furthermore, $\rbempl{q}_s/\amacro{\eta}
-            = (\rbempl{q}_s/\bempl{\eta}) (\bempl{\eta}/\amacro{\eta})
-            = \rbempl{E}_s (\bempl{\eta}/\amacro{\eta})$,
+Furthermore, $\rbempl{q}_s/\aempl{\eta}
+            = (\rbempl{q}_s/\bempl{\eta}) (\bempl{\eta}/\aempl{\eta})
+            = \rbempl{E}_s (\bempl{\eta}/\aempl{\eta})$,
 such that
 
 \begin{equation}
   Re_{dsub} = \left( \frac{\rasub{q}_s}{\rbempl{q}_s} - 1  \right)
-              \frac{\rbempl{E}_s \frac{\bempl{\eta}}{\amacro{\eta}}}{\Sdot} \; .
+              \frac{\rbempl{E}_s \frac{\bempl{\eta}}{\aempl{\eta}}}{\Sdot} \; .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:Sdot}) for $\Sdot$ and rearranging gives
 
 \begin{equation}
-  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\amacro{\eta}}{\bempl{\eta}} - 1}
-              \left( \frac{\cancel{\rbempl{E}_s} \cancel{\frac{\bempl{\eta}}{\amacro{\eta}}}    }{  \cancel{\frac{\bempl{\eta}}{\amacro{\eta}}}    \cancel{\rbempl{E}_s}} \right) \; .
+  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\aempl{\eta}}{\bempl{\eta}} - 1}
+              \left( \frac{\cancel{\rbempl{E}_s} \cancel{\frac{\bempl{\eta}}{\aempl{\eta}}}    }{  \cancel{\frac{\bempl{\eta}}{\aempl{\eta}}}    \cancel{\rbempl{E}_s}} \right) \; .
 \end{equation}
 %
 Canceling terms yields
 
 \begin{equation}
-  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\amacro{\eta}}{\bempl{\eta}} - 1} \; .
+  Re_{dsub} = \frac{\frac{\rasub{q}_s}{\rbempl{q}_s} - 1}{\frac{\aempl{\eta}}{\bempl{\eta}} - 1} \; .
                                                                \tag{\ref{eq:Re_dsub_prelim}}
 \end{equation}
 %
@@ -482,7 +482,7 @@ energy service consumption rate ($\rate{q}_s$),
 namely the observed, uncompensated own price elasticity of energy service demand~($\eqspsUC$), such that
 
 \begin{equation}
-  \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\amacro{p}_s}{\bempl{p}_s} \right)^{\eqspsUC} \; .
+  \frac{\rasub{q}_s}{\rbsub{q}_s} = \left( \frac{\aempl{p}_s}{\bempl{p}_s} \right)^{\eqspsUC} \; .
 \end{equation}
 %
 Note that the uncompensated own price elasticity
@@ -492,23 +492,23 @@ A negative value for the
 uncompensated own price elasticity of energy service demand
 is expected ($\eqspsUC < 0$),
 such that when the energy service price decreases
-($\bempl{p}_s > \amacro{p}_s $),
+($\bempl{p}_s > \aempl{p}_s $),
 the rate of energy service consumption increases
 ($\rbsub{q}_s < \rasub{q}_s$).
 
 Substituting Eq.~(\ref{eq:ps_pE_eta}) in the form
 $\bempl{p}_s = \bempl{p}_E/\bempl{\eta}$ and
-$\amacro{p}_s = \bempl{p}_E/\amacro{\eta}$
+$\aempl{p}_s = \bempl{p}_E/\aempl{\eta}$
 and noting that $\rbempl{q}_s = \raempl{q}_s$ gives
 
 \begin{equation} \label{eq:approx_qshat_over_qsorig}
-  \frac{\rasub{q}_s}{\rbempl{q}_s} = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsUC} \; .
+  \frac{\rasub{q}_s}{\rbempl{q}_s} = \left( \frac{\aempl{\eta}}{\bempl{\eta}} \right)^{-\eqspsUC} \; .
 \end{equation}
 %
 Again, note that the compensated own price elasticity of energy service demand
 is negative ($\eqspsUC < 0$), so that
 as energy service efficiency increases
-($\bempl{\eta} < \amacro{\eta}$),
+($\bempl{\eta} < \aempl{\eta}$),
 the energy service consumption rate increases
 ($\rorig{q}_s = \rbsub{q}_s < \rasub{q}_s$)
 as well.
@@ -521,7 +521,7 @@ yields the CPE model's expression for direct substitution rebound
 \end{equation}
 %
 such that, e.g.,
-$\eqspsUC = -0.2$ and $\amacro{\eta}/\bempl{\eta} = 2$
+$\eqspsUC = -0.2$ and $\aempl{\eta}/\bempl{\eta} = 2$
 yields $Re_{dsub} = 0.15$.
 
 As long as $\eqspsUC \in (-1, 0)$,
@@ -558,7 +558,7 @@ the change in expenditure on the energy service ($\Delta \rasub{C}_s$),
 namely
 
 \begin{equation}
-  \Delta \rasub{C}_s = \frac{p_E \left( \rasub{q}_s - \rbsub{q}_s \right)}{\amacro{\eta}} \; ,
+  \Delta \rasub{C}_s = \frac{p_E \left( \rasub{q}_s - \rbsub{q}_s \right)}{\aempl{\eta}} \; ,
 \end{equation}
 %
 and
