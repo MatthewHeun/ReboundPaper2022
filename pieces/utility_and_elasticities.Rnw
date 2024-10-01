@@ -759,7 +759,8 @@ elasticity becomes less negative as $\aempl{p}_s$ increases.%
 %
 Since the
 share of income spent on the energy service declines for $\sigma < 1$,
-it is not immediately clear in which direction $\eqspsUChat$ moves according to equation \ref{eq:Allen}.
+it is not immediately clear in which direction $\eqspsUChat$ 
+moves according to Eq.~(\ref{eq:Allen}).
 See Fig.~\ref{PartII-fig:PriceElasticitySensGraph} 
 in Appendix~\ref{PartII-sec:price_elasticities_sensitivity} 
 of Part~II 
