@@ -201,7 +201,7 @@ as a function of the normalized consumption rate of the energy service
 ($\rate{q}_s/\rbempl{q}_s$)
 and the normalized utility rate ($\rate{u}/\rbempl{u}$):
 
-\begin{equation} \label{eq:utility_Co_form}
+\begin{equation} \label{eq:utility_Cg_form}
   \frac{\rate{C}_g}{\rbempl{C}_g} = 
       \left[ \frac{1}{1 - a} \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho 
             - \frac{a}{1 - a} \left( \frac{\rate{q}}{\rbempl{q}_s} \right)^\rho \right]^{(1/\rho)} \; ,
@@ -218,7 +218,7 @@ In the consumption plane,
 the slope of an indifference curve is found by taking the first 
 partial derivative of $\rate{C}_g/\rbempl{C}_g$
 with respect to $\rate{q}_s/\rbempl{q}_s$,
-starting from Eq.~(\ref{eq:utility_Co_form}) and 
+starting from Eq.~(\ref{eq:utility_Cg_form}) and 
 using the chain rule repeatedly.
 The result is
 

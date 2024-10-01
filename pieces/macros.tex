@@ -326,12 +326,12 @@ bottom=2pt}
         
 % Equation for q_s_hat/q_s_orig
 \newcommand{\qssolution}{\left\{ \fCs + (1-\fCs)
-      \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\ainc{p}_s \rbempl{q}_s}{\rbempl{C}_g}  \right]
+      \left[ \left(  \frac{1-\fCs}{\fCs}  \right) \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g}  \right]
                                                   ^{\rho / (1 - \rho)} \right\} ^ {-1/\rho}}
 
 % Equation for C_g_hat/C_g_orig
 \newcommand{\Cgsolution}{ \left( 1 + \fCs \left\{ \left[ \left( \frac{1-\fCs}{\fCs} \right)
-          \frac{\ainc{p}_s \rbempl{q}_s}{\rbempl{C}_g} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
+          \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} \right] ^{\rho/(\rho - 1)} - 1 \right\} \right)^{-1/\rho}}
 
 % Equation for Re_dsub for the CES utility model
 \newcommand{\RedsubCES}{\frac{\qssolution{} - 1}{\etaratiostackedhat{} - 1}}
@@ -348,7 +348,7 @@ bottom=2pt}
 
 % Equation for Re_dinc, exact method
 \newcommand{\Redinceqnexact}{\frac{ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1}
-              { \etaratiostackedbar - 1 } \qssolution{} }
+              { \etaratiostacked - 1 } \qssolution{} }
 
 % Equation for Re_cap
 \newcommand{\Recapeqn}{\frac{\Delta \aempl{(R_\alpha \rate{C}_{cap})} I_E}{\Sdot}}
@@ -359,8 +359,8 @@ bottom=2pt}
               \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}}
 
 % Equation for Re_iinc, exact method
-\newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqgM} - 1}{\etaratiostackedbar - 1} 
-              \left( \etaratiostackedbar \right)
+\newcommand{\Reiinceqnexact}{\frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqgM} - 1}{\etaratiostacked - 1} 
+              \left( \etaratiostacked \right)
               \frac{\rbempl{C}_g I_E}{\rbempl{E}_s}
               \Cgsolution{}}
 

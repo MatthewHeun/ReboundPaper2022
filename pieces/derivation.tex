@@ -678,7 +678,7 @@ of Part~II) is
 
 \begin{equation} \label{eq:starstar_line}
   \frac{\rate{C}_g}{\rbempl{C}_g} =
-      -\frac{\amacro{p}_s \rbempl{q}_s}
+      -\frac{\aempl{p}_s \rbempl{q}_s}
             {\rbempl{C}_g}
         \left(  \frac{\rate{q}_s}{\rbempl{q}_s} \right)
       + \frac{1}{\rbempl{C}_g}
@@ -699,7 +699,7 @@ and~\ref{PartII-fig:LampConsGraph} of Part~II)
 at the original utility rate of $\rate{u}/\rbempl{u} = 1$ (Eq.~(\ref{eq:slope_indifference_curve_u1})).
 
 \begin{equation}
-  -\frac{\amacro{p}_s \rbempl{q}_s}
+  -\frac{\aempl{p}_s \rbempl{q}_s}
         {\rbempl{C}_g} =
     -\frac{\fCs}{1 - \fCs} \left( \frac{\rate{q}_s}{\rbempl{q}_s} \right)^{(\rho -1)} % \nonumber  \\
         \left[ \left( \frac{1}{1 - \fCs} \right)
@@ -732,7 +732,7 @@ to obtain
   \frac{\rasub{C}_g}{\rbempl{C}_g} = \left( \left( \frac{1}{1-\fCs} \right)
                                      - \left( \frac{\fCs}{1-\fCs} \right)
               \left\{ \fCs + (1-\fCs)
-                  \left[ \left( \frac{1-\fCs}{\fCs} \right) \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_g}   \right]
+                  \left[ \left( \frac{1-\fCs}{\fCs} \right) \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g}   \right]
                       ^{\frac{\rho}{1-\rho}} \right\} ^{-1} \right) ^{1/\rho} \; .
 \end{equation}
 
@@ -742,7 +742,7 @@ Simplifying gives
   \frac{\rasub{C}_g}{\rbempl{C}_g} = \Cgsolution{} \; . \tag{\ref{eq:C_g_solution}}
 \end{equation}
 
-Eq.~(\ref{eq:C_o_solution}) can be substituted into Eq.~(\ref{eq:Re_isub_prelim})
+Eq.~(\ref{eq:C_g_solution}) can be substituted into Eq.~(\ref{eq:Re_isub_prelim})
 to obtain an expression for indirect substitution rebound ($Re_{isub}$)
 via the CES utility model.
 
@@ -852,8 +852,8 @@ Substituting Eq.~(\ref{eq:typ_qs_eta_Edot}) and noting efficiency ($\eta$)
 equalities from Table~\ref{tab:analysis_assumptions} gives
 
 \begin{equation}
-  \rbinc{E}_s = \left( \frac{\rasub{q}_s / \cancel{\amacro{\eta}}}{\rbsub{q}_s / \cancel{\amacro{\eta}}} \right)
-                \left( \frac{\raempl{q}_s / \amacro{\eta}}{\rbempl{q}_s / \bempl{\eta}} \right)
+  \rbinc{E}_s = \left( \frac{\rasub{q}_s / \cancel{\asub{\eta}}}{\rbsub{q}_s / \cancel{\aempl{\eta}}} \right)
+                \left( \frac{\raempl{q}_s / \aempl{\eta}}{\rbempl{q}_s / \bempl{\eta}} \right)
                 \rbempl{E}_s \; .
 \end{equation}
 %
@@ -862,7 +862,7 @@ Canceling terms yields
 \begin{equation}
   \rbinc{E}_s = \left( \frac{\rasub{q}_s}{\rbsub{q}_s} \right)
                 \left( \frac{\cancel{\raempl{q}_s}}{\cancel{\rbempl{q}_s}} \right)
-                \left( \frac{\bempl{\eta}}{\amacro{\eta}}  \right)
+                \left( \frac{\bempl{\eta}}{\aempl{\eta}}  \right)
                 \rbempl{E}_s \; .
 \end{equation}
 %
@@ -871,7 +871,7 @@ Noting energy service consumption rate equalities from Table~\ref{tab:analysis_a
 
 \begin{equation} \label{eq:E_dot_s_hat}
   \rbinc{E}_s = \frac{\rasub{q}_s}{\rbsub{q}_s}
-                \frac{\bempl{\eta}}{\amacro{\eta}}
+                \frac{\bempl{\eta}}{\aempl{\eta}}
                 \rbempl{E}_s \; .
 \end{equation}
 
@@ -903,11 +903,11 @@ and
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:typ_qs_eta_Edot}) as
-$\rainc{E}_s = \frac{\rainc{q}_s}{\amacro{\eta}}$ and
-$\rbinc{E}_s = \frac{\rbinc{q}_s}{\amacro{\eta}}$ gives
+$\rainc{E}_s = \rainc{q}_s / \ainc{\eta}$ and
+$\rbinc{E}_s = \rbinc{q}_s / \binc{\eta}$ gives
 
 \begin{equation}
-  Re_{dinc} = \frac{\left( \frac{\rainc{q}_s / \cancel{\amacro{\eta}}}{\rbinc{q}_s / \cancel{\amacro{\eta}}} - 1  \right) \rbinc{E}_s}
+  Re_{dinc} = \frac{\left( \frac{\rainc{q}_s / \cancel{\ainc{\eta}}}{\rbinc{q}_s / \cancel{\binc{\eta}}} - 1  \right) \rbinc{E}_s}
               {\Sdot} \; .
 \end{equation}
 %
@@ -924,10 +924,10 @@ Substituting Eq.~(\ref{eq:E_dot_s_hat}) for $\rbinc{E}_s$ gives
 \begin{equation}
   Re_{dinc} = \frac{\left[ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1  \right]
                   \frac{\rasub{q}_s}{\rbsub{q}_s}
-                \cancel{\frac{\bempl{\eta}}{\amacro{\eta}}}
+                \cancel{\frac{\bempl{\eta}}{\aempl{\eta}}}
                 \cancel{\rbempl{E}_s}}
               {\left( \etaratiostacked - 1 \right)\!
-                  \cancel{\frac{\bempl{\eta}}{\amacro{\eta}}} \cancel{\rbempl{E}_s}} \; .
+                  \cancel{\frac{\bempl{\eta}}{\aempl{\eta}}} \cancel{\rbempl{E}_s}} \; .
 \end{equation}
 %
 Eliminating terms, recognizing that
@@ -995,7 +995,7 @@ recognizing that $\rbsub{C}_g = \rbempl{C}_g$, and simplifying gives
               \left( \frac{\rasub{C}_g}{\rorig{C}_g} \right) \; .
 \end{equation}
 
-Substituting Eq.~(\ref{eq:C_o_solution})
+Substituting Eq.~(\ref{eq:C_g_solution})
 for $\rasub{C}_g / \rorig{C}_g$,
 thereby assuming the CES utility model,
 gives the final form
