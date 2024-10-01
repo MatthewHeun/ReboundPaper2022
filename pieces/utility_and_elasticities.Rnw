@@ -129,7 +129,7 @@ for convenience.
 
 \begin{equation}
   \frac{\rasub{C}_g}{\rbsub{C}_g} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_g} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
- \tag{\ref{eq:C_dot__ratio_CPE}}
+ \tag{\ref{eq:C_dot_g_ratio_CPE}}
 \end{equation}
 
 
@@ -650,23 +650,23 @@ across the substitution effect.
 The compensated own price elasticity of energy service demand ($\eqspsChat$)
 gives the percentage change of the consumption rate of the energy service ($\rate{q}_s$)
 across the substitution effect
-due to a unit percentage change in the energy service price ($\amacro{p}_s$)
+due to a unit percentage change in the energy service price ($p_s$)
 resulting from the EEU
 under the constraint that utility is unchanged 
 ($\rbsub{u} = \rasub{u}$).
 In contrast to the CPE utility model above, 
 the compensated own price elasticity of energy service demand ($\eqspsChat$)
 is not constant in the CES utility model.
-Rather, $\eqspsChat$ is a function of the post-EEU energy service price ($\amacro{p}_s$).
+Rather, $\eqspsChat$ is a function of the post-EEU energy service price ($\aempl{p}_s$).
 The definition of $\eqspsChat$ is 
 
 \begin{equation} \label{eq:eqspsC_def}
-  \eqspsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
+  \eqspsChat \equiv \frac{\aempl{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \; .
 \end{equation}
 
 To find an expression for $\eqspsChat$ for the CES utility function, 
 we need to first find the partial derivative of the rate of energy service consumption~($\rasub{q}_s$)
-with respect to the post-EEU energy service price $\amacro{p}_s$ 
+with respect to the post-EEU energy service price ($\aempl{p}_s$) 
 at constant utility ($\rate{u} = \rbsub{u} = \rasub{u}$)
 across the substitution effect.
 This derivation of an expression for $\eqspsChat$ for the CES utility model
@@ -678,10 +678,10 @@ substitution effect.
   \frac{\rasub{q}_s}{\rbempl{q}_s} = \qssolution{} \tag{\ref{eq:q_s_solution}}
 \end{equation}
 
-In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\amacro{p}_s$ are constant 
+In Eq.~(\ref{eq:q_s_solution}), all terms on the right side except $\aempl{p}_s$ are constant 
 for the purposes of the partial derivative. 
 Finding the partial derivative 
-of $\rasub{q}_s$ with respect to $\amacro{p}_s$
+of $\rasub{q}_s$ with respect to $\aempl{p}_s$
 amounts to applying the chain rule repeatedly.
 To simplify the derivation, 
 we can define the following constants
@@ -698,72 +698,73 @@ we can define the following constants
 and rearrange slightly to obtain
 
 \begin{equation} 
-  \rasub{q}_s = \rorig{q}_s \left[ f + g \left( z \amacro{p}_s \right) ^ {m_s} \right] ^ n \; .
+  \rasub{q}_s = \rorig{q}_s \left[ f + g \left( z \aempl{p}_s \right) ^ {m_s} \right] ^ n \; .
 \end{equation}
 
-Taking the partial derivative of $\rasub{q}_s$ with respect to $\amacro{p}_s$,
+Taking the partial derivative of $\rasub{q}_s$ with respect to $\aempl{p}_s$,
 via repeated application of the chain rule, gives
 
 \begin{equation}
-  \pdv{\rasub{q}_s}{\amacro{p}_s} = \rorig{q}_s m_s n g z^{m_s} \amacro{p}_s^{m_s-1} 
-                \left\{ \left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
+  \pdv{\rasub{q}_s}{\aempl{p}_s} = \rorig{q}_s m_s n g z^{m_s} ({\aempl{p}_s})^{m_s-1} 
+                \left\{ \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
 \end{equation}
 
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqspsC_def})) gives
 
 \begin{equation}
-  \eqspsChat \equiv \frac{\amacro{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
-         = \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]^n } \;
-           \cancel{\rorig{q}_s} m_s n g z^{m_s} \amacro{p}_s^{m_s - 1} 
-                \left\{ \left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
+  \eqspsChat \equiv \frac{\aempl{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
+         = \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^n } \;
+           \cancel{\rorig{q}_s} m_s n g z^{m_s} (\aempl{p}_s)^{m_s - 1} 
+                \left\{ \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
 \end{equation}
 %
 Cancelling terms and
-combining $\amacro{p}_s$ and $\left[ f + g \left( z \amacro{p}_s \right)^{m_s} \right]$ 
+combining $\aempl{p}_s$ and $\left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]$ 
 terms with different exponents gives
 
 \begin{equation} \label{eq:eqspsC_exact_simple}
-  \eqspsChat = \frac{m_s n g (z \amacro{p}_s)^{m_s}}{f + g(z \amacro{p}_s)^{m_s}} \; .
+  \eqspsChat = \frac{m_s n g (z \aempl{p}_s)^{m_s}}{f + g(z \aempl{p}_s)^{m_s}} \; .
 \end{equation}
 %
 Back-substituting the constants and simplifying where possible yields
 
 \begin{equation} \label{eq:eqspsC_exact}
-  \eqspsChat = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right] ^ {\rho / (1 - \rho)} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\amacro{p}_s \rorig{q}_s}{\rorig{C}_g} \right] ^ {\rho / (1 - \rho)} } \; .
+  \eqspsChat = - \frac{\frac{1}{1 - \rho} \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\aempl{p}_s \rorig{q}_s}{\rorig{C}_g} \right] ^ {\rho / (1 - \rho)} }{\fCs + \left( 1 - \fCs \right) \left[ \frac{1 - \fCs}{\fCs} \frac{\aempl{p}_s \rorig{q}_s}{\rorig{C}_g} \right] ^ {\rho / (1 - \rho)} } \; .
 \end{equation}
 
 Eq.~(\ref{eq:eqspsC_exact}) shows that the compensated 
 energy service price elasticity of energy service consumption ($\eqspsChat$)
 under the CES utility model is a function 
-of the energy service price after the EEU~($\amacro{p}_s$). It is negative,
-as it should be, because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
+of the energy service price after the EEU~($\aempl{p}_s$). 
+It is negative, as it should be, 
+because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
 
-Of interest is how the elasticity changes as $\amacro{p}_s$ changes. Taking
+Of interest is how the elasticity changes as $\aempl{p}_s$ changes. Taking
 the derivative of Eq.~(\ref{eq:eqspsC_exact_simple}) and simplifying gives
 
 \begin{equation} \label{eq:eqspsC_exact_d}
- \pdv{\eqspsChat}{\amacro{p}_s} = \frac{m_s^2 n g (z \amacro{p}_s)^{m_s}}{\amacro{p}_s(f + g(z \amacro{p}_s)^{m_s})^2} \; .
+ \pdv{\eqspsChat}{\aempl{p}_s} = \frac{m_s^2 n g (z \aempl{p}_s)^{m_s}}{\aempl{p}_s(f + g(z \aempl{p}_s)^{m_s})^2} \; .
 \end{equation}
 
 All terms taken to their power are positive with the exception of $n$.
-For $\sigma < 1$, $n$ is positive; for $\sigma>1$, $n$ is negative.
+For $\sigma < 1$, $n$ is positive; for $\sigma > 1$, $n$ is negative.
 Since we expect $\sigma < 1$ (otherwise we have backfire rebound conditions),
 the derivative is positive: 
 the compensated own price
-elasticity becomes less negative as $\amacro{p}_s$ increases.%
+elasticity becomes less negative as $\aempl{p}_s$ increases.%
 \footnote{
-  For $\sigma = 1$, $m_s = 0$ and the derivative
+  For $\sigma = 1$, $m_s = 0$, and the derivative
   is zero: the Cobb-Douglas special case.
 }
 %
 Since the
-share of income spent on the energy service declines for $\sigma<1$,
+share of income spent on the energy service declines for $\sigma < 1$,
 it is not immediately clear in which direction $\eqspsUChat$ moves according to equation \ref{eq:Allen}.
 See Fig.~\ref{PartII-fig:PriceElasticitySensGraph} 
 in Appendix~\ref{PartII-sec:price_elasticities_sensitivity} 
 of Part~II 
 for a graph of the sensitivity of price elasticities ($\asub{\varepsilon}$)
-to energy service price ($\amacro{p}_s$) for concrete examples.
+to energy service price ($\aempl{p}_s$) for concrete examples.
 
 
 %..............................
