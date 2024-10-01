@@ -739,8 +739,8 @@ of the energy service price after the EEU~($\aempl{p}_s$).
 It is negative, as it should be, 
 because all terms are positive, with $\rho$ and $\fCs$ being bounded above by 1.
 
-Of interest is how the elasticity changes as $\aempl{p}_s$ changes. Taking
-the derivative of Eq.~(\ref{eq:eqspsC_exact_simple}) and simplifying gives
+Of interest is how the elasticity changes as $\aempl{p}_s$ changes. 
+Taking the derivative of Eq.~(\ref{eq:eqspsC_exact_simple}) and simplifying gives
 
 \begin{equation} \label{eq:eqspsC_exact_d}
  \pdv{\eqspsChat}{\aempl{p}_s} = \frac{m_s^2 n g (z \aempl{p}_s)^{m_s}}{\aempl{p}_s(f + g(z \aempl{p}_s)^{m_s})^2} \; .
