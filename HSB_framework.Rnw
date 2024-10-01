@@ -706,27 +706,28 @@ The original energy conversion device provides a rate of energy service
 $\rbempl{q}_s$ (in, say, vehicle-km/yr)
 with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
-final-to-service efficiency%
-\footnote{
-  Note that final-to-service efficiency ($\eta$) improves
-  between the original ($\circ$) and
-  post-emplacement ($*$)
-  stages of Fig.~\ref{fig:flowchart}, remaining constant thereafter.
-  Thus, $\orig{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
-  as shown in Table~\ref{tab:analysis_assumptions}.
-  We refer to all post-emplacement efficiencies 
-  ($\aempl{\eta}$, $\asub{\eta}$, $\ainc{\eta}$, and $\amacro{\eta}$)
-  as $\amacro{\eta}$
-  to match the nomenclature of \citet{Borenstein:2015aa}.
-  When convenient, the same approach to nomenclature 
-  is taken with other quantities such as 
-  the capital, 
-  operations and maintenance, and
-  disposal cost rates
-  ($\rate{C}_{cap}$, $\rate{C}_{\om}$, and $\rate{C}_d$, respectively).
-}
+final-to-service efficiency
+% \footnote{
+%   Note that final-to-service efficiency ($\eta$) improves
+%   between the original ($\circ$) and
+%   post-emplacement ($*$)
+%   stages of Fig.~\ref{fig:flowchart}, remaining constant thereafter.
+%   Thus, $\orig{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
+%   as shown in Table~\ref{tab:analysis_assumptions}.
+%   We refer to all post-emplacement efficiencies 
+%   ($\aempl{\eta}$, $\asub{\eta}$, $\ainc{\eta}$, and $\amacro{\eta}$)
+%   as $\amacro{\eta}$
+%   to match the nomenclature of \citet{Borenstein:2015aa}.
+%   When convenient, the same approach to nomenclature 
+%   is taken with other quantities such as 
+%   the capital, 
+%   operations and maintenance, and
+%   disposal cost rates
+%   ($\rate{C}_{cap}$, $\rate{C}_{\om}$, and $\rate{C}_d$, respectively).
+% }
 such that
-$\bempl{\eta} < \amacro{\eta}$.
+$\bempl{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$
+as shown in Table~\ref{tab:analysis_assumptions}.
 The EEU is not costless, so
 the upgraded device may be more expensive to purchase
 than a like-for-like replacement of the original device.

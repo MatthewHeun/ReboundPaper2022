@@ -465,3 +465,20 @@ bottom=2pt}
       \draw[black, thin, radius=#1] (0,0) circle;
     }%
 }
+
+
+% Macros needed only for compatibility
+% with previous versions of the paper
+% (prior to the "o" --> "g" shift in subscript nomenclature).
+% Needed for creating diffs
+\newcommand{\eqopsUC}{\varepsilon_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsC}{\varepsilon_{\rate{q}_o\!,p_s\!,c}}
+
+% originally
+\newcommand{\eqopsUCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsCorig}{\varepsilon^\circ_{\rate{q}_o\!,p_s\!,c}}
+% With hats
+\newcommand{\eqopsUChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s}}
+\newcommand{\eqopsChat}{\hat{\varepsilon}_{\rate{q}_o\!,p_s\!,c}}
+% 
+\newcommand{\eqoM}{\varepsilon_{\rate{q}_o\!,\rate{M}}}
