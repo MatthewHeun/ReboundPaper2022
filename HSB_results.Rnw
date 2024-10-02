@@ -366,7 +366,7 @@ as given in Table~\ref{tab:car_elasticity_parameters}.
     Parameters [units]                              & (gasoline) & (hybrid EV) &  \\
   \midrule
   Fuel economy                           & \Sexpr{mpg_worse} & \Sexpr{mpg_better} & Combined cycle mpg value taken from \citet{Car_Connection:2020}, \\
-  $\bempl{\eta}$, $\amacro{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
+  $\bempl{\eta}$, $\aempl{\eta}$ [mpg]             &           &          & for Titanium FWD 2020 model with Intercooled I-4, 2.0 L engine.   \\
                                                     &           &          & Combined cycle mpg value taken from \citet{Car_Connection:2020},\\
                                                     &           &          & for Titanium FWD 2020 model with Gas/Electric I-4, 2.0 L engine. \\
   \midrule
@@ -597,7 +597,7 @@ as shown in Table~\ref{tab:lamp_elasticity_parameters}.
     Parameters [units]                                &  &  & \\
   \midrule
   Lamp efficiency                   & \Sexpr{efficacy_worse}      & \Sexpr{efficacy_better}     & Incandescent: 530 lm output / 60 W energy input. \\
-  $\bempl{\eta}$, $\amacro{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
+  $\bempl{\eta}$, $\aempl{\eta}$ [\lmhr/\Whr]       &           &          & LED: 450 lm output / 5.5 W energy input. \\
   \midrule
    Undiscounted capital expenditure rate       & \Sexpr{C_dot_cap_orig_lamp_char}   & \Sexpr{C_dot_cap_star_lamp_char}    & Purchase costs: \$1.88 for incandescent lamp from  \\
    $\rbempl{C}_{cap}$, $\raempl{C}_{cap}$ [\$/yr]   &           &          & \citet{Home_Depot:2020_Inc_bulb}, \\
@@ -1958,7 +1958,7 @@ one that features energy augmenting technical change,
 we take the value from the \citet{Buera2024} study,
 where the majority of multipliers cluster around 3.
 Thus, we adopt the value of $k = 3$,
-fully aware that this can only be a first approximation.
+fully aware that this can be only a first approximation.
 
 After setting $k = 3$,
 we can recalculate all rebound components in our framework.
@@ -2522,10 +2522,10 @@ they are nearly the same in the lamp example.
 \label{sec:price_effect_results}
 %++++++++++++++++++++++++++++++
 
+Section~\ref{PartI-sec:notes_price_effect},
+Eq.~(\ref{PartI-eq:Re_p_E}), and 
 Appendix~\ref{PartI-sec:price_effect_appendix}
-of Part~I, 
-Section~\ref{PartI-sec:notes_price_effect}, and
-Eq.~(\ref{PartI-eq:Re_p_E})
+of Part~I
 provide an extension to the framework
 involving energy price rebound ($Re_{p_E}$).
 This section quantifies energy price rebound

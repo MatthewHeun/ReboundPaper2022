@@ -25,7 +25,7 @@ independent from others.
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of post-EEU efficiency ($\amacro{\eta}$) on rebound terms} 
+\subsection{Effect of post-EEU efficiency ($\aempl{\eta}$) on rebound terms} 
 \label{sec:effect_of_efficiency}
 %++++++++++++++++++++++++++++++
 
@@ -53,7 +53,7 @@ lamp_efficacy_ratio <- (rebound_results %>%
   
 Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
 both the energy takeback rate and expected energy savings ($\Sdot$)
-increase with post-EEU efficiency ($\amacro{\eta}$), 
+increase with post-EEU efficiency ($\aempl{\eta}$), 
 but the relationship is asymptotic.
 Each unit increase of fuel economy or lighting efficiency is less effective than
 the previous unit increase of fuel economy or lighting efficiency
@@ -65,10 +65,10 @@ leading to saturation of energy savings at very high levels of fuel economy and 
 A simple example illustrates.
 A $\bempl{\eta} = 25$ mpg car drives $\bempl{q}_s = 100$ miles 
 using $\bempl{E}_s = 4$ gallons of gasoline.
-A more-efficient car ($\amacro{\eta} = 30$ mpg) is expected to use
+A more-efficient car ($\aempl{\eta} = 30$ mpg) is expected to use
 $\aempl{E}_s = 3.33$ gallons to drive the same distance,
 a savings of $\Sdot = 0.67$ gallons.
-Another 5 mpg boost in efficiency (to $\amacro{\eta} = 35$ mpg)
+Another 5 mpg boost in efficiency (to $\aempl{\eta} = 35$ mpg)
 will use $\aempl{E}_s = 2.86$ gal to drive 100 miles, 
 a further expected savings of only $\Sdot = 0.47$ gallons.
 Each successive 5~mpg boost in fuel economy 
@@ -117,7 +117,7 @@ sensitivity_graphs(.parametric_data = eta_sens_data,
   ggplot2::scale_colour_manual(values = c(S_dot_dev = "black", takeback = "black"), guide = "none") + 
   ggplot2::scale_discrete_manual(aesthetics = "linewidth", values = c(S_dot_dev = 0.5, takeback = 0.5), guide = "none") + 
   ggplot2::scale_linetype_manual(values = c(S_dot_dev = "solid", takeback = "dashed"), guide = "none") +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
+  ggplot2::labs(x = expression(eta*"*"*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
                 y = expression(""*dot(S)[dev]*" and takeback rate [MJ/yr]"),
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -131,7 +131,7 @@ sensitivity_graphs(.parametric_data = eta_sens_data,
   
   
 Saturation can be seen mathematically, too.
-Taking the limit as $\amacro{\eta} \rightarrow \infty$ 
+Taking the limit as $\aempl{\eta} \rightarrow \infty$ 
 in Eq.~(\ref{PartI-eq:Sdot}) of Part~I gives $\Sdot = \rbempl{E}_s$, 
 not $\infty$. 
 Thus, efficiency saturation must occur.
@@ -146,10 +146,10 @@ the LED lamp is already much more efficient than the incandescent lamp
 (\Sexpr{lamp_efficacy_ratio}$\times$),
 whereas the hybrid car is only 
 \Sexpr{car_efficiency_ratio}$\times$ more efficient than the conventional gasoline car. 
-Thus, at $\amacro{\eta} = \Sexpr{efficacy_better}$ \lmhr/\Whr, 
+Thus, at $\aempl{\eta} = \Sexpr{efficacy_better}$ \lmhr/\Whr, 
 the energy efficient LED
 is far closer to efficiency saturation than the hybrid vehicle 
-(at $\amacro{\eta} = \Sexpr{mpg_better}$ mpg).
+(at $\aempl{\eta} = \Sexpr{mpg_better}$ mpg).
 As a result, further increases in the LED lamp's efficiency 
 are less effective than further increases in the hybrid car's efficiency.
 
@@ -162,7 +162,7 @@ But the actual savings are always less than expected savings, due to takeback.
 
 Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph} shows that
 expected energy savings ($\Sdot$) increase faster than takeback 
-as $\amacro{\eta}$ increases.
+as $\aempl{\eta}$ increases.
 Thus, total rebound ($Re_{tot}$, the ratio of 
 takeback rate to expected energy savings rate in Eq.~(\ref{PartI-eq:Re_takeback}) of Part~I),
 decreases as efficiency grows.
@@ -170,19 +170,19 @@ The lamp exhibits a relatively smaller rebound decline with efficiency,
 because the lamp example is closer to saturation than the car example.
 
 Fig.~\ref{fig:all_Re_terms_eta_graph} shows the variation of all rebound components
-with post-EEU efficiency ($\amacro{\eta}$).
+with post-EEU efficiency ($\aempl{\eta}$).
 In the car and lamp examples, 
 direct substitution rebound ($Re_{dsub}$) is the 
 rebound component 
-most sensitive to changes in post-EEU efficiency ($\amacro{\eta}$).
+most sensitive to changes in post-EEU efficiency ($\aempl{\eta}$).
 
 Note that the sensitivity analysis on post-upgrade efficiency 
-($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
+($\aempl{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph})
 is the only sensitivity analysis that requires careful explication
 of both the numerator and denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I,
 as in Fig.~\ref{fig:eta_tilde_takeback_Sdot_sens_graph}, 
 because both the numerator and denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I
-change when post-upgrade efficiency ($\amacro{\eta}$) changes.
+change when post-upgrade efficiency ($\aempl{\eta}$) changes.
 The denominator of Eq.~(\ref{PartI-eq:Re_takeback}) in Part~I doesn't change for
 the sensitivity analyses of Figs.~\ref{fig:all_Re_terms_C_cap_graph}--\ref{fig:all_Re_terms_k_graph}.
 Thus, for the remaining sensitivity analyses, 

@@ -9,6 +9,7 @@
 \footnotesize
 \begin{center}
 \caption{Rebound magnitude comparisons for the lamp example. All numbers in \%.
+         $k = 3$ is assumed.
          Note that 
          $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, 
          $Re_{tot} = Re_{micro} + Re_{macro}$, and 
