@@ -118,12 +118,12 @@ Solving for $A_{cap}$ and $C_{cap}$ and substituting gives
   \rate{A}_{cap} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \; .
 \end{equation}
 %
-Defining $R_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
+Defining $\tau_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
 (with subscript $\alpha$ indicating payments at the beginning of each 
 device lifetime) gives
 
 \begin{equation}
-  \rate{A}_{cap} = R_\alpha \rate{C}_{cap} \; .
+  \rate{A}_{cap} = \tau_\alpha \rate{C}_{cap} \; .
 \end{equation}
 
 Similar derivations can be employed for all other budget categories.
@@ -131,14 +131,14 @@ Similar derivations can be employed for all other budget categories.
 \begin{align}
   \rate{A}_s &= \rate{C}_s \\
   \rate{A}_{\om} &= \rate{C}_{\om} \\
-  \rate{A}_d &= R_\omega \rate{C}_d \\
+  \rate{A}_d &= \tau_\omega \rate{C}_d \\
   \rate{A}_g &= \rate{C}_g \\
   \rate{A}_N &= \rate{N} \\
   \rate{A}_M &= \rate{M}
 \end{align}
 %
 where 
-$R_\omega \equiv \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$
+$\tau_\omega \equiv \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$
 (with subscript $\omega$ indicating payments 
 at the end of each device lifetime), and 
 $\rate{C}_d \equiv C_d / t_{\life}$, the annualized disposal cost 
@@ -158,10 +158,10 @@ The budget constraint expressed in annualized present-value equivalent terms is
 Substituting cost rates gives
 
 \begin{equation}
-  \rate{M} = R_\alpha \rate{C}_{cap} + 
+  \rate{M} = \tau_\alpha \rate{C}_{cap} + 
              \rate{C}_s + 
              \rate{C}_{\om} + 
-             R_\omega \rate{C}_d + 
+             \tau_\omega \rate{C}_d + 
              \rate{C}_g + 
              \rate{N} \; .
 \end{equation}
@@ -172,39 +172,39 @@ the rate of energy consumption
 and efficiency, $\rate{q}_s / \eta$),
 the product of price ($p_g$) and
 the rate ($\rate{q}_g$) of other goods consumption,
-$\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
+$\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{\tau}_\omega \rorig{C}_d$,
 and after some rearranging gives the budget constraint
 used in Eq.~(\ref{eq:budget_constraint}):
 
 \begin{equation}
-  \rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_g \rate{q}_g + \rate{N} \; .
+  \rate{M} - \tau_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_g \rate{q}_g + \rate{N} \; .
 \end{equation}
 
-The term $R_\alpha$ represents the additional cost of annual interest
+The term $\tau_\alpha$ represents the additional cost of annual interest
 payments when the device is purchased with a loan.
-When $r > 0$, $R_\alpha > 1$.
-When $r = 0$, $R_\alpha = 1$, as proved below
+When $r > 0$, $\tau_\alpha > 1$.
+When $r = 0$, $\tau_\alpha = 1$, as proved below
 (Section~\ref{sec:proof_R_alpha}).
-The term $R_\omega$ represents the reduction of disposal costs 
+The term $\tau_\omega$ represents the reduction of disposal costs 
 if the device owner pays for disposal costs with money
 invested annually assuming real discount rate $r$. 
-When $r > 0$, $0 < R_\omega < 1$.
-When $r = 0$, $R_\omega = 1$, as proved below
+When $r > 0$, $0 < \tau_\omega < 1$.
+When $r = 0$, $\tau_\omega = 1$, as proved below
 (Section~\ref{sec:proof_R_omega}).
 
 
 %------------------------------
-\subsubsection{Proof: $R_\alpha = 1$ when $r = 0$}
+\subsubsection{Proof: $\tau_\alpha = 1$ when $r = 0$}
 \label{sec:proof_R_alpha}
 %------------------------------
 
-We expect that $R_\alpha = 1$ when $r = 0$.
+We expect that $\tau_\alpha = 1$ when $r = 0$.
 However, direct substitution of $r = 0$ into the expression
-for $R_\alpha$ gives $\frac{0}{0}$, 
+for $\tau_\alpha$ gives $\frac{0}{0}$, 
 so we rather assess
-$\lim_{r \to 0^+} R_\alpha \questionequal 1$.
+$\lim_{r \to 0^+} \tau_\alpha \questionequal 1$.
 
-Substituting for $R_\alpha$ gives
+Substituting for $\tau_\alpha$ gives
 
 \begin{equation}
   \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) 
@@ -310,17 +310,17 @@ thereby completing the proof with the expected result.
 
 
 %------------------------------
-\subsubsection{Proof: $R_\omega = 1$ when $r = 0$}
+\subsubsection{Proof: $\tau_\omega = 1$ when $r = 0$}
 \label{sec:proof_R_omega}
 %------------------------------
 
-We expect that $R_\omega = 1$ when $r = 0$.
+We expect that $\tau_\omega = 1$ when $r = 0$.
 However, direct substitution of $r = 0$ into the expression
-for $R_\omega$ gives $\frac{0}{0}$, 
+for $\tau_\omega$ gives $\frac{0}{0}$, 
 so we rather assess
-$\lim_{r \to 0^+} R_\omega \questionequal 1$.
+$\lim_{r \to 0^+} \tau_\omega \questionequal 1$.
 
-Substituting for $R_\omega$ gives
+Substituting for $\tau_\omega$ gives
 
 \begin{equation}
   \lim_{r \to 0^+} \left( \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \questionequal 1 \; .

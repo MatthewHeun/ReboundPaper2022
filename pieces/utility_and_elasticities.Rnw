@@ -123,7 +123,7 @@ for convenience.
 
 \begin{equation} 
   \frac{\rasub{q}_s}{\rbempl{q}_s}
-      = \left( \frac{\amacro{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} 
+      = \left( \frac{\aempl{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} 
         \tag{\ref{eq:approx_qshat_over_qsorig}}
 \end{equation}
 
@@ -243,7 +243,7 @@ The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}),
 with $p_s \rate{q}_s$ substituted for $p_E \rate{E}_s$.
 
 \begin{equation}
-  \rate{M} = p_s \rate{q}_s + R_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_g  + \rate{N}
+  \rate{M} = p_s \rate{q}_s + \tau_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_g  + \rate{N}
 \end{equation}
 %
 In a manner similar to derivations in
@@ -254,7 +254,7 @@ and $\rbempl{q}_s/\rbempl{q}_s$ to obtain
 
 \begin{equation}
   \frac{\rate{C}_g}{\rbempl{C}_g} \rbempl{C}_g = - p_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s
-                        + \rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd}  - \rate{N} \; .
+                        + \rate{M} - \tau_\alpha \rate{C}_{cap} - \rate{C}_{\omd}  - \rate{N} \; .
 \end{equation}
 %
 Solving for $\rate{C}_g/\rbempl{C}_g$ and rearranging gives
@@ -263,7 +263,7 @@ Solving for $\rate{C}_g/\rbempl{C}_g$ and rearranging gives
   \frac{\rate{C}_g}{\rbempl{C}_g} = - \frac{p_s \rbempl{q}_s}{\rbempl{C}_g}  
                                         \left( \frac{\rate{q}_s}{\rbempl{q}_s}   \right)
                                     + \frac{1}{\rbempl{C}_g}
-                                          (\rate{M} - R_\alpha \rate{C}_{cap} - \rate{C}_{\omd} - \rate{N}) \; ,
+                                          (\rate{M} - \tau_\alpha \rate{C}_{cap} - \rate{C}_{\omd} - \rate{N}) \; ,
 \end{equation}
 %
 from which the slope of the indifference curve in the consumption plane 
@@ -639,7 +639,7 @@ Thus,
 Because the elasticity of substitution is unchanged, 
 we refer to $\sigma$ without decoration for the CES utility model.
 The constancy of $\sigma$ means that the price elasticities ($\varepsilon$)
-will vary with the energy service price ($\amacro{p}_s$) 
+will vary with the energy service price ($\aempl{p}_s$) 
 across the substitution effect.
 
 

@@ -698,7 +698,7 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
   in the physical world.
 }
 %
-is captured by the variables $R_\alpha$ and $R_\omega$.
+is captured by the variables $\tau_\alpha$ and $\tau_\omega$.
 See Appendix~\ref{sec:budget_constraint} for details.)
 
 Energy is available at price $p_E$ (in \$/MJ).
@@ -740,8 +740,8 @@ of the upgraded device
 ($\rbempl{C}_{\om} < \ramacro{C}_{\om}$ and 
 $\rbempl{C}_d < \ramacro{C}_d$). 
 However, the opposite may hold, too.
-As final-to-service efficiency increases ($\bempl{\eta} < \amacro{\eta}$),
-the price of the energy service declines ($\bempl{p}_s > \amacro{p}_s$).
+As final-to-service efficiency increases ($\bempl{\eta} < \aempl{\eta}$),
+the price of the energy service declines ($\bempl{p}_s > \aempl{p}_s$).
 The energy price ($p_E$) is assumed exogenous
 at the microeconomic level
 ($\bempl{p}_E = \bsub{p}_E = \binc{p}_E = \bmacro{p}_E  = \amacro{p}_E$),
@@ -758,25 +758,25 @@ so the energy purchaser (the device user) is a price taker.%
 Initially, the device user spends income ($\rate{M}$)
 on energy for the device ($\rorig{C}_s = \orig{p}_E \rorig{E}_s$), 
 annualized capital costs for the device 
-($\orig{R}_\alpha \rorig{C}_{cap}$), 
+($\orig{\tau}_\alpha \rorig{C}_{cap}$), 
 annualized costs for operations and maintenance ($\rorig{C}_{\om}$) and
 disposal of the device 
-($\orig{R}_\omega \rorig{C}_d$), and 
+($\orig{\tau}_\omega \rorig{C}_d$), and 
 other goods and services ($\rorig{C}_g$).
 The budget constraint for the device user is
 
 \begin{equation} \label{eq:budget_constraint_prelim}
-  \rate{M} = \orig{R}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d + \rorig{C}_g \; ,
+  \rate{M} = \orig{\tau}_\alpha \rorig{C}_{cap} + \rorig{C}_s + \rorig{C}_{\om} + \orig{\tau}_\omega \rorig{C}_d + \rorig{C}_g \; ,
 \end{equation}
 %
 where 
-$\orig{R}_\alpha$ and $\orig{R}_\omega$ account for discounting, and
+$\orig{\tau}_\alpha$ and $\orig{\tau}_\omega$ account for discounting, and
 $\rorig{C}_{cap}$ and $\rorig{C}_{d}$ are undiscounted
 cost rates given by 
 $\orig{C}_{cap} / \orig{t}_{life}$ 
 and
 $\orig{C}_d / \orig{t}_{life}$.
-Note that $R_\alpha \ge 1$, and $R_\omega \le 1$;
+Note that $\tau_\alpha \ge 1$, and $\tau_\omega \le 1$;
 equalities apply when interest rate ($r$) is zero.
 (See Appendix~\ref{sec:budget_constraint} for details on discounting.)
 After substituting the product of energy price ($p_E$) and
@@ -785,7 +785,7 @@ the rate of energy consumption
 and efficiency, $\rate{q}_s / \eta$),
 after substituting the product of price ($p_g$) and
 the rate ($\rate{q}_g$) of other goods consumption,
-after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{R}_\omega \rorig{C}_d$,
+after substituting $\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{\tau}_\omega \rorig{C}_d$,
 and after some rearrangement, 
 Eq.~(\ref{eq:budget_constraint_prelim}) becomes
 
@@ -853,12 +853,12 @@ disposal ($\rate{E}_d$), and
 other goods expenditures ($\rate{E}_{g}$)
 are the product 
 of expenditures rates
-($\rate{C}_{\om}$, $R_{\omega}\rate{C}_d$, and $\rate{C}_g$) and
+($\rate{C}_{\om}$, $\tau_{\omega}\rate{C}_d$, and $\rate{C}_g$) and
 the energy intensity of the economy~($I_E$).
 
 \begin{align} \label{eq:indirect_energy_rates}
   \rate{E}_{\om} &= \rate{C}_{\om} I_E \\
-  \rate{E}_d     &= R_{\omega} \rate{C}_d I_E \\
+  \rate{E}_d     &= \tau_{\omega} \rate{C}_d I_E \\
   \rate{E}_g     &= \rate{C}_g I_E \\
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
@@ -1057,10 +1057,10 @@ of the original and upgraded devices
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
 to form discounted expenditure rates such that 
 $\rbempl{C}_{\omd} = \rbempl{C}_{\om} 
-                     + \bempl{R}_\omega \rbempl{C}_d$
+                     + \bempl{\tau}_\omega \rbempl{C}_d$
 and
 $\raempl{C}_{\omd} = \raempl{C}_m 
-                     + \aempl{R}_\omega \raempl{C}_d$.
+                     + \aempl{\tau}_\omega \raempl{C}_d$.
 
 For simplicity, we assume that operations, maintenance, and disposal
 expenditures imply energy consumption
@@ -1411,7 +1411,7 @@ Effective income ($\Mdothatprime$) is given by
 For the purposes of the income effect, 
 effective income (Eq.~(\ref{eq:effective_income})) 
 adjusts original income ($\rorig{M}$) to account for 
-sunk costs ($\aempl{R}_\alpha \raempl{C}_{cap}$ and $\raempl{C}_{\omd}$) and
+sunk costs ($\aempl{\tau}_\alpha \raempl{C}_{cap}$ and $\raempl{C}_{\omd}$) and
 net savings ($\rasub{N}$).
 
 Direct income rebound is defined as
