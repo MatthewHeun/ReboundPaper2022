@@ -42,48 +42,98 @@ to allow comparisons at different rebound stages
 ($\circ$, $*$, etc.)
 where the device lifetime ($\tlife$) may be different.
 The present value ($P$) of each expense category is obtained
-with an infinite sum as follows
+with an infinite sum for three cases.
 
-\begin{align} \label{eq:present_values}
+First, the present value ($P_{cap}$) of the capital cost ($C_{cap}$) 
+is given by the infinite sum 
+
+\begin{align}
 \footnotesize{}
   P_{cap} &= C_{cap} + \frac{C_{cap}}{(1 + r)^{\tlife}} + \frac{C_{cap}}{(1 + r)^{2 \tlife}} +
              \ldots + \frac{C_{cap}}{(1 + r)^{\itlife}} + \ldots 
            = C_{cap} \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
-          &= \phi_{\tlife} C_{cap} \\
+          &= \phi_{\tlife} C_{cap} \; ,
+\end{align}
 %
+where $\phi_t \equiv \frac{(1 + r)^t}{(1 + r)^t - 1}$.
+
+Second, the present value of all yearly expenses or income
+can be given by similar equations.
+For the example of the present value ($P_s$)
+of annual energy services costs ($C_s$),
+we have
+
+\begin{align}
+\footnotesize{}
   P_s &= C_s + \frac{C_s}{(1 + r)^{\oneyr}} + \frac{C_s}{(1 + r)^{\twoyr}} + 
          \ldots + \frac{C_s}{(1 + r)^{\iyr}} + \ldots 
        = C_s \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-      &= \phi_{\oneyr} C_s \\
+      &= \phi_{\oneyr} C_s \; .
+\end{align}
 %
-  P_{\om} &= C_{\om} + \frac{C_{\om}}{(1 + r)^{\oneyr}} + \frac{C_{\om}}{(1 + r)^{\twoyr}} + 
-             \ldots + \frac{C_{\om}}{(1 + r)^{\iyr}} + \ldots 
-           = C_{\om} \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-          &= \phi_{\oneyr} C_{\om} \\
-%
+Equations for 
+the present value of 
+annual operations and maintenance costs ($P_{\om}$ and $C_{\om}$), 
+annual other goods costs ($P_g$ and $C_g$), 
+annual income ($P_M$ and $M$), and 
+annual net savings ($P_N$ and $N$)
+are identical except for the subscripts.
+
+Finally, the present value ($P_d$) of disposal costs ($C_d$) is given by
+
+\begin{align}
+\footnotesize{}
   P_d &= \frac{C_d}{(1 + r)^{\tlife}} + \frac{C_d}{(1 + r)^{2 \tlife}} + 
          \ldots + \frac{C_d}{(1 + r)^{\itlife}} + \ldots 
        = C_d \sum_{i = 1}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
-      &= \gamma_{\tlife} C_d \\
-%
-  P_g &= C_g + \frac{C_g}{(1 + r)^{\oneyr}} + \frac{C_g}{(1 + r)^{\twoyr}} + 
-         \ldots + \frac{C_g}{(1 + r)^{\iyr}} + \ldots 
-       = C_g \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-      &= \phi_{\oneyr} C_g \\
-%
-  P_M &= M + \frac{M}{(1 + r)^{\oneyr}} + \frac{M}{(1 + r)^{\twoyr}} + 
-         \ldots + \frac{M}{(1 + r)^{\iyr}} + \ldots
-       = M \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-      &= \phi_{\oneyr} M \\
-%
-  P_N &= N + \frac{N}{(1 + r)^{\oneyr}} + \frac{N}{(1 + r)^{\twoyr}} + 
-         \ldots + \frac{N}{(1 + r)^{\iyr}} + \ldots
-       = N \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
-      &= \phi_{\oneyr} N
+      &= \gamma_{\tlife} C_d \; ,
 \end{align}
 %
-where $\phi_t \equiv \frac{(1 + r)^t}{(1 + r)^t - 1}$
-and $\gamma_t \equiv \frac{1}{(1 + r)^t - 1}$.
+where 
+$\gamma_t \equiv \frac{1}{(1 + r)^t - 1}$.
+
+
+
+% \begin{align} \label{eq:present_values}
+% \footnotesize{}
+%   P_{cap} &= C_{cap} + \frac{C_{cap}}{(1 + r)^{\tlife}} + \frac{C_{cap}}{(1 + r)^{2 \tlife}} +
+%              \ldots + \frac{C_{cap}}{(1 + r)^{\itlife}} + \ldots 
+%            = C_{cap} \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
+%           &= \phi_{\tlife} C_{cap} \\
+% %
+%   P_s &= C_s + \frac{C_s}{(1 + r)^{\oneyr}} + \frac{C_s}{(1 + r)^{\twoyr}} + 
+%          \ldots + \frac{C_s}{(1 + r)^{\iyr}} + \ldots 
+%        = C_s \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+%       &= \phi_{\oneyr} C_s \\
+% %
+%   P_{\om} &= C_{\om} + \frac{C_{\om}}{(1 + r)^{\oneyr}} + \frac{C_{\om}}{(1 + r)^{\twoyr}} + 
+%              \ldots + \frac{C_{\om}}{(1 + r)^{\iyr}} + \ldots 
+%            = C_{\om} \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+%           &= \phi_{\oneyr} C_{\om} \\
+% %
+%   P_d &= \frac{C_d}{(1 + r)^{\tlife}} + \frac{C_d}{(1 + r)^{2 \tlife}} + 
+%          \ldots + \frac{C_d}{(1 + r)^{\itlife}} + \ldots 
+%        = C_d \sum_{i = 1}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
+%       &= \gamma_{\tlife} C_d \\
+% %
+%   P_g &= C_g + \frac{C_g}{(1 + r)^{\oneyr}} + \frac{C_g}{(1 + r)^{\twoyr}} + 
+%          \ldots + \frac{C_g}{(1 + r)^{\iyr}} + \ldots 
+%        = C_g \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+%       &= \phi_{\oneyr} C_g \\
+% %
+%   P_M &= M + \frac{M}{(1 + r)^{\oneyr}} + \frac{M}{(1 + r)^{\twoyr}} + 
+%          \ldots + \frac{M}{(1 + r)^{\iyr}} + \ldots
+%        = M \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+%       &= \phi_{\oneyr} M \\
+% %
+%   P_N &= N + \frac{N}{(1 + r)^{\oneyr}} + \frac{N}{(1 + r)^{\twoyr}} + 
+%          \ldots + \frac{N}{(1 + r)^{\iyr}} + \ldots
+%        = N \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+%       &= \phi_{\oneyr} N
+% \end{align}
+% %
+% where $\phi_t \equiv \frac{(1 + r)^t}{(1 + r)^t - 1}$
+% and $\gamma_t \equiv \frac{1}{(1 + r)^t - 1}$.
 
 For simplicity, we desire annual values ($A$)
 with equivalent present value for each cost category. 
@@ -126,7 +176,8 @@ device lifetime) gives
   \rate{A}_{cap} = \tau_\alpha \rate{C}_{cap} \; .
 \end{equation}
 
-Similar derivations can be employed for all other budget categories.
+Similar derivations can be employed for all other budget categories
+to obtain
 
 \begin{align}
   \rate{A}_s &= \rate{C}_s \\
@@ -134,7 +185,7 @@ Similar derivations can be employed for all other budget categories.
   \rate{A}_d &= \tau_\omega \rate{C}_d \\
   \rate{A}_g &= \rate{C}_g \\
   \rate{A}_N &= \rate{N} \\
-  \rate{A}_M &= \rate{M}
+  \rate{A}_M &= \rate{M} \; ,
 \end{align}
 %
 where 
