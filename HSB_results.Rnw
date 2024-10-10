@@ -1091,8 +1091,8 @@ Note that Table~\ref{tab:car_stages_table} applies to the car user.
 Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}),
 changes occur only in the macroeconomy.
 For the car user, no changes are recorded across the macro effect.
-Thus, the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:car_stages_table} are identical.
+Thus, the $\sim$ (tilde) column
+is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
 show energy, expenditure, and consumption planes
@@ -1517,11 +1517,11 @@ Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters}
 and the equations in Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
-Similar to Table~\ref{tab:car_stages_table},
-Table~\ref{tab:lamp_stages_table} applies to the lamp user,
-so no changes are recorded across the macro effect, and
-the $-$ (bar) and $\sim$ (tilde) columns
-of Table~\ref{tab:lamp_stages_table} are identical.
+% Similar to Table~\ref{tab:car_stages_table},
+% Table~\ref{tab:lamp_stages_table} applies to the lamp user,
+% so no changes are recorded across the macro effect, and
+% the $-$ (bar) and $\sim$ (tilde) columns
+% of Table~\ref{tab:lamp_stages_table} are identical.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}
 show energy, expenditure, and consumption planes
