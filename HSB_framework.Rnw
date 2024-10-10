@@ -894,7 +894,8 @@ We begin with the emplacement effect.
 The emplacement effect accounts for performance changes of the device
 due to the fact that a higher-efficiency device has been put in service 
 (and will need to be decommissioned at a later date);
-behavior changes are addressed later,
+consumption patterns are assumed unchanged. 
+Behavior adjustments are addressed later, 
 in the substitution and income effects. 
 
 

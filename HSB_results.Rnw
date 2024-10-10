@@ -952,7 +952,8 @@ Note that budget constraints \circcirc{} and \barbar{}
 intersect at the $y$-axis (i.e., where $x$ = 0),
 because the prices of other goods and services do not change
 as a result of the EEU.
-Emplacement (by itself) does not alter consumption patterns, so
+As defined in this framework, 
+emplacement (by itself) does not alter consumption patterns, so
 the rate of energy service consumption and
 the rate of other goods consumption are
 unchanged across the emplacement effect
