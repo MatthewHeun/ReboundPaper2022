@@ -1112,7 +1112,6 @@ digs_car <- matrix(c(rep(0, n_stages_table_cols), # t_life,
                      rep(0, n_stages_table_cols), # E_dot_s
                      rep(0, n_stages_table_cols), # E_dot_emb
                      rep(0, n_stages_table_cols), # C_dot_s
-                     # rep(5, n_stages_table_cols), # C_dot_s
                      rep(0, n_stages_table_cols), # C_dot_cap
                      rep(0, n_stages_table_cols), # R_alpha_C_dot_cap
                      rep(0, n_stages_table_cols), # C_dot_om
