@@ -1433,7 +1433,8 @@ direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
 \footnote{
   Zero net savings ($\rasub{N} = 0$) could occur if 
   increases in the capital cost rate ($\Delta \raempl{C}_{cap}$) and/or
-  the maintenance and disposal cost rate ($\Delta \raempl{C}_{\md}$)
+  the operations, maintenance, and disposal 
+  cost rate ($\Delta \raempl{C}_{\omd}$)
   consume all freed cash ($\rate{G}$) plus savings from the compensating variation.
 }
 
