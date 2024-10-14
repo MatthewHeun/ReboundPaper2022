@@ -755,268 +755,268 @@ adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
 Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
-The order of presentation below is
-energy first, followed by expenditure, ending with consumption,
-because the EEU triggers rebound
-(the topic of this article and visible in the energy plane),
-but is caused by expenditures on the EEU and further monetary adjustments
-(visible in the expenditure plane),
-which are calculated via details about substitution
-(visible in the consumption plane).
+% The order of presentation below is
+% energy first, followed by expenditure, ending with consumption,
+% because the EEU triggers rebound
+% (the topic of this article and visible in the energy plane),
+% but is caused by expenditures on the EEU and further monetary adjustments
+% (visible in the expenditure plane),
+% which are calculated via details about substitution
+% (visible in the consumption plane).
 
 Axes of the rebound planes
 represent direct and indirect effects, with
 direct effects shown on the $x$-axes, and
 indirect effects shown on the $y$-axes.
-Specifically,
-%
-\begin{enumerate*}[label={(\roman*)}]
-
-  \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
-        the $x$- and $y$-axes of the energy plane, respectively;
-
-  \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$,
-        discounted for beginning of life and end of life costs) are placed on
-        the $x$- and $y$-axes of the expenditure plane, respectively; and
-
-  \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
-        the indexed expenditure rate of other consumption goods ($\rate{C}_g$) are placed on
-        the $x$- and $y$-axes of the consumption plane, respectively.
-
-\end{enumerate*}
+% Specifically,
+% %
+% \begin{enumerate*}[label={(\roman*)}]
+% 
+%   \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
+%         the $x$- and $y$-axes of the energy plane, respectively;
+% 
+%   \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$,
+%         discounted for beginning of life and end of life costs) are placed on
+%         the $x$- and $y$-axes of the expenditure plane, respectively; and
+% 
+%   \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
+%         the indexed expenditure rate of other consumption goods ($\rate{C}_g$) are placed on
+%         the $x$- and $y$-axes of the consumption plane, respectively.
+% 
+% \end{enumerate*}
 %
 Paths through energy, expenditure, and consumption planes
 consist of segments that represent changes due to the various rebound effects.
-Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
+% Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
 Effects that include both direct and indirect rebound
 will show displacement along both axes and
 create a path in the $x$-$y$ plane.
-See Appendix~\ref{sec:graph_details} for
-detailed mathematical descriptions for constructing paths on the rebound planes, and
-see Section~\ref{sec:results} for rebound path graphs
-for EEU examples of a car and an electric lamp.
+See Section~\ref{sec:results} for rebound path graphs
+for EEU examples of a car and an electric lamp and 
+Appendix~\ref{sec:graph_details} for
+detailed mathematical descriptions for constructing paths on the rebound planes.
 
 
-\begin{table}
-\footnotesize
-\centering % Centered table
-\caption{Segments in rebound planes.}
-\begin{tabular}{r l l c}
-  \toprule
-  \multicolumn{1}{c}{Segment} & Rebound effect             & Symbol           \\
-  \midrule
-  \circa{} \hspace{48.8mm}    & Direct emplacement         & $Re_{dempl}$     \\
-  \ab{}    \hspace{42.0mm}    & Embodied energy            & $Re_{emb}$       \\
-  \bstar{} \hspace{35.2mm}    & Ops.\, maint.\, and disp.\ & $Re_{\omd}$       \\
-  \midrule
-  \starc{} \hspace{28.8mm}    & Indirect substitution      & $Re_{isub}$      \\
-  \chat{}  \hspace{21.6mm}    & Direct substitution        & $Re_{dsub}$      \\
-  \midrule
-  \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
-  \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
-  \midrule
-  \bartilde{}                 & Macro                      & $Re_{macro}$     \\
-  \bottomrule
-\end{tabular}
-\label{tab:path_graph_segments}
-\end{table}
+% \begin{table}
+% \footnotesize
+% \centering % Centered table
+% \caption{Segments in rebound planes.}
+% \begin{tabular}{r l l c}
+%   \toprule
+%   \multicolumn{1}{c}{Segment} & Rebound effect             & Symbol           \\
+%   \midrule
+%   \circa{} \hspace{48.8mm}    & Direct emplacement         & $Re_{dempl}$     \\
+%   \ab{}    \hspace{42.0mm}    & Embodied energy            & $Re_{emb}$       \\
+%   \bstar{} \hspace{35.2mm}    & Ops.\, maint.\, and disp.\ & $Re_{\omd}$       \\
+%   \midrule
+%   \starc{} \hspace{28.8mm}    & Indirect substitution      & $Re_{isub}$      \\
+%   \chat{}  \hspace{21.6mm}    & Direct substitution        & $Re_{dsub}$      \\
+%   \midrule
+%   \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
+%   \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
+%   \midrule
+%   \bartilde{}                 & Macro                      & $Re_{macro}$     \\
+%   \bottomrule
+% \end{tabular}
+% \label{tab:path_graph_segments}
+% \end{table}
 
-Each rebound plane is described in the subsections below.
-Reference to the rebound planes in
-Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}
-below will be beneficial.
-
-
-%------------------------------
-\subsubsection{The energy plane}
-\label{sec:energy_path_graphs}
-%------------------------------
-
-The energy plane
-(see Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph} below)
-shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
-and
-the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
-\footnote{
-  A related, notional-only (not quantified as in Section~\ref{sec:results}),
-  one-dimensional visualization of direct and indirect energy rebound
-  (but not on expenditure or consumption planes)
-  can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
-%
-Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent stages
-between the rebound effects of Fig.~\ref{fig:flowchart}.
-Points $a$, $b$, $c$, and $d$ represent intermediate stages.
-Lines with negative slope through points
-$\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
-indicate energy consumption isoquants
-at key points.
-Note that segment \bartilde{} appears only in the energy plane,
-because the framework tracks energy consumption but not expenditures or consumption
-for the macro effect.
-
-In the energy plane,
-point $a$ lies on the $Re_{tot} = 0\%$ line
-indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
-is the point from which all rebound effects
-($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
-are measured.
-If rebound effects cause
-total energy demand to return to the original energy consumption level
-(negative sloping line through the $\circ$ point),
-all expected energy savings are taken back by rebound effects.
-Thus, the line of constant energy consumption through the $\circ$ point is labeled
-$Re_{tot} = 100\%$.
-The contribution of each rebound effect to total rebound
-is represented by the distance that each component's segment
-moves across the rebound isoquants.
-Total rebound ($Re_{tot}$) is measured linearly between and beyond the
-$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
-with direct rebound in the $x$ direction and
-indirect rebound in the $y$ direction.
-The region below and to the left of the $Re_{tot} = 0\%$ line
-exhibits negative rebound, indicating hyperconservation.
-The region above and to the right of the $Re_{tot} = 100\%$ line
-shows backfire,
-i.e., greater total energy consumption after the EEU than before it.
-
-Segment \starc{} moves in the negative $y$ direction
-by definition of the indirect substitution effect,
-and segment \chat{} moves in the positive $x$ direction
-by the definition of the direct substitution effect.
-Both income effect segments (\hatd{} and \dbar{})
-show more energy consumption, because net savings are spent
-on goods and services that rely on at least some energy consumption.%
-\footnote{
-  We exclude the case of an inferior good, whose consumption decreases
-  as real income increases, but
-  we note here the possibility of such behavior.
-  This behavior would
-  however require a different utility model
-  besides the CES utility model,
-  which we use throughout this analysis.
-}
-%
-Segment \bartilde{} always moves in the positive $y$ direction,
-because macro effects lead to additional indirect energy consumption.
+% Each rebound plane is described in the subsections below.
+% Reference to the rebound planes in
+% Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}
+% below will be beneficial.
 
 
-%------------------------------
-\subsubsection{The expenditure plane}
-\label{sec:expenditure_path_graphs}
-%------------------------------
+% %------------------------------
+% \subsubsection{The energy plane}
+% \label{sec:energy_path_graphs}
+% %------------------------------
 
-The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows
-the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and
-the indirect expenditure rate
-($\rate{C}_{indir}$, discounted when appropriate)
-on the $y$-axis.
-Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
-indicate expenditure isoquants.
-The line through the $\circ$ point is an isoquant for the
-cost of purchasing the original consumption bundle
-at the original prices.
-The line through the $*$ point is an isoquant for the
-cost of purchasing the original consumption bundle
-at the new prices.
-Segments \ab{} and \bstar{}
-could both move in the positive $y$ direction,
-they could both move in the negative $y$ direction, or
-they could move in opposite directions,
-depending on the results of the independent analyses for
-embodied energy and capital cost rates.
-The substitution effect along segments \starc{} and \chat{}
-will together, by definition, lead to lower expenditure
-due to the energy service price decline and
-the budget-reducing compensating variation (CV).
-The income effect (segments \hatd{} and \dbar{}) must bring expenditure
-back to the original expenditure line
-(equal to the budget constraint set by income in dollar or nominal terms)
-by assumptions about non-satiation and utility maximization
-in the device user's decision function.
+% The energy plane
+% (see Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph} below)
+% shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
+% and
+% the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
+% \footnote{
+%   A related, notional-only (not quantified as in Section~\ref{sec:results}),
+%   one-dimensional visualization of direct and indirect energy rebound
+%   (but not on expenditure or consumption planes)
+%   can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
+% %
+% Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent stages
+% between the rebound effects of Fig.~\ref{fig:flowchart}.
+% Points $a$, $b$, $c$, and $d$ represent intermediate stages.
+% Lines with negative slope through points
+% $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
+% indicate energy consumption isoquants
+% at key points.
+% Note that segment \bartilde{} appears only in the energy plane,
+% because the framework tracks energy consumption but not expenditures or consumption
+% for the macro effect.
+% 
+% In the energy plane,
+% point $a$ lies on the $Re_{tot} = 0\%$ line
+% indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
+% is the point from which all rebound effects
+% ($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
+% are measured.
+% If rebound effects cause
+% total energy demand to return to the original energy consumption level
+% (negative sloping line through the $\circ$ point),
+% all expected energy savings are taken back by rebound effects.
+% Thus, the line of constant energy consumption through the $\circ$ point is labeled
+% $Re_{tot} = 100\%$.
+% The contribution of each rebound effect to total rebound
+% is represented by the distance that each component's segment
+% moves across the rebound isoquants.
+% Total rebound ($Re_{tot}$) is measured linearly between and beyond the
+% $Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
+% with direct rebound in the $x$ direction and
+% indirect rebound in the $y$ direction.
+% The region below and to the left of the $Re_{tot} = 0\%$ line
+% exhibits negative rebound, indicating hyperconservation.
+% The region above and to the right of the $Re_{tot} = 100\%$ line
+% shows backfire,
+% i.e., greater total energy consumption after the EEU than before it.
+% 
+% Segment \starc{} moves in the negative $y$ direction
+% by definition of the indirect substitution effect,
+% and segment \chat{} moves in the positive $x$ direction
+% by the definition of the direct substitution effect.
+% Both income effect segments (\hatd{} and \dbar{})
+% show more energy consumption, because net savings are spent
+% on goods and services that rely on at least some energy consumption.%
+% \footnote{
+%   We exclude the case of an inferior good, whose consumption decreases
+%   as real income increases, but
+%   we note here the possibility of such behavior.
+%   This behavior would
+%   however require a different utility model
+%   besides the CES utility model,
+%   which we use throughout this analysis.
+% }
+% %
+% Segment \bartilde{} always moves in the positive $y$ direction,
+% because macro effects lead to additional indirect energy consumption.
 
 
-%------------------------------
-\subsubsection{The consumption plane}
-\label{sec:consumption_path_graphs}
-%------------------------------
+% %------------------------------
+% \subsubsection{The expenditure plane}
+% \label{sec:expenditure_path_graphs}
+% %------------------------------
 
-The consumption plane
-(Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
-the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
-the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $y$-axis.
-Iso-expenditure loci of indexed energy service and other goods demand,
-i.e. budget constraints,
-are shown as lines with negative slope
-(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
-Note that budget constraints \circcirc{} and \barbar{}
-intersect at the $y$-axis (i.e., where $x$ = 0),
-because the prices of other goods and services do not change
-as a result of the EEU.
-As defined in this framework, 
-emplacement (by itself) does not alter consumption patterns, so
-the rate of energy service consumption and
-the rate of other goods consumption are
-unchanged across the emplacement effect
-($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_g = \raempl{C}_g$, respectively).
-Thus,
-only movements after the $*$ point are visible as a path in the consumption plane, and
-points $\circ$, \emph{a}, \emph{b}, and $*$
-collapse to the same location in the consumption plane.
+% The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows
+% the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and
+% the indirect expenditure rate
+% ($\rate{C}_{indir}$, discounted when appropriate)
+% on the $y$-axis.
+% Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
+% indicate expenditure isoquants.
+% The line through the $\circ$ point is an isoquant for the
+% cost of purchasing the original consumption bundle
+% at the original prices.
+% The line through the $*$ point is an isoquant for the
+% cost of purchasing the original consumption bundle
+% at the new prices.
+% Segments \ab{} and \bstar{}
+% could both move in the positive $y$ direction,
+% they could both move in the negative $y$ direction, or
+% they could move in opposite directions,
+% depending on the results of the independent analyses for
+% embodied energy and capital cost rates.
+% The substitution effect along segments \starc{} and \chat{}
+% will together, by definition, lead to lower expenditure
+% due to the energy service price decline and
+% the budget-reducing compensating variation (CV).
+% The income effect (segments \hatd{} and \dbar{}) must bring expenditure
+% back to the original expenditure line
+% (equal to the budget constraint set by income in dollar or nominal terms)
+% by assumptions about non-satiation and utility maximization
+% in the device user's decision function.
 
-Indifference curves for the CES utility model
-are denoted by \iicirc{} and \iibar{}
-and represent lines of constant utility through the $\circ$ and $-$ points.
-Prior to the EEU, the consumption basket (of the energy service and other goods)
-is represented by the $\circ$ point.
-The budget constraint,
-here in real terms, i.e.,
-the capacity to purchase either the energy service or other goods and services,
-is shown as isoquant \circcirc{}.
-The original budget constraint line (\circcirc{})
-is tangent to the original indifference curve
-(\iicirc{}) at point $\circ$, the optimal consumption
-bundle prior to the EEU.
-The real budget line \starstar{}
-indicates the (higher) capacity to purchase
-combinations of energy services and other goods and services
-using the same money needed to purchase
-the old consumption bundle but at the new, lower price
-for the energy service,
-thanks to the EEU.
 
-The substitution effect leads to the cheaper, optimal
-CES-utility-preserving
-consumption bundle at the $\wedge$ point.
-The substitution effect is shown by segments
-\starc{} (the indirect component, which represents the decrease in other goods consumption) and
-\chat{} (the direct component, which represents the increase in energy service consumption).
-Although the substitution effect is calculated
-in the consumption plane,
-its impact
-can be seen in
-the energy and expenditure planes.
+% %------------------------------
+% \subsubsection{The consumption plane}
+% \label{sec:consumption_path_graphs}
+% %------------------------------
 
-In the consumption plane,
-the income expansion path under the CES utility model
-is a ray (\rr{}) from the origin through the $\wedge$ point
-in the consumption plane.
-The pre- and post-income-effect
-points ($\wedge$ and $-$, respectively)
-lie along the \rr{} ray, due to homotheticity.
-The increased consumption rate of the energy service is
-represented by segment \hatd{}, and
-the increased consumption rate of other goods and services is
-represented by segments \dbar{}.
-
-Under non-homothetic utility models,
-the income expansion path will be closer to vertical
-in the consumption plane,
-as the device owner spends more net income ($\rasub{N}$)
-on other goods and less on the energy service.
-In the limit, consumption of the energy service
-is already satiated, so
-net income is spent completely on other goods,
-resulting in a vertical income expansion path.
+% The consumption plane
+% (Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
+% the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
+% the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $y$-axis.
+% Iso-expenditure loci of indexed energy service and other goods demand,
+% i.e. budget constraints,
+% are shown as lines with negative slope
+% (lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
+% Note that budget constraints \circcirc{} and \barbar{}
+% intersect at the $y$-axis (i.e., where $x$ = 0),
+% because the prices of other goods and services do not change
+% as a result of the EEU.
+% As defined in this framework, 
+% emplacement (by itself) does not alter consumption patterns, so
+% the rate of energy service consumption and
+% the rate of other goods consumption are
+% unchanged across the emplacement effect
+% ($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_g = \raempl{C}_g$, respectively).
+% Thus,
+% only movements after the $*$ point are visible as a path in the consumption plane, and
+% points $\circ$, \emph{a}, \emph{b}, and $*$
+% collapse to the same location in the consumption plane.
+% 
+% Indifference curves for the CES utility model
+% are denoted by \iicirc{} and \iibar{}
+% and represent lines of constant utility through the $\circ$ and $-$ points.
+% Prior to the EEU, the consumption basket (of the energy service and other goods)
+% is represented by the $\circ$ point.
+% The budget constraint,
+% here in real terms, i.e.,
+% the capacity to purchase either the energy service or other goods and services,
+% is shown as isoquant \circcirc{}.
+% The original budget constraint line (\circcirc{})
+% is tangent to the original indifference curve
+% (\iicirc{}) at point $\circ$, the optimal consumption
+% bundle prior to the EEU.
+% The real budget line \starstar{}
+% indicates the (higher) capacity to purchase
+% combinations of energy services and other goods and services
+% using the same money needed to purchase
+% the old consumption bundle but at the new, lower price
+% for the energy service,
+% thanks to the EEU.
+% 
+% The substitution effect leads to the cheaper, optimal
+% CES-utility-preserving
+% consumption bundle at the $\wedge$ point.
+% The substitution effect is shown by segments
+% \starc{} (the indirect component, which represents the decrease in other goods consumption) and
+% \chat{} (the direct component, which represents the increase in energy service consumption).
+% Although the substitution effect is calculated
+% in the consumption plane,
+% its impact
+% can be seen in
+% the energy and expenditure planes.
+% 
+% In the consumption plane,
+% the income expansion path under the CES utility model
+% is a ray (\rr{}) from the origin through the $\wedge$ point
+% in the consumption plane.
+% The pre- and post-income-effect
+% points ($\wedge$ and $-$, respectively)
+% lie along the \rr{} ray, due to homotheticity.
+% The increased consumption rate of the energy service is
+% represented by segment \hatd{}, and
+% the increased consumption rate of other goods and services is
+% represented by segments \dbar{}.
+% 
+% Under non-homothetic utility models,
+% the income expansion path will be closer to vertical
+% in the consumption plane,
+% as the device owner spends more net income ($\rasub{N}$)
+% on other goods and less on the energy service.
+% In the limit, consumption of the energy service
+% is already satiated, so
+% net income is spent completely on other goods,
+% resulting in a vertical income expansion path.
 
 
 %++++++++++++++++++++++++++++++
@@ -1082,6 +1082,12 @@ can be found in Appendix~\ref{sec:sensitivity_analyses}.
 \label{sec:car_example}
 %++++++++++++++++++++++++++++++
 
+
+%------------------------------
+\subsubsection{Numerical results: Car example} 
+\label{sec:numerical_results_car_example}
+%------------------------------
+
 Armed with the data in
 Tables~\ref{tab:car_parameters}--\ref{tab:car_elasticity_parameters},
 and the equations in Section~\ref{PartI-sec:framework} of Part~I,
@@ -1094,10 +1100,6 @@ For the car user, no changes are recorded across the macro effect.
 Thus, the $\sim$ (tilde) column
 is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
-Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}
-show energy, expenditure, and consumption planes
-for the car example.
-
 
 <<car_stages_table, results="asis", echo=FALSE>>=
 n_stages_table_cols <- 6
@@ -1180,6 +1182,81 @@ Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_
 @
 
 
+The \empleffect{} has three components:
+the direct emplacement effect,
+the embodied energy effect, and
+the combined operations, maintenance, and disposal effects.
+Rebound from the direct emplacement effect
+($Re_{dempl}$) is \Sexpr{Re_dempl_car_char_perc}\% always,
+because energy takeback (and, therefore, rebound)
+occurs after the upgraded device is emplaced.
+Indirect rebound due to the embodied energy effect
+($Re_{emb}$) is \Sexpr{Re_emb_car_char_perc}\%,
+due to the higher embodied energy rate
+($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/yr)
+stemming from the electric battery in the hybrid EV car.
+Rebound due to the operations, maintenance, and disposal effects
+($Re_{\omd}$) is small and negative
+($\Sexpr{Re_omd_car_char_perc}$\%),
+because of the slightly lower operations, maintenance, and disposal costs
+for the hybrid EV car.
+
+The \subeffect{} has two components:
+direct and indirect substitution effect rebound.
+Rebound from direct substitution ($Re_{dsub}$) is
+positive, as expected (\Sexpr{Re_dsub_car_char_perc}\%).
+The car user will, on average, prefer more driving purely
+from the change in relative prices because of the fuel economy enhancements
+(\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
+In other words,
+due the relative price change,
+the more fuel-efficient car is driven \Sexpr{perc_increase_driving_char}\% further
+each year.
+Conversely, the indirect substitution effect ($Re_{isub}$)
+is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
+to achieve the same level of utility after increased driving.
+Indeed, across the substitution effect,
+less money is spent on other goods
+($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/yr).
+In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
+displacement along an indifference curve alters the price elasticities,
+and in particular, that the uncompensated own price elasticity declines
+in magnitude. The decline slows the rate of additional consumption of
+energy-intensive driving, and attenuates the microeconomic rebound
+relative to assuming constant price elasticities.
+
+The \inceffect{} also has two components:
+direct and indirect income effect rebound.
+The direct income effect
+($Re_{dinc}$) is positive
+(\Sexpr{Re_dinc_car_char_perc}\%),
+because the car user allocates some
+net savings to additional driving.
+Rebound from the indirect income effect
+($Re_{iinc}$) is positive (\Sexpr{Re_iinc_car_char_perc}\%)
+due to higher spending on other goods.
+Thus, the net savings after the substitution effect
+($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/yr)
+translates into positive direct and indirect income
+rebound at the microeconomic level.
+Total microeconomic rebound (emplacement, substitution, and income effects)
+sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
+
+Finally, in Part~I we noted that
+the link between macroeconomic and microeconomic rebound
+is largely unexplored,
+so we assume a value of $k = 1$ for both examples, initially.
+We return to the value for $k$
+in the Discussion (Section~\ref{sec:calculating_k}).
+With $k$ assumed to be 1,
+the \macroeffect{} leads to macroeconomic rebound
+($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%
+for the car example,
+due to economic expansion caused by
+productivity enhancements arising from the more-efficient provision of the
+energy service (transportation).
+
+
 <<GraphParameters, echo=FALSE>>=
 # For all planes
 stage_size <- 10
@@ -1213,6 +1290,10 @@ line_label_colour <- "darkgray"
 @
 
 
+%------------------------------
+\subsubsection{Rebound visualizations: Car example}
+\label{sec:rebound_planes_car_example}
+%------------------------------
 
 <<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_Re_label_angle <- -74
@@ -1316,6 +1397,105 @@ rebound_results %>%
   MKHthemes::xy_theme()
 @
 
+Fig.~\ref{fig:CarEnergyGraph} shows the energy plane for the car example, 
+assuming $k = 1$.
+The energy plane
+shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
+and
+the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
+\footnote{
+  A related, notional-only (not quantified),
+  one-dimensional visualization of direct and indirect energy rebound
+  (but not on expenditure or consumption planes)
+  can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
+%
+Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent stages
+between the rebound effects of Fig.~\ref{fig:flowchart}.
+Points $a$, $b$, $c$, and $d$ represent intermediate stages.
+Table~\ref{tab:path_graph_segments} provides the key 
+for rebound path segments.
+Note that segment \bartilde{} appears only in the energy plane,
+because the framework tracks energy consumption but not expenditures or consumption
+for the macro effect.
+
+\begin{table}
+\footnotesize
+\centering % Centered table
+\caption{Segments in rebound planes.}
+\begin{tabular}{r l l c}
+  \toprule
+  \multicolumn{1}{c}{Segment} & Rebound effect             & Symbol           \\
+  \midrule
+  \circa{} \hspace{48.8mm}    & Direct emplacement         & $Re_{dempl}$     \\
+  \ab{}    \hspace{42.0mm}    & Embodied energy            & $Re_{emb}$       \\
+  \bstar{} \hspace{35.2mm}    & Ops.\, maint.\, and disp.\ & $Re_{\omd}$       \\
+  \midrule
+  \starc{} \hspace{28.8mm}    & Indirect substitution      & $Re_{isub}$      \\
+  \chat{}  \hspace{21.6mm}    & Direct substitution        & $Re_{dsub}$      \\
+  \midrule
+  \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
+  \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
+  \midrule
+  \bartilde{}                 & Macro                      & $Re_{macro}$     \\
+  \bottomrule
+\end{tabular}
+\label{tab:path_graph_segments}
+\end{table}
+
+In the energy plane, 
+lines with negative slope through points
+$\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
+indicate energy consumption isoquants
+at key points.
+Point $a$ lies on the $Re_{tot} = 0\%$ line
+indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
+is the point from which all rebound effects
+($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
+are measured.
+If rebound effects cause
+total energy demand to return to the original energy consumption level
+(negative sloping line through the $\circ$ point),
+all expected energy savings are taken back by rebound effects.
+Thus, the line of constant energy consumption through the $\circ$ point is labeled
+$Re_{tot} = 100\%$.
+The contribution of each rebound effect to total rebound
+is represented by the distance that each component's segment
+moves across the rebound isoquants.
+Total rebound ($Re_{tot}$) is measured linearly between and beyond the
+$Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
+with direct rebound in the $x$ direction and
+indirect rebound in the $y$ direction.
+The region below and to the left of the $Re_{tot} = 0\%$ line
+exhibits negative rebound, indicating hyperconservation.
+The region above and to the right of the $Re_{tot} = 100\%$ line
+shows backfire,
+i.e., greater total energy consumption after the EEU than before it.
+
+Segment \starc{} moves in the negative $y$ direction
+by definition of the indirect substitution effect,
+and segment \chat{} moves in the positive $x$ direction
+by the definition of the direct substitution effect.
+Both income effect segments (\hatd{} and \dbar{})
+show more energy consumption, because net savings are spent
+on goods and services that rely on at least some energy consumption.%
+\footnote{
+  We exclude the case of an inferior good, whose consumption decreases
+  as real income increases, but
+  we note here the possibility of such behavior.
+  This behavior would
+  however require a different utility model
+  besides the CES utility model,
+  which we use throughout this analysis.
+}
+%
+Segment \bartilde{} always moves in the positive $y$ direction,
+because macro effects lead to additional indirect energy consumption.
+
+Note that rebound values from Table~\ref{tab:car_results}
+are indicated on Fig.~\ref{fig:CarEnergyGraph} as sums
+of direct and indirect components for each effect:
+emplacement, substitution, income, and macro.
+Total rebound is also shown.
 
 <<CarCostGraph, echo=FALSE, fig.cap="The expenditure plane for the car example. CV is compensating variation, the increase in consumption of the energy service and decrease in consumption of other goods and services to maintain constant utility. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_cost_line_angle <- -25.5
@@ -1359,6 +1539,38 @@ rebound_results %>%
   ggplot2::scale_x_continuous(limits = c(700, NA)) +
   MKHthemes::xy_theme()
 @
+
+
+Fig.~\ref{fig:CarCostGraph} shows the expenditure plane
+for the car example. 
+The expenditure plane shows
+the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and
+the indirect expenditure rate
+($\rate{C}_{indir}$, discounted when appropriate)
+on the $y$-axis.
+Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
+indicate expenditure isoquants.
+The line through the $\circ$ point is an isoquant for the
+cost of purchasing the original consumption bundle
+at the original prices.
+The line through the $*$ point is an isoquant for the
+cost of purchasing the original consumption bundle
+at the new prices.
+Segments \ab{} and \bstar{}
+could both move in the positive $y$ direction,
+they could both move in the negative $y$ direction, or
+they could move in opposite directions,
+depending on the results of the independent analyses for
+embodied energy and capital cost rates.
+The substitution effect along segments \starc{} and \chat{}
+will together, by definition, lead to lower expenditure
+due to the energy service price decline and
+the budget-reducing compensating variation (CV).
+The income effect (segments \hatd{} and \dbar{}) must bring expenditure
+back to the original expenditure line
+(equal to the budget constraint set by income in dollar or nominal terms)
+by assumptions about non-satiation and utility maximization
+in the device user's decision function.
 
 
 <<CarConsGraph, echo=FALSE, warning=FALSE, fig.cap="The consumption plane for the car example. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
@@ -1431,85 +1643,95 @@ rebound_results %>%
 @
 
 
-The \empleffect{} has three components:
-the direct emplacement effect,
-the embodied energy effect, and
-the combined operations, maintenance, and disposal effects.
-Rebound from the direct emplacement effect
-($Re_{dempl}$) is \Sexpr{Re_dempl_car_char_perc}\% always,
-because energy takeback (and, therefore, rebound)
-occurs after the upgraded device is emplaced.
-Indirect rebound due to the embodied energy effect
-($Re_{emb}$) is \Sexpr{Re_emb_car_char_perc}\%,
-due to the higher embodied energy rate
-($\Delta \raempl{E}_{emb} = \Sexpr{Delta_E_dot_emb_star_car_char}$~MJ/yr)
-stemming from the electric battery in the hybrid EV car.
-Rebound due to the operations, maintenance, and disposal effects
-($Re_{\omd}$) is small and negative
-($\Sexpr{Re_omd_car_char_perc}$\%),
-because of the slightly lower operations, maintenance, and disposal costs
-for the hybrid EV car.
+Fig.~\ref{fig:CarConsGraph}
+shows the consumption plane for the car example.
+The consumption plane shows
+the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
+the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $y$-axis.
+Iso-expenditure loci of indexed energy service and other goods demand,
+i.e. budget constraints,
+are shown as lines with negative slope
+(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
+Note that budget constraints \circcirc{} and \barbar{}
+intersect at the $y$-axis (i.e., where $x$ = 0),
+because the prices of other goods and services do not change
+as a result of the EEU.
+As defined in this framework, 
+emplacement (by itself) does not alter consumption patterns, so
+the rate of energy service consumption and
+the rate of other goods consumption are
+unchanged across the emplacement effect
+($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_g = \raempl{C}_g$, respectively).
+Thus,
+only movements after the $*$ point are visible as a path in the consumption plane, and
+points $\circ$, \emph{a}, \emph{b}, and $*$
+collapse to the same location in the consumption plane.
 
-The \subeffect{} has two components:
-direct and indirect substitution effect rebound.
-Rebound from direct substitution ($Re_{dsub}$) is
-positive, as expected (\Sexpr{Re_dsub_car_char_perc}\%).
-The car user will, on average, prefer more driving purely
-from the change in relative prices because of the fuel economy enhancements
-(\Sexpr{mpg_better}~mpg $>$ \Sexpr{mpg_worse}~mpg).
-In other words,
-due the relative price change,
-the more fuel-efficient car is driven \Sexpr{perc_increase_driving_char}\% further
-each year.
-Conversely, the indirect substitution effect ($Re_{isub}$)
-is slightly negative ($\Sexpr{Re_isub_car_char_perc}$\%)
-to achieve the same level of utility after increased driving.
-Indeed, across the substitution effect,
-less money is spent on other goods
-($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/yr).
-In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
-displacement along an indifference curve alters the price elasticities,
-and in particular, that the uncompensated own price elasticity declines
-in magnitude. The decline slows the rate of additional consumption of
-energy-intensive driving, and attenuates the microeconomic rebound
-relative to assuming constant price elasticities.
+Indifference curves for the CES utility model
+are denoted by \iicirc{} and \iibar{}
+and represent lines of constant utility through the $\circ$ and $-$ points.
+Prior to the EEU, the consumption basket (of the energy service and other goods)
+is represented by the $\circ$ point.
+The budget constraint,
+here in real terms, i.e.,
+the capacity to purchase either the energy service or other goods and services,
+is shown as isoquant \circcirc{}.
+The original budget constraint line (\circcirc{})
+is tangent to the original indifference curve
+(\iicirc{}) at point $\circ$, the optimal consumption
+bundle prior to the EEU.
+The real budget line \starstar{}
+indicates the (higher) capacity to purchase
+combinations of energy services and other goods and services
+using the same money needed to purchase
+the old consumption bundle but at the new, lower price
+for the energy service,
+thanks to the EEU.
 
-The \inceffect{} also has two components:
-direct and indirect income effect rebound.
-The direct income effect
-($Re_{dinc}$) is positive
-(\Sexpr{Re_dinc_car_char_perc}\%),
-because the car user allocates some
-net savings to additional driving.
-Rebound from the indirect income effect
-($Re_{iinc}$) is positive (\Sexpr{Re_iinc_car_char_perc}\%)
-due to higher spending on other goods.
-Thus, the net savings after the substitution effect
-($\rasub{N} = \Sexpr{N_dot_hat_car_char}$~\$/yr)
-translates into positive direct and indirect income
-rebound at the microeconomic level.
-Total microeconomic rebound (emplacement, substitution, and income effects)
-sums to $Re_{micro} = \Sexpr{Re_micro_car_char_perc}$\%.
+The substitution effect leads to the cheaper, optimal
+CES-utility-preserving
+consumption bundle at the $\wedge$ point.
+The substitution effect is shown by segments
+\starc{} (the indirect component, which represents the decrease in other goods consumption) and
+\chat{} (the direct component, which represents the increase in energy service consumption).
+Although the substitution effect is calculated
+in the consumption plane,
+its impact
+can be seen in
+the energy and expenditure planes.
 
-Finally, in Part~I we noted that
-the link between macroeconomic and microeconomic rebound
-is largely unexplored,
-so we assume a value of $k = 1$ for both examples, initially.
-We return to the value for $k$
-in the Discussion (Section~\ref{sec:calculating_k}).
-With $k$ assumed to be 1,
-the \macroeffect{} leads to macroeconomic rebound
-($Re_{\macro}$) of \Sexpr{Re_macro_car_char_perc}\%
-for the car example,
-due to economic expansion caused by
-productivity enhancements arising from the more-efficient provision of the
-energy service (transportation).
+In the consumption plane,
+the income expansion path under the CES utility model
+is a ray (\rr{}) from the origin through the $\wedge$ point
+in the consumption plane.
+The pre- and post-income-effect
+points ($\wedge$ and $-$, respectively)
+lie along the \rr{} ray, due to homotheticity.
+The increased consumption rate of the energy service is
+represented by segment \hatd{}, and
+the increased consumption rate of other goods and services is
+represented by segments \dbar{}.
+
+Under non-homothetic utility models,
+the income expansion path will be closer to vertical
+in the consumption plane,
+as the device owner spends more net income ($\rasub{N}$)
+on other goods and less on the energy service.
+In the limit, consumption of the energy service
+is already satiated, so
+net income is spent completely on other goods,
+resulting in a vertical income expansion path.
 
 
 %++++++++++++++++++++++++++++++
 \subsection{Example 2: Purchase of a new electric lamp}
 \label{sec:lamp_example}
 %++++++++++++++++++++++++++++++
+
+%------------------------------
+\subsubsection{Numerical results: Lamp example} 
+\label{sec:numerical_results_lamp_example}
+%------------------------------
 
 With the data in
 Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters}
@@ -1522,9 +1744,6 @@ as shown in Table~\ref{tab:lamp_stages_table}.
 % the $-$ (bar) and $\sim$ (tilde) columns
 % of Table~\ref{tab:lamp_stages_table} are identical.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
-Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}
-show energy, expenditure, and consumption planes
-for the lamp example.
 
 
 <<lamp_stages_table, results="asis", echo=FALSE>>=
@@ -1679,6 +1898,16 @@ with $k$ assumed to be 1,
 due to economic expansion caused by
 productivity enhancements arising from the more-efficient provision of the
 energy service (lighting).
+
+
+%------------------------------
+\subsubsection{Rebound visualizations: lamp example}
+\label{sec:rebound_planes_lamp_example}
+%------------------------------
+
+Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}
+show energy, expenditure, and consumption planes
+for the lamp example.
 
 
 <<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
