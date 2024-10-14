@@ -1218,7 +1218,8 @@ to achieve the same level of utility after increased driving.
 Indeed, across the substitution effect,
 less money is spent on other goods
 ($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_car_char}$~\$/yr).
-In Appendix~\ref{sec:price_elasticities_sensitivity} we show how the
+In Appendix~\ref{sec:price_elasticities_sensitivity},
+we show how the
 displacement along an indifference curve alters the price elasticities,
 and in particular, that the uncompensated own price elasticity declines
 in magnitude. The decline slows the rate of additional consumption of
@@ -1874,7 +1875,7 @@ as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
 To maintain constant utility,
 consumption of other goods is reduced
 ($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/yr),
-as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
+% as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
 yielding indirect substitution effect rebound
 ($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
 
