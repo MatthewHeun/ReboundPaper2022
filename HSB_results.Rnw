@@ -1103,17 +1103,15 @@ Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 <<car_stages_table, results="asis", echo=FALSE>>=
 n_stages_table_cols <- 6
-digs_car <- matrix(c(rep(0, n_stages_table_cols), # t_life,
+digs_car <- matrix(c(rep(0, n_stages_table_cols), # M_dot
+                     rep(4, n_stages_table_cols), # p_E
+                     rep(0, n_stages_table_cols), # t_life,
                      rep(3, n_stages_table_cols), # R_alpha
                      rep(3, n_stages_table_cols), # R_omega
                      rep(0, n_stages_table_cols), # eta_engr_units
                      rep(3, n_stages_table_cols), # eta
                      rep(3, n_stages_table_cols), # p_s
-                     rep(0, n_stages_table_cols), # q_dot_s
-                     rep(4, n_stages_table_cols), # p_E
-                     rep(0, n_stages_table_cols), # E_dot_s
                      rep(0, n_stages_table_cols), # E_dot_emb
-                     rep(0, n_stages_table_cols), # C_dot_s
                      rep(0, n_stages_table_cols), # C_dot_cap
                      rep(0, n_stages_table_cols), # R_alpha_C_dot_cap
                      rep(0, n_stages_table_cols), # C_dot_om
@@ -1121,9 +1119,11 @@ digs_car <- matrix(c(rep(0, n_stages_table_cols), # t_life,
                      rep(0, n_stages_table_cols), # C_dot_d
                      rep(0, n_stages_table_cols), # R_omega_C_dot_d
                      rep(0, n_stages_table_cols), # C_dot_omd
-                     rep(0, n_stages_table_cols), # C_dot_o
+                     rep(0, n_stages_table_cols), # E_dot_s
+                     rep(0, n_stages_table_cols), # C_dot_s
                      rep(0, n_stages_table_cols), # N_dot
-                     rep(0, n_stages_table_cols)), # M_dot
+                     rep(0, n_stages_table_cols), # q_dot_s
+                     rep(0, n_stages_table_cols)),# C_dot_g
                    nrow = 21, ncol = n_stages_table_cols, byrow = TRUE)
 rebound_results |>
   dplyr::filter(Case == "Car") |>
@@ -1136,7 +1136,8 @@ rebound_results |>
                                              "assumed to be 1.", 
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
-                                             "($\\sim$) is not shown."),
+                                             "($\\sim$) is not shown. ", 
+                                             "Blanks indicate unchanged values."),
                              digits = digs_car,
                              align = "lrrrrr") |>
   print(include.rownames = FALSE,
@@ -1748,17 +1749,15 @@ Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results
 
 
 <<lamp_stages_table, results="asis", echo=FALSE>>=
-digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # t_life,
+digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # M_dot
+                      rep(4, n_stages_table_cols), # p_E
+                      rep(0, n_stages_table_cols), # t_life,
                       rep(3, n_stages_table_cols), # R_alpha
                       rep(3, n_stages_table_cols), # R_omega
                       rep(0, n_stages_table_cols), # eta_engr_units
                       rep(0, n_stages_table_cols), # eta
                       rep(8, n_stages_table_cols), # p_s
-                      rep(0, n_stages_table_cols), # q_dot_s
-                      rep(4, n_stages_table_cols), # p_E
-                      rep(1, n_stages_table_cols), # E_dot_s
                       rep(3, n_stages_table_cols), # E_dot_emb
-                      rep(2, n_stages_table_cols), # C_dot_s
                       rep(2, n_stages_table_cols), # C_dot_cap
                       rep(2, n_stages_table_cols), # R_alpha_C_dot_cap
                       rep(2, n_stages_table_cols), # C_dot_om
@@ -1766,9 +1765,11 @@ digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # t_life,
                       rep(2, n_stages_table_cols), # C_dot_d
                       rep(2, n_stages_table_cols), # R_omega_C_dot_d
                       rep(2, n_stages_table_cols), # C_dot_omd
-                      rep(0, n_stages_table_cols), # C_dot_o
+                      rep(1, n_stages_table_cols), # E_dot_s
+                      rep(2, n_stages_table_cols), # C_dot_s
                       rep(2, n_stages_table_cols), # N_dot
-                      rep(0, n_stages_table_cols)), # M_dot
+                      rep(0, n_stages_table_cols), # q_dot_s
+                      rep(0, n_stages_table_cols)),# C_dot_g
                     nrow = 21, ncol = n_stages_table_cols, byrow = TRUE)
 
 rebound_results %>%
@@ -1782,7 +1783,8 @@ rebound_results %>%
                                              "assumed to be 1.", 
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
-                                             "($\\sim$) is not shown."),
+                                             "($\\sim$) is not shown. ", 
+                                             "Blanks indicate unchanged values."),
                              digits = digs_lamp,
                              align = "lrrrrr") %>%
   print(include.rownames = FALSE,
