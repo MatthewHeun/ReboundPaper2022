@@ -1102,7 +1102,16 @@ is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 <<car_stages_table, results="asis", echo=FALSE>>=
-n_stages_table_cols <- 6
+# Use this group to exclude the description column
+# n_stages_table_cols <- 6
+# descr_col <- FALSE
+# align_string <- "lrrrrr"
+
+# Use this group to include the description column
+descr_col <- TRUE
+n_stages_table_cols <- 7
+align_string <- "lrrrrrr"
+
 digs_car <- matrix(c(rep(0, n_stages_table_cols), # M_dot
                      rep(4, n_stages_table_cols), # p_E
                      rep(0, n_stages_table_cols), # t_life,
@@ -1130,7 +1139,8 @@ rebound_results |>
   dplyr::mutate(
     Case = NULL
   ) |>
-  ReboundTools::stages_table(include_tilde_stage = FALSE, 
+  ReboundTools::stages_table(include_description_column = descr_col, 
+                             include_tilde_stage = FALSE, 
                              label = "tab:car_stages_table",
                              caption = paste("Results for car example with macro factor ($k$)", 
                                              "assumed to be 1.", 
@@ -1140,7 +1150,7 @@ rebound_results |>
                                              "Blanks indicate unchanged values relative",
                                              "to previous or later values in the same row."),
                              digits = digs_car,
-                             align = "lrrrrr") |>
+                             align = align_string) |>
   print(include.rownames = FALSE,
         booktabs = TRUE,
         caption.placement = "top",
@@ -1778,7 +1788,8 @@ rebound_results %>%
   dplyr::mutate(
     Case = NULL
   ) %>%
-  ReboundTools::stages_table(include_tilde_stage = FALSE, 
+  ReboundTools::stages_table(include_description_column = descr_col, 
+                             include_tilde_stage = FALSE, 
                              label = "tab:lamp_stages_table",
                              caption = paste("Results for lamp example with macro factor ($k$)", 
                                              "assumed to be 1.", 
@@ -1788,7 +1799,7 @@ rebound_results %>%
                                              "Blanks indicate unchanged values relative",
                                              "to previous or later values in the same row."),
                              digits = digs_lamp,
-                             align = "lrrrrr") %>%
+                             align = align_string) %>%
   print(include.rownames = FALSE,
         booktabs = TRUE,
         caption.placement = "top",
