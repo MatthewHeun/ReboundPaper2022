@@ -1137,7 +1137,8 @@ rebound_results |>
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
                                              "($\\sim$) is not shown. ", 
-                                             "Blanks indicate unchanged values."),
+                                             "Blanks indicate unchanged values relative",
+                                             "to previous or later values in the same row."),
                              digits = digs_car,
                              align = "lrrrrr") |>
   print(include.rownames = FALSE,
@@ -1784,7 +1785,8 @@ rebound_results %>%
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
                                              "($\\sim$) is not shown. ", 
-                                             "Blanks indicate unchanged values."),
+                                             "Blanks indicate unchanged values relative",
+                                             "to previous or later values in the same row."),
                              digits = digs_lamp,
                              align = "lrrrrr") %>%
   print(include.rownames = FALSE,
