@@ -1675,7 +1675,8 @@ as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
           the income effect which includes the (negative) savings 
           from emplacement would become smaller.       
   
-    \item At the same time, substitution effect rebound would become even larger.
+    \item At the same time, rebound could become even larger if the additional devices
+          are also run for a longer time.
     
   \end{enumerate*}
 }
