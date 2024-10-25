@@ -1684,7 +1684,6 @@ as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
 To maintain constant utility,
 consumption of other goods is reduced
 ($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/yr),
-% as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
 yielding indirect substitution effect rebound
 ($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
 
