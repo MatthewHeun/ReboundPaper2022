@@ -706,24 +706,6 @@ $\rbempl{q}_s$ (in, say, vehicle-km/yr)
 with final-to-service efficiency $\bempl{\eta}$ (in, say, vehicle-km/MJ).
 An energy efficiency upgrade (EEU) increases
 final-to-service efficiency
-% \footnote{
-%   Note that final-to-service efficiency ($\eta$) improves
-%   between the original ($\circ$) and
-%   post-emplacement ($*$)
-%   stages of Fig.~\ref{fig:flowchart}, remaining constant thereafter.
-%   Thus, $\orig{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
-%   as shown in Table~\ref{tab:analysis_assumptions}.
-%   We refer to all post-emplacement efficiencies 
-%   ($\aempl{\eta}$, $\asub{\eta}$, $\ainc{\eta}$, and $\amacro{\eta}$)
-%   as $\amacro{\eta}$
-%   to match the nomenclature of \citet{Borenstein:2015aa}.
-%   When convenient, the same approach to nomenclature 
-%   is taken with other quantities such as 
-%   the capital, 
-%   operations and maintenance, and
-%   disposal cost rates
-%   ($\rate{C}_{cap}$, $\rate{C}_{\om}$, and $\rate{C}_d$, respectively).
-% }
 such that
 $\bempl{\eta} < \aempl{\eta} = \asub{\eta} = \ainc{\eta} = \amacro{\eta}$,
 as shown in Table~\ref{tab:analysis_assumptions}.
@@ -774,7 +756,16 @@ $\rorig{C}_{cap}$ and $\rorig{C}_{d}$ are undiscounted
 cost rates given by 
 $\orig{C}_{cap} / \orig{t}_{life}$ 
 and
-$\orig{C}_d / \orig{t}_{life}$.
+$\orig{C}_d / \orig{t}_{life}$.%
+\footnote{
+  We are only discounting monetary magnitudes 
+  to reflect the time value of money.
+  We thank an anonymous reviewer for the insight that,
+  in principle, 
+  the carbon content of energy could also be discounted
+  if one assumes that near term emissions are worse than later emissions. 
+}
+%
 Note that $\tau_\alpha \ge 1$, and $\tau_\omega \le 1$;
 equalities apply when interest rate ($r$) is zero.
 (See Appendix~\ref{sec:budget_constraint} for details on discounting.)
@@ -897,6 +888,10 @@ due to the fact that a higher-efficiency device has been put in service
 consumption patterns are assumed unchanged. 
 Behavior adjustments are addressed later, 
 in the substitution and income effects. 
+Then, any (positive or negative) adjustment 
+in income due to emplacement 
+is added to the freed cash ($\rate{G}$) 
+spent in the income effect.
 
 
 %..............................
@@ -1556,6 +1551,13 @@ GDP remains unchanged.%
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
+  Nevertheless, as long as the energy efficiency improvement 
+  is the only one in the economy,
+  the further output growth may be constrained to the extent that
+  the other inputs into production remain constrained 
+  at the original levels and substituting energy 
+  for the other inputs to production
+  is limited by the prevailing technology.
 }
 %
 That may be true in the short run. 

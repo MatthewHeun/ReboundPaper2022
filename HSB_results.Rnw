@@ -558,6 +558,19 @@ Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebou
 N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
 Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_bar, digits = 2)
 Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+
+# Calculate the increase in "on" time for the lamp in hr/day.
+q_dot_s_star_lamp <- rebound_results |> 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp") |> 
+  magrittr::extract2(ReboundTools::star_vars$q_dot_s_star)
+q_dot_s_hat_lamp <- rebound_results |> 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp") |> 
+  magrittr::extract2(ReboundTools::hat_vars$q_dot_s_hat)
+t_on_orig <- 3 # hrs
+t_on_hat <- t_on_orig * q_dot_s_hat_lamp / q_dot_s_star_lamp
+
+t_on_orig_char <- format(round(t_on_orig, 1), nsmall = 1)
+t_on_hat_char <- format(round(t_on_hat, 1), nsmall = 1)
 @
 
 
@@ -1638,7 +1651,35 @@ compared to the incandescent lamp
 leading to increased demand for lighting
 (from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~\lmhr/yr
 to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~\lmhr/yr)
-as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
+as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
+\footnote{
+  The increase in energy service consumption 
+  across the substitution effect
+  ($\rbsub{q}_s < \rasub{q}_s$)
+  indicates that
+  the LED lamp is being used 
+  \Sexpr{t_on_hat_char}~hr/day
+  instead of 
+  \Sexpr{t_on_orig_char}~hr/day. 
+  This may mean that the lamp 
+  isn't switched off when device owner leaves a room 
+  or the house for a short period of time.
+  It is important to distinguish this rebound effect
+  from one where additional or more powerful lamps would be added,
+  in which case rebound magnitude would be affected in two ways.
+  %
+  \begin{enumerate*}[label={(\alph*)}]
+	
+    \item Because more cash would be spent on a second lamp
+          or on a more powerful single lamp, 
+          the income effect which includes the (negative) savings 
+          from emplacement would become smaller.       
+  
+    \item At the same time, substitution effect rebound would become even larger.
+    
+  \end{enumerate*}
+}
+%
 To maintain constant utility,
 consumption of other goods is reduced
 ($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/yr),
