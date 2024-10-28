@@ -1971,9 +1971,11 @@ For the results presented in Section~\ref{sec:results} above,
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-There are no estimates of $k$, which ultimately traces the aggregate growth
-effects of a single, device-specific technical enhancement and is likely
-to differ between EEUs. However, using recent empirical estimates of
+% There are no estimates of $k$, which ultimately traces the aggregate growth effects
+There are no estimates of k, which ultimately traces the aggregate, long-run growth effects
+of a single, device-specific technical enhancement and is likely
+to differ between EEUs. 
+However, using recent empirical estimates of
 sectoral multipliers we can ascertain ourselves that $k$ should be different
 from 1 and choose a different value in line with those estimates.
 
@@ -1984,19 +1986,32 @@ from larger markets for particular products have a long
 history in economic thought dating back at least to \citet{Smith1776},
 data from input-output tables and recent advances in network theory
 allowed formalization of the spill-overs from sectoral to aggregate growth.
-First results show that U.S. aggregate output growth
-may have been up to 3 times as large as the growth of the sector in which
-growth originated \citep{Foerster2022}.
-And industrial policy to
-encourage technology adoption in certain sectors was found to pay back
-up to 5 times its cost in India, but with wide variation
-across sectors \citep{Buera2024}.
-Since our problem also concerns technology adoption,
-one that features energy augmenting technical change,
-we take the value from the \citet{Buera2024} study,
-where the majority of multipliers cluster around 3.
-Thus, we adopt the value of $k = 3$,
+% First results show that U.S. aggregate output growth
+% may have been up to 3 times as large as the growth of the sector in which
+% growth originated \citep{Foerster2022}.
+First results from the literature 
+show that three quarters of U.S.\ aggregate output growth
+originates from sectoral shocks, 
+which are amplified through the production and investment network
+where one sector's output is used as
+intermediate inputs and capital goods in others \citep{Foerster2022}.
+Durable goods are estimated by the authors
+to have the largest sectoral multiplier, and
+their effect on agggregate output 
+is more than three times their sectoral growth.
+Since we are also considering durable goods, 
+we adopt the value of k = 3 to represent the long-run growth effect,
 fully aware that this can be only a first approximation.
+% And industrial policy to
+% encourage technology adoption in certain sectors was found to pay back
+% up to 5 times its cost in India, but with wide variation
+% across sectors \citep{Buera2024}.
+% Since our problem also concerns technology adoption,
+% one that features energy augmenting technical change,
+% we take the value from the \citet{Buera2024} study,
+% where the majority of multipliers cluster around 3.
+% Thus, we adopt the value of $k = 3$,
+% fully aware that this can be only a first approximation.
 
 After setting $k = 3$,
 we can recalculate all rebound components in our framework.
