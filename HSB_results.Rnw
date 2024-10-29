@@ -558,6 +558,19 @@ Re_iinc_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebou
 N_dot_hat_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::hat_vars$N_dot_hat, digits = 2)
 Delta_C_dot_o_bar_lamp_char <- val_to_string(case = "Lamp", val = ReboundTools::Delta_vars$Delta_C_dot_g_bar, digits = 2)
 Re_macro_lamp_char_perc <- val_to_string(case = "Lamp", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
+
+# Calculate the increase in "on" time for the lamp in hr/day.
+q_dot_s_star_lamp <- rebound_results |> 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp") |> 
+  magrittr::extract2(ReboundTools::star_vars$q_dot_s_star)
+q_dot_s_hat_lamp <- rebound_results |> 
+  dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp") |> 
+  magrittr::extract2(ReboundTools::hat_vars$q_dot_s_hat)
+t_on_orig <- 3 # hrs
+t_on_hat <- t_on_orig * q_dot_s_hat_lamp / q_dot_s_star_lamp
+
+t_on_orig_char <- format(round(t_on_orig, 1), nsmall = 1)
+t_on_hat_char <- format(round(t_on_hat, 1), nsmall = 1)
 @
 
 
@@ -755,268 +768,20 @@ adjustments (via emplacement, substitution, income, and macro effects)
 across all aspects (energy, expenditure, and consumption).
 Each aspect is represented by a path in its own plane,
 showing adjustments in response to the EEU.
-% The order of presentation below is
-% energy first, followed by expenditure, ending with consumption,
-% because the EEU triggers rebound
-% (the topic of this article and visible in the energy plane),
-% but is caused by expenditures on the EEU and further monetary adjustments
-% (visible in the expenditure plane),
-% which are calculated via details about substitution
-% (visible in the consumption plane).
 
 Axes of the rebound planes
 represent direct and indirect effects, with
 direct effects shown on the $x$-axes, and
 indirect effects shown on the $y$-axes.
-% Specifically,
-% %
-% \begin{enumerate*}[label={(\roman*)}]
-% 
-%   \item direct and indirect energy consumption rates ($\rate{E}_{dir}$, $\rate{E}_{indir}$) are placed on
-%         the $x$- and $y$-axes of the energy plane, respectively;
-% 
-%   \item direct and indirect expenditure rates ($\rate{C}_{dir}$ and $\rate{C}_{indir}$,
-%         discounted for beginning of life and end of life costs) are placed on
-%         the $x$- and $y$-axes of the expenditure plane, respectively; and
-% 
-%   \item the indexed consumption rate of the energy service ($\rate{q}_s$) and
-%         the indexed expenditure rate of other consumption goods ($\rate{C}_g$) are placed on
-%         the $x$- and $y$-axes of the consumption plane, respectively.
-% 
-% \end{enumerate*}
-%
 Paths through energy, expenditure, and consumption planes
 consist of segments that represent changes due to the various rebound effects.
-% Table~\ref{tab:path_graph_segments} provides the key for rebound path segments.
 Effects that include both direct and indirect rebound
 will show displacement along both axes and
 create a path in the $x$-$y$ plane.
-See Section~\ref{sec:results} for rebound path graphs
+See Section~\ref{sec:results} for rebound planes
 for EEU examples of a car and an electric lamp and 
 Appendix~\ref{sec:graph_details} for
 detailed mathematical descriptions for constructing paths on the rebound planes.
-
-
-% \begin{table}
-% \footnotesize
-% \centering % Centered table
-% \caption{Segments in rebound planes.}
-% \begin{tabular}{r l l c}
-%   \toprule
-%   \multicolumn{1}{c}{Segment} & Rebound effect             & Symbol           \\
-%   \midrule
-%   \circa{} \hspace{48.8mm}    & Direct emplacement         & $Re_{dempl}$     \\
-%   \ab{}    \hspace{42.0mm}    & Embodied energy            & $Re_{emb}$       \\
-%   \bstar{} \hspace{35.2mm}    & Ops.\, maint.\, and disp.\ & $Re_{\omd}$       \\
-%   \midrule
-%   \starc{} \hspace{28.8mm}    & Indirect substitution      & $Re_{isub}$      \\
-%   \chat{}  \hspace{21.6mm}    & Direct substitution        & $Re_{dsub}$      \\
-%   \midrule
-%   \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
-%   \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
-%   \midrule
-%   \bartilde{}                 & Macro                      & $Re_{macro}$     \\
-%   \bottomrule
-% \end{tabular}
-% \label{tab:path_graph_segments}
-% \end{table}
-
-% Each rebound plane is described in the subsections below.
-% Reference to the rebound planes in
-% Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}
-% below will be beneficial.
-
-
-% %------------------------------
-% \subsubsection{The energy plane}
-% \label{sec:energy_path_graphs}
-% %------------------------------
-
-% The energy plane
-% (see Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph} below)
-% shows the direct energy consumption rate ($\rate{E}_{dir}$) on the $x$-axis
-% and
-% the indirect energy consumption rate ($\rate{E}_{indir}$) on the $y$-axis.%
-% \footnote{
-%   A related, notional-only (not quantified as in Section~\ref{sec:results}),
-%   one-dimensional visualization of direct and indirect energy rebound
-%   (but not on expenditure or consumption planes)
-%   can be found in Fig.~1 of \cite{Exadaktylos:2021aa}.}
-% %
-% Points $\circ$, $*$, $\wedge$, $-$, and $\sim$ represent stages
-% between the rebound effects of Fig.~\ref{fig:flowchart}.
-% Points $a$, $b$, $c$, and $d$ represent intermediate stages.
-% Lines with negative slope through points
-% $\circ$, $a$, $*$, $\wedge$, $-$, and $\sim$
-% indicate energy consumption isoquants
-% at key points.
-% Note that segment \bartilde{} appears only in the energy plane,
-% because the framework tracks energy consumption but not expenditures or consumption
-% for the macro effect.
-% 
-% In the energy plane,
-% point $a$ lies on the $Re_{tot} = 0\%$ line
-% indicating that point $a$ (and the $Re_{tot} = 0\%$ line)
-% is the point from which all rebound effects
-% ($Re_{empl}$, $Re_{sub}$, $Re_{inc}$, and $Re_{\macro}$)
-% are measured.
-% If rebound effects cause
-% total energy demand to return to the original energy consumption level
-% (negative sloping line through the $\circ$ point),
-% all expected energy savings are taken back by rebound effects.
-% Thus, the line of constant energy consumption through the $\circ$ point is labeled
-% $Re_{tot} = 100\%$.
-% The contribution of each rebound effect to total rebound
-% is represented by the distance that each component's segment
-% moves across the rebound isoquants.
-% Total rebound ($Re_{tot}$) is measured linearly between and beyond the
-% $Re_{tot} = 0\%$ and $Re_{tot} = 100\%$ lines,
-% with direct rebound in the $x$ direction and
-% indirect rebound in the $y$ direction.
-% The region below and to the left of the $Re_{tot} = 0\%$ line
-% exhibits negative rebound, indicating hyperconservation.
-% The region above and to the right of the $Re_{tot} = 100\%$ line
-% shows backfire,
-% i.e., greater total energy consumption after the EEU than before it.
-% 
-% Segment \starc{} moves in the negative $y$ direction
-% by definition of the indirect substitution effect,
-% and segment \chat{} moves in the positive $x$ direction
-% by the definition of the direct substitution effect.
-% Both income effect segments (\hatd{} and \dbar{})
-% show more energy consumption, because net savings are spent
-% on goods and services that rely on at least some energy consumption.%
-% \footnote{
-%   We exclude the case of an inferior good, whose consumption decreases
-%   as real income increases, but
-%   we note here the possibility of such behavior.
-%   This behavior would
-%   however require a different utility model
-%   besides the CES utility model,
-%   which we use throughout this analysis.
-% }
-% %
-% Segment \bartilde{} always moves in the positive $y$ direction,
-% because macro effects lead to additional indirect energy consumption.
-
-
-% %------------------------------
-% \subsubsection{The expenditure plane}
-% \label{sec:expenditure_path_graphs}
-% %------------------------------
-
-% The expenditure plane (see Figs.~\ref{fig:CarCostGraph} and~\ref{fig:LampCostGraph} below) shows
-% the direct expenditure rate on the energy service ($\rate{C}_{dir}$) on the $x$-axis and
-% the indirect expenditure rate
-% ($\rate{C}_{indir}$, discounted when appropriate)
-% on the $y$-axis.
-% Lines with negative slope through points $\circ$, $a$, $*$, and $\wedge$
-% indicate expenditure isoquants.
-% The line through the $\circ$ point is an isoquant for the
-% cost of purchasing the original consumption bundle
-% at the original prices.
-% The line through the $*$ point is an isoquant for the
-% cost of purchasing the original consumption bundle
-% at the new prices.
-% Segments \ab{} and \bstar{}
-% could both move in the positive $y$ direction,
-% they could both move in the negative $y$ direction, or
-% they could move in opposite directions,
-% depending on the results of the independent analyses for
-% embodied energy and capital cost rates.
-% The substitution effect along segments \starc{} and \chat{}
-% will together, by definition, lead to lower expenditure
-% due to the energy service price decline and
-% the budget-reducing compensating variation (CV).
-% The income effect (segments \hatd{} and \dbar{}) must bring expenditure
-% back to the original expenditure line
-% (equal to the budget constraint set by income in dollar or nominal terms)
-% by assumptions about non-satiation and utility maximization
-% in the device user's decision function.
-
-
-% %------------------------------
-% \subsubsection{The consumption plane}
-% \label{sec:consumption_path_graphs}
-% %------------------------------
-
-% The consumption plane
-% (Figs.~\ref{fig:CarConsGraph} and~\ref{fig:LampConsGraph} below) shows
-% the indexed rate of energy service consumption ($\rate{q}_s/\rbempl{q}_s$) on the $x$-axis and
-% the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $y$-axis.
-% Iso-expenditure loci of indexed energy service and other goods demand,
-% i.e. budget constraints,
-% are shown as lines with negative slope
-% (lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
-% Note that budget constraints \circcirc{} and \barbar{}
-% intersect at the $y$-axis (i.e., where $x$ = 0),
-% because the prices of other goods and services do not change
-% as a result of the EEU.
-% As defined in this framework, 
-% emplacement (by itself) does not alter consumption patterns, so
-% the rate of energy service consumption and
-% the rate of other goods consumption are
-% unchanged across the emplacement effect
-% ($\rbempl{q}_s = \raempl{q}_s$ and $\rbempl{C}_g = \raempl{C}_g$, respectively).
-% Thus,
-% only movements after the $*$ point are visible as a path in the consumption plane, and
-% points $\circ$, \emph{a}, \emph{b}, and $*$
-% collapse to the same location in the consumption plane.
-% 
-% Indifference curves for the CES utility model
-% are denoted by \iicirc{} and \iibar{}
-% and represent lines of constant utility through the $\circ$ and $-$ points.
-% Prior to the EEU, the consumption basket (of the energy service and other goods)
-% is represented by the $\circ$ point.
-% The budget constraint,
-% here in real terms, i.e.,
-% the capacity to purchase either the energy service or other goods and services,
-% is shown as isoquant \circcirc{}.
-% The original budget constraint line (\circcirc{})
-% is tangent to the original indifference curve
-% (\iicirc{}) at point $\circ$, the optimal consumption
-% bundle prior to the EEU.
-% The real budget line \starstar{}
-% indicates the (higher) capacity to purchase
-% combinations of energy services and other goods and services
-% using the same money needed to purchase
-% the old consumption bundle but at the new, lower price
-% for the energy service,
-% thanks to the EEU.
-% 
-% The substitution effect leads to the cheaper, optimal
-% CES-utility-preserving
-% consumption bundle at the $\wedge$ point.
-% The substitution effect is shown by segments
-% \starc{} (the indirect component, which represents the decrease in other goods consumption) and
-% \chat{} (the direct component, which represents the increase in energy service consumption).
-% Although the substitution effect is calculated
-% in the consumption plane,
-% its impact
-% can be seen in
-% the energy and expenditure planes.
-% 
-% In the consumption plane,
-% the income expansion path under the CES utility model
-% is a ray (\rr{}) from the origin through the $\wedge$ point
-% in the consumption plane.
-% The pre- and post-income-effect
-% points ($\wedge$ and $-$, respectively)
-% lie along the \rr{} ray, due to homotheticity.
-% The increased consumption rate of the energy service is
-% represented by segment \hatd{}, and
-% the increased consumption rate of other goods and services is
-% represented by segments \dbar{}.
-% 
-% Under non-homothetic utility models,
-% the income expansion path will be closer to vertical
-% in the consumption plane,
-% as the device owner spends more net income ($\rasub{N}$)
-% on other goods and less on the energy service.
-% In the limit, consumption of the energy service
-% is already satiated, so
-% net income is spent completely on other goods,
-% resulting in a vertical income expansion path.
 
 
 %++++++++++++++++++++++++++++++
@@ -1102,22 +867,31 @@ is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
 <<car_stages_table, results="asis", echo=FALSE>>=
-n_stages_table_cols <- 6
+# Use this group to exclude the description column
+# n_stages_table_cols <- 6
+# descr_col <- FALSE
+# align_string <- "lrrrrr"
+
+# Use this group to include the description column
+descr_col <- TRUE
+n_stages_table_cols <- 7
+align_string <- "lrrrrrr"
+
 digs_car <- matrix(c(rep(0, n_stages_table_cols), # M_dot
                      rep(4, n_stages_table_cols), # p_E
                      rep(0, n_stages_table_cols), # t_life,
-                     rep(3, n_stages_table_cols), # R_alpha
-                     rep(3, n_stages_table_cols), # R_omega
+                     rep(3, n_stages_table_cols), # tau_alpha
+                     rep(3, n_stages_table_cols), # tau_omega
                      rep(0, n_stages_table_cols), # eta_engr_units
                      rep(3, n_stages_table_cols), # eta
                      rep(3, n_stages_table_cols), # p_s
                      rep(0, n_stages_table_cols), # E_dot_emb
                      rep(0, n_stages_table_cols), # C_dot_cap
-                     rep(0, n_stages_table_cols), # R_alpha_C_dot_cap
+                     rep(0, n_stages_table_cols), # tau_alpha_C_dot_cap
                      rep(0, n_stages_table_cols), # C_dot_om
                      rep(0, n_stages_table_cols), # C_d
                      rep(0, n_stages_table_cols), # C_dot_d
-                     rep(0, n_stages_table_cols), # R_omega_C_dot_d
+                     rep(0, n_stages_table_cols), # tau_omega_C_dot_d
                      rep(0, n_stages_table_cols), # C_dot_omd
                      rep(0, n_stages_table_cols), # E_dot_s
                      rep(0, n_stages_table_cols), # C_dot_s
@@ -1130,16 +904,18 @@ rebound_results |>
   dplyr::mutate(
     Case = NULL
   ) |>
-  ReboundTools::stages_table(include_tilde_stage = FALSE, 
+  ReboundTools::stages_table(include_description_column = descr_col, 
+                             include_tilde_stage = FALSE, 
                              label = "tab:car_stages_table",
                              caption = paste("Results for car example with macro factor ($k$)", 
                                              "assumed to be 1.", 
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
                                              "($\\sim$) is not shown. ", 
-                                             "Blanks indicate unchanged values."),
+                                             "Blanks indicate unchanged values relative",
+                                             "to previous or later values in the same row."),
                              digits = digs_car,
-                             align = "lrrrrr") |>
+                             align = align_string) |>
   print(include.rownames = FALSE,
         booktabs = TRUE,
         caption.placement = "top",
@@ -1752,18 +1528,18 @@ Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results
 digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # M_dot
                       rep(4, n_stages_table_cols), # p_E
                       rep(0, n_stages_table_cols), # t_life,
-                      rep(3, n_stages_table_cols), # R_alpha
-                      rep(3, n_stages_table_cols), # R_omega
+                      rep(3, n_stages_table_cols), # tau_alpha
+                      rep(3, n_stages_table_cols), # tau_omega
                       rep(0, n_stages_table_cols), # eta_engr_units
                       rep(0, n_stages_table_cols), # eta
                       rep(8, n_stages_table_cols), # p_s
                       rep(3, n_stages_table_cols), # E_dot_emb
                       rep(2, n_stages_table_cols), # C_dot_cap
-                      rep(2, n_stages_table_cols), # R_alpha_C_dot_cap
+                      rep(2, n_stages_table_cols), # tau_alpha_C_dot_cap
                       rep(2, n_stages_table_cols), # C_dot_om
                       rep(2, n_stages_table_cols), # C_d
                       rep(2, n_stages_table_cols), # C_dot_d
-                      rep(2, n_stages_table_cols), # R_omega_C_dot_d
+                      rep(2, n_stages_table_cols), # tau_omega_C_dot_d
                       rep(2, n_stages_table_cols), # C_dot_omd
                       rep(1, n_stages_table_cols), # E_dot_s
                       rep(2, n_stages_table_cols), # C_dot_s
@@ -1777,16 +1553,18 @@ rebound_results %>%
   dplyr::mutate(
     Case = NULL
   ) %>%
-  ReboundTools::stages_table(include_tilde_stage = FALSE, 
+  ReboundTools::stages_table(include_description_column = descr_col, 
+                             include_tilde_stage = FALSE, 
                              label = "tab:lamp_stages_table",
                              caption = paste("Results for lamp example with macro factor ($k$)", 
                                              "assumed to be 1.", 
                                              "There is no change for the consumer across", 
                                              "across the macro effect, so the last stage", 
                                              "($\\sim$) is not shown. ", 
-                                             "Blanks indicate unchanged values."),
+                                             "Blanks indicate unchanged values relative",
+                                             "to previous or later values in the same row."),
                              digits = digs_lamp,
-                             align = "lrrrrr") %>%
+                             align = align_string) %>%
   print(include.rownames = FALSE,
         booktabs = TRUE,
         caption.placement = "top",
@@ -1873,11 +1651,39 @@ compared to the incandescent lamp
 leading to increased demand for lighting
 (from $\rbsub{q}_s = \Sexpr{q_dot_s_star_lamp_char}$~\lmhr/yr
 to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~\lmhr/yr)
-as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.
+as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
+\footnote{
+  The increase in energy service consumption 
+  across the substitution effect
+  ($\rbsub{q}_s < \rasub{q}_s$)
+  indicates that
+  the LED lamp is being used 
+  \Sexpr{t_on_hat_char}~hr/day
+  instead of 
+  \Sexpr{t_on_orig_char}~hr/day. 
+  This may mean that the lamp 
+  isn't switched off when device owner leaves a room 
+  or the house for a short period of time.
+  It is important to distinguish this rebound effect
+  from one where additional or more powerful lamps would be added,
+  in which case rebound magnitude would be affected in two ways.
+  %
+  \begin{enumerate*}[label={(\alph*)}]
+	
+    \item Because more cash would be spent on a second lamp
+          or on a more powerful single lamp, 
+          the income effect which includes the (negative) savings 
+          from emplacement would become smaller.       
+  
+    \item At the same time, rebound could become even larger if the additional devices
+          are also run for a longer time.
+    
+  \end{enumerate*}
+}
+%
 To maintain constant utility,
 consumption of other goods is reduced
 ($\Delta \rasub{C}_g = \Sexpr{Delta_C_dot_o_hat_lamp_char}$~\$/yr),
-% as shown by segment \starc{} in Fig.~\ref{fig:LampConsGraph},
 yielding indirect substitution effect rebound
 ($Re_{isub}$) of $\Sexpr{Re_isub_lamp_char_perc}$\%.
 
@@ -2165,9 +1971,11 @@ For the results presented in Section~\ref{sec:results} above,
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-There are no estimates of $k$, which ultimately traces the aggregate growth
-effects of a single, device-specific technical enhancement and is likely
-to differ between EEUs. However, using recent empirical estimates of
+% There are no estimates of $k$, which ultimately traces the aggregate growth effects
+There are no estimates of k, which ultimately traces the aggregate, long-run growth effects
+of a single, device-specific technical enhancement and is likely
+to differ between EEUs. 
+However, using recent empirical estimates of
 sectoral multipliers we can ascertain ourselves that $k$ should be different
 from 1 and choose a different value in line with those estimates.
 
@@ -2178,19 +1986,32 @@ from larger markets for particular products have a long
 history in economic thought dating back at least to \citet{Smith1776},
 data from input-output tables and recent advances in network theory
 allowed formalization of the spill-overs from sectoral to aggregate growth.
-First results show that U.S. aggregate output growth
-may have been up to 3 times as large as the growth of the sector in which
-growth originated \citep{Foerster2022}.
-And industrial policy to
-encourage technology adoption in certain sectors was found to pay back
-up to 5 times its cost in India, but with wide variation
-across sectors \citep{Buera2024}.
-Since our problem also concerns technology adoption,
-one that features energy augmenting technical change,
-we take the value from the \citet{Buera2024} study,
-where the majority of multipliers cluster around 3.
-Thus, we adopt the value of $k = 3$,
+% First results show that U.S. aggregate output growth
+% may have been up to 3 times as large as the growth of the sector in which
+% growth originated \citep{Foerster2022}.
+First results from the literature 
+show that three quarters of U.S.\ aggregate output growth
+originates from sectoral shocks, 
+which are amplified through the production and investment network
+where one sector's output is used as
+intermediate inputs and capital goods in others \citep{Foerster2022}.
+Durable goods are estimated by the authors
+to have the largest sectoral multiplier, and
+their effect on agggregate output 
+is more than three times their sectoral growth.
+Since we are also considering durable goods, 
+we adopt the value of k = 3 to represent the long-run growth effect,
 fully aware that this can be only a first approximation.
+% And industrial policy to
+% encourage technology adoption in certain sectors was found to pay back
+% up to 5 times its cost in India, but with wide variation
+% across sectors \citep{Buera2024}.
+% Since our problem also concerns technology adoption,
+% one that features energy augmenting technical change,
+% we take the value from the \citet{Buera2024} study,
+% where the majority of multipliers cluster around 3.
+% Thus, we adopt the value of $k = 3$,
+% fully aware that this can be only a first approximation.
 
 After setting $k = 3$,
 we can recalculate all rebound components in our framework.
