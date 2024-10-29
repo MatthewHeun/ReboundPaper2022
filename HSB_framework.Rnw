@@ -317,7 +317,8 @@ economists need to have an energy analyst's understanding of energy, and
 energy analysts need to have an economist's understanding of finance and human behavior.%
 \footnote{
   Indeed, this is why the authors for these papers
-  come from the energy analysis (MKH, PEB) and economics (GS) disciplines.
+  come from the disciplines of energy analysis (MKH, PEB) 
+  and economics (GS).
 }
 %
 Developing the knowledge and skills required 
