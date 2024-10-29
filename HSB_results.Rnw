@@ -335,8 +335,8 @@ to replace a conventional gasoline Ford Fusion car.
 The cars are matched as closely as possible,
 except for the inclusion of an electric battery
 in the hybrid car.
-The car case study features a larger initial capital investment ($\orig{C}_{cap} < \amacro{C}_{cap}$)
-for the long-term benefit of decreased energy service costs ($\rorig{C}_s > \ramacro{C}_s$).
+The car case study features a larger initial capital investment ($\orig{C}_{cap} < \aempl{C}_{cap}$)
+for the long-term benefit of decreased energy service costs ($\rorig{C}_s > \raempl{C}_s$).
 
 We require three sets of data.
 First, basic car parameters are summarized
@@ -761,7 +761,7 @@ To date, visualizing the energy, expenditure, and consumption
 aspects of rebound phenomena has not been
 done in a numerically precise manner
 with a set of mutually consistent graphs.
-So we introduce \emph{rebound planes}
+We introduce \emph{rebound planes}
 to help advance clarity of
 (direct and indirect) rebound and
 adjustments (via emplacement, substitution, income, and macro effects)
@@ -1645,7 +1645,7 @@ the incandescent lamp and the LED lamp.%
 Direct \subeffect{} rebound
 ($Re_{dsub}$) is \Sexpr{Re_dsub_lamp_char_perc}\%
 due to the much higher LED lamp efficiency
-($\amacro{\eta} = \Sexpr{eta_better}$~lm/W)
+($\aempl{\eta} = \Sexpr{eta_better}$~lm/W)
 compared to the incandescent lamp
 ($\bempl{\eta} = \Sexpr{eta_worse}$~lm/W),
 leading to increased demand for lighting
@@ -1666,19 +1666,20 @@ as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
   or the house for a short period of time.
   It is important to distinguish this rebound effect
   from one where additional or more powerful lamps would be added,
-  in which case rebound magnitude would be affected in two ways.
-  %
-  \begin{enumerate*}[label={(\alph*)}]
-	
-    \item Because more cash would be spent on a second lamp
-          or on a more powerful single lamp, 
-          the income effect which includes the (negative) savings 
-          from emplacement would become smaller.       
-  
-    \item At the same time, rebound could become even larger if the additional devices
-          are also run for a longer time.
-    
-  \end{enumerate*}
+  which, strictly speaking, would be an income effect.
+  % in which case rebound magnitude would be affected in two ways.
+  % %
+  % \begin{enumerate*}[label={(\alph*)}]
+  % 
+  %   \item Because more cash would be spent on a second lamp
+  %         or on a more powerful single lamp, 
+  %         the income effect which includes the (negative) savings 
+  %         from emplacement would become smaller.       
+  % 
+  %   \item At the same time, rebound could become even larger if the additional devices
+  %         are also run for a longer time.
+  %   
+  % \end{enumerate*}
 }
 %
 To maintain constant utility,
@@ -1971,8 +1972,7 @@ For the results presented in Section~\ref{sec:results} above,
 we assumed a placeholder value of $k = 1$,
 meaning that every \$1 of spending by the device user in the income effect
 generates only \$1 of additional economic activity in the broader economy.
-% There are no estimates of $k$, which ultimately traces the aggregate growth effects
-There are no estimates of k, which ultimately traces the aggregate, long-run growth effects
+There are no estimates of $k$, which ultimately traces the aggregate, long-run growth effects
 of a single, device-specific technical enhancement and is likely
 to differ between EEUs. 
 However, using recent empirical estimates of
@@ -1986,9 +1986,6 @@ from larger markets for particular products have a long
 history in economic thought dating back at least to \citet{Smith1776},
 data from input-output tables and recent advances in network theory
 allowed formalization of the spill-overs from sectoral to aggregate growth.
-% First results show that U.S. aggregate output growth
-% may have been up to 3 times as large as the growth of the sector in which
-% growth originated \citep{Foerster2022}.
 First results from the literature 
 show that three quarters of U.S.\ aggregate output growth
 originates from sectoral shocks, 
@@ -2000,18 +1997,8 @@ to have the largest sectoral multiplier, and
 their effect on agggregate output 
 is more than three times their sectoral growth.
 Since we are also considering durable goods, 
-we adopt the value of k = 3 to represent the long-run growth effect,
+we adopt the value of $k = 3$ to represent the long-run growth effect,
 fully aware that this can be only a first approximation.
-% And industrial policy to
-% encourage technology adoption in certain sectors was found to pay back
-% up to 5 times its cost in India, but with wide variation
-% across sectors \citep{Buera2024}.
-% Since our problem also concerns technology adoption,
-% one that features energy augmenting technical change,
-% we take the value from the \citet{Buera2024} study,
-% where the majority of multipliers cluster around 3.
-% Thus, we adopt the value of $k = 3$,
-% fully aware that this can be only a first approximation.
 
 After setting $k = 3$,
 we can recalculate all rebound components in our framework.
@@ -2771,7 +2758,7 @@ of full penetration of the lamp EEU.
 \label{sec:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this paper (Part~II), we help to advance clarity in the field of energy rebound
+In this paper (Part~II of two), we help to advance clarity in the field of energy rebound
 by
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -2797,7 +2784,7 @@ by
 %
 We encourage energy analysts and economists to use visualizations
 like the energy, expenditure, and consumption planes
-to document rebound calculations going forward.
+to document and visualize rebound calculations going forward.
 Our hope is that additional clarity will
 %
 \begin{enumerate*}[label={(\roman*)}]
@@ -2855,9 +2842,9 @@ Further work could be pursued in several areas.
         than in Appendix~\ref{sec:sensitivity_analyses},
         although this will be challenging work because
         many rebound parameters are covariant.
-        For example, post-EEU efficiency ($\amacro{\eta}$)
+        For example, post-EEU efficiency ($\aempl{\eta}$)
         is unlikely to be independent of
-        post-EEU capital cost ($\amacro{C}_{cap}$).
+        post-EEU capital cost ($\aempl{C}_{cap}$).
 
   \item The framework could be extended to encompass
         fuel-switching EEUs, such as the move from
