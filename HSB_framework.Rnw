@@ -714,13 +714,13 @@ The EEU is not costless, so
 the upgraded device may be more expensive to purchase
 than a like-for-like replacement of the original device.
 We call this increased ``capital cost'' 
-($\bempl{C}_{cap} < \amacro{C}_{cap}$). 
+($\bempl{C}_{cap} < \aempl{C}_{cap}$). 
 It may also 
 be more costly to operate and maintain (subscript $OM$) and
 dispose (subscript $d$) 
 of the upgraded device
-($\rbempl{C}_{\om} < \ramacro{C}_{\om}$ and 
-$\rbempl{C}_d < \ramacro{C}_d$). 
+($\rbempl{C}_{\om} < \raempl{C}_{\om}$ and 
+$\rbempl{C}_d < \raempl{C}_d$). 
 However, the opposite may hold, too.
 As final-to-service efficiency increases ($\bempl{\eta} < \aempl{\eta}$),
 the price of the energy service declines ($\bempl{p}_s > \aempl{p}_s$).
@@ -734,7 +734,7 @@ so the energy purchaser (the device user) is a price taker.%
   that is beyond the scope of this paper.
   However, see Section~\ref{sec:notes_price_effect}
   where we discuss an energy price rebound effect
-  as an extension of the framework.
+  as an extension of this framework.
 }
 %
 Initially, the device user spends income ($\rate{M}$)
@@ -889,7 +889,7 @@ due to the fact that a higher-efficiency device has been put in service
 consumption patterns are assumed unchanged. 
 Behavior adjustments are addressed later, 
 in the substitution and income effects. 
-Then, any (positive or negative) adjustment 
+Any (positive or negative) adjustment 
 in income due to emplacement 
 is added to the freed cash ($\rate{G}$) 
 spent in the income effect.
@@ -1090,7 +1090,7 @@ It decomposes price-induced behavior change into
         other goods consumption due to the lower post-EEU price of the energy service 
         (the substitution effect) and
   
-  \item spending the higher real income (the income effect).%
+  \item spending of the higher real income (the income effect).%
         \footnote{
           For the original development of the decomposition
           see \citet{Slutsky1915} and \citet{Allen1936}.
@@ -1242,7 +1242,7 @@ which can be rearranged to
 To find the post-substitution effect point ($\wedge$),
 we solve for the location on the indifference curve
 where its slope is equal to the slope of the
-expenditure line after the EEU, 
+post-EEU expenditure line, 
 assuming the CES utility model.%
 \footnote{
   Other utility models could be used; however, 
@@ -1359,7 +1359,9 @@ as consumers become more affluent,
 implying income elasticities 
 of the energy service of less than one \citep{Greening2000}. 
 At the lower bound, 
-the consumer spends all income after the substitution effect on other goods and none on the energy service,
+the consumer spends all income after the substitution effect 
+on other goods (subscript $g$) and
+none on the energy service (subscript $s$),
 choices that serve to reduce rebound 
 due to typically lower energy intensity of other goods compared to the energy service.%
 \footnote{
@@ -1480,7 +1482,8 @@ As shown in Table~\ref{tab:inceffect}, indirect income rebound is defined as
 \end{equation}
 %
 After substitution, rearranging, and canceling of terms, 
-the expression for indirect income for the CES utility model rebound is
+the expression for indirect income rebound 
+under the CES utility model is
 
 \begin{equation} \label{eq:Re_iinc}
   Re_{iinc} = \Reiinceqnexact{} \; .
@@ -1541,7 +1544,7 @@ GDP remains unchanged.%
   To appreciate the difference between production for
   the market and production for the household, 
   consider the case
-  where increased mileage leads to the household saving
+  where increased fuel efficiency leads to the household saving
   on energy per car trip. 
   The household takes more trips
   (direct rebound), without effect on GDP.
@@ -1574,9 +1577,11 @@ If the EEU saves time,
 then saved time could be spent on more paid work or
 on increasing human capital \citep{Sorrell2008,Gautham2024}.
 If the EEU saves money (but no time), 
-then the freed cash could be spent to create additional demand for products
+then the freed cash could be spent
+to create additional demand for products
 that translate into higher GDP and possibly faster productivity growth
-\citep{Magacho2018}. It could also be spent on more effective 
+\citep{Magacho2018}. 
+The freed cash could also be spent on more effective 
 (and more costly) human capital-increasing activities
 or even be used to start a venture. 
 In all cases, it would be rash to conclude that 
@@ -1627,7 +1632,7 @@ of the direct increase in productivity expressed as productivity
 gains in other sectors, 
 then the macro effect can simply
 be represented as a multiple of the (indirect) emplacement effect
-at the ``$*$'' stage of Fig.~\ref{fig:flowchart},
+at the post-emplacement stage ($*$) of Fig.~\ref{fig:flowchart},
 a multiplier that we represent by a macro factor ($k$).%
 \footnote{
   The macro factor ($k$) appears unitless,
@@ -1676,8 +1681,9 @@ However, we show how it could be incorporated
 by adding an assumption about EEU adoption shares and 
 a model of the energy market to 
 derive a rebound expression 
-for the energy price effect
-in Appendix~\ref{sec:price_effect_appendix}.
+for the energy price effect in
+Section~\ref{sec:notes_price_effect} and
+Appendix~\ref{sec:price_effect_appendix}.
 
 
 %++++++++++++++++++++++++++++++
@@ -1876,7 +1882,7 @@ By so doing, we help advance clarity in the field of energy rebound.
 The income effect (Section~\ref{sec:inc_effect_main_paper})
 captures the energy and rebound implications
 of expanding real income at the level of the upgraded device.
-Our partial equilibrium framework described herein
+The partial equilibrium framework described herein
 enables calculation of income effect rebound ($Re_{inc}$)
 without regard to changes in energy price ($p_E$), 
 because the energy price is assumed exogenous.
