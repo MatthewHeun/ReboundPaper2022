@@ -993,10 +993,11 @@ We assume no energy is embodied in the device while in service.
 The EEU causes the embodied energy of the energy conversion device to change
 from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
 
-For simplicity, we spread all embodied energy
+For simplicity, we spread all embodied energy evenly
 over the lifetime of the device
-for a constant embodied energy rate ($\rate{E}_{emb}$).%
+which gives a constant embodied energy rate ($\rate{E}_{emb}$).%
 \footnote{
+  This framework focuses on EEUs for individual machines.
   In the aggregate, adoption of new technology usually follows
   a logistic (or ``S'') curve.
 }
@@ -1054,7 +1055,7 @@ to form discounted expenditure rates such that
 $\rbempl{C}_{\omd} = \rbempl{C}_{\om} 
                      + \bempl{\tau}_\omega \rbempl{C}_d$
 and
-$\raempl{C}_{\omd} = \raempl{C}_m 
+$\raempl{C}_{\omd} = \raempl{C}_{\om} 
                      + \aempl{\tau}_\omega \raempl{C}_d$.
 
 For simplicity, we assume that operations, maintenance, and disposal
@@ -1552,10 +1553,10 @@ GDP remains unchanged.%
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
   Nevertheless, as long as the energy efficiency improvement 
-  is the only one in the economy,
+  is limited to only one energy conversion device (in this example, a car),
   the further output growth may be constrained to the extent that
   the other inputs into production remain constrained 
-  at the original levels and substituting energy 
+  at their original levels and substituting energy 
   for the other inputs to production
   is limited by the prevailing technology.
 }
