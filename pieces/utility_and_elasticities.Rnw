@@ -128,7 +128,7 @@ for convenience.
 \end{equation}
 
 \begin{equation}
-  \frac{\rasub{C}_g}{\rbsub{C}_g} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_g} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \; . \right]
+  \frac{\rasub{C}_g}{\rbsub{C}_g} = 1 - \frac{p_E \rbsub{q}_s}{\bsub{\eta}  \rbsub{C}_g} \left[ \left( \etaratiostacked \right)^{-\eqspsUC} - 1 \right]
  \tag{\ref{eq:C_dot_g_ratio_CPE}}
 \end{equation}
 
@@ -798,7 +798,7 @@ the definition of the compensated cross price elasticity
 of other goods consumption($\eqgpsChat$).
 
 \begin{equation} \label{eq:eqgpsC_def}
-  \eqgpsChat \equiv \frac{\aempl{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\amacro{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
+  \eqgpsChat \equiv \frac{\aempl{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}}
 \end{equation}
 
 Again, we need to find the partial

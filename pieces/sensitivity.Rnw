@@ -11,12 +11,12 @@ sensitivity analyses
 can show important trends, tendencies, and relationships
 between rebound parameters and rebound magnitudes.
 Key rebound parameters include 
-post-EEU efficiency ($\amacro{\eta}$),
-post-EEU capital cost ($\amacro{C}_{cap}$),
+post-EEU efficiency ($\aempl{\eta}$),
+post-EEU capital cost ($\aempl{C}_{cap}$),
 energy price ($p_E$),
 pre-EEU uncompensated price elasticity of energy service demand ($\eqspsUCorig$), 
 the macro factor ($k$), and
-post-EEU energy service price ($\amacro{p}_s$).
+post-EEU energy service price ($\aempl{p}_s$).
 Univariate sensitivity analyses 
 (the kind shown here)
 should be interpreted carefully,
@@ -229,19 +229,20 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of capital cost ($\amacro{C}_{cap}$) on rebound terms} 
+\subsection{Effect of capital cost ($\aempl{C}_{cap}$) on rebound terms} 
 \label{sec:effect_of_capital_cost}
 %++++++++++++++++++++++++++++++
 
 The sensitivity of energy rebound
-to capital cost ($\amacro{C}_{cap}$) is shown
+to capital cost ($\aempl{C}_{cap}$) is shown
 in Fig.~\ref{fig:all_Re_terms_C_cap_graph}.
 All other things being equal,
 as capital cost of the EEU rises, 
 less net savings result from the emplacement effect,
 leading to smaller income, macro, and total rebound.
 The same effects would be observed
-with increasing maintenance and disposal cost rate ($\ramacro{C}_{\md}$).
+with increasing operations and maintenance ($\raempl{C}_{\om}$) and
+disposal cost ($\raempl{C}_d$) rates.
 
 <<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(32000, 38000, by = 1000)),
@@ -484,11 +485,14 @@ rebound_terms_graph(rebound_data = actual_cases,
 \label{sec:effect_of_discount_rate}
 %++++++++++++++++++++++++++++++
 
-The effect of discount rate on rebound is shown in Fig.~\ref{fig:all_Re_terms_r_graph}.
+The effect of discount rate on rebound is shown 
+in Fig.~\ref{fig:all_Re_terms_r_graph}.
 Discounting has little effect on rebound terms
 compared to other parameters such as
-upgraded efficiency ($\amacro{\eta}$, Fig.~\ref{fig:all_Re_terms_eta_graph}), 
-capital cost ($\amacro{C}_{cap}$, Fig.~\ref{fig:all_Re_terms_C_cap_graph}), 
+upgraded efficiency ($\aempl{\eta}$, 
+Fig.~\ref{fig:all_Re_terms_eta_graph}), 
+capital cost ($\aempl{C}_{cap}$,
+Fig.~\ref{fig:all_Re_terms_C_cap_graph}), 
 energy price ($p_E$, Fig.~\ref{fig:all_Re_terms_p_E_graph}), and 
 own price elasticity of energy service demand 
 ($\eqspsUCorig$, Fig.~\ref{fig:all_Re_terms_eps_graph}).
@@ -520,7 +524,7 @@ rebound_terms_graph(rebound_data = actual_cases,
 
 
 %++++++++++++++++++++++++++++++
-\subsection{Effect of energy service price ($\amacro{p}_s$) on price elasticities ($\asub{\varepsilon}$)}
+\subsection{Effect of energy service price ($\aempl{p}_s$) on price elasticities ($\asub{\varepsilon}$)}
 \label{sec:price_elasticities_sensitivity}
 %++++++++++++++++++++++++++++++
 
@@ -531,19 +535,20 @@ for the CES utility model described
 in Section~\ref{PartI-sec:sub_effect_main_paper} 
 and Appendix~\ref{PartI-sec:utility_and_elasticities}
 of Part~I.
-Note that the left side of each graph ($\amacro{p}_{s} = 0$)
-represents unattainable infinite efficiency ($\amacro{\eta}_s \rightarrow \infty$), 
+Note that the left side of each graph ($\aempl{p}_{s} = 0$)
+represents unattainable infinite efficiency 
+($\aempl{\eta}_s \rightarrow \infty$), 
 i.e., delivery of the energy service without energy consumption.
 
 First, note the sign of the elasticities. As expected, both of the
 uncompensated price elasticities ($\eqspsUChat$ and $\eqgpsUChat$,
 dashed lines in Fig.~\ref{fig:PriceElasticitySensGraph}) 
-are negative, regardless of the energy service price ($\amacro{p}_s$):
+are negative, regardless of the energy service price ($\aempl{p}_s$):
 a lower price means more consumption of both
 goods, all other things being equal.
 The compensated own price elasticity ($\eqspsChat$) is negative
 and the compensated cross price elasticity ($\eqgpsChat$) is positive.
-As $\amacro{p}_s$ declines, the consumers substitutes the energy
+As $\aempl{p}_s$ declines, the consumers substitutes the energy
 service for other goods.
 
 <<PriceElasticitySensGraph, echo=FALSE, fig.width=6, fig.height=4, fig.align="center", fig.cap="Sensitivity of post substitution effect price elasticities ($\\asub{\\varepsilon}$) to post-EEU energy service price ($\\amacro{p}_{s}$) for the CES utility model. This graph is a visualization of Eqs.~(\\ref{PartI-eq:eqgpsC_exact}), (\\ref{PartI-eq:eqgpsUC_exact}), (\\ref{PartI-eq:eqspsC_exact}), and (\\ref{PartI-eq:eqspsUC_exact}) of Part~I. The solid vertical line indicates the original energy service price ($\\orig{p}_s$), and the dashed vertical line indicates the upgraded energy service price ($\\aempl{p}_s = \\asub{p}_s = \\ainc{p}_s = \\amacro{p}_s$) for the two examples. See Tables~\\ref{tab:car_stages_table} and \\ref{tab:lamp_stages_table} for $p_s$ in different units.">>=
@@ -635,7 +640,7 @@ ggplot2::ggplot() +
 
 Second, the magnitude of price elasticities varies.
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that the car example exhibits
-more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\amacro{p}_s$)
+more variation of price elasticities ($\asub{\varepsilon}$) with energy service price ($\aempl{p}_s$)
 than the lamp example, 
 because the expenditure share ($\fCs$) for the lamp example is very small
 compared to the car example.
@@ -649,7 +654,7 @@ with substitution and income effects
 to prefer the CES utility model over the CPE approximation.
 
 Fig.~\ref{fig:PriceElasticitySensGraph} shows that
-as efficiency increases (and $\amacro{p}_s$ decreases), 
+as efficiency increases (and $\aempl{p}_s$ decreases), 
 the absolute value of the uncompensated price elasticities 
 ($\eqspsUChat$ and $\eqgpsUChat$) decreases, 
 a change that exceeds the slightly increasing (in absolute value terms)
