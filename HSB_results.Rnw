@@ -1516,11 +1516,6 @@ Tables~\ref{tab:lamp_parameters}--\ref{tab:lamp_elasticity_parameters}
 and the equations in Section~\ref{PartI-sec:framework} of Part~I in hand,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:lamp_stages_table}.
-% Similar to Table~\ref{tab:car_stages_table},
-% Table~\ref{tab:lamp_stages_table} applies to the lamp user,
-% so no changes are recorded across the macro effect, and
-% the $-$ (bar) and $\sim$ (tilde) columns
-% of Table~\ref{tab:lamp_stages_table} are identical.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 

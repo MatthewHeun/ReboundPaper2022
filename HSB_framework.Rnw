@@ -385,7 +385,12 @@ one that
   \item starts at the microeconomics of rebound
         (building especially upon \citet{Borenstein:2015aa}) and 
         
-  \item is approachable for both energy analysts and economists.
+  \item is approachable for both energy analysts and economists.%
+\footnote{
+  This objective may mean that some aspects of the development of the framework
+  will seem obvious to energy analysts while  
+  other aspects will seem obvious to economists.
+}
 
 \end{enumerate*}
 %
@@ -574,10 +579,12 @@ Names for the decorations are given at the bottom of the figure
   Note that
   the vocabulary and mathematical notation for rebound effects is important;
   Fig.~\ref{fig:flowchart} and Appendix~\ref{sec:nomenclature} provide guides to 
-  notational elements used throughout this paper, including
+  elements used throughout this paper, including
   symbols, Greek letters, abbreviations, decorations, and subscripts.
   The notational elements 
   can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
+  As the goal of this paper is to bridge disciplines, 
+  the nomenclature will necessarily have unfamiliar elements to each discipline involved.
   In several places, including Fig.~\ref{fig:flowchart},
   we use colored backgrounds on rebound effects for visual convenience. 
   The colors are carried through to figures in Part~II.
