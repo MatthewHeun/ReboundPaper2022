@@ -1649,7 +1649,7 @@ to $\rasub{q}_s = \Sexpr{q_dot_s_hat_lamp_char}$~\lmhr/yr)
 as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
 \footnote{
   The increase in energy service consumption 
-  across the substitution effect
+  across our substitution effect
   ($\rbsub{q}_s < \rasub{q}_s$)
   indicates that
   the LED lamp is being used 
@@ -1660,8 +1660,13 @@ as shown by segment \chat{} in Fig.~\ref{fig:LampConsGraph}.%
   isn't switched off when device owner leaves a room 
   or the house for a short period of time.
   It is important to distinguish this rebound effect
-  from one where additional or more powerful lamps would be added,
+  from one where additional lamps would be added,
   which, strictly speaking, would be an income effect.
+  Our results are consistent with
+  \citet{Tsao:2010aa} who note that 
+  ``no empirical evidence has been found for saturation
+  in per-capita consumption of light,
+  even in contemporary developed nations.''
   % in which case rebound magnitude would be affected in two ways.
   % %
   % \begin{enumerate*}[label={(\alph*)}]
