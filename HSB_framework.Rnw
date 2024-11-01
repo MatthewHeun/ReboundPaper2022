@@ -703,6 +703,10 @@ embodied energy rates ($\rate{E}_{emb}$ in MJ/yr).
   to effect changes 
   (via heat or work) 
   in the physical world.
+  We thank an anonymous reviewer for the insight that,
+  in principle, 
+  the carbon content of energy could also be discounted
+  if one assumes that near term emissions are worse than later emissions. 
 }
 %
 is captured by the variables $\tau_\alpha$ and $\tau_\omega$.
@@ -764,16 +768,7 @@ $\rorig{C}_{cap}$ and $\rorig{C}_{d}$ are undiscounted
 cost rates given by 
 $\orig{C}_{cap} / \orig{t}_{life}$ 
 and
-$\orig{C}_d / \orig{t}_{life}$.%
-\footnote{
-  We are only discounting monetary magnitudes 
-  to reflect the time value of money.
-  We thank an anonymous reviewer for the insight that,
-  in principle, 
-  the carbon content of energy could also be discounted
-  if one assumes that near term emissions are worse than later emissions. 
-}
-%
+$\orig{C}_d / \orig{t}_{life}$.
 Note that $\tau_\alpha \ge 1$, and $\tau_\omega \le 1$;
 equalities apply when interest rate ($r$) is zero.
 (See Appendix~\ref{sec:budget_constraint} for details on discounting.)
@@ -898,6 +893,7 @@ Behavior adjustments are addressed later,
 in the substitution and income effects. 
 Any (positive or negative) adjustment 
 in income due to emplacement 
+(measured as net income, $\raempl{N}$)
 is added to the freed cash ($\rate{G}$) 
 spent in the income effect.
 
@@ -1003,13 +999,7 @@ from $\orig{E}_{emb}$ to $\aempl{E}_{emb}$.
 
 For simplicity, we spread all embodied energy evenly
 over the lifetime of the device
-which gives a constant embodied energy rate ($\rate{E}_{emb}$).%
-\footnote{
-  This framework focuses on EEUs for individual machines.
-  In the aggregate, adoption of new technology usually follows
-  a logistic (or ``S'') curve.
-}
-
+which gives a constant embodied energy rate ($\rate{E}_{emb}$).
 Thus, we allocate embodied energy over the life of the original and upgraded devices
 ($\bempl{t}_{\life}$ and $\aempl{t}_{\life}$, respectively)
 without discounting
@@ -1563,13 +1553,13 @@ GDP remains unchanged.%
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
-  Nevertheless, as long as the energy efficiency improvement 
-  is limited to only one energy conversion device (in this example, a car),
-  the further output growth may be constrained to the extent that
-  the other inputs into production remain constrained 
-  at their original levels and substituting energy 
-  for the other inputs to production
-  is limited by the prevailing technology.
+  % Nevertheless, as long as the energy efficiency improvement 
+  % is limited to only one energy conversion device (in this example, a car),
+  % the further output growth may be constrained to the extent that
+  % the other inputs into production remain constrained 
+  % at their original levels and substituting energy 
+  % for the other inputs to production
+  % is limited by the prevailing technology.
 }
 %
 That may be true in the short run. 
@@ -1595,7 +1585,17 @@ or even be used to start a venture.
 In all cases, it would be rash to conclude that 
 just because some EEUs lead to productivity increases
 not captured directly by GDP,
-they do not eventually lead to additional economic growth.
+they do not eventually lead to additional economic growth.%
+\footnote{
+  Nevertheless, as long as the energy efficiency improvement 
+  (in this example, an upgraded car)
+  is the only technological progress in the economy,
+  further output growth may be constrained to the extent that
+  the other inputs into production remain constrained 
+  at their original levels and substituting energy 
+  for the other inputs to production
+  is limited by the prevailing technology.
+}
 
 \citeauthor{Borenstein:2015aa} also addressed these macro effects 
 from consumer behavior
