@@ -123,7 +123,7 @@ for convenience.
 
 \begin{equation} 
   \frac{\rasub{q}_s}{\rbempl{q}_s}
-      = \left( \frac{\aempl{\eta}}{\bempl{\eta}} \right)^{-\eqspsC} 
+      = \left( \frac{\aempl{\eta}}{\bempl{\eta}} \right)^{-\eqspsUC} 
         \tag{\ref{eq:approx_qshat_over_qsorig}}
 \end{equation}
 
