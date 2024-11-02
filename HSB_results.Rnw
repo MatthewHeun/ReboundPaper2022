@@ -2239,7 +2239,8 @@ We illustrate with the lamp example.
 
 Because the microeconomic portion of this framework
 is focused on adjustments caused by a single EEU
-(in this example, replacing a single incandescent lamp with an LED),
+(in this example, replacing a single incandescent lamp 
+with a single LED),
 $\eqspsUC$ should account for only the behavioral adjustment 
 of using a lamp for more hours per day.
 The device owner installing additional lamps
