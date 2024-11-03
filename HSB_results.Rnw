@@ -2308,7 +2308,17 @@ Burn time rebound
 is equivalent to our direct substitution rebound ($Re_{dsub}$)
 and implies a value for
 uncompensated own price elasticity of energy service consumption
-of $\eqspsUC = -0.13$.
+of $\eqspsUC = -0.13$.%
+\footnote{
+  The value of $\eqspsUC = -0.13$ was obtained by 
+  an iterative method:
+  values for $\eqspsUC$ are guessed until $Re_{dsub} = 4\%$
+  is obtained by Eq.~\ref{PartI-eq:Re_dsub_CES} of Part~I.
+  The constant price elasticity model
+  (Eq.~\ref{PartI-eq:Re_dsub_approx} of Part~I) can be used
+  directly as an approximation.
+}
+
 Our value of $\eqspsUC = -0.4$ lies between 
 \citeauthor{Fouquet2011} ($-0.6$) and 
 the implied elasticity from 
