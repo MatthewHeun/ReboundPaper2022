@@ -2322,13 +2322,10 @@ and implies a value for
 uncompensated own price elasticity of energy service consumption
 of $\eqspsUC = -0.13$.%
 \footnote{
-  The value of $\eqspsUC = -0.13$ was obtained by 
-  an iterative method:
-  values for $\eqspsUC$ are guessed until $Re_{dsub} = 4\%$
-  is obtained by Eq.~\ref{PartI-eq:Re_dsub_CES} of Part~I.
-  The constant price elasticity model
-  (Eq.~\ref{PartI-eq:Re_dsub_approx} of Part~I) can be used
-  directly as an approximation.
+  The value of $\eqspsUC = -0.13$ was obtained via iteration:
+  values for $\eqspsUC$ were guessed until
+  Eq.~\ref{PartI-eq:Re_dsub_CES} of Part~I gave
+  $Re_{dsub} = 4\%$.
 }
 %
 Our value of $\eqspsUC = -0.4$ lies between 
@@ -2342,7 +2339,7 @@ and enables estimation of total rebound in our framework
 using the implied elasticity from \citet{Schleich2014}
 and the recent value from \citet{Fouquet2011}.
 (See Appendix~\ref{sec:sensitivity_analyses} 
-for additional univariate sensitivity studies.)
+for additional univariate sensitivity analyses.)
 Specifically, 
 total rebound for the lamp example is 
 $\Sexpr{f_lmp_loweps("Re_tot")}$\% 
