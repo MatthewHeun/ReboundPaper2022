@@ -2032,6 +2032,17 @@ f_lmp_loweps <- function(Re_name, string_val = TRUE) {
     return(out_val)
   }
 }
+f_lmp_higheps <- function(Re_name, string_val = TRUE) {
+  out_val <- rebound_results %>%
+    dplyr::filter(Case == "Lamp (k = 3, eps = -0.6)") %>%
+    magrittr::extract2(Re_name) %>%
+    magrittr::multiply_by(100)
+  if (string_val) {
+    return(format(round(out_val, 1), nsmall = 1))
+  } else {
+    return(out_val)
+  }
+}
 @
 
 Tables~\ref{tab:car_results} and~\ref{tab:lamp_results}
@@ -2298,7 +2309,8 @@ we prefer the value of $\eqspsUC = -0.4$,
 as motivated above. 
 
 Regardless,
-\citet{Schleich2014} can be used to assess the sensitivity
+\citet{Schleich2014} and \citet{Fouquet2011}
+can be used to assess the sensitivity
 of total rebound to the value of $\eqspsUC$.
 Indeed, 
 a value for $\eqspsUC$ can be back-calculated from the
@@ -2318,7 +2330,7 @@ of $\eqspsUC = -0.13$.%
   (Eq.~\ref{PartI-eq:Re_dsub_approx} of Part~I) can be used
   directly as an approximation.
 }
-
+%
 Our value of $\eqspsUC = -0.4$ lies between 
 \citeauthor{Fouquet2011} ($-0.6$) and 
 the implied elasticity from 
@@ -2327,17 +2339,18 @@ the implied elasticity from
 Fig.~\ref{fig:LampSensToEps} shows the
 univariate sensitivity to $\eqspsUC$ for the lamp example
 and enables estimation of total rebound in our framework
-using the implied elasticity from \citeauthor{Schleich2014}
+using the implied elasticity from \citet{Schleich2014}
+and the recent value from \citet{Fouquet2011}.
 (See Appendix~\ref{sec:sensitivity_analyses} 
 for additional univariate sensitivity studies.)
 Specifically, 
-total rebound for the lamp example
-moves from 
-$Re_{tot} = \Sexpr{f_lmp("Re_tot")}$~\% 
-(with $\eqspsUC = -0.4$, our preferred value)
-to 
-$Re_{tot} = \Sexpr{f_lmp_loweps("Re_tot")}$~\% 
-(with $\eqspsUC = -0.13$, the implied value from \citet{Schleich2014}).
+total rebound for the lamp example is 
+$\Sexpr{f_lmp_loweps("Re_tot")}$\% 
+(with $\eqspsUC = -0.13$, the implied value from \citeauthor{Schleich2014}), 
+$\Sexpr{f_lmp("Re_tot")}$\% 
+(with $\eqspsUC = -0.4$, our preferred value), or
+$\Sexpr{f_lmp_higheps("Re_tot")}$\%
+(with $\eqspsUC = -0.6$, from \citeauthor{Fouquet2011}).
 
 
 <<LampSensToEps, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$) in the lamp example. The macro factor, $k = 3$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
