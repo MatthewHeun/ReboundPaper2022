@@ -380,7 +380,7 @@ eqspsUC_lamp <- actual_cases %>%
   dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor, $k = 3$. The lamp portion of this figure appears in Fig.~\\ref{fig:LampSensToEps}. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor, $k = 3$. The lamp portion of this figure appears as Fig.~\\ref{fig:LampSensToEps}. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
