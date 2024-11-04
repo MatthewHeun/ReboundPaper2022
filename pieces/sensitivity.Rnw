@@ -75,7 +75,7 @@ Each successive 5~mpg boost in fuel economy
 saves less energy than the previous 5~mpg boost in fuel economy.
 
 
-<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor, $k = 3$. (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<eta_tilde_takeback_Sdot_sens_graph, echo=FALSE, fig.cap="Expected energy savings rate ($\\Sdot$, solid line) and takeback rate (dashed line) sensitivity to post-EEU efficiency ($\\aempl{\\eta}$). The macro factor, $k = 3$. (Note different $x$- and $y$-axis scales.)", fig.width=6, fig.height=4, fig.align="center">>=
 actual_cases <- rebound_data %>% 
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] %in% c("Car (k = 3)", "Lamp (k = 3)")) %>% 
   # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
@@ -192,7 +192,7 @@ increases (decreases) proportionally,
 and the actual energy savings rate decreases (increases) accordingly.
 
 
-<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\amacro{\\eta}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eta_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to post-EEU efficiency ($\\aempl{\\eta}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
@@ -214,7 +214,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
                     graph_params = Re_graph_params) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") + 
   ggplot2::scale_x_continuous(labels = eta_tilde_formatter) +
-  ggplot2::labs(x = expression(tilde(eta)*" [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
+  ggplot2::labs(x = expression(eta*"* [mpg (Car) or "*lm%.%hr*"/"*W%.%hr*" (Lamp)]"),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -244,7 +244,7 @@ The same effects would be observed
 with increasing operations and maintenance ($\raempl{C}_{\om}$) and
 disposal cost ($\raempl{C}_d$) rates.
 
-<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\amacro{C}_{cap}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_C_cap_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to capital cost ($\\aempl{C}_{cap}$). The macro factor, $k = 3$.", fig.width=6, fig.height=4, fig.align="center">>=
 C_dot_cap_sens_params <- list(Car = list(C_cap_star = seq(32000, 38000, by = 1000)),
                               Lamp = list(C_cap_star = seq(0.5, 10.0, by = 0.1)))
 
@@ -254,7 +254,7 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_se
                     graph_params = Re_graph_params) +
   ggplot2::scale_x_continuous(breaks = c(1, 2, 4, 6, 8, 10, seq(32000, 38000, by = 2000))) + 
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
-  ggplot2::labs(x = expression(tilde(C)[cap]*" [$]"),
+  ggplot2::labs(x = expression(C[cap]^"*"*" [$]"),
                 y = "Rebound terms [-]",
                 colour = ggplot2::element_blank(),
                 size = ggplot2::element_blank(),
@@ -380,7 +380,7 @@ eqspsUC_lamp <- actual_cases %>%
   dplyr::select(ReboundTools::orig_vars$e_qs_ps_UC_orig)
 @
 
-<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor, $k = 3$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<all_Re_terms_eps_graph, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$). The macro factor, $k = 3$. The lamp portion of this figure appears in Fig.~\\ref{fig:LampSensToEps}. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 eps_sens_params <- list(Car = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)),
                         Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)))
 
