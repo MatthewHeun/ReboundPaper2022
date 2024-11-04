@@ -2240,7 +2240,7 @@ The effect of the
 uncompensated own price elasticity of energy service consumption
 ($\eqspsUC$) on rebound deserves additional consideration, 
 because it dictates the magnitude of direct substitution rebound and
-thereby affects all other rebound components that follow.
+thereby affects other rebound components that follow.
 $\eqspsUC$ is important, because it models device owner behavior
 with respect to additional consumption of the energy service.
 As $\eqspsUC$ becomes more negative, 
@@ -2262,7 +2262,7 @@ Installing additional lamps elsewhere in the economy
 would fall under the macro effect.
 
 \citet[Table~3]{Fouquet2011} estimate
-$\eqspsUC = -0.6$ for most recent decade
+$\eqspsUC = -0.6$ for the most recent decade
 of their study (2000--2010).
 As with most historical lighting rebound studies,
 the \citeauthor{Fouquet2011} estimate 
@@ -2285,14 +2285,9 @@ consumption of illumination from the single lamp
 increases by a factor of \Sexpr{t_on_factor_char} from
 \Sexpr{t_on_orig_char}~hr/day originally to
 \Sexpr{t_on_hat_char}~hr/day after the substitution effect. 
-This may mean that the lamp 
-isn't switched off when device owner leaves a room 
-or the house for a short period of time.
-% These results are consistent with
-% \citet{Tsao:2010aa} who note that 
-% ``no empirical evidence has been found for saturation
-% in per-capita consumption of light,
-% even in contemporary developed nations.''
+This may mean that the more efficient lamp 
+isn't switched off when the device owner leaves a room 
+or the house for a period of time.
 
 To our knowledge, 
 the only study that focuses on single-device rebound 
@@ -2350,7 +2345,7 @@ $\Sexpr{f_lmp_higheps("Re_tot")}$\%
 (with $\eqspsUC = -0.6$, from \citeauthor{Fouquet2011}).
 
 
-<<LampSensToEps, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$) in the lamp example. The macro factor, $k = 3$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<LampSensToEps, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$) in the lamp example. The macro factor, $k = 3$. The line for $Re_{dinc}$ is behind the line for $Re_{dempl}$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 sens_graph_main_paper_actual_cases <- rebound_data %>% 
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp (k = 3)") %>% 
   # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
