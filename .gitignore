@@ -74,8 +74,6 @@ ExecSumm_results.aux
 ExecSumm_results.log
 ExecSumm_results.pdf
 ExecSumm_results.synctex.gz
-HSB_framework_*.pdf
-HSB_results_*.pdf
 diff.aux
 diff.log
 diff.out
@@ -93,8 +91,6 @@ diff_results.log
 diff_results.out
 diff_results.pdf
 diff_results.tex
-diff_HSB_framework_*.*
-diff_HSB_results_*.*
 diff-HSB_framework.aux
 diff-HSB_framework.bbl
 diff-HSB_framework.blg
