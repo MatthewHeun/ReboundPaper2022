@@ -22,6 +22,13 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
 \usepackage{nccmath}            % For the \useshortskip command above equations
+
+
+\usepackage{newtxtext}          % For Times New Roman in body
+\usepackage{newtxmath}          % For Times New Roman in equations
+
+
+
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
 \usepackage{setspace}           % For double spacing
@@ -862,7 +869,7 @@ and the equations in Section~\ref{PartI-sec:framework} of Part~I,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car user.
-Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}),
+Across the macro effect (segment \bartildeline{} in Fig.~\ref{fig:CarEnergyGraph}),
 changes occur only in the macroeconomy.
 For the car user, no changes are recorded across the macro effect.
 Thus, the $\sim$ (tilde) column
@@ -1195,7 +1202,7 @@ between the rebound effects of Fig.~\ref{fig:flowchart}.
 Points $a$, $b$, $c$, and $d$ represent intermediate stages.
 Table~\ref{tab:path_graph_segments} provides the key 
 for rebound path segments.
-Note that segment \bartilde{} appears only in the energy plane,
+Note that segment \bartildeline{} appears only in the energy plane,
 because the framework tracks energy consumption but not expenditures or consumption
 for the macro effect.
 
@@ -1217,7 +1224,7 @@ for the macro effect.
   \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
   \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
   \midrule
-  \bartilde{}                 & Macro                      & $Re_{macro}$     \\
+  \bartildeline{}             & Macro                      & $Re_{macro}$     \\
   \bottomrule
 \end{tabular}
 \label{tab:path_graph_segments}
@@ -1269,7 +1276,7 @@ on goods and services that rely on at least some energy consumption.%
   which we use throughout this analysis.
 }
 %
-Segment \bartilde{} always moves in the positive $y$ direction,
+Segment \bartildeline{} always moves in the positive $y$ direction,
 because macro effects lead to additional indirect energy consumption.
 
 Note that rebound values from Table~\ref{tab:car_results}
@@ -1432,8 +1439,8 @@ the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $
 Iso-expenditure loci of indexed energy service and other goods demand,
 i.e. budget constraints,
 are shown as lines with negative slope
-(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
-Note that budget constraints \circcirc{} and \barbar{}
+(lines \circcirc{}, \starstar{}, \hathatline{}, and \barbarline{}).
+Note that budget constraints \circcirc{} and \barbarline{}
 intersect at the $y$-axis (i.e., where $x$ = 0),
 because the prices of other goods and services do not change
 as a result of the EEU.
@@ -1976,7 +1983,7 @@ However, we see that choosing a placeholder value of $k = 1$
 resulted in a low value for $Re_{\macro}$ and, therefore, $Re_{tot}$
 in Section~\ref{sec:results}.
 In Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph},
-the macro effect segments (\bartilde{})
+the macro effect segments (\bartildeline{})
 should be three times longer than they appear.
 In Tables~\ref{tab:car_results} and~\ref{tab:lamp_results},
 the values of macro rebound ($Re_{\macro}$) should triple to

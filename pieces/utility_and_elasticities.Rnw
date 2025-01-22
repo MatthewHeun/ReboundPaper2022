@@ -233,7 +233,7 @@ The result is
 The budget constraint is the starting point for finding 
 the slope of an expenditure line in the consumption plane.
 (Example expenditure lines include
-the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
+the \circcirc{}, \starstar{}, \hathatline{}, and \barbarline{} lines
 in Figs.~\ref{PartII-fig:CarConsGraph} 
 and~\ref{PartII-fig:LampConsGraph} of Part~II.)
 The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}), 

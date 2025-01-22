@@ -22,6 +22,11 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
 \usepackage{nccmath}            % For the \useshortskip command above equations
+
+\usepackage{newtxtext}          % For Times New Roman in body
+\usepackage{newtxmath}          % For Times New Roman in equations
+
+
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
 \usepackage{physics}            % For the \eval command.
