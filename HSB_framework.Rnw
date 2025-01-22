@@ -14,7 +14,7 @@
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
 \usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
-\usepackage[]{lineno}           % For line numbers
+% \usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
 \usepackage{microtype}          % For beautiful typesetting
 \usepackage{multicol}           % For multi-column layout
@@ -26,7 +26,8 @@
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
 \usepackage{physics}            % For the \eval command.
 \usepackage{setspace}           % For double spacing
-\doublespacing
+% \doublespacing
+\singlespacing
 \usepackage{soul}               % For text highlighting
 \usepackage[most]{tcolorbox}    % For color highlighting of text
 \usepackage{tikz}               % For diagrams
@@ -126,7 +127,7 @@ library(tidyr)
 library(xtable)
 @
 
-\linenumbers
+% \linenumbers
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
