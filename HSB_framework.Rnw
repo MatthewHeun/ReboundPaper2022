@@ -1520,7 +1520,7 @@ productivity shocks in a firm or sector
 can have larger macroeconomic consequences than the original
 shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}. 
 \citet{Foerster2022} estimate
-that 3/4 of long-run US growth since 1950
+that 3/4 of long-run U.S.\ growth since 1950
 can be attributed to sector-specific
 (as opposed to aggregrate) trend factors. 
 Because the EEU represents a positive, sector-specific
@@ -1553,13 +1553,6 @@ GDP remains unchanged.%
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
-  % Nevertheless, as long as the energy efficiency improvement 
-  % is limited to only one energy conversion device (in this example, a car),
-  % the further output growth may be constrained to the extent that
-  % the other inputs into production remain constrained 
-  % at their original levels and substituting energy 
-  % for the other inputs to production
-  % is limited by the prevailing technology.
 }
 %
 That may be true in the short run. 
