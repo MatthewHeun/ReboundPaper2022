@@ -13,7 +13,7 @@
 \usepackage{chngcntr}           % To get figure and table numbering correct in the appendices
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
-\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
+\usepackage[letterpaper, left=1in, right=3in, top=1in, bottom=1in, footskip=.25in]{geometry} % For better margins.
 % \usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
 \usepackage{microtype}          % For beautiful typesetting
