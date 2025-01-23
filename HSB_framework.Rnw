@@ -54,9 +54,8 @@
 \bibliographystyle{apa-good.bst}
 
 % Author info
-\title{Energy, expenditure, and consumption aspects of rebound,\\
-        Part I: Foundations of
-        a rigorous analytical framework}
+\title{Energetic and economic aspects of rebound,
+       Part I: Foundations of a rigorous analytical framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
 \author[4]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
@@ -84,38 +83,37 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-Widespread implementation of energy efficiency
-is a key greenhouse gas emissions mitigation measure, 
-but rebound can ``take back'' energy savings.
-However, the absence of solid analytical foundations hinders
-empirical determination of the size of rebound.
-A new clarity is needed, one that 
-involves both economics and energy analysis.
-In this paper (Part~I of two), 
+Widespread implementation of energy efficiency 
+is a key greenhouse gas emissions mitigation measure, but
+rebound can ``take back'' energy savings. 
+However, the absence of solid analytical foundations 
+hinders empirical determination of the size of rebound.
+A new clarity is needed,
+one that involves both economics and energy analysis. 
+In this paper (Part I),
 we advance foundations of a rigorous analytical framework
-for consumer-sided rebound
-that starts at the microeconomic level
-and is approachable for both energy analysts and economists. 
-We develop foundations of a rebound analysis framework that
-%
+for consumer-sided rebound that starts 
+at the microeconomic level and
+is approachable for both energy analysts and economists. 
+We develop foundations of a framework that %
 \begin{enumerate*}[label={(\roman*)}]
 	
   \item clarifies the energy, expenditure, and consumption aspects of rebound,
 
-  \item combines 
-        embodied energy effects with
-        operations, maintenance, and disposal effects
-        (under a new ``emplacement effect''), and
+  \item combines embodied energy with 
+        operations, maintenance, and disposal effects 
+        (under a new ``emplacement effect''), and 
 
-  \item provides the first operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels.
+  \item provides the first operationalized link 
+        between microeconomic and macroeconomic levels. 
         
 \end{enumerate*}
 %
-Furthermore, our framework enables determination of
-the effect of non-marginal energy service price decrease,
-the effect of satiation of demand for the energy service, and 
-the effect of reduced energy demand on energy price.
+The framework enables determination 
+of the effects of
+non-marginal energy service price decreases, 
+satiated demand for the energy service, and
+reduced energy demand.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound

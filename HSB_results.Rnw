@@ -55,8 +55,8 @@
 \bibliographystyle{apa-good.bst}
 
 % Author info
-\title{Energy, expenditure, and consumption aspects of rebound,\\
-          Part II: Applications of the framework}
+\title{Energetic and economic aspects of rebound, 
+       Part II: Applications of the framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
 \author[4]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
@@ -84,31 +84,28 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-Widespread implementation of energy efficiency
-is a key greenhouse gas emissions mitigation measure, 
-but rebound can ``take back'' energy savings.
-However, the absence of solid analytical foundations hinders
-empirical determination of the size of rebound.
-In Part~I, we developed foundations of 
-a rigorous analytical framework
-that is approachable for both energy analysts and economists. 
-In this paper (Part~II of two),
+Widespread implementation of energy efficiency is a 
+key greenhouse gas emissions mitigation measure, 
+but rebound can ``take back'' energy savings. 
+However, the absence of solid analytical foundations hinders 
+empirical determination of rebound magnitudes.
+In Part I, we developed foundations of a rigorous, analytical,
+consumer-sided rebound framework that is approachable 
+for both energy analysts and economists. 
+In this paper (Part II),
 we develop energy, expenditure, and consumption planes, 
-a novel, mutually consistent, and numerically precise
-way to visualize and illustrate rebound.
-Further, we operationalize the macro factor
-for macroeconomic rebound. 
-Using the framework and rebound planes,
+a novel, mutually consistent, and numerically precise way
+to visualize and illustrate rebound.
+Further, we operationalize the macro factor for macroeconomic rebound. 
+Using the framework and rebound planes, 
 we calculate and show total rebound for two examples: 
-energy efficiency upgrades of
-a car (56.2\%) and
+energy efficiency upgrades of a car (56.2\%) and 
 an electric lamp (67.0\%).
-We calculate rebound for a producer-sided extension
-to the framework, 
-namely an energy price rebound effect.
-Finally, we provide information about new open source software tools 
-for calculating magnitudes and
-visualizing rebound effects using the framework.
+We also calculate rebound when extending the framework to include 
+an energy price effect.
+Finally, we provide information about new open-source software tools
+for calculating rebound magnitudes and
+visualizing rebound effects.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -196,10 +193,8 @@ Third, we apply the framework to two energy efficiency upgrades (EEUs)
 (a car and an electric lamp)
 with detailed explication
 of numerical results for the examples.
-Fourth, we apply the framework to
-calculate numerical values
-for the producer-sided energy price rebound
-extension to the framework.
+Fourth, we apply the framework to 
+calculate numerical values for an energy price effect.
 Finally, we provide information
 about new open source software tools
 for calculating and visualizing rebound
@@ -834,7 +829,7 @@ In addition, an Excel workbook that performs identical rebound calculations
 using the framework of this paper
 is available from University of Leeds at
 \url{https://doi.org/10.5518/1634}.
-(See \citet{Brockway:2025aa} **** Fix title and date in bibtex. ****)
+(See \citet{Brockway:2025aa}.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
