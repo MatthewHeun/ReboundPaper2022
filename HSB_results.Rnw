@@ -832,12 +832,9 @@ can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
 In addition, an Excel workbook that performs identical rebound calculations
 using the framework of this paper
-**** will be stored at the
-Research Data Leeds Repository if this submission is accepted.
-The spreadsheet file is included with the submission of this paper. ****
-% can be found at the data repository for this paper at
-% \url{https://doi.org/10.5518/1201}.
-(See \citet{Brockway:2023aa}.)
+is available from University of Leeds at
+\url{https://doi.org/10.5518/1634}.
+(See \citet{Brockway:2025aa} **** Fix title and date in bibtex. ****)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3067,15 +3064,9 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
 \label{sec:data_repository}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Data and example calculations in spreadsheet format are stored at the
-% Research Data Leeds Repository
-% (\url{https://doi.org/10.5518/1201}).
-
-**** Data and example calculations in spreadsheet format will be stored at the
-Research Data Leeds Repository if this submission is accepted.
-The spreadsheet file is included with the submission of this paper. ****
-
-
+Data and example calculations in spreadsheet format are stored at the
+the University of Leeds at
+\url{https://doi.org/10.5518/1634}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
