@@ -1424,9 +1424,12 @@ Direct income rebound is defined as
 After substitution, rearranging, and canceling of terms (Appendix~\ref{sec:Re_dinc}), 
 the expression for direct income rebound under the CES utility model is
 
-\begin{equation} \label{eq:Re_dinc}
-  Re_{dinc} = \Redinceqnexact{} \; .
-\end{equation}
+% \begin{equation} \label{eq:Re_dinc}
+%   Re_{dinc} = \Redinceqnexact{} \; .
+% \end{equation}
+\begin{align} \label{eq:Re_dinc}
+  Re_{dinc} = &\Redinceqnexact{} \; .
+\end{align}
 %
 If there are no net savings after the substitution effect ($\rasub{N} = 0$), 
 direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
