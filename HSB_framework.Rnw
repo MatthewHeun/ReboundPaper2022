@@ -608,7 +608,7 @@ Names for the decorations are given at the bottom of the figure
 \label{sec:rebound_relationships}
 %++++++++++++++++++++++++++++++
 
-Energy rebound is defined as
+Energy rebound ($Re$) is defined as
 
 \begin{equation} \label{eq:Re_def}
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
