@@ -351,9 +351,9 @@ bottom=2pt}
               { \etaratiostacked - 1 } \left( \etaratiostacked \right)^{-\eqspsC}}
 
 % Equation for Re_dinc, exact method
-\newcommand{\Redinceqnexact}{\frac{ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1}
-              { \etaratiostacked - 1 } \times \nonumber \\
-              &\qssolution{} }
+\newcommand{\Redinceqnexact}{& \frac{ \left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right) ^{\eqsM} - 1}
+              { \etaratiostacked - 1 } \; \times \nonumber \\
+              & \qssolution{} }
 
 % Equation for Re_cap
 \newcommand{\Recapeqn}{\frac{\Delta \aempl{(R_\alpha \rate{C}_{cap})} I_E}{\Sdot}}
@@ -366,7 +366,7 @@ bottom=2pt}
 % Equation for Re_iinc, exact method
 \newcommand{\Reiinceqnexact}{& \frac{\left( 1 + \frac{\rbinc{N}}{\Mdothatprime} \right)^{\eqgM} - 1}{\etaratiostacked - 1} 
               \left( \etaratiostacked \right)
-              \frac{\rbempl{C}_g I_E}{\rbempl{E}_s} \times \nonumber \\
+              \frac{\rbempl{C}_g I_E}{\rbempl{E}_s} \; \times \nonumber \\
               & \Cgsolution{}}
 
 
@@ -377,17 +377,11 @@ bottom=2pt}
          {\etaratiostacked - 1}}
 
 % Equation for Re_macro
-% \newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\md} - p_E I_E Re_{dsub} - Re_{isub})}
 \newcommand{\Remacroeqn}{k (p_E I_E - Re_{cap} - Re_{\omd})}
 
 % Equation for Re_tot
-% \newcommand{\Retoteqn}{&Re_{emb} - k Re_{cap} + (1-k) Re_{\md}         \nonumber \\
-%                        &+ (1 - k p_E I_E) Re_{dsub} + (1 - k) Re_{isub}   \nonumber \\
-%                        &+ Re_{dinc} + Re_{iinc} +  k p_E I_E}
-% \newcommand{\Retoteqn}{&Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\md}   \nonumber \\
-%                        &+ Re_{dsub} + Re_{isub}                              \nonumber \\
-%                        &+ Re_{dinc} + Re_{iinc}}
-\newcommand{\Retoteqn}{Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\omd} + Re_{dsub} + Re_{isub} + Re_{dinc} + Re_{iinc}}
+\newcommand{\Retoteqn}{& Re_{emb} + k (p_E I_E - Re_{cap}) + (1-k) Re_{\omd} \; + \nonumber \\ 
+                       & Re_{dsub} + Re_{isub} + Re_{dinc} + Re_{iinc}}
                  
 
 %%%% Income preference equations
