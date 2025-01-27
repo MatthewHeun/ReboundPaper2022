@@ -868,6 +868,8 @@ Thus, the $\sim$ (tilde) column
 is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
 
+\begin{landscape}
+
 <<car_stages_table, results="asis", echo=FALSE>>=
 # Use this group to exclude the description column
 # n_stages_table_cols <- 6
@@ -926,6 +928,9 @@ rebound_results |>
         math.style.negative = TRUE,
         size = "footnotesize")
 @
+
+\end{landscape}
+
 
 
 <<car_rebound_results_table, results="asis", echo=FALSE>>=
@@ -1521,6 +1526,8 @@ as shown in Table~\ref{tab:lamp_stages_table}.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 
+\begin{landscape}
+
 <<lamp_stages_table, results="asis", echo=FALSE>>=
 digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # M_dot
                       rep(4, n_stages_table_cols), # p_E
@@ -1570,6 +1577,8 @@ rebound_results %>%
         math.style.negative = TRUE,
         size = "footnotesize")
 @
+
+\end{landscape}
 
 
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
