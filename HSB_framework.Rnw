@@ -1490,9 +1490,12 @@ After substitution, rearranging, and canceling of terms,
 the expression for indirect income rebound 
 under the CES utility model is
 
-\begin{equation} \label{eq:Re_iinc}
+% \begin{equation} \label{eq:Re_iinc}
+%   Re_{iinc} = \Reiinceqnexact{} \; .
+% \end{equation}
+\begin{align} \label{eq:Re_iinc}
   Re_{iinc} = \Reiinceqnexact{} \; .
-\end{equation}
+\end{align}
 %
 (See Appendix~\ref{sec:Re_inc} for details of the derivation
 of direct and indirect income effect rebound.)
