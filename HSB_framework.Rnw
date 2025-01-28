@@ -2093,7 +2093,7 @@ Author contributions for this paper (Part~I of the two-part paper) are shown in 
 %If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
 
 Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
-Council, supported under EPSRC Fellowship award EP/R024254/1.
+Council, supported under EPSRC Fellowship award EP/R024251/1.
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
