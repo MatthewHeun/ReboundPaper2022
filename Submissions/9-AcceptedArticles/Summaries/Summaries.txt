@@ -13,10 +13,9 @@ Part I:
 Widespread implementation of energy efficiency 
 is a key greenhouse gas emissions mitigation measure, but
 rebound can ``take back'' energy savings. 
-In this paper (Part I),
+In this first of two papers (Part I),
 we advance foundations of a rigorous analytical framework
-for consumer-sided rebound that starts 
-at the microeconomic level and
+for consumer-sided rebound that
 is approachable for both energy analysts and economists. 
 The framework enables determination 
 of the effects of
@@ -27,9 +26,8 @@ reduced energy demand.
 
 Part II:
 
-In this paper (Part II),
-we develop energy, expenditure, and consumption planes, 
-a novel, mutually consistent, and numerically precise way
+In this second of two papers (Part II),
+we develop energy, expenditure, and consumption planes
 to visualize and illustrate energy rebound.
 Using the framework and rebound planes, 
 we calculate and show total rebound for two examples: 
