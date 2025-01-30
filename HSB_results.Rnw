@@ -3119,6 +3119,14 @@ Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
 
+The findings, interpretations, and conclusions expressed
+in this paper are entirely those of the authors.
+They do not necessarily represent the views of the
+International Bank for Reconstruction and Development/World Bank and
+its affiliated organizations, or 
+those of the Executive Directors of the World Bank or
+the governments they represent.
+
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}
 %
