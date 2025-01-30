@@ -115,7 +115,7 @@ The framework enables determination
 of the effects of
 non-marginal energy service price decreases, 
 satiated demand for the energy service, and
-reduced energy demand.
+reduced economy-wide energy demand.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
