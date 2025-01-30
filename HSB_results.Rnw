@@ -98,9 +98,9 @@ In this paper (Part II),
 we develop energy, expenditure, and consumption planes, 
 a novel, mutually consistent, and numerically precise way
 to visualize and illustrate rebound.
-Further, we operationalize the macro factor for macroeconomic rebound. 
+Further, we operationalize the macro factor ($k$) for macroeconomic rebound. 
 Using the framework and rebound planes, 
-we calculate and show total rebound for two examples: 
+we calculate and show total rebound (using $k = 3$) for two examples: 
 energy efficiency upgrades of a car (56.2\%) and 
 an electric lamp (67.0\%).
 We also calculate rebound when extending the framework to include 
@@ -839,6 +839,25 @@ is available from University of Leeds at
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+<<Withk3, echo = FALSE>>=
+# This chunk was previously lower (in Section 4).
+# But we need these numbers in this section for table captions.
+Re_macro_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
+  magrittr::extract2("Re_macro")
+Re_macro_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
+  magrittr::extract2("Re_macro")
+Re_tot_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
+  magrittr::extract2("Re_tot")
+Re_tot_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
+  magrittr::extract2("Re_tot")
+Re_tot_car_k3_string <- format(round(Re_tot_car_k_3*100, 1), nsmall = 1)
+Re_tot_lamp_k3_string <- format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)
+@
+
 In this section we present rebound calculation results for two examples:
 energy efficiency upgrades of a car (Section~\ref{sec:car_example}) and
 an electric lamp (Section~\ref{sec:lamp_example}).
@@ -936,6 +955,11 @@ rebound_results |>
 
 
 <<car_rebound_results_table, results="asis", echo=FALSE>>=
+table_cap <- paste0("Car example: rebound results with macro factor ($k$) assumed to be 1. ",
+                    "(See Section~\\ref{sec:calculating_k} in which we use an updated value ", 
+                    "of $k = 3$ to obtain $Re_{tot} = ", 
+                    Re_tot_car_k3_string,
+                    "\\%$.)")
 rebound_results %>%
   dplyr::filter(Case == "Car") %>%
   dplyr::mutate(
@@ -944,7 +968,7 @@ rebound_results %>%
   ReboundTools::rebound_results_table(include_subtotals = FALSE,
                                       rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
                                       label = "tab:car_results",
-                                      caption = "Car example: rebound results with macro factor ($k$) assumed to be 1.",
+                                      caption = table_cap,
                                       digits = 1,
                                       align = "rrr") %>%
   print(include.rownames = FALSE,
@@ -966,7 +990,6 @@ Re_micro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::reboun
 Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
 @
-
 
 The \empleffect{} has three components:
 the direct emplacement effect,
@@ -1584,6 +1607,12 @@ rebound_results %>%
 
 
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
+table_cap <- paste0("Lamp example: rebound results with macro factor ($k$) assumed to be 1. ",
+                    "(See Section~\\ref{sec:calculating_k} in which we use an updated value ", 
+                    "of $k = 3$ to obtain $Re_{tot} = ", 
+                    Re_tot_lamp_k3_string,
+                    "\\%$.)")
+
 rebound_results %>%
   dplyr::filter(Case == "Lamp") %>%
   dplyr::mutate(
@@ -1592,7 +1621,7 @@ rebound_results %>%
   ReboundTools::rebound_results_table(include_subtotals = FALSE,
                                       rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
                                       label = "tab:lamp_results",
-                                      caption = "Lamp example: rebound results with macro factor ($k$) assumed to be 1.",
+                                      caption = table_cap,
                                       digits = 1,
                                       align = "rrr") %>%
   print(include.rownames = FALSE,
@@ -1921,21 +1950,6 @@ rebound_results %>%
 \subsection{A first attempt at calculating macro rebound}
 \label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
-
-<<Withk3, echo = FALSE>>=
-Re_macro_car_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Car (k = 3)") %>%
-  magrittr::extract2("Re_macro")
-Re_macro_lamp_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Lamp (k = 3)") %>%
-  magrittr::extract2("Re_macro")
-Re_tot_car_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Car (k = 3)") %>%
-  magrittr::extract2("Re_tot")
-Re_tot_lamp_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Lamp (k = 3)") %>%
-  magrittr::extract2("Re_tot")
-@
 
 Few previous studies explored the link
 between microeconomic and macroeconomic rebound.
