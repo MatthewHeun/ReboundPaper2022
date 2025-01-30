@@ -57,7 +57,7 @@
 \title{Energetic and economic aspects of rebound,
        Part I: Foundations of a rigorous analytical framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
-\author[4]{Gregor Semieniuk}
+\author[4,5]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
 \affil[1]{Engineering Department, Calvin University, 
           3201 Burton St. SE, Grand Rapids, MI, 49546}
@@ -67,9 +67,11 @@
 \affil[3]{School for Public Leadership, Faculty of Economic and Management Science,
           Stellenbosch University,
           Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
-\affil[4]{Political Economy Research Institute and Department of Economics,
+\affil[4]{School of Public Policy and Department of Economics, 
           University of Massachusetts Amherst, 
           Amherst, MA, 01003}
+\affil[5]{World Bank, 
+          Washington, DC, 20433}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
 
