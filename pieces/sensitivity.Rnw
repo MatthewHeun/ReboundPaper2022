@@ -197,6 +197,26 @@ Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
 
+# Different colours for B&W paper
+# Re_graph_params[["dempl_colour"]] <- "black"
+# Re_graph_params[["emb_colour"]] <- "black"
+# Re_graph_params[["dsub_colour"]] <- "black"
+# Re_graph_params[["isub_colour"]] <- "black"
+# Re_graph_params[["dinc_colour"]] <- "black"
+# Re_graph_params[["iinc_colour"]] <- "black"
+# Re_graph_params[["macro_colour"]] <- "black"
+# 
+# Re_graph_params[["dempl_linewidth"]] <- 0.1
+# Re_graph_params[["emb_linewidth"]] <- 0.1
+# Re_graph_params[["dsub_linewidth"]] <- 0.3
+# Re_graph_params[["isub_linewidth"]] <- 0.3
+# Re_graph_params[["dinc_linewidth"]] <- 0.5
+# Re_graph_params[["iinc_linewidth"]] <- 0.5
+# Re_graph_params[["macro_linewidth"]] <- 1
+# 
+# Re_graph_params[["tot_linewidth"]] <- 1.5
+
+
 Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
                                                 ReboundTools::rebound_terms$Re_macro,
                                                 ReboundTools::rebound_terms$Re_dinc,
