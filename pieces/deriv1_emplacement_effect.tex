@@ -59,7 +59,7 @@
 %%%%%%%%%% Energy Emplacement Effect %%%%%%%%%%
 ~
 
-Note: $\rate{C}_{\omd} \equiv \rate{C}_{\om} + R_{\omega} \rate{C}_d$.
+Note: $\rate{C}_{\omd} \equiv \rate{C}_{\om} + \tau_{\omega} \rate{C}_d$.
 
 Take differences to obtain the change in energy consumption, \\
 $\Delta \raempl{E} \equiv \raempl{E} - \rbempl{E}$.
@@ -99,7 +99,7 @@ $Re_{emb} \equiv \frac{\Delta \raempl{E}_{emb}}{\Sdot}$,
 $Re_{\omd} \equiv \frac{\Delta \raempl{C}_{\omd} I_E}{\Sdot}$, 
 $Re_{\omd} = Re_{\om} + Re_d$,
 $Re_{\om} \equiv \frac{\Delta \raempl{C}_{\om} I_E}{\Sdot}$, and 
-$Re_d \equiv \frac{\Delta \aempl{(R_\omega \rate{C}_d)} I_E}{\Sdot}$
+$Re_d \equiv \frac{\Delta \aempl{(\tau_\omega \rate{C}_d)} I_E}{\Sdot}$
 such that
 %
 \begin{equation} \label{eq:Re_empl_def}
@@ -129,13 +129,13 @@ Solving for $\Delta \raempl{N} \equiv \raempl{N} - \cancelto{0}{\rbempl{N}}$ giv
 Rewriting with $\Delta$ terms gives
 %
 \begin{equation}
-  \Delta \raempl{N} = - p_E \Delta \raempl{E}_s - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd} \; .
+  \Delta \raempl{N} = - p_E \Delta \raempl{E}_s - \Delta \aempl{(\tau_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd} \; .
 \end{equation}
 %
 Substituting Eq.~(\ref{eq:Sdot_def}) gives
 %
 \begin{equation} \label{eq:N_dot_star_empl}
-  \Delta \raempl{N} = \raempl{N} = p_E \Sdot - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd} \; .
+  \Delta \raempl{N} = \raempl{N} = p_E \Sdot - \Delta \aempl{(\tau_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd} \; .
 \end{equation}
 %
 Freed cash ($\rate{G}$) resulting from the EEU, 
