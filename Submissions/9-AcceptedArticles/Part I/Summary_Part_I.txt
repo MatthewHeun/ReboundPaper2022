@@ -1,0 +1,13 @@
+
+Widespread implementation of energy efficiency 
+is a key greenhouse gas emissions mitigation measure, but
+rebound can ``take back'' energy savings. 
+In this first of two papers (Part I),
+we advance foundations of a rigorous analytical framework
+for consumer-sided rebound that
+is approachable for both energy analysts and economists. 
+The framework enables determination 
+of the effects of
+non-marginal energy service price decreases, 
+satiated demand for the energy service, and
+reduced energy demand.
