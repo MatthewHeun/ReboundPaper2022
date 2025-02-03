@@ -115,16 +115,29 @@
 %%%%% Colors
 
 % Original spectrum colours
-% \colorlet{emplcolor}{red!25!white}
-% \colorlet{subcolor}{orange!25!white}
-% \colorlet{inccolor}{green!25!white}
-% \colorlet{macrocolor}{blue!25!white}
 
-% New Viridis "plasma" colours
-\definecolor{emplcolor}{HTML}{150789}
-\definecolor{subcolor}{HTML}{99149F}
-\definecolor{inccolor}{HTML}{E76F5A}
-\definecolor{macrocolor}{HTML}{F7E225}
+% Viridis "plasma" colours
+\definecolor{emplcolor}{HTML}{150789}  % Blue
+\definecolor{subcolor}{HTML}{99149F}   % Purple
+\definecolor{inccolor}{HTML}{E76F5A}   % Orange
+\definecolor{macrocolor}{HTML}{F7E225} % Yellow
+
+\definecolor{empltextcolor}{HTML}{FFFFFF}   % White
+\definecolor{subtextcolor}{HTML}{FFFFFF}    % White
+\definecolor{inctextcolor}{HTML}{000000}    % Black
+\definecolor{macrotextcolor}{HTML}{000000} % Black
+
+% Black-and-white colours
+% \definecolor{emplcolor}{HTML}{FFFFFF}  % White
+% \definecolor{subcolor}{HTML}{FFFFFF}   % White
+% \definecolor{inccolor}{HTML}{FFFFFF}   % White
+% \definecolor{macrocolor}{HTML}{FFFFFF} % White
+% 
+% \definecolor{empltextcolor}{HTML}{000000}   % Black
+% \definecolor{subtextcolor}{HTML}{000000}    % Black
+% \definecolor{inctextcolor}{HTML}{000000}    % Black
+% \definecolor{macrotextcolor}{HTML}{000000} % Black
+
 
 
 
@@ -151,28 +164,28 @@ bottom=2pt}
 %%%%% Colored phrases
 
 % Emplacement effect
-\newcommand{\empleffect}{\inlinebox[emplcolor]{\textcolor{white}{emplacement effect}}}
-\newcommand{\empleffectadj}{\inlinebox[emplcolor]{\textcolor{white}{emplacement-effect}}}
-\newcommand{\Empleffect}{\inlinebox[emplcolor]{\textcolor{white}{Emplacement effect}}}
-\newcommand{\EmplEffect}{\inlinebox[emplcolor]{\textcolor{white}{Emplacement Effect}}}
+\newcommand{\empleffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{emplacement effect}}}
+\newcommand{\empleffectadj}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{emplacement-effect}}}
+\newcommand{\Empleffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{Emplacement effect}}}
+\newcommand{\EmplEffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{Emplacement Effect}}}
 
 % Substitution effect
-\newcommand{\subeffect}{\inlinebox[subcolor]{\textcolor{white}{substitution effect}}}
-\newcommand{\subeffectadj}{\inlinebox[subcolor]{\textcolor{white}{substitution-effect}}}
-\newcommand{\Subeffect}{\inlinebox[subcolor]{\textcolor{white}{Substitution effect}}}
-\newcommand{\SubEffect}{\inlinebox[subcolor]{\textcolor{white}{Substitution Effect}}}
+\newcommand{\subeffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{substitution effect}}}
+\newcommand{\subeffectadj}{\inlinebox[subcolor]{\textcolor{subtextcolor}{substitution-effect}}}
+\newcommand{\Subeffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{Substitution effect}}}
+\newcommand{\SubEffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{Substitution Effect}}}
 
 % Income effect
-\newcommand{\inceffect}{\inlinebox[inccolor]{\textcolor{black}{income effect}}}
-\newcommand{\inceffectadj}{\inlinebox[inccolor]{\textcolor{black}{income-effect}}}
-\newcommand{\Inceffect}{\inlinebox[inccolor]{\textcolor{black}{Income effect}}}
-\newcommand{\IncEffect}{\inlinebox[inccolor]{\textcolor{black}{Income Effect}}}
+\newcommand{\inceffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{income effect}}}
+\newcommand{\inceffectadj}{\inlinebox[inccolor]{\textcolor{inctextcolor}{income-effect}}}
+\newcommand{\Inceffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{Income effect}}}
+\newcommand{\IncEffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{Income Effect}}}
 
 % Macro effect
-\newcommand{\macroeffect}{\inlinebox[macrocolor]{\textcolor{black}{macro effect}}}
-\newcommand{\macroeffectadj}{\inlinebox[macrocolor]{\textcolor{black}{macro-effect}}}
-\newcommand{\Macroeffect}{\inlinebox[macrocolor]{\textcolor{black}{Macro effect}}}
-\newcommand{\MacroEffect}{\inlinebox[macrocolor]{\textcolor{black}{Macro Effect}}}
+\newcommand{\macroeffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{macro effect}}}
+\newcommand{\macroeffectadj}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{macro-effect}}}
+\newcommand{\Macroeffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{Macro effect}}}
+\newcommand{\MacroEffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{Macro Effect}}}
 
 
 %%%%% minipage for assumptions and constraints tables
