@@ -1182,9 +1182,25 @@ car_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
                                  36970, 81300, car_Re_arrow_angle, 3900, annotation_colour, 0.5, # Re_inc
                                  42900, 79700, car_Re_arrow_angle, 2400, annotation_colour, 0.5) # Re_macro
 
+
+paper_path_graph_params <- ReboundTools::path_graph_params
+
+# B&W path graph colours
+paper_path_graph_params[["dempl_colour"]] <- "black"
+paper_path_graph_params[["emb_colour"]] <- "black"
+paper_path_graph_params[["omd_colour"]] <- "black"
+paper_path_graph_params[["dsub_colour"]] <- "black"
+paper_path_graph_params[["isub_colour"]] <- "black"
+paper_path_graph_params[["dinc_colour"]] <- "black"
+paper_path_graph_params[["iinc_colour"]] <- "black"
+paper_path_graph_params[["macro_colour"]] <- "black"
+
+
+
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Energy") +
+                            graph_types = "Energy", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_spoke(data = car_Re_arrows,
                         mapping = ggplot2::aes(x = x,
                                                y = y,
@@ -1200,10 +1216,6 @@ rebound_results %>%
                                             size = size,
                                             angle = angle),
                      parse = TRUE) +
-  # Set the limits manually, because we plot beyond these limits
-  # with shading.
-  # ggplot2::xlim(34730, 63500) +
-  # ggplot2::ylim(73150, 77255) +
   MKHthemes::xy_theme()
 @
 
@@ -1337,7 +1349,8 @@ car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Expenditure") +
+                            graph_types = "Expenditure", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = car_cost_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1439,7 +1452,8 @@ car_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Consumption") +
+                            graph_types = "Consumption", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = car_prefs_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1805,7 +1819,8 @@ lamp_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Energy") +
+                            graph_types = "Energy", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_spoke(data = lamp_Re_arrows,
                         mapping = ggplot2::aes(x = x,
                                                y = y,
@@ -1855,7 +1870,8 @@ lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Expenditure") +
+                            graph_types = "Expenditure", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = lamp_cost_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1926,7 +1942,8 @@ lamp_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
                                      )
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Consumption") +
+                            graph_types = "Consumption", 
+                            graph_params = paper_path_graph_params) +
     ggplot2::geom_text(data = lamp_prefs_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
