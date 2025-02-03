@@ -1109,7 +1109,6 @@ paper_path_graph_params <- ReboundTools::path_graph_params
 # paper_path_graph_params[["dinc_colour"]] <- "black"
 # paper_path_graph_params[["iinc_colour"]] <- "black"
 # paper_path_graph_params[["macro_colour"]] <- "black"
-
 @
 
 
