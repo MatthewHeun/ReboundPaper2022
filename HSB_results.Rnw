@@ -1096,7 +1096,6 @@ bar_line_label_size <- bar_size - 1
 r_line_label_size <- abcd_size
 i_line_label_size <- abcd_size
 line_label_colour <- "darkgray"
-
 @
 
 
@@ -2404,28 +2403,28 @@ Re_graph_params <- ReboundTools::sens_graph_params
 Re_graph_params[["include_x_axis"]] <- TRUE
 Re_graph_params[["use_latex_legend"]] <- TRUE
 
-# Different colours for B&W paper
-Re_graph_params[["dempl_colour"]] <- "black"
-Re_graph_params[["emb_colour"]] <- "black"
-Re_graph_params[["omd_colour"]] <- "black"
-Re_graph_params[["dsub_colour"]] <- "darkgray"
-Re_graph_params[["isub_colour"]] <- "darkgray"
-Re_graph_params[["dinc_colour"]] <- "black"
-Re_graph_params[["iinc_colour"]] <- "black"
-Re_graph_params[["macro_colour"]] <- "gray"
-Re_graph_params[["tot_colour"]] <- "black"
-
-Re_graph_params[["dempl_linewidth"]] <- 0.2
-Re_graph_params[["emb_linewidth"]] <- 0.2
-Re_graph_params[["omd_linewidth"]] <- 0.2
-Re_graph_params[["dsub_linewidth"]] <- 0.5
-Re_graph_params[["isub_linewidth"]] <- 0.5
-Re_graph_params[["dinc_linewidth"]] <- 1
-Re_graph_params[["iinc_linewidth"]] <- 1
-Re_graph_params[["macro_linewidth"]] <- 1.3
-Re_graph_params[["tot_linewidth"]] <- 1
-
-Re_graph_params[["tot_linetype"]] <- "dotted"
+# Different parameters for B&W paper
+# Re_graph_params[["dempl_colour"]] <- "black"
+# Re_graph_params[["emb_colour"]] <- "black"
+# Re_graph_params[["omd_colour"]] <- "black"
+# Re_graph_params[["dsub_colour"]] <- "darkgray"
+# Re_graph_params[["isub_colour"]] <- "darkgray"
+# Re_graph_params[["dinc_colour"]] <- "black"
+# Re_graph_params[["iinc_colour"]] <- "black"
+# Re_graph_params[["macro_colour"]] <- "gray"
+# Re_graph_params[["tot_colour"]] <- "black"
+# 
+# Re_graph_params[["dempl_linewidth"]] <- 0.2
+# Re_graph_params[["emb_linewidth"]] <- 0.2
+# Re_graph_params[["omd_linewidth"]] <- 0.3
+# Re_graph_params[["dsub_linewidth"]] <- 0.5
+# Re_graph_params[["isub_linewidth"]] <- 0.5
+# Re_graph_params[["dinc_linewidth"]] <- 1
+# Re_graph_params[["iinc_linewidth"]] <- 1
+# Re_graph_params[["macro_linewidth"]] <- 1.3
+# Re_graph_params[["tot_linewidth"]] <- 1
+# 
+# Re_graph_params[["tot_linetype"]] <- "dotted"
 
 Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
                                                 ReboundTools::rebound_terms$Re_macro,
