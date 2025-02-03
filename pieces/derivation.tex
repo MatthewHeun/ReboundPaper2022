@@ -934,9 +934,12 @@ $\rorig{q}_s = \raempl{q}_s$, and substituting Eq.~(\ref{eq:q_s_solution}),
 which assumes the CES utility model,
 gives
 
-\begin{equation}
+% \begin{equation}
+%   Re_{dinc} = \Redinceqnexact{} \; . \tag{\ref{eq:Re_dinc}}
+% \end{equation}
+\begin{align}
   Re_{dinc} = \Redinceqnexact{} \; . \tag{\ref{eq:Re_dinc}}
-\end{equation}
+\end{align}
 %
 If there is no net savings ($\rasub{N} = 0$),
 direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.
@@ -1000,9 +1003,9 @@ thereby assuming the CES utility model,
 gives the final form
 of the indirect income rebound expression:
 
-\begin{equation}
+\begin{align}
   Re_{iinc} = \Reiinceqnexact{} \; . \tag{\ref{eq:Re_iinc}}
-\end{equation}
+\end{align}
 %
 If there is no net savings ($\rasub{N} = 0$),
 indirect income effect rebound is zero ($Re_{iinc} = 0$), as expected.
@@ -1014,7 +1017,7 @@ indirect income effect rebound is zero ($Re_{iinc} = 0$), as expected.
 %..............................
 
 Following \citet{Borenstein:2015aa},
-under CPE utility model
+under the CPE utility model
 all freed cash is spent on other goods,
 as in the fully satiated case discussed
 in Section~\ref{sec:inc_effect_main_paper}.
@@ -1037,19 +1040,14 @@ Macro rebound~($Re_{\macro}$) is given by Eq.~(\ref{eq:Re_macro_def}).
 Substituting Eq.~(\ref{eq:N_dot_star_empl}) for net savings~($\raempl{N}$) gives
 
 \begin{equation}
-  % Re_{\macro} = \frac{k \rate{G} I_E}{\Sdot}
-  %                               - \frac{k \Delta \raempl{C}_{cap} I_E}{\Sdot}
-  %                               - \frac{k \Delta \raempl{C}_{\md} I_E}{\Sdot}
-  %                               - \frac{k p_E I_E \Delta \rasub{E}_s}{\Sdot}
-  %                               - \frac{k \Delta \rasub{C}_g I_E}{\Sdot} \; .
-  Re_{\macro} = \frac{k (p_E \Sdot - \Delta \aempl{(R_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) I_E}{\Sdot} \; .
+  Re_{\macro} = \frac{k (p_E \Sdot - \Delta \aempl{(\tau_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) I_E}{\Sdot} \; .
 \end{equation}
 %
 Separating terms gives
 
 \begin{equation}
   Re_{\macro} = \frac{k p_E \cancel{\Sdot} I_E}{\cancel{\Sdot}}
-                                - \frac{k \Delta \aempl{(R_\alpha  \rate{C}_{cap})} I_E}{\Sdot}
+                                - \frac{k \Delta \aempl{(\tau_\alpha  \rate{C}_{cap})} I_E}{\Sdot}
                                 - \frac{k \Delta \raempl{C}_{\omd} I_E}{\Sdot} \; .
 \end{equation}
 %

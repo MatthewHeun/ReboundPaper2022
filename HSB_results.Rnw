@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}    % For submission
+\documentclass[10pt]{article}    % For submission
 
 
 
@@ -13,8 +13,8 @@
 \usepackage{chngcntr}           % To get figure and table numbering correct in the appendices
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
-\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
-\usepackage[]{lineno}           % For line numbers
+\usepackage[letterpaper, left=1in, right=3in, top=1in, bottom=1in, footskip=.25in]{geometry} % For better margins.
+% \usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
 \usepackage{microtype}          % For beautiful typesetting
 \usepackage{multicol}           % For multi-column layout
@@ -22,10 +22,18 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
 \usepackage{nccmath}            % For the \useshortskip command above equations
+
+
+\usepackage{newtxtext}          % For Times New Roman in body
+\usepackage{newtxmath}          % For Times New Roman in equations
+
+
+
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
 \usepackage{setspace}           % For double spacing
-\doublespacing
+% \doublespacing
+\singlespacing
 \usepackage{soul}               % For text highlighting
 \usepackage[most]{tcolorbox}    % For color highlighting of text
 \usepackage{tikz}               % For diagrams
@@ -47,10 +55,10 @@
 \bibliographystyle{apa-good.bst}
 
 % Author info
-\title{Energy, expenditure, and consumption aspects of rebound,\\
-          Part II: Applications of the framework}
+\title{Energetic and economic aspects of rebound, 
+       Part II: Applications of the framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
-\author[4]{Gregor Semieniuk}
+\author[4,5]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
 \affil[1]{Engineering Department, Calvin University, 
           3201 Burton St. SE, Grand Rapids, MI, 49546}
@@ -60,9 +68,11 @@
 \affil[3]{School for Public Leadership, Faculty of Economic and Management Science,
           Stellenbosch University,
           Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
-\affil[4]{Political Economy Research Institute and Department of Economics,
+\affil[4]{School of Public Policy and Department of Economics, 
           University of Massachusetts Amherst, 
           Amherst, MA, 01003}
+\affil[5]{World Bank, 
+          Washington, DC, 20433}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
 
@@ -76,31 +86,28 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-Widespread implementation of energy efficiency
-is a key greenhouse gas emissions mitigation measure, 
-but rebound can ``take back'' energy savings.
-However, the absence of solid analytical foundations hinders
-empirical determination of the size of rebound.
-In Part~I, we developed foundations of 
-a rigorous analytical framework
-that is approachable for both energy analysts and economists. 
-In this paper (Part~II of two),
+Widespread implementation of energy efficiency is a 
+key greenhouse gas emissions mitigation measure, 
+but rebound can ``take back'' energy savings. 
+However, the absence of solid analytical foundations hinders 
+empirical determination of rebound magnitudes.
+In Part I, we developed foundations of a rigorous, analytical,
+consumer-sided rebound framework that is approachable 
+for both energy analysts and economists. 
+In this paper (Part II),
 we develop energy, expenditure, and consumption planes, 
-a novel, mutually consistent, and numerically precise
-way to visualize and illustrate rebound.
-Further, we operationalize the macro factor
-for macroeconomic rebound. 
-Using the framework and rebound planes,
-we calculate and show total rebound for two examples: 
-energy efficiency upgrades of
-a car (56.2\%) and
+a novel, mutually consistent, and numerically precise way
+to visualize and illustrate rebound.
+Further, we operationalize the macro factor ($k$) for macroeconomic rebound. 
+Using the framework and rebound planes, 
+we calculate and show total rebound (using $k = 3$) for two examples: 
+energy efficiency upgrades of a car (56.2\%) and 
 an electric lamp (67.0\%).
-We calculate rebound for a producer-sided extension
-to the framework, 
-namely an energy price rebound effect.
-Finally, we provide information about new open source software tools 
-for calculating magnitudes and
-visualizing rebound effects using the framework.
+We also calculate rebound when extending the framework to include 
+an energy price effect.
+Finally, we provide information about new open-source software tools
+for calculating rebound magnitudes and
+visualizing rebound effects.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -118,7 +125,8 @@ library(tidyr)
 library(xtable)
 @
 
-\linenumbers
+
+% \linenumbers
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -188,10 +196,8 @@ Third, we apply the framework to two energy efficiency upgrades (EEUs)
 (a car and an electric lamp)
 with detailed explication
 of numerical results for the examples.
-Fourth, we apply the framework to
-calculate numerical values
-for the producer-sided energy price rebound
-extension to the framework.
+Fourth, we apply the framework to 
+calculate numerical values for an energy price effect.
 Finally, we provide information
 about new open source software tools
 for calculating and visualizing rebound
@@ -824,18 +830,34 @@ can be found at \url{https://matthewheun.github.io/ReboundTools/}.
 
 In addition, an Excel workbook that performs identical rebound calculations
 using the framework of this paper
-**** will be stored at the
-Research Data Leeds Repository if this submission is accepted.
-The spreadsheet file is included with the submission of this paper. ****
-% can be found at the data repository for this paper at
-% \url{https://doi.org/10.5518/1201}.
-(See \citet{Brockway:2023aa}.)
+is available from University of Leeds at
+\url{https://doi.org/10.5518/1634}.
+(See \citet{Brockway:2025aa}.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<<Withk3, echo = FALSE>>=
+# This chunk was previously lower (in Section 4).
+# But we need these numbers in this section for table captions.
+Re_macro_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
+  magrittr::extract2("Re_macro")
+Re_macro_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
+  magrittr::extract2("Re_macro")
+Re_tot_car_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Car (k = 3)") %>%
+  magrittr::extract2("Re_tot")
+Re_tot_lamp_k_3 <- rebound_results %>%
+  dplyr::filter(Case == "Lamp (k = 3)") %>%
+  magrittr::extract2("Re_tot")
+Re_tot_car_k3_string <- format(round(Re_tot_car_k_3*100, 1), nsmall = 1)
+Re_tot_lamp_k3_string <- format(round(Re_tot_lamp_k_3*100, 1), nsmall = 1)
+@
 
 In this section we present rebound calculation results for two examples:
 energy efficiency upgrades of a car (Section~\ref{sec:car_example}) and
@@ -861,12 +883,14 @@ and the equations in Section~\ref{PartI-sec:framework} of Part~I,
 we calculate important values at each rebound stage,
 as shown in Table~\ref{tab:car_stages_table}.
 Note that Table~\ref{tab:car_stages_table} applies to the car user.
-Across the macro effect (segment \bartilde{} in Fig.~\ref{fig:CarEnergyGraph}),
+Across the macro effect (segment \bartildeline{} in Fig.~\ref{fig:CarEnergyGraph}),
 changes occur only in the macroeconomy.
 For the car user, no changes are recorded across the macro effect.
 Thus, the $\sim$ (tilde) column
 is absent from Table~\ref{tab:car_stages_table}.
 Rebound components for the car upgrade are shown in Table~\ref{tab:car_results}.
+
+\begin{landscape}
 
 <<car_stages_table, results="asis", echo=FALSE>>=
 # Use this group to exclude the description column
@@ -927,8 +951,16 @@ rebound_results |>
         size = "footnotesize")
 @
 
+\end{landscape}
+
+
 
 <<car_rebound_results_table, results="asis", echo=FALSE>>=
+table_cap <- paste0("Car example: rebound results with macro factor ($k$) assumed to be 1. ",
+                    "(See Section~\\ref{sec:calculating_k} in which we use an updated value ", 
+                    "of $k = 3$ to obtain $Re_{tot} = ", 
+                    Re_tot_car_k3_string,
+                    "\\%$.)")
 rebound_results %>%
   dplyr::filter(Case == "Car") %>%
   dplyr::mutate(
@@ -937,7 +969,7 @@ rebound_results %>%
   ReboundTools::rebound_results_table(include_subtotals = FALSE,
                                       rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
                                       label = "tab:car_results",
-                                      caption = "Car example: rebound results with macro factor ($k$) assumed to be 1.",
+                                      caption = table_cap,
                                       digits = 1,
                                       align = "rrr") %>%
   print(include.rownames = FALSE,
@@ -959,7 +991,6 @@ Re_micro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::reboun
 Re_macro_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_macro, to_perc = TRUE)
 Re_tot_car_char_perc <- val_to_string(case = "Car", val = ReboundTools::rebound_terms$Re_tot, to_perc = TRUE)
 @
-
 
 The \empleffect{} has three components:
 the direct emplacement effect,
@@ -1037,7 +1068,7 @@ productivity enhancements arising from the more-efficient provision of the
 energy service (transportation).
 
 
-<<GraphParameters, echo=FALSE>>=
+<<PathGraphParameters, echo=FALSE>>=
 # For all planes
 stage_size <- 10
 orig_size <- stage_size
@@ -1067,6 +1098,47 @@ r_line_label_size <- abcd_size
 i_line_label_size <- abcd_size
 line_label_colour <- "darkgray"
 
+paper_path_graph_params <- ReboundTools::path_graph_params
+
+# B&W path graph colours
+# paper_path_graph_params[["dempl_colour"]] <- "black"
+# paper_path_graph_params[["emb_colour"]] <- "black"
+# paper_path_graph_params[["omd_colour"]] <- "black"
+# paper_path_graph_params[["dsub_colour"]] <- "black"
+# paper_path_graph_params[["isub_colour"]] <- "black"
+# paper_path_graph_params[["dinc_colour"]] <- "black"
+# paper_path_graph_params[["iinc_colour"]] <- "black"
+# paper_path_graph_params[["macro_colour"]] <- "black"
+@
+
+
+<<SensitivityGraphParameters, echo=FALSE>>=
+sensitivity_graph_params <- ReboundTools::sens_graph_params
+sensitivity_graph_params[["include_x_axis"]] <- TRUE
+sensitivity_graph_params[["use_latex_legend"]] <- TRUE
+
+# Different parameters for B&W paper
+# sensitivity_graph_params[["dempl_colour"]] <- "black"
+# sensitivity_graph_params[["emb_colour"]] <- "black"
+# sensitivity_graph_params[["omd_colour"]] <- "black"
+# sensitivity_graph_params[["dsub_colour"]] <- "darkgray"
+# sensitivity_graph_params[["isub_colour"]] <- "darkgray"
+# sensitivity_graph_params[["dinc_colour"]] <- "black"
+# sensitivity_graph_params[["iinc_colour"]] <- "black"
+# sensitivity_graph_params[["macro_colour"]] <- "gray"
+# sensitivity_graph_params[["tot_colour"]] <- "black"
+# 
+# sensitivity_graph_params[["dempl_linewidth"]] <- 0.2
+# sensitivity_graph_params[["emb_linewidth"]] <- 0.2
+# sensitivity_graph_params[["omd_linewidth"]] <- 0.3
+# sensitivity_graph_params[["dsub_linewidth"]] <- 0.5
+# sensitivity_graph_params[["isub_linewidth"]] <- 0.5
+# sensitivity_graph_params[["dinc_linewidth"]] <- 1
+# sensitivity_graph_params[["iinc_linewidth"]] <- 1
+# sensitivity_graph_params[["macro_linewidth"]] <- 1.3
+# sensitivity_graph_params[["tot_linewidth"]] <- 1
+# 
+# sensitivity_graph_params[["tot_linetype"]] <- "dotted"
 @
 
 
@@ -1154,7 +1226,8 @@ car_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Energy") +
+                            graph_types = "Energy", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_spoke(data = car_Re_arrows,
                         mapping = ggplot2::aes(x = x,
                                                y = y,
@@ -1170,10 +1243,6 @@ rebound_results %>%
                                             size = size,
                                             angle = angle),
                      parse = TRUE) +
-  # Set the limits manually, because we plot beyond these limits
-  # with shading.
-  # ggplot2::xlim(34730, 63500) +
-  # ggplot2::ylim(73150, 77255) +
   MKHthemes::xy_theme()
 @
 
@@ -1194,7 +1263,7 @@ between the rebound effects of Fig.~\ref{fig:flowchart}.
 Points $a$, $b$, $c$, and $d$ represent intermediate stages.
 Table~\ref{tab:path_graph_segments} provides the key 
 for rebound path segments.
-Note that segment \bartilde{} appears only in the energy plane,
+Note that segment \bartildeline{} appears only in the energy plane,
 because the framework tracks energy consumption but not expenditures or consumption
 for the macro effect.
 
@@ -1216,7 +1285,7 @@ for the macro effect.
   \hatd{}  \hspace{14.8mm}    & Direct income              & $Re_{dinc}$      \\
   \dbar{}  \hspace{ 7.1mm}    & Indirect income            & $Re_{iinc}$      \\
   \midrule
-  \bartilde{}                 & Macro                      & $Re_{macro}$     \\
+  \bartildeline{}             & Macro                      & $Re_{macro}$     \\
   \bottomrule
 \end{tabular}
 \label{tab:path_graph_segments}
@@ -1268,7 +1337,7 @@ on goods and services that rely on at least some energy consumption.%
   which we use throughout this analysis.
 }
 %
-Segment \bartilde{} always moves in the positive $y$ direction,
+Segment \bartildeline{} always moves in the positive $y$ direction,
 because macro effects lead to additional indirect energy consumption.
 
 Note that rebound values from Table~\ref{tab:car_results}
@@ -1307,7 +1376,8 @@ car_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Expenditure") +
+                            graph_types = "Expenditure", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = car_cost_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1409,7 +1479,8 @@ car_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Car",
-                            graph_types = "Consumption") +
+                            graph_types = "Consumption", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = car_prefs_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1431,8 +1502,8 @@ the indexed rate of other goods consumption ($\rate{C}_g/\rbempl{C}_g$) on the $
 Iso-expenditure loci of indexed energy service and other goods demand,
 i.e. budget constraints,
 are shown as lines with negative slope
-(lines \circcirc{}, \starstar{}, \hathat{}, and \barbar{}).
-Note that budget constraints \circcirc{} and \barbar{}
+(lines \circcirc{}, \starstar{}, \hathatline{}, and \barbarline{}).
+Note that budget constraints \circcirc{} and \barbarline{}
 intersect at the $y$-axis (i.e., where $x$ = 0),
 because the prices of other goods and services do not change
 as a result of the EEU.
@@ -1521,6 +1592,8 @@ as shown in Table~\ref{tab:lamp_stages_table}.
 Rebound components for the lamp upgrade are shown in Table~\ref{tab:lamp_results}.
 
 
+\begin{landscape}
+
 <<lamp_stages_table, results="asis", echo=FALSE>>=
 digs_lamp <- matrix(c(rep(0, n_stages_table_cols), # M_dot
                       rep(4, n_stages_table_cols), # p_E
@@ -1571,8 +1644,16 @@ rebound_results %>%
         size = "footnotesize")
 @
 
+\end{landscape}
+
 
 <<lamp_rebound_results_table, results="asis", echo=FALSE>>=
+table_cap <- paste0("Lamp example: rebound results with macro factor ($k$) assumed to be 1. ",
+                    "(See Section~\\ref{sec:calculating_k} in which we use an updated value ", 
+                    "of $k = 3$ to obtain $Re_{tot} = ", 
+                    Re_tot_lamp_k3_string,
+                    "\\%$.)")
+
 rebound_results %>%
   dplyr::filter(Case == "Lamp") %>%
   dplyr::mutate(
@@ -1581,7 +1662,7 @@ rebound_results %>%
   ReboundTools::rebound_results_table(include_subtotals = FALSE,
                                       rebound_terms = ReboundTools::rebound_terms[!names(ReboundTools::rebound_terms) %in% "Re_cap"],
                                       label = "tab:lamp_results",
-                                      caption = "Lamp example: rebound results with macro factor ($k$) assumed to be 1.",
+                                      caption = table_cap,
                                       digits = 1,
                                       align = "rrr") %>%
   print(include.rownames = FALSE,
@@ -1765,7 +1846,8 @@ lamp_Re_arrows <- tibble::tribble(~x, ~y, ~angle, ~radius, ~colour, ~size,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Energy") +
+                            graph_types = "Energy", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_spoke(data = lamp_Re_arrows,
                         mapping = ggplot2::aes(x = x,
                                                y = y,
@@ -1815,7 +1897,8 @@ lamp_cost_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
 
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Expenditure") +
+                            graph_types = "Expenditure", 
+                            graph_params = paper_path_graph_params) +
   ggplot2::geom_text(data = lamp_cost_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1886,7 +1969,8 @@ lamp_prefs_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size,
                                      )
 rebound_results %>%
   ReboundTools::path_graphs(cases = "Lamp",
-                               graph_types = "Consumption") +
+                            graph_types = "Consumption", 
+                            graph_params = paper_path_graph_params) +
     ggplot2::geom_text(data = lamp_prefs_labels,
                      mapping = ggplot2::aes(x = x,
                                             y = y,
@@ -1910,21 +1994,6 @@ rebound_results %>%
 \subsection{A first attempt at calculating macro rebound}
 \label{sec:calculating_k}
 %++++++++++++++++++++++++++++++
-
-<<Withk3, echo = FALSE>>=
-Re_macro_car_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Car (k = 3)") %>%
-  magrittr::extract2("Re_macro")
-Re_macro_lamp_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Lamp (k = 3)") %>%
-  magrittr::extract2("Re_macro")
-Re_tot_car_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Car (k = 3)") %>%
-  magrittr::extract2("Re_tot")
-Re_tot_lamp_k_3 <- rebound_results %>%
-  dplyr::filter(Case == "Lamp (k = 3)") %>%
-  magrittr::extract2("Re_tot")
-@
 
 Few previous studies explored the link
 between microeconomic and macroeconomic rebound.
@@ -1975,7 +2044,7 @@ However, we see that choosing a placeholder value of $k = 1$
 resulted in a low value for $Re_{\macro}$ and, therefore, $Re_{tot}$
 in Section~\ref{sec:results}.
 In Figs.~\ref{fig:CarEnergyGraph} and~\ref{fig:LampEnergyGraph},
-the macro effect segments (\bartilde{})
+the macro effect segments (\bartildeline{})
 should be three times longer than they appear.
 In Tables~\ref{tab:car_results} and~\ref{tab:lamp_results},
 the values of macro rebound ($Re_{\macro}$) should triple to
@@ -2345,7 +2414,7 @@ $\Sexpr{f_lmp_higheps("Re_tot")}$\%
 (with $\eqspsUCorig = -0.6$, from \citeauthor{Fouquet2011}).
 
 
-<<LampSensToEps, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$) in the lamp example. The macro factor, $k = 3$. The line for $Re_{dinc}$ is behind the line for $Re_{dempl}$. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
+<<LampSensToEps, echo=FALSE, fig.cap="Sensitivity of rebound components to uncompensated own price elasticity of energy service demand ($\\eqspsUCorig$) in the lamp example. The macro factor, $k = 3$. The lines for $Re_{dempl}$, $Re_{dinc}$, $Re_{emb}$, and $Re_{O\\!M\\!d}$ are nearly coincident. (Note reversed $x$-axis scale.)", fig.width=6, fig.height=4, fig.align="center">>=
 sens_graph_main_paper_actual_cases <- rebound_data %>% 
   dplyr::filter(.data[[ReboundTools::eeu_base_params$case]] == "Lamp (k = 3)") %>% 
   # Change the Cases column to say "Car" and "Lamp" to get rid of the "(k = 3)" part.
@@ -2358,9 +2427,32 @@ eps_sens_params <- list(Lamp = list(e_qs_ps_UC_orig = seq(-0.7, -0.1, by = 0.01)
 # We want to get the parameterized data so we can find a specific data point for the text.
 eps_graph_parametric_data_main_paper <- ReboundTools::parametric_analysis(original_cases = sens_graph_main_paper_actual_cases, parameterization = eps_sens_params)
 
-Re_graph_params <- ReboundTools::sens_graph_params
-Re_graph_params[["include_x_axis"]] <- TRUE
-Re_graph_params[["use_latex_legend"]] <- TRUE
+# sensitivity_graph_params <- ReboundTools::sens_graph_params
+# sensitivity_graph_params[["include_x_axis"]] <- TRUE
+# sensitivity_graph_params[["use_latex_legend"]] <- TRUE
+# 
+# # Different parameters for B&W paper
+# sensitivity_graph_params[["dempl_colour"]] <- "black"
+# sensitivity_graph_params[["emb_colour"]] <- "black"
+# sensitivity_graph_params[["omd_colour"]] <- "black"
+# sensitivity_graph_params[["dsub_colour"]] <- "darkgray"
+# sensitivity_graph_params[["isub_colour"]] <- "darkgray"
+# sensitivity_graph_params[["dinc_colour"]] <- "black"
+# sensitivity_graph_params[["iinc_colour"]] <- "black"
+# sensitivity_graph_params[["macro_colour"]] <- "gray"
+# sensitivity_graph_params[["tot_colour"]] <- "black"
+# 
+# sensitivity_graph_params[["dempl_linewidth"]] <- 0.2
+# sensitivity_graph_params[["emb_linewidth"]] <- 0.2
+# sensitivity_graph_params[["omd_linewidth"]] <- 0.3
+# sensitivity_graph_params[["dsub_linewidth"]] <- 0.5
+# sensitivity_graph_params[["isub_linewidth"]] <- 0.5
+# sensitivity_graph_params[["dinc_linewidth"]] <- 1
+# sensitivity_graph_params[["iinc_linewidth"]] <- 1
+# sensitivity_graph_params[["macro_linewidth"]] <- 1.3
+# sensitivity_graph_params[["tot_linewidth"]] <- 1
+# 
+# sensitivity_graph_params[["tot_linetype"]] <- "dotted"
 
 Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_tot,
                                                 ReboundTools::rebound_terms$Re_macro,
@@ -2370,14 +2462,14 @@ Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_t
                                                 ReboundTools::rebound_terms$Re_isub,
                                                 ReboundTools::rebound_terms$Re_dempl,
                                                 ReboundTools::rebound_terms$Re_emb,
-                                                ReboundTools::rebound_terms$Re_md)] %>% 
+                                                ReboundTools::rebound_terms$Re_omd)] %>% 
   unlist()
 
 rebound_terms_graph(.parametric_data = eps_graph_parametric_data_main_paper,
                     parameterization = sens_graph_main_paper_actual_cases,
                     x_var = ReboundTools::orig_vars$e_qs_ps_UC_orig, 
                     Re_terms = Re_terms_order,
-                    graph_params = Re_graph_params) +
+                    graph_params = sensitivity_graph_params) +
   ggplot2::facet_wrap(facets = "Case", scales = "free_x") +
   ggplot2::scale_x_reverse(breaks = seq(-0.7, -0.1, by = 0.1)) +
   ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.1)) +
@@ -3059,15 +3151,9 @@ Author contributions for this paper (Part~II of the two-part paper) are shown in
 \label{sec:data_repository}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Data and example calculations in spreadsheet format are stored at the
-% Research Data Leeds Repository
-% (\url{https://doi.org/10.5518/1201}).
-
-**** Data and example calculations in spreadsheet format will be stored at the
-Research Data Leeds Repository if this submission is accepted.
-The spreadsheet file is included with the submission of this paper. ****
-
-
+Data and example calculations in spreadsheet format are stored at the
+the University of Leeds at
+\url{https://doi.org/10.5518/1634}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3082,7 +3168,7 @@ The spreadsheet file is included with the submission of this paper. ****
 %If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
 
 Paul Brockway’s time was funded by the UK Research and Innovation (UKRI)
-Council, supported under EPSRC Fellowship award EP/R024254/1.
+Council, supported under EPSRC Fellowship award EP/R024251/1.
 The authors benefited from discussions with
 Daniele Girardi (University of Massachusetts at Amherst) and
 Christopher Blackburn (Bureau of Economic Analysis).
@@ -3099,6 +3185,14 @@ Finally, the authors thank the students of MKH's Fall 2019
 Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
+
+The findings, interpretations, and conclusions expressed
+in this paper are entirely those of the authors.
+They do not necessarily represent the views of the
+International Bank for Reconstruction and Development/World Bank and
+its affiliated organizations, or 
+those of the Executive Directors of the World Bank or
+the governments they represent.
 
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}

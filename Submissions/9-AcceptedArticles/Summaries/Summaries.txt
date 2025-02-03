@@ -1,0 +1,38 @@
+2-3 sentence description of the work
+for use on the Association's social media account. 
+This summary should be accessible to a wider audience 
+and highlight the importance/relevance 
+of your research and its findings. 
+We recommend adding a visual medium, 
+such as a picture/graph relevant to the article. 
+Please provide your Twitter username if you wish to be tagged.
+
+
+Part I:
+
+Widespread implementation of energy efficiency 
+is a key greenhouse gas emissions mitigation measure, but
+rebound can ``take back'' energy savings. 
+In this first of two papers (Part I),
+we advance foundations of a rigorous analytical framework
+for consumer-sided rebound that
+is approachable for both energy analysts and economists. 
+The framework enables determination 
+of the effects of
+non-marginal energy service price decreases, 
+satiated demand for the energy service, and
+reduced energy demand.
+
+
+Part II:
+
+In this second of two papers (Part II),
+we develop energy, expenditure, and consumption planes
+to visualize and illustrate energy rebound.
+Using the framework and rebound planes, 
+we calculate and show total rebound for two examples: 
+energy efficiency upgrades of a car (56.2%) and 
+an electric lamp (67.0%).
+Finally, we provide information about new open-source software tools
+for calculating rebound magnitudes and
+visualizing rebound effects.

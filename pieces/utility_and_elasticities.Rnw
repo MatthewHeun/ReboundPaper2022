@@ -233,7 +233,7 @@ The result is
 The budget constraint is the starting point for finding 
 the slope of an expenditure line in the consumption plane.
 (Example expenditure lines include
-the \circcirc{}, \starstar{}, \hathat{}, and \barbar{} lines
+the \circcirc{}, \starstar{}, \hathatline{}, and \barbarline{} lines
 in Figs.~\ref{PartII-fig:CarConsGraph} 
 and~\ref{PartII-fig:LampConsGraph} of Part~II.)
 The following equation is a generic version of Eqs.~(\ref{eq:M_acct_orig}), 
@@ -711,12 +711,12 @@ via repeated application of the chain rule, gives
 
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqspsC_def})) gives
 
-\begin{equation}
-  \eqspsChat \equiv \frac{\aempl{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} 
-         = \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^n } \;
-           \cancel{\rorig{q}_s} m_s n g z^{m_s} (\aempl{p}_s)^{m_s - 1} 
-                \left\{ \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^{n-1} \right\} \; .
-\end{equation}
+\begin{align}
+  \eqspsChat \equiv & \frac{\aempl{p}_s}{\rasub{q}_s} \eval{\pdv{\rasub{q}_s}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
+         = & \frac{\amacro{p}_s}{\cancel{\rorig{q}_s} \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^n } \;
+           \cancel{\rorig{q}_s} m_s n g z^{m_s} (\aempl{p}_s)^{m_s - 1} \; \times \nonumber  \\
+           & \left\{ \left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]^{n-1} \right\} \; . 
+\end{align}
 %
 Cancelling terms and
 combining $\aempl{p}_s$ and $\left[ f + g \left( z \aempl{p}_s \right)^{m_s} \right]$ 
@@ -846,10 +846,10 @@ via repeated application of the chain rule, gives
 Forming the elasticity via its definition (Eq.~(\ref{eq:eqgpsC_def})) gives
 
 \begin{align}
-  \eqgpsChat &\equiv \frac{\aempl{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
-         &= \frac{\aempl{p}_s}{\cancel{\rorig{q}_g} \left\{ 1 + f \left[ \left( z \aempl{p}_s \right)^{m_g} - 1 \right] \right\}^n } \;
-           \cancel{\rorig{q}_g} m_g n f z^{m_g} (\aempl{p}_s)^{m_g - 1} 
-                \left\{ 1 + f \left[ \left( z \aempl{p}_s \right)^{m_g} - 1 \right] \right\} ^{n-1}  \; .
+  \eqgpsChat \equiv & \frac{\aempl{p}_s}{\rasub{q}_g} \eval{\pdv{\rasub{q}_g}{\aempl{p}_s}}_{\rate{u} \, = \, \rbsub{u} \, = \, \rasub{u}} \nonumber \\
+         = & \frac{\aempl{p}_s}{\cancel{\rorig{q}_g} \left\{ 1 + f \left[ \left( z \aempl{p}_s \right)^{m_g} - 1 \right] \right\}^n } \;
+           \cancel{\rorig{q}_g} m_g n f z^{m_g} (\aempl{p}_s)^{m_g - 1} \; \times \nonumber \\
+           &  \left\{ 1 + f \left[ \left( z \aempl{p}_s \right)^{m_g} - 1 \right] \right\} ^{n-1}  \; .
 \end{align}
 %
 Cancelling terms and

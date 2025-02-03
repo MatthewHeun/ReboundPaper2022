@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}    % For submission
+\documentclass[10pt]{article}    % For submission
 
 
 
@@ -13,8 +13,8 @@
 \usepackage{chngcntr}           % To get figure and table numbering correct in the appendices
 \usepackage[makeroom]{cancel}   % To show terms go to zero
 \usepackage[inline]{enumitem}   % For inline enumeration
-\usepackage[letterpaper, left=0.75in, right=0.75in, top=0.75in, bottom=0.75in, footskip=.25in]{geometry} % For better margins.
-\usepackage[]{lineno}           % For line numbers
+\usepackage[letterpaper, left=1in, right=3in, top=1in, bottom=1in, footskip=.25in]{geometry} % For better margins.
+% \usepackage[]{lineno}           % For line numbers
 % \modulolinenumbers[5]
 \usepackage{microtype}          % For beautiful typesetting
 \usepackage{multicol}           % For multi-column layout
@@ -22,11 +22,17 @@
 \usepackage{natbib}
 \setlength{\bibsep}{0.0pt}      % To set the separation between entries to 0.
 \usepackage{nccmath}            % For the \useshortskip command above equations
+
+\usepackage{newtxtext}          % For Times New Roman in body
+\usepackage{newtxmath}          % For Times New Roman in equations
+
+
 \usepackage{parcolumns}         % For multi-column layout
 \usepackage{pdflscape}          % For landscape environment \begin{landscape} ... \end{landscape}
 \usepackage{physics}            % For the \eval command.
 \usepackage{setspace}           % For double spacing
-\doublespacing
+% \doublespacing
+\singlespacing
 \usepackage{soul}               % For text highlighting
 \usepackage[most]{tcolorbox}    % For color highlighting of text
 \usepackage{tikz}               % For diagrams
@@ -48,11 +54,10 @@
 \bibliographystyle{apa-good.bst}
 
 % Author info
-\title{Energy, expenditure, and consumption aspects of rebound,\\
-        Part I: Foundations of
-        a rigorous analytical framework}
+\title{Energetic and economic aspects of rebound,
+       Part I: Foundations of a rigorous analytical framework}
 \author[1,2,3,*]{Matthew Kuperus Heun}
-\author[4]{Gregor Semieniuk}
+\author[4,5]{Gregor Semieniuk}
 \author[2]{Paul E.\ Brockway}
 \affil[1]{Engineering Department, Calvin University, 
           3201 Burton St. SE, Grand Rapids, MI, 49546}
@@ -62,9 +67,11 @@
 \affil[3]{School for Public Leadership, Faculty of Economic and Management Science,
           Stellenbosch University,
           Private Bag X1, Matieland, 7602, Stellenbosch, South Africa}
-\affil[4]{Political Economy Research Institute and Department of Economics,
+\affil[4]{School of Public Policy and Department of Economics, 
           University of Massachusetts Amherst, 
           Amherst, MA, 01003}
+\affil[5]{World Bank, 
+          Washington, DC, 20433}
 \affil[*]{\normalfont{Corresponding author: \texttt{mkh2@calvin.edu}}}
 \renewcommand\Affilfont{\itshape\small}
 
@@ -78,38 +85,37 @@
 %% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-Widespread implementation of energy efficiency
-is a key greenhouse gas emissions mitigation measure, 
-but rebound can ``take back'' energy savings.
-However, the absence of solid analytical foundations hinders
-empirical determination of the size of rebound.
-A new clarity is needed, one that 
-involves both economics and energy analysis.
-In this paper (Part~I of two), 
+Widespread implementation of energy efficiency 
+is a key greenhouse gas emissions mitigation measure, but
+rebound can ``take back'' energy savings. 
+However, the absence of solid analytical foundations 
+hinders empirical determination of the size of rebound.
+A new clarity is needed,
+one that involves both economics and energy analysis. 
+In this paper (Part I),
 we advance foundations of a rigorous analytical framework
-for consumer-sided rebound
-that starts at the microeconomic level
-and is approachable for both energy analysts and economists. 
-We develop foundations of a rebound analysis framework that
-%
+for consumer-sided rebound that starts 
+at the microeconomic level and
+is approachable for both energy analysts and economists. 
+We develop foundations of a framework that %
 \begin{enumerate*}[label={(\roman*)}]
 	
   \item clarifies the energy, expenditure, and consumption aspects of rebound,
 
-  \item combines 
-        embodied energy effects with
-        operations, maintenance, and disposal effects
-        (under a new ``emplacement effect''), and
+  \item combines embodied energy with 
+        operations, maintenance, and disposal effects 
+        (under a new ``emplacement effect''), and 
 
-  \item provides the first operationalized link between 
-        rebound effects on microeconomic and macroeconomic levels.
+  \item provides the first operationalized link 
+        between microeconomic and macroeconomic levels. 
         
 \end{enumerate*}
 %
-Furthermore, our framework enables determination of
-the effect of non-marginal energy service price decrease,
-the effect of satiation of demand for the energy service, and 
-the effect of reduced energy demand on energy price.
+The framework enables determination 
+of the effects of
+non-marginal energy service price decreases, 
+satiated demand for the energy service, and
+reduced economy-wide energy demand.
 \end{abstract}
 
 Keywords: Energy efficiency, Energy rebound, Energy services, Microeconomic rebound, Substitution and income effects, Macroeconomic rebound
@@ -126,7 +132,7 @@ library(tidyr)
 library(xtable)
 @
 
-\linenumbers
+% \linenumbers
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -604,7 +610,7 @@ Names for the decorations are given at the bottom of the figure
 \label{sec:rebound_relationships}
 %++++++++++++++++++++++++++++++
 
-Energy rebound is defined as
+Energy rebound ($Re$) is defined as
 
 \begin{equation} \label{eq:Re_def}
   Re \equiv 1 - \frac{\text{actual final energy savings rate}}{\text{expected final energy savings rate}} \; ,
@@ -1420,9 +1426,9 @@ Direct income rebound is defined as
 After substitution, rearranging, and canceling of terms (Appendix~\ref{sec:Re_dinc}), 
 the expression for direct income rebound under the CES utility model is
 
-\begin{equation} \label{eq:Re_dinc}
+\begin{align} \label{eq:Re_dinc}
   Re_{dinc} = \Redinceqnexact{} \; .
-\end{equation}
+\end{align}
 %
 If there are no net savings after the substitution effect ($\rasub{N} = 0$), 
 direct income effect rebound is zero ($Re_{dinc} = 0$), as expected.%
@@ -1483,9 +1489,9 @@ After substitution, rearranging, and canceling of terms,
 the expression for indirect income rebound 
 under the CES utility model is
 
-\begin{equation} \label{eq:Re_iinc}
+\begin{align} \label{eq:Re_iinc}
   Re_{iinc} = \Reiinceqnexact{} \; .
-\end{equation}
+\end{align}
 %
 (See Appendix~\ref{sec:Re_inc} for details of the derivation
 of direct and indirect income effect rebound.)
@@ -1520,7 +1526,7 @@ productivity shocks in a firm or sector
 can have larger macroeconomic consequences than the original
 shock \citep{Gabaix2011,Acemoglu2012eme,Baqaee2019}. 
 \citet{Foerster2022} estimate
-that 3/4 of long-run US growth since 1950
+that 3/4 of long-run U.S.\ growth since 1950
 can be attributed to sector-specific
 (as opposed to aggregrate) trend factors. 
 Because the EEU represents a positive, sector-specific
@@ -1553,13 +1559,6 @@ GDP remains unchanged.%
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
-  % Nevertheless, as long as the energy efficiency improvement 
-  % is limited to only one energy conversion device (in this example, a car),
-  % the further output growth may be constrained to the extent that
-  % the other inputs into production remain constrained 
-  % at their original levels and substituting energy 
-  % for the other inputs to production
-  % is limited by the prevailing technology.
 }
 %
 That may be true in the short run. 
@@ -2096,7 +2095,7 @@ Author contributions for this paper (Part~I of the two-part paper) are shown in 
 %If no funding has been provided for the research, please include the following sentence: This research did not receive any specific grant from funding agencies  in the public, commercial, or not-for-profit sectors.
 
 Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
-Council, supported under EPSRC Fellowship award EP/R024254/1.
+Council, supported under EPSRC Fellowship award EP/R024251/1.
 The authors benefited from discussions with 
 Daniele Girardi (University of Massachusetts at Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
