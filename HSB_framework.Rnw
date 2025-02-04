@@ -1144,8 +1144,8 @@ the price of the energy service decreases ($\bempl{p}_s > \aempl{p}_s$).
 After compensating variation tightens the budget constraint,
 consumption at the new energy service price ($\aempl{p}_s$)
 yields utility at the same level as prior to the EEU
-by consuming more of the now-lower-cost energy service
-and less of the now-relatively-more-expensive other goods.
+by consuming more of the now-lower-cost energy service (subscript $s$)
+and less of the now-relatively-more-expensive other goods (subscript $g$).
 
 A constant price elasticity (CPE) utility model
 is often used in the literature
