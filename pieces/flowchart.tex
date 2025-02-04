@@ -6,13 +6,13 @@
 \begin{tikzpicture}%[font=\sffamily]
   % Set up the nodes of the main path
   \node(orig) at (0cm,0cm) {\strut $\circ$};
-  \node[right=0.2cm of orig] (empl)[rounded corners, text=empltextcolor, fill=emplcolor] {\strut emplacement};
+  \node[right=0.2cm of orig] (empl)[rounded corners, text=empltextcolor, fill=emplbgcolor] {\strut emplacement};
   \node[right=0.2cm of empl] (star) {$*$};
-  \node[right=0.2cm of star] (sub)[rounded corners, text=subtextcolor, fill=subcolor] {\strut substitution};
+  \node[right=0.2cm of star] (sub)[rounded corners, text=subtextcolor, fill=subbgcolor] {\strut substitution};
   \node[right=0.2cm of sub] (hat) {$\wedge$};
-  \node[right=0.2cm of hat] (inc)[rounded corners, text=inctextcolor, fill=inccolor] {\strut income};
+  \node[right=0.2cm of hat] (inc)[rounded corners, text=inctextcolor, fill=incbgcolor] {\strut income};
   \node[right=0.2cm of inc] (bar) {$-$};
-  \node[right=0.2cm of bar] (macro)[rounded corners, text=macrotextcolor, fill=macrocolor] {\strut macro};
+  \node[right=0.2cm of bar] (macro)[rounded corners, text=macrotextcolor, fill=macrobgcolor] {\strut macro};
   \node[right=0.2cm of macro] (tilde) {$\sim$};
 
   % Draw arrows between main row boxes

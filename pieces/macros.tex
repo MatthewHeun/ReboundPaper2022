@@ -117,25 +117,35 @@
 % Original spectrum colours
 
 % Viridis "plasma" colours
-% \definecolor{emplcolor}{HTML}{150789}  % Blue
-% \definecolor{subcolor}{HTML}{99149F}   % Purple
-% \definecolor{inccolor}{HTML}{E76F5A}   % Orange
-% \definecolor{macrocolor}{HTML}{F7E225} % Yellow
+% \definecolor{emplbgcolor}{HTML}{150789}  % Blue
+% \definecolor{subbgcolor}{HTML}{99149F}   % Purple
+% \definecolor{incbgcolor}{HTML}{E76F5A}   % Orange
+% \definecolor{macrobgcolor}{HTML}{F7E225} % Yellow
 % 
-% \definecolor{empltextcolor}{HTML}{FFFFFF}   % White
+% \definecolor{emplsegcolor}{HTML}{150789}  % Blue
+% \definecolor{subsegcolor}{HTML}{99149F}   % Purple
+% \definecolor{incsetcolor}{HTML}{E76F5A}   % Orange
+% \definecolor{macrosegcolor}{HTML}{F7E225} % Yellow
+%
+%% \definecolor{empltextcolor}{HTML}{FFFFFF}   % White
 % \definecolor{subtextcolor}{HTML}{FFFFFF}    % White
 % \definecolor{inctextcolor}{HTML}{000000}    % Black
 % \definecolor{macrotextcolor}{HTML}{000000} % Black
 
 % Black-and-white colours
-\definecolor{emplcolor}{HTML}{FFFFFF}  % White
-\definecolor{subcolor}{HTML}{FFFFFF}   % White
-\definecolor{inccolor}{HTML}{FFFFFF}   % White
-\definecolor{macrocolor}{HTML}{FFFFFF} % White
+\definecolor{emplbgcolor}{HTML}{FFFFFF}  % White
+\definecolor{subbgcolor}{HTML}{FFFFFF}   % White
+\definecolor{incbgcolor}{HTML}{FFFFFF}   % White
+\definecolor{macrobgcolor}{HTML}{FFFFFF} % White
 
-\definecolor{empltextcolor}{HTML}{000000}   % Black
-\definecolor{subtextcolor}{HTML}{000000}    % Black
-\definecolor{inctextcolor}{HTML}{000000}    % Black
+\definecolor{emplsegcolor}{HTML}{000000}  % Black
+\definecolor{subsegcolor}{HTML}{000000}   % Black
+\definecolor{incsegcolor}{HTML}{000000}   % Black
+\definecolor{macrosegcolor}{HTML}{000000} % Black
+
+\definecolor{empltextcolor}{HTML}{000000}  % Black
+\definecolor{subtextcolor}{HTML}{000000}   % Black
+\definecolor{inctextcolor}{HTML}{000000}   % Black
 \definecolor{macrotextcolor}{HTML}{000000} % Black
 
 
@@ -164,28 +174,28 @@ bottom=2pt}
 %%%%% Colored phrases
 
 % Emplacement effect
-\newcommand{\empleffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{emplacement effect}}}
-\newcommand{\empleffectadj}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{emplacement-effect}}}
-\newcommand{\Empleffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{Emplacement effect}}}
-\newcommand{\EmplEffect}{\inlinebox[emplcolor]{\textcolor{empltextcolor}{Emplacement Effect}}}
+\newcommand{\empleffect}{\inlinebox[emplbgcolor]{\textcolor{empltextcolor}{emplacement effect}}}
+\newcommand{\empleffectadj}{\inlinebox[emplbgcolor]{\textcolor{empltextcolor}{emplacement-effect}}}
+\newcommand{\Empleffect}{\inlinebox[emplbgcolor]{\textcolor{empltextcolor}{Emplacement effect}}}
+\newcommand{\EmplEffect}{\inlinebox[emplbgcolor]{\textcolor{empltextcolor}{Emplacement Effect}}}
 
 % Substitution effect
-\newcommand{\subeffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{substitution effect}}}
-\newcommand{\subeffectadj}{\inlinebox[subcolor]{\textcolor{subtextcolor}{substitution-effect}}}
-\newcommand{\Subeffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{Substitution effect}}}
-\newcommand{\SubEffect}{\inlinebox[subcolor]{\textcolor{subtextcolor}{Substitution Effect}}}
+\newcommand{\subeffect}{\inlinebox[subbgcolor]{\textcolor{subtextcolor}{substitution effect}}}
+\newcommand{\subeffectadj}{\inlinebox[subbgcolor]{\textcolor{subtextcolor}{substitution-effect}}}
+\newcommand{\Subeffect}{\inlinebox[subbgcolor]{\textcolor{subtextcolor}{Substitution effect}}}
+\newcommand{\SubEffect}{\inlinebox[subbgcolor]{\textcolor{subtextcolor}{Substitution Effect}}}
 
 % Income effect
-\newcommand{\inceffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{income effect}}}
-\newcommand{\inceffectadj}{\inlinebox[inccolor]{\textcolor{inctextcolor}{income-effect}}}
-\newcommand{\Inceffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{Income effect}}}
-\newcommand{\IncEffect}{\inlinebox[inccolor]{\textcolor{inctextcolor}{Income Effect}}}
+\newcommand{\inceffect}{\inlinebox[incbgcolor]{\textcolor{inctextcolor}{income effect}}}
+\newcommand{\inceffectadj}{\inlinebox[incbgcolor]{\textcolor{inctextcolor}{income-effect}}}
+\newcommand{\Inceffect}{\inlinebox[incbgcolor]{\textcolor{inctextcolor}{Income effect}}}
+\newcommand{\IncEffect}{\inlinebox[incbgcolor]{\textcolor{inctextcolor}{Income Effect}}}
 
 % Macro effect
-\newcommand{\macroeffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{macro effect}}}
-\newcommand{\macroeffectadj}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{macro-effect}}}
-\newcommand{\Macroeffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{Macro effect}}}
-\newcommand{\MacroEffect}{\inlinebox[macrocolor]{\textcolor{macrotextcolor}{Macro Effect}}}
+\newcommand{\macroeffect}{\inlinebox[macrobgcolor]{\textcolor{macrotextcolor}{macro effect}}}
+\newcommand{\macroeffectadj}{\inlinebox[macrobgcolor]{\textcolor{macrotextcolor}{macro-effect}}}
+\newcommand{\Macroeffect}{\inlinebox[macrobgcolor]{\textcolor{macrotextcolor}{Macro effect}}}
+\newcommand{\MacroEffect}{\inlinebox[macrobgcolor]{\textcolor{macrotextcolor}{Macro Effect}}}
 
 
 %%%%% minipage for assumptions and constraints tables
@@ -448,16 +458,15 @@ bottom=2pt}
 \newcommand{\barbarline}{\seg{$-\,$}{black}{0.1 mm}{$\, -$}}
 
 % Line segments
-\newcommand{\circa}{\seg{$\circ$}{emplcolor}{0.6 mm}{$a$}}
-% \newcommand{\ab}{\seg{a}{emplcolor}{0.6 mm}{b}}
-\newcommand{\ab}{$a$\tikz[baseline=-0.6ex]\draw [line width=0.6mm,dotted,emplcolor] (0,0) -- (0.45,0);$b$}
-\newcommand{\bstar}{\seg{$b\,$}{emplcolor}{0.6 mm}{$*$}}
-\newcommand{\starc}{\seg{$*$}{subcolor}{0.6 mm}{$\,c$}}
-\newcommand{\chat}{\seg{$c\,$}{subcolor}{0.6 mm}{$\wedge$}}
-\newcommand{\hatd}{\seg{$\wedge$}{inccolor}{0.6 mm}{$\,d$}}
-\newcommand{\dbar}{\seg{$d$}{inccolor}{0.6 mm}{$\,-$}}
-\newcommand{\hatbarline}{\seg{$\wedge$}{inccolor}{0.6 mm}{$\,-$}}
-\newcommand{\bartildeline}{\seg{$- \,$}{macrocolor}{0.6 mm}{$\, \sim$}}
+\newcommand{\circa}{\seg{$\circ$}{emplsegcolor}{0.6 mm}{$a$}}
+\newcommand{\ab}{$a$\tikz[baseline=-0.6ex]\draw [line width=0.6mm,dotted,emplsegcolor] (0,0) -- (0.45,0);$b$}
+\newcommand{\bstar}{\seg{$b\,$}{emplsegcolor}{0.6 mm}{$*$}}
+\newcommand{\starc}{\seg{$*$}{subsegcolor}{0.6 mm}{$\,c$}}
+\newcommand{\chat}{\seg{$c\,$}{subsegcolor}{0.6 mm}{$\wedge$}}
+\newcommand{\hatd}{\seg{$\wedge$}{incsegcolor}{0.6 mm}{$\,d$}}
+\newcommand{\dbar}{\seg{$d$}{incsegcolor}{0.6 mm}{$\,-$}}
+\newcommand{\hatbarline}{\seg{$\wedge$}{incsegcolor}{0.6 mm}{$\,-$}}
+\newcommand{\bartildeline}{\seg{$- \,$}{macrosegcolor}{0.6 mm}{$\, \sim$}}
 
 
 % Rotated text for tables

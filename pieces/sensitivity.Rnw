@@ -212,7 +212,8 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = eta_sens_par
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0), 
                  # Move the facet labels out of the graphs slightly.
                  strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
-                 legend.key.width = ggplot2::unit(1, 'cm'))
+                 , 
+    legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
 
 
@@ -252,7 +253,8 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = C_dot_cap_se
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0), 
                  # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
+                 legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
 
 
@@ -350,7 +352,8 @@ rebound_terms_graph(rebound_data = actual_cases, parameterization = p_E_sens_par
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0), 
                  # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
+                 legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
   
   
@@ -391,7 +394,8 @@ rebound_terms_graph(.parametric_data = eps_graph_parametric_data, parameterizati
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0), 
                  # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
+                 legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
   
   
@@ -464,7 +468,8 @@ rebound_terms_graph(rebound_data = actual_cases,
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0), 
                  # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
+                 legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
   
   
@@ -507,7 +512,8 @@ rebound_terms_graph(rebound_data = actual_cases,
   MKHthemes::xy_theme() +
   ggplot2::theme(legend.text = ggplot2::element_text(hjust = 0),
                  # Move the facet labels out of the graphs slightly.
-                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)))
+                 strip.text.x = ggplot2::element_text(margin = ggplot2::margin(b = 2)), 
+                 legend.key.width = ggplot2::unit(sens_graph_legend_line_width, "mm"))
 @
 
 
