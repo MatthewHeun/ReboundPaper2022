@@ -733,7 +733,7 @@ than a like-for-like replacement of the original device.
 We call this increased ``capital cost'' 
 ($\bempl{C}_{cap} < \aempl{C}_{cap}$). 
 It may also 
-be more costly to operate and maintain (subscript $O\!M$) and
+be more costly to operate and maintain (subscript $\om$) and
 dispose (subscript $d$) 
 of the upgraded device
 ($\rbempl{C}_{\om} < \raempl{C}_{\om}$ and 
