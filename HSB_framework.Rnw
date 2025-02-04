@@ -491,11 +491,11 @@ including
 %
 \begin{enumerate*}[label={(\roman*)}]
 	
-  \item embodied energy of their manufacture (emb), 
+  \item embodied energy of their manufacture (subscript $emb$), 
   
-  \item operations and maintenance (OM), and
+  \item operations and maintenance (subscript $\om$), and
   
-  \item disposal (d) activities.
+  \item disposal (subscript $d$) activities.
     
 \end{enumerate*}
 %
@@ -858,7 +858,7 @@ the energy intensity of the economy~($I_E$).
   \text{[MJ/yr]} &= \text{[\$/yr]}\text{[MJ/\$]} \nonumber
 \end{align}
 %
-Note that indirect energy rate for the disposal effect
+Note that the indirect energy rate for the disposal effect
 is obtained from disposal costs that include discounting.
 (See Appendix~\ref{sec:budget_constraint} for details on cost discounting.)
 
