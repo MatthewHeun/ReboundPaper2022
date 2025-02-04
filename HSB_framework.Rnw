@@ -1838,7 +1838,7 @@ leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
 Our framework operationalizes the link between micro and macro levels, 
 via the macro factor ($k$), 
 but more work can be done in this area.
-Thus, ``This paper (2024)'' earns \rating{50} in the ``Macro effect'' row.
+Thus, ``This paper (2025)'' earns \rating{50} in the ``Macro effect'' row.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly marginal or small improvements in efficiency, 
 excluding the numerically precise analysis of important non-incremental upgrades
@@ -1870,7 +1870,7 @@ required conceptual development
 as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
 (Development of empirical applications is left for Part~II.)
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
-hence we fill the ``This paper (2024)'' column 
+hence we fill the ``This paper (2025)'' column 
 with filled circles (\rating{100})
 in nearly all rows.
 By so doing, we help advance clarity in the field of energy rebound.
@@ -1998,7 +1998,8 @@ Future work could be pursued in several areas.
         in analogy to the consumer framework,
         could be derived 
         due to the substantial symmetry between 
-        neoclassical consumer and producer models (**** Varian 1992, Fine 2015 ****).
+        neoclassical consumer and producer models
+        \citep{varian_microeconomic_1992, fine_microeconomics_2016}.
   
   \item This framework could be extended to include 
         some of the advanced topics
@@ -2024,7 +2025,6 @@ Future work could be pursued in several areas.
         such as the transition to all-electric vehicles and 
         the conversion of natural gas and oil furnaces to heat pumps 
         for home heating.
-
   
 \end{enumerate*}
 
@@ -2098,11 +2098,11 @@ Author contributions for this paper (Part~I of the two-part paper) are shown in 
 Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
 Council, supported under EPSRC Fellowship award EP/R024251/1.
 The authors benefited from discussions with 
-Daniele Girardi (University of Massachusetts at Amherst) and 
+Daniele Girardi (University of Massachusetts Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
 The authors are grateful for comments from internal reviewers
 Becky Haney and Jeremy Van Antwerp (Calvin University); 
-Nathan Chan (University of Massachusetts at Amherst); and 
+Nathan Chan (University of Massachusetts Amherst); and 
 Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
