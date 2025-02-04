@@ -1161,7 +1161,7 @@ sensitivity_graph_params[["tot_linetype"]] <- "dotted"
 \label{sec:rebound_planes_car_example}
 %------------------------------
 
-<<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<CarEnergyGraph, echo=FALSE, fig.cap="The energy plane for the car example. The macro factor, $k = 1$. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 car_Re_label_angle <- -74
 car_Re_arrow_angle <- pi/180 * 5
 
@@ -1782,7 +1782,7 @@ show energy, expenditure, and consumption planes
 for the lamp example.
 
 
-<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. Macro factor ($k$) is assumed to be 1. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
+<<LampEnergyGraph, echo = FALSE, warning=FALSE, fig.cap="The energy plane for the lamp example. The macro factor, $k = 1$. See Table~\\ref{tab:path_graph_segments} for meanings of path segments.", fig.width=6, fig.height=4, fig.align = "center">>=
 lamp_Re_label_angle <- -65
 lamp_Re_arrow_angle <- pi/180 * 13
 lamp_energy_labels <- tibble::tribble(~x, ~y, ~lab, ~colour, ~size, ~angle,
