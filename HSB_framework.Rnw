@@ -1543,15 +1543,14 @@ GDP remains unchanged.%
 \footnote{
   To appreciate the difference between production for
   the market and production for the household, 
-  consider the case
-  where increased fuel efficiency leads to the household saving
-  on energy per car trip. 
-  The household takes more trips
-  (direct rebound), without effect on GDP.
-  In the other case, 
-  the household buys the energy service
-  (transport) directly from a taxi company. 
-  Here, the taxi company lowers the price but gains more customers, 
+  consider the example of increased fuel efficiency.
+  In one case,
+  the household upgrades its own car and
+  takes more trips (direct rebound), without effect on GDP.
+  In the other case,
+  the household buys the energy service (transport) 
+  directly from a taxi company that upgrades its cars. 
+  Here, the taxi company lowers the price but gains more customers,
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
@@ -1991,11 +1990,15 @@ Future work could be pursued in several areas.
   
   \item Although this is a consumer-sided framework,
         we demonstrated that it could be extended 
-        to producer-sided effects such as the 
-        energy price rebound effect. 
-        Further work could explore additional
-        extensions to other producer-sided 
-        energy rebound effects.
+        to effects affecting producers such as
+        the energy price rebound effect. 
+        Further work could explore additional extensions
+        to other producer-sided energy rebound effects. 
+        Moreover, a neoclassical producer framework, 
+        in analogy to the consumer framework,
+        could be derived 
+        due to the substantial symmetry between 
+        neoclassical consumer and producer models (**** Varian 1992, Fine 2015 ****).
   
   \item This framework could be extended to include 
         some of the advanced topics
@@ -2015,11 +2018,13 @@ Future work could be pursued in several areas.
         \citet{Borenstein:2015aa} went some way to analyzing emissions
         and could provide a starting point for such work.
         The capability to analyze fuel-switching EEUs
+        (discussed in the previous item)
         will be important for analyzing the greenhouse gas emissions
         implications of many EEUs that involve electrification, 
         such as the transition to all-electric vehicles and 
         the conversion of natural gas and oil furnaces to heat pumps 
         for home heating.
+
   
 \end{enumerate*}
 
@@ -2108,6 +2113,15 @@ Finally, the authors thank the students of MKH's Fall 2019
 Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
+
+The findings, interpretations, and conclusions expressed
+in this paper are entirely those of the authors.
+They do not necessarily represent the views of the
+International Bank for Reconstruction and Development/World Bank and
+its affiliated organizations, or 
+those of the Executive Directors of the World Bank or
+the governments they represent.
+
 
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}

@@ -27,7 +27,7 @@
                                                   & $\Sexpr{f_car("Re_dir")}$
                                                   & $\Sexpr{f_car("Re_indir")}$
                                                   & $\Sexpr{f_car("Re_tot")}$  \\
- & (2024)     & 2020  & consumption planes        & & & & & & &   \\
+ & (2025)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
 1 & \citeauthor{Small:2007aa}  & U.S.,      & Elasticity of VMT w.r.t.\ & & & & & 4.5 (short run, &  &  \\
   & \citeyearpar{Small:2007aa} & 1967--2001 & fuel cost per mile        & & & & & 1967--2001)     &  &  \\
