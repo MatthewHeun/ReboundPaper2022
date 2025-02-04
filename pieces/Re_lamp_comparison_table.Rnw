@@ -27,7 +27,7 @@
                                                   & $\Sexpr{f_lmp("Re_dir")}$
                                                   & $\Sexpr{f_lmp("Re_indir")}$
                                                   & $\Sexpr{f_lmp("Re_tot")}$  \\
- & (2024)     & 2020  & consumption planes        & & & & & & &   \\
+ & (2025)     & 2020  & consumption planes        & & & & & & &   \\
 \midrule
 1 & \citeauthor{Guertin:2003aa}  & Canada, & Econometric residential  & & & & & 32--49 & &  \\
   & \citeyearpar{Guertin:2003aa} & 1993    & energy demand model      & & & & &        & &  \\

@@ -1543,15 +1543,14 @@ GDP remains unchanged.%
 \footnote{
   To appreciate the difference between production for
   the market and production for the household, 
-  consider the case
-  where increased fuel efficiency leads to the household saving
-  on energy per car trip. 
-  The household takes more trips
-  (direct rebound), without effect on GDP.
-  In the other case, 
-  the household buys the energy service
-  (transport) directly from a taxi company. 
-  Here, the taxi company lowers the price but gains more customers, 
+  consider the example of increased fuel efficiency.
+  In one case,
+  the household upgrades its own car and
+  takes more trips (direct rebound), without effect on GDP.
+  In the other case,
+  the household buys the energy service (transport) 
+  directly from a taxi company that upgrades its cars. 
+  Here, the taxi company lowers the price but gains more customers,
   leading immediately to growth in inflation-adjusted (i.e., real) GDP,
   as more driving services are produced. 
   Yet, the physical change of more car trips is the same in both cases.
@@ -1839,7 +1838,7 @@ leading to \rating{0} in the ``Macro effect'' row for all previous frameworks
 Our framework operationalizes the link between micro and macro levels, 
 via the macro factor ($k$), 
 but more work can be done in this area.
-Thus, ``This paper (2024)'' earns \rating{50} in the ``Macro effect'' row.
+Thus, ``This paper (2025)'' earns \rating{50} in the ``Macro effect'' row.
 Finally, all previous frameworks assume constant price elasticities and
 implicitly marginal or small improvements in efficiency, 
 excluding the numerically precise analysis of important non-incremental upgrades
@@ -1871,7 +1870,7 @@ required conceptual development
 as in Section~\ref{sec:macro_effect_main_paper} and Appendix~\ref{sec:Re_macro}.
 (Development of empirical applications is left for Part~II.)
 This paper addresses most of the gaps in Table~\ref{tab:previous_frameworks};
-hence we fill the ``This paper (2024)'' column 
+hence we fill the ``This paper (2025)'' column 
 with filled circles (\rating{100})
 in nearly all rows.
 By so doing, we help advance clarity in the field of energy rebound.
@@ -1991,11 +1990,16 @@ Future work could be pursued in several areas.
   
   \item Although this is a consumer-sided framework,
         we demonstrated that it could be extended 
-        to producer-sided effects such as the 
-        energy price rebound effect. 
-        Further work could explore additional
-        extensions to other producer-sided 
-        energy rebound effects.
+        to effects affecting producers such as
+        the energy price rebound effect. 
+        Further work could explore additional extensions
+        to other producer-sided energy rebound effects. 
+        Moreover, a neoclassical producer framework, 
+        in analogy to the consumer framework,
+        could be derived 
+        due to the substantial symmetry between 
+        neoclassical consumer and producer models
+        \citep{varian_microeconomic_1992, fine_microeconomics_2016}.
   
   \item This framework could be extended to include 
         some of the advanced topics
@@ -2015,6 +2019,7 @@ Future work could be pursued in several areas.
         \citet{Borenstein:2015aa} went some way to analyzing emissions
         and could provide a starting point for such work.
         The capability to analyze fuel-switching EEUs
+        (discussed in the previous item)
         will be important for analyzing the greenhouse gas emissions
         implications of many EEUs that involve electrification, 
         such as the transition to all-electric vehicles and 
@@ -2093,11 +2098,11 @@ Author contributions for this paper (Part~I of the two-part paper) are shown in 
 Paul Brockway’s time was funded by the UK Research and Innovation (UKRI) 
 Council, supported under EPSRC Fellowship award EP/R024251/1.
 The authors benefited from discussions with 
-Daniele Girardi (University of Massachusetts at Amherst) and 
+Daniele Girardi (University of Massachusetts Amherst) and 
 Christopher Blackburn (Bureau of Economic Analysis).
 The authors are grateful for comments from internal reviewers
 Becky Haney and Jeremy Van Antwerp (Calvin University); 
-Nathan Chan (University of Massachusetts at Amherst); and 
+Nathan Chan (University of Massachusetts Amherst); and 
 Zeke Marshall (University of Leeds).
 The authors appreciate the many constructive comments 
 on a working paper version of this article from 
@@ -2108,6 +2113,15 @@ Finally, the authors thank the students of MKH's Fall 2019
 Thermal Systems Design course (ENGR333) at Calvin University
 who studied energy rebound for many energy conversion devices
 using an early version of this framework.
+
+The findings, interpretations, and conclusions expressed
+in this paper are entirely those of the authors.
+They do not necessarily represent the views of the
+International Bank for Reconstruction and Development/World Bank and
+its affiliated organizations, or 
+those of the Executive Directors of the World Bank or
+the governments they represent.
+
 
 % No need for this section label, because BibTeX already provides a "References" heading.
 % \section*{References}
