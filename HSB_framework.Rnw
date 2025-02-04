@@ -590,11 +590,7 @@ Names for the decorations are given at the bottom of the figure
   The notational elements 
   can be mixed to provide a rich and expressive symbolic ``language'' for energy rebound.
   As the goal of this paper is to bridge disciplines, 
-  the nomenclature will necessarily have unfamiliar elements to each discipline involved.
-  In several places, including Fig.~\ref{fig:flowchart},
-  we use colored backgrounds on rebound effects for visual convenience. 
-  The colors are carried through to figures in Part~II.
-}
+  the nomenclature will necessarily have unfamiliar elements to each discipline involved.}
 
 \begin{figure}
 \centering
@@ -772,9 +768,9 @@ where
 $\orig{\tau}_\alpha$ and $\orig{\tau}_\omega$ account for discounting, and
 $\rorig{C}_{cap}$ and $\rorig{C}_{d}$ are undiscounted
 cost rates given by 
-$\orig{C}_{cap} / \orig{t}_{life}$ 
+$\orig{C}_{cap} / \orig{t}_{\life}$ 
 and
-$\orig{C}_d / \orig{t}_{life}$.
+$\orig{C}_d / \orig{t}_{\life}$.
 Note that $\tau_\alpha \ge 1$, and $\tau_\omega \le 1$;
 equalities apply when interest rate ($r$) is zero.
 (See Appendix~\ref{sec:budget_constraint} for details on discounting.)
