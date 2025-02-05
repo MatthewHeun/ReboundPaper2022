@@ -1101,14 +1101,14 @@ line_label_colour <- "darkgray"
 paper_path_graph_params <- ReboundTools::path_graph_params
 
 # B&W path graphs (comment for colour)
-# paper_path_graph_params[["dempl_colour"]] <- "black"
-# paper_path_graph_params[["emb_colour"]] <- "black"
-# paper_path_graph_params[["omd_colour"]] <- "black"
-# paper_path_graph_params[["dsub_colour"]] <- "black"
-# paper_path_graph_params[["isub_colour"]] <- "black"
-# paper_path_graph_params[["dinc_colour"]] <- "black"
-# paper_path_graph_params[["iinc_colour"]] <- "black"
-# paper_path_graph_params[["macro_colour"]] <- "black"
+paper_path_graph_params[["dempl_colour"]] <- "black"
+paper_path_graph_params[["emb_colour"]] <- "black"
+paper_path_graph_params[["omd_colour"]] <- "black"
+paper_path_graph_params[["dsub_colour"]] <- "black"
+paper_path_graph_params[["isub_colour"]] <- "black"
+paper_path_graph_params[["dinc_colour"]] <- "black"
+paper_path_graph_params[["iinc_colour"]] <- "black"
+paper_path_graph_params[["macro_colour"]] <- "black"
 @
 
 
@@ -1131,27 +1131,27 @@ Re_terms_order <- ReboundTools::rebound_terms[c(ReboundTools::rebound_terms$Re_t
   unlist()
 
 # Different colors for B&W paper (comment for colour)
-# sensitivity_graph_params[["dempl_colour"]] <- "black"
-# sensitivity_graph_params[["emb_colour"]] <- "black"
-# sensitivity_graph_params[["omd_colour"]] <- "black"
-# sensitivity_graph_params[["dsub_colour"]] <- "darkgray"
-# sensitivity_graph_params[["isub_colour"]] <- "darkgray"
-# sensitivity_graph_params[["dinc_colour"]] <- "black"
-# sensitivity_graph_params[["iinc_colour"]] <- "black"
-# sensitivity_graph_params[["macro_colour"]] <- "gray"
-# sensitivity_graph_params[["tot_colour"]] <- "black"
-# 
-# sensitivity_graph_params[["dempl_linewidth"]] <- 0.2
-# sensitivity_graph_params[["emb_linewidth"]] <- 0.2
-# sensitivity_graph_params[["omd_linewidth"]] <- 0.3
-# sensitivity_graph_params[["dsub_linewidth"]] <- 0.5
-# sensitivity_graph_params[["isub_linewidth"]] <- 0.5
-# sensitivity_graph_params[["dinc_linewidth"]] <- 1
-# sensitivity_graph_params[["iinc_linewidth"]] <- 1
-# sensitivity_graph_params[["macro_linewidth"]] <- 1.3
-# sensitivity_graph_params[["tot_linewidth"]] <- 1
-# 
-# sensitivity_graph_params[["tot_linetype"]] <- "dotted"
+sensitivity_graph_params[["dempl_colour"]] <- "black"
+sensitivity_graph_params[["emb_colour"]] <- "black"
+sensitivity_graph_params[["omd_colour"]] <- "black"
+sensitivity_graph_params[["dsub_colour"]] <- "darkgray"
+sensitivity_graph_params[["isub_colour"]] <- "darkgray"
+sensitivity_graph_params[["dinc_colour"]] <- "black"
+sensitivity_graph_params[["iinc_colour"]] <- "black"
+sensitivity_graph_params[["macro_colour"]] <- "gray"
+sensitivity_graph_params[["tot_colour"]] <- "black"
+
+sensitivity_graph_params[["dempl_linewidth"]] <- 0.2
+sensitivity_graph_params[["emb_linewidth"]] <- 0.2
+sensitivity_graph_params[["omd_linewidth"]] <- 0.3
+sensitivity_graph_params[["dsub_linewidth"]] <- 0.5
+sensitivity_graph_params[["isub_linewidth"]] <- 0.5
+sensitivity_graph_params[["dinc_linewidth"]] <- 1
+sensitivity_graph_params[["iinc_linewidth"]] <- 1
+sensitivity_graph_params[["macro_linewidth"]] <- 1.3
+sensitivity_graph_params[["tot_linewidth"]] <- 1
+
+sensitivity_graph_params[["tot_linetype"]] <- "dotted"
 
 @
 
