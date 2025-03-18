@@ -1,0 +1,73 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+
+This framework utilizes
+a partial equilibrium analysis (at the microeconomic level)
+in which we account for the change of the energy service price
+due to the EEU ($\orig{p}_s \neq \aempl{p}_s$), but 
+we do not track the effect of the EEU on prices of other goods.
+These assumptions have important implications for the relationship between 
+the rate of consumption of other goods ($\rate{q}_g$) and 
+the rate of expenditure on other goods ($\rate{C}_g$).
+
+We assume a basket of other goods (besides the energy service) 
+purchased in the economy,
+each ($i$) with its own price ($p_{g,i}$) and rate of consumption ($\rate{q}_{g,i}$),
+such that the average price of all other goods purchased in the economy
+prior to the EEU~($\orig{p}_g$) is given by
+
+\begin{equation}
+  \orig{p}_g = \frac{\sum\limits_i \orig{p}_{g,i} \orig{q}_{g,i}}{\sum\limits_i \orig{q}_{g,i}} \; .
+\end{equation}
+%
+Then, the expenditure rate of other purchases in the economy can be given as
+
+\begin{equation}
+  \rorig{C}_g = \orig{p}_g \rorig{q}_g
+\end{equation}
+%
+before the EEU and
+
+\begin{equation}
+  \rasub{C}_g = \asub{p}_g \rasub{q}_g \; 
+\end{equation}
+%
+after the substitution effect, for example.
+
+We assume that any microeconomic effects
+(emplacement, substitution, or income)
+for a single device 
+are not so large that they 
+cause a measurable change in prices of other goods. 
+Thus, 
+
+\begin{equation}
+  \orig{p}_g = \aempl{p}_g = \asub{p}_g = \ainc{p}_g = \amacro{p}_g  = p_g\; .
+\end{equation}
+
+In the partial equilibrium analysis, 
+any two other goods prices can be equated 
+across any rebound effect
+to obtain
+(for the example of the original conditions ($\circ$) 
+and the post-substitution state ($\wedge$))
+
+\begin{equation} \label{eq:qo_Co_equality}
+  \frac{\rasub{C}_g}{\rorig{C}_g} 
+      = \frac{\rasub{q}_g}{\rorig{q}_g} \; .
+\end{equation}
+
+Thus, a ratio of other goods expenditure rates
+is always equal to a ratio of other goods consumption rates.
+
+
+
+
+
+
+
+
+

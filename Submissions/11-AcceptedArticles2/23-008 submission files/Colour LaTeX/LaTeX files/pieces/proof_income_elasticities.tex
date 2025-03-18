@@ -1,0 +1,135 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+
+After the substitution effect, 
+a rate of net savings is available ($\rasub{N}$), 
+all of which is spent on
+additional energy service ($\Delta \rainc{q}_s$, $\Delta \rainc{C}_s = p_E \Delta \rainc{E}_s$) or 
+additional other goods ($\Delta \rainc{q}_g$, $\Delta \rainc{C}_g$).
+The income effect must satisfy the budget constraint
+such that net savings is zero afterward ($\rainc{N} = 0$).
+The budget constraint across the income effect 
+is represented by Eq.~(\ref{eq:inc_budget_constraint}): 
+
+\begin{equation}
+  \rbinc{N} = p_E \Delta \rainc{E}_s + \Delta \rainc{C}_g \; . \tag{\ref{eq:inc_budget_constraint}}
+\end{equation}
+
+The additional spending due to the income effect is given by income preference equations
+
+\begin{equation}
+  \frac{\rainc{q}_s}{\rbinc{q}_s} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqsM} 
+                                                                \tag{\ref{eq:qsrat_eqsM}}
+\end{equation}
+%
+and
+
+\begin{equation}
+  \frac{\rainc{q}_g}{\rbinc{q}_g} = \left( 1 + \frac{\rbinc{N}}{\Mdothatprime}  \right) ^{\eqgM} \; ,
+                                                                \tag{\ref{eq:qgrat_eqgM}}
+\end{equation}
+%
+where
+
+\begin{equation}
+  \effinceqn \; . \tag{\ref{eq:effective_income}}
+\end{equation}
+%
+This appendix proves that the income preference equations 
+(Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qgrat_eqgM}))
+satisfy the budget constraint (Eq.~(\ref{eq:inc_budget_constraint})).
+
+The first step in the proof is to convert 
+the income preference equations
+to $\rbempl{C}_s$ and $\rbempl{C}_g$ ratios.
+For the energy service income preference equation (Eq.~(\ref{eq:qsrat_eqsM})), 
+multiply numerator and denominator of the left-hand side by $\aempl{p}_s = p_E / \aempl{\eta}$
+(Eq.~(\ref{eq:ps_pE_eta}))
+to obtain $\rainc{C}_s / \rbinc{C}_s$.
+For the other goods income preference equation (Eq.~(\ref{eq:qgrat_eqgM})), 
+multiply numerator and denominator of the left-hand side by $p_g$
+to obtain $\rainc{C}_g / \rbinc{C}_g$.
+Then, invoke homotheticity to set $\eqsM = 1$ and $\eqgM = 1$ to obtain
+
+\begin{equation}
+    \frac{\rainc{C}_s}{\rbinc{C}_s} = 1 + \frac{\rbinc{N}}{\Mdothatprime}
+\end{equation}
+%
+and
+
+\begin{equation}
+  \frac{\rainc{C}_g}{\rbinc{C}_g} = 1 + \frac{\rbinc{N}}{\Mdothatprime} \; .
+\end{equation}
+%
+
+The second step in the proof is to obtain expressions 
+for $\Delta \rainc{C}_s$ and $\Delta \rainc{C}_g$.
+Multiply the income preference equations above
+by $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_g$, respectively.
+Then, subtract $\Delta \rbinc{C}_s$ and $\Delta \rbinc{C}_g$, respectively, 
+to obtain
+
+\begin{equation}
+  \Delta \rainc{C}_s = \frac{\rbinc{C}_s}{\Mdothatprime} \rbinc{N}
+\end{equation}
+%
+and
+
+\begin{equation}
+  \Delta \rainc{C}_g = \frac{\rbinc{C}_g}{\Mdothatprime} \rbinc{N} \; .
+\end{equation}
+
+The above versions of the income preference equations 
+can be substituted into the budget constraint
+(Eq.~(\ref{eq:inc_budget_constraint})) to obtain
+
+\begin{equation} \label{eq:inc_elasticity_proof_setup}
+  \rbinc{N} \questionequal \frac{\rbinc{C}_s}{\Mdothatprime} \rbinc{N} 
+                            + \frac{\rbinc{C}_g}{\Mdothatprime}  \rbinc{N} \; .
+\end{equation}
+%
+If equality is demonstrated, 
+the income preference equations satisfy the budget constraint.
+The remainder of the proof shows the equality
+of Eq.~(\ref{eq:inc_elasticity_proof_setup}).
+
+Dividing by $\rbinc{N}$ and multiplying by $\Mdothatprime$ gives
+
+\begin{equation}
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \Mdothatprime \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:effective_income}) for $\Mdothatprime$ gives
+
+\begin{equation}
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \rate{M} - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \rasub{N} \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:M_acct_asub}) for $\rate{M}$ gives
+
+\begin{equation}
+  \rbinc{C}_s + \rbinc{C}_g \questionequal p_E \rasub{E}_s + \asub{R}_\alpha \rasub{C}_{cap} + \rasub{C}_{\omd} + \rasub{C}_g + \cancel{\rasub{N}}
+    - \aempl{R}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd} - \cancel{\rasub{N}} \; .
+\end{equation}
+%
+Cancelling terms and recognizing that $\aempl{R}_\alpha \raempl{C}_{cap} = \asub{R}_\alpha \rasub{C}_{cap}$, $\raempl{C}_{\omd} = \rasub{C}_{\omd}$, and
+$\rasub{C}_s = p_E \rasub{E}_s$ gives
+
+\begin{equation}
+  \rbinc{C}_s + \rbinc{C}_g \questionequal \rasub{C}_s + \cancel{\asub{R}_\alpha \rasub{C}_{cap}} + \cancel{\rasub{C}_{\omd}} + \rasub{C}_g
+        - \cancel{\asub{R}_\alpha \rasub{C}_{cap}} - \cancel{\rasub{C}_{\omd}} \; .
+\end{equation}
+%
+Cancelling terms gives
+
+\begin{equation}
+  \rbinc{C}_s + \rbinc{C}_g \stackrel{\checkmark}{=} \rbinc{C}_s + \rbinc{C}_g \; ,
+\end{equation}
+%
+thereby completing the proof that the income preference equations
+(Eqs.~(\ref{eq:qsrat_eqsM}) and~(\ref{eq:qgrat_eqgM}))
+satisfy the budget constraint
+(Eq.~(\ref{eq:inc_budget_constraint})).

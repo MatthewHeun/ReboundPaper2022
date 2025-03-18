@@ -1,0 +1,45 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+\begin{tikzpicture}%[font=\sffamily]
+  % Set up the nodes of the main path
+  \node(orig) at (0cm,0cm) {\strut $\circ$};
+  \node[right=0.2cm of orig] (empl)[rounded corners, text=empltextcolor, fill=emplbgcolor] {\strut emplacement};
+  \node[right=0.2cm of empl] (star) {$*$};
+  \node[right=0.2cm of star] (sub)[rounded corners, text=subtextcolor, fill=subbgcolor] {\strut substitution};
+  \node[right=0.2cm of sub] (hat) {$\wedge$};
+  \node[right=0.2cm of hat] (inc)[rounded corners, text=inctextcolor, fill=incbgcolor] {\strut income};
+  \node[right=0.2cm of inc] (bar) {$-$};
+  \node[right=0.2cm of bar] (macro)[rounded corners, text=macrotextcolor, fill=macrobgcolor] {\strut macro};
+  \node[right=0.2cm of macro] (tilde) {$\sim$};
+
+  % Draw arrows between main row boxes
+  \draw[->] (orig) -- (empl);
+  \draw[->] (empl) -- (star);
+  \draw[->] (star) -- (sub);
+  \draw[->] (sub) -- (hat);
+  \draw[->] (hat) -- (inc);
+  \draw[->] (inc) -- (bar);
+  \draw[->] (bar) -- (macro);
+  \draw[->] (macro) -- (tilde);
+  % Add nodes for rebound terms beneath nodes
+  \node[above=0.1cm of empl] {$Re_{empl}$};
+  \node[above=0.1cm of sub] {$Re_{sub}$};
+  \node[above=0.1cm of inc] {$Re_{inc}$};
+  \node[above=0.1cm of macro] {$Re_{\macro}$};
+  % Add nodes for rebound terms above nodes
+  \node[below=0.1cm of empl] {\footnotesize $Re_{dempl}$,$Re_{iempl}$};
+  \node[below=0.1cm of sub] {\footnotesize $Re_{dsub}$,$Re_{isub}$};
+  \node[below=0.1cm of inc] {\footnotesize $Re_{dinc}$,$Re_{iinc}$};
+  % Add nodes for spelled-out decorations beneath nodes
+  % \node[below=0.715cm of orig] {no decoration};
+  \node[below=0.715cm of orig] {orig};
+  % \node[below=0.9cm of prime] {prime};
+  \node[below=0.9cm of star] {star};
+  \node[below=0.9cm of hat] {hat};
+  \node[below=0.9cm of bar] {bar};
+  \node[below=0.9cm of tilde] {tilde};
+\end{tikzpicture}
+

@@ -1,0 +1,214 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_results.Rnw
+
+Presentation of the rigorous analytical framework is aided by a 
+nomenclature that describes energy stages and rebound effects.
+Table~\ref{tab:symbols} shows symbols and abbreviations, their meanings, and example units.
+Table~\ref{tab:greek} shows Greek letters, their meanings, and example units.
+Table~\ref{tab:initialisms} shows initialisms and acronyms.
+Table~\ref{tab:decorations} shows symbol decorations and their meanings.
+Table~\ref{tab:subscripts} shows subscripts and their meanings.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\footnotesize
+\centering % Centered table
+\caption{Symbols and abbreviations.}
+\begin{tabular}{r l}
+  \toprule
+  Symbol & Meaning [example units] \\
+  \midrule
+  \multirow{2}{*}{$a$} & a point in the emplacement effect in rebound planes or \\
+                       & the share parameter in the CES utility model [--] \\
+  $b$  & a point in the emplacement effect in rebound planes \\
+  $C$  & cost [\$] \\
+  $c$  & a point in the substitution effect in rebound planes \\
+  $d$  & a point in the income effect on rebound planes \\
+  $E$  & final energy [MJ] \\
+  $f$  & expenditure share [--] \\
+  $G$  & freed cash [\$] \\
+  $I$  & energy intensity of economic activity [MJ/\$] \\
+  $k$  & macro factor [--] \\
+  $M$  & income [\$] \\
+  $N$  & net savings [\$] \\
+  $p$  & price [\$] \\
+  $Q$  & quantity at the macroeconomic level [--] \\
+  $q$  & quantity [--] \\
+  $Re$ & rebound [--] \\
+  $r$  & real discount rate [1/yr] \\
+  $S$  & energy cost savings [\$] \\
+  $t$  & energy conversion device lifetime [yr] \\
+  $u$  & utility [utils] \\
+  $x$  & the abscissa coordinate \\
+  $y$  & the ordinate coordinate \\
+  \bottomrule
+\end{tabular}
+\label{tab:symbols}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Greek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\footnotesize
+\centering % Centered table
+\caption{Greek letters.}
+\begin{tabular}{r l}
+  \toprule
+  Greek letter & Meaning [example units] \\
+  \midrule
+  $\alpha$       & subscript that indicates capital cost payments at beginning of life \\
+  $\Delta$       & difference (later quantity less earlier quantity, see Fig.~\ref{fig:flowchart}) \\
+  $\varepsilon$  & price or income elasticity [--] \\
+  $\eqsM$        & income ($\dot{M}$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqgM$        & income ($\dot{M}$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eqspsUC$     & uncompensated energy service price ($p_s$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqgpsUC$     & uncompensated energy service price ($p_s$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eqspsC$      & compensated energy service price ($p_s$) elasticity of energy service demand ($\dot{q}_s$) [--] \\
+  $\eqgpsC$      & compensated energy service price ($p_s$) elasticity of other goods demand ($\dot{q}_o$) [--] \\
+  $\eta$         & final-energy-to-service efficiency [vehicle-km/MJ] \\
+  $\omega$       & subscript that indicates disposal cost at end of life \\
+  $\rho$         & exponent in the CES utility function, $\rho \equiv (\sigma - 1) / \sigma$ [--] \\
+  $\sigma$       & elasticity of substitution between the energy service ($\rbempl{q}_s$) and other goods ($\rbempl{q}_o$) [--] \\
+  $\tau$         & multiplicative term that accounts for discounting [--] \\
+  \bottomrule
+\end{tabular}
+\label{tab:greek}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Initialisms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\footnotesize
+\centering % Centered table
+\caption{Initialisms and acronyms.}
+\begin{tabular}{r l}
+  \toprule
+  Abbreviation & Meaning \\
+  \midrule
+  APF    & aggregate production function \\
+  BOL    & beginning of life \\
+  CES    & constant elasticity of substitution \\
+  CGE    & computable general equilibrium \\
+  CPE    & constant price elasticity \\
+  CV     & compensating variation \\
+  EEU    & energy efficiency upgrade \\
+  EOL    & end of life \\
+  EPSRC  & engineering and physical sciences research council \\
+  EV     & electric vehicle \\
+  GDP    & gross domestic product \\
+  LAIDS  & linear approximation to almost ideal demand system \\
+  LED    & light emitting diode \\
+  mpg    & miles per U.S.\ gallon \\
+  RECS   & residential energy consumption survey \\
+  TVM    & time value of money \\
+  UK     & United Kingdom \\
+  UKRI   & UK research and innovation \\
+  U.S.\  & United States \\
+  VMT    & vehicle miles traveled \\
+  w.r.t. & with respect to \\
+  \bottomrule
+\end{tabular}
+\label{tab:initialisms}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Decorations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\footnotesize
+\centering % Centered table
+\caption{Decorations.}
+\begin{tabular}{r l}
+  \toprule
+  Decoration & Meaning [example units] \\
+  \midrule
+  $\orig{X}$ & $X$ originally (before the \empleffect{}) \\
+  $\aempl{X}$  & $X$ after the \empleffect{} (before the \subeffect{}) \\
+  $\asub{X}$ & $X$ after the \subeffect{} (before the \inceffect{}) \\
+  $\ainc{X}$ & $X$ after the \inceffect{} (before the \macroeffect{}) \\
+  $\amacro{X}$ & $X$ after the \macroeffect{} \\
+  $\rate{X}$ & rate of $X$ [units of X/yr] \\
+  $M^\prime$ & effective income [\$] \\
+  \bottomrule
+\end{tabular}
+\label{tab:decorations}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subscripts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}
+\footnotesize
+\centering
+\caption{Subscripts.}
+\begin{tabular}{r l}
+  \toprule
+  Subscript & Meaning \\
+  \midrule
+  $0$      & quantity at an initial time \\
+  $1$      & a specific point on the consumption plane \\
+  $c$      & compensated \\
+  $cap$    & capital costs \\
+  $dev$    & device \\
+  $dempl$  & direct emplacement effect \\
+  $dinc$   & direct income effect \\
+  $dir$    & direct effects (at the energy conversion device) \\
+  $dsub$   & direct substitution effect \\
+  $E$      & energy \\
+  $emb$    & embodied \\
+  $empl$   & emplacement effect \\
+  $g$      & other expenditures (besides energy) by the device user \\
+  $iempl$  & indirect emplacement effects \\
+  $iinc$   & indirect income effect \\
+  $inc$    & income effect \\
+  $indir$  & indirect effects (beyond the energy conversion device) \\
+  $isub$   & indirect substitution effect \\
+  $\life$  & lifetime \\
+  $\macro$ & macro effect \\
+  $\om$    & operations and maintenance \\
+  $\omd$   & operations, maintenance, and disposal \\
+  $own$    & ownership duration \\
+  $s$      & service stage of the energy conversion chain \\
+  $sub$    & substitution effect \\
+  $tot$    & sum of all rebound effects in the framework \\
+  \bottomrule
+\end{tabular}
+\label{tab:subscripts}
+\end{table}
+
+
+Differences are indicated by the Greek letter $\Delta$ and always
+signify subtraction of a quantity at an earlier stage of Fig.~\ref{fig:flowchart}
+from the same quantity at the next later stage of Fig.~\ref{fig:flowchart}.
+E.g.,
+$\Delta \ainc{X} \equiv \ainc{X} - \binc{X}$, and
+$\Delta \amacro{X} \equiv \amacro{X} - \bmacro{X}$.
+Lack of decoration on a difference term indicates a difference that spans all stages of Fig.~\ref{fig:flowchart}.
+E.g., $\Delta X \equiv \amacro{X} - \orig{X}$.
+$\Delta X$ is also the sum of differences across each stage in Fig.~\ref{fig:flowchart},
+as shown below.
+
+\begin{align}
+\Delta X &= \Delta \amacro{X} + \Delta \ainc{X} + \Delta \asub{X} + \Delta \aempl{X} \nonumber \\
+\Delta X &= (\amacro{X} - \bmacro{X}) + (\ainc{X} - \binc{X})
+            + (\asub{X} - \bsub{X}) + (\aempl{X} - \bempl{X}) \nonumber \\
+\Delta X &= (\amacro{X} - \cancel{\bmacro{X}}) + (\cancel{\ainc{X}} - \cancel{\binc{X}})
+            + (\cancel{\asub{X}} - \cancel{\bsub{X}}) + (\cancel{\aempl{X}} - \bempl{X}) \nonumber \\
+\Delta X &= \amacro{X} - \orig{X}
+\end{align}

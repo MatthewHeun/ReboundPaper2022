@@ -1,0 +1,449 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_results.Rnw
+
+Rebound planes show the impact of direct and indirect rebound effects
+for energy, expenditure, and consumption aspects.
+Rebound planes for the car example can be found in 
+Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:CarConsGraph}.
+Rebound planes for the lamp example can be found in
+Figs.~\ref{fig:LampEnergyGraph}--\ref{fig:LampConsGraph}.
+
+This appendix shows the mathematical details of rebound planes,
+specifically derivations of equations for lines and curves 
+shown in Table~\ref{tab:lines_and_curves}.
+The lines and curves enable construction of numerically precise and accurate
+paths in rebound planes
+as shown in Figs.~\ref{fig:CarEnergyGraph}--\ref{fig:LampConsGraph}.
+
+\begin{table}
+\footnotesize
+\centering
+\caption{Lines and curves for rebound planes.}
+\label{tab:lines_and_curves}
+\begin{tabular}{rl}
+\toprule
+Rebound plane                & Lines and curves                        \\ 
+\midrule
+\multirow{2}{*}{Energy}      & Constant total energy consumption lines \\
+                             & 0\% and 100\% rebound lines             \\
+\midrule
+Expenditure                  & Constant expenditure lines              \\
+\midrule
+\multirow{3}{*}{Consumption} & Constant expenditure lines              \\
+                             & Rays from origin to $\wedge$ point      \\
+                             & Indifference curves                     \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Energy planes}
+\label{sec:energy_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+The energy plane shows direct (on the $x$-axis) and indirect (on the $y$-axis)
+energy consumption associated with the energy conversion device 
+and the device user.
+Lines of total energy consumption isoquants provide a 
+scale for total rebound.
+For example, the 0\% and 100\% rebound lines are constant total energy consumption
+lines which pass through the original point ($\circ$) and
+the post-direct-emplacement-effect point ($a$) 
+in the energy plane.
+
+The equation of a constant total energy consumption line is derived from 
+
+\begin{equation}
+  \rate{E}_{tot} = \rate{E}_{dir} + \rate{E}_{indir}
+\end{equation}
+%
+at any rebound stage.
+Direct energy consumption is energy consumed by the energy conversion device
+($\rate{E}_s$), and 
+indirect energy consumption is the sum of embodied energy, 
+energy associated with maintenanace and disposal, and energy associated 
+with expenditures on other goods
+($\rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_g) I_E$).
+
+For the energy plane, 
+direct energy consumption is placed on the $x$-axis and 
+indirect energy consumption is placed on the $y$-axis.
+To derive the equation of a constant energy consumption line, 
+we first rearrange to put the $y$ coordinate on the left of the equation:
+
+\begin{equation}
+  \rate{E}_{indir} = - \rate{E}_{dir} + \rate{E}_{tot} \; .
+\end{equation}
+%
+Next, we substitute $y$ for $\rate{E}_{indir}$,
+$x$ for $\rate{E}_{dir}$, and 
+$\rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_g) I_E$ for $\rate{E}_{tot}$
+to obtain
+
+\begin{equation}
+  y = -x + \rate{E}_s + \rate{E}_{emb} + (\rate{C}_{\omd} + \rate{C}_g) I_E \; ,
+\end{equation}
+%
+where all of $\rate{E}_s$, $\rate{E}_{emb}$, $\rate{C}_{\omd}$, and $\rate{C}_g$
+apply at the same rebound stage.
+
+The constant total energy consumption line 
+that passes through the original point ($\circ$)
+shows 100\% rebound:
+
+\begin{equation}
+  y = -x + \rbempl{E}_s + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_g) I_E \; .
+\end{equation}
+
+The 0\% rebound line is the constant total energy consumption line 
+that accounts for expected energy savings ($\Sdot$) only:
+
+\begin{equation}
+  y = -x + (\rbempl{E}_s - \Sdot)
+          + \rbempl{E}_{emb} + (\rbempl{C}_{\omd} + \rbempl{C}_g) I_E \; .
+\end{equation}
+%
+The above line passes through the $a$ point in the energy plane.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Expenditure planes}
+\label{sec:expenditure_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+The expenditure plane shows direct (on the $x$-axis) and indirect (on the $y$-axis)
+expenses associated with the energy conversion device 
+and the device user.
+Lines of constant expenditure are important, 
+because they provide budget constraints for the device user.
+
+The equation of a constant total expenditure line is derived from 
+the budget constraint
+
+\begin{equation}
+  \rate{C}_{tot} = \rate{C}_{dir} + \rate{C}_{indir}
+\end{equation}
+%
+at any rebound stage.
+In the expenditure plane,
+indirect expenditures are placed on the $y$-axis
+and direct expenditures on energy for the energy conversion device are place on the $x$-axis.
+Direct expenditure is the cost of energy consumed by the energy conversion device
+($\rate{C}_s = p_E \rate{E}_s$), and 
+indirect expenses are the sum of capital costs,
+operations, maintenanace, and disposal costs, and 
+expenditures on other goods
+($\tau_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_g$).
+Rearranging to put the $y$-axis variable on the left side of the equation gives
+
+\begin{equation}
+  \rate{C}_{indir} = - \rate{C}_{dir} + \rate{C}_{tot} \; .
+\end{equation}
+
+Substituting $y$ for $\rate{C}_{indir}$, 
+$x$ for $\rate{C}_{dir}$, and 
+$\rate{C}_s + \tau_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_g$ for $\rate{C}_{tot}$
+gives
+
+\begin{equation}
+  y = -x + \rate{C}_s + \tau_\alpha \rate{C}_{cap} + \rate{C}_{\omd} + \rate{C}_g \; ,
+\end{equation}
+%
+where all of $\rate{C}_s$, $\tau_\alpha$, $\rate{C}_{cap}$, $\rate{C}_{\omd}$, and $\rate{C}_g$
+apply at the same rebound stage.
+
+The constant total expenditure line 
+that passes through the original point ($\circ$)
+shows the budget constraint for the device user:
+
+\begin{equation}
+  y = -x + \rbempl{C}_s + \bempl{\tau}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_g \; ,
+\end{equation}
+%
+into which Eq.~(\ref{PartI-eq:M_acct_orig}) of Part~I can be substituted with 
+$\rorig{C}_s = p_E \rorig{E}_s$ and 
+$\rorig{N} = 0$ to obtain
+
+\begin{equation}
+  y = -x + \rate{M} \; .
+\end{equation}
+
+The constant total expenditure line 
+that accounts for expected energy savings ($\Sdot$) 
+and freed cash ($\rate{G} = p_E \Sdot$) only 
+is given by:
+
+\begin{equation}
+  y = -x + (\rbempl{C}_s - \rate{G}) + \bempl{\tau}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rbempl{C}_g \; ,
+\end{equation}
+%
+or
+
+\begin{equation}
+  y = -x + \rate{M} - \rate{G}\; .
+\end{equation}
+%
+The line given by the equation above
+passes through the $a$ point in the expenditure plane.
+
+
+%++++++++++++++++++++++++++++++
+\subsection{Consumption planes}
+\label{sec:cons_path_graph_details}
+%++++++++++++++++++++++++++++++
+
+The consumption plane shows expenditures in 
+the $\rate{C}_g/\rbempl{C}_g$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane,
+according to the utility model.
+(See Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.)
+Consumption planes include 
+%
+\begin{enumerate*}[label={(\roman*)}]
+	
+  \item constant expenditure lines given prices,
+  
+  \item a ray from the origin through the $\wedge$ point, and 
+  
+  \item indifference curves.
+    
+\end{enumerate*}
+%
+Derivations for each are shown in the following subsections.
+
+
+%------------------------------
+\subsubsection{Constant expenditure lines} 
+\label{sec:pref_graph_constant_expenditure_lines}
+%------------------------------
+
+There are four constant expenditure lines in the consumption planes of
+Figs.~\ref{fig:CarConsGraph} and \ref{fig:LampConsGraph}.
+The constant expenditure lines pass through 
+the original point (line \circcirc{}), 
+the post-emplacement point (line \starstar{}), 
+the post-substitution point (line \hathatline{}), and 
+the post-income point (line \barbarline{}).
+Similar to the expenditure plane, 
+lines of constant expenditure in the consumption plane
+are derived from the budget constraint of the device user
+at each of the four points.
+
+Prior to the EEU, the budget constraint is given by Eq.~(\ref{PartI-eq:M_acct_orig}) of Part~I.
+Substituting $\orig{p}_s \rorig{q}_s$ for $p_E \rorig{E}_s$ and 
+recognizing that there is no net savings before the EEU
+($\rorig{N} = 0$) gives
+
+\begin{equation}
+  \rate{M} = \orig{p}_s \rorig{q}_s + \orig{\tau}_\alpha \rorig{C}_{cap} + \rorig{C}_{\omd} + \rorig{C}_g \; .
+\end{equation}
+
+To create the line of constant expenditure in the consumption plane, 
+we allow $\rorig{q}_s$ and $\rorig{C}_g$ to vary in a compensatory manner:
+when one increases, the other must decrease.
+To show that variation along the constant expenditure line, 
+we remove the notation that ties $\rorig{q}_s$ and $\rorig{C}_g$
+to the original point ($\circ$) to obtain
+
+\begin{equation}
+  \rate{M} = \bempl{p}_s \rate{q}_s + \bempl{\tau}_\alpha \rbempl{C}_{cap} + \rbempl{C}_{\omd} + \rate{C}_g \; , 
+\end{equation}
+%
+where all of $\rate{M}$, $\bempl{p}_s$, $\bempl{\tau}_\alpha \rbempl{C}_{cap}$, and $\rbempl{C}_{\omd}$
+apply at the same rebound stage, 
+namely the original point ($\circ$) in this instance.
+
+To derive the equation of the line representing the original budget constraint 
+in $\rate{C}_g/\rbempl{C}_g$ vs.\ $\rate{q}_s/\rbempl{q}_s$ space
+(the \circcirc{} line through the $\circ$ point
+in consumption planes), 
+we solve for $\rate{C}_g$ to obtain
+
+\begin{equation}
+  \rate{C}_g = - \bempl{p}_s \rate{q}_s + \rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} \; .
+\end{equation}
+%
+Multiplying judiciously by $\rbempl{C}_g/\rbempl{C}_g$ and $\rbempl{q}_s/\rbempl{q}_s$ gives
+
+\begin{equation}
+  \frac{\rate{C}_g}{\rbempl{C}_g} \rbempl{C}_g
+       = - \bempl{p}_s \frac{\rate{q}_s}{\rbempl{q}_s} \rbempl{q}_s 
+         + \rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} \; .
+\end{equation}
+%
+Dividing both sides by $\rbempl{C}_g$ yields
+
+\begin{equation}
+  \frac{\rate{C}_g}{\rbempl{C}_g}
+       = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} \frac{\rate{q}_s}{\rbempl{q}_s}
+         + \frac{1}{\rbempl{C}_g} (\rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}) \; .
+\end{equation}
+%
+Noting that  
+$\rate{q}_s/\rbempl{q}_s$ and 
+$\rate{C}_g/\rbempl{C}_g$ are
+the $x$-axis and $y$-axis, respectively,
+of the consumption plane gives
+
+\begin{equation} \label{eq:orig_line_prefs}
+  y = - \frac{\bempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} x
+         + \frac{1}{\rbempl{C}_g} (\rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}) \; .
+\end{equation}
+
+A similar procedure can be employed to derive the equation of the
+\starstar{} line through the $*$ point
+after the emplacement effect.
+The starting point is the budget constraint at the $*$ point
+(Eq.~(\ref{PartI-eq:M_acct_aemp}) of Part~I)
+with 
+$\aempl{p}_s \rate{q}_s$ replacing $p_E \raempl{E}_s$ and
+$\rate{C}_g$ replacing $\raempl{C}_g$.
+
+\begin{equation}
+  \rate{M} = \aempl{p}_s \rate{q}_s + \aempl{\tau}_\alpha \raempl{C}_{cap} + \raempl{C}_{\omd} + \rate{C}_g + \raempl{N}
+\end{equation}
+%
+Substituting Eq.~(\ref{PartI-eq:N_dot_star_empl}) of Part~I for $\raempl{N}$,
+substituting Eq.~(\ref{PartI-eq:G_dot}) of Part~I to obtain $\rate{G}$,
+multiplying judiciously by $\rbempl{C}_g/\rbempl{C}_g$ and $\rbempl{q}_s/\rbempl{q}_s$, 
+rearranging, and noting that 
+$\rate{q}_s/\rbempl{q}_s$ is the $x$-axis and 
+$\rate{C}_g/\rbempl{C}_g$ is the $y$-axis gives
+
+\begin{equation} \label{eq:star_line_prefs}
+  y = - \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} x
+         + \frac{1}{\rbempl{C}_g} (\rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} - \rate{G}) \; .
+\end{equation}
+%
+Note that the slope of Eq.~(\ref{eq:star_line_prefs}) is less negative
+than the slope of Eq.~(\ref{eq:orig_line_prefs}), 
+because $\aempl{p}_s < \bempl{p}_s$.
+The $y$-intercept of Eq.~(\ref{eq:star_line_prefs}) is less than the 
+$y$-intercept of Eq.~(\ref{eq:orig_line_prefs}),
+reflecting freed cash.
+Both effects are seen in
+the consumption planes
+(Figs.~\ref{fig:CarConsGraph} and \ref{fig:LampConsGraph}).
+The \circcirc{} and \starstar{} lines intersect at the coincident $\circ$ and $*$ points.
+
+A similar derivation process can be used to find the equation of 
+the line representing the budget constraint
+after the substitution effect (the \hathatline{} line through the $\wedge$ point).
+The starting point is Eq.~(\ref{PartI-eq:M_acct_asub}) of Part~I, and 
+the equation for the constant expenditure line is
+
+\begin{equation} \label{eq:hat_line_prefs}
+  y = - \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} x
+         + \frac{1}{\rbempl{C}_g} (\rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd} 
+                                   - \rate{G} + \aempl{p}_s \Delta \rasub{q}_s + \Delta \rasub{C}_g) \; .
+\end{equation}
+
+Note that the \hathatline{} line (Eq.~(\ref{eq:hat_line_prefs})) has the same slope as 
+the \starstar{} line (Eq.~(\ref{eq:star_line_prefs}))
+but a lower $y$-intercept.
+
+Finally, the corresponding derivation
+for the equation of the constant expenditure line through the 
+$-$ point (line \barbarline{}) starts with Eq.~(\ref{PartI-eq:M_acct_ainc}) of Part~I 
+and comes to
+
+\begin{equation} 
+  y = - \frac{\aempl{p}_s \rbempl{q}_s}{\rbempl{C}_g} x
+        + \frac{1}{\rbempl{C}_g} (\rate{M} - \bempl{\tau}_\alpha \rbempl{C}_{cap} - \rbempl{C}_{\omd}
+                                   - \Delta \aempl{(\tau_\alpha \rate{C}_{cap})} - \Delta \raempl{C}_{\omd}) \; .
+\end{equation}
+
+Simplification of $\Delta$ terms gives
+
+\begin{equation} \label{eq:bar_line_prefs}
+  y = - \frac{\amacro{p}_s \rbempl{q}_s}{\rbempl{C}_g} x
+        + \frac{1}{\rbempl{C}_g} (\rate{M} - \aempl{\tau}_\alpha \raempl{C}_{cap} - \raempl{C}_{\omd}) \; .
+\end{equation}
+%
+
+
+%------------------------------
+\subsubsection{Ray from the origin to the $\wedge$ point} 
+\label{sec:pref_graph_ray}
+%------------------------------
+
+In the consumption plane,
+the ray from the origin to the $\wedge$ point 
+(line \rr{})
+defines the path along which the income effect
+(lines \hatd{} and \dbar{})
+operates.
+The ray from the origin to the $\wedge$ point
+has slope $(\rasub{C}_g/\rbempl{C}_g) / (\rasub{q}_s/\rbempl{q}_s)$
+and a $y$-intercept of 0.
+Therefore, the equation of line \rr{} is
+
+\begin{equation} \label{eq:ray_cons}
+  y = \frac{\rasub{C}_g/\rbempl{C}_g}{\rasub{q}_s/\rbempl{q}_s} \, x \; .
+\end{equation}
+
+
+%------------------------------
+\subsubsection{Indifference curves} 
+\label{sec:cons_graph_indifference_curves}
+%------------------------------
+
+In the consumption plane,
+indifference curves represent lines of constant utility
+for the energy conversion device user.
+In the consumption plane
+($\rate{C}_g/\rbempl{C}_g$ vs.\ $\rate{q}_s/\rbempl{q}_s$), 
+any indifference curve 
+is given by 
+Eq.~(\ref{PartI-eq:utility_Cg_form}) of Part~I
+with $\fCs$ replacing the share parameter $a$, 
+as shown in Appendix~\ref{PartI-sec:utility_and_elasticities} of Part~I.
+Recognizing that 
+$\rate{C}_g/\rbempl{C}_g$ is on the $y$-axis and 
+$\rate{q}_s/\rbempl{q}_s$ is on the $x$-axis
+leads to substitution of 
+$y$ for $\rate{C}_g/\rbempl{C}_g$ and 
+$x$ for $\rate{q}_s/\rbempl{q}_s$ to obtain
+
+\begin{equation} \label{eq:utility_line_form}
+  y = \left[ \frac{1}{1 - \fCs} \left( \frac{\rate{u}}{\rbempl{u}} \right)^\rho 
+            - \frac{\fCs}{1 - \fCs} (x)^\rho \right]^{(1/\rho)} \; .
+\end{equation}
+
+At any point on the 
+$\rate{C}_g/\rbempl{C}_g$ vs.\ $\rate{q}_s/\rbempl{q}_s$ plane,
+namely ($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{g,1}/\rbempl{C}_g$),
+indexed utility ($\rate{u}_1/\rbempl{u}$) is given by Eq.~(\ref{PartI-eq:ces_utility}) of Part~I as
+
+\begin{equation} \label{eq:utility_ratio_1_point}
+  \frac{\rate{u}_1}{\rbempl{u}} =
+        \left[ \fCs \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho
+        + (1-\fCs) \left( \frac{\rate{C}_{g,1}}{\rbempl{C}_g} \right)^\rho  \right]^{(1/\rho)} \; .
+\end{equation}
+%
+Substituting Eq.~(\ref{eq:utility_ratio_1_point}) into Eq.~(\ref{eq:utility_line_form})
+for $\rate{u}/\rorig{u}$
+and simplifying exponents gives
+
+\begin{equation}
+  y = \left\{ \frac{1}{1 - \fCs} \left[ \fCs \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho 
+        + (1-\fCs) \left( \frac{\rate{C}_{g,1}}{\rbempl{C}_g} \right)^\rho   \right] 
+            - \frac{\fCs}{1 - \fCs} (x)^\rho \right\}^{(1/\rho)}  .
+\end{equation}
+%
+Simplifying further yields
+the equation of an indifference curve passing through point 
+($\rate{q}_{s,1}/\rbempl{q}_s$, $\rate{C}_{g,1}/\rbempl{C}_g$):
+
+\begin{equation} \label{eq:indiff_curve_eqn}
+  y = \left\{ \left( \frac{\fCs}{1 - \fCs} \right) \left[ \left( \frac{\rate{q}_{s,1}}{\rbempl{q}_s} \right)^\rho 
+                                                          - (x)^\rho  \right]
+        + \left( \frac{\rate{C}_{g
+        ,1}}{\rbempl{C}_g} \right)^\rho \right\}^{(1/\rho)} \; .
+\end{equation}
+%
+Note that if $x$ is $\rate{q}_{s,1}/\rbempl{q}_s$,
+$y$ becomes $\rate{C}_{g,1}/\rbempl{C}_g$,
+as expected.

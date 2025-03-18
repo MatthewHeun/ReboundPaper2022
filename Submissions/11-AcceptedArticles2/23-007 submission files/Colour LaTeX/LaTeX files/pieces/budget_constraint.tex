@@ -1,0 +1,404 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+We assume the device owner has four expense categories 
+related to the device:
+capital cost ($C_{cap}$), 
+energy service cost ($C_s$), 
+operations and maintenance cost ($C_{\om}$), and
+disposal cost ($C_d$).
+We count one expense category for all other
+goods and services ($C_g$),
+one category for annual income ($M$), and 
+net savings ($N$), 
+the difference between income and expenses.
+Capital ($cap$) and disposal ($d$) costs are applied
+at the beginning ($\alpha$) and end ($\omega$), respectively, 
+of the device lifetime ($t_{\life}$).
+All other budget categories are 
+applied at the beginning of each year.
+A budget can be constructed for the device owner for each stage
+of Figure~\ref{fig:flowchart}, 
+leading to a different budget 
+before emplacement ($\circ$), 
+after emplacement ($*$), 
+after the substitution effect ($\wedge$), 
+after the income effect ($-$), and 
+after the macro effect ($\sim$).
+When needed, 
+the different budgets can be distinguished by symbol decorations
+shown in Table~\ref{tab:decorations}.
+We allow the device owner to purchase the device 
+with a loan and assume a real discount rate $r$.
+For a device not purchased on credit,
+$r = 0$ applies.
+The device owner may save (with real discount rate $r$)
+to pay for future disposal costs.
+
+Each budget category is analyzed in perpetuity
+to allow comparisons at different rebound stages 
+($\circ$, $*$, etc.)
+where the device lifetime ($\tlife$) may be different.
+The present value ($P$) of each expense category is obtained
+with an infinite sum for three cases.
+
+First, the present value ($P_{cap}$) of the capital cost ($C_{cap}$) 
+is given by the infinite sum 
+
+\begin{align}
+\footnotesize{}
+  P_{cap} &= C_{cap} + \frac{C_{cap}}{(1 + r)^{\tlife}} + \frac{C_{cap}}{(1 + r)^{2 \tlife}} +
+             \ldots + \frac{C_{cap}}{(1 + r)^{\itlife}} + \ldots \nonumber \\
+          &= C_{cap} \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
+          &= \phi_{\tlife} C_{cap} \; ,
+\end{align}
+%
+where $\phi_t \equiv \frac{(1 + r)^t}{(1 + r)^t - 1}$.
+
+Second, the present value of all yearly expenses or income
+can be given by similar equations.
+For the example of the present value ($P_s$)
+of annual energy services costs ($C_s$),
+we have
+
+\begin{align}
+\footnotesize{}
+  P_s &= C_s + \frac{C_s}{(1 + r)^{\oneyr}} + \frac{C_s}{(1 + r)^{\twoyr}} + 
+         \ldots + \frac{C_s}{(1 + r)^{\iyr}} + \ldots  \nonumber \\
+      &= C_s \sum_{i = 0}^{\infty} \frac{1}{(1 + r)^{\iyr}} \nonumber \\
+      &= \phi_{\oneyr} C_s \; .
+\end{align}
+%
+Equations for 
+the present value of 
+annual operations and maintenance costs ($P_{\om}$ and $C_{\om}$), 
+annual other goods costs ($P_g$ and $C_g$), 
+annual income ($P_M$ and $M$), and 
+annual net savings ($P_N$ and $N$)
+are identical except for the subscripts.
+
+Finally, the present value ($P_d$) of disposal costs ($C_d$) is given by
+
+\begin{align}
+\footnotesize{}
+  P_d &= \frac{C_d}{(1 + r)^{\tlife}} + \frac{C_d}{(1 + r)^{2 \tlife}} + 
+         \ldots + \frac{C_d}{(1 + r)^{\itlife}} + \ldots \nonumber \\
+      &= C_d \sum_{i = 1}^{\infty} \frac{1}{(1 + r)^{\itlife}} \nonumber \\
+      &= \gamma_{\tlife} C_d \; ,
+\end{align}
+%
+where 
+$\gamma_t \equiv \frac{1}{(1 + r)^t - 1}$.
+
+
+For simplicity, we desire annual values ($A$)
+with equivalent present value for each cost category. 
+Using the capital cost to illustrate, 
+we begin with the present value equivalence of the infinite series and 
+annual costs:
+
+\begin{equation}
+  P_{cap} = P_{A_{cap}} \; .
+\end{equation}
+%
+Substituting expressions for present values ($P$) gives
+
+\begin{equation}
+  \phi_{t_{\life}} C_{cap} = \phi_{1\,\mathrm{yr}} A_{cap} \; .
+\end{equation}
+%
+Rearranging gives
+
+\begin{equation}
+  A_{cap} = \frac{\phi_{\tlife}}{\phi_{\oneyr}} C_{cap} \; .
+\end{equation}
+%
+Further, we desire annualized rates defined as
+$\rate{A} \equiv A/\oneyr$ such that
+$\rate{A}_{cap} = A_{cap}/\oneyr$
+and 
+$\rate{C}_{cap} \equiv C_{cap}/\tlife$.
+Solving for $A_{cap}$ and $C_{cap}$ and substituting gives
+
+\begin{equation}
+  \rate{A}_{cap} (\oneyr) = \frac{\phi_{\tlife}}{\phi_{\oneyr}} \rate{C}_{cap} \tlife \; .
+\end{equation}
+%
+Defining $\tau_\alpha \equiv \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$ 
+(with subscript $\alpha$ indicating payments at the beginning of each 
+device lifetime) gives
+
+\begin{equation}
+  \rate{A}_{cap} = \tau_\alpha \rate{C}_{cap} \; .
+\end{equation}
+
+Similar derivations can be employed for all other budget categories
+to obtain
+
+\begin{align}
+  \rate{A}_s &= \rate{C}_s \\
+  \rate{A}_{\om} &= \rate{C}_{\om} \\
+  \rate{A}_d &= \tau_\omega \rate{C}_d \\
+  \rate{A}_g &= \rate{C}_g \\
+  \rate{A}_N &= \rate{N} \\
+  \rate{A}_M &= \rate{M} \; ,
+\end{align}
+%
+where 
+$\tau_\omega \equiv \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr}$
+(with subscript $\omega$ indicating payments 
+at the end of each device lifetime), and 
+$\rate{C}_d \equiv C_d / t_{\life}$, the annualized disposal cost 
+without discounting.
+
+The budget constraint expressed in annualized present-value equivalent terms is 
+%
+\begin{equation}
+  \rate{A}_M = \rate{A}_{cap} + 
+               \rate{A}_s + 
+               \rate{A}_{\om} + 
+               \rate{A}_d + 
+               \rate{A}_g + 
+               \rate{A}_N \; .
+\end{equation}
+%
+Substituting cost rates gives
+
+\begin{equation}
+  \rate{M} = \tau_\alpha \rate{C}_{cap} + 
+             \rate{C}_s + 
+             \rate{C}_{\om} + 
+             \tau_\omega \rate{C}_d + 
+             \rate{C}_g + 
+             \rate{N} \; .
+\end{equation}
+%
+Substituting the product of energy price ($p_E$) and
+the rate of energy consumption
+(given by the ratio of the rate of energy service consumption
+and efficiency, $\rate{q}_s / \eta$),
+the product of price ($p_g$) and
+the rate ($\rate{q}_g$) of other goods consumption,
+$\rorig{C}_{\omd} \equiv \rorig{C}_{\om} + \orig{\tau}_\omega \rorig{C}_d$,
+and after some rearranging gives the budget constraint
+used in Eq.~(\ref{eq:budget_constraint}):
+
+\begin{equation}
+  \rate{M} - \tau_\alpha \rate{C}_{cap} - \rate{C}_{\omd} = p_E \frac{\rate{q}_s}{\eta} + p_g \rate{q}_g + \rate{N} \; .
+\end{equation}
+
+The term $\tau_\alpha$ represents the additional cost of annual interest
+payments when the device is purchased with a loan.
+When $r > 0$, $\tau_\alpha > 1$.
+When $r = 0$, $\tau_\alpha = 1$, as proved below
+(Section~\ref{sec:proof_R_alpha}).
+The term $\tau_\omega$ represents the reduction of disposal costs 
+if the device owner pays for disposal costs with money
+invested annually assuming real discount rate $r$. 
+When $r > 0$, $0 < \tau_\omega < 1$.
+When $r = 0$, $\tau_\omega = 1$, as proved below
+(Section~\ref{sec:proof_R_omega}).
+
+
+%------------------------------
+\subsubsection{Proof: $\tau_\alpha = 1$ when $r = 0$}
+\label{sec:proof_R_alpha}
+%------------------------------
+
+We expect that $\tau_\alpha = 1$ when $r = 0$.
+However, direct substitution of $r = 0$ into the expression
+for $\tau_\alpha$ gives $\frac{0}{0}$, 
+so we rather assess
+$\lim_{r \to 0^+} \tau_\alpha \questionequal 1$.
+
+Substituting for $\tau_\alpha$ gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\phi_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) 
+  \questionequal 1 \; .
+\end{equation}
+%
+Substituting for $\phi$ terms gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left[ \frac{\frac{(1 + r)^{\tlife}}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \cdot \frac{\tlife}{\oneyr} \right] \questionequal 1 \; .
+\end{equation}
+%
+Distributing double-fractions gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left[
+  \frac{(1 + r)^{\tlife}}{(1 + r)^{\oneyr}} \cdot
+  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
+  \frac{\tlife}{\oneyr}
+  \right] \questionequal 1 \; .
+\end{equation}
+%
+Multiplying terms in numerator and demoninator gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{
+  \frac{\left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr}}{(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}}
+  \right\} \questionequal 1 \; .
+\end{equation}
+%
+Applying L'H\^{o}pital's rule gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{\frac{\partial}{\partial r} \left\{ \left[(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\tlife} \right] \frac{\tlife}{\oneyr} \right\}}
+  {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}\right]}
+  \right) \questionequal 1 \; .
+\end{equation}
+%
+Applying the chain rule repeatedly gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left(
+  \frac{\frac{\tlife}{\oneyr} 
+      \left\{ \frac{\partial}{\partial r} \left[  (1 + r)^{\tlife} (1 + r)^{\oneyr} \right]  - 
+              \frac{\partial}{\partial r} \left[  (1 + r)^{\tlife} \right] 
+      \right\}}
+  {\frac{\partial}{\partial r} \left[    (1 + r)^{\tlife} (1 + r)^{\oneyr} \right]  - 
+              \frac{\partial}{\partial r} \left[  (1 + r)^{\oneyr} \right] }
+  \right) \questionequal 1 \; .
+\end{equation}
+
+Several intermediate results are helpful.
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} \right] \right\} = \tlife
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right] \right\} = \oneyr
+\end{equation}
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] \right\} = \tlife (1 + r)^{\oneyr}  + \oneyr (1 + r)^{\tlife} 
+\end{equation}
+
+Substituting the intermediate results gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left\{
+                         \frac{\frac{\tlife}{\oneyr}
+                         \left[ (1 + r)^{\oneyr} (\tlife) + 
+                         (1 + r)^{\tlife} (\oneyr) - 
+                         \tlife \right]}
+                        {(1 + r)^{\oneyr} (\tlife) + 
+                         (1 + r)^{\tlife} (\oneyr) - 
+                         \oneyr}
+                    \right\} \questionequal 1 \; .
+\end{equation}
+%
+Setting $r = 0$ in the remaining terms gives
+
+\begin{equation}
+  \frac{\frac{\tlife}{\oneyr}
+              \left[ (1) (\tlife) + 
+                     (1) (\oneyr) - 
+                     \tlife
+              \right]}
+       {(1) (\tlife) + 
+        (1) (\oneyr) - 
+        \oneyr} \questionequal 1 \; .
+\end{equation}
+%
+Simplifying gives
+
+\begin{align}
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}{\tlife} &\questionequal 1 \\
+  1 &\stackrel{\checkmark}{=} 1 \; ,
+\end{align}
+%
+thereby completing the proof with the expected result. 
+
+
+
+%------------------------------
+\subsubsection{Proof: $\tau_\omega = 1$ when $r = 0$}
+\label{sec:proof_R_omega}
+%------------------------------
+
+We expect that $\tau_\omega = 1$ when $r = 0$.
+However, direct substitution of $r = 0$ into the expression
+for $\tau_\omega$ gives $\frac{0}{0}$, 
+so we rather assess
+$\lim_{r \to 0^+} \tau_\omega \questionequal 1$.
+
+Substituting for $\tau_\omega$ gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left( \frac{\gamma_{\tlife}}{\phi_{\oneyr}} \frac{\tlife}{\oneyr} \right) \questionequal 1 \; .
+\end{equation}
+%
+Substituting for $\gamma$ and $\phi$ terms gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left[ \frac{\frac{1}{(1 + r)^{\tlife} - 1}}{\frac{(1 + r)^{\oneyr}}{(1 + r)^{\oneyr} - 1}} \frac{\tlife}{\oneyr} \right] \questionequal 1 \; .
+\end{equation}
+%
+Distributing double-fractions gives
+
+\begin{equation}
+  \lim_{r \to 0^+} \left[
+  \frac{1}{(1 + r)^{\oneyr}} \cdot
+  \frac{(1 + r)^{\oneyr} - 1}{(1 + r)^{\tlife} - 1} \cdot
+  \frac{\tlife}{\oneyr}
+  \right] \questionequal 1 \; .
+\end{equation}
+%
+Multiplying terms in numerator and demoninator gives
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left\{
+    \frac{\left[ (1 + r)^{\oneyr} - 1 \right] \left( \frac{\tlife}{\oneyr} \right)}
+    {(1 + r)^{\tlife} (1 + r)^{\oneyr} - (1 + r)^{\oneyr}} 
+  \right\} \questionequal 1 \; .
+\end{equation}
+%
+Applying L'H\^{o}pital's rule gives
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left\{
+    \frac{\frac{\tlife}{\oneyr}
+      \frac{\partial}{\partial r} 
+        \left[ (1 + r)^{\oneyr} - 1 \right]}
+    {\frac{\partial}{\partial r} \left[ (1 + r)^{\tlife} (1 + r)^{\oneyr} \right] - 
+     \frac{\partial}{\partial r} \left[ (1 + r)^{\oneyr} \right]}
+  \right\} \questionequal 1 \; .
+\end{equation}
+%
+Applying the intermediate results from Section~\ref{sec:proof_R_alpha} yields
+
+\begin{equation}
+  \lim_{r \to 0^+} 
+  \left[
+    \frac{\left(\frac{\tlife}{\oneyr}\right) (\oneyr)}
+         {(1 + r)^{\oneyr} (\tlife) + 
+          (1 + r)^{\tlife} (\oneyr) - 
+          \oneyr}
+  \right] \questionequal 1 \; .
+\end{equation}
+%
+Setting $r = 0$ in the remaining terms gives
+
+\begin{equation}
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
+  {(1) (\tlife) + (1) \oneyr - \oneyr} \questionequal 1 \; .
+\end{equation}
+%
+Simplifying the denominator gives
+
+\begin{align}
+  \frac{\left( \frac{\tlife}{\oneyr} \right) (\oneyr)}
+       {\tlife} \questionequal 1 \\
+       1 \stackrel{\checkmark}{=} 1 \; ,
+\end{align}
+%
+thereby completing the proof with the expected result.

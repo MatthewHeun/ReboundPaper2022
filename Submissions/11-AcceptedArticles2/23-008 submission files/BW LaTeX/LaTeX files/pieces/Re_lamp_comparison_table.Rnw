@@ -1,0 +1,82 @@
+% The next command tells RStudio to do "Compile PDF" on HSB_results.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB_results.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_results.Rnw
+
+
+\begin{landscape}
+\begin{table}
+\footnotesize
+\begin{center}
+\caption{Rebound magnitude comparisons for the lamp example. All numbers in \%.
+         $k = 3$ is assumed.
+         Note that 
+         $Re_{tot} = Re_{empl} + Re_{sub} + Re_{inc} + Re_{macro}$, 
+         $Re_{tot} = Re_{micro} + Re_{macro}$, and 
+         $Re_{tot} = Re_{dir} + Re_{indir}$.}
+\label{tab:rebound_lamp_comparisons}
+\begin{tabular}{ c l l l c c c c @{\hspace*{10mm}} c c @{\hspace*{10mm}} c }
+\toprule
+  &               &          &                 & \multicolumn{3}{c}{$Re_{micro}$}      & $Re_{macro}$ & $Re_{dir}$ & $Re_{indir}$ & $Re_{tot}$ \\ 
+  & Rebound study & Coverage & Analysis method & $Re_{empl}$ & $Re_{sub}$ & $Re_{inc}$ &              &            &              &            \\ 
+\midrule
+ & This paper & U.S., & Energy, expenditure, and  & $\Sexpr{f_lmp("Re_empl")}$
+                                                  & $\Sexpr{f_lmp("Re_sub")}$
+                                                  & $\Sexpr{f_lmp("Re_inc")}$
+                                                  & $\Sexpr{f_lmp("Re_macro")}$
+                                                  & $\Sexpr{f_lmp("Re_dir")}$
+                                                  & $\Sexpr{f_lmp("Re_indir")}$
+                                                  & $\Sexpr{f_lmp("Re_tot")}$  \\
+ & (2025)     & 2020  & consumption planes        & & & & & & &   \\
+\midrule
+1 & \citeauthor{Guertin:2003aa}  & Canada, & Econometric residential  & & & & & 32--49 & &  \\
+  & \citeyearpar{Guertin:2003aa} & 1993    & energy demand model      & & & & &        & &  \\
+  &                              &         & based on Canadian house- & & & & &        & &  \\
+  &                              &         & hold data                & & & & &        & &  \\
+\midrule
+2 & \citeauthor{Freire-Gonzalez:2011aa}  & Catalonia, & Input-output based      & & & & & 49 & 16 &  \\
+  & \citeyearpar{Freire-Gonzalez:2011aa} & Spain,     & energy model, utilising & & & & &    &    &  \\
+  &                                      & 2000--2008 & expenditure/cross price & & & & &    &    &  \\
+  &                                      &            & elasticities            & & & & &    &    &  \\
+\midrule
+3 & \citeauthor{Thomas:2013ab}  & U.S., & Expenditure/cross price   & & & & & 10 & 10 &  \\
+  & \citeyearpar{Thomas:2013ab} & 2004  & elasticities of home      & & & & &    &    &  \\
+  &                             &       & electricity use, using    & & & & &    &    &  \\
+  &                             &       & household spending        & & & & &    &    &  \\
+  &                             &       & survey data               & & & & &    &    &  \\
+\midrule
+4 & \citeauthor{Schleich2014}  & Germany, & Survey of electricity & & & & & 6 & &  \\
+  & \citeyearpar{Schleich2014} & 2012     & consumption in 6409   & & & & &   & &  \\
+  &                            &          & German households     & & & & &   & &  \\
+\midrule
+5 & \citeauthor{Borenstein:2015aa}  & U.S., & Microeconomic &  & 14      & 6 & & & &  \\
+  & \citeyearpar{Borenstein:2015aa} & 2012  & framework     &  & (6--37) &   & & & &  \\
+\midrule
+6 & \citeauthor{Chitnis:2015}  & UK,        & Estimated own/cross price  & & 14 & 35 & & 41 & 8 & 49 \\
+  & \citeyearpar{Chitnis:2015} & 1964--2014 & elasticities of transport  & &    &    & &    &   &    \\
+  &                            &            & fuels, uses household      & &    &    & &    &   &    \\
+  &                            &            & spending survey data       & &    &    & &    &   &    \\
+\midrule
+7 & \citeauthor{Duarte:2018aa}  & Spain,     & Dynamic CGE model, & & & & & & & 12          \\
+  & \citeyearpar{Duarte:2018aa} & 2010--2030 & efficiency shock   & & & & & & & (short run) \\
+  &                             &            &                    & & & & & & & 51          \\
+  &                             &            &                    & & & & & & & (long run)  \\
+\midrule
+8 & \citeauthor{Barkhordar:2019aa}  & Iran,      & Dynamic CGE model & & & & & 28        & & 43        \\
+  & \citeyearpar{Barkhordar:2019aa} & 2018--2040 &                   & & & & & (average) & & (average) \\
+\midrule
+9 & \citeauthor{Chitnis:2020aa}  & UK,            & Household demand analysis & & & & & 95 & $-41$ & 54  \\
+  & \citeyearpar{Chitnis:2020aa} & 1964--2015     & via Linear approximation  & & & & &    &       &     \\
+  &                              &                & to the Almost Ideal       & & & & &    &       &     \\
+  &                              &                & Demand System (LAIDS)     & & & & &    &       &     \\
+\midrule
+10 & \citeauthor{Shojaeddini:2022aa}  & U.S., & Price elasticity of lighting & & & & & 18--29 & & \\
+   & \citeyearpar{Shojaeddini:2022aa} & 2009  & from cross sectional data    & & & & &        & & \\
+   &                                  &       & from the 2009 Residential    & & & & &        & & \\
+   &                                  &       & Energy Consumption           & & & & &        & & \\
+   &                                  &       & Survey (RECS)                & & & & &        & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}

@@ -1,0 +1,108 @@
+% The next command tells RStudio to do "Compile PDF" on HSB.Rnw,
+% instead of this file, thereby eliminating the need to switch back to HSB.Rnw 
+% before building the paper.
+%!TEX root = ../HSB_framework.Rnw
+
+\begin{landscape}
+
+\begin{table}
+\footnotesize
+\centering
+\caption{Assumptions and constraints for analysis of rebound effects.}
+\label{tab:analysis_assumptions}
+
+\begin{tabular}{r c c c c c}
+\toprule
+Parameter & \EmplEffect{} & \SubEffect & \IncEffect & \MacroEffect \\
+\midrule
+Energy price                      & $\bempl{p}_E  = \aempl{p}_E$         
+                                  & $\bsub{p}_E   = \asub{p}_E$ 
+                                  & $\binc{p}_E   = \ainc{p}_E$ 
+                                  & $\bmacro{p}_E = \amacro{p}_E$ \\
+%
+Energy service efficiency         & $\bempl{\eta}  < \aempl{\eta}$         
+                                  & $\bsub{\eta}   = \asub{\eta}$ 
+                                  & $\binc{\eta}   = \ainc{\eta}$ 
+                                  & $\bmacro{\eta} = \amacro{\eta}$ \\
+%
+Energy service price              & $\bempl{p}_s  > \aempl{p}_s$          
+                                  & $\bsub{p}_s   = \asub{p}_s$ 
+                                  & $\binc{p}_s   = \ainc{p}_s$  
+                                  & $\bmacro{p}_s = \amacro{p}_s$ \\
+%
+Other goods price                 & $p_g$          
+                                  & $p_g$ 
+                                  & $p_g$  
+                                  & $p_g$ \\
+%
+Energy service consumption rate   & $\rbempl{q}_s  = \raempl{q}_s$         
+                                  & $\rbsub{q}_s   < \rasub{q}_s$ 
+                                  & $\rbinc{q}_s   < \rainc{q}_s$ 
+                                  & $\rbmacro{q}_s = \ramacro{q}_s$ \\
+%
+Other goods consumption rate      & $\rbempl{q}_g  = \raempl{q}_g$         
+                                  & $\rbsub{q}_g   > \rasub{q}_g$ 
+                                  & $\rbinc{q}_g   < \rainc{q}_g$ 
+                                  & $\rbmacro{q}_g = \ramacro{q}_g$ \\
+%
+Device energy consumption rate    & $\rbempl{E}_s  > \raempl{E}_s$
+                                  & $\rbsub{E}_s   < \rasub{E}_s$ 
+                                  & $\rbinc{E}_s   < \rainc{E}_s$ 
+                                  & $\rbmacro{E}_s = \ramacro{E}_s$ \\
+%
+Embodied energy rate              & $\rbempl{E}_{emb}  < \raempl{E}_{emb}$ 
+                                  & $\rbsub{E}_{emb}   = \rasub{E}_{emb}$ 
+                                  & $\rbinc{E}_{emb}   = \rainc{E}_{emb}$ 
+                                  & $\rbmacro{E}_{emb} = \ramacro{E}_{emb}$ \\
+%
+Device lifetime                   & $\bempl{t}_{\life}  < \aempl{t}_{\life}$ 
+                                  & $\bsub{t}_{\life}   = \asub{t}_{\life}$ 
+                                  & $\binc{t}_{\life}   = \ainc{t}_{\life}$ 
+                                  & $\bmacro{t}_{\life} = \amacro{t}_{\life}$ \\
+%
+Beginning-of-life discount factor & $\bempl{\tau}_\alpha  < \aempl{\tau}_\alpha$ 
+                                  & $\bsub{\tau}_\alpha   = \asub{\tau}_\alpha$ 
+                                  & $\binc{\tau}_\alpha   = \ainc{\tau}_\alpha$ 
+                                  & $\bmacro{\tau}_\alpha = \amacro{\tau}_\alpha$ \\
+%
+End-of-life discount factor       & $\bempl{\tau}_\omega  > \aempl{\tau}_\omega$
+                                  & $\bsub{\tau}_\omega   = \asub{\tau}_\omega$
+                                  & $\binc{\tau}_\omega   = \ainc{\tau}_\omega$
+                                  & $\bmacro{\tau}_\omega = \amacro{\tau}_\omega$ \\
+%
+Capital expenditure rate          & $\rbempl{C}_{cap}  < \raempl{C}_{cap}$ 
+                                  & $\rbsub{C}_{cap}   = \rasub{C}_{cap}$ 
+                                  & $\rbinc{C}_{cap}   = \rainc{C}_{cap}$ 
+                                  & $\rbmacro{C}_{cap} = \ramacro{C}_{cap}$ \\
+%
+Ops., maint., and disp.\ expenditure rate & $\rbempl{C}_{\omd} < \raempl{C}_{\omd}$ 
+                                  & $\rbsub{C}_{\omd}   = \rasub{C}_{\omd}$ 
+                                  & $\rbinc{C}_{\omd}   = \rainc{C}_{\omd}$ 
+                                  & $\rbmacro{C}_{\omd} = \ramacro{C}_{\omd}$ \\
+%
+Energy service expenditure rate   & $\rbempl{C}_s  > \raempl{C}_s$
+                                  & $\rbsub{C}_s   < \rasub{C}_s$ 
+                                  & $\rbinc{C}_s   < \rainc{C}_s$ 
+                                  & $\rbmacro{C}_s = \ramacro{C}_s$ \\
+%
+Other goods expenditure rate      & $\rbempl{C}_g  = \raempl{C}_g$         
+                                  & $\rbsub{C}_g   > \rasub{C}_g$ 
+                                  & $\rbinc{C}_g   < \rainc{C}_g$ 
+                                  & $\rbmacro{C}_g = \ramacro{C}_g$ \\
+%
+Income                            & $\rate{M}$         
+                                  & $\rate{M}$ 
+                                  & $\rate{M}$ 
+                                  & $\rate{M}$  \\
+%
+Net savings                       & 0 = $\rbempl{N} <   \raempl{N}$         
+                                  & $\rbsub{N}      <   \rasub{N}$ 
+                                  & $\rbinc{N}      >   \rainc{N} = 0$ 
+                                  & $\rbmacro{N}    =   \ramacro{N} = 0$  \\
+\bottomrule
+\end{tabular}
+
+
+\end{table}
+
+\end{landscape}
